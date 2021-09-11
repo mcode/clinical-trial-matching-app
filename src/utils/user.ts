@@ -8,8 +8,22 @@ export type User = {
   record?: FhirUser; // for debugging
 };
 
+type FhirUserName = {
+  prefix: string;
+  given: string[];
+  family: string;
+  suffix?: string[];
+};
+
+const getName = (fhirUserName: FhirUserName): string => {
+  const prefix = fhirUserName.prefix ? `${fhirUserName.prefix} ` : null;
+  const fullName = `${fhirUserName.given.join(' ')} ${fhirUserName.family}`;
+  const suffix = fhirUserName.suffix?.length > 0 ? `, ${fhirUserName.suffix[0]}` : null;
+  return `${prefix || ''}${fullName}${suffix || ''}`;
+};
+
 export const convertFhirUser = (fhirUser: FhirUser): User => ({
   id: fhirUser.id,
-  name: `${fhirUser.name[0].prefix || ''} ${fhirUser.name[0].given[0]} ${fhirUser.name[0].family}`,
+  name: getName(fhirUser.name[0]),
   record: fhirUser,
 });

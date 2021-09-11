@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import smart from 'fhirclient';
-import { Alert, Box, Container } from '@material-ui/core';
+import { Alert, Box, Container } from '@mui/material';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       clientId: publicRuntimeConfig.fhirClientId,
       noRedirect: true,
       redirectUri: '/authorize',
-      scope: 'launch/patient openid profile',
+      scope: 'launch/patient openid fhirUser patient/*.read',
     });
 
     return {

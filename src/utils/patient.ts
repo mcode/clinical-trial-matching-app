@@ -4,17 +4,19 @@ export type Patient = {
   id: string;
   name: string;
   gender: string;
-  age: number;
+  age: string;
+  zipcode: string;
+  cancerType: string;
   record?: fhirclient.FHIR.Patient; // for debugging
 };
 
-const getAge = (dateString: Date): number => {
+const getAge = (dateString: Date): string => {
   const today = new Date();
   const birthDate = new Date(dateString);
   let age = today.getFullYear() - birthDate.getFullYear();
   const months = today.getMonth() - birthDate.getMonth();
   if (months < 0 || (months === 0 && today.getDate() < birthDate.getDate())) age--;
-  return age;
+  return `${age}`;
 };
 
 export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patient => ({
@@ -22,5 +24,7 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
   name: `${fhirPatient.name[0].given[0]} ${fhirPatient.name[0].family}`,
   gender: fhirPatient.gender,
   age: getAge(fhirPatient.birthDate),
+  zipcode: fhirPatient.address[0].postalCode,
+  cancerType: '',
   record: fhirPatient,
 });
