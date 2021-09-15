@@ -1,21 +1,26 @@
 import type { ReactElement } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { AppBar, Box, Stack } from '@mui/material';
 
-import { User } from '@/utils/user';
 import Logo from '@/assets/images/logo.png';
 
 export type HeaderProps = {
-  user?: User;
+  userName?: string;
 };
 
-const Header = ({ user }: HeaderProps): ReactElement => (
-  <AppBar position="static">
+const Header = ({ userName }: HeaderProps): ReactElement => (
+  <AppBar position="static" sx={{ height: '80px' }}>
     <Stack alignItems="center" direction="row" justifyContent="space-between" px={2} py={1}>
-      <Image src={Logo} alt="Clinical Trial Finder logo" layout="fixed" width={300} height={60} priority />
-      {user && (
+      <Link href="/search" passHref>
+        <Box sx={{ cursor: 'pointer' }}>
+          <Image src={Logo} alt="Clinical Trial Finder logo" layout="fixed" width={300} height={60} priority />
+        </Box>
+      </Link>
+
+      {userName && (
         <Box color="common.white" fontWeight="600" mr={1}>
-          {user.name}
+          {userName}
         </Box>
       )}
     </Stack>

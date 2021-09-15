@@ -1,9 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import SearchForm, { SearchFormProps } from '../SearchForm';
-import mockPatient from '@/__mocks__/patient';
+
+const defaultValues = {
+  age: '28',
+  cancerType: 'Breast',
+  travelDistance: '100',
+  zipcode: '11111',
+};
 
 describe('<SearchForm />', () => {
-  const Component = (props: Partial<SearchFormProps>) => <SearchForm patient={mockPatient} {...props} />;
+  const Component = (props: Partial<SearchFormProps>) => <SearchForm defaultValues={defaultValues} {...props} />;
 
   it('renders the search form and all the search form fields', () => {
     render(<Component />);

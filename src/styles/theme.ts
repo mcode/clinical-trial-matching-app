@@ -42,9 +42,6 @@ const theme = createTheme({
     secondary: {
       main: colors.red,
     },
-    error: {
-      main: colors.red,
-    },
     common: colors,
     background: {
       default: colors.grayLighter,

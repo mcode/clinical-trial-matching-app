@@ -5,7 +5,10 @@ import { Box, FormControl, FormControlLabel, FormGroup, FormLabel, Stack } from 
 import { MatchingServiceCheckbox } from './FormFields';
 import { SearchFormValuesType } from './types';
 
-type MatchingServicesProps = { control: Control<SearchFormValuesType> };
+type MatchingServicesProps = {
+  control: Control<SearchFormValuesType>;
+  fullWidth?: boolean;
+};
 
 const MATCHING_SERVICES = [
   { name: 'breastCancerTrials', label: 'BreastCancerTrials.org', defaultValue: true },
@@ -13,7 +16,7 @@ const MATCHING_SERVICES = [
   { name: 'trialscope', label: 'Trialscope', defaultValue: false },
 ] as const;
 
-const MatchingServices = ({ control }: MatchingServicesProps): ReactElement => (
+const MatchingServices = ({ control, fullWidth }: MatchingServicesProps): ReactElement => (
   <Box bgcolor={theme => theme.palette.common.white} borderRadius="5px" px={1.5} py={0.5}>
     <FormControl component="fieldset">
       <FormLabel component="legend" sx={{ fontSize: '0.8em' }}>
@@ -21,7 +24,7 @@ const MatchingServices = ({ control }: MatchingServicesProps): ReactElement => (
       </FormLabel>
 
       <FormGroup>
-        <Stack direction={{ xs: 'column', md: 'row' }}>
+        <Stack direction={fullWidth ? 'column' : { xs: 'column', md: 'row' }}>
           {MATCHING_SERVICES.map(matchingService => (
             <FormControlLabel
               key={matchingService.name}
