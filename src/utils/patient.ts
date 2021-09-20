@@ -23,7 +23,7 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
   id: fhirPatient.id,
   name: `${fhirPatient.name[0].given[0]} ${fhirPatient.name[0].family}`,
   gender: fhirPatient.gender,
-  age: getAge(fhirPatient.birthDate),
+  age: fhirPatient.birthDate ? getAge(fhirPatient.birthDate) : null,
   zipcode: fhirPatient.address[0].postalCode,
   cancerType: '',
   record: fhirPatient,

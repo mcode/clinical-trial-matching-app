@@ -14,7 +14,7 @@ import {
   ECOGScoreAutocomplete,
   KarnofskyScoreAutocomplete,
   MedicationsAutocomplete,
-  MetastatsisTextField,
+  MetastasisTextField,
   RadiationAutocomplete,
   SurgeryAutocomplete,
   TravelDistanceTextField,
@@ -33,10 +33,10 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
   const router = useRouter();
 
   const defaultValues: Partial<SearchFormValuesType> = {
-    age: patient.age,
-    cancerType: patient.cancerType,
+    age: patient.age || '',
+    cancerType: patient.cancerType || '',
     travelDistance: '100',
-    zipcode: patient.zipcode,
+    zipcode: patient.zipcode || '',
   };
 
   const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
@@ -70,7 +70,7 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
           </Stack>
         </Box>
 
-        <Grid columns={8} container spacing={2} px={2} py={{ xs: 0, md: 2 }} mt={{ xs: 0, md: -2 }}>
+        <Grid columns={8} container spacing={2} px={2} py={{ md: 2 }} pb={{ xs: 2 }} mt={{ xs: 0, md: -2 }}>
           <Grid item xs={8}>
             <MatchingServices control={control} />
           </Grid>
@@ -108,7 +108,7 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
           </Grid>
 
           <Grid item xs={8} lg={4} xl={2}>
-            <Controller name="metastasis" defaultValue="" control={control} render={MetastatsisTextField} />
+            <Controller name="metastasis" defaultValue="" control={control} render={MetastasisTextField} />
           </Grid>
 
           <Grid item xs={8} lg={4} xl={2}>

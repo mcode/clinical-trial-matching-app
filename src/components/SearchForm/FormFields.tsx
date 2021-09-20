@@ -49,11 +49,11 @@ export const CancerSubtypeTextField = ({
   <TextField data-testid="cancerSubtype" fullWidth label="Cancer Subtype" variant="filled" {...field} />
 );
 
-export const MetastatsisTextField = ({
+export const MetastasisTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
-}): ReactElement => <TextField data-testid="metastasis" fullWidth label="Metastatsis" variant="filled" {...field} />;
+}): ReactElement => <TextField data-testid="metastasis" fullWidth label="Metastasis" variant="filled" {...field} />;
 
 export const CancerStageAutocomplete = ({
   field,
