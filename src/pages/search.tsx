@@ -3,8 +3,10 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
+import { fhirclient } from 'fhirclient/lib/types';
 
 import PatientCard from '@/components/PatientCard';
+import SearchForm from '@/components/SearchForm';
 import { Patient, convertFhirPatient } from '@/utils/patient';
 import { User, convertFhirUser } from '@/utils/user';
 
@@ -21,7 +23,7 @@ const SearchPage = ({ patient }: SearchPageProps): ReactElement => {
       </Head>
 
       <PatientCard patient={patient} />
-      <pre>{JSON.stringify(patient, null, 2)}</pre>
+      <SearchForm patient={patient} />
     </>
   );
 };
@@ -38,9 +40,22 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
   }
 
-  const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
+  const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
+  const [fhirPatient, fhirUser, fhirCancerConditions] = await Promise.all([
+    fhirClient.patient.read(),
+    fhirClient.user.read(),
+    fhirClient.request<fhirclient.FHIR.Bundle>(
+      `Condition?patient=${urlPatientId}&_profile=${encodeURIComponent(
+        'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition'
+      )}`
+    ),
+  ]);
 
   return {
-    props: { patient: convertFhirPatient(fhirPatient), user: convertFhirUser(fhirUser) },
+    props: {
+      patient: convertFhirPatient(fhirPatient),
+      user: convertFhirUser(fhirUser),
+      fhirCancerConditions,
+    },
   };
 };

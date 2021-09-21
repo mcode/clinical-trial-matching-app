@@ -1,8 +1,6 @@
-import React, { ReactElement } from 'react';
-import { Box, Stack } from '@material-ui/core';
-import { AccountCircle as AccountCircleIcon } from '@material-ui/icons';
-
-import * as Styles from './PatientCard.styles';
+import type { ReactElement } from 'react';
+import { Box, Stack } from '@mui/material';
+import { AccountCircle as AccountCircleIcon } from '@mui/icons-material';
 
 import type { Patient } from '@/utils/patient';
 
@@ -11,22 +9,20 @@ export type PatientCardProps = {
 };
 
 const PatientCard = ({ patient }: PatientCardProps): ReactElement => (
-  <Styles.DarkCard>
-    <Stack alignItems="center" direction="row">
-      <Box pr={3} py={2}>
-        <AccountCircleIcon fontSize="large" />
-      </Box>
+  <Stack alignItems="center" bgcolor="grey.800" color="common.white" direction="row" height="80px" pl={3}>
+    <Box pr={3} py={2}>
+      <AccountCircleIcon fontSize="large" />
+    </Box>
 
-      <Box>
-        <Box fontWeight={600}>{patient.name}</Box>
+    <Box>
+      <Box fontWeight={700}>{patient.name}</Box>
 
-        <Stack direction="row">
-          <Box width={80}>{patient.gender}</Box>
-          <Box width={80}>{patient.age} yrs</Box>
-        </Stack>
-      </Box>
-    </Stack>
-  </Styles.DarkCard>
+      <Stack direction="row">
+        <Box width={80}>{patient.gender}</Box>
+        <Box width={80}>{patient.age} yrs</Box>
+      </Stack>
+    </Box>
+  </Stack>
 );
 
 export default PatientCard;

@@ -1,0 +1,2356 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 6,
+  "link": [],
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "NCT02684032",
+        "title": "Anti-Estrogen Therapy, Palbociclib, and Gedatolisib for Metastatic ER+, HER2- Breast Cancer",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://clinicaltrials.gov",
+            "value": "NCT02684032"
+          }
+        ],
+        "phase": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/research-study-phase",
+              "code": "phase-1",
+              "display": "Phase 1"
+            }
+          ],
+          "text": "Phase 1"
+        },
+        "keyword": [
+          {
+            "text": "OTHER_TARGETED_THERAPY"
+          },
+          {
+            "text": "TREATMENT_HORMONE"
+          },
+          {
+            "text": "METASTATIC"
+          },
+          {
+            "text": "TREATMENT_BIOLOGICAL"
+          },
+          {
+            "text": "CDK4_6_INHIBITORS"
+          }
+        ],
+        "contact": [
+          {
+            "name": "Pfizer CT.gov Call Center ",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "1-800-718-1021",
+                "use": "work"
+              },
+              {
+                "system": "email",
+                "value": "ClinicalTrials.gov_Inquiries@pfizer.com",
+                "use": "work"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "text": "United States"
+          }
+        ],
+        "objective": [
+          {
+            "name": "Women with metastatic (stage IV) estrogen receptor positive (ER+), HER2 negative (HER2-) breast cancer. You must not have already received an mTOR inhibitor, PI3K inhibitor, or more than one chemotherapy for metastatic disease."
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "orgNCT02684032",
+            "name": "University of Michigan Hospitals"
+          },
+          {
+            "resourceType": "Group",
+            "id": "groupNCT02684032",
+            "type": "person",
+            "actual": false
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-0",
+            "name": "University of Alabama at Birmingham",
+            "address": {
+              "use": "work",
+              "city": "Birmingham",
+              "country": "United States",
+              "state": "Alabama",
+              "postalCode": "35233"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-1",
+            "name": "University of Alabama at Birmingham",
+            "address": {
+              "use": "work",
+              "city": "Birmingham",
+              "country": "United States",
+              "state": "Alabama",
+              "postalCode": "35249"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-2",
+            "name": "Compassionate Care Research Group Inc. at Compassionate Cancer Care Medical Group, Inc.",
+            "address": {
+              "use": "work",
+              "city": "Corona",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "92879"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-3",
+            "name": "Compassionate Care Research Group Inc. at Compassionate Cancer Care Medical Group, Inc.",
+            "address": {
+              "use": "work",
+              "city": "Fountain Valley",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "92708"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-4",
+            "name": "Keck Hospital of USC - Norris Healthcare Center (HC3)",
+            "address": {
+              "use": "work",
+              "city": "Los Angeles",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "90033"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-5",
+            "name": "Keck Hospital of USC",
+            "address": {
+              "use": "work",
+              "city": "Los Angeles",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "90033"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-6",
+            "name": "LAC+USC Medical Center",
+            "address": {
+              "use": "work",
+              "city": "Los Angeles",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "90033"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-7",
+            "name": "USC/Norris Comprehensive Cancer Center / Investigational Drug Services",
+            "address": {
+              "use": "work",
+              "city": "Los Angeles",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "90033"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-8",
+            "name": "USC/Norris Comprehensive Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Los Angeles",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "90033"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-9",
+            "name": "Compassionate Care Research Group Inc. at Compassionate Cancer Care Medical Group, Inc.",
+            "address": {
+              "use": "work",
+              "city": "Riverside",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "92501"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-10",
+            "name": "UCSF - Helen Diller Family Comprehensive Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "San Francisco",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "94115"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-11",
+            "name": "UCSF - Helen Diller Family Comprehensive Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "San Francisco",
+              "country": "United States",
+              "state": "California",
+              "postalCode": "94158"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-12",
+            "name": "University of Colorado Hospital - Anschutz Inpatient Pavilion (AiP)",
+            "address": {
+              "use": "work",
+              "city": "Aurora",
+              "country": "United States",
+              "state": "Colorado",
+              "postalCode": "80045"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-13",
+            "name": "University of Colorado Hospital - Anschutz Outpatient Pavilion (AOP)",
+            "address": {
+              "use": "work",
+              "city": "Aurora",
+              "country": "United States",
+              "state": "Colorado",
+              "postalCode": "80045"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-14",
+            "name": "University of Colorado Hospital - Clinical Trials Office (CTO)",
+            "address": {
+              "use": "work",
+              "city": "Aurora",
+              "country": "United States",
+              "state": "Colorado",
+              "postalCode": "80045"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-15",
+            "name": "University of Colorado Hospital- Anschutz Cancer Pavilion (ACP)",
+            "address": {
+              "use": "work",
+              "city": "Aurora",
+              "country": "United States",
+              "state": "Colorado",
+              "postalCode": "80045"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-16",
+            "name": "Moffitt Cancer Center Richard M Schulze Family Foundation Outpatient Center at McKinley Campus",
+            "address": {
+              "use": "work",
+              "city": "Tampa",
+              "country": "United States",
+              "state": "Florida",
+              "postalCode": "33612"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-17",
+            "name": "Moffitt Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Tampa",
+              "country": "United States",
+              "state": "Florida",
+              "postalCode": "33612"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-18",
+            "name": "Emory University Hospital Midtown",
+            "address": {
+              "use": "work",
+              "city": "Atlanta",
+              "country": "United States",
+              "state": "Georgia",
+              "postalCode": "30308"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-19",
+            "name": "Emory University Hospital",
+            "address": {
+              "use": "work",
+              "city": "Atlanta",
+              "country": "United States",
+              "state": "Georgia",
+              "postalCode": "30322"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-20",
+            "name": "The Emory Clinic",
+            "address": {
+              "use": "work",
+              "city": "Atlanta",
+              "country": "United States",
+              "state": "Georgia",
+              "postalCode": "30322"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-21",
+            "name": "Winship Cancer Institute",
+            "address": {
+              "use": "work",
+              "city": "Atlanta",
+              "country": "United States",
+              "state": "Georgia",
+              "postalCode": "30322"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-22",
+            "name": "Massachusetts General Hospital",
+            "address": {
+              "use": "work",
+              "city": "Boston",
+              "country": "United States",
+              "state": "Massachusetts",
+              "postalCode": "02114"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-23",
+            "name": "University of Michigan",
+            "address": {
+              "use": "work",
+              "city": "Ann Arbor",
+              "country": "United States",
+              "state": "Michigan",
+              "postalCode": "48109"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-24",
+            "name": "Karmanos Cancer Institute",
+            "address": {
+              "use": "work",
+              "city": "Detroit",
+              "country": "United States",
+              "state": "Michigan",
+              "postalCode": "48201"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-25",
+            "name": "Karmanos Cancer Institute",
+            "address": {
+              "use": "work",
+              "city": "Farmington Hills",
+              "country": "United States",
+              "state": "Michigan",
+              "postalCode": "48334"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-26",
+            "name": "UNC Cancer Hospital Infusion Pharmacy",
+            "address": {
+              "use": "work",
+              "city": "Chapel Hill",
+              "country": "United States",
+              "state": "North Carolina",
+              "postalCode": "27514"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-27",
+            "name": "UNC Hospitals, The University of North Carolina at Chapel Hill",
+            "address": {
+              "use": "work",
+              "city": "Chapel Hill",
+              "country": "United States",
+              "state": "North Carolina",
+              "postalCode": "27514"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-28",
+            "name": "Ohio State University Comprehensive Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Columbus",
+              "country": "United States",
+              "state": "Ohio",
+              "postalCode": "43210"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-29",
+            "name": "The Ohio State University Wexner Medical Center James Cancer Hospital",
+            "address": {
+              "use": "work",
+              "city": "Columbus",
+              "country": "United States",
+              "state": "Ohio",
+              "postalCode": "43210"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-30",
+            "name": "Stefanie Spielman Comprehensive Breast Cancer",
+            "address": {
+              "use": "work",
+              "city": "Columbus",
+              "country": "United States",
+              "state": "Ohio",
+              "postalCode": "43212"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-31",
+            "name": "Thomas Jefferson University - Clinical and Regulatory",
+            "address": {
+              "use": "work",
+              "city": "Philadelphia",
+              "country": "United States",
+              "state": "Pennsylvania",
+              "postalCode": "19107"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-32",
+            "name": "Thomas Jefferson University",
+            "address": {
+              "use": "work",
+              "city": "Philadelphia",
+              "country": "United States",
+              "state": "Pennsylvania",
+              "postalCode": "19107"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-33",
+            "name": "Vanderbilt Breast Center at One Hundred Oaks",
+            "address": {
+              "use": "work",
+              "city": "Nashville",
+              "country": "United States",
+              "state": "Tennessee",
+              "postalCode": "37204"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-34",
+            "name": "Henry-Joyce Cancer Clinic",
+            "address": {
+              "use": "work",
+              "city": "Nashville",
+              "country": "United States",
+              "state": "Tennessee",
+              "postalCode": "37232"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-35",
+            "name": "The University of Texas MD Anderson Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Houston",
+              "country": "United States",
+              "state": "Texas",
+              "postalCode": "77030"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-36",
+            "name": "U.T. MD Anderson Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Houston",
+              "country": "United States",
+              "state": "Texas",
+              "postalCode": "77030"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-37",
+            "name": "Virginia Cancer Specialists, PC",
+            "address": {
+              "use": "work",
+              "city": "Fairfax",
+              "country": "United States",
+              "state": "Virginia",
+              "postalCode": "22031"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-38",
+            "name": "Seattle Cancer Care Alliance (SCCA) Investigational Drug Services",
+            "address": {
+              "use": "work",
+              "city": "Seattle",
+              "country": "United States",
+              "state": "Washington",
+              "postalCode": "98109"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-39",
+            "name": "Seattle Cancer Care Alliance",
+            "address": {
+              "use": "work",
+              "city": "Seattle",
+              "country": "United States",
+              "state": "Washington",
+              "postalCode": "98109"
+            }
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-40",
+            "name": "University of Washington Medical Center",
+            "address": {
+              "use": "work",
+              "city": "Seattle",
+              "country": "United States",
+              "state": "Washington",
+              "postalCode": "98195"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-0",
+            "description": "Gedatolisib weekly intravenous starting at 180 mg/week in a 4 week cycle.",
+            "title": "Gedatolisib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM A"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-1",
+            "description": "Gedatolisib weekly intravenous starting at 180 mg/week in a 4 week cycle.",
+            "title": "Gedatolisib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM B"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-2",
+            "description": "Gedatolisib weekly intravenous starting at 180 mg/week in a 4 week cycle.",
+            "title": "Gedatolisib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM C"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-3",
+            "description": "Gedatolisib weekly intravenous starting at 180 mg/week in a 4 week cycle.",
+            "title": "Gedatolisib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant cohort"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-4",
+            "description": "Gedatolisib weekly intravenous starting at 180 mg/week in a 4 week cycle.",
+            "title": "Gedatolisib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Letrozole Cohort"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-5",
+            "description": "Palbociclib initiated at 125 mg daily: 3 out of 4 weeks in a 4 week cycle.",
+            "title": "Palbociclib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM A"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-6",
+            "description": "Palbociclib initiated at 125 mg daily: 3 out of 4 weeks in a 4 week cycle.",
+            "title": "Palbociclib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM B"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-7",
+            "description": "Palbociclib initiated at 125 mg daily: 3 out of 4 weeks in a 4 week cycle.",
+            "title": "Palbociclib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM C"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-8",
+            "description": "Palbociclib initiated at 125 mg daily: 3 out of 4 weeks in a 4 week cycle.",
+            "title": "Palbociclib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant cohort"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-9",
+            "description": "Palbociclib initiated at 125 mg daily: 3 out of 4 weeks in a 4 week cycle.",
+            "title": "Palbociclib",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Letrozole Cohort"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-10",
+            "description": "Letrozole at 2.5 mg daily",
+            "title": "Letrozole",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM A"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-11",
+            "description": "Letrozole at 2.5 mg daily",
+            "title": "Letrozole",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Letrozole Cohort"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-12",
+            "description": "Fulvestrant administered intramuscularly at 500 mg on Day 1, 15 and 28 and then every 28 days.",
+            "title": "Fulvestrant",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM B"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-13",
+            "description": "Fulvestrant administered intramuscularly at 500 mg on Day 1, 15 and 28 and then every 28 days.",
+            "title": "Fulvestrant",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "ARM C"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-14",
+            "description": "Fulvestrant administered intramuscularly at 500 mg on Day 1, 15 and 28 and then every 28 days.",
+            "title": "Fulvestrant",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Arm D"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-15",
+            "description": "Fulvestrant administered intramuscularly at 500 mg on Day 1, 15 and 28 and then every 28 days.",
+            "title": "Fulvestrant",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant cohort"
+            }
+          }
+        ],
+        "sponsor": {
+          "reference": "#orgNCT02684032",
+          "type": "Organization"
+        },
+        "enrollment": [
+          {
+            "reference": "#groupNCT02684032",
+            "type": "Group",
+            "display": "\r\n        Inclusion Criteria:\r\n\r\n          -  Women 18 years of age or older, who are either: Postmenopausal or Pre/perimenopausal\r\n             women with medically-induced menopause by treatment with agents to induce chemical\r\n             menopause.\r\n\r\n          -  Histologically or cytologically proven diagnosis of breast cancer with evidence of\r\n             metastasis.\r\n\r\n          -  Documentation of estrogen receptor positive ((ER+), human epidermal growth factor\r\n             receptor 2 (HER2 negative (HER2-)) tumor.\r\n\r\n          -  Dose Escalation Portion: Patients must satisfy one of the following criteria:\r\n\r\n               -  Letrozole combination cohort (L): metastatic breast cancer (MBC) with progression\r\n                  who are candidates for a letrozole-containing regimen, with palbociclib.\r\n\r\n               -  Fulvestrant combination cohort (F): MBC with progression who are candidates for a\r\n                  fulvestrant containing regimen, with palbociclib.\r\n\r\n          -  Dose Expansion Portion: Patients must satisfy one of the following criteria:\r\n\r\n               -  Arm A: MBC with progression and no prior endocrine based systemic therapy in the\r\n                  metastatic setting;\r\n\r\n               -  Arm B: MBC with progression during or following one prior endocrine based\r\n                  systemic therapy in the metastatic setting, with no prior therapy with any\r\n                  cyclin-dependent kinase (CDK) inhibitor;\r\n\r\n               -  Arm C/Arm D: MBC with progression during or following one or two prior endocrine\r\n                  based systemic therapies in the metastatic setting, and following prior therapy\r\n                  with a CDK inhibitor.\r\n\r\n          -  Measurable disease as defined by Response Evaluation Criteria In Solid Tumors (RECIST)\r\n             version 1.1.\r\n\r\n          -  Bone only patients during dose escalation portion.\r\n\r\n          -  Availability of archival tumor biopsy sample or willing to provide fresh biopsy if not\r\n             available.\r\n\r\n          -  Eastern Cooperative Oncology Group [ECOG] performance must be 0 or 1.\r\n\r\n          -  Adequate bone marrow, renal and liver function.\r\n\r\n        Exclusion Criteria:\r\n\r\n          -  Prior treatment with a mechanistic target of rapamycin (mTOR) inhibitor or\r\n             phosphoinositide 3-kinase (PI3K) inhibitor.\r\n\r\n          -  More than 1 line of prior chemotherapy in the treatment of metastatic or locally\r\n             advanced/recurrent disease.\r\n\r\n          -  Bone only patients during expansion/efficacy portion.\r\n\r\n          -  Patients with advanced/metastatic disease who have symptomatic visceral spread, and\r\n             who have life threatening complications needing immediate therapy, such as massive\r\n             uncontrolled effusions [pleural, pericardial, peritoneal], pulmonary lymphangitis, and\r\n             over 50% liver replacement with tumor.\r\n\r\n          -  Known active uncontrolled or symptomatic Central Nervous System (CNS) metastases.\r\n\r\n          -  Active bacterial, fungal or viral infection.\r\n\r\n          -  Uncontrolled or significant cardiovascular disease.\r\n\r\n          -  Radiation therapy within 4 weeks of investigational product.\r\n\r\n          -  Cytotoxic chemotherapy within 4 weeks of investigational product (6 weeks for\r\n             mitomycin C or nitrosoureas) if immediate prior regimen was administered on an every 3\r\n             4 week schedule or 2 weeks of investigational product if immediate prior regimen\r\n             consisted of weekly therapy.\r\n\r\n          -  Any other anti cancer agents (eg, hormonal, biological, investigational) within 5\r\n             times the half life prior to investigational product.\r\n\r\n          -  Impairment of gastro intestinal (GI) function or GI disease.\r\n\r\n          -  Pregnant female patients; breastfeeding female patients; and female patients of\r\n             childbearing potential who are unwilling or unable to use 2 highly effective methods\r\n             of contraception as outlined in this protocol for the duration of the study and for 90\r\n             days.\r\n      "
+          }
+        ],
+        "description": "\r\n      This is a multicenter, open label, Phase 1b study in patients with mBC. This study will have\r\n      a dose escalation to identify the maximum tolerated dose (MTD) of the combination of\r\n      gedatolisib plus palbociclib/fulvestrant and gedatolisib plus palbociclib/letrozole and\r\n      expansion to estimate the objective response rate (OR) of the combination of gedatolisib plus\r\n      palbociclib/letrozole or palbociclib/fulvestrant.\r\n    ",
+        "category": [
+          {
+            "text": "Study Type: Interventional"
+          },
+          {
+            "text": "Primary Purpose: Treatment"
+          },
+          {
+            "text": "Masking: None (Open Label)"
+          },
+          {
+            "text": "Allocation: Non-Randomized"
+          }
+        ],
+        "status": "closed-to-accrual",
+        "condition": [
+          {
+            "text": "Breast Cancer"
+          }
+        ],
+        "site": [
+          {
+            "reference": "#location-0",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-1",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-2",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-3",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-4",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-5",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-6",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-7",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-8",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-9",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-10",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-11",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-12",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-13",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-14",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-15",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-16",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-17",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-18",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-19",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-20",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-21",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-22",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-23",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-24",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-25",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-26",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-27",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-28",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-29",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-30",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-31",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-32",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-33",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-34",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-35",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-36",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-37",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-38",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-39",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-40",
+            "type": "Location"
+          }
+        ],
+        "arm": [
+          {
+            "name": "Letrozole Cohort",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Letrozole combination cohort in dose escalation"
+          },
+          {
+            "name": "Fulvestrant cohort",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Fulvestrant combination cohort in dose escalation"
+          },
+          {
+            "name": "ARM A",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Gedatolisib + palbociclib + letrozole in dose expansion"
+          },
+          {
+            "name": "ARM B",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Gedatolisib + palbociclib + fulvestrant in dose expansion"
+          },
+          {
+            "name": "ARM C",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Gedatolisib + palbociclib + fulvestrant in dose expansion"
+          },
+          {
+            "name": "Arm D",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Gedatolisib (3:1) + palbociclib + fulvestrant in dose expansion"
+          }
+        ],
+        "protocol": [
+          {
+            "reference": "#plan-0",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-1",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-2",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-3",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-4",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-5",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-6",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-7",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-8",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-9",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-10",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-11",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-12",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-13",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-14",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-15",
+            "type": "PlanDefinition"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "NCT03473639",
+        "title": "Entinostat & Capecitabine for Stage II, Stage III and Metastatic HER2 Negative Breast Cancer",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://clinicaltrials.gov",
+            "value": "NCT03473639"
+          }
+        ],
+        "phase": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/research-study-phase",
+              "code": "phase-1",
+              "display": "Phase 1"
+            }
+          ],
+          "text": "Phase 1"
+        },
+        "keyword": [
+          {
+            "text": "OTHER_TARGETED_THERAPY"
+          },
+          {
+            "text": "TREATMENT_NEOADJUVANT"
+          },
+          {
+            "text": "TREATMENT_CHEMOTHERAPY"
+          },
+          {
+            "text": "METASTATIC"
+          },
+          {
+            "text": "TREATMENT_BIOLOGICAL"
+          }
+        ],
+        "contact": [
+          {
+            "name": "Laura Mitchell ",
+            "telecom": [
+              {
+                "system": "email",
+                "value": "laura_mitchell@urmc.rochester.edu",
+                "use": "work"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "text": "United States"
+          }
+        ],
+        "objective": [
+          {
+            "name": "People with stage II, stage III, or metastatic (stage IV) HER2 negative (HER2-) breast cancer who had chemotherapy that included a taxane or anthracycline before they had surgery."
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "orgNCT03473639",
+            "name": "University of Rochester Medical Center"
+          },
+          {
+            "resourceType": "Group",
+            "id": "groupNCT03473639",
+            "type": "person",
+            "actual": false
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-0",
+            "name": "University of Rochester Medical Center",
+            "address": {
+              "use": "work",
+              "city": "Rochester",
+              "country": "United States",
+              "state": "New York",
+              "postalCode": "14642"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "laura_mitchell@urmc.rochester.edu",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-1",
+            "name": "University of Virginia",
+            "address": {
+              "use": "work",
+              "city": "Charlottesville",
+              "country": "United States",
+              "state": "Virginia",
+              "postalCode": "22908"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "SEH3AA@virginia.edu",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "434-297-7827",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-0",
+            "description": "In metastatic breast cancer patients, entinostat will be taken orally starting at 3 mg per week and will increase to 5 mg per week in the absence of unacceptable side effects. The safe dose (when combined with capecitabine) will be confirmed in additional metastatic breast cancer patients and breast cancer patients with residual invasive disease following neoadjuvant chemotherapy and surgery.",
+            "title": "Entinostat",
+            "subtitle": "SNDX-275",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Entinostat and Capecitabine"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-1",
+            "description": "In metastatic breast cancer patients, capecitabine will be taken by mouth starting at 800 mg/m2 twice a day for 14 days per cycle and increase to 1000 mg/m2 (for 14 days per cycle) in the absence of unacceptable side effects. The safe dose (when combined with capecitabine) will be confirmed in additional metastatic breast cancer patients and breast cancer patients with residual invasive disease following neoadjuvant chemotherapy and surgery.",
+            "title": "Capecitabine",
+            "subtitle": "Xeloda",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Entinostat and Capecitabine"
+            }
+          }
+        ],
+        "sponsor": {
+          "reference": "#orgNCT03473639",
+          "type": "Organization"
+        },
+        "enrollment": [
+          {
+            "reference": "#groupNCT03473639",
+            "type": "Group",
+            "display": "\r\n        Inclusion Criteria:\r\n\r\n        Disease Characteristics by Dose Escalation Phase and Expansion Phase:\r\n\r\n        Part A: Dose Escalation Phase:\r\n\r\n          1. Patients must have a histologically confirmed diagnosis of stage IV invasive breast\r\n             cancer.\r\n\r\n          2. Patients can have breast cancer with positive OR negative estrogen and progesterone\r\n             receptor status. Patients must have negative HER-2 receptor status. Estrogen,\r\n             progesterone, and HER2 receptor status must be assessed according to ASCO/CAP\r\n             guidelines. ER or PR positivity is defined as ≥ 1% positive nuclear staining. HER-2 is\r\n             negative if tumor testing shows: a) IHC negative (0 or 1+) or b) ISH negative using\r\n             single probe or dual probe. If HER-2 IHC is 2+, ISH must be performed and negative.\r\n             HER-2 equivocal is not eligible.\r\n\r\n        Part B: Expansion Phase:\r\n\r\n          1. Patients must have a histologically confirmed diagnosis of stage I-III invasive breast\r\n             cancer.\r\n\r\n          2. Patients with multifocal, multicentric, synchronous bilateral and primary inflammatory\r\n             breast cancers are allowed.\r\n\r\n               1. Multifocal disease is defined as more than one invasive cancer < 2 cm from the\r\n                  largest lesion within the same breast quadrant.\r\n\r\n               2. Multicentric disease is defined as more than one invasive cancer ≥ 2 cm from the\r\n                  largest lesion within the same breast quadrant or more than one lesion in\r\n                  different quadrants.\r\n\r\n               3. Synchronous bilateral disease is defined as invasive breast cancer with positive\r\n                  lymph nodes (axillary or intramammary) in at least one breast, diagnosed within\r\n                  30 days of each other. NOTE: The tumor with the highest recurrence score should\r\n                  be used.\r\n\r\n          3. Patients can have breast cancer with positive OR negative estrogen and progesterone\r\n             receptor status. Patients must have negative HER-2 receptor status. Estrogen,\r\n             progesterone, and HER2 receptor status must be assessed according to ASCO/CAP\r\n             guidelines. ER or PR positivity is defined as ≥ 1% positive nuclear staining. HER-2 is\r\n             negative if tumor testing shows: a) IHC negative (0 or 1+) or b) ISH negative using\r\n             single probe or dual probe. If HER-2 IHC is 2+, ISH must be performed and negative.\r\n             HER-2 equivocal is not eligible.\r\n\r\n          4. Patients must have been treated with standard neoadjuvant chemotherapy with at least\r\n             three cycles of taxane or anthracycline based regimen. Patients must be registered\r\n             within 36 weeks after last dose of chemotherapy.\r\n\r\n          5. Patients must have histologically confirmed residual invasive carcinoma at the time of\r\n             surgery (ypT1mi or greater) or positive lymph nodes (ypN0(itc) or greater).\r\n\r\n        Both Phases:\r\n\r\n          1. Willingness and ability to provide written informed consent and to comply with the\r\n             study protocol as judged by the investigator.\r\n\r\n          2. ECOG Performance Status of 0-2.\r\n\r\n          3. Age ≥ 18 years.\r\n\r\n          4. Subject must have a life expectancy ≥ 6 months.\r\n\r\n          5. Adequate bone marrow function defined as follows:\r\n\r\n               1. Absolute neutrophil count (ANC) ≥ 1,000 cells/mm3\r\n\r\n               2. Platelets ≥ 100,000 cells/mm3\r\n\r\n          6. Hemoglobin ≥ 9 g/dl (Note: The use of transfusion to achieve Hgb ≥ 9 g/dl is\r\n             acceptable)Serum creatinine ≤ 1.5 x institutional upper limit normal (IULN) OR GFR ≥60\r\n             mL/min for patient with creatinine levels >1.5× institutional ULN\r\n\r\n          7. Bilirubin ≤ 1.5 x IULN OR Direct Bilirubin ≤ULN for patients with total bilirubin\r\n             levels >1.5×ULN\r\n\r\n          8. ALT and AST ≤ 2.5 IULN\r\n\r\n          9. Alkaline Phosphatase ≤ 2.5 IULN\r\n\r\n         10. If a female is of childbearing potential, she has a negative serum blood pregnancy\r\n             test during screening and a negative urine pregnancy test within 3 days prior to\r\n             receiving the first dose of study drug. If the screening serum test is done within 3\r\n             days prior to receiving the first dose of study drug, a urine test is not required.\r\n\r\n         11. If a patient is of childbearing potential the patient must agree to use effective\r\n             contraception during the study and for 120 days after the last dose of study drug.\r\n\r\n             Non-childbearing potential is defined as (by other than medical reasons):\r\n\r\n               1. ≥45 years of age and has not had menses for >2 years\r\n\r\n               2. Amenorrheic for <2 years without a hysterectomy and oophorectomy and a\r\n                  follicle-stimulating hormone value in the postmenopausal range upon pre-study\r\n                  (screening) evaluation\r\n\r\n               3. Post hysterectomy, oophorectomy or tubal ligation. Documented hysterectomy or\r\n                  oophorectomy must be confirmed with medical records of the actual procedure or\r\n                  confirmed by an ultrasound. Tubal ligation must be confirmed with medical records\r\n                  of the actual procedure otherwise the patient must be willing to use 2 adequate\r\n                  barrier methods throughout the study, starting with the screening visit through\r\n                  120 days after the last dose of study drug\r\n\r\n         12. Non-vasectomized males must agree to use adequate contraception for at least 120 days\r\n             after the last dose of study drug Males must also abstain from sperm donations for at\r\n             least 120 days after the last dose of study drug.\r\n\r\n         13. Experienced resolution of toxic effect(s) of the most recent prior anti-cancer therapy\r\n             to Grade ≤ 2 (except alopecia and Grade 3 neuropathy).\r\n\r\n        Exclusion Criteria (both phases):\r\n\r\n          1. Subjects who have had chemotherapy, biological therapy, immunological therapy,\r\n             radiation therapy, or hormonal therapy within 3 weeks prior to first dose of study\r\n             treatment.\r\n\r\n          2. Subjects who are unable or unwilling to discontinue use of prohibited medications.\r\n\r\n          3. Subject is unable or unwilling to participate in a study related procedure.\r\n\r\n          4. Subject is a prisoner.\r\n\r\n          5. Subject has evidence or history of an uncontrolled bleeding disorder. Patients with\r\n             chronic bleeding disorders that are controlled with treatment or not clinically\r\n             relevant are allowed.\r\n\r\n          6. Subjects with history of CNS disease including primary brain tumor, seizures not\r\n             controlled with standard medical therapy, or history of cerebrovascular accident (CVA,\r\n             stroke), transient ischemic attack (TIA), or subarachnoid hemorrhage within six months\r\n             of first dose of study treatment.\r\n\r\n          7. Known brain metastases or cranial epidural disease unless adequately treated with\r\n             radiotherapy and/or surgery (including radiosurgery) and stable for at least 4 weeks\r\n             before first dose of study treatment AND enrolling in the metastatic dose escalation\r\n             phase of present study only.\r\n\r\n          8. History or current evidence of any condition, therapy, or laboratory abnormality that\r\n             might confound the results of the study, interfere with the patient's participation\r\n             for the full duration of the study, or is not in the best interest of the patient to\r\n             participate, in the opinion of the treating Investigator, including, but not limited\r\n             to:\r\n\r\n               1. Myocardial infarction or arterial thromboembolic events within 6 months prior to\r\n                  first dose of study treatment or severe or unstable angina, New York Heart\r\n                  Association (NYHA) Class III or IV disease, or a QTc interval > 470 msec.\r\n\r\n               2. Uncontrolled hypertension (defined as BP >160/100) or diabetes mellitus.\r\n\r\n               3. Another known malignancy that is progressing or requires active treatment.\r\n\r\n               4. Any prior history of other cancer within the 2 years prior to first dose of study\r\n                  treatment with the exception of adequately treated non-melanoma skin cancer or\r\n                  cervical intraepithelial neoplasia [CIN]/cervical carcinoma in situ or melanoma\r\n                  in situ).\r\n\r\n               5. Active infection requiring systemic therapy.\r\n\r\n          9. Any contraindication to oral agents or significant nausea and vomiting, malabsorption,\r\n             or significant small bowel resection that, in the opinion of the investigator, would\r\n             preclude adequate absorption.\r\n\r\n         10. Allergy to benzamide or inactive components of entinostat.\r\n\r\n         11. Known psychiatric or substance abuse disorders that would interfere with cooperation\r\n             with the requirements of the study.\r\n\r\n         12. Currently participating and receiving investigational therapy on another study. If\r\n             prior participation in a study of an investigational agent/device, last dose of\r\n             investigational therapy or use of an investigational device must be greater than 4\r\n             weeks from the first dose of study drug in the present study.\r\n\r\n         13. Known history of human immunodeficiency virus (HIV) (HIV 1/2 antibodies), due to\r\n             concerns for potential drug-drug interactions with entinostat and anti-retroviral\r\n             medications.\r\n\r\n         14. Known active hepatitis B (e.g., hepatitis B surface antigen-reactive) or hepatitis C\r\n             (e.g., hepatitis C virus ribonucleic acid [qualitative]). Patients with past hepatitis\r\n             B virus (HBV) infection or resolved HBV infection (defined as the presence of\r\n             hepatitis B core antibody [HBc Ab] and absence of HBsAg) are eligible. HBV DNA test\r\n             must be performed in these patients prior to study treatment. Patients positive for\r\n             hepatitis C virus (HCV) antibody are eligible only if polymerase chain reaction is\r\n             negative for HCV RNA.\r\n\r\n         15. If female, is pregnant or breastfeeding.\r\n\r\n         16. The following medications are prohibited while the patient is receiving entinostat:\r\n\r\n               1. Any other HDAC Inhibitor, including valproic acid\r\n\r\n               2. DNA methyltransferase inhibitors\r\n\r\n               3. Any additional anticancer agents (excluding entinostat and capecitabine), such as\r\n                  chemotherapy, immunotherapy, targeted therapy, biological response modifiers, or\r\n                  endocrine therapy, will not be allowed, even if utilized as treatment of\r\n                  non-cancer indications.\r\n\r\n               4. Any investigational agents.\r\n\r\n               5. Radiation Therapy\r\n\r\n               6. Traditional herbal medicines; these therapies are not fully studied and their use\r\n                  may result in unanticipated drug-drug interactions that may cause or confound the\r\n                  assessment of toxicity.\r\n      "
+          }
+        ],
+        "description": "\r\n      The purpose of this study is to learn about the safety and side effects of combining\r\n      entinostat, an investigational drug, with capecitabine, a drug commonly used in breast cancer\r\n      (BC), in both participants with metastatic breast cancer (MBC) and then participants with\r\n      high-risk breast cancer after neo-adjuvant therapy.\r\n    ",
+        "category": [
+          {
+            "text": "Study Type: Interventional"
+          },
+          {
+            "text": "Intervention Model: Single Group Assignment"
+          },
+          {
+            "text": "Primary Purpose: Treatment"
+          },
+          {
+            "text": "Masking: None (Open Label)"
+          },
+          {
+            "text": "Allocation: N/A"
+          }
+        ],
+        "status": "active",
+        "condition": [
+          {
+            "text": "Metastatic Breast Cancer"
+          },
+          {
+            "text": "Breast Cancer"
+          }
+        ],
+        "site": [
+          {
+            "reference": "#location-0",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-1",
+            "type": "Location"
+          }
+        ],
+        "arm": [
+          {
+            "name": "Entinostat and Capecitabine",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Dose escalation of the combination of entinostat and capecitabine in MBC patients. This dose will be given to MBC patients and to BC patients with residual invasive disease after neoadjuvant chemotherapy and surgery.\r\nThe dose combinations include:\r\nCombination 1: 3 mg/week entinostat, 800 mg/m2 twice a day for 14 days of capecitabine Combination 2: 5 mg/week entinostat, 800 mg/m2 twice a day for 14 days of capecitabine Combination 3: 3 mg/week entinostat, 1000 mg/m2 twice a day for 14 days of capecitabine Combination 4: 5 mg/week entinostat, 1000 mg/m2 twice a day for 14 days of capecitabine\r\nIf a participant experiences unacceptable side effects, he or she will receive the next lowest dose combination. If he or she is on Combination 1, he or she will stop study treatment."
+          }
+        ],
+        "protocol": [
+          {
+            "reference": "#plan-0",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-1",
+            "type": "PlanDefinition"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "NCT03964532",
+        "title": "Talazoparib and Avelumab for Advanced Breast Cancer (TALAVE)",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://clinicaltrials.gov",
+            "value": "NCT03964532"
+          }
+        ],
+        "phase": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/research-study-phase",
+              "code": "phase-1-phase-2",
+              "display": "Phase 1/Phase 2"
+            }
+          ],
+          "text": "Phase 1/Phase 2"
+        },
+        "keyword": [
+          {
+            "text": "PARP"
+          },
+          {
+            "text": "TREATMENT_VACCINE"
+          },
+          {
+            "text": "TREATMENT_BIOLOGICAL"
+          },
+          {
+            "text": "METASTATIC"
+          }
+        ],
+        "contact": [
+          {
+            "name": "Melani Terry ",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "704-863-2318",
+                "use": "work"
+              },
+              {
+                "system": "email",
+                "value": "Melani.Terry@atriumhealth.org",
+                "use": "work"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "text": "United States"
+          }
+        ],
+        "objective": [
+          {
+            "name": "People with advanced (some stage III) or metastatic (stage IV) breast cancer who have not already received a PARP inhibitor."
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "orgNCT03964532",
+            "name": "Levine Cancer Institute"
+          },
+          {
+            "resourceType": "Group",
+            "id": "groupNCT03964532",
+            "type": "person",
+            "actual": false
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-0",
+            "name": "MedStar Georgetown University Hospital",
+            "address": {
+              "use": "work",
+              "city": "Washington",
+              "country": "United States",
+              "state": "District of Columbia",
+              "postalCode": "20007"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "ns1152@georgetown.edu",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "202-687-9016",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-1",
+            "name": "Levine Cancer Institute",
+            "address": {
+              "use": "work",
+              "city": "Charlotte",
+              "country": "United States",
+              "state": "North Carolina",
+              "postalCode": "28204"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "Leah.J.Wilson@atriumhealth.org",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "704-863-2318",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-2",
+            "name": "University of Utah, Huntsman Cancer Institute",
+            "address": {
+              "use": "work",
+              "city": "Salt Lake City",
+              "country": "United States",
+              "state": "Utah",
+              "postalCode": "84112"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "Anne.Fitzgerald@hci.utah.edu",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "801-213-6230",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-0",
+            "description": "Talazoparib (formerly MDV3800 and BMN673) is an oral small molecule, selective inhibitor of PARP-1 and PARP-2.",
+            "title": "Talazoparib",
+            "subtitle": "Talzenna",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Phase I/Phase II"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-1",
+            "description": "Avelumab (formerly MSB0010718C) is a human immunoglobulin G1 (IgG1) anti-PD-L1 monoclonal antibody131 that utilizes both adaptive and innate immune mechanisms.",
+            "title": "Avelumab",
+            "subtitle": "Bavencio",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Phase I/Phase II"
+            }
+          }
+        ],
+        "sponsor": {
+          "reference": "#orgNCT03964532",
+          "type": "Organization"
+        },
+        "enrollment": [
+          {
+            "reference": "#groupNCT03964532",
+            "type": "Group",
+            "display": "\r\n        Inclusion Criteria:\r\n\r\n          -  Histologically confirmed advanced breast cancer not amenable to curative treatment by\r\n             surgery or radiotherapy, that is amenable to biopsy\r\n\r\n          -  Radiographically measurable disease by RECIST v1.1\r\n\r\n          -  Age ≥ 18 years\r\n\r\n          -  Life expectancy of more than 3 months\r\n\r\n          -  Eastern Cooperative Oncology Group (ECOG) performance status 0 to 1\r\n\r\n          -  Signed informed consent form\r\n\r\n          -  Patients with a standard 12-lead electrocardiogram (ECG) with the following parameters\r\n             at screening (defined as the mean of the triplicate ECGs):\r\n\r\n               1. QTc interval at screening < 481 msec\r\n\r\n               2. Resting heart rate 50-100bpm\r\n\r\n          -  Adequate hepatic, bone marrow, and renal function at the time of enrollment:\r\n\r\n               1. Bone Marrow: Absolute neutrophil count (ANC) ≥ 1,500/mm3; Platelets ≥\r\n                  100,000/mm3; Hemoglobin ≥ 9.0 g/dL. Patients must be able to meet the criteria\r\n                  without transfusion or receipt of colony stimulating factors within 2 weeks\r\n                  before obtaining sample\r\n\r\n               2. Creatinine clearance ≥ 60 mL/min based on Cockcroft-Gault equation\r\n\r\n               3. Hepatic function: aspartate aminotransferase (AST) and alanine aminotransferase\r\n                  (ALT) ≤ 2.5 × the upper normal limit of institution's normal range. Total\r\n                  bilirubin ≤ 1.5 × the upper normal limit of institution's normal range. For\r\n                  subjects with liver metastases, AST and ALT < 5 × the upper normal limit of\r\n                  institution's normal range, and total bilirubin >1.5 - 3.0 x the upper normal\r\n                  limit of institution's normal range are acceptable as long as there is no\r\n                  persistent nausea, vomiting, right upper quadrant pain or tenderness, fever,\r\n                  rash, or eosinophilia\r\n\r\n               4. Prothrombin Time (PT) and Partial Thromboplastin Time (PTT) must be ≤ 2 X the\r\n                  upper limit of the institution's normal range and International Normalized Ratio\r\n                  (INR) < 2. Subjects on anticoagulation (such as coumadin) will be permitted to\r\n                  enroll as long as the INR is in the acceptable therapeutic range as determined by\r\n                  the investigator\r\n\r\n          -  Patients may have received an unlimited number of prior therapies. The last dose of\r\n             systemic therapy must have occurred a minimum of 2 weeks prior to C1D1.\r\n\r\n          -  Patients must have fully recovered from all effects of surgery. Patients must have had\r\n             at least two weeks after minor surgery and four weeks after major surgery before\r\n             starting therapy. Minor procedures requiring conscious sedation such as endoscopies or\r\n             mediport placement may only require a 24-hour waiting period, but this must be\r\n             discussed with an investigator\r\n\r\n          -  Women of childbearing potential must have a negative serum pregnancy test within 14\r\n             days prior to initiation of treatment and/or postmenopausal women must be amenorrheic\r\n             for at least 12 months to be considered of non-childbearing potential\r\n\r\n          -  Patient is capable of swallowing pills whole\r\n\r\n          -  Subject, or legally authorized representative (LAR) is capable of understanding and\r\n             complying with parameters as outlined in the protocol and able to sign and date the\r\n             informed consent, approved by the IRB, prior to the initiation of any screening or\r\n             study-specific procedures\r\n\r\n          -  Patient, or LAR, must consent to multiple biopsies during study.\r\n\r\n        Exclusion Criteria:\r\n\r\n          -  Prior disease progression while receiving anti-PD-1 or anti-PD-L1 therapy within 6\r\n             months of use\r\n\r\n          -  Prior exposure to PARP inhibitor-based therapy\r\n\r\n          -  Patients with known untreated central nervous system (CNS) metastases\r\n\r\n          -  Recent severe infection or antibiotic use, or known chronic infection with human\r\n             immunodeficiency virus (HIV) or hepatitis B virus\r\n\r\n          -  Signs or symptoms of infection within 2 weeks prior to Cycle 1, Day 1\r\n\r\n          -  Diagnosis of immunodeficiency or is receiving systemic steroid or other\r\n             immunosuppressive therapy\r\n\r\n          -  Active autoimmune disease that has required systemic treatment in the past 2 years\r\n\r\n          -  History of tuberculosis\r\n\r\n          -  History of allogenic bone marrow transplant or solid organ transplant\r\n\r\n          -  History of idiopathic pulmonary fibrosis, pneumonitis (including drug induced),\r\n             organizing pneumonia (i.e., bronchiolitis obliterans, cryptogenic organizing\r\n             pneumonia, etc.), or evidence of active pneumonitis on screening chest CT scan\r\n\r\n          -  Life-threatening visceral disease or other severe concurrent disease that would, in\r\n             the investigator's judgment, cause unacceptable safety risks, contraindicate patient\r\n             participation in the clinical study or compromise compliance with the protocol\r\n\r\n          -  Live vaccine administration within 30 days of planned start of study therapy\r\n\r\n          -  Cardiovascular disease problems including unstable angina, therapy for lifethreatening\r\n             ventricular arrhythmia, or myocardial infarction, stroke within the last 6 months, or\r\n             a diagnosis of congestive heart failure\r\n\r\n          -  Patient has impairment of gastrointestinal (GI) function or GI disease that may\r\n             significantly alter the absorption of the study drugs\r\n\r\n          -  Presence of a psychiatric illness or social situation that would limit compliance with\r\n             study requirements\r\n\r\n          -  Women who are pregnant or breastfeeding\r\n\r\n          -  Patients with history of another active malignancy within the past 2 years, excluding\r\n             non-melanoma carcinoma of the skin\r\n\r\n          -  Patients receiving any other investigational agents\r\n\r\n          -  Patients must not have had radiotherapy encompassing >20% of the bone marrow\r\n\r\n          -  Patients must not have current evidence of any condition, therapy, or laboratory\r\n             abnormality (including active or uncontrolled myelosuppression [ie, anemia,\r\n             leukopenia, neutropenia, thrombocytopenia]) that might confound the results of the\r\n             study or interfere with the patient's participation for the full duration of the study\r\n             treatment or that makes it not in the best interest of the patient to participate\r\n\r\n          -  Patients must not be considered a poor medical risk due to a serious, uncontrolled\r\n             medical disorder, nonmalignant systemic disease, or active, uncontrolled infection.\r\n\r\n          -  Current use of potent P-gp inhibitors within 7 days prior to randomization. For a list\r\n             of potent P-gp inhibitors\r\n      "
+          }
+        ],
+        "description": "\r\n      This is a multi-institutional pilot trial for patients with advanced breast cancer. The trial\r\n      is designed to assess the safety and tolerability of induction talazoparib followed by\r\n      combination of talazoparib and avelumab. As an exploratory endpoint, the study team will\r\n      evaluate the immunomodulatory effects of induction talazoparib followed by the combination of\r\n      talazoparib and avelumab in patients with advanced breast cancer.\r\n    ",
+        "category": [
+          {
+            "text": "Study Type: Interventional"
+          },
+          {
+            "text": "Intervention Model: Single Group Assignment"
+          },
+          {
+            "text": "Primary Purpose: Treatment"
+          },
+          {
+            "text": "Masking: None (Open Label)"
+          },
+          {
+            "text": "Allocation: N/A"
+          }
+        ],
+        "status": "active",
+        "condition": [
+          {
+            "text": "Breast Cancer"
+          }
+        ],
+        "site": [
+          {
+            "reference": "#location-0",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-1",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-2",
+            "type": "Location"
+          }
+        ],
+        "arm": [
+          {
+            "name": "Phase I/Phase II",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Talazoparib (1mg by mouth [PO] daily D1-28) will be provided as monotherapy for the first cycle. Starting with cycle 2 and for all subsequent cycles, treatment with avelumab (800 mg intravenously [IV] D1 every 2 weeks) will be added to talazoparib."
+          }
+        ],
+        "protocol": [
+          {
+            "reference": "#plan-0",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-1",
+            "type": "PlanDefinition"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "NCT03641755",
+        "title": "Olaparib & Sapacitabine for People with Advanced Breast Cancer & an Inherited BRCA1/2 Mutation",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://clinicaltrials.gov",
+            "value": "NCT03641755"
+          }
+        ],
+        "phase": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/research-study-phase",
+              "code": "phase-1-phase-2",
+              "display": "Phase 1/Phase 2"
+            }
+          ],
+          "text": "Phase 1/Phase 2"
+        },
+        "keyword": [
+          {
+            "text": "TREATMENT_CHEMOTHERAPY"
+          },
+          {
+            "text": "BRCA1_2"
+          },
+          {
+            "text": "PARP"
+          },
+          {
+            "text": "METASTATIC"
+          },
+          {
+            "text": "TREATMENT_BIOLOGICAL"
+          }
+        ],
+        "contact": [
+          {
+            "name": "Sara M. Tolaney, MD MPH ",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "617-632-2335",
+                "use": "work"
+              },
+              {
+                "system": "email",
+                "value": "Sara_Tolaney@dfci.harvard.edu",
+                "use": "work"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "text": "United States"
+          }
+        ],
+        "objective": [
+          {
+            "name": "People with metastatic (stage IV) breast cancer who have been tested for and found to have an inherited BRCA1 or BRCA2 mutation."
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "orgNCT03641755",
+            "name": "Dana Farber Cancer Institute"
+          },
+          {
+            "resourceType": "Group",
+            "id": "groupNCT03641755",
+            "type": "person",
+            "actual": false
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-0",
+            "name": "Dana Farber Cancer Institute",
+            "address": {
+              "use": "work",
+              "city": "Boston",
+              "country": "United States",
+              "state": "Massachusetts",
+              "postalCode": "02215"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "Sara_Tolaney@dfci.harvard.edu",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "617-632-2335",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-1",
+            "name": "Broad Institute of MIT",
+            "address": {
+              "use": "work",
+              "city": "Cambridge",
+              "country": "United States",
+              "state": "Massachusetts",
+              "postalCode": "02142"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-0",
+            "description": "Sapacitabine may help to stop the growth of some types of cancers",
+            "title": "Sapacitabine",
+            "subtitle": "CYC682",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Olaparib + Sapacitabine"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-1",
+            "description": "Olaparib is an inhibitor of PARP (poly [adenosine diphosphate-ribose] polymerase), which means that it stops PARP from working",
+            "title": "Olaparib",
+            "subtitle": "Lynparza",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Olaparib + Sapacitabine"
+            }
+          }
+        ],
+        "sponsor": {
+          "reference": "#orgNCT03641755",
+          "type": "Organization"
+        },
+        "enrollment": [
+          {
+            "reference": "#groupNCT03641755",
+            "type": "Group",
+            "display": "\r\n        Inclusion Criteria:\r\n\r\n          -  Histologically or cytologically confirmed breast cancer that is metastatic or\r\n             unresectable.\r\n\r\n          -  Documented germline mutation in BRCA1 or BRCA2 that is predicted to be deleterious or\r\n             suspected deleterious (known or predicted to be detrimental/lead to loss of function).\r\n             Testing may be completed by any CLIA-certified laboratory.\r\n\r\n          -  Patients with estrogen and/or progesterone receptor-positive disease must have\r\n             received and progressed on at least one endocrine therapy (adjuvant or metastatic), or\r\n             have disease that the treating physician believes to be inappropriate for endocrine\r\n             therapy.\r\n\r\n          -  Patients with HER2-positive disease must have received and progressed on two lines of\r\n             HER2-directed therapy in the metastatic setting.\r\n\r\n          -  Age ≥ 18 years\r\n\r\n          -  ECOG performance status of 0-1 (please see Appendix A).\r\n\r\n          -  Participants enrolling to the phase I portion of the study must have evaluable or\r\n             measurable disease; participants enrolling to the phase II portion of the study must\r\n             have measurable disease per RECIST 1.1 criteria (please see Section 11).\r\n\r\n          -  Adequate organ and bone marrow function as defined below:\r\n\r\n               -  Hemoglobin ≥ 10 g/dL\r\n\r\n               -  Absolute neutrophil count (ANC) ≥ 1.5 × 109/L\r\n\r\n               -  Platelet count ≥ 100 × 109/L\r\n\r\n               -  Total bilirubin ≤ 1.5 × institutional upper limit of normal (ULN)\r\n\r\n               -  AST(SGOT) / ALT (SGPT) ≤ 2.5 × institutional ULN, OR\r\n\r\n               -  AST(SGOT) / ALT (SGPT) ≤ 5 × institutional ULN if liver metastases are present\r\n\r\n               -  Creatinine Clearance estimated (using the Cockcroft-Gault equation) of ≥ 51\r\n                  mL/min\r\n\r\n          -  Ability to understand and willingness to sign an informed consent document.\r\n\r\n          -  Ability to swallow and retain oral study medication.\r\n\r\n          -  Female participants must be postmenopausal or must have a negative serum pregnancy\r\n             test performed during screening. Postmenopausal is defined as:\r\n\r\n               -  Amenorrhoeic for 1 year or more following cessation of exogenous hormonal\r\n                  treatments\r\n\r\n               -  Luteinizing hormone (LH) and follicle stimulating hormone (FSH) levels in the\r\n                  postmenopausal range for women under 50.\r\n\r\n               -  Radiation-induced oophorectomy with last menses >1 year ago\r\n\r\n               -  Chemotherapy-induced menopause with >1 year interval since last menses\r\n\r\n               -  Status post surgical sterilization (bilateral oophorectomy or hysterectomy)\r\n\r\n          -  The effects of sapacitabine and olaparib on the developing human fetus are unknown.\r\n             For this reason, women of child-bearing potential must agree to use two highly\r\n             effective forms of contraception for the duration of study participation and 6 months\r\n             after the last dose of sapacitabine and/or olaparib. Men must agree to use two highly\r\n             effective forms of contraception for the duration of study participation and 3 months\r\n             after the last dose of sapacitabine and/or olaparib. A list of acceptable methods is\r\n             listed in Section 5.5.3.4.\r\n\r\n          -  Participants must be willing and able to comply with the protocol for the duration of\r\n             the study, including undergoing treatment and scheduled visits and examinations.\r\n\r\n          -  Participants enrolling to the phase II portion of the trial must be willing to undergo\r\n             a biopsy at baseline; if their disease is not accessible for biopsy they are still\r\n             eligible to participate.\r\n\r\n        Exclusion Criteria:\r\n\r\n          -  Any previous treatment with a PARP inhibitor, including but not limited to olaparib.\r\n\r\n          -  Any previous treatment with sapacitabine.\r\n\r\n          -  Patients who have had prior systemic chemotherapy, immune therapy, or investigational\r\n             therapy within 3 weeks of study entry. Endocrine therapy must have been discontinued\r\n             at least 7 days prior to Cycle 1 Day 1. Patients may receive bisphosphonates or\r\n             denosumab during the study.\r\n\r\n          -  Patients who have received prior radiotherapy within 1 week of study entry.\r\n\r\n          -  Participants with active pneumonitis.\r\n\r\n          -  Patients who have undergone major surgery or have ongoing persistent toxicities within\r\n             2 weeks prior to study entry. Patients must have recovered to baseline or ≤ Grade 1\r\n             from any effects of any major surgery prior to study entry with the exception of any\r\n             grade of alopecia and persistent grade ≤ 2 peripheral neuropathy\r\n\r\n          -  For enrollment during phase II: patients who have received more than 3 prior lines of\r\n             cytotoxic chemotherapy for metastatic disease. Prior treatments with hormonal therapy\r\n             and non-hormonal targeted therapy are allowed and not counted as a prior line of\r\n             cytotoxic chemotherapy. For the purposes of this protocol, the combination of an\r\n             aromatase inhibitor and everolimus is not considered cytotoxic chemotherapy.\r\n\r\n          -  Patients with a history of treated central nervous system (CNS) metastases are\r\n             eligible, provided they meet all of the following criteria:\r\n\r\n               -  Disease outside the CNS is present\r\n\r\n               -  No clinical evidence of progression in the CNS since completion of CNS-directed\r\n                  therapy\r\n\r\n               -  Minimum of 2 weeks between completion of radiotherapy and Cycle 1 Day 1\r\n\r\n               -  Recovery from significant (≥ Grade 3) acute toxicity with no requirement for\r\n                  escalating doses of corticosteroid over the 7 days prior to treatment start.\r\n\r\n               -  Participants requiring concomitant use of known strong CYP3A inhibitors (e.g.\r\n                  itraconazole, telithromycin, clarithromycin, protease inhibitors boosted with\r\n                  ritonavir or cobicistat, indinavir, saquinavir, nelfinavir, boceprevir,\r\n                  telaprevir) or moderate CYP3A inhibitors (e.g. ciprofloxacin, erythromycin,\r\n                  diltiazem, fluconazole, verapamil). The required washout period prior to study\r\n                  entry is 2 weeks.\r\n\r\n          -  Participants requiring concomitant use of known strong (e.g. phenobarbital,\r\n             enzalutamide, phenytoin, rifampicin, rifabutin, rifapentine, carbamazepine, nevirapine\r\n             and St John's Wort) or moderate CYP3A inducers (e.g. bosentan, efavirenz, modafinil).\r\n             The required washout period prior to study entry is 5 weeks for enzalutamide or\r\n             phenobarbital and 3 weeks for other agents.\r\n\r\n          -  Participants with a QTcF of >470 msec on screening ECG.\r\n\r\n          -  Participants with a personal or family history of long QT syndrome.\r\n\r\n          -  Pregnant women are excluded from this study because olaparib and sapacitabine are\r\n             agents with the potential for teratogenic or abortifacient effects. Because there is\r\n             an unknown but potential risk for adverse events in nursing infants secondary to\r\n             treatment of the mother with the study agents, breastfeeding should be discontinued if\r\n             the mother is treated with olaparib or sapacitabine and for one month after receiving\r\n             the last dose.\r\n\r\n          -  Participants with known active Hepatitis B, C, or known HIV positive status.\r\n\r\n          -  Participants unable to swallow orally administered medication and participants with\r\n             gastrointestinal disorders that are likely to interfere with absorption of the study\r\n             medications in the opinion of the treating investigator (e.g. malabsorption syndrome\r\n             or major stomach or bowel resections).\r\n\r\n          -  History of allergic reactions attributed to compounds of similar chemical or biologic\r\n             composition to sapacitabine or olaparib.\r\n\r\n          -  Patients with a history of myelodysplastic syndrome (MDS)/acute myeloid leukemia (AML)\r\n             or with features suggestive of MDS/AML.\r\n\r\n          -  History of a previous allogeneic bone marrow transplant or double umbilical cord blood\r\n             transplantation.\r\n\r\n          -  Patients with a history of a second primary malignancy, with the following exceptions:\r\n             adequately treated non-melanoma skin cancers, curatively treated in situ cancer of the\r\n             cervix, ductal carcinoma in situ (DCIS) of the breast, stage 1 grade 1 endometrial\r\n             carcinoma, and any other solid tumor or lymphoma (without bone marrow involvement)\r\n             diagnosed ≥ 5 years prior to study entry and treated with no evidence of disease\r\n             recurrence; other exceptions may exist following agreement with the principal\r\n             investigator who believes disease recurrence is unlikely.\r\n\r\n          -  Uncontrolled intercurrent illness including, but not limited to, ongoing or active\r\n             infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac\r\n             arrhythmia, or psychiatric illness/social situations that would limit compliance with\r\n             study requirements.\r\n\r\n          -  Participants who are involved in the planning and/or conduct of the study (applies to\r\n             both pharmaceutical company staff and/or staff at the study site).\r\n      "
+          }
+        ],
+        "description": "\r\n      This research study is studying a combination of drugs as a possible treatment for breast\r\n      cancer with a BRCA mutation.\r\n\r\n      The interventions involved in this study are:\r\n\r\n        -  Sapacitabine (CYC682)\r\n\r\n        -  Olaparib (Lynparza™)\r\n    ",
+        "category": [
+          {
+            "text": "Study Type: Interventional"
+          },
+          {
+            "text": "Intervention Model: Single Group Assignment"
+          },
+          {
+            "text": "Primary Purpose: Treatment"
+          },
+          {
+            "text": "Masking: None (Open Label)"
+          },
+          {
+            "text": "Allocation: N/A"
+          }
+        ],
+        "status": "active",
+        "condition": [
+          {
+            "text": "Breast Cancer"
+          }
+        ],
+        "site": [
+          {
+            "reference": "#location-0",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-1",
+            "type": "Location"
+          }
+        ],
+        "arm": [
+          {
+            "name": "Olaparib + Sapacitabine",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Olaparib will be administered orally twice daily for each 28-day cycle\r\nSapacitabine will be administered orally once daily on days 1 - 5 and 8 - 12 of every 28-day cycle\r\nOlaparib will be given at a predetermined dose\r\nSapacitabine will be given at a predetermined dose"
+          }
+        ],
+        "protocol": [
+          {
+            "reference": "#plan-0",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-1",
+            "type": "PlanDefinition"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "NCT03959891",
+        "title": "Ipatasertib, Hormone Therapy and Ibrance for Metastatic Breast Cancer (TAKTIC)",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://clinicaltrials.gov",
+            "value": "NCT03959891"
+          }
+        ],
+        "phase": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/research-study-phase",
+              "code": "phase-1",
+              "display": "Phase 1"
+            }
+          ],
+          "text": "Phase 1"
+        },
+        "keyword": [
+          {
+            "text": "TREATMENT_HORMONE"
+          },
+          {
+            "text": "METASTATIC"
+          },
+          {
+            "text": "OTHER_TARGETED_THERAPY"
+          },
+          {
+            "text": "TREATMENT_BIOLOGICAL"
+          }
+        ],
+        "contact": [
+          {
+            "name": "Aditya Bardia, MD ",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "617-724-4000",
+                "use": "work"
+              },
+              {
+                "system": "email",
+                "value": "Bardia.aditya@mgh.harvard.edu",
+                "use": "work"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "text": "United States"
+          }
+        ],
+        "objective": [
+          {
+            "name": "Postmenopausal women with estrogen receptor positive, HER2 negative advanced (some stage III) or metastatic (stage IV) breast cancer that has progressed on at least one therapy."
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "orgNCT03959891",
+            "name": "Massachusetts General Hospital Cancer Center"
+          },
+          {
+            "resourceType": "Group",
+            "id": "groupNCT03959891",
+            "type": "person",
+            "actual": false
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-0",
+            "name": "Massachusetts General Hospital Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Boston",
+              "country": "United States",
+              "state": "Massachusetts",
+              "postalCode": "02115"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "Bardia.aditya@mgh.harvard.edu",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "617-724-4000",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-0",
+            "description": "Ipatasertib is a type of inhibitor that is believed to work by inhibiting Akt.",
+            "title": "Ipatasertib",
+            "subtitle": "GDC-0068",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Aromatase Inhibitor + Ipatasertib"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-1",
+            "description": "Ipatasertib is a type of inhibitor that is believed to work by inhibiting Akt.",
+            "title": "Ipatasertib",
+            "subtitle": "GDC-0068",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant + Ipatasertib"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-2",
+            "description": "Ipatasertib is a type of inhibitor that is believed to work by inhibiting Akt.",
+            "title": "Ipatasertib",
+            "subtitle": "GDC-0068",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant + Ipatasertib +Palbociclib"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-3",
+            "description": "Hormone therapies work by stopping the production of a certain hormone, blocking hormone receptors, or substituting chemically similar agents for the active hormone, which cannot be used by the tumor cell.",
+            "title": "Fulvestrant",
+            "subtitle": "Falsodex",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant + Ipatasertib"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-4",
+            "description": "Hormone therapies work by stopping the production of a certain hormone, blocking hormone receptors, or substituting chemically similar agents for the active hormone, which cannot be used by the tumor cell.",
+            "title": "Fulvestrant",
+            "subtitle": "Falsodex",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant + Ipatasertib +Palbociclib"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-5",
+            "description": "Letrozole is an aromatase inhibitor. This means it blocks the enzyme aromatase (found in the body's muscle, skin, breast and fat), which is used to convert androgens (hormones produced by the adrenal glands) into estrogen. In the absence of estrogen, tumors dependent on this hormone for growth will shrink.",
+            "title": "Aromatase Inhibitor",
+            "subtitle": "Letrozole",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Aromatase Inhibitor + Ipatasertib"
+            }
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-6",
+            "description": "Palbociclib (Ibrance®) is a drug that can be used along with an aromatase inhibitor to treat women with advanced hormone receptor-positive breast cancer. Palbociclib is a reversible small molecule cyclin-dependent kinase (CDK) inhibitor. The drug blocks proteins in the cell called cyclin-dependent kinase (CDK) 4 and CDK 6. In hormone positive breast cancer cells, blocking these proteins helps stop the cells from dividing to make new cells. It helps prevent the cells from moving from G1 to S cell cycle phase in the division process. This slows cancer growth.",
+            "title": "Palbociclib",
+            "subtitle": "Ibrance",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Fulvestrant + Ipatasertib +Palbociclib"
+            }
+          }
+        ],
+        "sponsor": {
+          "reference": "#orgNCT03959891",
+          "type": "Organization"
+        },
+        "enrollment": [
+          {
+            "reference": "#groupNCT03959891",
+            "type": "Group",
+            "display": "\r\n        Inclusion Criteria:\r\n\r\n          -  Adult women (≥ 18 years of age) with biopsy proven HR+/HER2 negative breast cancer;\r\n             HR+ defined as ≥1% positivity for ER, and/or PR (≥1%), as per local assessment. HER2\r\n             as per standard CAP guidelines (local assessment).\r\n\r\n          -  Postmenopausal women with locally advanced or metastatic BC. Patients must be\r\n             postmenopausal women as defined by one of the following:\r\n\r\n               -  Women >60 years OR\r\n\r\n               -  Women ≤60 years, and any one of following:\r\n\r\n                    -  LH and FSH level in the postmenopausal range according to institutional\r\n                       standards\r\n\r\n                    -  s/p post bilateral surgical oophorectomy.\r\n\r\n                    -  Premenopausal/perimenopausal women on gonadotropin-releasing hormone agonist\r\n                       (to be continued during study) and estradiol level in the postmenopausal\r\n                       range according to institutional standards\r\n\r\n          -  Disease progression on at least one prior therapy for metastatic disease, including\r\n             endocrine therapy with/without CDK 4/6 inhibitor (palbociclib or ribociclib or\r\n             abemaciclib). Disease recurrence during/within 12 month of (neo)adjuvant endocrine\r\n             therapy (with/without CDK 4/6 inhibitor) will count as one prior therapy for this\r\n             definition.\r\n\r\n          -  ECOG Performance Status 0 - 2\r\n\r\n          -  Left ventricular ejection fraction (LVEF) ≥ 50%\r\n\r\n          -  Evaluable or measurable disease: at least one lesion that can be accurately measured\r\n             in at least one dimension ≥ 20 mm with conventional imaging techniques or ≥ 10 mm with\r\n             spiral CT or MRI. Bone lesions in the absence of measurable disease as defined above\r\n             is also acceptable.\r\n\r\n          -  Discontinuation of prior breast cancer therapies, including endocrine therapy, for 14\r\n             days (non-myelosuppressive) or 21 days (myelosuppressive). Wash-out for Fulvestrant\r\n             and tamoxifen will be 28 days.\r\n\r\n          -  Prior mTOR inhibitor and/or PI3K inhibitor allowed (all arms)\r\n\r\n          -  Prior aromatase inhibitor is allowed (all arms)\r\n\r\n          -  Adequate bone marrow function: ANC ≥ 1000/mm3, hemoglobin ≥9 g/dl, and platelets ≥\r\n             100,000/mm3.\r\n\r\n          -  Adequate hepatic function: Total bilirubin < 1.5mg/dL, AST and ALT < 3X Institutional\r\n             ULN (or 5 X Institutional ULN in presence of hepatic mets).\r\n\r\n          -  Adequate renal function: Calculated creatinine clearance ≥ 30 mL/min\r\n\r\n          -  Fasting blood glucose <140 mg/dL, and hemoglobin A1c <7.\r\n\r\n          -  Signed informed consent and agree to comply with study procedures.\r\n\r\n        Exclusion Criteria:\r\n\r\n          -  Participants with progressive CNS metastatic disease. Patients with stable CNS\r\n             metastasis would be eligible, provided mets radiologically stable for atleast one\r\n             month, and patient is not actively taking steroids.\r\n\r\n          -  Participants who have had chemotherapy or radiotherapy within 4 weeks (6 weeks for\r\n             nitrosoureas or mitomycin C) prior to entering the study or those who have not\r\n             recovered from adverse events due to agents administered more than 4 weeks earlier.\r\n\r\n          -  Prior use of AKT inhibitor (any setting)\r\n\r\n          -  Treatment with strong CYP3A inhibitors or strong CYP3A inducers within 14 days or 5\r\n             drug-elimination half-lives, whichever is longer, prior to initiation of study\r\n             treatment. Because the lists of these agents are constantly changing, it is important\r\n             to regularly consult a frequently-updated list such as\r\n             http://medicine.iupui.edu/clinpharm/ddis/table.aspx; medical reference texts such as\r\n             the Physicians' Desk Reference may also provide this information. As part of the\r\n             enrollment/informed consent procedures, the patient will be counseled on the risk of\r\n             interactions with other agents, and what to do if new medications need to be\r\n             prescribed or if the patient is considering a new over-the-counter medicine or herbal\r\n             product.\r\n\r\n          -  Uncontrolled inter-current illness including, but not limited to, ongoing or active\r\n             infection, symptomatic congestive heart failure, unstable angina pectoris, cardiac\r\n             arrhythmia, or psychiatric illness/social situations that would limit compliance with\r\n             study requirements. Patient has impairment of gastrointestinal (GI) function or GI\r\n             disease that may significantly alter the absorption of the study drugs (e.g.,\r\n             inflammatory bowel disease, ulcerative diseases, uncontrolled nausea, vomiting,\r\n             diarrhea, malabsorption syndrome, or small bowel resection).\r\n\r\n          -  Clinically significant, uncontrolled heart disease and/or cardiac repolarization\r\n             abnormality including any of the following:\r\n\r\n               -  History of angina pectoris, symptomatic pericarditis, coronary artery bypass\r\n                  graft (CABG) or myocardial infarction within 6 months prior to study entry.\r\n\r\n               -  Documented cardiomyopathy.\r\n\r\n               -  History of cardiac failure, significant/symptomatic bradycardia, Long QT\r\n                  syndrome, family history of idiopathic sudden death or congenital long QT\r\n                  syndrome or any of the following:\r\n\r\n               -  Known risk to prolong the QT interval or induce Torsade's de Pointes.\r\n\r\n               -  Uncorrected hypomagnesemia or hypokalemia.\r\n\r\n               -  Systolic Blood Pressure (SBP) >160 mmHg or <90 mmHg.\r\n\r\n               -  Bradycardia (heart rate <50 at rest), by ECG or pulse.\r\n\r\n               -  On screening, inability to determine the QTcF interval on the ECG (i.e.:\r\n                  unreadable or not interpretable) or QTcF >450 screening ECG (based on a mean of 3\r\n                  ECGs).\r\n\r\n          -  HIV-positive participants on combination antiretroviral therapy are ineligible. These\r\n             participants are at increased risk of lethal infections when treated with\r\n             marrow-suppressive therapy. Appropriate studies will be undertaken in participants\r\n             receiving combination antiretroviral therapy when indicated.\r\n\r\n          -  History of Type I or Type II diabetes mellitus requiring insulin. Patients who are on\r\n             a stable dose of oral diabetes medication ≥ 2 weeks prior to initiation of study\r\n             treatment are eligible for enrollment. Patients must meet the laboratory eligibility\r\n             criteria for fasting blood glucose and hemoglobin A1c as outlined in the inclusion\r\n             criteria.\r\n\r\n          -  Pregnant women are excluded from this study because the safety of study medications is\r\n             not established in pregnant women.\r\n\r\n          -  Women of child-bearing potential, defined as all women physiologically capable of\r\n             becoming pregnant, unless they are using highly effective methods of contraception\r\n             throughout the study and for 8 weeks after study drug discontinuation. Women are\r\n             considered post-menopausal and not of child bearing potential if they have had 12\r\n             months of natural (spontaneous) amenorrhea with an appropriate clinical profile (e.g.\r\n             age appropriate, history of vasomotor symptoms) or have had surgical bilateral\r\n             oophorectomy (with or without hysterectomy) or tubal ligation at least six weeks ago.\r\n             In the case of bilateral oophorectomy alone, only when the reproductive status of the\r\n             woman has been confirmed by follow up hormone level assessment is she considered not\r\n             of child bearing potential. Highly effective contraception methods include:\r\n\r\n          -  Total abstinence when this is in line with the preferred and usual lifestyle of the\r\n             patient. Periodic abstinence (e.g., calendar, ovulation, symptothermal, post-ovulation\r\n             methods) and withdrawal are not acceptable methods of contraception\r\n\r\n          -  Female sterilization (have had surgical bilateral oophorectomy with or without\r\n             hysterectomy), total hysterectomy, or tubal ligation at least six weeks before taking\r\n             study treatment. In case of oophorectomy alone, only when the reproductive status of\r\n             the woman has been confirmed by follow up hormone level assessment\r\n\r\n          -  Use of oral, injected or implanted hormonal methods of contraception or placement of\r\n             an intrauterine device (IUD) or intrauterine system (IUS), or other forms of hormonal\r\n             contraception that have comparable efficacy (failure rate <1%), for example hormone\r\n             vaginal ring or transdermal hormone contraception.\r\n\r\n          -  In case of use of oral contraception, women should have been stable on the same pill\r\n             for a minimum of 3 months before taking study treatment. Note: While oral\r\n             contraceptives are allowed, they should be used in conjunction with a barrier method\r\n             of contraception due to unknown effect of drug-drug interaction.\r\n\r\n          -  For Arm A only: patients who have received prior fulvestrant.\r\n\r\n          -  For Arm C only: h/o of intolerable toxicity to CDK 4/6 inhibitor resulting in\r\n             treatment discontinuation due to toxicity\r\n      "
+          }
+        ],
+        "description": "\r\n      This research is looking to find out if the combination of Ipatasertib with Aromatase\r\n      inhibitor or Fulvestrant can be an effective treatment for breast cancer.\r\n    ",
+        "category": [
+          {
+            "text": "Study Type: Interventional"
+          },
+          {
+            "text": "Intervention Model: Parallel Assignment"
+          },
+          {
+            "text": "Primary Purpose: Treatment"
+          },
+          {
+            "text": "Masking: None (Open Label)"
+          },
+          {
+            "text": "Allocation: Non-Randomized"
+          }
+        ],
+        "status": "active",
+        "condition": [
+          {
+            "text": "Breast Cancer"
+          }
+        ],
+        "site": [
+          {
+            "reference": "#location-0",
+            "type": "Location"
+          }
+        ],
+        "arm": [
+          {
+            "name": "Fulvestrant + Ipatasertib",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Ipatasertib will be administered orally on a daily basis\r\nFulvestrant would be administered as intra-muscular injection twice a month for the first cycle, and then monthly for all other cycles."
+          },
+          {
+            "name": "Aromatase Inhibitor + Ipatasertib",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Ipatasertib will be administered orally on a daily basis\r\nAromatase inhibitors will be administered orally on a daily basis"
+          },
+          {
+            "name": "Fulvestrant + Ipatasertib +Palbociclib",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "Ipatasertib will be administered orally on a 3 week on and 1 week off schedule\r\nFulvestrant would be administered as intra-muscular injection twice a month for the first cycle, and then monthly for all other cycles.\r\nPalbociclib will be administered orally on a 3 week on and 1 week off schedule"
+          }
+        ],
+        "protocol": [
+          {
+            "reference": "#plan-0",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-1",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-2",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-3",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-4",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-5",
+            "type": "PlanDefinition"
+          },
+          {
+            "reference": "#plan-6",
+            "type": "PlanDefinition"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "NCT03990896",
+        "title": "Talazoparib in Women With Metastatic Triple Negative or HR+, HER2- Breast Cancer with a Tumor (Not Inherited) BRCA1/2 Mutation",
+        "identifier": [
+          {
+            "use": "official",
+            "system": "http://clinicaltrials.gov",
+            "value": "NCT03990896"
+          }
+        ],
+        "phase": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/research-study-phase",
+              "code": "phase-2",
+              "display": "Phase 2"
+            }
+          ],
+          "text": "Phase 2"
+        },
+        "keyword": [
+          {
+            "text": "TREATMENT_BIOLOGICAL"
+          },
+          {
+            "text": "METASTATIC"
+          },
+          {
+            "text": "PARP"
+          },
+          {
+            "text": "BRCA1_2"
+          }
+        ],
+        "contact": [
+          {
+            "name": "Neelima Vidula, MD ",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "617-724-4000",
+                "use": "work"
+              },
+              {
+                "system": "email",
+                "value": "nvidula@mgh.harvard.edu",
+                "use": "work"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "text": "United States"
+          }
+        ],
+        "objective": [
+          {
+            "name": "Women with metastatic (stage IV) triple negative (ER-, PR-, HER2-) or hormone positive (ER+ and/or PR+), HER2 negative (HER2-) breast cancer. Your tumor must test positive for a  BRCA 1 or a BRCA 2 tumor (not inherited) mutation."
+          }
+        ],
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "orgNCT03990896",
+            "name": "Massachusetts General Hospital Cancer Center"
+          },
+          {
+            "resourceType": "Group",
+            "id": "groupNCT03990896",
+            "type": "person",
+            "actual": false
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-0",
+            "name": "Massachusetts General Hospital Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Boston",
+              "country": "United States",
+              "state": "Massachusetts",
+              "postalCode": "02114"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "nvidula@mgh.harvard.edu",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "617-724-4000",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "Location",
+            "id": "location-1",
+            "name": "MD Anderson Cancer Center",
+            "address": {
+              "use": "work",
+              "city": "Houston",
+              "country": "United States",
+              "state": "Texas",
+              "postalCode": "77030"
+            },
+            "telecom": [
+              {
+                "system": "email",
+                "value": "sdamodaran@mdanderson.org",
+                "use": "work"
+              },
+              {
+                "system": "phone",
+                "value": "713-792-2817",
+                "use": "work"
+              }
+            ]
+          },
+          {
+            "resourceType": "PlanDefinition",
+            "status": "unknown",
+            "id": "plan-0",
+            "description": "Talazoparib is a study drug that inhibits (stops) the normal activity of certain proteins called \"poly (ADP-ribose) polymerases\" also called \"PARPs\". PARPs are proteins (made from genes which are part of DNA) that are found in all normal and cancer cells that are involved in the repair of DNA. PARPs are needed to repair mistakes that can happen in DNA when cells divide. If the mistakes are not repaired, the defective cell will usually die and be replaced. Cells with mistakes in their DNA that do not die can become cancer cells.",
+            "title": "Talazoparib",
+            "subtitle": "Talzenna",
+            "type": {
+              "text": "Drug"
+            },
+            "subjectCodeableConcept": {
+              "text": "Talazoparib"
+            }
+          }
+        ],
+        "sponsor": {
+          "reference": "#orgNCT03990896",
+          "type": "Organization"
+        },
+        "enrollment": [
+          {
+            "reference": "#groupNCT03990896",
+            "type": "Group",
+            "display": "\r\n        Inclusion Criteria:\r\n\r\n          -  Metastatic breast cancer with deleterious somatic BRCA 1 or 2 mutations detectable by\r\n             cell-free circulating tumor DNA, by CLIA certified clinical assay (including but not\r\n             restricted to MGH-Snapshot cfDNA assay, Guardant360, Foundation One). The eligibility\r\n             of a given assay and/or BRCA mutation could be discussed with the primary investigator\r\n             (Dr. Vidula) and senior investigator (Dr. Bardia), who will provide the final\r\n             discretion.\r\n\r\n          -  Patients with germline BRCA 1 or 2 mutations will not be eligible.\r\n\r\n          -  Patients with only a VUS (Variant of Unknown Significance), or non-functional BRCA\r\n             mutation, without a deleterious somatic BRCA 1 or 2 mutation will not be eligible.\r\n\r\n          -  The following disease subtypes are eligible:\r\n\r\n               -  Triple negative breast cancer (defined as ER < 1%, PR < 1%, HER2 negative, as per\r\n                  ASCO CAP guidelines), with disease progression on at least one prior chemotherapy\r\n                  regimen in the metastatic setting.\r\n\r\n               -  Hormone receptor positive, HER2 negative disease with disease progression on at\r\n                  least one prior endocrine therapy in the metastatic setting or be considered\r\n                  inappropriate for endocrine therapy\r\n\r\n          -  Patients must have evaluable or measurable disease.\r\n\r\n          -  Any number of prior lines of therapy are allowed\r\n\r\n          -  Patients may have received prior platinum based chemotherapy (0-1 prior platinum based\r\n             therapy). However, the patient must not have progressed while on platinum treatment\r\n             (any setting), or within 6 months after end of treatment (neoadjuvant and/or\r\n             adjuvant).\r\n\r\n          -  At least two weeks from last systemic therapy for breast cancer, with recovery of all\r\n             treatment related toxicity to grade 1 or less. Subjects with ≤ Grade 2 neuropathy are\r\n             an exception to this criterion.\r\n\r\n          -  At least two weeks from last radiation therapy, with recovery of all treatment related\r\n             toxicity to grade 1 or less.\r\n\r\n             -≥ 18 years of age on day of signing informed consent.\r\n\r\n          -  ECOG performance status of ≤2.\r\n\r\n          -  Adequate organ function as defined in Table 1 within 10 days prior to treatment\r\n             initiation.\r\n\r\n          -  Adequate Organ Function Laboratory Values\r\n\r\n          -  SYSTEM LABORATORY VALUE\r\n\r\n          -  Hematological\r\n\r\n               -  Absolute neutrophil count (ANC) ≥1,500 /mcL\r\n\r\n               -  Platelets ≥100,000 / mcL\r\n\r\n               -  Hemoglobin ≥9 g/dL or ≥5.6 mmol/L without transfusion or EPO dependency (within 7\r\n                  days of assessment)\r\n\r\n          -  Renal\r\n\r\n             --Serum creatinine OR Measured or calculated creatinine clearance (GFR can also be\r\n             used in place of creatinine or CrCl) ≤1.5 X institutional upper limit of normal (ULN)\r\n             OR ≥60 mL/min for subject with creatinine levels > 1.5 X institutional ULN\r\n\r\n          -  Hepatic\r\n\r\n               -  Serum total bilirubin ≤ 1.5 X institutional ULN OR Direct bilirubin ≤\r\n                  institutional ULN for subjects with total bilirubin levels > 1.5 ULN\r\n\r\n               -  AST (SGOT) and ALT (SGPT) ≤ 2.5 X institutional ULN OR ≤ 5 X institutional ULN\r\n                  for subjects with liver metastases\r\n\r\n          -  Prior CNS disease is allowed if stable for at least one month since whole brain\r\n             radiation therapy in patients who received whole brain radiation, or 2 weeks since\r\n             stereotactic radiotherapy in patients who received stereotactic radiotherapy. Patients\r\n             should not be requiring steroids. Patients whose CNS disease was surgically treated\r\n             may be enrolled if stable for at least one month after surgery, and not requiring\r\n             steroids.\r\n\r\n          -  Female subjects of childbearing potential must have a negative urine or serum\r\n             pregnancy test within 72 hours prior to receiving the first dose of study medication.\r\n             If the urine test is positive or cannot be confirmed as negative, a serum pregnancy\r\n             test will be required.\r\n\r\n          -  Female subjects of childbearing potential must use an acceptable form of birth control\r\n             per treating physician discretion or be surgically sterile, or abstain from\r\n             heterosexual activity for the course of the study through 7 months after the last dose\r\n             of study medication. Subjects of childbearing potential are those who have not been\r\n             surgically sterilized or have not been free from menses for > 1 year.\r\n\r\n          -  Male subjects should agree to use an adequate method of contraception starting with\r\n             the first dose of study therapy through 7 months after the last dose of study therapy.\r\n             Additionally, male patients may not donate sperm during the duration of the study and\r\n             through 7 months after the last dose of study therapy.\r\n\r\n          -  Willing and able to provide written informed consent.\r\n\r\n        Exclusion Criteria:\r\n\r\n          -  Treatment with an investigational agent within 4 weeks of the first dose of treatment.\r\n\r\n          -  Patients must not have received prior treatment with a PARP inhibitor\r\n\r\n          -  Patients must not have a germline BRCA 1 or 2 mutation\r\n\r\n          -  Has had prior chemotherapy, targeted small molecule therapy, or radiation therapy\r\n             within 2 weeks prior to study Day 1 or who has not recovered (i.e., ≤ Grade 1 or at\r\n             baseline) from adverse events due to a previously administered agent. Note: Subjects\r\n             with ≤ Grade 2 neuropathy are an exception to this criterion.\r\n\r\n             --If subject received major surgery, they must have recovered adequately from the\r\n             toxicity and/or complications from the intervention prior to starting therapy.\r\n\r\n          -  Has a known additional malignancy that is progressing or requires active treatment.\r\n             Exceptions include basal cell carcinoma of the skin or squamous cell carcinoma of the\r\n             skin that has undergone potentially curative therapy or in situ cervical cancer.\r\n\r\n          -  Has known, untreated central nervous system (CNS) metastases and/or carcinomatous\r\n             meningitis.\r\n\r\n          -  Has a history or current evidence of any condition, therapy, or laboratory abnormality\r\n             that might confound the results of the trial, interfere with the subject's\r\n             participation for the full duration of the trial, or is not in the best interest of\r\n             the subject to participate, in the opinion of the treating investigator.\r\n\r\n          -  Has known psychiatric or substance abuse disorders that would interfere with\r\n             cooperation with the requirements of the trial.\r\n\r\n          -  Is pregnant or breastfeeding, or expecting to conceive or father children within the\r\n             projected duration of the trial, starting with the screening visit through 7 months\r\n             after the last dose of trial treatment.\r\n\r\n          -  Has a known history of Human Immunodeficiency Virus (HIV).\r\n\r\n          -  Has known active Hepatitis B or Hepatitis C.\r\n\r\n          -  Patients should not be on strong P-glycoprotein inhibitors.\r\n\r\n          -  Patients should not be on any other anti-cancer therapy (chemotherapy, hormone\r\n             therapy, immunotherapy, or alternate investigational therapy).\r\n      "
+          }
+        ],
+        "description": "\r\n      This research is to evaluate the effectiveness of Talazoparib as a potential treatment for\r\n      metastatic breast cancer with a BRCA 1 or BRCA 2 mutation.\r\n    ",
+        "category": [
+          {
+            "text": "Study Type: Interventional"
+          },
+          {
+            "text": "Intervention Model: Single Group Assignment"
+          },
+          {
+            "text": "Primary Purpose: Treatment"
+          },
+          {
+            "text": "Masking: None (Open Label)"
+          },
+          {
+            "text": "Allocation: N/A"
+          }
+        ],
+        "status": "active",
+        "condition": [
+          {
+            "text": "Breast Cancer"
+          }
+        ],
+        "site": [
+          {
+            "reference": "#location-0",
+            "type": "Location"
+          },
+          {
+            "reference": "#location-1",
+            "type": "Location"
+          }
+        ],
+        "arm": [
+          {
+            "name": "Talazoparib",
+            "type": {
+              "coding": [
+                {
+                  "code": "Experimental",
+                  "display": "Experimental"
+                }
+              ],
+              "text": "Experimental"
+            },
+            "description": "-Talazoparib will be provided as capsules for oral administration daily"
+          }
+        ],
+        "protocol": [
+          {
+            "reference": "#plan-0",
+            "type": "PlanDefinition"
+          }
+        ]
+      },
+      "search": {
+        "mode": "match"
+      }
+    }
+  ]
+}
