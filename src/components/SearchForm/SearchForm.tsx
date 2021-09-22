@@ -58,7 +58,7 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
               />
             </Box>
 
-            <Box ml={10} textAlign={{ xs: 'center', lg: 'left' }}>
+            <Box ml={{ md: 0, lg: 10 }} textAlign={{ xs: 'center', lg: 'left' }}>
               <Box fontSize={{ xs: 30, lg: 38, xl: 63 }} fontWeight={300}>
                 Let's find some clinical trials
               </Box>
