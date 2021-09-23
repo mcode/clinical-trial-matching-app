@@ -2,7 +2,7 @@ import type { ReactElement, ReactNode } from 'react';
 import { Accordion, AccordionDetails, AccordionSummary, Stack, Typography } from '@mui/material';
 import { ExpandMore as ExpandMoreIcon } from '@mui/icons-material';
 
-type SidebarAccordionProps = {
+export type SidebarAccordionProps = {
   children: ReactNode;
   defaultExpanded?: boolean;
   icon: ReactNode;
