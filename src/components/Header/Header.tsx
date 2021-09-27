@@ -19,7 +19,7 @@ const Header = ({ userName }: HeaderProps): ReactElement => (
       </Link>
 
       {userName && (
-        <Box color="common.white" fontWeight="600" mr={1}>
+        <Box color="common.white" display={{ xs: 'none', sm: 'block' }} fontWeight="600" mr={1} textAlign="right">
           {userName}
         </Box>
       )}

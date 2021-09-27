@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { Box, Button, Grid, Stack } from '@mui/material';
+import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 import {
@@ -36,7 +36,8 @@ const formDataToSearchQuery = (data: SearchFormValuesType) => ({
 
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
-
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.between('xs', 'md'));
   const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
   const onSubmit = data => router.push({ pathname: '/results', query: formDataToSearchQuery(data) });
 
@@ -68,12 +69,12 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           </Stack>
         </Box>
 
-        <Grid columns={8} container spacing={2} px={2} py={fullWidth ? 2 : { md: 2 }} pb={{ xs: 2 }} mt={0}>
+        <Grid columns={8} container spacing={2} px={2} py={fullWidth ? 0 : { md: 2 }} pb={{ xs: 2 }} mt={0}>
           <Grid item xs={8}>
             <MatchingServices control={control} fullWidth={fullWidth} />
           </Grid>
 
-          <Grid item xs={fullWidth ? 4 : 8} md={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
+          <Grid item xs={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
             <Controller
               name="zipcode"
               defaultValue=""
@@ -83,7 +84,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
             />
           </Grid>
 
-          <Grid item xs={fullWidth ? 4 : 8} md={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
+          <Grid item xs={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
             <Controller name="travelDistance" defaultValue="" control={control} render={TravelDistanceTextField} />
           </Grid>
 
@@ -113,11 +114,11 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
             <Controller name="stage" defaultValue={null} control={control} render={CancerStageAutocomplete} />
           </Grid>
 
-          <Grid item xs={fullWidth ? 4 : 8} lg={4} xl={fullWidth ? 4 : 2}>
+          <Grid item xs={4} xl={fullWidth ? 4 : 2}>
             <Controller name="ecogScore" defaultValue={null} control={control} render={ECOGScoreAutocomplete} />
           </Grid>
 
-          <Grid item xs={fullWidth ? 4 : 8} lg={4} xl={fullWidth ? 4 : 2}>
+          <Grid item xs={4} xl={fullWidth ? 4 : 2}>
             <Controller
               name="karnofskyScore"
               defaultValue={null}
@@ -152,7 +153,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
                 fontWeight: '500',
                 height: '50px',
                 minWidth: '200px',
-                width: '25%',
+                width: fullWidth || smallScreen ? '100%' : '25%',
               }}
               type="submit"
               variant="contained"
