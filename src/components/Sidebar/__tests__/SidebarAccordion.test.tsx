@@ -7,7 +7,7 @@ const title = 'Provider Information';
 const icon = <PersonIcon fontSize="large" />;
 const child = <p>{mockUser.name}</p>;
 
-describe('<SidebarAccordion></SidebarAccordion>', () => {
+describe('<SidebarAccordion />', () => {
   const Component = (props: Partial<SidebarAccordionProps>) => (
     <SidebarAccordion icon={icon} title={title} {...props}>
       {child}
