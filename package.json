@@ -17,7 +17,8 @@
     "start": "node server.js",
     "test": "jest --watch",
     "test:ci": "jest",
-    "upload-test-patients": "node ./src/utils/uploadTestPatients.js"
+    "upload-test-patients": "tsc ./src/utils/uploadTestPatients.ts --target es5 --lib esnext && node ./src/utils/uploadTestPatients.js",
+    "upload-test-patients:dump": "tsc ./src/utils/uploadTestPatients.ts --target es5 --lib esnext && node ./src/utils/uploadTestPatients.js --dump"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -27,17 +28,16 @@
     "@fontsource/open-sans": "^4.5.0",
     "@mui/icons-material": "^5.0.0-rc.1",
     "@mui/material": "^5.0.0-rc.1",
+    "axios": "^0.21.4",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "fhirclient": "^2.4.0",
+    "mkdirp": "^1.0.4",
     "next": "11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.15.2",
-    "react-query": "^3.23.2",
-    "request": "^2.34",
-    "request-promise-native": "^1.0.9",
-    "mkdirp": "^1.0.4"
+    "react-query": "^3.23.2"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",
@@ -48,8 +48,11 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/react-hooks": "^7.0.2",
     "@testing-library/user-event": "^13.2.1",
+    "@types/axios": "^0.14.0",
+    "@types/fhir": "^0.0.34",
     "@types/hapi": "^18.0.6",
     "@types/jest": "^27.0.1",
+    "@types/mkdirp": "^1.0.2",
     "@types/node": "^14.17.15",
     "@types/react": "^17.0.20",
     "@typescript-eslint/eslint-plugin": "^4.31.0",
