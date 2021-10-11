@@ -3,6 +3,7 @@ import { ControllerRenderProps } from 'react-hook-form';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
 
 import { SearchFormValuesType } from './types';
+import { getCancerCodes } from '../../utils/cancerTypes';
 
 export const MatchingServiceCheckbox = ({
   field,
@@ -47,17 +48,66 @@ export const CancerTypeTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
-}): ReactElement => (
-  <TextField
-    data-testid="cancerType"
-    error={field.value === ''}
-    fullWidth
-    label="Cancer Type"
-    required
-    variant="filled"
-    {...field}
-  />
-);
+}): ReactElement => {
+  const [open, setOpen] = React.useState(false);
+  const [options, setOptions] = React.useState([field.value]);
+  const loading = open && options.length === 0;
+  // Create effects for open/closing the autocomplete picker
+  // (This is based on https://mui.com/components/autocomplete/#load-on-open)
+  React.useEffect(() => {
+    let active = true;
+
+    if (!loading) {
+      return undefined;
+    }
+
+    (async () => {
+      const codes = await getCancerCodes();
+
+      if (active) {
+        // For now convert down to a string to match the SearchFormValuesType
+        setOptions(codes.map(code => code.display));
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [loading]);
+
+  React.useEffect(() => {
+    if (!open) {
+      setOptions([]);
+    }
+  }, [open]);
+
+  return (
+    <Autocomplete
+      data-testid="cancerType"
+      open={open}
+      onOpen={() => {
+        setOpen(true);
+      }}
+      onClose={() => {
+        setOpen(false);
+      }}
+      loading={loading}
+      getOptionLabel={option => {
+        console.log('getOptionLabel(%o)', option);
+        return option.toString();
+      }}
+      isOptionEqualToValue={(option, value) => {
+        console.log('isOptionEqualToValue(%o, %o)', option, value);
+        return option === value;
+      }}
+      options={options}
+      renderInput={params => (
+        <TextField error={field.value === ''} required variant="filled" fullWidth label="Cancer Type" {...params} />
+      )}
+      {...field}
+    />
+  );
+};
 
 export const CancerSubtypeTextField = ({
   field,
