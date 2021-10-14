@@ -6,7 +6,6 @@ export type Patient = {
   gender: string;
   age: string;
   zipcode: string;
-  cancerType: string;
   record?: fhirclient.FHIR.Patient; // for debugging
 };
 
@@ -26,6 +25,5 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
   age: fhirPatient.birthDate ? getAge(fhirPatient.birthDate) : null,
   zipcode:
     fhirPatient.address?.length > 0 && fhirPatient.address[0].postalCode ? fhirPatient.address[0].postalCode : null,
-  cancerType: '',
   record: fhirPatient,
 });
