@@ -83,6 +83,7 @@ export const CancerTypeTextField = ({
 
   return (
     <Autocomplete
+      {...field}
       data-testid="cancerType"
       open={open}
       onOpen={() => {
@@ -94,17 +95,17 @@ export const CancerTypeTextField = ({
       loading={loading}
       getOptionLabel={option => {
         console.log('getOptionLabel(%o)', option);
-        return option.toString();
+        return option || '';
       }}
       isOptionEqualToValue={(option, value) => {
         console.log('isOptionEqualToValue(%o, %o)', option, value);
         return option === value;
       }}
+      onChange={(_event, value) => field.onChange(value)}
       options={options}
       renderInput={params => (
         <TextField error={field.value === ''} required variant="filled" fullWidth label="Cancer Type" {...params} />
       )}
-      {...field}
     />
   );
 };
