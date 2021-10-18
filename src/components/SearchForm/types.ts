@@ -1,3 +1,5 @@
+import { CancerCode } from '../../utils/cancerTypes';
+
 export type SearchFormValuesType = {
   matchingServices: {
     breastCancerTrials: boolean;
@@ -7,7 +9,7 @@ export type SearchFormValuesType = {
   zipcode: string;
   travelDistance: string;
   age: string;
-  cancerType: string;
+  cancerType: CancerCode;
   cancerSubtype: string;
   metastasis: string;
   stage: string;

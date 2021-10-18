@@ -54,6 +54,7 @@ export const CancerTypeTextField = ({
   const loading = open && options.length === 0;
   // Create effects for open/closing the autocomplete picker
   // (This is based on https://mui.com/components/autocomplete/#load-on-open)
+  // TODO: Only load once (although this may also eventually be done in the library?)
   React.useEffect(() => {
     let active = true;
 
@@ -65,8 +66,7 @@ export const CancerTypeTextField = ({
       const codes = await getCancerCodes();
 
       if (active) {
-        // For now convert down to a string to match the SearchFormValuesType
-        setOptions(codes.map(code => code.display));
+        setOptions(codes);
       }
     })();
 
@@ -94,17 +94,22 @@ export const CancerTypeTextField = ({
       }}
       loading={loading}
       getOptionLabel={option => {
-        console.log('getOptionLabel(%o)', option);
-        return option || '';
+        return option.display || '';
       }}
       isOptionEqualToValue={(option, value) => {
-        console.log('isOptionEqualToValue(%o, %o)', option, value);
-        return option === value;
+        return option.primary === value.primary && option.histology === value.histology;
       }}
       onChange={(_event, value) => field.onChange(value)}
       options={options}
       renderInput={params => (
-        <TextField error={field.value === ''} required variant="filled" fullWidth label="Cancer Type" {...params} />
+        <TextField
+          error={!field.value || field.value.display === ''}
+          required
+          variant="filled"
+          fullWidth
+          label="Cancer Type"
+          {...params}
+        />
       )}
     />
   );
