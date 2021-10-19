@@ -118,7 +118,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     getMedicationStatement('mcode-cancer-related-medication-statement'),
   ]);
 
-  return {
+  const serverSideProps = {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
@@ -132,6 +132,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
       medications: convertFhirMedicationStatements(fhirMedicationStatements),
     },
   };
+  console.log('serverSideProps', serverSideProps); // for debugging
+
+  return serverSideProps;
 };
 
 const bundleMaker = (fhirClient: Client) => {

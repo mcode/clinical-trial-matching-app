@@ -37,7 +37,7 @@ const getKarnofskyScore = (answerId: string): string => {
       score = '0';
       break;
     default:
-      score = '';
+      score = null;
       break;
   }
   return score;
@@ -53,5 +53,5 @@ export const convertFhirKarnofskyPerformanceStatus = (bundle: fhirclient.FHIR.Bu
     bundle.entry[0].resource.interpretation[0].coding &&
     bundle.entry[0].resource.interpretation[0].coding[0] &&
     bundle.entry[0].resource.interpretation[0].coding[0].code;
-  return answerId ? getKarnofskyScore(answerId) : null;
+  return getKarnofskyScore(answerId);
 };
