@@ -22,7 +22,7 @@ const getEcogScore = (answerId: string): string => {
       score = '5';
       break;
     default:
-      score = '';
+      score = null;
       break;
   }
   return score;
@@ -38,5 +38,5 @@ export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle)
     bundle.entry[0].resource.interpretation[0].coding &&
     bundle.entry[0].resource.interpretation[0].coding[0] &&
     bundle.entry[0].resource.interpretation[0].coding[0].code;
-  return answerId ? getEcogScore(answerId) : null;
+  return getEcogScore(answerId);
 };
