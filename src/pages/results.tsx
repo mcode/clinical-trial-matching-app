@@ -14,10 +14,12 @@ import { Results, ResultsHeader } from '@/components/Results';
 import mockSearchResults from '@/__mocks__/results.json';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
+import { SearchParameters } from '@/utils/search_types';
 
 type ResultsPageProps = {
   patient: Patient;
   user: User;
+  search_params: SearchParameters
 };
 
 const openTransition = (theme: Theme) =>
@@ -50,9 +52,9 @@ const MainContent = styled(Paper)`
   flex: 1 0 auto;
 `;
 
-const ResultsPage = ({ patient, user }: ResultsPageProps): ReactElement => {
+const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
-  const { data } = useQuery(['clinical-trials'], () => clinicalTrialSearchQuery(), { refetchOnMount: false });
+  const { data } = useQuery(['clinical-trials'], () => clinicalTrialSearchQuery(patient, user, search_params), { refetchOnMount: false });
 
   const toggleDrawer = () => setOpen(currentlyOpen => !currentlyOpen);
 
@@ -101,7 +103,7 @@ const ResultsPage = ({ patient, user }: ResultsPageProps): ReactElement => {
 export default ResultsPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  const { req, res } = context;
+  const { req, res, query } = context;
   const queryClient = new QueryClient();
 
   let fhirClient: Client;
@@ -112,12 +114,18 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
-  await queryClient.prefetchQuery(['clinical-trials'], () => mockSearchResults);
+  // await queryClient.prefetchQuery(['clinical-trials'], () => mockSearchResults);
+    // queryClient.prefetchQuery(["hello"], () =>
+    //     "clinical-trials-search"
+    // );
+
+    console.log("Query", query);
 
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
+      search_params: query,
       dehydratedState: dehydrate(queryClient),
     },
   };
