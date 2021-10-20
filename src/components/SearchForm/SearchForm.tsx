@@ -2,7 +2,7 @@ import type { ReactElement } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { Box, Button, Grid, Stack } from '@mui/material';
+import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
 import {
@@ -21,31 +21,30 @@ import {
   ZipcodeTextField,
 } from './FormFields';
 import SearchImage from '@/assets/images/search.png';
-import type { Patient } from '@/utils/patient';
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType } from './types';
 
 export type SearchFormProps = {
-  patient: Patient;
+  defaultValues?: Partial<SearchFormValuesType>;
+  fullWidth?: boolean;
 };
 
-const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
+const formDataToSearchQuery = (data: SearchFormValuesType) => ({
+  ...data,
+  matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
+});
+
+const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
-
-  const defaultValues: Partial<SearchFormValuesType> = {
-    age: patient.age || '',
-    cancerType: patient.cancerType || '',
-    travelDistance: '100',
-    zipcode: patient.zipcode || '',
-  };
-
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.between('xs', 'md'));
   const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
-  const onSubmit = data => router.push({ pathname: '/results', query: data });
+  const onSubmit = data => router.push({ pathname: '/results', query: formDataToSearchQuery(data) });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box bgcolor="grey.200">
-        <Box p={{ xs: 0, md: 2 }} display={{ xs: 'none', md: 'block' }}>
+        <Box p={{ xs: 0, md: 2 }} display={fullWidth ? 'none' : { xs: 'none', md: 'block' }}>
           <Stack alignItems="center" direction={{ xs: 'column', lg: 'row' }} justifyContent="center">
             <Box>
               <Image
@@ -70,12 +69,12 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
           </Stack>
         </Box>
 
-        <Grid columns={8} container spacing={2} px={2} py={{ md: 2 }} pb={{ xs: 2 }} mt={{ xs: 0, md: -2 }}>
+        <Grid columns={8} container spacing={2} px={2} py={fullWidth ? 0 : { md: 2 }} pb={{ xs: 2 }} mt={0}>
           <Grid item xs={8}>
-            <MatchingServices control={control} />
+            <MatchingServices control={control} fullWidth={fullWidth} />
           </Grid>
 
-          <Grid item xs={8} md={4} lg={2} xl={1}>
+          <Grid item xs={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
             <Controller
               name="zipcode"
               defaultValue=""
@@ -85,15 +84,15 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
             />
           </Grid>
 
-          <Grid item xs={8} md={4} lg={2} xl={1}>
+          <Grid item xs={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
             <Controller name="travelDistance" defaultValue="" control={control} render={TravelDistanceTextField} />
           </Grid>
 
-          <Grid item xs={8} lg={4} xl={2}>
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller name="age" defaultValue="" control={control} render={AgeTextField} />
           </Grid>
 
-          <Grid item xs={8} lg={4} xl={2}>
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="cancerType"
               defaultValue=""
@@ -103,23 +102,23 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
             />
           </Grid>
 
-          <Grid item xs={8} lg={4} xl={2}>
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller name="cancerSubtype" defaultValue="" control={control} render={CancerSubtypeTextField} />
           </Grid>
 
-          <Grid item xs={8} lg={4} xl={2}>
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller name="metastasis" defaultValue="" control={control} render={MetastasisTextField} />
           </Grid>
 
-          <Grid item xs={8} lg={4} xl={2}>
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller name="stage" defaultValue={null} control={control} render={CancerStageAutocomplete} />
           </Grid>
 
-          <Grid item xs={8} lg={4} xl={2}>
+          <Grid item xs={4} xl={fullWidth ? 4 : 2}>
             <Controller name="ecogScore" defaultValue={null} control={control} render={ECOGScoreAutocomplete} />
           </Grid>
 
-          <Grid item xs={8} lg={4} xl={2}>
+          <Grid item xs={4} xl={fullWidth ? 4 : 2}>
             <Controller
               name="karnofskyScore"
               defaultValue={null}
@@ -153,7 +152,8 @@ const SearchForm = ({ patient }: SearchFormProps): ReactElement => {
                 fontSize: '1.3em',
                 fontWeight: '500',
                 height: '50px',
-                width: '25%',
+                minWidth: '200px',
+                width: fullWidth || smallScreen ? '100%' : '25%',
               }}
               type="submit"
               variant="contained"

@@ -17,7 +17,17 @@ export const ZipcodeTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'zipcode'>;
-}): ReactElement => <TextField data-testid="zipcode" fullWidth label="Zip Code" required variant="filled" {...field} />;
+}): ReactElement => (
+  <TextField
+    data-testid="zipcode"
+    error={field.value === ''}
+    fullWidth
+    label="Zip Code"
+    required
+    variant="filled"
+    {...field}
+  />
+);
 
 export const TravelDistanceTextField = ({
   field,
@@ -38,7 +48,15 @@ export const CancerTypeTextField = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
 }): ReactElement => (
-  <TextField data-testid="cancerType" fullWidth label="Cancer Type" required variant="filled" {...field} />
+  <TextField
+    data-testid="cancerType"
+    error={field.value === ''}
+    fullWidth
+    label="Cancer Type"
+    required
+    variant="filled"
+    {...field}
+  />
 );
 
 export const CancerSubtypeTextField = ({

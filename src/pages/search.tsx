@@ -5,6 +5,7 @@ import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 
+import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
 import { Patient, convertFhirPatient } from '@/utils/patient';
@@ -15,15 +16,23 @@ type SearchPageProps = {
   user: User;
 };
 
-const SearchPage = ({ patient }: SearchPageProps): ReactElement => {
+const SearchPage = ({ patient, user }: SearchPageProps): ReactElement => {
+  const defaultValues = {
+    age: patient.age || '',
+    cancerType: patient.cancerType || '',
+    travelDistance: '100',
+    zipcode: patient.zipcode || '',
+  };
+
   return (
     <>
       <Head>
         <title>Search | Clinical Trial Finder</title>
       </Head>
 
+      <Header userName={user?.name} />
       <PatientCard patient={patient} />
-      <SearchForm patient={patient} />
+      <SearchForm defaultValues={defaultValues} />
     </>
   );
 };

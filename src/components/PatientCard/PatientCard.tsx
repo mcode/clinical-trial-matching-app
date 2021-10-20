@@ -9,7 +9,15 @@ export type PatientCardProps = {
 };
 
 const PatientCard = ({ patient }: PatientCardProps): ReactElement => (
-  <Stack alignItems="center" bgcolor="grey.800" color="common.white" direction="row" height="80px" pl={3}>
+  <Stack
+    alignItems="center"
+    bgcolor="grey.800"
+    color="common.white"
+    direction="row"
+    height="80px"
+    minHeight="80px"
+    pl={3}
+  >
     <Box pr={3} py={2}>
       <AccountCircleIcon fontSize="large" />
     </Box>

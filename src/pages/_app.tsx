@@ -11,7 +11,6 @@ import '@fontsource/open-sans/600.css';
 import '@fontsource/open-sans/700.css';
 import '@fontsource/open-sans/800.css';
 
-import Header from '@/components/Header';
 import emotionCache from '@/emotionCache';
 import theme from '@/styles/theme';
 
@@ -35,7 +34,6 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
         <CacheProvider value={emotionCache}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Header user={pageProps.user} />
             <Component {...pageProps} />
             <ReactQueryDevtools initialIsOpen={false} />
           </ThemeProvider>
