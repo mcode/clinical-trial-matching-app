@@ -16,7 +16,7 @@ const SidebarAccordion = ({ children, defaultExpanded, icon, title }: SidebarAcc
       aria-controls="sidebar-accordion-content"
       id="sidebar-accordion-header"
       sx={{
-        backgroundColor: 'grey.800',
+        backgroundColor: 'common.gray',
         color: 'common.white',
         height: '80px',
         mt: '1px',

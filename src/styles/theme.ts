@@ -6,11 +6,15 @@ declare module '@mui/material/styles/createPalette' {
 }
 
 const colors = {
-  blue: '#65A3BF',
-  gray: '#404852',
-  grayLighter: '#F6F6F6',
-  red: '#9D646D',
-  white: '#FFF',
+  blue: '#64a3bf',
+  blueLighter: '#84c9e8',
+  gray: '#404952',
+  grayLight: '#697481',
+  grayLighter: '#f6f6f6',
+  red: '#9d646c',
+  white: '#ffffff',
+  yellow: '#bf9b4f',
+  green: '#659b78',
 };
 
 const theme = createTheme({

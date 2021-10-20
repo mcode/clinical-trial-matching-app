@@ -1,6 +1,6 @@
-import { fhirclient } from 'fhirclient/lib/types';
+import { Bundle } from 'fhir/r4';
 
-const clinicalTrialSearchQuery = async (): Promise<fhirclient.FHIR.Bundle> =>
+const clinicalTrialSearchQuery = async (): Promise<Bundle> =>
   fetch('/api/clinical-trial-search').then(res => res.json());
 
 export default clinicalTrialSearchQuery;

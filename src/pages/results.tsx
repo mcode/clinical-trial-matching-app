@@ -87,9 +87,7 @@ const ResultsPage = ({ patient, user }: ResultsPageProps): ReactElement => {
             <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} />
 
             <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
-              <Results />
-
-              {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
+              <Results data={data} />
             </MainContent>
           </SlidingStack>
         </Stack>

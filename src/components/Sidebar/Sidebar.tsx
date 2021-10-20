@@ -18,7 +18,24 @@ const ensureArray = (value?: string | string[]): string[] => {
 
 const Sidebar = ({ patient }: SidebarProps): ReactElement => {
   const { query } = useRouter();
+  const defaultValues = getDefaultValues(query);
 
+  return (
+    <>
+      <PatientCard patient={patient} />
+
+      <SidebarAccordion icon={<SearchIcon fontSize="large" />} title="New Search">
+        <SearchForm fullWidth defaultValues={defaultValues} />
+      </SidebarAccordion>
+
+      <SidebarAccordion defaultExpanded icon={<FilterIcon fontSize="large" />} title="Filters">
+        <p>TODO: Filters</p>
+      </SidebarAccordion>
+    </>
+  );
+};
+
+export const getDefaultValues = (query: ParsedUrlQuery): Partial<SearchFormValuesType> => {
   const matchingServices = query.matchingServices || [];
   const defaultValues = {
     matchingServices: {
@@ -40,20 +57,7 @@ const Sidebar = ({ patient }: SidebarProps): ReactElement => {
     surgery: ensureArray(query.surgery),
     medications: ensureArray(query.medications),
   };
-
-  return (
-    <>
-      <PatientCard patient={patient} />
-
-      <SidebarAccordion icon={<SearchIcon fontSize="large" />} title="New Search">
-        <SearchForm fullWidth defaultValues={defaultValues} />
-      </SidebarAccordion>
-
-      <SidebarAccordion defaultExpanded icon={<FilterIcon fontSize="large" />} title="Filters">
-        <p>TODO: Filters</p>
-      </SidebarAccordion>
-    </>
-  );
+  return defaultValues;
 };
 
 export default Sidebar;
