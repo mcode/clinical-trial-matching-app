@@ -118,7 +118,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     getMedicationStatement('mcode-cancer-related-medication-statement'),
   ]);
 
-  return {
+  const serverSideProps = {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
@@ -131,6 +131,22 @@ export const getServerSideProps: GetServerSideProps = async context => {
       surgery: convertFhirSurgeryProcedures(fhirSurgeryProcedures),
       medications: convertFhirMedicationStatements(fhirMedicationStatements),
     },
+  };
+  console.log('serverSideProps', serverSideProps); // for debugging
+
+  return serverSideProps;
+};
+
+const bundleMaker = (fhirClient: Client) => {
+  const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
+  return (resourceType: string) => {
+    return (url: string): Promise<fhirclient.FHIR.Bundle> => {
+      return fhirClient.request<fhirclient.FHIR.Bundle>(
+        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(
+          `http://hl7.org/fhir/us/mcode/StructureDefinition/` + url
+        )}`
+      );
+    };
   };
 };
 
