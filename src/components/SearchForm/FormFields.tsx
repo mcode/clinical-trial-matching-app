@@ -3,6 +3,7 @@ import { ControllerRenderProps } from 'react-hook-form';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
 
 import { SearchFormValuesType } from './types';
+import { getCancerCodes } from '../../utils/cancerTypes';
 
 export const MatchingServiceCheckbox = ({
   field,
@@ -47,17 +48,72 @@ export const CancerTypeTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
-}): ReactElement => (
-  <TextField
-    data-testid="cancerType"
-    error={field.value === ''}
-    fullWidth
-    label="Cancer Type"
-    required
-    variant="filled"
-    {...field}
-  />
-);
+}): ReactElement => {
+  const [open, setOpen] = React.useState(false);
+  const [options, setOptions] = React.useState([field.value]);
+  const loading = open && options.length === 0;
+  // Create effects for open/closing the autocomplete picker
+  // (This is based on https://mui.com/components/autocomplete/#load-on-open)
+  // TODO: Only load once (although this may also eventually be done in the library?)
+  React.useEffect(() => {
+    let active = true;
+
+    if (!loading) {
+      return undefined;
+    }
+
+    (async () => {
+      const codes = await getCancerCodes();
+
+      if (active) {
+        setOptions(codes);
+      }
+    })();
+
+    return () => {
+      active = false;
+    };
+  }, [loading]);
+
+  React.useEffect(() => {
+    if (!open) {
+      setOptions([]);
+    }
+  }, [open]);
+
+  return (
+    <Autocomplete
+      {...field}
+      data-testid="cancerType"
+      open={open}
+      onOpen={() => {
+        setOpen(true);
+      }}
+      onClose={() => {
+        setOpen(false);
+      }}
+      loading={loading}
+      getOptionLabel={option => {
+        return option.display || '';
+      }}
+      isOptionEqualToValue={(option, value) => {
+        return option.primary === value.primary && option.histology === value.histology;
+      }}
+      onChange={(_event, value) => field.onChange(value)}
+      options={options}
+      renderInput={params => (
+        <TextField
+          error={!field.value || field.value.display === ''}
+          required
+          variant="filled"
+          fullWidth
+          label="Cancer Type"
+          {...params}
+        />
+      )}
+    />
+  );
+};
 
 export const CancerSubtypeTextField = ({
   field,
