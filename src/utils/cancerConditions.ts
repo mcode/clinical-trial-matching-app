@@ -1,20 +1,26 @@
 import { fhirclient } from 'fhirclient/lib/types';
+import { CancerCode } from './cancerTypes';
+
+export interface CancerType extends CancerCode {
+  original?: boolean;
+}
 
 export type PrimaryCancerCondition = {
-  cancerType: string;
+  cancerType: CancerType;
   cancerSubtype: string;
   stage: string;
 };
 
-const getCancerType = (resource: fhirclient.FHIR.Resource): string => {
-  return (
-    (resource.bodySite &&
-      resource.bodySite[0] &&
-      resource.bodySite[0].coding &&
-      resource.bodySite[0].coding[0] &&
-      resource.bodySite[0].coding[0].display) ||
-    null
-  );
+const getCancerType = (resource: fhirclient.FHIR.Resource): CancerType => {
+  const coding = resource?.bodySite?.length > 0 ? resource.bodySite[0]?.coding : null;
+  if (coding && coding.length > 0 && coding[0].display) {
+    return {
+      display: coding[0].display,
+      original: true,
+    };
+  } else {
+    return null;
+  }
 };
 
 const getCancerSubtype = (resource: fhirclient.FHIR.Resource): string => {

@@ -49,7 +49,7 @@ const SearchPage = ({
 }: SearchPageProps): ReactElement => {
   const defaultValues = {
     age: patient.age || '',
-    cancerType: primaryCancerCondition.cancerType || '',
+    cancerType: primaryCancerCondition.cancerType || { display: '', original: true },
     cancerSubtype: primaryCancerCondition.cancerSubtype || '',
     stage: primaryCancerCondition.stage,
     travelDistance: '100',
@@ -135,19 +135,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   console.log('serverSideProps', serverSideProps); // for debugging
 
   return serverSideProps;
-};
-
-const bundleMaker = (fhirClient: Client) => {
-  const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
-  return (resourceType: string) => {
-    return (url: string): Promise<fhirclient.FHIR.Bundle> => {
-      return fhirClient.request<fhirclient.FHIR.Bundle>(
-        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(
-          `http://hl7.org/fhir/us/mcode/StructureDefinition/` + url
-        )}`
-      );
-    };
-  };
 };
 
 const bundleMaker = (fhirClient: Client) => {
