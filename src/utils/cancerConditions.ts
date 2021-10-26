@@ -1,5 +1,7 @@
 import { fhirclient } from 'fhirclient/lib/types';
 import { CancerCode } from './cancerTypes';
+import { CodeableConcept, Coding } from './fhirTypes';
+import { SNOMED_CODE_URI } from './snomed';
 
 export interface CancerType extends CancerCode {
   original?: boolean;
@@ -11,16 +13,34 @@ export type PrimaryCancerCondition = {
   stage: string;
 };
 
-const getCancerType = (resource: fhirclient.FHIR.Resource): CancerType => {
-  const coding = resource?.bodySite?.length > 0 ? resource.bodySite[0]?.coding : null;
-  if (coding && coding.length > 0 && coding[0].display) {
-    return {
-      display: coding[0].display,
-      original: true,
-    };
-  } else {
+const getCancerType = (resource: fhirclient.FHIR.Resource): CancerType | null => {
+  console.log('cancer type: %o', resource);
+  if (!resource || resource.resourceType !== 'Condition') {
     return null;
   }
+  // Grab the text from the coding for this
+  const code = resource.code as CodeableConcept;
+  if (code.coding && code.coding.length > 0) {
+    let coding: Coding | null = null;
+    for (const c of code.coding) {
+      if (c.system === SNOMED_CODE_URI) {
+        if (coding?.system !== SNOMED_CODE_URI) {
+          // Prefer SNOMED over anything else
+          coding = c;
+        }
+      } else if (!coding && c.display) {
+        // Use anything with a display value if we have one
+        coding = c;
+      }
+    }
+    if (coding) {
+      return {
+        display: coding.display ?? coding.code,
+        original: true,
+      };
+    }
+  }
+  return null;
 };
 
 const getCancerSubtype = (resource: fhirclient.FHIR.Resource): string => {
@@ -49,6 +69,8 @@ export const convertFhirSecondaryCancerCondition = (bundle: fhirclient.FHIR.Bund
 };
 
 export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition => {
+  // Conceptually there can be multiple results for this. For now, just use the first.
+  console.log('bundle: %o', bundle);
   const resource = bundle && bundle.entry && bundle.entry[0] && bundle.entry[0].resource;
   return {
     cancerType: getCancerType(resource),
