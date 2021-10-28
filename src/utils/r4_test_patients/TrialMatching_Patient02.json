@@ -793,7 +793,7 @@
       "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedurePatientExample02", 
       "resource": {
         "resourceType": "Procedure",
-        "id": "mCODETrialMatchingCancerRelatedRadiationProcedurePatientExample02",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
@@ -843,7 +843,7 @@
       "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure02PatientExample02", 
       "resource": {
         "resourceType": "Procedure",
-        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure02PatientExample02",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
@@ -893,7 +893,7 @@
       "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure03PatientExample02", 
       "resource": {
         "resourceType": "Procedure",
-        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure03PatientExample02",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
@@ -943,7 +943,7 @@
       "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure04PatientExample02", 
       "resource": {
         "resourceType": "Procedure",
-        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure04PatientExample02",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02",
         "meta": {
           "profile": [
             "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
