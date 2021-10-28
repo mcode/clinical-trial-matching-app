@@ -8,7 +8,8 @@ export type PrimaryCancerCondition = {
 
 const getCancerType = (resource: fhirclient.FHIR.Resource): string => {
   return (
-    (resource.bodySite &&
+    (resource &&
+      resource.bodySite &&
       resource.bodySite[0] &&
       resource.bodySite[0].coding &&
       resource.bodySite[0].coding[0] &&
