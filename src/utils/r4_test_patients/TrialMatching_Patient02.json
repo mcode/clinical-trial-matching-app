@@ -790,7 +790,7 @@
       }      
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedurePatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02", 
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02",
@@ -840,7 +840,7 @@
       }      
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure02PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02", 
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02",
@@ -890,7 +890,7 @@
       }      
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure03PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02", 
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02",
@@ -940,7 +940,7 @@
       }      
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure04PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02", 
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02",
