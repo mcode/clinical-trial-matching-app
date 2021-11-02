@@ -29,10 +29,20 @@ export type SearchFormProps = {
   fullWidth?: boolean;
 };
 
-const formDataToSearchQuery = (data: SearchFormValuesType) => ({
-  ...data,
-  matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
-});
+type SearchQuery = Omit<SearchFormValuesType, 'cancerType' | 'matchingServices'> & {
+  cancerType?: string;
+  matchingServices: string[];
+};
+
+const formDataToSearchQuery = (data: SearchFormValuesType): SearchQuery => {
+  // The cancer type needs to be converted to an appropriate type
+  const result: SearchQuery = {
+    ...data,
+    cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
+    matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
+  };
+  return result;
+};
 
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
@@ -95,7 +105,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="cancerType"
-              defaultValue=""
+              defaultValue={defaultValues.cancerType}
               control={control}
               rules={{ required: true }}
               render={CancerTypeTextField}

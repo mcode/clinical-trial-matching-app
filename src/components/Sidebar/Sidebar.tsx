@@ -29,7 +29,7 @@ const Sidebar = ({ patient }: SidebarProps): ReactElement => {
     zipcode: (query.zipcode as string) || '',
     travelDistance: (query.travelDistance as string) || '',
     age: (query.age as string) || '',
-    cancerType: (query.cancerType as string) || '',
+    cancerType: { display: (query.cancerType as string) || '' },
     cancerSubtype: (query.cancerSubtype as string) || '',
     metastasis: (query.metastasis as string) || '',
     stage: (query.stage as string) || null,

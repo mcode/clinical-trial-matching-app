@@ -3,18 +3,13 @@ import { CancerCode } from './cancerTypes';
 import { CodeableConcept, Coding } from './fhirTypes';
 import { SNOMED_CODE_URI } from './snomed';
 
-export interface CancerType extends CancerCode {
-  original?: boolean;
-}
-
 export type PrimaryCancerCondition = {
-  cancerType: CancerType;
+  cancerType: CancerCode;
   cancerSubtype: string;
   stage: string;
 };
 
-const getCancerType = (resource: fhirclient.FHIR.Resource): CancerType | null => {
-  console.log('cancer type: %o', resource);
+const getCancerType = (resource: fhirclient.FHIR.Resource): CancerCode | null => {
   if (!resource || resource.resourceType !== 'Condition') {
     return null;
   }
@@ -36,7 +31,7 @@ const getCancerType = (resource: fhirclient.FHIR.Resource): CancerType | null =>
     if (coding) {
       return {
         display: coding.display ?? coding.code,
-        original: true,
+        fromPatient: true,
       };
     }
   }
@@ -70,7 +65,6 @@ export const convertFhirSecondaryCancerCondition = (bundle: fhirclient.FHIR.Bund
 
 export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition => {
   // Conceptually there can be multiple results for this. For now, just use the first.
-  console.log('bundle: %o', bundle);
   const resource = bundle && bundle.entry && bundle.entry[0] && bundle.entry[0].resource;
   return {
     cancerType: getCancerType(resource),

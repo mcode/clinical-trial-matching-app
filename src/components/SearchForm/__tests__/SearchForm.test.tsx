@@ -3,7 +3,7 @@ import SearchForm, { SearchFormProps } from '../SearchForm';
 
 const defaultValues = {
   age: '28',
-  cancerType: 'Breast',
+  cancerType: { display: 'Breast' },
   travelDistance: '100',
   zipcode: '11111',
 };
