@@ -17,8 +17,8 @@
     "start": "node server.js",
     "test": "jest --watch",
     "test:ci": "jest",
-    "upload-test-patients": "tsc ./src/utils/uploadTestPatients.ts --target es5 --lib esnext && node ./src/utils/uploadTestPatients.js",
-    "upload-test-patients:dump": "tsc ./src/utils/uploadTestPatients.ts --target es5 --lib esnext && node ./src/utils/uploadTestPatients.js --dump"
+    "upload-test-patients": "ts-node ./src/utils/uploadTestPatients.ts",
+    "upload-test-patients:dump": "ts-node ./src/utils/uploadTestPatients.ts --dump"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",
@@ -73,6 +73,7 @@
     "prettier": "^2.4.0",
     "react-test-renderer": "^17.0.2",
     "ts-jest": "^27.0.5",
+    "ts-node": "^10.4.0",
     "typescript": "^4.4.2"
   },
   "browserslist": {

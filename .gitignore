@@ -18,7 +18,6 @@
 # misc
 .DS_Store
 /test_patient_dump
-/src/utils/uploadTestPatients.js
 
 # debug
 npm-debug.log*

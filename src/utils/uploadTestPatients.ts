@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import * as mkdirp from 'mkdirp';
+import * as https from 'https';
 import { Bundle, BundleEntry, FhirResource, OperationOutcome, Patient, Resource } from 'fhir/r4';
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
 
@@ -11,6 +12,12 @@ type Result = {
   'resource statuses': string;
   'diagnostic message'?: string;
 };
+
+const axiosInstance = axios.create({
+  httpsAgent: new https.Agent({
+    rejectUnauthorized: false,
+  }),
+});
 
 const convertToTransaction = (bundle: Bundle, baseURL: string): Bundle => {
   bundle.type = 'transaction';
@@ -55,7 +62,7 @@ const getResult = (
   const processingEntriesOrPatientUploadFailures = response.data && (response.data as OperationOutcome).issue;
 
   if (processingEntriesUploadSuccesses) {
-    /* Can't expect to see a mix of successes and failures since we're uploading transaction bundles, 
+    /* Can't expect to see a mix of successes and failures since we're uploading transaction bundles,
     which completely fail when even 1 entry fails to upload */
     const entries = (response.data as Bundle).entry;
     for (const entry of entries) {
@@ -130,20 +137,23 @@ const makeRequester = (
     const getPatientResult = (id: string, response: AxiosResponse<Patient>) => getResult(id, 'patient', response);
     const getEntriesResult = (response: AxiosResponse<Bundle>) => getResult(entries.id, 'entries', response);
 
-    /* In 2018, there was an issue with the SMART server bugging out when trying to PUT the entire input Bundle. 
+    /* In 2018, there was an issue with the SMART server bugging out when trying to PUT the entire input Bundle.
     If we PUT the Patient first and then POST the other entries, that seemed to result in less bugs. */
-    const request: Promise<Result[]> = axios(patientConfig).then(
+    const request: Promise<Result[]> = axiosInstance(patientConfig).then(
       async (success: AxiosResponse<Patient>) => {
         const patientSuccess = getPatientResult(`${bundle.id}_patient`, success);
 
-        const entriesResult: Result = await axios(entriesConfig).then(
+        const entriesResult: Result = await axiosInstance(entriesConfig).then(
           (success: AxiosResponse<Bundle>) => getEntriesResult(success),
           (error: AxiosError<Bundle>) => getEntriesResult(error.response)
         );
 
         return [patientSuccess, entriesResult];
       },
-      (error: AxiosError<Patient>) => [getPatientResult(patient.id, error.response)]
+      (error: AxiosError<Patient>) => {
+        console.error(error);
+        return [];
+      }
     );
 
     return request;
