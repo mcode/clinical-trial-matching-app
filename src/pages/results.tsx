@@ -13,8 +13,7 @@ import Sidebar from '@/components/Sidebar';
 import { Results, ResultsHeader } from '@/components/Results';
 import mockSearchResults from '@/__mocks__/results.json';
 import { clinicalTrialSearchQuery } from '@/queries';
-import { Patient, convertFhirPatient } from '@/utils/patient';
-import { User, convertFhirUser } from '@/utils/user';
+import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 
 type ResultsPageProps = {
   patient: Patient;

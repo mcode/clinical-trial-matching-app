@@ -5,7 +5,7 @@ import { FilterAlt as FilterIcon, Search as SearchIcon } from '@mui/icons-materi
 import SidebarAccordion from './SidebarAccordion';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
-import { Patient } from '@/utils/patient';
+import { Patient } from '@/utils/fhirConversionUtils';
 
 type SidebarProps = {
   patient: Patient;
