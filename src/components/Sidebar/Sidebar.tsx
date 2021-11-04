@@ -31,7 +31,7 @@ const Sidebar = ({ patient }: SidebarProps): ReactElement => {
     age: (query.age as string) || '',
     cancerType: (query.cancerType as string) || '',
     cancerSubtype: (query.cancerSubtype as string) || '',
-    metastasis: (query.metastasis as string) || '',
+    metastasis: ensureArray(query.metastasis),
     stage: (query.stage as string) || null,
     ecogScore: (query.ecogScore as string) || null,
     karnofskyScore: (query.karnofskyScore as string) || null,

@@ -15,7 +15,7 @@ import {
   convertFhirPatient,
   convertFhirPrimaryCancerCondition,
   convertFhirRadiationProcedures,
-  convertFhirSecondaryCancerCondition,
+  convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
   convertFhirUser,
@@ -28,7 +28,7 @@ type SearchPageProps = {
   patient: Patient;
   user: User;
   primaryCancerCondition: PrimaryCancerCondition;
-  metastasis: string;
+  metastasis: string[];
   ecogScore: string;
   karnofskyScore: string;
   biomarkers: string[];
@@ -56,7 +56,7 @@ const SearchPage = ({
     stage: primaryCancerCondition.stage,
     travelDistance: '100',
     zipcode: patient.zipcode || '',
-    metastasis: metastasis || '',
+    metastasis,
     ecogScore,
     karnofskyScore,
     biomarkers,
@@ -120,12 +120,18 @@ export const getServerSideProps: GetServerSideProps = async context => {
     getMedicationStatement('mcode-cancer-related-medication-statement'),
   ]);
 
+  // console.log('fhirTumorMarkers.entry', JSON.stringify(fhirTumorMarkers.entry));
+  // console.log('fhirRadiationProcedures.entry', JSON.stringify(fhirRadiationProcedures.entry));
+  // console.log('fhirSurgeryProcedures.entry', JSON.stringify(fhirSurgeryProcedures.entry));
+  // console.log('fhirSecondaryCancerCondition.entry', JSON.stringify(fhirSecondaryCancerCondition.entry));
+  // console.log('fhirPrimaryCancerCondition.entry', JSON.stringify(fhirPrimaryCancerCondition.entry));
+
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
       primaryCancerCondition: convertFhirPrimaryCancerCondition(fhirPrimaryCancerCondition),
-      metastasis: convertFhirSecondaryCancerCondition(fhirSecondaryCancerCondition),
+      metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
       ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
       karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
       biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
