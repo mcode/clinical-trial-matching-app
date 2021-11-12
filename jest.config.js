@@ -3,8 +3,9 @@
 module.exports = {
   collectCoverageFrom: ['src/**/*.{js,ts,tsx}', '!**/node_modules/**', '!.next/**', '!out/**'],
   moduleNameMapper: {
-    '@/(.*)': '<rootDir>/src/$1',
     '\\.css$': 'identity-obj-proxy',
+    '\\.svg$': '<rootDir>/src/__mocks__/svgrMock.js',
+    '@/(.*)': '<rootDir>/src/$1',
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'json', 'jsx'],
   transform: {

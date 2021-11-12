@@ -1,33 +1,29 @@
-import { Typography } from '@mui/material';
 import type { ReactElement } from 'react';
-import React from 'react';
-import ResultsAccordion from './ResultsAccordion';
-import { Bundle, BundleEntry } from 'fhir/r4';
+import { Bundle, BundleEntry, ResearchStudy } from 'fhir/r4';
+import { Typography } from '@mui/material';
 
-type ResultsProps = {
+import Study from './Study';
+
+export type ResultsProps = {
   data: Bundle;
 };
 
 const Results = ({ data }: ResultsProps): ReactElement => {
   const entries: BundleEntry[] = data.entry || [];
-  const studies: BundleEntry[] = entries.filter(
-    entry => entry.resource.resourceType && entry.resource.resourceType === 'ResearchStudy'
-  );
-
-  console.log('studies', studies);
-  const length = studies.length;
+  const studies = entries.filter(({ resource }) => resource?.resourceType === 'ResearchStudy');
 
   return (
     <>
-      <Typography fontWeight="normal" variant="h6" mb={2}>
-        {`We found `}
-        <Typography display="inline" fontWeight={600} variant="h6" component="span" color="common.blue">
-          {length}
+      <Typography fontWeight="normal" mb={2} variant="h6">
+        We found
+        <Typography color="common.blueDarker" component="span" fontWeight={700} variant="h6">
+          {` ${studies.length} `}
         </Typography>
-        {` matching trials...`}
+        matching trials...
       </Typography>
-      {studies.map((entry: BundleEntry, index: number) => (
-        <ResultsAccordion entry={entry} index={index} />
+
+      {studies.map((study: BundleEntry) => (
+        <Study key={study.resource.id} study={study.resource as ResearchStudy} />
       ))}
     </>
   );

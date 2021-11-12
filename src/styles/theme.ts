@@ -7,6 +7,7 @@ declare module '@mui/material/styles/createPalette' {
 
 const colors = {
   blue: '#64a3bf',
+  blueDarker: '#4887a4',
   blueLighter: '#84c9e8',
   gray: '#404952',
   grayLight: '#697481',
@@ -24,10 +25,20 @@ const theme = createTheme({
       sm: 480,
       md: 768,
       lg: 992,
-      xl: 1300,
+      xl: 1400,
     },
   },
   components: {
+    MuiAutocomplete: {
+      styleOverrides: {
+        root: {
+          '.MuiInputBase-adornedStart': {
+            paddingBottom: '5px',
+            paddingTop: '28px',
+          },
+        },
+      },
+    },
     MuiFilledInput: {
       styleOverrides: {
         root: {
