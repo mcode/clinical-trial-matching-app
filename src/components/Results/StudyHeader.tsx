@@ -110,7 +110,7 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
 
             <Stack alignItems="center" direction="row" spacing={1}>
               <LocationOnIcon fontSize="small" sx={{ color: isExpanded ? 'common.white' : 'common.gray' }} />
-              <Typography>{studyProps.distance}</Typography>
+              <Typography>{studyProps.closestFacility.distance}</Typography>
             </Stack>
 
             {studyProps.period && (

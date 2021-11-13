@@ -1,6 +1,14 @@
-import { BundleEntry, ContactDetail, Organization, ResearchStudy } from 'fhir/r4';
+import { BundleEntry, ContactDetail, Organization, ResearchStudy, DomainResource } from 'fhir/r4';
 import { format } from 'date-fns';
 import { ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyProps } from './types';
+import {
+  getZipcodeCoordinates,
+  getLocationsWithCoordinates,
+  getCoordinatesOfClosestLocation,
+  getDistanceBetweenPoints,
+  coordinatesAreEqual,
+} from '@/utils/distanceUtils';
+import { ParsedUrlQuery } from 'querystring';
 
 const getContact = (contact: ContactDetail): ContactProps => {
   return {
@@ -10,13 +18,15 @@ const getContact = (contact: ContactDetail): ContactProps => {
   };
 };
 
-const getClosestFacility = (): ContactProps => {
-  // TODO
+const getClosestFacility = (study: DomainResource, { zipcode }: ParsedUrlQuery): ContactProps => {
+  const origin = getZipcodeCoordinates(zipcode as string);
+  const locations = getLocationsWithCoordinates(study);
+  const closest = getCoordinatesOfClosestLocation(origin, locations);
+  const distance = getDistanceBetweenPoints(origin, closest);
+  const location = closest && locations.find(coordinatesAreEqual(closest));
   return {
-    name: 'ABC Cancer Institute',
-    phone: '999-999-9999',
-    email: 'abccancerinstitute@abci.com',
-    distance: '8.2 miles',
+    ...getContact(location),
+    distance: distance !== null ? `${distance} miles` : 'Unknown distance',
   };
 };
 
@@ -32,8 +42,6 @@ const getDetails = (study: ResearchStudy): StudyDetail[] => {
   ];
   return details.filter(({ body }) => (Array.isArray(body) ? body.length > 0 : body));
 };
-
-const getDistance = (): string => '82.1 miles'; // TODO
 
 const getKeywords = (study: ResearchStudy): string[] => study.keyword?.map(({ text }) => text.replace(/_/g, ' '));
 
@@ -96,12 +104,11 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-export const getStudyProps = (study: ResearchStudy): StudyProps => {
+export const getStudyProps = (study: ResearchStudy, query: ParsedUrlQuery): StudyProps => {
   return {
-    closestFacility: getClosestFacility(),
+    closestFacility: getClosestFacility(study, query),
     conditions: getConditions(study),
     details: getDetails(study),
-    distance: getDistance(),
     keywords: getKeywords(study),
     likelihood: getLikelihood(study),
     period: getPeriod(study),
