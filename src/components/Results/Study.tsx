@@ -18,6 +18,7 @@ import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
 import { getStudyProps } from './utils';
+import { useRouter } from 'next/router';
 
 type StudyProps = {
   study: ResearchStudy;
@@ -25,7 +26,8 @@ type StudyProps = {
 
 const Study = ({ study }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const studyProps = getStudyProps(study);
+  const { query } = useRouter();
+  const studyProps = getStudyProps(study, query);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
 

@@ -33,12 +33,14 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "fhirclient": "^2.4.0",
+    "geolib": "^3.3.3",
     "mkdirp": "^1.0.4",
     "next": "11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.15.2",
-    "react-query": "^3.23.2"
+    "react-query": "^3.23.2",
+    "us-zips": "^2021.11.4"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",

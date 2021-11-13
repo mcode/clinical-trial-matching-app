@@ -7,7 +7,6 @@ export type StudyProps = {
   closestFacility: ContactProps;
   conditions: string[];
   details: StudyDetail[];
-  distance: string;
   keywords: string[];
   likelihood: LikelihoodProps;
   period: string;
