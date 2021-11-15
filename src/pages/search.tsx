@@ -120,12 +120,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
     getMedicationStatement('mcode-cancer-related-medication-statement'),
   ]);
 
-  // console.log('fhirTumorMarkers.entry', JSON.stringify(fhirTumorMarkers.entry));
-  // console.log('fhirRadiationProcedures.entry', JSON.stringify(fhirRadiationProcedures.entry));
-  // console.log('fhirSurgeryProcedures.entry', JSON.stringify(fhirSurgeryProcedures.entry));
-  // console.log('fhirSecondaryCancerCondition.entry', JSON.stringify(fhirSecondaryCancerCondition.entry));
-  // console.log('fhirPrimaryCancerCondition.entry', JSON.stringify(fhirPrimaryCancerCondition.entry));
-
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
