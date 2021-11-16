@@ -17,6 +17,7 @@
 
 # misc
 .DS_Store
+/test_patient_dump
 
 # debug
 npm-debug.log*
