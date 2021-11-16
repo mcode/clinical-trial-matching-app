@@ -8,20 +8,61 @@ import { fhirclient } from 'fhirclient/lib/types';
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
-import { Patient, convertFhirPatient } from '@/utils/patient';
-import { User, convertFhirUser } from '@/utils/user';
+import {
+  convertFhirEcogPerformanceStatus,
+  convertFhirKarnofskyPerformanceStatus,
+  convertFhirMedicationStatements,
+  convertFhirPatient,
+  convertFhirPrimaryCancerCondition,
+  convertFhirRadiationProcedures,
+  convertFhirSecondaryCancerConditions,
+  convertFhirSurgeryProcedures,
+  convertFhirTumorMarkers,
+  convertFhirUser,
+  Patient,
+  PrimaryCancerCondition,
+  User,
+} from '@/utils/fhirConversionUtils';
 
 type SearchPageProps = {
   patient: Patient;
   user: User;
+  primaryCancerCondition: PrimaryCancerCondition;
+  metastasis: string[];
+  ecogScore: string;
+  karnofskyScore: string;
+  biomarkers: string[];
+  radiation: string[];
+  surgery: string[];
+  medications: string[];
 };
 
-const SearchPage = ({ patient, user }: SearchPageProps): ReactElement => {
+const SearchPage = ({
+  patient,
+  user,
+  primaryCancerCondition,
+  metastasis,
+  ecogScore,
+  karnofskyScore,
+  biomarkers,
+  radiation,
+  surgery,
+  medications,
+}: SearchPageProps): ReactElement => {
   const defaultValues = {
     age: patient.age || '',
-    cancerType: patient.cancerType || '',
+    cancerType: primaryCancerCondition.cancerType || '',
+    cancerSubtype: primaryCancerCondition.cancerSubtype || '',
+    stage: primaryCancerCondition.stage,
     travelDistance: '100',
     zipcode: patient.zipcode || '',
+    metastasis,
+    ecogScore,
+    karnofskyScore,
+    biomarkers,
+    radiation,
+    surgery,
+    medications,
   };
 
   return (
@@ -49,22 +90,59 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
   }
 
-  const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
-  const [fhirPatient, fhirUser, fhirCancerConditions] = await Promise.all([
+  const getResource = bundleMaker(fhirClient);
+  const getCondition = getResource('Condition');
+  const getObservation = getResource('Observation');
+  const getProcedure = getResource('Procedure');
+  const getMedicationStatement = getResource('MedicationStatement');
+
+  const [
+    fhirPatient,
+    fhirUser,
+    fhirPrimaryCancerCondition,
+    fhirSecondaryCancerCondition,
+    fhirEcogPerformanceStatus,
+    fhirKarnofskyPerformanceStatus,
+    fhirTumorMarkers,
+    fhirRadiationProcedures,
+    fhirSurgeryProcedures,
+    fhirMedicationStatements,
+  ] = await Promise.all([
     fhirClient.patient.read(),
     fhirClient.user.read(),
-    fhirClient.request<fhirclient.FHIR.Bundle>(
-      `Condition?patient=${urlPatientId}&_profile=${encodeURIComponent(
-        'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition'
-      )}`
-    ),
+    getCondition('mcode-primary-cancer-condition'),
+    getCondition('mcode-secondary-cancer-condition'),
+    getObservation('mcode-ecog-performance-status'),
+    getObservation('mcode-karnofsky-performance-status'),
+    getObservation('mcode-tumor-marker'),
+    getProcedure('mcode-cancer-related-radiation-procedure'),
+    getProcedure('mcode-cancer-related-surgical-procedure'),
+    getMedicationStatement('mcode-cancer-related-medication-statement'),
   ]);
 
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
-      fhirCancerConditions,
+      primaryCancerCondition: convertFhirPrimaryCancerCondition(fhirPrimaryCancerCondition),
+      metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
+      ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
+      karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
+      biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
+      radiation: convertFhirRadiationProcedures(fhirRadiationProcedures),
+      surgery: convertFhirSurgeryProcedures(fhirSurgeryProcedures),
+      medications: convertFhirMedicationStatements(fhirMedicationStatements),
     },
   };
+};
+
+const bundleMaker = (fhirClient: Client) => {
+  const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
+  return (resourceType: string) =>
+    (url: string): Promise<fhirclient.FHIR.Bundle> =>
+      fhirClient.request<fhirclient.FHIR.Bundle>(
+        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(
+          `http://hl7.org/fhir/us/mcode/StructureDefinition/${url}`
+        )}`
+      );
 };
