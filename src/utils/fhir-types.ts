@@ -1,4 +1,3 @@
-
 /**
  * Any combination of upper or lower case ASCII letters ('A'..'Z', and
  * 'a'..'z', numerals ('0'..'9'), '-' and '.', with a length limit of 64
@@ -36,7 +35,7 @@ export type code = string;
  * - `YYYY-MM-DDTHH:mm:ss.SSSZ`
  * - `YYYY-MM-DDTHH:mm:ssZ`
  */
-export type instant = string;  // "2018-04-30T13:31:44.140-04:00"
+export type instant = string; // "2018-04-30T13:31:44.140-04:00"
 
 /**
  * A date, date-time or partial date (e.g. just year or year + month) as
@@ -66,221 +65,253 @@ export type dateTime = string;
  */
 export type unsignedInt = number;
 
-export type valueX = "valueInteger" | "valueUnsignedInt" | "valuePositiveInt" |
-    "valueDecimal"|"valueDateTime"|"valueDate"|"valueTime"|"valueInstant"|
-    "valueString"|"valueUri"|"valueOid"|"valueUuid"|"valueId"|
-    "valueBoolean"|"valueCode"|"valueMarkdown"|"valueBase64Binary"|
-    "valueCoding"|"valueCodeableConcept"|"valueAttachment"|
-    "valueIdentifier"|"valueQuantity"|"valueSampledData"|"valueRange"|
-    "valuePeriod"|"valueRatio"|"valueHumanName"|"valueAddress"|
-    "valueContactPoint"|"valueTiming"|"valueReference"|"valueAnnotation"|
-    "valueSignature"|"valueMeta";
+export type valueX =
+  | 'valueInteger'
+  | 'valueUnsignedInt'
+  | 'valuePositiveInt'
+  | 'valueDecimal'
+  | 'valueDateTime'
+  | 'valueDate'
+  | 'valueTime'
+  | 'valueInstant'
+  | 'valueString'
+  | 'valueUri'
+  | 'valueOid'
+  | 'valueUuid'
+  | 'valueId'
+  | 'valueBoolean'
+  | 'valueCode'
+  | 'valueMarkdown'
+  | 'valueBase64Binary'
+  | 'valueCoding'
+  | 'valueCodeableConcept'
+  | 'valueAttachment'
+  | 'valueIdentifier'
+  | 'valueQuantity'
+  | 'valueSampledData'
+  | 'valueRange'
+  | 'valuePeriod'
+  | 'valueRatio'
+  | 'valueHumanName'
+  | 'valueAddress'
+  | 'valueContactPoint'
+  | 'valueTiming'
+  | 'valueReference'
+  | 'valueAnnotation'
+  | 'valueSignature'
+  | 'valueMeta';
 
 export interface Element {
-    id?: id;
-    extension?: Array<Extension<valueX>>;
+  id?: id;
+  extension?: Array<Extension<valueX>>;
 }
 
-export interface Extension<T = "valueX"> extends Element {
-    /**
-     * identifies the meaning of the extension
-     */
-    url: uri;
+export interface Extension<T = 'valueX'> extends Element {
+  /**
+   * identifies the meaning of the extension
+   */
+  url: uri;
 
-    [T: string]: any;
+  [T: string]: any;
 }
 
 export interface CapabilityStatement {
-    resourceType: string;
-    fhirVersion: string;
-    rest: Array<{
-        security?: {
-            cors?: boolean;
-            extension?: Array<{
-                url: string;
-                extension: Array<Extension<"valueUri">>
-            }>
-        };
-        resource: Array<{
-            type: string
-        }>
+  resourceType: string;
+  fhirVersion: string;
+  rest: Array<{
+    security?: {
+      cors?: boolean;
+      extension?: Array<{
+        url: string;
+        extension: Array<Extension<'valueUri'>>;
+      }>;
+    };
+    resource: Array<{
+      type: string;
     }>;
+  }>;
 }
 
 export interface Resource extends Record<string, any> {
-    /**
-     * Logical id of this artifact
-     */
-    id ?: id;
+  /**
+   * Logical id of this artifact
+   */
+  id?: id;
 
-    resourceType?: string;
+  resourceType?: string;
 
-    /**
-     * Metadata about the resource
-     */
-    meta ?: Meta;
+  /**
+   * Metadata about the resource
+   */
+  meta?: Meta;
 
-    /**
-     * A set of rules under which this content was created
-     */
-    implicitRules ?: uri;
+  /**
+   * A set of rules under which this content was created
+   */
+  implicitRules?: uri;
 
-    /**
-     * Language of the resource content
-     */
-    language ?: code;
+  /**
+   * Language of the resource content
+   */
+  language?: code;
 }
 
 export interface Meta extends Element {
-
-    /**
-     * When the resource version last changed
-     */
-    lastUpdated: instant;
+  /**
+   * When the resource version last changed
+   */
+  lastUpdated: instant;
 }
 
 export interface Observation extends Resource {
-    resourceType: "Observation";
+  resourceType: 'Observation';
 }
 
 export interface Patient extends Resource {
-    resourceType: "Patient";
+  resourceType: 'Patient';
 }
 
 export interface Practitioner extends Resource {
-    resourceType: "Practitioner";
+  resourceType: 'Practitioner';
 }
 
 export interface RelatedPerson extends Resource {
-    resourceType: "RelatedPerson";
+  resourceType: 'RelatedPerson';
 }
 
 export interface Encounter extends Resource {
-    resourceType: "Encounter";
+  resourceType: 'Encounter';
 }
 
 export interface Period extends Element {
-    /**
-     * Starting time with inclusive boundary
-     */
-    start ?: dateTime;
+  /**
+   * Starting time with inclusive boundary
+   */
+  start?: dateTime;
 
-    /**
-     * End time with inclusive boundary, if not ongoing
-     */
-    end ?: dateTime;
+  /**
+   * End time with inclusive boundary, if not ongoing
+   */
+  end?: dateTime;
 }
 
 export interface BackboneElement extends Element {
-    modifierExtension ?: Extension[];
+  modifierExtension?: Extension[];
 }
 
 export interface CodeableConcept extends Element {
-    /**
-     * Code defined by a terminology system
-     */
-    coding?: Coding[];
+  /**
+   * Code defined by a terminology system
+   */
+  coding?: Coding[];
 
-    /**
-     * Plain text representation of the concept
-     */
-    text?: string;
+  /**
+   * Plain text representation of the concept
+   */
+  text?: string;
 }
 
 export interface Coding extends Element {
-    /**
-     * Identity of the terminology system
-     */
-    system ?: uri;
+  /**
+   * Identity of the terminology system
+   */
+  system?: uri;
 
-    /**
-     * Version of the system - if relevant
-     */
-    version ?: string;
+  /**
+   * Version of the system - if relevant
+   */
+  version?: string;
 
-    /**
-     * Symbol in syntax defined by the system
-     */
-    code ?: code;
+  /**
+   * Symbol in syntax defined by the system
+   */
+  code?: code;
 
-    /**
-     * Representation defined by the system
-     */
-    display ?: string;
+  /**
+   * Representation defined by the system
+   */
+  display?: string;
 
-    /**
-     * If this coding was chosen directly by the user
-     */
-    userSelected ?: boolean;
+  /**
+   * If this coding was chosen directly by the user
+   */
+  userSelected?: boolean;
 }
 
 export interface Identifier extends Element {
-    use ?: "usual" | "official" | "temp" | "secondary";
-    /**
-     * Description of identifier
-     */
-    type ?: CodeableConcept;
+  use?: 'usual' | 'official' | 'temp' | 'secondary';
+  /**
+   * Description of identifier
+   */
+  type?: CodeableConcept;
 
-    /**
-     * The namespace for the identifier value
-     */
-    system ?: uri;
+  /**
+   * The namespace for the identifier value
+   */
+  system?: uri;
 
-    /**
-     * The value that is unique
-     */
-    value ?: string;
+  /**
+   * The value that is unique
+   */
+  value?: string;
 
-    /**
-     * Time period when id is/was valid for use
-     */
-    period ?: Period;
+  /**
+   * Time period when id is/was valid for use
+   */
+  period?: Period;
 
-    /**
-     * Organization that issued id (may be just text)
-     */
-    assigner ?: Reference;
+  /**
+   * Organization that issued id (may be just text)
+   */
+  assigner?: Reference;
 }
 
 export interface Reference extends Element {
+  /**
+   * Literal reference, Relative, internal or absolute URL
+   */
+  reference?: string;
 
-    /**
-     * Literal reference, Relative, internal or absolute URL
-     */
-    reference ?: string;
+  /**
+   * Logical reference, when literal reference is not known
+   */
+  identifier?: Identifier;
 
-    /**
-     * Logical reference, when literal reference is not known
-     */
-    identifier ?: Identifier;
-
-    /**
-     * Text alternative for the resource
-     */
-    display ?: string;
+  /**
+   * Text alternative for the resource
+   */
+  display?: string;
 }
 
 export interface BundleLink extends BackboneElement {
-    relation: string;
-    url: uri;
+  relation: string;
+  url: uri;
 }
 
 export interface BundleEntry extends BackboneElement {
-    fullUrl?: string; // This is optional on POSTs
-    resource: Resource;
+  fullUrl?: string; // This is optional on POSTs
+  resource: Resource;
 }
 
 export interface Bundle extends Resource {
-    /**
-     * Persistent identifier for the bundle
-     */
-    identifier ?: Identifier;
+  /**
+   * Persistent identifier for the bundle
+   */
+  identifier?: Identifier;
 
-    type: "document" | "message" | "transaction" | "transaction-response"
-        | "batch" | "batch-response" | "history" | "searchset" | "collection";
+  type:
+    | 'document'
+    | 'message'
+    | 'transaction'
+    | 'transaction-response'
+    | 'batch'
+    | 'batch-response'
+    | 'history'
+    | 'searchset'
+    | 'collection';
 
-    total ?: unsignedInt;
+  total?: unsignedInt;
 
-    link?: BundleLink[];
-    entry?: BundleEntry[];
+  link?: BundleLink[];
+  entry?: BundleEntry[];
 }

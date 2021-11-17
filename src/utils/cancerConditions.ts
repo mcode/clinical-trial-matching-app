@@ -49,6 +49,6 @@ export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle
     cancerType: getCancerType(resource),
     cancerSubtype: getCancerSubtype(resource),
     stage: getStage(resource),
-    resource
+    resource,
   };
 };

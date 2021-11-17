@@ -9,4 +9,4 @@ export type SearchParameters = {
   stage: string;
   ecogScore: string;
   karnofskyScore: string;
-}
+};

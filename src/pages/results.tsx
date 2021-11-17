@@ -19,7 +19,7 @@ import { SearchParameters } from '@/utils/search_types';
 type ResultsPageProps = {
   patient: Patient;
   user: User;
-  search_params: SearchParameters
+  search_params: SearchParameters;
 };
 
 const openTransition = (theme: Theme) =>
@@ -54,7 +54,11 @@ const MainContent = styled(Paper)`
 
 const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
-  const { data } = useQuery(['clinical-trials', search_params, patient], () => clinicalTrialSearchQuery(patient, user, search_params), { refetchOnMount: false });
+  const { data } = useQuery(
+    ['clinical-trials', search_params, patient],
+    () => clinicalTrialSearchQuery(patient, user, search_params),
+    { refetchOnMount: false }
+  );
 
   const toggleDrawer = () => setOpen(currentlyOpen => !currentlyOpen);
 
@@ -115,8 +119,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
 
-
-
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
@@ -126,5 +128,3 @@ export const getServerSideProps: GetServerSideProps = async context => {
     },
   };
 };
-
-
