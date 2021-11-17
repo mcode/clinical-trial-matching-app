@@ -54,7 +54,7 @@ const MainContent = styled(Paper)`
 
 const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
-  const { data } = useQuery(['clinical-trials'], () => clinicalTrialSearchQuery(patient, user, search_params), { refetchOnMount: false });
+  const { data } = useQuery(['clinical-trials', search_params, patient], () => clinicalTrialSearchQuery(patient, user, search_params), { refetchOnMount: false });
 
   const toggleDrawer = () => setOpen(currentlyOpen => !currentlyOpen);
 
@@ -114,12 +114,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
-  // await queryClient.prefetchQuery(['clinical-trials'], () => mockSearchResults);
-    // queryClient.prefetchQuery(["hello"], () =>
-    //     "clinical-trials-search"
-    // );
 
-    console.log("Query", query);
+
 
   return {
     props: {
@@ -130,3 +126,5 @@ export const getServerSideProps: GetServerSideProps = async context => {
     },
   };
 };
+
+

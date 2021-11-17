@@ -1,5 +1,3 @@
-
-
 export type SearchParameters = {
   matchingServices: string[];
   zipcode: string;
