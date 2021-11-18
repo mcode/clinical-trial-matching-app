@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import { AccordionSummary, Box, Chip, IconButton, Stack, SvgIcon, Typography } from '@mui/material';
+import { AccordionActions, AccordionSummary, Box, Chip, IconButton, Stack, SvgIcon, Typography } from '@mui/material';
 import {
   Event as EventIcon,
   ExpandMore as ExpandMoreIcon,
@@ -23,7 +23,9 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
     <AccordionSummary
       aria-controls={`results-content-${studyId}`}
       expandIcon={
-        <ExpandMoreIcon fontSize="large" sx={{ color: isExpanded ? 'common.white' : 'common.gray', mx: 2 }} />
+        <IconButton aria-label="expand collapse">
+          <ExpandMoreIcon fontSize="large" sx={{ color: isExpanded ? 'common.white' : 'common.gray', mx: 0 }} />
+        </IconButton>
       }
       id={`results-header-${studyId}`}
       sx={{
@@ -33,17 +35,17 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
         '& .MuiAccordionSummary-content': { m: 0 },
       }}
     >
-      <Stack alignItems="center" direction="row" flexGrow={1} spacing={4}>
+      <Stack direction={{ xs: 'column', lg: 'row' }} flexGrow={1} spacing={{ xs: 0, lg: 4 }}>
         <Box
           alignItems="center"
           bgcolor={studyProps.status.color}
-          display="flex"
+          display={{ xs: 'block', lg: 'flex' }}
           height="100%"
           justifyContent="center"
-          minHeight="100px"
+          minHeight={{ lg: '100px' }}
           minWidth="110px"
           p={1}
-          width="110px"
+          width={{ xs: 'fit-content', lg: '110px' }}
         >
           <Typography color="common.white" fontWeight="600" sx={{ textTransform: 'uppercase' }} textAlign="center">
             {studyProps.status.text}
@@ -55,7 +57,7 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
           direction={{ xs: 'column', xl: 'row' }}
           flexGrow={1}
           height="100%"
-          py={2}
+          p={2}
           spacing={{ xs: 0, xl: 4 }}
         >
           <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} flexGrow={1}>
@@ -105,11 +107,13 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
             )}
           </Stack>
         </Stack>
-
-        <IconButton aria-label="save study">
-          <SaveIcon fontSize="medium" sx={{ color: 'common.blue' }} />
-        </IconButton>
       </Stack>
+
+      <AccordionActions>
+        <IconButton aria-label="save study">
+          <SaveIcon fontSize="medium" sx={{ color: 'common.blue', p: 0 }} />
+        </IconButton>
+      </AccordionActions>
     </AccordionSummary>
   );
 };
