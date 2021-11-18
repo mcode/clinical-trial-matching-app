@@ -61,11 +61,22 @@ export const CancerSubtypeTextField = ({
   <TextField data-testid="cancerSubtype" fullWidth label="Cancer Subtype" variant="filled" {...field} />
 );
 
-export const MetastasisTextField = ({
+export const MetastasisAutocomplete = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
-}): ReactElement => <TextField data-testid="metastasis" fullWidth label="Metastasis" variant="filled" {...field} />;
+}): ReactElement => (
+  <Autocomplete
+    {...field}
+    data-testid="metastasis"
+    multiple
+    onChange={(_event, value) => field.onChange(value)}
+    options={['metastasis-1', 'metastasis-2', 'metastasis-3']}
+    renderInput={params => (
+      <TextField variant="filled" label="Metastasis" placeholder="Add metastasis..." {...params} />
+    )}
+  />
+);
 
 export const CancerStageAutocomplete = ({
   field,
@@ -76,7 +87,7 @@ export const CancerStageAutocomplete = ({
     {...field}
     data-testid="stage"
     onChange={(_event, value) => field.onChange(value)}
-    options={['0', 'I', 'II', 'III', 'IV']}
+    options={['0', 'I', 'II', 'IIA', 'III', 'IV']}
     renderInput={params => <TextField variant="filled" label="Stage" placeholder="" {...params} />}
   />
 );

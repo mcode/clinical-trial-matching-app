@@ -14,7 +14,7 @@ import {
   ECOGScoreAutocomplete,
   KarnofskyScoreAutocomplete,
   MedicationsAutocomplete,
-  MetastasisTextField,
+  MetastasisAutocomplete,
   RadiationAutocomplete,
   SurgeryAutocomplete,
   TravelDistanceTextField,
@@ -84,7 +84,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
             <MatchingServices control={control} fullWidth={fullWidth} />
           </Grid>
 
-          <Grid item xs={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="zipcode"
               defaultValue=""
@@ -94,7 +94,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
             />
           </Grid>
 
-          <Grid item xs={4} lg={fullWidth ? 4 : 2} xl={fullWidth ? 4 : 1}>
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller name="travelDistance" defaultValue="" control={control} render={TravelDistanceTextField} />
           </Grid>
 
@@ -117,10 +117,6 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
-            <Controller name="metastasis" defaultValue="" control={control} render={MetastasisTextField} />
-          </Grid>
-
-          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller name="stage" defaultValue={null} control={control} render={CancerStageAutocomplete} />
           </Grid>
 
@@ -135,6 +131,10 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
               control={control}
               render={KarnofskyScoreAutocomplete}
             />
+          </Grid>
+
+          <Grid item xs={8}>
+            <Controller name="metastasis" defaultValue={[]} control={control} render={MetastasisAutocomplete} />
           </Grid>
 
           <Grid item xs={8}>

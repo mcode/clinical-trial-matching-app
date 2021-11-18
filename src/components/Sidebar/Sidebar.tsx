@@ -5,7 +5,7 @@ import { FilterAlt as FilterIcon, Search as SearchIcon } from '@mui/icons-materi
 import SidebarAccordion from './SidebarAccordion';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
-import { Patient } from '@/utils/patient';
+import { Patient } from '@/utils/fhirConversionUtils';
 
 type SidebarProps = {
   patient: Patient;
@@ -31,7 +31,7 @@ const Sidebar = ({ patient }: SidebarProps): ReactElement => {
     age: (query.age as string) || '',
     cancerType: { display: (query.cancerType as string) || '' },
     cancerSubtype: (query.cancerSubtype as string) || '',
-    metastasis: (query.metastasis as string) || '',
+    metastasis: ensureArray(query.metastasis),
     stage: (query.stage as string) || null,
     ecogScore: (query.ecogScore as string) || null,
     karnofskyScore: (query.karnofskyScore as string) || null,

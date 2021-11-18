@@ -8,25 +8,27 @@ import { fhirclient } from 'fhirclient/lib/types';
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
-import { Patient, convertFhirPatient } from '@/utils/patient';
-import { User, convertFhirUser } from '@/utils/user';
 import {
-  PrimaryCancerCondition,
+  convertFhirEcogPerformanceStatus,
+  convertFhirKarnofskyPerformanceStatus,
+  convertFhirMedicationStatements,
+  convertFhirPatient,
   convertFhirPrimaryCancerCondition,
-  convertFhirSecondaryCancerCondition,
-} from '@/utils/cancerConditions';
-import { convertFhirEcogPerformanceStatus } from '@/utils/ecogScore';
-import { convertFhirKarnofskyPerformanceStatus } from '@/utils/karnofskyScore';
-import { convertFhirTumorMarkers } from '@/utils/biomarkers';
-import { convertFhirRadiationProcedures } from '@/utils/radiation';
-import { convertFhirSurgeryProcedures } from '@/utils/surgery';
-import { convertFhirMedicationStatements } from '@/utils/medications';
+  convertFhirRadiationProcedures,
+  convertFhirSecondaryCancerConditions,
+  convertFhirSurgeryProcedures,
+  convertFhirTumorMarkers,
+  convertFhirUser,
+  Patient,
+  PrimaryCancerCondition,
+  User,
+} from '@/utils/fhirConversionUtils';
 
 type SearchPageProps = {
   patient: Patient;
   user: User;
   primaryCancerCondition: PrimaryCancerCondition;
-  metastasis: string;
+  metastasis: string[];
   ecogScore: string;
   karnofskyScore: string;
   biomarkers: string[];
@@ -54,9 +56,9 @@ const SearchPage = ({
     stage: primaryCancerCondition.stage,
     travelDistance: '100',
     zipcode: patient.zipcode || '',
-    metastasis: metastasis || '',
-    ecogScore: ecogScore,
-    karnofskyScore: karnofskyScore,
+    metastasis,
+    ecogScore,
+    karnofskyScore,
     biomarkers,
     radiation,
     surgery,
@@ -123,7 +125,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
       primaryCancerCondition: convertFhirPrimaryCancerCondition(fhirPrimaryCancerCondition),
-      metastasis: convertFhirSecondaryCancerCondition(fhirSecondaryCancerCondition),
+      metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
       ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
       karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
       biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
@@ -139,13 +141,11 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
 const bundleMaker = (fhirClient: Client) => {
   const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
-  return (resourceType: string) => {
-    return (url: string): Promise<fhirclient.FHIR.Bundle> => {
-      return fhirClient.request<fhirclient.FHIR.Bundle>(
+  return (resourceType: string) =>
+    (url: string): Promise<fhirclient.FHIR.Bundle> =>
+      fhirClient.request<fhirclient.FHIR.Bundle>(
         `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(
-          `http://hl7.org/fhir/us/mcode/StructureDefinition/` + url
+          `http://hl7.org/fhir/us/mcode/StructureDefinition/${url}`
         )}`
       );
-    };
-  };
 };

@@ -11,7 +11,7 @@ export type SearchFormValuesType = {
   age: string;
   cancerType: CancerCode;
   cancerSubtype: string;
-  metastasis: string;
+  metastasis: string[];
   stage: string;
   ecogScore: string;
   karnofskyScore: string;
