@@ -37,7 +37,7 @@ const Study = ({ study }: StudyProps): ReactElement => {
           p: 0,
         }}
       >
-        <Stack direction={{ xs: 'column', lg: 'row' }}>
+        <Stack direction={{ xs: 'column', xl: 'row' }}>
           <Stack flexGrow={1} p={2} sx={{ backgroundColor: 'common.white', maxHeight: '500px', overflowY: 'scroll' }}>
             <TableContainer>
               <Table>

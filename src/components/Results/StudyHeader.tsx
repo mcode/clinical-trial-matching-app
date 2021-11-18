@@ -58,7 +58,7 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
           py={2}
           spacing={{ xs: 0, xl: 4 }}
         >
-          <Stack flexGrow={1}>
+          <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} flexGrow={1}>
             <Typography fontWeight="normal" lineHeight={1.2} mb={0.5} variant="h6">
               {studyProps.title}
             </Typography>
