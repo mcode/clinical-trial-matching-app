@@ -18,7 +18,6 @@ const SidebarAccordion = ({ children, defaultExpanded, icon, title }: SidebarAcc
       sx={{
         backgroundColor: 'common.gray',
         color: 'common.white',
-        height: '80px',
         mt: '1px',
       }}
     >

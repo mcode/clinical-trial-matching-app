@@ -1,5 +1,17 @@
 import type { ReactElement } from 'react';
-import { AccordionActions, AccordionSummary, Box, Chip, IconButton, Stack, SvgIcon, Typography } from '@mui/material';
+import {
+  AccordionActions,
+  AccordionSummary,
+  Box,
+  Chip,
+  IconButton,
+  Stack,
+  SvgIcon,
+  Typography,
+  useMediaQuery,
+  useTheme,
+  Button,
+} from '@mui/material';
 import {
   Event as EventIcon,
   ExpandMore as ExpandMoreIcon,
@@ -18,6 +30,8 @@ type StudyHeaderProps = {
 
 const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): ReactElement => {
   const studyTags = [...studyProps.conditions, studyProps.phase, studyProps.type];
+  const theme = useTheme();
+  const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <AccordionSummary
@@ -32,7 +46,7 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
         backgroundColor: isExpanded ? 'common.gray' : 'common.grayLighter',
         color: isExpanded ? 'common.white' : 'common.gray',
         p: 0,
-        '& .MuiAccordionSummary-content': { m: 0 },
+        '& .MuiAccordionSummary-content': { m: 0, flexDirection: { xs: 'column', sm: 'row' } },
       }}
     >
       <Stack direction={{ xs: 'column', lg: 'row' }} flexGrow={1} spacing={{ xs: 0, lg: 4 }}>
@@ -109,10 +123,25 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
         </Stack>
       </Stack>
 
-      <AccordionActions>
-        <IconButton aria-label="save study">
-          <SaveIcon fontSize="medium" sx={{ color: 'common.blue', p: 0 }} />
-        </IconButton>
+      <AccordionActions style={{ padding: ' 0 16px' }}>
+        {isExtraSmallScreen ? (
+          <Button
+            startIcon={<SaveIcon />}
+            sx={{
+              fontSize: '1.1em',
+              fontWeight: '600',
+              minWidth: '200px',
+              width: '100%',
+            }}
+            variant="contained"
+          >
+            Save study
+          </Button>
+        ) : (
+          <IconButton aria-label="save study">
+            <SaveIcon fontSize="medium" sx={{ color: 'common.blue', p: 0 }} />
+          </IconButton>
+        )}
       </AccordionActions>
     </AccordionSummary>
   );

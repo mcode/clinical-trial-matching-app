@@ -5,7 +5,7 @@ import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
-import { Drawer, Paper, Stack, Theme } from '@mui/material';
+import { Drawer, Paper, Stack, Theme, useTheme, useMediaQuery } from '@mui/material';
 import styled from '@emotion/styled';
 
 import Header from '@/components/Header';
@@ -32,18 +32,23 @@ const leaveTransition = (theme: Theme) =>
     duration: theme.transitions.duration.leavingScreen,
   });
 
-const drawerWidth = 400;
+const getDrawerWidth = (shrink: boolean) => {
+  return shrink ? 250 : 400;
+};
 
-const SlidingStack = styled(Stack, { shouldForwardProp: prop => prop !== 'open' })<{
+type SlidingStackProps = {
   theme?: Theme;
   open: boolean;
-}>`
-  ${({ theme, open }) => `
+  shrink: boolean;
+};
+
+const SlidingStack = styled(Stack, { shouldForwardProp: prop => prop !== 'open' })<SlidingStackProps>`
+  ${({ theme, open, shrink }: SlidingStackProps) => `
     transition: ${leaveTransition(theme)};
     margin-left: 0;
 
     ${theme.breakpoints.up('lg')} {
-      margin-left: -${drawerWidth}px;
+      margin-left: -${getDrawerWidth(shrink)}px;
 
       ${open ? `transition: ${openTransition(theme)}; margin-left: 0;` : ''};
     }
@@ -60,9 +65,11 @@ const ResultsPage = ({ patient, user }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
   const [mobileOpen, setMobileOpen] = useState(false);
   const { data } = useQuery(['clinical-trials'], () => clinicalTrialSearchQuery(), { refetchOnMount: false });
-
+  const theme = useTheme();
   const toggleDrawer = () => setOpen(!open);
   const toggleMobileDrawer = () => setMobileOpen(!mobileOpen);
+  const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const drawerWidth = getDrawerWidth(isExtraSmallScreen);
 
   return (
     <>
@@ -108,7 +115,13 @@ const ResultsPage = ({ patient, user }: ResultsPageProps): ReactElement => {
             <Sidebar patient={patient} />
           </Drawer>
 
-          <SlidingStack alignItems="stretch" flexGrow={1} open={open} sx={{ overflowY: 'auto' }}>
+          <SlidingStack
+            alignItems="stretch"
+            flexGrow={1}
+            open={open}
+            shrink={isExtraSmallScreen}
+            sx={{ overflowY: 'auto' }}
+          >
             <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} toggleMobileDrawer={toggleMobileDrawer} />
 
             <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>

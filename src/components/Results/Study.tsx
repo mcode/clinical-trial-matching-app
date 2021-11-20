@@ -9,6 +9,8 @@ import {
   TableCell,
   TableContainer,
   TableRow,
+  useMediaQuery,
+  useTheme,
 } from '@mui/material';
 import { Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 
@@ -24,9 +26,17 @@ type StudyProps = {
 const Study = ({ study }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
   const studyProps = getStudyProps(study);
+  const theme = useTheme();
+  const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
 
   return (
-    <Accordion sx={{ marginBottom: 2 }} onChange={(_event, expanded) => setIsExpanded(expanded)}>
+    <Accordion
+      sx={{
+        marginBottom: 2,
+        '& .MuiAccordionSummary-root': { flexDirection: { xs: 'column', sm: 'row' } },
+      }}
+      onChange={(_event, expanded) => setIsExpanded(expanded)}
+    >
       <StudyHeader isExpanded={isExpanded} studyId={study.id} studyProps={studyProps} />
 
       <AccordionDetails
@@ -37,21 +47,39 @@ const Study = ({ study }: StudyProps): ReactElement => {
           p: 0,
         }}
       >
-        <Stack direction={{ xs: 'column', xl: 'row' }}>
+        <Stack direction={{ xs: 'column', lg: 'row' }}>
           <Stack flexGrow={1} p={2} sx={{ backgroundColor: 'common.white', maxHeight: '500px', overflowY: 'scroll' }}>
             <TableContainer>
-              <Table>
+              <Table size={isExtraLargeScreen ? 'medium' : 'small'} stickyHeader={!isExtraLargeScreen}>
                 <TableBody>
                   {studyProps.details.map(({ header, body }, index) => (
-                    <TableRow key={index}>
+                    <TableRow
+                      key={index}
+                      sx={{
+                        display: { xs: 'flex', xl: 'table-row' },
+                        flexDirection: { xs: 'column', xl: 'row' },
+                        '&:last-child td, &:last-child th': { xl: { border: 0 } },
+                        '& td': {
+                          xs: { border: 0 },
+                          xl: { borderBottom: '1px solid rgba(224, 224, 224, 1)' },
+                        },
+                      }}
+                    >
                       <TableCell
                         variant="head"
-                        sx={{ textTransform: 'uppercase', textAlign: 'right', verticalAlign: 'top' }}
+                        sx={{
+                          textTransform: 'uppercase',
+                          textAlign: { xs: 'left', xl: 'right' },
+                          verticalAlign: 'top',
+                        }}
+                        component="th"
                       >
                         {header}
                       </TableCell>
 
-                      <TableCell sx={{ whiteSpace: 'pre-line' }}>{body}</TableCell>
+                      <TableCell sx={{ whiteSpace: 'pre-line' }} component="td">
+                        {body}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

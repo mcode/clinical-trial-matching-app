@@ -1,4 +1,5 @@
 import { createTheme, lighten } from '@mui/material/styles';
+import { createBreakpoints } from '@mui/system';
 
 declare module '@mui/material/styles/createPalette' {
   type CustomCommonColors = typeof colors;
@@ -18,16 +19,18 @@ const colors = {
   green: '#659b78',
 };
 
-const theme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 480,
-      md: 768,
-      lg: 992,
-      xl: 1400,
-    },
+const breakpoints = createBreakpoints({
+  values: {
+    xs: 0,
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1400,
   },
+});
+
+const theme = createTheme({
+  breakpoints,
   components: {
     MuiAutocomplete: {
       styleOverrides: {
@@ -48,6 +51,18 @@ const theme = createTheme({
           },
         },
       },
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'contained' },
+          style: {
+            borderRadius: '0',
+            color: colors.white,
+            height: '50px',
+          },
+        },
+      ],
     },
   },
   palette: {
@@ -87,12 +102,18 @@ const theme = createTheme({
     fontWeightMedium: 600,
     h6: {
       fontWeight: 600,
+      [breakpoints.down('sm')]: {
+        fontSize: '1.2rem',
+      },
     },
     subtitle2: {
       fontWeight: 600,
     },
     button: {
       fontWeight: 600,
+    },
+    body1: {
+      overflowWrap: 'anywhere',
     },
   },
 });
