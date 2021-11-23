@@ -4,14 +4,18 @@ import { Bundle, BundleEntry, Resource } from '@/utils/fhir-types';
 
 // Matching services and their information
 const services = {
-  breastCancerTrials: { service_name: 'Breast Cancer Trials', url: 'http://localhost:3001', search_route: '/getClinicalTrial' },
+  breastCancerTrials: {
+    service_name: 'Breast Cancer Trials',
+    url: 'http://localhost:3001',
+    search_route: '/getClinicalTrial',
+  },
   trialjectory: { service_name: 'TrialJectory', url: 'http://localhost:3000', search_route: '/getClinicalTrial' },
   trialscope: { service_name: 'TrialScope', url: 'http://localhost:3000', search_route: '/getClinicalTrial' },
 };
 
 /**
  * API/Query handler For clinical-trial-search
- * 
+ *
  * @param req Should contain { patient, user, search_params }
  * @param res Returns { results, errors }
  */
@@ -20,7 +24,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   // For now this is just the patient record.
   const entries: BundleEntry[] = [{ resource: patient.record }];
-  console.log("Entries", entries);
+  console.log('Entries', entries);
 
   const patientBundle: Bundle = buildBundle(search_params, entries);
 
@@ -35,10 +39,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
 /**
  * Builds bundle with search parameter and entries
- * 
- * @param search_params 
- * @param entries 
- * @returns 
+ *
+ * @param search_params
+ * @param entries
+ * @returns
  */
 function buildBundle(search_params: SearchParameters, entries: BundleEntry[]): Bundle {
   const trial_params: Resource = {
@@ -64,16 +68,14 @@ function buildBundle(search_params: SearchParameters, entries: BundleEntry[]): B
   return patientBundle;
 }
 
-
 /**
  * Calls all selected wrappers and combines the results
- * 
+ *
  * @param matchingServices Selected matching services to use
  * @param query Query to be sent to all matching services
  * @returns Responses from called wrappers
  */
 async function callWrappers(matchingServices: string[], query: Bundle) {
-
   const wrapper_results = await Promise.all(
     matchingServices.map(async service => {
       console.log(service);
@@ -88,36 +90,37 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
     })
   );
 
-  
   // Separate out responses that were unsuccessful
-  const errors = wrapper_results.filter( result => result.status == 500 );
+  const errors = wrapper_results.filter(result => result.status == 500);
 
   // Combine the responses that were successful
-  const combined:Bundle = {
-    resourceType: "Bundle",
-    type: "searchset",
+  const combined: Bundle = {
+    resourceType: 'Bundle',
+    type: 'searchset',
     total: 0,
-    entry: []
-  }
+    entry: [],
+  };
 
-  const successful = wrapper_results.filter( result => result.status == 200 ).forEach( searchset => {
-    // Each search set is also a Bundle so:
-    combined.total += searchset.response.total ||  0;
-    combined.entry.push(...searchset.response.entry);
-  });
+  const successful = wrapper_results
+    .filter(result => result.status == 200)
+    .forEach(searchset => {
+      // Each search set is also a Bundle so:
+      combined.total += searchset.response.total || 0;
+      combined.entry.push(...searchset.response.entry);
+    });
 
   return { results: combined, errors };
 }
 
 /**
  * Calls a single wrapper
- * 
+ *
  * @param url URL to send POST to
  * @param query Query to send to URL
  * @param service_name Name of the service
  * @returns Response from wrapper
  */
-async function callWrapper(url: string, query: string, service_name:string ) {
+async function callWrapper(url: string, query: string, service_name: string) {
   console.log('url', url);
   console.log('query', query);
 
@@ -131,8 +134,12 @@ async function callWrapper(url: string, query: string, service_name:string ) {
   })
     .then(handleError)
     .then(response => response.json())
-    .then(data => { return { status: 200, response: data } })
-    .catch(error => { return { status: 500, response: "There was an issue receiving responses from " + service_name }  });
+    .then(data => {
+      return { status: 200, response: data };
+    })
+    .catch(error => {
+      return { status: 500, response: 'There was an issue receiving responses from ' + service_name };
+    });
 }
 
 /**
