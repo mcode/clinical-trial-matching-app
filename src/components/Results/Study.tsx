@@ -91,6 +91,9 @@ const Study = ({ study }: StudyProps): ReactElement => {
             <StudyDetailsButton icon={<LaunchIcon />} text="More info" />
             <StudyDetailsButton icon={<SaveIcon />} text="Save study" />
             <StudyContact title="Sponsor" contact={studyProps.sponsor} />
+            {studyProps.contacts.map((contact, index) => (
+              <StudyContact title="Contact" contact={contact} key={index} />
+            ))}
             <StudyContact title="Closest Facility" contact={studyProps.closestFacility} />
           </Stack>
         </Stack>

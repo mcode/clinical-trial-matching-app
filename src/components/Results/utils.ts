@@ -1,6 +1,14 @@
-import { BundleEntry, ResearchStudy } from 'fhir/r4';
+import { BundleEntry, ContactDetail, Organization, ResearchStudy } from 'fhir/r4';
 import { format } from 'date-fns';
 import { ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyProps } from './types';
+
+const getContact = (contact: ContactDetail): ContactProps => {
+  return {
+    name: contact?.name,
+    phone: contact?.telecom?.find(info => info.system === 'phone' && info.value)?.value,
+    email: contact?.telecom?.find(info => info.system === 'email' && info.value)?.value,
+  };
+};
 
 const getClosestFacility = (): ContactProps => {
   // TODO
@@ -45,13 +53,16 @@ const getPeriod = (study: ResearchStudy): string => {
 
 const getPhase = (study: ResearchStudy): string => study.phase.text;
 
-const getSponsor = (): ContactProps => {
-  // TODO
-  return {
-    name: 'ABC Cancer Institute',
-    phone: '999-999-9999',
-    email: 'abccancerinstitute@abci.com',
-  };
+const getContacts = (study: ResearchStudy): ContactProps[] => {
+  return study?.contact?.map(getContact) || [];
+};
+
+const getSponsor = (study: ResearchStudy): ContactProps => {
+  const sponsorId = study?.sponsor?.reference?.match(/\#(.*)/)?.[1];
+  const sponsor: Organization = study?.contained?.find(
+    ({ resourceType, id }) => resourceType === 'Organization' && id === sponsorId
+  ) as Organization;
+  return getContact(sponsor);
 };
 
 const getStatus = (study: ResearchStudy): StatusProps => {
@@ -95,7 +106,8 @@ export const getStudyProps = (study: ResearchStudy): StudyProps => {
     likelihood: getLikelihood(study),
     period: getPeriod(study),
     phase: getPhase(study),
-    sponsor: getSponsor(),
+    sponsor: getSponsor(study),
+    contacts: getContacts(study),
     status: getStatus(study),
     title: getTitle(study),
     type: getType(study),

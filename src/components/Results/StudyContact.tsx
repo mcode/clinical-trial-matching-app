@@ -15,9 +15,11 @@ const StudyContact = ({ contact, title }: StudyContactProps): ReactElement => (
       {title}
     </Box>
 
-    <Box fontWeight="600" ml={2}>
-      {contact.name}
-    </Box>
+    {contact.name && (
+      <Box fontWeight="600" ml={2}>
+        {contact.name}
+      </Box>
+    )}
 
     {contact.phone && (
       <Stack alignItems="center" direction="row" ml={4}>
