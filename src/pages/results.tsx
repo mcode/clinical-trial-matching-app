@@ -42,7 +42,9 @@ type SlidingStackProps = {
   shrink: boolean;
 };
 
-const SlidingStack = styled(Stack, { shouldForwardProp: prop => prop !== 'open' })<SlidingStackProps>`
+const SlidingStack = styled(Stack, {
+  shouldForwardProp: prop => !(prop === 'open' || prop === 'shrink'),
+})<SlidingStackProps>`
   ${({ theme, open, shrink }: SlidingStackProps) => `
     transition: ${leaveTransition(theme)};
     margin-left: 0;
