@@ -19,12 +19,16 @@ import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
 import { getStudyProps } from './utils';
 import { useRouter } from 'next/router';
+import { SaveStudyHandler } from './types';
+import UnsaveIcon from './UnsaveIcon';
 
 type StudyProps = {
   study: ResearchStudy;
+  handleSaveStudy: SaveStudyHandler;
+  isStudySaved: boolean;
 };
 
-const Study = ({ study }: StudyProps): ReactElement => {
+const Study = ({ study, handleSaveStudy, isStudySaved }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { query } = useRouter();
   const studyProps = getStudyProps(study, query);
@@ -39,7 +43,13 @@ const Study = ({ study }: StudyProps): ReactElement => {
       }}
       onChange={(_event, expanded) => setIsExpanded(expanded)}
     >
-      <StudyHeader isExpanded={isExpanded} studyId={study.id} studyProps={studyProps} />
+      <StudyHeader
+        isExpanded={isExpanded}
+        studyId={study.id}
+        studyProps={studyProps}
+        handleSaveStudy={handleSaveStudy}
+        isStudySaved={isStudySaved}
+      />
 
       <AccordionDetails
         sx={{
@@ -91,7 +101,11 @@ const Study = ({ study }: StudyProps): ReactElement => {
 
           <Stack p={2} sx={{ backgroundColor: 'common.grayLighter' }}>
             <StudyDetailsButton icon={<LaunchIcon />} text="More info" />
-            <StudyDetailsButton icon={<SaveIcon />} text="Save study" />
+            <StudyDetailsButton
+              icon={isStudySaved ? <UnsaveIcon /> : <SaveIcon />}
+              text={isStudySaved ? 'Unsave study' : 'Save study'}
+              onClick={handleSaveStudy}
+            />
             <StudyContact title="Sponsor" contact={studyProps.sponsor} />
             {studyProps.contacts.map((contact, index) => (
               <StudyContact title="Contact" contact={contact} key={index} />

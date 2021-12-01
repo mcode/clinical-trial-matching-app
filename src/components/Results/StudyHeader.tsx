@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import {
   AccordionActions,
   AccordionSummary,
@@ -6,11 +6,9 @@ import {
   Chip,
   IconButton,
   Stack,
-  SvgIcon,
   Typography,
   useMediaQuery,
   useTheme,
-  Button,
 } from '@mui/material';
 import {
   Event as EventIcon,
@@ -18,17 +16,28 @@ import {
   LocationOn as LocationOnIcon,
   Save as SaveIcon,
 } from '@mui/icons-material';
+import TargetIcon from './TargetIcon';
+import UnsaveIcon from './UnsaveIcon';
+import BookmarkCheckIcon from './BookmarkCheckIcon';
 
-import TargetIcon from '@/assets/images/target.svg';
-import { StudyProps } from './types';
+import { StudyProps, SaveStudyHandler } from './types';
+import StudyDetailsButton from './StudyDetailsButton';
 
 type StudyHeaderProps = {
   isExpanded: boolean;
   studyId: string;
   studyProps: StudyProps;
+  handleSaveStudy: SaveStudyHandler;
+  isStudySaved: boolean;
 };
 
-const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): ReactElement => {
+const StudyHeader = ({
+  isExpanded,
+  studyId,
+  studyProps,
+  handleSaveStudy,
+  isStudySaved,
+}: StudyHeaderProps): ReactElement => {
   const studyTags = [...(studyProps.conditions || []), studyProps.phase, studyProps.type];
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -100,11 +109,7 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
 
           <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} py={1} spacing={{ xs: 0, xl: 0.5 }}>
             <Stack alignItems="center" direction="row" spacing={1}>
-              <SvgIcon
-                component={TargetIcon}
-                fontSize="inherit"
-                sx={{ color: studyProps.likelihood.color, width: '20px' }}
-              />
+              <TargetIcon fontSize="inherit" sx={{ color: studyProps.likelihood.color, width: '20px' }} />
               <Typography whiteSpace="nowrap">{studyProps.likelihood.text}</Typography>
             </Stack>
 
@@ -125,24 +130,33 @@ const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): Rea
 
       <AccordionActions style={{ padding: ' 0 16px' }}>
         {isExtraSmallScreen ? (
-          <Button
-            startIcon={<SaveIcon />}
-            sx={{
-              fontSize: '1.1em',
-              fontWeight: '600',
-              minWidth: '200px',
-              width: '100%',
-            }}
-            variant="contained"
-          >
-            Save study
-          </Button>
+          <StudyDetailsButton
+            icon={isStudySaved ? <UnsaveIcon /> : <SaveIcon />}
+            text={isStudySaved ? 'Unsave study' : 'Save study'}
+            onClick={handleSaveStudy}
+          />
         ) : (
-          <IconButton aria-label="save study">
-            <SaveIcon fontSize="medium" sx={{ color: 'common.blue', p: 0 }} />
+          <IconButton aria-label={isStudySaved ? 'unsave study' : 'save study'} onClick={handleSaveStudy}>
+            {isStudySaved ? (
+              <UnsaveIcon fontSize="medium" sx={{ color: isExpanded ? 'common.blueLighter' : 'common.blue', p: 0 }} />
+            ) : (
+              <SaveIcon fontSize="medium" sx={{ color: isExpanded ? 'common.blueLighter' : 'common.blue', p: 0 }} />
+            )}
           </IconButton>
         )}
       </AccordionActions>
+
+      {isStudySaved && (
+        <BookmarkCheckIcon
+          fontSize="medium"
+          sx={{
+            color: isExpanded ? 'common.blueLighter' : 'common.blue',
+            p: 0,
+            position: 'absolute',
+            right: '0.5em',
+          }}
+        />
+      )}
     </AccordionSummary>
   );
 };
