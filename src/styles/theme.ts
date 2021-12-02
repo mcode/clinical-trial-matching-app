@@ -1,4 +1,5 @@
 import { createTheme, lighten } from '@mui/material/styles';
+import { createBreakpoints } from '@mui/system';
 
 declare module '@mui/material/styles/createPalette' {
   type CustomCommonColors = typeof colors;
@@ -6,24 +7,41 @@ declare module '@mui/material/styles/createPalette' {
 }
 
 const colors = {
-  blue: '#65A3BF',
-  gray: '#404852',
-  grayLighter: '#F6F6F6',
-  red: '#9D646D',
-  white: '#FFF',
+  blue: '#64a3bf',
+  blueDarker: '#4887a4',
+  blueLighter: '#84c9e8',
+  gray: '#404952',
+  grayLight: '#697481',
+  grayLighter: '#f6f6f6',
+  red: '#9d646c',
+  white: '#ffffff',
+  yellow: '#bf9b4f',
+  green: '#659b78',
 };
 
-const theme = createTheme({
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 480,
-      md: 768,
-      lg: 992,
-      xl: 1300,
-    },
+const breakpoints = createBreakpoints({
+  values: {
+    xs: 0,
+    sm: 480,
+    md: 768,
+    lg: 992,
+    xl: 1400,
   },
+});
+
+const theme = createTheme({
+  breakpoints,
   components: {
+    MuiAutocomplete: {
+      styleOverrides: {
+        root: {
+          '.MuiInputBase-adornedStart': {
+            paddingBottom: '5px',
+            paddingTop: '28px',
+          },
+        },
+      },
+    },
     MuiFilledInput: {
       styleOverrides: {
         root: {
@@ -33,6 +51,18 @@ const theme = createTheme({
           },
         },
       },
+    },
+    MuiButton: {
+      variants: [
+        {
+          props: { variant: 'contained' },
+          style: {
+            borderRadius: '0',
+            color: colors.white,
+            height: '50px',
+          },
+        },
+      ],
     },
   },
   palette: {
@@ -72,12 +102,18 @@ const theme = createTheme({
     fontWeightMedium: 600,
     h6: {
       fontWeight: 600,
+      [breakpoints.down('sm')]: {
+        fontSize: '1.2rem',
+      },
     },
     subtitle2: {
       fontWeight: 600,
     },
     button: {
       fontWeight: 600,
+    },
+    body1: {
+      overflowWrap: 'anywhere',
     },
   },
 });

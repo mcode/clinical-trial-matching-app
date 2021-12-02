@@ -1,8 +1,41 @@
 import React, { ReactElement } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
-import { Autocomplete, Checkbox, TextField } from '@mui/material';
+import { Autocomplete, Checkbox, Chip, TextField, Typography } from '@mui/material';
 
 import { SearchFormValuesType } from './types';
+
+const AutocompleteMulti = ({ field, label, options }): ReactElement => (
+  <Autocomplete
+    {...field}
+    data-testid={label}
+    freeSolo
+    multiple
+    onChange={(_event, value) => field.onChange(value)}
+    options={options}
+    renderInput={params => (
+      <TextField
+        variant="filled"
+        label={label.charAt(0).toUpperCase() + label.slice(1)}
+        placeholder={`Add ${label}...`}
+        {...params}
+      />
+    )}
+    renderTags={(value, getTagProps) =>
+      value.map((option, index) => (
+        <Chip
+          label={
+            <Typography fontSize="0.8rem" py={0.8} whiteSpace="normal">
+              {option}
+            </Typography>
+          }
+          sx={{ height: '100%' }}
+          {...getTagProps({ index })}
+        />
+      ))
+    }
+    sx={{ '& .MuiAutocomplete-inputRoot .MuiAutocomplete-input': { width: 'auto' } }}
+  />
+);
 
 export const MatchingServiceCheckbox = ({
   field,
@@ -67,23 +100,6 @@ export const CancerSubtypeTextField = ({
   <TextField data-testid="cancerSubtype" fullWidth label="Cancer Subtype" variant="filled" {...field} />
 );
 
-export const MetastasisAutocomplete = ({
-  field,
-}: {
-  field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
-}): ReactElement => (
-  <Autocomplete
-    {...field}
-    data-testid="metastasis"
-    multiple
-    onChange={(_event, value) => field.onChange(value)}
-    options={['metastasis-1', 'metastasis-2', 'metastasis-3']}
-    renderInput={params => (
-      <TextField variant="filled" label="Metastasis" placeholder="Add metastasis..." {...params} />
-    )}
-  />
-);
-
 export const CancerStageAutocomplete = ({
   field,
 }: {
@@ -126,19 +142,20 @@ export const KarnofskyScoreAutocomplete = ({
   />
 );
 
+export const MetastasisAutocomplete = ({
+  field,
+}: {
+  field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
+}): ReactElement => (
+  <AutocompleteMulti field={field} label="metastasis" options={['metastasis-1', 'metastasis-2', 'metastasis-3']} />
+);
+
 export const BiomarkersAutocomplete = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'biomarkers'>;
 }): ReactElement => (
-  <Autocomplete
-    {...field}
-    data-testid="biomarkers"
-    multiple
-    onChange={(_event, value) => field.onChange(value)}
-    options={['biomarker-1', 'biomarker-2', 'biomarker-3']}
-    renderInput={params => <TextField variant="filled" label="Biomarkers" placeholder="Add biomarker..." {...params} />}
-  />
+  <AutocompleteMulti field={field} label="biomarkers" options={['biomarker-1', 'biomarker-2', 'biomarker-3']} />
 );
 
 export const RadiationAutocomplete = ({
@@ -146,14 +163,7 @@ export const RadiationAutocomplete = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'radiation'>;
 }): ReactElement => (
-  <Autocomplete
-    {...field}
-    data-testid="radiation"
-    multiple
-    onChange={(_event, value) => field.onChange(value)}
-    options={['radiation-1', 'radiation-2', 'radiation-3']}
-    renderInput={params => <TextField variant="filled" label="Radiation" placeholder="Add radiation..." {...params} />}
-  />
+  <AutocompleteMulti field={field} label="radiation" options={['radiation-1', 'radiation-2', 'radiation-3']} />
 );
 
 export const SurgeryAutocomplete = ({
@@ -161,14 +171,7 @@ export const SurgeryAutocomplete = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'surgery'>;
 }): ReactElement => (
-  <Autocomplete
-    {...field}
-    data-testid="surgery"
-    multiple
-    onChange={(_event, value) => field.onChange(value)}
-    options={['surgery-1', 'surgery-2', 'surgery-3']}
-    renderInput={params => <TextField variant="filled" label="Surgery" placeholder="Add surgery..." {...params} />}
-  />
+  <AutocompleteMulti field={field} label="surgery" options={['surgery-1', 'surgery-2', 'surgery-3']} />
 );
 
 export const MedicationsAutocomplete = ({
@@ -176,14 +179,5 @@ export const MedicationsAutocomplete = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'medications'>;
 }): ReactElement => (
-  <Autocomplete
-    {...field}
-    data-testid="medications"
-    multiple
-    onChange={(_event, value) => field.onChange(value)}
-    options={['medication-1', 'medication-2', 'medication-3']}
-    renderInput={params => (
-      <TextField {...params} variant="filled" label="Medications" placeholder="Add medication..." />
-    )}
-  />
+  <AutocompleteMulti field={field} label="medications" options={['medication-1', 'medication-2', 'medication-3']} />
 );

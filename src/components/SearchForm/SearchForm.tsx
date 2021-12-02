@@ -37,7 +37,7 @@ const formDataToSearchQuery = (data: SearchFormValuesType) => ({
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
-  const smallScreen = useMediaQuery(theme.breakpoints.between('xs', 'md'));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
   const onSubmit = data => router.push({ pathname: '/results', query: formDataToSearchQuery(data) });
 
@@ -110,11 +110,11 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
             <Controller name="stage" defaultValue={null} control={control} render={CancerStageAutocomplete} />
           </Grid>
 
-          <Grid item xs={4} xl={fullWidth ? 4 : 2}>
+          <Grid item xs={8} xl={fullWidth ? 8 : 2}>
             <Controller name="ecogScore" defaultValue={null} control={control} render={ECOGScoreAutocomplete} />
           </Grid>
 
-          <Grid item xs={4} xl={fullWidth ? 4 : 2}>
+          <Grid item xs={8} xl={fullWidth ? 8 : 2}>
             <Controller
               name="karnofskyScore"
               defaultValue={null}
@@ -146,14 +146,11 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           <Grid item xs={8}>
             <Button
               sx={{
-                borderRadius: '0',
-                color: 'common.white',
                 float: 'right',
                 fontSize: '1.3em',
                 fontWeight: '500',
-                height: '50px',
                 minWidth: '200px',
-                width: fullWidth || smallScreen ? '100%' : '25%',
+                width: fullWidth || isSmallScreen ? '100%' : '25%',
               }}
               type="submit"
               variant="contained"
