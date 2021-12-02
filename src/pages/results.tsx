@@ -1,4 +1,4 @@
-import { ReactElement, useState, Fragment} from 'react';
+import { ReactElement, useState, Fragment } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSideProps } from 'next';
@@ -72,7 +72,7 @@ const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactE
     () => clinicalTrialSearchQuery(patient, user, search_params),
     {
       enabled: typeof window !== 'undefined',
-      refetchOnMount: false
+      refetchOnMount: false,
     }
   );
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -133,14 +133,16 @@ const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactE
             shrink={isExtraSmallScreen}
             sx={{ overflowY: 'auto' }}
           >
-              <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} toggleMobileDrawer={toggleMobileDrawer} />
-              <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
-                {(isIdle || isLoading) && <Stack alignItems="center" direction="column" justifyContent="center" sx={{ height: '100%' }} >
-                  <CircularProgress size={drawerWidth / 2 }/>
-                </Stack>}
+            <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} toggleMobileDrawer={toggleMobileDrawer} />
+            <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
+              {(isIdle || isLoading) && (
+                <Stack alignItems="center" direction="column" justifyContent="center" sx={{ height: '100%' }}>
+                  <CircularProgress size={drawerWidth / 2} />
+                </Stack>
+              )}
 
-                {(!isIdle && !isLoading) && <Results data={data} />}
-              </MainContent>
+              {!isIdle && !isLoading && <Results data={data} />}
+            </MainContent>
           </SlidingStack>
         </Stack>
       </Stack>

@@ -90,7 +90,7 @@ const getStatus = (study: ResearchStudy): StatusProps => {
 const getTitle = (study: ResearchStudy): string => study.title;
 
 const getType = (study: ResearchStudy): string => {
-  for (const { text } of (study.category || []) ) {
+  for (const { text } of study.category || []) {
     const match = text.match(/Study Type: (.+)$/)?.[1];
     if (match) return match;
   }

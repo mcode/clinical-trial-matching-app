@@ -11,12 +11,12 @@ export type ResultsProps = {
 export type ResultsResponse = {
   results?: Bundle;
   errors?: ErrorResponse[];
-}
+};
 
 export type ErrorResponse = {
   status: string;
   response: string;
-}
+};
 
 const Results = ({ data }: ResultsProps): ReactElement => {
   console.log(data);
