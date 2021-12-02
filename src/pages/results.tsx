@@ -1,11 +1,11 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useState, Fragment} from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
-import { Drawer, Paper, Stack, Theme } from '@mui/material';
+import { Drawer, Paper, Stack, Theme, useTheme, useMediaQuery, CircularProgress } from '@mui/material';
 import styled from '@emotion/styled';
 
 import Header from '@/components/Header';
@@ -34,15 +34,28 @@ const leaveTransition = (theme: Theme) =>
     duration: theme.transitions.duration.leavingScreen,
   });
 
-const SlidingStack = styled(Stack, { shouldForwardProp: prop => prop !== 'open' })<{
+const getDrawerWidth = (shrink: boolean) => {
+  return shrink ? 250 : 400;
+};
+
+type SlidingStackProps = {
   theme?: Theme;
   open: boolean;
-}>`
-  ${({ theme, open }) => `
-    transition: ${leaveTransition(theme)};
-    margin-left: -400px;
+  shrink: boolean;
+};
 
-    ${open ? `transition: ${openTransition(theme)}; margin-left: 0;` : ''};
+const SlidingStack = styled(Stack, {
+  shouldForwardProp: prop => !(prop === 'open' || prop === 'shrink'),
+})<SlidingStackProps>`
+  ${({ theme, open, shrink }: SlidingStackProps) => `
+    transition: ${leaveTransition(theme)};
+    margin-left: 0;
+
+    ${theme.breakpoints.up('lg')} {
+      margin-left: -${getDrawerWidth(shrink)}px;
+
+      ${open ? `transition: ${openTransition(theme)}; margin-left: 0;` : ''};
+    }
   `};
 `;
 
@@ -54,13 +67,20 @@ const MainContent = styled(Paper)`
 
 const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
-  const { data } = useQuery(
+  const { isIdle, isLoading, data } = useQuery(
     ['clinical-trials', search_params, patient],
     () => clinicalTrialSearchQuery(patient, user, search_params),
-    { refetchOnMount: false }
+    {
+      enabled: typeof window !== 'undefined',
+      refetchOnMount: false
+    }
   );
-
-  const toggleDrawer = () => setOpen(currentlyOpen => !currentlyOpen);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const theme = useTheme();
+  const toggleDrawer = () => setOpen(!open);
+  const toggleMobileDrawer = () => setMobileOpen(!mobileOpen);
+  const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const drawerWidth = getDrawerWidth(isExtraSmallScreen);
 
   return (
     <>
@@ -71,15 +91,32 @@ const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactE
       <Stack minHeight="100vh" maxHeight="100vh" sx={{ overflowY: 'auto' }}>
         <Header userName={user?.name} />
 
-        <Stack alignItems="stretch" direction="row" flex="1 1 auto" sx={{ overflowY: 'auto' }}>
+        <Stack alignItems="stretch" direction={{ xs: 'column', lg: 'row' }} flex="1 1 auto" sx={{ overflowY: 'auto' }}>
+          <Drawer
+            onClose={toggleMobileDrawer}
+            ModalProps={{ keepMounted: true }} // for better open performance on mobile
+            sx={{
+              display: { xs: 'block', lg: 'none' },
+              width: drawerWidth,
+              '& .MuiDrawer-paper': {
+                boxSizing: 'border-box',
+                width: drawerWidth,
+              },
+            }}
+            variant="temporary"
+            open={mobileOpen}
+          >
+            <Sidebar patient={patient} />
+          </Drawer>
+
           <Drawer
             sx={{
-              width: 400,
-              flexShrink: 0,
+              display: { xs: 'none', lg: 'block' },
+              width: drawerWidth,
               '& .MuiDrawer-paper': {
-                width: 400,
                 boxSizing: 'border-box',
                 position: 'relative',
+                width: drawerWidth,
               },
             }}
             variant="persistent"
@@ -89,14 +126,21 @@ const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactE
             <Sidebar patient={patient} />
           </Drawer>
 
-          <SlidingStack alignItems="stretch" flexGrow={1} open={open} sx={{ overflowY: 'auto' }}>
-            <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} />
+          <SlidingStack
+            alignItems="stretch"
+            flexGrow={1}
+            open={open}
+            shrink={isExtraSmallScreen}
+            sx={{ overflowY: 'auto' }}
+          >
+              <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} toggleMobileDrawer={toggleMobileDrawer} />
+              <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
+                {(isIdle || isLoading) && <Stack alignItems="center" direction="column" justifyContent="center" sx={{ height: '100%' }} >
+                  <CircularProgress size={drawerWidth / 2 }/>
+                </Stack>}
 
-            <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
-              <Results />
-
-              {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
-            </MainContent>
+                {(!isIdle && !isLoading) && <Results data={data} />}
+              </MainContent>
           </SlidingStack>
         </Stack>
       </Stack>
