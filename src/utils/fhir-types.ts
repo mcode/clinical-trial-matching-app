@@ -106,13 +106,14 @@ export interface Element {
   extension?: Array<Extension<valueX>>;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export interface Extension<T = 'valueX'> extends Element {
   /**
    * identifies the meaning of the extension
    */
   url: uri;
 
-  [T: string]: any;
+  [T: string]: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 }
 
 export interface CapabilityStatement {
@@ -132,6 +133,7 @@ export interface CapabilityStatement {
   }>;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export interface Resource extends Record<string, any> {
   /**
    * Logical id of this artifact
