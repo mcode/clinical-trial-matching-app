@@ -24,7 +24,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   // For now this is just the patient record.
   const entries: BundleEntry[] = [{ resource: patient.record }];
-  console.log('Entries', entries);
 
   const patientBundle: Bundle = buildBundle(search_params, entries);
 
@@ -33,7 +32,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       ? search_params['matchingServices']
       : [search_params['matchingServices']];
   const results = await callWrappers(chosen_services, patientBundle);
-  console.log('Service results', results);
   res.status(200).json(results);
 };
 
@@ -78,14 +76,12 @@ function buildBundle(search_params: SearchParameters, entries: BundleEntry[]): B
 async function callWrappers(matchingServices: string[], query: Bundle) {
   const wrapper_results = await Promise.all(
     matchingServices.map(async service => {
-      console.log(service);
       const results = await callWrapper(
         services[service].url + services[service].search_route,
         JSON.stringify(query, null, 2),
         services[service].service_name
       );
 
-      console.log('Results', results);
       return results;
     })
   );

@@ -19,7 +19,6 @@ export type ErrorResponse = {
 };
 
 const Results = ({ data }: ResultsProps): ReactElement => {
-  console.log(data);
   const entries: BundleEntry[] = data?.results?.entry || [];
   const studies = entries.filter(({ resource }) => resource?.resourceType === 'ResearchStudy');
 

@@ -96,11 +96,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const getProcedure = getResource('Procedure');
   const getMedicationStatement = getResource('MedicationStatement');
 
-  // console.log("Condition", JSON.stringify(getCondition));
-  //  console.log("Observation", JSON.stringify(getCondition));
-  //   console.log("Procedure", JSON.stringify(getProcedure));
-  //    console.log("MedicationStatement", JSON.stringify(getMedicationStatement));
-
   const [
     fhirPatient,
     fhirUser,
