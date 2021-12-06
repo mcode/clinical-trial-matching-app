@@ -19,8 +19,8 @@ const services = {
  * @param req Should contain { patient, user, search_params }
  * @param res Returns { results, errors }
  */
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { patient, user, search_params } = JSON.parse(req.body);
+const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
+  const { patient, search_params } = JSON.parse(req.body);
 
   // For now this is just the patient record.
   const entries: BundleEntry[] = [{ resource: patient.record }];
@@ -97,7 +97,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
     entry: [],
   };
 
-  const successful = wrapper_results
+  wrapper_results
     .filter(result => result.status == 200)
     .forEach(searchset => {
       // Each search set is also a Bundle so:
@@ -117,9 +117,6 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
  * @returns Response from wrapper
  */
 async function callWrapper(url: string, query: string, service_name: string) {
-  console.log('url', url);
-  console.log('query', query);
-
   return fetch(url, {
     cache: 'no-store',
     method: 'post',
@@ -134,7 +131,7 @@ async function callWrapper(url: string, query: string, service_name: string) {
       return { status: 200, response: data };
     })
     .catch(error => {
-      return { status: 500, response: 'There was an issue receiving responses from ' + service_name };
+      return { status: 500, response: 'There was an issue receiving responses from ' + service_name, error };
     });
 }
 

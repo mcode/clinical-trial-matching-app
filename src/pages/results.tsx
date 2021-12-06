@@ -1,4 +1,4 @@
-import { ReactElement, useState, Fragment } from 'react';
+import { ReactElement, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSideProps } from 'next';
@@ -11,7 +11,6 @@ import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import { Results, ResultsHeader } from '@/components/Results';
-import mockSearchResults from '@/__mocks__/results.json';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { SearchParameters } from '@/utils/search_types';
