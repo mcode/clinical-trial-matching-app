@@ -5,50 +5,50 @@ import { Bundle, BundleEntry, Resource } from '@/utils/fhir-types';
 // Matching services and their information
 const services = {
   breastCancerTrials: {
-    service_name: 'Breast Cancer Trials',
+    serviceName: 'Breast Cancer Trials',
     url: 'http://localhost:3001',
-    search_route: '/getClinicalTrial',
+    searchRoute: '/getClinicalTrial',
   },
-  trialjectory: { service_name: 'TrialJectory', url: 'http://localhost:3000', search_route: '/getClinicalTrial' },
-  trialscope: { service_name: 'TrialScope', url: 'http://localhost:3000', search_route: '/getClinicalTrial' },
+  trialjectory: { serviceName: 'TrialJectory', url: 'http://localhost:3000', searchRoute: '/getClinicalTrial' },
+  trialscope: { serviceName: 'TrialScope', url: 'http://localhost:3000', searchRoute: '/getClinicalTrial' },
 };
 
 /**
  * API/Query handler For clinical-trial-search
  *
- * @param req Should contain { patient, user, search_params }
+ * @param req Should contain { patient, user, searchParams }
  * @param res Returns { results, errors }
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { patient, search_params } = JSON.parse(req.body);
+  const { patient, searchParams } = JSON.parse(req.body);
 
   // For now this is just the patient record.
   const entries: BundleEntry[] = [{ resource: patient.record }];
 
-  const patientBundle: Bundle = buildBundle(search_params, entries);
+  const patientBundle: Bundle = buildBundle(searchParams, entries);
 
-  const chosen_services =
-    typeof search_params['matchingServices'] != 'undefined' && search_params['matchingServices'] instanceof Array
-      ? search_params['matchingServices']
-      : [search_params['matchingServices']];
-  const results = await callWrappers(chosen_services, patientBundle);
+  const chosenServices =
+    searchParams.matchingServices && Array.isArray(searchParams.matchingServices)
+      ? searchParams.matchingServices
+      : [searchParams.matchingServices];
+  const results = await callWrappers(chosenServices, patientBundle);
   res.status(200).json(results);
 };
 
 /**
  * Builds bundle with search parameter and entries
  *
- * @param search_params
+ * @param searchParams
  * @param entries
  * @returns
  */
-function buildBundle(search_params: SearchParameters, entries: BundleEntry[]): Bundle {
-  const trial_params: Resource = {
+function buildBundle(searchParams: SearchParameters, entries: BundleEntry[]): Bundle {
+  const trialParams: Resource = {
     resourceType: 'Parameters',
     id: '0',
     parameter: [
-      ...(search_params['zipcode'] && [{ name: 'zipCode', valueString: search_params['zipcode'] }]),
-      ...(search_params['travelDistance'] && [{ name: 'travelRadius', valueString: search_params['travelDistance'] }]),
+      ...(searchParams['zipcode'] && [{ name: 'zipCode', valueString: searchParams['zipcode'] }]),
+      ...(searchParams['travelDistance'] && [{ name: 'travelRadius', valueString: searchParams['travelDistance'] }]),
     ],
   };
 
@@ -56,7 +56,7 @@ function buildBundle(search_params: SearchParameters, entries: BundleEntry[]): B
   const patientBundle: Bundle = {
     resourceType: 'Bundle',
     type: 'collection',
-    entry: [{ resource: trial_params }],
+    entry: [{ resource: trialParams }],
   };
 
   entries.forEach(resource => {
@@ -74,12 +74,12 @@ function buildBundle(search_params: SearchParameters, entries: BundleEntry[]): B
  * @returns Responses from called wrappers
  */
 async function callWrappers(matchingServices: string[], query: Bundle) {
-  const wrapper_results = await Promise.all(
+  const wrapperResults = await Promise.all(
     matchingServices.map(async service => {
       const results = await callWrapper(
-        services[service].url + services[service].search_route,
+        services[service].url + services[service].searchRoute,
         JSON.stringify(query, null, 2),
-        services[service].service_name
+        services[service].serviceName
       );
 
       return results;
@@ -87,7 +87,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
   );
 
   // Separate out responses that were unsuccessful
-  const errors = wrapper_results.filter(result => result.status == 500);
+  const errors = wrapperResults.filter(result => result.status == 500);
 
   // Combine the responses that were successful
   const combined: Bundle = {
@@ -97,7 +97,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
     entry: [],
   };
 
-  wrapper_results
+  wrapperResults
     .filter(result => result.status == 200)
     .forEach(searchset => {
       // Each search set is also a Bundle so:
@@ -113,10 +113,10 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
  *
  * @param url URL to send POST to
  * @param query Query to send to URL
- * @param service_name Name of the service
+ * @param serviceName Name of the service
  * @returns Response from wrapper
  */
-async function callWrapper(url: string, query: string, service_name: string) {
+async function callWrapper(url: string, query: string, serviceName: string) {
   return fetch(url, {
     cache: 'no-store',
     method: 'post',
@@ -131,7 +131,7 @@ async function callWrapper(url: string, query: string, service_name: string) {
       return { status: 200, response: data };
     })
     .catch(error => {
-      return { status: 500, response: 'There was an issue receiving responses from ' + service_name, error };
+      return { status: 500, response: 'There was an issue receiving responses from ' + serviceName, error };
     });
 }
 

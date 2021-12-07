@@ -15,12 +15,12 @@ export type ErrorResponse = {
 const clinicalTrialSearchQuery = async (
   patient: Patient,
   user: User,
-  search_params: ParsedUrlQuery
+  searchParams: ParsedUrlQuery
 ): Promise<ResultsResponse> =>
   fetch('/api/clinical-trial-search', {
     cache: 'no-store',
     method: 'post',
-    body: JSON.stringify({ patient, user, search_params }, null, 2),
+    body: JSON.stringify({ patient, user, searchParams }, null, 2),
   }).then(res => res.json());
 
 export default clinicalTrialSearchQuery;

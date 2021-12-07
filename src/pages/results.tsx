@@ -18,7 +18,7 @@ import { SearchParameters } from '@/utils/search_types';
 type ResultsPageProps = {
   patient: Patient;
   user: User;
-  search_params: SearchParameters;
+  searchParams: SearchParameters;
 };
 
 const openTransition = (theme: Theme) =>
@@ -64,11 +64,11 @@ const MainContent = styled(Paper)`
   flex: 1 0 auto;
 `;
 
-const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactElement => {
+const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
   const { isIdle, isLoading, data } = useQuery(
-    ['clinical-trials', search_params, patient],
-    () => clinicalTrialSearchQuery(patient, user, search_params),
+    ['clinical-trials', searchParams, patient],
+    () => clinicalTrialSearchQuery(patient, user, searchParams),
     {
       enabled: typeof window !== 'undefined',
       refetchOnMount: false,
@@ -135,7 +135,7 @@ const ResultsPage = ({ patient, user, search_params }: ResultsPageProps): ReactE
             <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} toggleMobileDrawer={toggleMobileDrawer} />
             <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
               {(isIdle || isLoading) && (
-                <Stack alignItems="center" direction="column" justifyContent="center" sx={{ height: '100%' }}>
+                <Stack alignItems="center" direction="column" justifyContent="center" height="100%">
                   <CircularProgress size={drawerWidth / 2} />
                 </Stack>
               )}
@@ -168,7 +168,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
-      search_params: query,
+      searchParams: query,
       dehydratedState: dehydrate(queryClient),
     },
   };
