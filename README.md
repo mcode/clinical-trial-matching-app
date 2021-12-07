@@ -4,6 +4,10 @@
 
 - [Node.js](https://nodejs.org/en/download/) (LTS edition, currently 16.x)
 - [Yarn](https://yarnpkg.com/en/docs/install) (1.22 or above)
+- At least one of the following matching services:
+  - [BreastCancerTrials](https://github.com/mcode/clinical-trial-matching-service-breastcancertrials.org)
+  - [TrialScope](https://github.com/mcode/clinical-trial-matching-service-trialscope)
+  - [TrialJectory](https://github.com/mcode/clinical-trial-matching-service-trialjectory)
 
 ## Testing with a launcher
 
@@ -15,6 +19,17 @@
      - Ensure that the "Simulate launch within the EHR user interface" option is disabled as local development is unable to set cookies in an iframe over plain http
    - Select a practitioner and a patient
    - Page will load with name of selected patient displayed
+
+### Running the matching services:
+
+Present on the application's search page is the option of several matching services. For each one you wish to use, you must also have their wrapper running (see [Requirements](#requirements)).
+
+```
+npm install
+npm start
+```
+
+NOTE: TrialScope and TrialJectory both run on port `3000` so thus you will not be able to run them at the same time. This is because TrialScope will be phased out soon.
 
 ## Uploading test patients to the public SMART sandbox
 
