@@ -29,7 +29,7 @@ type StudyHeaderProps = {
 };
 
 const StudyHeader = ({ isExpanded, studyId, studyProps }: StudyHeaderProps): ReactElement => {
-  const studyTags = [...studyProps.conditions, studyProps.phase, studyProps.type];
+  const studyTags = [...(studyProps.conditions || []), studyProps.phase, studyProps.type];
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 

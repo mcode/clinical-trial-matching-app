@@ -4,7 +4,9 @@ import Results, { ResultsProps } from '../Results';
 import mockSearchResults from '@/__mocks__/results.json';
 
 describe('<Results />', () => {
-  const Component = (props: Partial<ResultsProps>) => <Results data={mockSearchResults as Bundle} {...props} />;
+  const Component = (props: Partial<ResultsProps>) => (
+    <Results data={{ results: mockSearchResults as Bundle }} {...props} />
+  );
 
   it('renders the correct number of results', () => {
     render(<Component />);
