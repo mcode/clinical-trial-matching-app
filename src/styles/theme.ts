@@ -64,6 +64,16 @@ const theme = createTheme({
         },
       ],
     },
+    MuiChip: {
+      styleOverrides: {
+        root: { display: 'flex', flexDirection: 'row', height: 'unset' },
+        label: {
+          overflowWrap: 'break-word',
+          whiteSpace: 'normal',
+          textOverflow: 'clip',
+        },
+      },
+    },
   },
   palette: {
     primary: {
