@@ -1,65 +1,37 @@
-import { getStudies, savedStudiesReducer, uninitializedState } from '../resultsStateUtils';
+import { savedStudiesReducer, uninitializedState, getSavedStudies } from '../resultsStateUtils';
 import mockSearchResults from '@/__mocks__/results.json';
-import mockStudies from '@/__mocks__/studies.json';
-import { Bundle, ResearchStudy } from 'fhir/r4';
+import { BundleEntry } from '@/components/Results/types';
 
 describe('savedStudiesReducer', () => {
-  const studies = mockStudies as ResearchStudy[];
+  const entries = mockSearchResults.entry as BundleEntry[];
 
-  it('sets the initial state based on the supplied list of studies', () => {
-    expect(savedStudiesReducer(uninitializedState, { type: 'setInitialState', value: { studies } })).toEqual({
-      ids: new Set<string>(),
-      savedStudies: studies,
-    });
-  });
-
-  it('saves a study when it is not already selected and after already having selected a study', () => {
-    expect(
-      savedStudiesReducer(
-        { ids: new Set<string>(['NCT02684032']), savedStudies: [studies[0]] },
-        { type: 'toggleSave', value: { study: studies[2], studies } }
-      )
-    ).toEqual({
-      ids: new Set<string>(['NCT02684032', 'NCT03964532']),
-      savedStudies: [studies[0], studies[2]],
-    });
-  });
-
-  it('saves a study when it is not already selected and after not having any selected studies', () => {
-    expect(
-      savedStudiesReducer(
-        { ids: new Set<string>(), savedStudies: studies },
-        { type: 'toggleSave', value: { study: studies[0], studies } }
-      )
-    ).toEqual({ ids: new Set<string>(['NCT02684032']), savedStudies: [studies[0]] });
+  it('resets to the initial state', () => {
+    expect(savedStudiesReducer(new Set<string>(['NCT02684032']), { type: 'setInitialState' })).toEqual(
+      uninitializedState
+    );
   });
 
   it('unsaves a study when it is already is selected', () => {
     expect(
-      savedStudiesReducer(
-        {
-          ids: new Set<string>(['NCT02684032', 'NCT03964532']),
-          savedStudies: [studies[0], studies[2]],
-        },
-        { type: 'toggleSave', value: { study: studies[2], studies } }
-      )
-    ).toEqual({ ids: new Set<string>(['NCT02684032']), savedStudies: [studies[0]] });
+      savedStudiesReducer(new Set<string>(['NCT02684032', 'NCT03964532']), { type: 'toggleSave', value: entries[2] })
+    ).toEqual(new Set<string>(['NCT02684032']));
   });
 
-  it('saves all studies when no studies are selected', () => {
-    expect(
-      savedStudiesReducer(
-        { ids: new Set<string>(['NCT02684032']), savedStudies: [studies[0]] },
-        { type: 'toggleSave', value: { study: studies[0], studies } }
-      )
-    ).toEqual({ ids: new Set<string>(), savedStudies: studies });
+  it('saves a study when it is not already selected', () => {
+    expect(savedStudiesReducer(new Set<string>(['NCT03964532']), { type: 'toggleSave', value: entries[0] })).toEqual(
+      new Set<string>(['NCT02684032', 'NCT03964532'])
+    );
   });
 });
 
-describe('getStudies', () => {
-  it('gets all the ResearchStudy resources from a Bundle', () => {
-    const results = mockSearchResults as Bundle;
-    const studies = mockStudies as ResearchStudy[];
-    expect(getStudies(results)).toEqual(studies);
+describe('getSavedStudies', () => {
+  const entries = mockSearchResults.entry as BundleEntry[];
+
+  it('gets all studies when none are saved', () => {
+    expect(getSavedStudies([entries[0], entries[2]], uninitializedState)).toEqual([entries[0], entries[2]]);
+  });
+
+  it('gets selected studies', () => {
+    expect(getSavedStudies(entries, new Set<string>(['NCT02684032', 'NCT03964532']))).toEqual([entries[0], entries[2]]);
   });
 });
