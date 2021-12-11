@@ -1,4 +1,3 @@
-import { ResearchStudy } from 'fhir/r4';
 import { MouseEventHandler } from 'react';
 
 export type ContactProps = { name?: string; phone?: string; email?: string; distance?: string };
@@ -9,7 +8,10 @@ export type StudyDetail = { header: string; body: string };
 export type StudyProps = {
   closestFacility: ContactProps;
   conditions: string[];
-  details: StudyDetail[];
+  trialId: string;
+  source: string;
+  description: string;
+  eligibility: string;
   keywords: string[];
   likelihood: LikelihoodProps;
   period: string;
@@ -23,11 +25,8 @@ export type StudyProps = {
 
 export type SaveStudyHandler = MouseEventHandler<HTMLButtonElement>;
 
-export type SavedStudiesState = {
-  ids: Set<string>;
-  savedStudies: ResearchStudy[];
-};
+export type BundleEntry = fhir4.BundleEntry & { resource: fhir4.ResearchStudy };
 
-export type SavedStudiesAction =
-  | { type: 'toggleSave'; value: { study: ResearchStudy; studies: ResearchStudy[] } }
-  | { type: 'setInitialState'; value: { studies: ResearchStudy[] } };
+export type SavedStudiesState = Set<string>;
+
+export type SavedStudiesAction = { type: 'toggleSave'; value: BundleEntry } | { type: 'setInitialState' };

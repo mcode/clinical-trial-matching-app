@@ -1,4 +1,4 @@
-import { ReactElement, useEffect, useReducer, useState } from 'react';
+import { ReactElement, useMemo, useReducer, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSideProps } from 'next';
@@ -9,12 +9,12 @@ import { Drawer, Paper, Stack, Theme, useTheme, useMediaQuery, CircularProgress 
 import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
-import { Results, ResultsHeader, SaveStudyHandler } from '@/components/Results';
+import { Results, ResultsHeader, SaveStudyHandler, BundleEntry } from '@/components/Results';
+import { SearchParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
-import { SearchParameters } from 'types/search-types';
-import { ResearchStudy } from 'fhir/r4';
-import { uninitializedState, getStudies, savedStudiesReducer } from '@/utils/resultsStateUtils';
+import { uninitializedState, savedStudiesReducer, getSavedStudies } from '@/utils/resultsStateUtils';
+import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
 
 type ResultsPageProps = {
   patient: Patient;
@@ -83,25 +83,23 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const drawerWidth = getDrawerWidth(isExtraSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const [studies, setStudies] = useState([] as ResearchStudy[]);
+  const entries = useMemo(() => data?.results?.entry as BundleEntry[], [data]);
   const [state, dispatch] = useReducer(savedStudiesReducer, uninitializedState);
-  useEffect(() => {
-    const studies = getStudies(data?.results);
-    setStudies(studies);
-    dispatch({ type: 'setInitialState', value: { studies } });
-  }, [data]);
 
+  const alreadyHasSavedStudies = state.size !== 0;
+  const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
+  const handleExportSavedStudies = (): void => {
+    const savedStudies = getSavedStudies(entries, state);
+    const data = unpackStudies(savedStudies);
+    exportSpreadsheetData(data, 'clinicalTrials');
+  };
   const handleSaveStudy =
-    (study: ResearchStudy): SaveStudyHandler =>
+    (entry: BundleEntry): SaveStudyHandler =>
     event => {
       // When the save button is in the accordion actions, we don't want it to expand/collapse the accordion.
       event.stopPropagation();
-      dispatch({ type: 'toggleSave', value: { study, studies } });
+      dispatch({ type: 'toggleSave', value: entry });
     };
-
-  const handleClearSavedStudies = () => dispatch({ type: 'setInitialState', value: { studies } });
-
-  console.log('state', state);
 
   return (
     <>
@@ -158,8 +156,9 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
               isOpen={open}
               toggleDrawer={toggleDrawer}
               toggleMobileDrawer={toggleMobileDrawer}
-              state={state}
+              alreadyHasSavedStudies={alreadyHasSavedStudies}
               handleClearSavedStudies={handleClearSavedStudies}
+              handleExportStudies={handleExportSavedStudies}
             />
             <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
               {(isIdle || isLoading) && (
@@ -168,7 +167,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                 </Stack>
               )}
 
-              {!isIdle && !isLoading && <Results studies={studies} state={state} handleSaveStudy={handleSaveStudy} />}
+              {!isIdle && !isLoading && <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} />}
             </MainContent>
           </SlidingStack>
         </Stack>

@@ -1,7 +1,7 @@
 import { GeolibInputCoordinates } from 'geolib/es/types';
 import data from 'us-zips';
 import { findNearest, convertDistance, getPreciseDistance, getLatitude, getLongitude } from 'geolib';
-import { DomainResource, FhirResource, Location } from 'fhir/r4';
+import { Location, Reference, ResearchStudy } from 'fhir/r4';
 
 export const getZipcodeCoordinates = (zipcode: string): GeolibInputCoordinates => {
   return data[zipcode] || null;
@@ -37,9 +37,26 @@ export const getLocationCoordinates = (location: Location): GeolibInputCoordinat
     : null;
 };
 
-export const getLocationsWithCoordinates = (study: DomainResource): Location[] => {
-  const isLocation = ({ resourceType }: FhirResource) => resourceType === 'Location';
-  const locations: Location[] = (study?.contained?.filter(isLocation) as Location[]) || [];
+export const getLocations = (study: ResearchStudy): Location[] => {
+  const sites: Reference[] = study.site || [];
+  const locations: Location[] = [];
+  const getLocation = (referenceId: string) =>
+    study.contained.find(({ resourceType, id }) => resourceType === 'Location' && referenceId === id);
+
+  for (const site of sites) {
+    const url: string = site.reference;
+    const isLocalReference = url.length > 1 && url.substr(0, 1);
+    if (isLocalReference) {
+      const id = url.substr(1);
+      const location = getLocation(id) as Location;
+      location && locations.push(location);
+    }
+  }
+  return locations;
+};
+
+export const getLocationsWithCoordinates = (study: ResearchStudy): Location[] => {
+  const locations = getLocations(study);
   const united_states = new RegExp(/(United States|United States of America|USA|US)/, 'i');
   const us_zip = new RegExp(/^\d{5}$/);
   const locationsWithCoordinates: Location[] = [];

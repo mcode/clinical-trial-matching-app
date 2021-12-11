@@ -40,10 +40,37 @@ export const locationsWithAndWithoutCoordinates: Location[] = [
       country: 'USA',
     },
   },
+  {
+    resourceType: 'Location',
+    id: 'location-5',
+    name: 'Fifth Location (does not have local reference)',
+    address: {
+      postalCode: '70001',
+      country: 'USA',
+    },
+  },
 ];
 
 export const researchStudyWithLocations: ResearchStudy = {
   resourceType: 'ResearchStudy',
+  site: [
+    {
+      reference: '#location-1',
+      type: 'Location',
+    },
+    {
+      reference: '#location-2',
+      type: 'Location',
+    },
+    {
+      reference: '#location-3',
+      type: 'Location',
+    },
+    {
+      reference: '#location-4',
+      type: 'Location',
+    },
+  ],
   contained: [
     {
       resourceType: 'Organization',

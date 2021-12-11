@@ -1,5 +1,4 @@
 import { ReactElement, useState } from 'react';
-import { ResearchStudy } from 'fhir/r4';
 import {
   Accordion,
   AccordionDetails,
@@ -17,21 +16,22 @@ import { Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
-import { getStudyProps } from './utils';
 import { useRouter } from 'next/router';
-import { SaveStudyHandler } from './types';
+import { getDetails, getStudyProps } from './utils';
+import { SaveStudyHandler, BundleEntry } from './types';
 import UnsaveIcon from './UnsaveIcon';
 
 type StudyProps = {
-  study: ResearchStudy;
+  entry: BundleEntry;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
 };
 
-const Study = ({ study, handleSaveStudy, isStudySaved }: StudyProps): ReactElement => {
+const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { query } = useRouter();
-  const studyProps = getStudyProps(study, query);
+  const studyProps = getStudyProps(entry, query);
+  const details = getDetails(studyProps);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
 
@@ -45,7 +45,7 @@ const Study = ({ study, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
     >
       <StudyHeader
         isExpanded={isExpanded}
-        studyId={study.id}
+        studyId={entry.resource.id}
         studyProps={studyProps}
         handleSaveStudy={handleSaveStudy}
         isStudySaved={isStudySaved}
@@ -64,7 +64,7 @@ const Study = ({ study, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
             <TableContainer>
               <Table size={isExtraLargeScreen ? 'medium' : 'small'} stickyHeader={!isExtraLargeScreen}>
                 <TableBody>
-                  {studyProps.details.map(({ header, body }, index) => (
+                  {details.map(({ header, body }, index) => (
                     <TableRow
                       key={index}
                       sx={{

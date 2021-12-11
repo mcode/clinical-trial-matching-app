@@ -5,24 +5,24 @@ import {
   ChevronRight as ChevronRightIcon,
   Menu as MenuIcon,
 } from '@mui/icons-material';
-import { SavedStudiesState } from './types';
 
 export type ResultsHeaderProps = {
   isOpen: boolean;
   toggleDrawer: () => void;
   toggleMobileDrawer: () => void;
-  state: SavedStudiesState;
+  alreadyHasSavedStudies: boolean;
   handleClearSavedStudies: () => void;
+  handleExportStudies: () => void;
 };
 
 const ResultsHeader = ({
   isOpen,
   toggleDrawer,
   toggleMobileDrawer,
-  state,
+  alreadyHasSavedStudies,
   handleClearSavedStudies,
+  handleExportStudies,
 }: ResultsHeaderProps): ReactElement => {
-  const alreadyHasSavedStudies = state.ids.size !== 0;
   return (
     <Stack
       alignItems="center"
@@ -56,7 +56,9 @@ const ResultsHeader = ({
           </Button>
         )}
 
-        <Button sx={{ mr: 2 }}>{alreadyHasSavedStudies ? 'Export Saved' : 'Export All'}</Button>
+        <Button sx={{ mr: 2 }} onClick={handleExportStudies}>
+          {alreadyHasSavedStudies ? 'Export Saved' : 'Export All'}
+        </Button>
       </Stack>
     </Stack>
   );

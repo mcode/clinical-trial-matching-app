@@ -1,32 +1,32 @@
 import { ReactElement } from 'react';
-import { ResearchStudy } from 'fhir/r4';
 import { Typography } from '@mui/material';
 
 import Study from './Study';
 import { SavedStudiesState, SaveStudyHandler } from './types';
+import { BundleEntry } from './types';
 
 export type ResultsProps = {
-  studies: ResearchStudy[];
+  entries: BundleEntry[];
   state: SavedStudiesState;
-  handleSaveStudy: (study: ResearchStudy) => SaveStudyHandler;
+  handleSaveStudy: (study: BundleEntry) => SaveStudyHandler;
 };
 
-const Results = ({ studies, state, handleSaveStudy }: ResultsProps): ReactElement => (
+const Results = ({ entries, state, handleSaveStudy }: ResultsProps): ReactElement => (
   <>
     <Typography fontWeight="normal" mb={2} variant="h6">
       We found
       <Typography color="common.blueDarker" component="span" fontWeight={700} variant="h6">
-        {` ${studies.length} `}
+        {` ${entries.length} `}
       </Typography>
       matching trials...
     </Typography>
 
-    {studies.map((study: ResearchStudy) => (
+    {entries.map((entry: BundleEntry) => (
       <Study
-        key={study.id}
-        study={study}
-        handleSaveStudy={handleSaveStudy(study)}
-        isStudySaved={state.ids.has(study.id)}
+        key={entry.resource.id}
+        entry={entry}
+        handleSaveStudy={handleSaveStudy(entry)}
+        isStudySaved={state.has(entry.resource.id)}
       />
     ))}
   </>

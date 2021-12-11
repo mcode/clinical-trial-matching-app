@@ -1,6 +1,4 @@
-import { BundleEntry, ContactDetail, Organization, ResearchStudy, DomainResource } from 'fhir/r4';
-import { format } from 'date-fns';
-import { ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyProps } from './types';
+import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy } from 'fhir/r4';
 import {
   getZipcodeCoordinates,
   getLocationsWithCoordinates,
@@ -9,8 +7,11 @@ import {
   coordinatesAreEqual,
 } from '@/utils/distanceUtils';
 import { ParsedUrlQuery } from 'querystring';
+import { format } from 'date-fns';
+import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyProps } from './types';
+import { MainRowKeys } from '@/utils/exportData';
 
-const getContact = (contact: ContactDetail): ContactProps => {
+export const getContact = (contact: ContactDetail): ContactProps => {
   return {
     name: contact?.name,
     phone: contact?.telecom?.find(info => info.system === 'phone' && info.value)?.value,
@@ -18,8 +19,9 @@ const getContact = (contact: ContactDetail): ContactProps => {
   };
 };
 
-const getClosestFacility = (study: DomainResource, { zipcode }: ParsedUrlQuery): ContactProps => {
-  const origin = getZipcodeCoordinates(zipcode as string);
+const getClosestFacility = (study: ResearchStudy, query: ParsedUrlQuery): ContactProps => {
+  const zipcode = query?.zipcode as string;
+  const origin = getZipcodeCoordinates(zipcode);
   const locations = getLocationsWithCoordinates(study);
   const closest = getCoordinatesOfClosestLocation(origin, locations);
   const distance = getDistanceBetweenPoints(origin, closest);
@@ -30,23 +32,31 @@ const getClosestFacility = (study: DomainResource, { zipcode }: ParsedUrlQuery):
   };
 };
 
-const getConditions = (study: ResearchStudy): string[] => study.condition?.map(({ text }) => text);
+const getConditions = (study: ResearchStudy): string[] => study.condition?.map(({ text }) => text) || [];
 
-const getDetails = (study: ResearchStudy): StudyDetail[] => {
+export const getDetails = (studyProps: StudyProps): StudyDetail[] => {
   const details = [
-    { header: 'Conditions', body: study.condition?.map(({ text }) => text).join(', ') },
-    { header: 'Trial Id', body: study.identifier?.[0]?.value },
-    { header: 'Source', body: 'Unknown' }, // TODO
-    { header: 'Description', body: study.description?.trim() },
-    { header: 'Eligibility', body: study.enrollment?.[0]?.display.trim() },
+    { header: MainRowKeys.conditions, body: studyProps.conditions.join(', ') },
+    { header: MainRowKeys.trialId, body: studyProps.trialId },
+    { header: MainRowKeys.source, body: studyProps.source },
+    { header: MainRowKeys.description, body: studyProps.description },
+    { header: MainRowKeys.eligibility, body: studyProps.eligibility },
   ];
   return details.filter(({ body }) => (Array.isArray(body) ? body.length > 0 : body));
 };
 
+const getTrialId = (study: ResearchStudy) => study.identifier?.[0]?.value;
+
+const getSource = () => 'Unknown'; // TODO
+
+const getDescription = (study: ResearchStudy) => study.description?.trim();
+
+const getEligibility = (study: ResearchStudy) => study.enrollment?.[0]?.display.trim();
+
 const getKeywords = (study: ResearchStudy): string[] => study.keyword?.map(({ text }) => text.replace(/_/g, ' '));
 
-const getLikelihood = (study: BundleEntry): LikelihoodProps => {
-  const score = study.search?.score || 1;
+const getLikelihood = (search: BundleEntrySearch): LikelihoodProps => {
+  const score = search?.score;
   if (score >= 0.75) return { text: 'High-likelihood match', color: 'common.green' };
   else if (score >= 0.01) return { text: 'Possible match', color: 'common.yellow' };
   else if (score < 0.01) return { text: 'No match', color: 'common.red' };
@@ -55,11 +65,11 @@ const getLikelihood = (study: BundleEntry): LikelihoodProps => {
 
 const getPeriod = (study: ResearchStudy): string => {
   const startDate = study?.period?.start && format(new Date(study.period.start), 'PP');
-  const endDate = study?.period?.end;
+  const endDate = study?.period?.end && format(new Date(study.period.end), 'PP');
   return startDate ? (endDate ? `${startDate} - ${endDate}` : startDate) : null;
 };
 
-const getPhase = (study: ResearchStudy): string => study.phase.text;
+const getPhase = (study: ResearchStudy): string => study.phase?.text;
 
 const getContacts = (study: ResearchStudy): ContactProps[] => {
   return study?.contact?.map(getContact) || [];
@@ -74,7 +84,7 @@ const getSponsor = (study: ResearchStudy): ContactProps => {
 };
 
 const getStatus = (study: ResearchStudy): StatusProps => {
-  const status = study.status?.replace(/-/g, ' ') || '';
+  const status = study.status?.replace(/-/g, ' ');
   switch (study.status) {
     case 'active':
     case 'administratively-completed':
@@ -104,19 +114,23 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-export const getStudyProps = (study: ResearchStudy, query: ParsedUrlQuery): StudyProps => {
+export const getStudyProps = (entry: BundleEntry, query?: ParsedUrlQuery): StudyProps => {
+  const { resource, search } = entry as BundleEntry & { resource: ResearchStudy };
   return {
-    closestFacility: getClosestFacility(study, query),
-    conditions: getConditions(study),
-    details: getDetails(study),
-    keywords: getKeywords(study),
-    likelihood: getLikelihood(study),
-    period: getPeriod(study),
-    phase: getPhase(study),
-    sponsor: getSponsor(study),
-    contacts: getContacts(study),
-    status: getStatus(study),
-    title: getTitle(study),
-    type: getType(study),
+    closestFacility: getClosestFacility(resource, query),
+    conditions: getConditions(resource),
+    trialId: getTrialId(resource),
+    source: getSource(),
+    description: getDescription(resource),
+    eligibility: getEligibility(resource),
+    keywords: getKeywords(resource),
+    likelihood: getLikelihood(search),
+    period: getPeriod(resource),
+    phase: getPhase(resource),
+    sponsor: getSponsor(resource),
+    contacts: getContacts(resource),
+    status: getStatus(resource),
+    title: getTitle(resource),
+    type: getType(resource),
   };
 };
