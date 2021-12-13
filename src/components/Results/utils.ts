@@ -20,14 +20,14 @@ const getClosestFacility = (): ContactProps => {
   };
 };
 
-const getConditions = (study: ResearchStudy): string[] => study.condition.map(({ text }) => text);
+const getConditions = (study: ResearchStudy): string[] => study.condition?.map(({ text }) => text);
 
 const getDetails = (study: ResearchStudy): StudyDetail[] => {
   const details = [
-    { header: 'Conditions', body: study.condition.map(({ text }) => text).join(', ') },
+    { header: 'Conditions', body: study.condition?.map(({ text }) => text).join(', ') },
     { header: 'Trial Id', body: study.identifier?.[0]?.value },
     { header: 'Source', body: 'Unknown' }, // TODO
-    { header: 'Description', body: study.description.trim() },
+    { header: 'Description', body: study.description?.trim() },
     { header: 'Eligibility', body: study.enrollment?.[0]?.display.trim() },
   ];
   return details.filter(({ body }) => (Array.isArray(body) ? body.length > 0 : body));
@@ -35,7 +35,7 @@ const getDetails = (study: ResearchStudy): StudyDetail[] => {
 
 const getDistance = (): string => '82.1 miles'; // TODO
 
-const getKeywords = (study: ResearchStudy): string[] => study.keyword.map(({ text }) => text.replace(/_/g, ' '));
+const getKeywords = (study: ResearchStudy): string[] => study.keyword?.map(({ text }) => text.replace(/_/g, ' '));
 
 const getLikelihood = (study: BundleEntry): LikelihoodProps => {
   const score = study.search?.score || 1;
@@ -66,7 +66,7 @@ const getSponsor = (study: ResearchStudy): ContactProps => {
 };
 
 const getStatus = (study: ResearchStudy): StatusProps => {
-  const status = study.status.replace(/-/g, ' ');
+  const status = study.status?.replace(/-/g, ' ') || '';
   switch (study.status) {
     case 'active':
     case 'administratively-completed':
@@ -90,7 +90,7 @@ const getStatus = (study: ResearchStudy): StatusProps => {
 const getTitle = (study: ResearchStudy): string => study.title;
 
 const getType = (study: ResearchStudy): string => {
-  for (const { text } of study.category) {
+  for (const { text } of study.category || []) {
     const match = text.match(/Study Type: (.+)$/)?.[1];
     if (match) return match;
   }

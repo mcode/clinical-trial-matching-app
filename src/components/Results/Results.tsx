@@ -5,11 +5,21 @@ import { Typography } from '@mui/material';
 import Study from './Study';
 
 export type ResultsProps = {
-  data: Bundle;
+  data: ResultsResponse;
+};
+
+export type ResultsResponse = {
+  results?: Bundle;
+  errors?: ErrorResponse[];
+};
+
+export type ErrorResponse = {
+  status: string;
+  response: string;
 };
 
 const Results = ({ data }: ResultsProps): ReactElement => {
-  const entries: BundleEntry[] = data.entry || [];
+  const entries: BundleEntry[] = data?.results?.entry || [];
   const studies = entries.filter(({ resource }) => resource?.resourceType === 'ResearchStudy');
 
   return (
