@@ -4,7 +4,7 @@ import { Autocomplete, Checkbox, Chip, TextField, Typography } from '@mui/materi
 
 import { SearchFormValuesType } from './types';
 import { AutocompleteCodeField } from './AutocompleteCodeField';
-import { getCancerCodes } from '@/utils/cancerTypes';
+import { getCancerTypeCodes, getCancerSubtypeCodes } from '@/utils/cancerTypes';
 
 const AutocompleteMulti = ({ field, label, options }): ReactElement => (
   <Autocomplete
@@ -82,16 +82,16 @@ export const CancerTypeTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
-}): ReactElement => {
-  return <AutocompleteCodeField initialValue={field.value} codeLoader={getCancerCodes} />;
-};
+}): ReactElement => (
+  <AutocompleteCodeField initialValue={field.value} label="Cancer Type" required codeLoader={getCancerTypeCodes} />
+);
 
 export const CancerSubtypeTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerSubtype'>;
 }): ReactElement => (
-  <TextField data-testid="cancerSubtype" fullWidth label="Cancer Subtype" variant="filled" {...field} />
+  <AutocompleteCodeField initialValue={field.value} label="Cancer Subtype" codeLoader={getCancerSubtypeCodes} />
 );
 
 export const CancerStageAutocomplete = ({

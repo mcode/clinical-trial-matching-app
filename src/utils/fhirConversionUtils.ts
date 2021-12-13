@@ -1,7 +1,11 @@
 import { CodeableConcept, Coding, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
-import { CancerCode } from './cancerTypes';
-import { SNOMED_CODE_URI } from './snomed';
+import { Extension } from './fhirTypes';
+import { snomedCodeNameDB } from './cancerTypes';
+import { NamedSNOMEDCode, SNOMED_CODE_URI } from './snomed';
+
+export const MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR =
+  'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior';
 
 type FhirUser = fhirclient.FHIR.Patient | fhirclient.FHIR.Practitioner | fhirclient.FHIR.RelatedPerson;
 
@@ -21,8 +25,8 @@ export type Patient = {
 };
 
 export type PrimaryCancerCondition = {
-  cancerType: CancerCode;
-  cancerSubtype: string;
+  cancerType: NamedSNOMEDCode | null;
+  cancerSubtype: NamedSNOMEDCode | null;
   stage: string;
 };
 
@@ -82,7 +86,7 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
     fhirPatient.address?.length > 0 && fhirPatient.address[0].postalCode ? fhirPatient.address[0].postalCode : null,
 });
 
-const getCancerType = (resource: fhirclient.FHIR.Resource): CancerCode | null => {
+const getCancerType = (resource: fhirclient.FHIR.Resource): NamedSNOMEDCode | null => {
   if (!resource || resource.resourceType !== 'Condition') {
     return null;
   }
@@ -104,18 +108,31 @@ const getCancerType = (resource: fhirclient.FHIR.Resource): CancerCode | null =>
     if (coding) {
       return {
         display: coding.display ?? coding.code,
-        fromPatient: true,
+        code: coding.code,
       };
     }
   }
   return null;
 };
 
-const getCancerSubtype = (resource: fhirclient.FHIR.Resource): string => {
-  return (
-    (resource && resource.code && resource.code.coding && resource.code.coding[0] && resource.code.coding[0].display) ||
-    null
-  );
+const getCancerSubtype = (resource: fhirclient.FHIR.Resource): NamedSNOMEDCode | null => {
+  if (!resource || resource.resourceType !== 'Condition') {
+    return null;
+  }
+  // This needs to grab an extension, the histology morphology code if set
+  if (Array.isArray(resource.extension)) {
+    const extensions = resource.extension as Extension[];
+    for (const extension of extensions) {
+      if (extension.url == MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR) {
+        // Use the code if possible
+        const snomed = snomedCodeNameDB.getSnomedCode(extension.valueCodeableConcept);
+        if (snomed) {
+          return snomed;
+        }
+      }
+    }
+  }
+  return null;
 };
 
 export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition => {

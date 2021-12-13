@@ -1,61 +1,49 @@
 // For now, the types are simply loaded statically
 import CANCER_CODES from './cancerCodes.json';
-
-export interface CancerCode {
-  display: string;
-  primary?: string;
-  histology?: string;
-  fromPatient?: boolean;
-}
-
-function codeComplexity(code: CancerCode): number {
-  let complexity = 0;
-  if (code.primary) complexity++;
-  if (code.histology) complexity++;
-  return complexity;
-}
+import SNOMED_CODES from './snomedCodes.json';
+import { NamedSNOMEDCode, SnomedCodeDB } from './snomed';
 
 /**
- * Internal cache containing cancer codes (as this will otherwise be loaded each time)
+ * For now, the code lookup DB is just exported. This may not work in the future if the number of codes expands to the
+ * point where they can't reasonably be statically included. For now, however...
  */
-let cachedCancerCodes: CancerCode[] | null = null;
+export const snomedCodeNameDB = new SnomedCodeDB(SNOMED_CODES);
+
+function createCodeList(codes: string[]): NamedSNOMEDCode[] {
+  return Array.from(new Set(codes))
+    .map(code => {
+      return { code: code, display: snomedCodeNameDB.getDisplayString(code) };
+    })
+    .sort((a, b) => {
+      return a.display < b.display ? -1 : a.display > b.display ? 1 : 0;
+    });
+}
 
 /**
- * Loads a set of cancer ccodes
+ * Internal cache containing cancer type codes (as this will otherwise be loaded each time)
+ */
+let cachedCancerTypeCodes: NamedSNOMEDCode[] | null = null;
+/**
+ * Loads a set of primary cancer codes
  * @returns a Promise that resolve to a set of CancerCodes
  */
-export function getCancerCodes(): Promise<CancerCode[]> {
-  if (cachedCancerCodes) {
-    return Promise.resolve(cachedCancerCodes);
+export function getCancerTypeCodes(): Promise<NamedSNOMEDCode[]> {
+  if (cachedCancerTypeCodes) {
+    return Promise.resolve(cachedCancerTypeCodes);
   }
-  // If the codes aren't "loaded" then "load" them - for now that just means removing duplicates and sorting the list
-  // There are a number of instances where codes are duplicated. For now, pick
-  // the "most complicated" type
-  const uniqueCodes = new Map<string, CancerCode>();
-  for (const code of CANCER_CODES) {
-    if (uniqueCodes.has(code.display)) {
-      // See if this one is "more complicated"
-      if (codeComplexity(code) > codeComplexity(uniqueCodes.get(code.display))) {
-        uniqueCodes.set(code.display, code);
-      }
-    } else {
-      uniqueCodes.set(code.display, code);
-    }
+  // If the codes aren't "loaded" then "load" them
+  return Promise.resolve((cachedCancerTypeCodes = createCodeList(CANCER_CODES.types)));
+}
+
+/**
+ * Internal cache containing cancer subtype codes (as this will otherwise be loaded each time)
+ */
+let cachedCancerSubtypeCodes: NamedSNOMEDCode[] | null = null;
+
+export function getCancerSubtypeCodes(): Promise<NamedSNOMEDCode[]> {
+  if (cachedCancerSubtypeCodes) {
+    return Promise.resolve(cachedCancerSubtypeCodes);
   }
-  cachedCancerCodes = Array.from(uniqueCodes.values());
-  // And then sort
-  cachedCancerCodes.sort((a, b) => {
-    if (a.fromPatient) {
-      // codes from the patient always sort "less than" ones without
-      if (!b.fromPatient) {
-        return -1;
-      }
-    } else if (b.fromPatient) {
-      // Codes not from the patient always sort "greater than" ones with
-      return 1;
-    }
-    // Otherwise, use string comparison
-    return a.display < b.display ? -1 : a.display === b.display ? 0 : 1;
-  });
-  return Promise.resolve(cachedCancerCodes);
+  // If the codes aren't "loaded" then "load" them
+  return Promise.resolve((cachedCancerSubtypeCodes = createCodeList(CANCER_CODES.subtypes)));
 }

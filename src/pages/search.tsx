@@ -52,7 +52,7 @@ const SearchPage = ({
   const defaultValues = {
     age: patient.age || '',
     cancerType: primaryCancerCondition.cancerType || { display: '', fromPatient: true },
-    cancerSubtype: primaryCancerCondition.cancerSubtype || '',
+    cancerSubtype: primaryCancerCondition.cancerSubtype,
     stage: primaryCancerCondition.stage,
     travelDistance: '100',
     zipcode: patient.zipcode || '',

@@ -1,4 +1,4 @@
-import { CancerCode } from '../../utils/cancerTypes';
+import { NamedSNOMEDCode } from '@/utils/snomed';
 
 export type SearchFormValuesType = {
   matchingServices: {
@@ -9,8 +9,8 @@ export type SearchFormValuesType = {
   zipcode: string;
   travelDistance: string;
   age: string;
-  cancerType: CancerCode;
-  cancerSubtype: string;
+  cancerType: NamedSNOMEDCode;
+  cancerSubtype: NamedSNOMEDCode;
   metastasis: string[];
   stage: string;
   ecogScore: string;

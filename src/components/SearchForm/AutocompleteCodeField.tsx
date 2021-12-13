@@ -8,6 +8,8 @@ export interface AutocompleteCodeValue {
 export interface AutocompleteCodeFieldProps<T extends AutocompleteCodeValue> {
   initialValue: T;
   codeLoader: () => Promise<T[]>;
+  required?: boolean;
+  label?: string;
 }
 
 export interface AutocompleteCodeFieldState<T extends AutocompleteCodeValue> {
@@ -64,7 +66,6 @@ export class AutocompleteCodeField<T extends AutocompleteCodeValue> extends Reac
   render(): ReactElement {
     return (
       <Autocomplete
-        data-testid="cancerType"
         value={this.state.value !== null && this.state.value !== undefined ? (this.state.value as NonNullable<T>) : ''}
         open={this.state.open}
         onOpen={() => {
@@ -78,20 +79,25 @@ export class AutocompleteCodeField<T extends AutocompleteCodeValue> extends Reac
         }}
         loading={this.state.loading}
         getOptionLabel={option => {
-          return option.display || '';
+          return option?.display || '';
         }}
         isOptionEqualToValue={(option, value) => {
           // value may either be a selected option or a user-entered string
-          return option.display === (typeof value === 'string' ? value : value.display);
+          // option may be null if the value is unknown
+          if (option === null) {
+            return value === null || (value as unknown) === '';
+          } else {
+            return option.display === (typeof value === 'string' ? value : value.display);
+          }
         }}
         options={this.state.options}
         renderInput={params => (
           <TextField
-            error={!this.state.value || this.state.value.display === ''}
-            required
+            error={this.props.required && (!this.state.value || this.state.value.display === '')}
+            required={this.props.required}
             variant="filled"
             fullWidth
-            label="Cancer Type"
+            label={this.props.label}
             {...params}
           />
         )}
