@@ -159,7 +159,12 @@ async function callWrapper(url: string, query: string, serviceName: string) {
       return { status: 200, response: data };
     })
     .catch(error => {
-      return { status: 500, response: 'There was an issue receiving responses from ' + serviceName, error };
+      return {
+        status: 500,
+        response: 'There was an issue receiving responses from ' + serviceName,
+        serviceName,
+        error,
+      };
     });
 }
 
