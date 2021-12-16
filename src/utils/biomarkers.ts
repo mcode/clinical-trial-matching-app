@@ -1,19 +1,11 @@
 import { fhirclient } from 'fhirclient/lib/types';
 
 const getMarker = (resource: fhirclient.FHIR.Resource): string => {
-  return (
-    resource && resource.code && resource.code.coding && resource.code.coding[0] && resource.code.coding[0].display
-  );
+  return resource?.code?.coding?.[0]?.display;
 };
 
 const getStatus = (resource: fhirclient.FHIR.Resource): string => {
-  return (
-    resource &&
-    resource.valueCodeableConcept &&
-    resource.valueCodeableConcept.coding &&
-    resource.valueCodeableConcept.coding[0] &&
-    resource.valueCodeableConcept.coding[0].display
-  );
+  return resource?.valueCodeableConcept?.coding?.[0].display;
 };
 
 export const convertFhirTumorMarkers = (bundle: fhirclient.FHIR.Bundle): string[] => {
