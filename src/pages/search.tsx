@@ -51,7 +51,7 @@ const SearchPage = ({
 }: SearchPageProps): ReactElement => {
   const defaultValues = {
     age: patient.age || '',
-    cancerType: primaryCancerCondition.cancerType || { display: '', fromPatient: true },
+    cancerType: primaryCancerCondition.cancerType,
     cancerSubtype: primaryCancerCondition.cancerSubtype,
     stage: primaryCancerCondition.stage,
     travelDistance: '100',

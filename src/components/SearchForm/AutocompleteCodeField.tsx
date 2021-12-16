@@ -1,23 +1,23 @@
 import React, { ReactElement } from 'react';
 import { Autocomplete, TextField } from '@mui/material';
 
-export interface AutocompleteCodeValue {
+export type AutocompleteCodeValue = {
   display: string;
-}
+};
 
-export interface AutocompleteCodeFieldProps<T extends AutocompleteCodeValue> {
+export type AutocompleteCodeFieldProps<T extends AutocompleteCodeValue> = {
   initialValue: T;
   codeLoader: () => Promise<T[]>;
   required?: boolean;
   label?: string;
-}
+};
 
-export interface AutocompleteCodeFieldState<T extends AutocompleteCodeValue> {
+export type AutocompleteCodeFieldState<T extends AutocompleteCodeValue> = {
   open: boolean;
   loading: boolean;
   options: T[];
   value: T;
-}
+};
 
 export class AutocompleteCodeField<T extends AutocompleteCodeValue> extends React.Component<
   AutocompleteCodeFieldProps<T>,

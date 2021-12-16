@@ -9,8 +9,8 @@ export type SearchFormValuesType = {
   zipcode: string;
   travelDistance: string;
   age: string;
-  cancerType: NamedSNOMEDCode;
-  cancerSubtype: NamedSNOMEDCode;
+  cancerType: NamedSNOMEDCode | null;
+  cancerSubtype: NamedSNOMEDCode | null;
   metastasis: string[];
   stage: string;
   ecogScore: string;
