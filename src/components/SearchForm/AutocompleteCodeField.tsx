@@ -6,6 +6,7 @@ export type AutocompleteCodeValue = {
 };
 
 export type AutocompleteCodeFieldProps<T extends AutocompleteCodeValue> = {
+  'data-testid'?: string;
   initialValue: T;
   codeLoader: () => Promise<T[]>;
   required?: boolean;
@@ -66,6 +67,7 @@ export class AutocompleteCodeField<T extends AutocompleteCodeValue> extends Reac
   render(): ReactElement {
     return (
       <Autocomplete
+        data-testid={this.props['data-testid']}
         value={this.state.value !== null && this.state.value !== undefined ? (this.state.value as NonNullable<T>) : ''}
         open={this.state.open}
         onOpen={() => {
@@ -83,11 +85,11 @@ export class AutocompleteCodeField<T extends AutocompleteCodeValue> extends Reac
         }}
         isOptionEqualToValue={(option, value) => {
           // value may either be a selected option or a user-entered string
-          // option may be null if the value is unknown
-          if (option === null) {
-            return value === null || (value as unknown) === '';
+          // option may be null or undefined if the value is unknown
+          if (option) {
+            return option.display === (typeof value === 'string' ? value : value?.display);
           } else {
-            return option.display === (typeof value === 'string' ? value : value.display);
+            return value === null || (value as unknown) === '';
           }
         }}
         options={this.state.options}

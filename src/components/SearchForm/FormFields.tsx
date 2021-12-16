@@ -83,7 +83,13 @@ export const CancerTypeTextField = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
 }): ReactElement => (
-  <AutocompleteCodeField initialValue={field.value} label="Cancer Type" required codeLoader={getCancerTypeCodes} />
+  <AutocompleteCodeField
+    data-testid="cancerType"
+    initialValue={field.value}
+    label="Cancer Type"
+    required
+    codeLoader={getCancerTypeCodes}
+  />
 );
 
 export const CancerSubtypeTextField = ({
@@ -91,7 +97,12 @@ export const CancerSubtypeTextField = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerSubtype'>;
 }): ReactElement => (
-  <AutocompleteCodeField initialValue={field.value} label="Cancer Subtype" codeLoader={getCancerSubtypeCodes} />
+  <AutocompleteCodeField
+    data-testid="cancerSubtype"
+    initialValue={field.value}
+    label="Cancer Subtype"
+    codeLoader={getCancerSubtypeCodes}
+  />
 );
 
 export const CancerStageAutocomplete = ({
