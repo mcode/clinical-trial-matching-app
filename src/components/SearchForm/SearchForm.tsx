@@ -9,8 +9,8 @@ import {
   AgeTextField,
   BiomarkersAutocomplete,
   CancerStageAutocomplete,
-  CancerSubtypeTextField,
-  CancerTypeTextField,
+  CancerTypeAutocomplete,
+  CancerSubtypeAutocomplete,
   ECOGScoreAutocomplete,
   KarnofskyScoreAutocomplete,
   MedicationsAutocomplete,
@@ -31,6 +31,8 @@ export type SearchFormProps = {
 
 const formDataToSearchQuery = (data: SearchFormValuesType) => ({
   ...data,
+  cancerType: data.cancerType ? data.cancerType.code.toString() : undefined,
+  cancerSubtype: data.cancerSubtype ? data.cancerSubtype.code.toString() : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
 });
 
@@ -95,15 +97,20 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="cancerType"
-              defaultValue=""
+              defaultValue={defaultValues.cancerType}
               control={control}
               rules={{ required: true }}
-              render={CancerTypeTextField}
+              render={CancerTypeAutocomplete}
             />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
-            <Controller name="cancerSubtype" defaultValue="" control={control} render={CancerSubtypeTextField} />
+            <Controller
+              name="cancerSubtype"
+              defaultValue={defaultValues.cancerSubtype}
+              control={control}
+              render={CancerSubtypeAutocomplete}
+            />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>

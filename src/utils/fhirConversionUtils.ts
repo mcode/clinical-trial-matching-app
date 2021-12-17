@@ -1,6 +1,11 @@
 import { CodeableConcept, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 
+const MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR =
+  'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior';
+
+const SNOMED_CODE_URI = 'http://snomed.info/sct';
+
 type FhirUser = fhirclient.FHIR.Patient | fhirclient.FHIR.Practitioner | fhirclient.FHIR.RelatedPerson;
 
 type FhirUserName = {
@@ -8,6 +13,11 @@ type FhirUserName = {
   given: string[];
   family: string;
   suffix?: string[];
+};
+
+export type NamedSNOMEDCode = {
+  code: string | number;
+  display: string;
 };
 
 export type Patient = {
@@ -19,8 +29,8 @@ export type Patient = {
 };
 
 export type PrimaryCancerCondition = {
-  cancerType: string;
-  cancerSubtype: string;
+  cancerType: NamedSNOMEDCode | null;
+  cancerSubtype: NamedSNOMEDCode | null;
   stage: string;
 };
 
@@ -83,8 +93,8 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
 export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition => {
   const condition = bundle?.entry?.[0]?.resource as Condition;
   return {
-    cancerType: condition?.bodySite?.[0]?.coding?.[0]?.display ?? null,
-    cancerSubtype: condition?.code?.coding?.[0]?.display ?? null,
+    cancerType: getCancerType(condition),
+    cancerSubtype: getCancerSubtype(condition),
     stage: getStage(condition),
   };
 };
@@ -119,25 +129,6 @@ export const convertFhirUser = (fhirUser: FhirUser): User => ({
   record: fhirUser,
 });
 
-const getAge = (dateString: Date): string => {
-  const now = Date.now();
-  const today = new Date(now);
-  const birthDate = new Date(dateString);
-  let age = today.getFullYear() - birthDate.getFullYear();
-  const months = today.getMonth() - birthDate.getMonth();
-  if (months < 0 || (months === 0 && today.getDate() < birthDate.getDate())) age--;
-  return `${age}`;
-};
-
-const getUserName = (fhirUserName: FhirUserName): string => {
-  const prefix = fhirUserName.prefix ? `${fhirUserName.prefix} ` : null;
-  const fullName = `${fhirUserName.given.join(' ')} ${fhirUserName.family}`;
-  const suffix = fhirUserName.suffix?.length > 0 ? `, ${fhirUserName.suffix[0]}` : null;
-  return `${prefix || ''}${fullName}${suffix || ''}`;
-};
-
-const getUniques = (array: string[]) => [...new Set(array)];
-
 const convertTumorMarkersToBiomarkers = (tumorMarker: Observation): string[] => {
   const loincToDisplayMap = {
     '40556-3': 'ER Ag Tiss Ql ImStn',
@@ -166,6 +157,27 @@ const convertTumorMarkersToBiomarkers = (tumorMarker: Observation): string[] => 
   const status = snomedToDisplayMap[statusCode] ?? statusCoding?.[0]?.display;
   return status ? markers.map(marker => `${marker} ${status}`) : [];
 };
+
+// ----- HELPERS ----- //
+
+const getAge = (dateString: Date): string => {
+  const now = Date.now();
+  const today = new Date(now);
+  const birthDate = new Date(dateString);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const months = today.getMonth() - birthDate.getMonth();
+  if (months < 0 || (months === 0 && today.getDate() < birthDate.getDate())) age--;
+  return `${age}`;
+};
+
+const getUserName = (fhirUserName: FhirUserName): string => {
+  const prefix = fhirUserName.prefix ? `${fhirUserName.prefix} ` : null;
+  const fullName = `${fhirUserName.given.join(' ')} ${fhirUserName.family}`;
+  const suffix = fhirUserName.suffix?.length > 0 ? `, ${fhirUserName.suffix[0]}` : null;
+  return `${prefix || ''}${fullName}${suffix || ''}`;
+};
+
+const getUniques = (array: string[]) => [...new Set(array)];
 
 const getDisplays = (resource: { medicationCodeableConcept?: CodeableConcept; code?: CodeableConcept }): string[] => {
   if (resource?.code) {
@@ -204,4 +216,40 @@ const getStage = (condition: Condition): string => {
 
   // get the first found stage for now
   return stages?.length ? stages[0] : null;
+};
+
+const getCancerType = (condition: Condition): NamedSNOMEDCode | null => {
+  if (Array.isArray(condition?.code?.coding)) {
+    // Prefer SNOMED over anything else, else take the first code with a display
+    let code = condition.code.coding.find(({ system }) => system === SNOMED_CODE_URI);
+    if (!code) code = condition.code.coding.find(({ display }) => Boolean(display));
+
+    if (code) {
+      return {
+        code: code.code,
+        display: code.display ?? code.code,
+      };
+    }
+  }
+
+  return null;
+};
+
+const getCancerSubtype = (condition: Condition): NamedSNOMEDCode | null => {
+  if (Array.isArray(condition?.extension)) {
+    for (const extension of condition.extension) {
+      if (
+        extension.url === MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR &&
+        extension.valueCodeableConcept?.coding?.[0]?.system === SNOMED_CODE_URI
+      ) {
+        const code = extension.valueCodeableConcept.coding[0];
+        return {
+          code: code.code,
+          display: code.display ?? code.code,
+        };
+      }
+    }
+  }
+
+  return null;
 };
