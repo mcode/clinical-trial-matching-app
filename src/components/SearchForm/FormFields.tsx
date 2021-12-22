@@ -1,8 +1,10 @@
-import React, { ReactElement } from 'react';
+import { ReactElement, useMemo, useState } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
+import { useQuery } from 'react-query';
 import { Autocomplete, Checkbox, Chip, TextField, Typography } from '@mui/material';
 
 import { SearchFormValuesType } from './types';
+import { fetchCancerSubtypeCodesQuery, fetchCancerTypeCodesQuery } from '@/queries';
 
 const AutocompleteMulti = ({ field, label, options }): ReactElement => (
   <Autocomplete
@@ -36,6 +38,8 @@ const AutocompleteMulti = ({ field, label, options }): ReactElement => (
     sx={{ '& .MuiAutocomplete-inputRoot .MuiAutocomplete-input': { width: 'auto' } }}
   />
 );
+
+// ----- FIELDS ----- //
 
 export const MatchingServiceCheckbox = ({
   field,
@@ -76,29 +80,53 @@ export const AgeTextField = ({
   field: ControllerRenderProps<SearchFormValuesType, 'age'>;
 }): ReactElement => <TextField data-testid="age" fullWidth label="Age" type="number" variant="filled" {...field} />;
 
-export const CancerTypeTextField = ({
+export const CancerTypeAutocomplete = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
-}): ReactElement => (
-  <TextField
-    data-testid="cancerType"
-    error={field.value === ''}
-    fullWidth
-    label="Cancer Type"
-    required
-    variant="filled"
-    {...field}
-  />
-);
+}): ReactElement => {
+  const { data, isLoading } = useQuery(['cancer-type-codes'], () => fetchCancerTypeCodesQuery(), {
+    enabled: typeof window !== 'undefined',
+  });
+  const [initialValue] = useState(field.value);
+  const options = useMemo(() => [initialValue, ...(data || [])].filter(Boolean), [initialValue, data]);
 
-export const CancerSubtypeTextField = ({
+  return (
+    <Autocomplete
+      {...field}
+      data-testid="cancerType"
+      loading={isLoading}
+      onChange={(_event, value) => field.onChange(value)}
+      options={options}
+      getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
+      renderInput={params => <TextField variant="filled" label="Cancer Type" placeholder="" {...params} />}
+    />
+  );
+};
+
+export const CancerSubtypeAutocomplete = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerSubtype'>;
-}): ReactElement => (
-  <TextField data-testid="cancerSubtype" fullWidth label="Cancer Subtype" variant="filled" {...field} />
-);
+}): ReactElement => {
+  const { data, isLoading } = useQuery(['cancer-subtype-codes'], () => fetchCancerSubtypeCodesQuery(), {
+    enabled: typeof window !== 'undefined',
+  });
+  const [initialValue] = useState(field.value);
+  const options = useMemo(() => [initialValue, ...(data || [])].filter(Boolean), [initialValue, data]);
+
+  return (
+    <Autocomplete
+      {...field}
+      data-testid="cancerSubtype"
+      loading={isLoading}
+      onChange={(_event, value) => field.onChange(value)}
+      options={options}
+      getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
+      renderInput={params => <TextField variant="filled" label="Cancer Subtype" placeholder="" {...params} />}
+    />
+  );
+};
 
 export const CancerStageAutocomplete = ({
   field,

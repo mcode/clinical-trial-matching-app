@@ -1,3 +1,5 @@
+import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
+
 export type SearchFormValuesType = {
   matchingServices: {
     breastCancerTrials: boolean;
@@ -7,8 +9,8 @@ export type SearchFormValuesType = {
   zipcode: string;
   travelDistance: string;
   age: string;
-  cancerType: string;
-  cancerSubtype: string;
+  cancerType: NamedSNOMEDCode | null;
+  cancerSubtype: NamedSNOMEDCode | null;
   metastasis: string[];
   stage: string;
   ecogScore: string;

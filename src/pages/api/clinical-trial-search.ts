@@ -1,6 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { SearchParameters } from '@/utils/search_types';
-import { Bundle, BundleEntry, Resource } from '@/utils/fhir-types';
+
+import { SearchParameters } from 'types/search-types';
+import { Bundle, BundleEntry, Resource } from 'types/fhir-types';
 
 // Matching services and their information
 const services = {

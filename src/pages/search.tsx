@@ -51,8 +51,8 @@ const SearchPage = ({
 }: SearchPageProps): ReactElement => {
   const defaultValues = {
     age: patient.age || '',
-    cancerType: primaryCancerCondition.cancerType || '',
-    cancerSubtype: primaryCancerCondition.cancerSubtype || '',
+    cancerType: primaryCancerCondition.cancerType,
+    cancerSubtype: primaryCancerCondition.cancerSubtype,
     stage: primaryCancerCondition.stage,
     travelDistance: '100',
     zipcode: patient.zipcode || '',

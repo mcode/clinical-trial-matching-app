@@ -13,7 +13,7 @@ import Sidebar from '@/components/Sidebar';
 import { Results, ResultsHeader } from '@/components/Results';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
-import { SearchParameters } from '@/utils/search_types';
+import { SearchParameters } from 'types/search-types';
 
 type ResultsPageProps = {
   patient: Patient;

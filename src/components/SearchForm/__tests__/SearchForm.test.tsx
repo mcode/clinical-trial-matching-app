@@ -1,15 +1,30 @@
 import { render, screen } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import SearchForm, { SearchFormProps } from '../SearchForm';
 
 const defaultValues = {
   age: '28',
-  cancerType: 'Breast',
+  cancerType: { display: 'Breast', code: '372137005' },
   travelDistance: '100',
   zipcode: '11111',
 };
 
+const createQueryClient = () =>
+  new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        cacheTime: Infinity,
+      },
+    },
+  });
+
 describe('<SearchForm />', () => {
-  const Component = (props: Partial<SearchFormProps>) => <SearchForm defaultValues={defaultValues} {...props} />;
+  const Component = (props: Partial<SearchFormProps>) => (
+    <QueryClientProvider client={createQueryClient()}>
+      <SearchForm defaultValues={defaultValues} {...props} />
+    </QueryClientProvider>
+  );
 
   it('renders the search form and all the search form fields', () => {
     render(<Component />);
