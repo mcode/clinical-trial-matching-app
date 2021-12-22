@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useState, memo } from 'react';
 import {
   Accordion,
   AccordionDetails,
@@ -118,4 +118,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
   );
 };
 
-export default Study;
+export default memo(
+  Study,
+  (prevProps: StudyProps, nextProps: StudyProps) => prevProps.isStudySaved === nextProps.isStudySaved
+);

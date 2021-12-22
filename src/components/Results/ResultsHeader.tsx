@@ -1,4 +1,4 @@
-import type { ReactElement } from 'react';
+import { ReactElement, memo } from 'react';
 import { Button, IconButton, Stack } from '@mui/material';
 import {
   ChevronLeft as ChevronLeftIcon,
@@ -64,4 +64,4 @@ const ResultsHeader = ({
   );
 };
 
-export default ResultsHeader;
+export default memo(ResultsHeader);
