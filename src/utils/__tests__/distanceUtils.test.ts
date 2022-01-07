@@ -7,6 +7,7 @@ import {
   coordinatesAreEqual,
   getDistanceBetweenPoints,
   getCoordinatesOfClosestLocation,
+  getLocations,
 } from '../distanceUtils';
 
 describe('getZipcodeCoordinates', () => {
@@ -65,6 +66,17 @@ describe('getLocationCoordinates', () => {
 
   it('should return null when it cannot find the location coordinates', () => {
     expect(getLocationCoordinates(locationsWithAndWithoutCoordinates[1])).toBeNull();
+  });
+});
+
+describe('getLocations', () => {
+  it('should get all the locally referred locations contained within a ResearchStudy', () => {
+    expect(getLocations(researchStudyWithLocations)).toEqual([
+      locationsWithAndWithoutCoordinates[0],
+      locationsWithAndWithoutCoordinates[1],
+      locationsWithAndWithoutCoordinates[2],
+      locationsWithAndWithoutCoordinates[3],
+    ]);
   });
 });
 
