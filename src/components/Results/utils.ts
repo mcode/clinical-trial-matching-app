@@ -1,12 +1,4 @@
 import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy } from 'fhir/r4';
-import {
-  getZipcodeCoordinates,
-  getLocationsWithCoordinates,
-  getCoordinatesOfClosestLocation,
-  getDistanceBetweenPoints,
-  coordinatesAreEqual,
-} from '@/utils/distanceUtils';
-import { ParsedUrlQuery } from 'querystring';
 import { format } from 'date-fns';
 import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyProps } from './types';
 import { MainRowKeys } from '@/utils/exportData';
@@ -16,19 +8,6 @@ export const getContact = (contact: ContactDetail): ContactProps => {
     name: contact?.name,
     phone: contact?.telecom?.find(info => info.system === 'phone' && info.value)?.value,
     email: contact?.telecom?.find(info => info.system === 'email' && info.value)?.value,
-  };
-};
-
-const getClosestFacility = (study: ResearchStudy, query: ParsedUrlQuery): ContactProps => {
-  const zipcode = query?.zipcode as string;
-  const origin = getZipcodeCoordinates(zipcode);
-  const locations = getLocationsWithCoordinates(study);
-  const closest = getCoordinatesOfClosestLocation(origin, locations);
-  const distance = getDistanceBetweenPoints(origin, closest);
-  const location = closest && locations.find(coordinatesAreEqual(closest));
-  return {
-    ...getContact(location),
-    distance: distance !== null ? `${distance} miles` : 'Unknown distance',
   };
 };
 
@@ -114,10 +93,9 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-export const getStudyProps = (entry: BundleEntry, query?: ParsedUrlQuery): StudyProps => {
+export const getStudyProps = (entry: BundleEntry): StudyProps => {
   const { resource, search } = entry as BundleEntry & { resource: ResearchStudy };
   return {
-    closestFacility: getClosestFacility(resource, query),
     conditions: getConditions(resource),
     trialId: getTrialId(resource),
     source: getSource(),

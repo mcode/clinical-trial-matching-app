@@ -16,21 +16,20 @@ import { Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
-import { useRouter } from 'next/router';
 import { getDetails, getStudyProps } from './utils';
-import { SaveStudyHandler, BundleEntry } from './types';
+import { SaveStudyHandler, BundleEntry, ContactProps } from './types';
 import UnsaveIcon from './UnsaveIcon';
 
 type StudyProps = {
   entry: BundleEntry;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
+  closestFacility: ContactProps;
 };
 
-const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactElement => {
+const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const { query } = useRouter();
-  const studyProps = getStudyProps(entry, query);
+  const studyProps = getStudyProps(entry);
   const details = getDetails(studyProps);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
@@ -49,6 +48,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
         studyProps={studyProps}
         handleSaveStudy={handleSaveStudy}
         isStudySaved={isStudySaved}
+        closestFacility={closestFacility}
       />
 
       <AccordionDetails
@@ -110,7 +110,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
             {studyProps.contacts.map((contact, index) => (
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
-            <StudyContact title="Closest Facility" contact={studyProps.closestFacility} />
+            <StudyContact title="Closest Facility" contact={closestFacility} />
           </Stack>
         </Stack>
       </AccordionDetails>

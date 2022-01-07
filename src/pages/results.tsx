@@ -9,7 +9,7 @@ import { Drawer, Paper, Stack, Theme, useTheme, useMediaQuery, CircularProgress 
 import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
-import { Results, ResultsHeader, SaveStudyHandler, BundleEntry } from '@/components/Results';
+import { Results, ResultsHeader, SaveStudyHandler, BundleEntry, ContactProps } from '@/components/Results';
 import { SearchParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
@@ -84,6 +84,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
   const entries = useMemo(() => data?.results?.entry as BundleEntry[], [data]);
+  const closestFacilities = useMemo(() => data?.closestFacilities as ContactProps[], [data]);
   const [state, dispatch] = useReducer(savedStudiesReducer, uninitializedState);
 
   const alreadyHasSavedStudies = state.size !== 0;
@@ -167,7 +168,14 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                 </Stack>
               )}
 
-              {!isIdle && !isLoading && <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} />}
+              {!isIdle && !isLoading && (
+                <Results
+                  entries={entries}
+                  state={state}
+                  handleSaveStudy={handleSaveStudy}
+                  closestFacilities={closestFacilities}
+                />
+              )}
             </MainContent>
           </SlidingStack>
         </Stack>

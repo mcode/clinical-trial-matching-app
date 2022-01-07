@@ -6,7 +6,6 @@ export type StatusProps = { text: string; color: string };
 export type StudyDetail = { header: string; body: string };
 
 export type StudyProps = {
-  closestFacility: ContactProps;
   conditions: string[];
   trialId: string;
   source: string;

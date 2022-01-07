@@ -20,7 +20,7 @@ import TargetIcon from './TargetIcon';
 import UnsaveIcon from './UnsaveIcon';
 import BookmarkCheckIcon from './BookmarkCheckIcon';
 
-import { StudyProps, SaveStudyHandler } from './types';
+import { StudyProps, SaveStudyHandler, ContactProps } from './types';
 import StudyDetailsButton from './StudyDetailsButton';
 
 type StudyHeaderProps = {
@@ -29,6 +29,7 @@ type StudyHeaderProps = {
   studyProps: StudyProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
+  closestFacility: ContactProps;
 };
 
 const StudyHeader = ({
@@ -37,6 +38,7 @@ const StudyHeader = ({
   studyProps,
   handleSaveStudy,
   isStudySaved,
+  closestFacility,
 }: StudyHeaderProps): ReactElement => {
   const studyTags = [...studyProps.conditions, studyProps.phase, studyProps.type];
   const theme = useTheme();
@@ -115,7 +117,7 @@ const StudyHeader = ({
 
             <Stack alignItems="center" direction="row" spacing={1}>
               <LocationOnIcon fontSize="small" sx={{ color: isExpanded ? 'common.white' : 'common.gray' }} />
-              <Typography>{studyProps.closestFacility.distance}</Typography>
+              <Typography>{closestFacility.distance}</Typography>
             </Stack>
 
             {studyProps.period && (
