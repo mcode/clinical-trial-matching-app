@@ -55,8 +55,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       : [searchParams.matchingServices];
   const results = await callWrappers(chosenServices, patientBundle);
 
-  console.log('results', results);
-
   res.status(200).json(results);
 };
 
