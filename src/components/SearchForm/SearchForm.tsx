@@ -31,8 +31,10 @@ export type SearchFormProps = {
 
 const formDataToSearchQuery = (data: SearchFormValuesType) => ({
   ...data,
-  cancerType: data.cancerType ? data.cancerType.code.toString() : undefined,
-  cancerSubtype: data.cancerSubtype ? data.cancerSubtype.code.toString() : undefined,
+  // For the cancer types, encode the JSON objects
+  // Boolean check is because JSON.stringify(null) === "null" and should be omitted
+  cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
+  cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
 });
 

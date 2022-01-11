@@ -2,6 +2,8 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { SearchParameters } from 'types/search-types';
 import { Bundle, BundleEntry, Resource } from 'types/fhir-types';
+import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
+import { setCancerType } from '@/utils/fhirFilter';
 
 // Matching services and their information
 const services = {
@@ -36,6 +38,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
   res.status(200).json(results);
 };
 
+function parseNamedSNOMEDCode(code: string): NamedSNOMEDCode {
+  try {
+    const result: NamedSNOMEDCode = JSON.parse(code);
+    // Make sure this is valid
+    return typeof result.display === 'string' && typeof result.code === 'string' ? result : undefined;
+  } catch (ex) {
+    // JSON parse error, return undefined
+    return undefined;
+  }
+}
+
 /**
  * Builds bundle with search parameter and entries
  *
@@ -61,8 +74,18 @@ function buildBundle(searchParams: SearchParameters, entries: BundleEntry[]): Bu
   };
 
   entries.forEach(resource => {
-    patientBundle.entry.push({ ...(resource.fullUrl && { fullUrl: resource.fullUrl }), resource: resource.resource });
+    if (resource) {
+      // FIXME: Why can this contain empty resources?
+      patientBundle.entry.push({ ...(resource.fullUrl && { fullUrl: resource.fullUrl }), resource: resource.resource });
+    }
   });
+
+  // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
+  // codes if they exist.
+  const cancerType: NamedSNOMEDCode = parseNamedSNOMEDCode(searchParams['cancerType']);
+  if (cancerType) {
+    setCancerType(patientBundle, cancerType);
+  }
 
   return patientBundle;
 }
