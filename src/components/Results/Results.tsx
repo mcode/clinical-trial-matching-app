@@ -1,42 +1,37 @@
-import type { ReactElement } from 'react';
-import { Bundle, BundleEntry, ResearchStudy } from 'fhir/r4';
+import { ReactElement } from 'react';
 import { Typography } from '@mui/material';
 
 import Study from './Study';
+import { ContactProps, SavedStudiesState, SaveStudyHandler } from './types';
+import { BundleEntry } from './types';
 
 export type ResultsProps = {
-  data: ResultsResponse;
+  entries: BundleEntry[];
+  state: SavedStudiesState;
+  handleSaveStudy: (study: BundleEntry) => SaveStudyHandler;
+  closestFacilities: ContactProps[];
 };
 
-export type ResultsResponse = {
-  results?: Bundle;
-  errors?: ErrorResponse[];
-};
-
-export type ErrorResponse = {
-  status: string;
-  response: string;
-};
-
-const Results = ({ data }: ResultsProps): ReactElement => {
-  const entries: BundleEntry[] = data?.results?.entry || [];
-  const studies = entries.filter(({ resource }) => resource?.resourceType === 'ResearchStudy');
-
-  return (
-    <>
-      <Typography fontWeight="normal" mb={2} variant="h6">
-        We found
-        <Typography color="common.blueDarker" component="span" fontWeight={700} variant="h6">
-          {` ${studies.length} `}
-        </Typography>
-        matching trials...
+const Results = ({ entries, state, handleSaveStudy, closestFacilities }: ResultsProps): ReactElement => (
+  <>
+    <Typography fontWeight="normal" mb={2} variant="h6">
+      We found
+      <Typography color="common.blueDarker" component="span" fontWeight={700} variant="h6">
+        {` ${entries.length} `}
       </Typography>
+      matching trials...
+    </Typography>
 
-      {studies.map((study: BundleEntry) => (
-        <Study key={study.resource.id} study={study.resource as ResearchStudy} />
-      ))}
-    </>
-  );
-};
+    {entries.map((entry: BundleEntry, index: number) => (
+      <Study
+        key={entry.resource.id}
+        entry={entry}
+        handleSaveStudy={handleSaveStudy(entry)}
+        isStudySaved={state.has(entry.resource.id)}
+        closestFacility={closestFacilities[index]}
+      />
+    ))}
+  </>
+);
 
 export default Results;

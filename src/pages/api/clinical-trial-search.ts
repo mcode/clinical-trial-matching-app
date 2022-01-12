@@ -1,9 +1,30 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-
 import { SearchParameters } from 'types/search-types';
 import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
+import { ResearchStudy } from 'fhir/r4';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { setCancerHistologyMorphology, setCancerType } from '@/utils/fhirFilter';
+import { ContactProps } from '@/components/Results/types';
+import { getContact } from '@/components/Results/utils';
+import {
+  getZipcodeCoordinates,
+  getLocationsWithCoordinates,
+  getCoordinatesOfClosestLocation,
+  getDistanceBetweenPoints,
+  coordinatesAreEqual,
+} from '@/utils/distanceUtils';
+
+const getClosestFacility = (study: ResearchStudy, zipcode: string): ContactProps => {
+  const origin = getZipcodeCoordinates(zipcode);
+  const locations = getLocationsWithCoordinates(study);
+  const closest = getCoordinatesOfClosestLocation(origin, locations);
+  const distance = getDistanceBetweenPoints(origin, closest);
+  const location = closest && locations.find(coordinatesAreEqual(closest));
+  return {
+    ...getContact(location),
+    distance: distance !== null ? `${distance} miles` : 'Unknown distance',
+  };
+};
 
 // Matching services and their information
 const services = {
@@ -35,6 +56,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       ? searchParams.matchingServices
       : [searchParams.matchingServices];
   const results = await callWrappers(chosenServices, patientBundle);
+
   res.status(200).json(results);
 };
 
@@ -134,7 +156,12 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
       combined.entry.push(...searchset.response.entry);
     });
 
-  return { results: combined, errors };
+  const zipcode = query.entry[0].resource.parameter[0].valueString as string;
+  const closestFacilities: ContactProps[] = combined.entry?.map(({ resource }) =>
+    getClosestFacility(resource as ResearchStudy, zipcode)
+  );
+
+  return { results: combined, errors, closestFacilities };
 }
 
 /**

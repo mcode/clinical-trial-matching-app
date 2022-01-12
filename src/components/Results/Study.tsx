@@ -1,5 +1,4 @@
-import { ReactElement, useState } from 'react';
-import { ResearchStudy } from 'fhir/r4';
+import { ReactElement, useState, memo } from 'react';
 import {
   Accordion,
   AccordionDetails,
@@ -17,15 +16,21 @@ import { Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
-import { getStudyProps } from './utils';
+import { getDetails, getStudyProps } from './utils';
+import { SaveStudyHandler, BundleEntry, ContactProps } from './types';
+import UnsaveIcon from './UnsaveIcon';
 
 type StudyProps = {
-  study: ResearchStudy;
+  entry: BundleEntry;
+  handleSaveStudy: SaveStudyHandler;
+  isStudySaved: boolean;
+  closestFacility: ContactProps;
 };
 
-const Study = ({ study }: StudyProps): ReactElement => {
+const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const studyProps = getStudyProps(study);
+  const studyProps = getStudyProps(entry);
+  const details = getDetails(studyProps);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
 
@@ -37,7 +42,14 @@ const Study = ({ study }: StudyProps): ReactElement => {
       }}
       onChange={(_event, expanded) => setIsExpanded(expanded)}
     >
-      <StudyHeader isExpanded={isExpanded} studyId={study.id} studyProps={studyProps} />
+      <StudyHeader
+        isExpanded={isExpanded}
+        studyId={entry.resource.id}
+        studyProps={studyProps}
+        handleSaveStudy={handleSaveStudy}
+        isStudySaved={isStudySaved}
+        closestFacility={closestFacility}
+      />
 
       <AccordionDetails
         sx={{
@@ -52,7 +64,7 @@ const Study = ({ study }: StudyProps): ReactElement => {
             <TableContainer>
               <Table size={isExtraLargeScreen ? 'medium' : 'small'} stickyHeader={!isExtraLargeScreen}>
                 <TableBody>
-                  {studyProps.details.map(({ header, body }, index) => (
+                  {details.map(({ header, body }, index) => (
                     <TableRow
                       key={index}
                       sx={{
@@ -89,12 +101,16 @@ const Study = ({ study }: StudyProps): ReactElement => {
 
           <Stack p={2} sx={{ backgroundColor: 'common.grayLighter' }}>
             <StudyDetailsButton icon={<LaunchIcon />} text="More info" />
-            <StudyDetailsButton icon={<SaveIcon />} text="Save study" />
+            <StudyDetailsButton
+              icon={isStudySaved ? <UnsaveIcon /> : <SaveIcon />}
+              text={isStudySaved ? 'Unsave study' : 'Save study'}
+              onClick={handleSaveStudy}
+            />
             <StudyContact title="Sponsor" contact={studyProps.sponsor} />
             {studyProps.contacts.map((contact, index) => (
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
-            <StudyContact title="Closest Facility" contact={studyProps.closestFacility} />
+            <StudyContact title="Closest Facility" contact={closestFacility} />
           </Stack>
         </Stack>
       </AccordionDetails>
@@ -102,4 +118,7 @@ const Study = ({ study }: StudyProps): ReactElement => {
   );
 };
 
-export default Study;
+export default memo(
+  Study,
+  (prevProps: StudyProps, nextProps: StudyProps) => prevProps.isStudySaved === nextProps.isStudySaved
+);

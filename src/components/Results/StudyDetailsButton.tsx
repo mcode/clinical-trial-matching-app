@@ -1,12 +1,14 @@
 import type { ReactElement } from 'react';
 import { Button } from '@mui/material';
+import { SaveStudyHandler } from './types';
 
 type StudyDetailsButtonProps = {
   icon: ReactElement;
   text: string;
+  onClick?: SaveStudyHandler;
 };
 
-const StudyDetailsButton = ({ icon, text }: StudyDetailsButtonProps): ReactElement => (
+const StudyDetailsButton = ({ icon, text, ...props }: StudyDetailsButtonProps): ReactElement => (
   <Button
     startIcon={icon}
     sx={{
@@ -17,6 +19,7 @@ const StudyDetailsButton = ({ icon, text }: StudyDetailsButtonProps): ReactEleme
       width: '100%',
     }}
     variant="contained"
+    {...props}
   >
     {text}
   </Button>
