@@ -169,6 +169,10 @@ export interface Meta extends Element {
   profile?: string[];
 }
 
+export interface Condition extends Resource {
+  resourceType: 'Condition';
+}
+
 export interface Observation extends Resource {
   resourceType: 'Observation';
 }

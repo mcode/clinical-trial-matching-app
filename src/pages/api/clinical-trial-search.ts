@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 import { SearchParameters } from 'types/search-types';
-import { Bundle, BundleEntry, Resource } from 'types/fhir-types';
+import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
-import { setCancerType } from '@/utils/fhirFilter';
+import { setCancerHistologyMorphology, setCancerType } from '@/utils/fhirFilter';
 
 // Matching services and their information
 const services = {
@@ -82,9 +82,14 @@ function buildBundle(searchParams: SearchParameters, entries: BundleEntry[]): Bu
 
   // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
   // codes if they exist.
-  const cancerType: NamedSNOMEDCode = parseNamedSNOMEDCode(searchParams['cancerType']);
+  const cancerType = parseNamedSNOMEDCode(searchParams['cancerType']);
+  let cancerRecord: Condition;
   if (cancerType) {
-    setCancerType(patientBundle, cancerType);
+    cancerRecord = setCancerType(patientBundle, cancerType);
+  }
+  const cancerSubtype = parseNamedSNOMEDCode(searchParams['cancerSubtype']);
+  if (cancerSubtype) {
+    setCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
   }
 
   return patientBundle;
