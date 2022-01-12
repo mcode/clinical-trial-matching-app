@@ -1,3 +1,4 @@
+import { ContactProps } from '@/components/Results';
 import { Patient, User } from '@/utils/fhirConversionUtils';
 import { Bundle } from 'fhir/r4';
 import { ParsedUrlQuery } from 'querystring';
@@ -5,6 +6,7 @@ import { ParsedUrlQuery } from 'querystring';
 export type ResultsResponse = {
   results?: Bundle;
   errors?: ErrorResponse[];
+  closestFacilities?: ContactProps[];
 };
 
 export type ErrorResponse = {

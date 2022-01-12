@@ -1,4 +1,4 @@
-import { ReactElement, useState } from 'react';
+import { ReactElement, useMemo, useReducer, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSideProps } from 'next';
@@ -7,13 +7,14 @@ import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { Drawer, Paper, Stack, Theme, useTheme, useMediaQuery, CircularProgress } from '@mui/material';
 import styled from '@emotion/styled';
-
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
-import { Results, ResultsHeader } from '@/components/Results';
+import { Results, ResultsHeader, SaveStudyHandler, BundleEntry, ContactProps } from '@/components/Results';
+import { SearchParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
-import { SearchParameters } from 'types/search-types';
+import { uninitializedState, savedStudiesReducer, getSavedStudies } from '@/utils/resultsStateUtils';
+import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
 
 type ResultsPageProps = {
   patient: Patient;
@@ -81,6 +82,26 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const drawerWidth = getDrawerWidth(isExtraSmallScreen);
 
+  // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
+  const entries = useMemo(() => data?.results?.entry as BundleEntry[], [data]);
+  const closestFacilities = useMemo(() => data?.closestFacilities as ContactProps[], [data]);
+  const [state, dispatch] = useReducer(savedStudiesReducer, uninitializedState);
+
+  const alreadyHasSavedStudies = state.size !== 0;
+  const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
+  const handleExportSavedStudies = (): void => {
+    const savedStudies = getSavedStudies(entries, state);
+    const data = unpackStudies(savedStudies);
+    exportSpreadsheetData(data, 'clinicalTrials');
+  };
+  const handleSaveStudy =
+    (entry: BundleEntry): SaveStudyHandler =>
+    event => {
+      // When the save button is in the accordion actions, we don't want it to expand/collapse the accordion.
+      event.stopPropagation();
+      dispatch({ type: 'toggleSave', value: entry });
+    };
+
   return (
     <>
       <Head>
@@ -132,7 +153,14 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
             shrink={isExtraSmallScreen}
             sx={{ overflowY: 'auto' }}
           >
-            <ResultsHeader isOpen={open} toggleDrawer={toggleDrawer} toggleMobileDrawer={toggleMobileDrawer} />
+            <ResultsHeader
+              isOpen={open}
+              toggleDrawer={toggleDrawer}
+              toggleMobileDrawer={toggleMobileDrawer}
+              alreadyHasSavedStudies={alreadyHasSavedStudies}
+              handleClearSavedStudies={handleClearSavedStudies}
+              handleExportStudies={handleExportSavedStudies}
+            />
             <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
               {(isIdle || isLoading) && (
                 <Stack alignItems="center" direction="column" justifyContent="center" height="100%">
@@ -140,7 +168,14 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                 </Stack>
               )}
 
-              {!isIdle && !isLoading && <Results data={data} />}
+              {!isIdle && !isLoading && (
+                <Results
+                  entries={entries}
+                  state={state}
+                  handleSaveStudy={handleSaveStudy}
+                  closestFacilities={closestFacilities}
+                />
+              )}
             </MainContent>
           </SlidingStack>
         </Stack>
