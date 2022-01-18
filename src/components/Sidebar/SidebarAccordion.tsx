@@ -7,10 +7,17 @@ export type SidebarAccordionProps = {
   defaultExpanded?: boolean;
   icon: ReactNode;
   title: string;
+  disabled: boolean;
 };
 
-const SidebarAccordion = ({ children, defaultExpanded, icon, title }: SidebarAccordionProps): ReactElement => (
-  <Accordion defaultExpanded={defaultExpanded} disableGutters square>
+const SidebarAccordion = ({
+  children,
+  defaultExpanded,
+  icon,
+  title,
+  disabled,
+}: SidebarAccordionProps): ReactElement => (
+  <Accordion defaultExpanded={defaultExpanded} disableGutters square disabled={disabled}>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon fontSize="large" sx={{ color: 'common.white' }} />}
       aria-controls="sidebar-accordion-content"
