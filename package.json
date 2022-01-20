@@ -39,7 +39,7 @@
     "next": "11.1.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-hook-form": "^7.15.2",
+    "react-hook-form": "^7.24.2",
     "react-query": "^3.23.2",
     "us-zips": "^2021.11.4",
     "xlsx": "^0.17.4"

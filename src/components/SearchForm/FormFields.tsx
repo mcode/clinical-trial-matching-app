@@ -100,6 +100,7 @@ export const CancerTypeAutocomplete = ({
       options={options}
       getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
       renderInput={params => <TextField variant="filled" label="Cancer Type" placeholder="" {...params} />}
+      isOptionEqualToValue={(option, value) => option.code === value.code}
     />
   );
 };
@@ -124,6 +125,7 @@ export const CancerSubtypeAutocomplete = ({
       options={options}
       getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
       renderInput={params => <TextField variant="filled" label="Cancer Subtype" placeholder="" {...params} />}
+      isOptionEqualToValue={(option, value) => option.code === value.code}
     />
   );
 };
