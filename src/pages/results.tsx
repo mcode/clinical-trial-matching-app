@@ -1,11 +1,22 @@
-import { ReactElement, useMemo, useReducer, useState } from 'react';
+import { ReactElement, useMemo, useReducer, useState, SyntheticEvent } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
-import { Drawer, Paper, Stack, Theme, useTheme, useMediaQuery, CircularProgress } from '@mui/material';
+import {
+  Drawer,
+  Paper,
+  Stack,
+  Theme,
+  useTheme,
+  useMediaQuery,
+  CircularProgress,
+  Snackbar,
+  Alert,
+  SnackbarCloseReason,
+} from '@mui/material';
 import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
@@ -76,6 +87,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     }
   );
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [alertOpen, setAlertOpen] = useState(true);
   const theme = useTheme();
   const toggleDrawer = () => setOpen(!open);
   const toggleMobileDrawer = () => setMobileOpen(!mobileOpen);
@@ -101,6 +113,13 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
       event.stopPropagation();
       dispatch({ type: 'toggleSave', value: entry });
     };
+  const handleClose = (event: SyntheticEvent<Element, Event>, reason?: SnackbarCloseReason) => {
+    // Don't close if we're just clicking "off" of the element
+    if (reason === 'clickaway') {
+      return;
+    }
+    setAlertOpen(false);
+  };
 
   return (
     <>
@@ -175,6 +194,19 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                   handleSaveStudy={handleSaveStudy}
                   closestFacilities={closestFacilities}
                 />
+              )}
+              {!isIdle && !isLoading && data.errors?.length > 0 && (
+                <Snackbar
+                  open={alertOpen}
+                  anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+                  onClose={handleClose}
+                >
+                  {/* Because you can only show one snackbar at a time, we'll display all of the services that errored out. */}
+                  <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+                    There was an error with the following service(s):{' '}
+                    {data.errors.map(item => item.serviceName).join(', ')}
+                  </Alert>
+                </Snackbar>
               )}
             </MainContent>
           </SlidingStack>

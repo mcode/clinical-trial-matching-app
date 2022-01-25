@@ -12,6 +12,8 @@ export type ResultsResponse = {
 export type ErrorResponse = {
   status: string;
   response: string;
+  serviceName: string;
+  error?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
 const clinicalTrialSearchQuery = async (

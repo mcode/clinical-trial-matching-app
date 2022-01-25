@@ -8,8 +8,16 @@ import { BundleEntry } from './types';
 export type ResultsProps = {
   entries: BundleEntry[];
   state: SavedStudiesState;
+  errors?: ErrorResponse[];
   handleSaveStudy: (study: BundleEntry) => SaveStudyHandler;
   closestFacilities: ContactProps[];
+};
+
+export type ErrorResponse = {
+  status: string;
+  response: string;
+  serviceName: string;
+  error?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
 const Results = ({ entries, state, handleSaveStudy, closestFacilities }: ResultsProps): ReactElement => (
