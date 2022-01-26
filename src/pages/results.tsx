@@ -16,6 +16,7 @@ import {
   Snackbar,
   Alert,
   SnackbarCloseReason,
+  Typography,
 } from '@mui/material';
 import styled from '@emotion/styled';
 import Header from '@/components/Header';
@@ -145,7 +146,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
             variant="temporary"
             open={mobileOpen}
           >
-            <Sidebar patient={patient} />
+            <Sidebar patient={patient} disabled={isIdle || isLoading} />
           </Drawer>
 
           <Drawer
@@ -162,7 +163,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
             anchor="left"
             open={open}
           >
-            <Sidebar patient={patient} />
+            <Sidebar patient={patient} disabled={isIdle || isLoading} />
           </Drawer>
 
           <SlidingStack
@@ -179,14 +180,28 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
               alreadyHasSavedStudies={alreadyHasSavedStudies}
               handleClearSavedStudies={handleClearSavedStudies}
               handleExportStudies={handleExportSavedStudies}
+              showExport={!isIdle && !isLoading}
             />
-            <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
+            <MainContent
+              elevation={0}
+              sx={[
+                {
+                  flex: '1 1 auto',
+                  overflowY: 'auto',
+                  p: 3,
+                },
+                (isIdle || isLoading) && { display: 'flex', justifyContent: 'center', alignItems: 'center' },
+              ]}
+              square
+            >
               {(isIdle || isLoading) && (
-                <Stack alignItems="center" direction="column" justifyContent="center" height="100%">
-                  <CircularProgress size={drawerWidth / 2} />
+                <Stack alignItems="center" justifyContent="center" height="100%">
+                  <CircularProgress size={drawerWidth / 4} />
+                  <Typography variant="h4" marginTop={3}>
+                    Loading trials...
+                  </Typography>
                 </Stack>
               )}
-
               {!isIdle && !isLoading && (
                 <Results
                   entries={entries}

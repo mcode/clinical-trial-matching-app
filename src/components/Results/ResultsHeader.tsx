@@ -13,6 +13,7 @@ export type ResultsHeaderProps = {
   alreadyHasSavedStudies: boolean;
   handleClearSavedStudies: () => void;
   handleExportStudies: () => void;
+  showExport: boolean;
 };
 
 const ResultsHeader = ({
@@ -22,6 +23,7 @@ const ResultsHeader = ({
   alreadyHasSavedStudies,
   handleClearSavedStudies,
   handleExportStudies,
+  showExport,
 }: ResultsHeaderProps): ReactElement => {
   return (
     <Stack
@@ -56,9 +58,11 @@ const ResultsHeader = ({
           </Button>
         )}
 
-        <Button sx={{ mr: 2 }} onClick={handleExportStudies}>
-          {alreadyHasSavedStudies ? 'Export Saved' : 'Export All'}
-        </Button>
+        {showExport && (
+          <Button sx={{ mr: 2 }} onClick={handleExportStudies}>
+            {alreadyHasSavedStudies ? 'Export Saved' : 'Export All'}
+          </Button>
+        )}
       </Stack>
     </Stack>
   );

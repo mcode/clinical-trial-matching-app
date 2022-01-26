@@ -9,6 +9,7 @@ import { Patient } from '@/utils/fhirConversionUtils';
 
 type SidebarProps = {
   patient: Patient;
+  disabled: boolean;
 };
 
 const ensureArray = (value?: string | string[]): string[] => {
@@ -16,7 +17,7 @@ const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const Sidebar = ({ patient }: SidebarProps): ReactElement => {
+const Sidebar = ({ patient, disabled }: SidebarProps): ReactElement => {
   const { query } = useRouter();
 
   const matchingServices = query.matchingServices || [];
@@ -45,11 +46,11 @@ const Sidebar = ({ patient }: SidebarProps): ReactElement => {
     <>
       <PatientCard patient={patient} />
 
-      <SidebarAccordion icon={<SearchIcon fontSize="large" />} title="New Search">
+      <SidebarAccordion icon={<SearchIcon fontSize="large" />} title="New Search" disabled={disabled}>
         <SearchForm fullWidth defaultValues={defaultValues} />
       </SidebarAccordion>
 
-      <SidebarAccordion defaultExpanded icon={<FilterIcon fontSize="large" />} title="Filters">
+      <SidebarAccordion defaultExpanded icon={<FilterIcon fontSize="large" />} title="Filters" disabled={disabled}>
         <p>TODO: Filters</p>
       </SidebarAccordion>
     </>

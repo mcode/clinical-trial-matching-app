@@ -8,6 +8,7 @@ afterEach(() => {
 
 describe('<ResultsHeader />', () => {
   const isOpen = true;
+  const showExport = true;
   const toggleDrawer = jest.fn();
   const toggleMobileDrawer = jest.fn();
   const handleClearSavedStudies = jest.fn();
@@ -21,6 +22,7 @@ describe('<ResultsHeader />', () => {
       alreadyHasSavedStudies={false}
       handleClearSavedStudies={handleClearSavedStudies}
       handleExportStudies={handleExportStudies}
+      showExport={showExport}
       {...props}
     />
   );
@@ -33,6 +35,7 @@ describe('<ResultsHeader />', () => {
       alreadyHasSavedStudies={true}
       handleClearSavedStudies={handleClearSavedStudies}
       handleExportStudies={handleExportStudies}
+      showExport={showExport}
       {...props}
     />
   );

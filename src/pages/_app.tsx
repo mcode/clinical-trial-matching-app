@@ -1,6 +1,6 @@
-import React, { ReactElement, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useState } from 'react';
 import { CacheProvider } from '@emotion/react';
-import { CssBaseline, ThemeProvider } from '@mui/material';
+import { CircularProgress, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { Hydrate } from 'react-query/hydration';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -16,7 +16,23 @@ import theme from '@/styles/theme';
 
 import type { AppProps } from 'next/app';
 
-const App = ({ Component, pageProps }: AppProps): ReactElement => {
+const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
+  const [loading, setLoading] = useState(false);
+  const handleStart = useCallback(() => setLoading(true), []);
+  const handleStop = useCallback(() => setLoading(false), []);
+
+  useEffect(() => {
+    router.events.on('routeChangeStart', handleStart);
+    router.events.on('routeChangeComplete', handleStop);
+    router.events.on('routeChangeError', handleStop);
+
+    return () => {
+      router.events.off('routeChangeStart', handleStart);
+      router.events.off('routeChangeComplete', handleStop);
+      router.events.off('routeChangeError', handleStop);
+    };
+  }, [handleStop, handleStart, router.events]);
+
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -34,7 +50,16 @@ const App = ({ Component, pageProps }: AppProps): ReactElement => {
         <CacheProvider value={emotionCache}>
           <ThemeProvider theme={theme}>
             <CssBaseline />
-            <Component {...pageProps} />
+            {loading ? (
+              <Stack minHeight="100vh" maxHeight="100vh" justifyContent="center" alignItems="center">
+                <CircularProgress size="10vh" />
+                <Typography variant="h4" marginTop={3}>
+                  Loading page...
+                </Typography>
+              </Stack>
+            ) : (
+              <Component {...pageProps} />
+            )}
             <ReactQueryDevtools initialIsOpen={false} />
           </ThemeProvider>
         </CacheProvider>
