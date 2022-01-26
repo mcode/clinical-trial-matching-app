@@ -182,10 +182,21 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
               handleExportStudies={handleExportSavedStudies}
               showExport={!isIdle && !isLoading}
             />
-            <MainContent elevation={0} sx={{ flex: '1 1 auto', overflowY: 'auto', p: 3 }} square>
+            <MainContent
+              elevation={0}
+              sx={[
+                {
+                  flex: '1 1 auto',
+                  overflowY: 'auto',
+                  p: 3,
+                },
+                (isIdle || isLoading) && { display: 'flex', justifyContent: 'center', alignItems: 'center' },
+              ]}
+              square
+            >
               {(isIdle || isLoading) && (
                 <Stack alignItems="center" justifyContent="center" height="100%">
-                  <CircularProgress size={drawerWidth / 2} />
+                  <CircularProgress size={drawerWidth / 4} />
                   <Typography variant="h4" marginTop={3}>
                     Loading trials...
                   </Typography>

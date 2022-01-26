@@ -52,7 +52,7 @@ const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
             <CssBaseline />
             {loading ? (
               <Stack minHeight="100vh" maxHeight="100vh" justifyContent="center" alignItems="center">
-                <CircularProgress size="25vh" />
+                <CircularProgress size="10vh" />
                 <Typography variant="h4" marginTop={3}>
                   Loading page...
                 </Typography>
