@@ -162,7 +162,15 @@ export interface Meta extends Element {
   /**
    * When the resource version last changed
    */
-  lastUpdated: instant;
+  lastUpdated?: instant;
+  /**
+   * A list of profiles the resource claims to conform to.
+   */
+  profile?: string[];
+}
+
+export interface Condition extends Resource {
+  resourceType: 'Condition';
 }
 
 export interface Observation extends Resource {

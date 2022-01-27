@@ -23,6 +23,7 @@ import {
   PrimaryCancerCondition,
   User,
 } from '@/utils/fhirConversionUtils';
+import { MCODE_STRUCTURE_DEFINITION } from '@/utils/fhirConstants';
 
 type SearchPageProps = {
   patient: Patient;
@@ -141,8 +142,6 @@ const bundleMaker = (fhirClient: Client) => {
   return (resourceType: string) =>
     (url: string): Promise<fhirclient.FHIR.Bundle> =>
       fhirClient.request<fhirclient.FHIR.Bundle>(
-        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(
-          `http://hl7.org/fhir/us/mcode/StructureDefinition/${url}`
-        )}`
+        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(MCODE_STRUCTURE_DEFINITION + url)}`
       );
 };
