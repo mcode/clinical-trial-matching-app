@@ -6,38 +6,19 @@ import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
 import { NamedSNOMEDCode } from './fhirConversionUtils';
 import { MCODE_PRIMARY_CANCER_CONDITION, MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, SNOMED_CODE_URI } from './fhirConstants';
 
-/**
- * Filters a bundle in-place, removing entries
- * @param bundle the bundle to filter
- */
-export const filterBundle = (bundle: Bundle, filterFunction: (resource: Resource) => boolean): void => {
+export const addResource = (bundle: Bundle, resource: Resource): void => {
+  const entry: BundleEntry = {
+    resource: resource,
+  };
   if (bundle.entry) {
-    bundle.entry = bundle.entry.filter((entry: BundleEntry): boolean => {
-      if (entry.resource) {
-        return filterFunction(entry.resource);
-      } else {
-        // Keep entries without resources for now
-        return true;
-      }
-    });
+    bundle.entry.push(entry);
+  } else {
+    bundle.entry = [entry];
   }
 };
 
-export const removeResourcesByProfile = (bundle: Bundle, resourceType: string, profile: string): void => {
-  filterBundle(bundle, (resource: Resource): boolean => {
-    if (resource.resourceType !== resourceType) {
-      // Do not filter resources that are not the associated type
-      return true;
-    }
-    // Return true (keep) if there is no matching profile.
-    return resource.meta?.profile && resource.meta.profile.indexOf(profile) < 0;
-  });
-};
-
-export const setCancerType = (bundle: Bundle, code: NamedSNOMEDCode): Condition => {
-  // First, remove all existing cancer types
-  removeResourcesByProfile(bundle, 'Condition', MCODE_PRIMARY_CANCER_CONDITION);
-  // Then add in a new resource for that condition
+export const addCancerType = (bundle: Bundle, code: NamedSNOMEDCode): Condition => {
+  // Create the Condition - done separate from the function call to ensure proper TypeScript checking
   const resource: Condition = {
     resourceType: 'Condition',
     meta: {
@@ -53,14 +34,7 @@ export const setCancerType = (bundle: Bundle, code: NamedSNOMEDCode): Condition 
       ],
     },
   };
-  const entry: BundleEntry = {
-    resource: resource,
-  };
-  if (bundle.entry) {
-    bundle.entry.push(entry);
-  } else {
-    bundle.entry = [entry];
-  }
+  addResource(bundle, resource);
   return resource;
 };
 
@@ -86,7 +60,13 @@ function findCondition(bundleOrCondition: Bundle | Condition, profile: string): 
   return null;
 }
 
-export const setCancerHistologyMorphology = (
+/**
+ * Adds a histology morphology extension to an existing bundle.
+ * @param bundleOrCondition the bundle containing a primary cancer condition or the condition itself
+ * @param code the code to add
+ * @returns the existing Condition the extension was added to or the newly created Condition
+ */
+export const addCancerHistologyMorphology = (
   bundleOrCondition: Bundle | Condition,
   code: NamedSNOMEDCode
 ): Condition => {

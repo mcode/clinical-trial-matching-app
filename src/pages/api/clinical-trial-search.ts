@@ -3,7 +3,7 @@ import { SearchParameters } from 'types/search-types';
 import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
 import { ResearchStudy } from 'fhir/r4';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
-import { setCancerHistologyMorphology, setCancerType } from '@/utils/fhirFilter';
+import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
 import { ContactProps } from '@/components/Results/types';
 import { getContact } from '@/components/Results/utils';
 import {
@@ -107,11 +107,11 @@ function buildBundle(searchParams: SearchParameters, entries: BundleEntry[]): Bu
   const cancerType = parseNamedSNOMEDCode(searchParams['cancerType']);
   let cancerRecord: Condition;
   if (cancerType) {
-    cancerRecord = setCancerType(patientBundle, cancerType);
+    cancerRecord = addCancerType(patientBundle, cancerType);
   }
   const cancerSubtype = parseNamedSNOMEDCode(searchParams['cancerSubtype']);
   if (cancerSubtype) {
-    setCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
+    addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
   }
 
   return patientBundle;
