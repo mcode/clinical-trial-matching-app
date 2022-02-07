@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { SearchParameters } from 'types/search-types';
-import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
+import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
 import { ResearchStudy } from 'fhir/r4';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
@@ -13,6 +13,7 @@ import {
   getDistanceBetweenPoints,
   coordinatesAreEqual,
 } from '@/utils/distanceUtils';
+import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 
 const getClosestFacility = (study: ResearchStudy, zipcode: string): ContactProps => {
   const origin = getZipcodeCoordinates(zipcode);
@@ -44,12 +45,9 @@ const services = {
  * @param res Returns { results, errors }
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { patient, searchParams } = JSON.parse(req.body);
+  const { searchParams } = JSON.parse(req.body);
 
-  // For now this is just the patient record.
-  const entries: BundleEntry[] = [{ resource: patient.record }];
-
-  const patientBundle: Bundle = buildBundle(searchParams, entries);
+  const patientBundle: Bundle = buildBundle(searchParams);
 
   const chosenServices =
     searchParams.matchingServices && Array.isArray(searchParams.matchingServices)
@@ -75,10 +73,9 @@ function parseNamedSNOMEDCode(code: string): NamedSNOMEDCode {
  * Builds bundle with search parameter and entries
  *
  * @param searchParams
- * @param entries
  * @returns
  */
-function buildBundle(searchParams: SearchParameters, entries: BundleEntry[]): Bundle {
+function buildBundle(searchParams: SearchParameters): Bundle {
   const trialParams: Resource = {
     resourceType: 'Parameters',
     id: '0',
@@ -88,19 +85,29 @@ function buildBundle(searchParams: SearchParameters, entries: BundleEntry[]): Bu
     ],
   };
 
+  // Create our stub patient
+  const patient: Patient = {
+    resourceType: 'Patient',
+    id: 'search_patient',
+  };
+  // Add whatever we can
+  if (isAdministrativeGender(searchParams.gender)) {
+    patient.gender = searchParams.gender;
+  }
+  if (searchParams.age) {
+    const age = Number(searchParams.age);
+    if (!isNaN(age)) {
+      // For the age, calculate a year based on today's date and just store that. Just a year is a valid FHIR date.
+      patient.birthDate = (new Date().getUTCFullYear() - age).toString();
+    }
+  }
+
   // Initialize a patient bundle with our search information.
   const patientBundle: Bundle = {
     resourceType: 'Bundle',
     type: 'collection',
-    entry: [{ resource: trialParams }],
+    entry: [{ resource: trialParams }, { resource: patient }],
   };
-
-  entries.forEach(resource => {
-    if (resource) {
-      // FIXME: Why can this contain empty resources?
-      patientBundle.entry.push({ ...(resource.fullUrl && { fullUrl: resource.fullUrl }), resource: resource.resource });
-    }
-  });
 
   // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
   // codes if they exist.
@@ -113,6 +120,8 @@ function buildBundle(searchParams: SearchParameters, entries: BundleEntry[]): Bu
   if (cancerSubtype) {
     addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
   }
+
+  console.log(JSON.stringify(patientBundle, null, 2));
 
   return patientBundle;
 }
