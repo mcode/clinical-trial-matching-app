@@ -4,7 +4,7 @@ import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
 import { Results } from '@/queries/clinicalTrialSearchQuery';
-import { getStudyProps } from '@/components/Results/utils';
+import { getStudyDetailProps } from '@/components/Results/utils';
 
 // Matching services and their information
 const services = {
@@ -136,7 +136,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
       combined.total += searchset.response?.total || 0;
       // Transform each of the studies in the bundle
       searchset?.response?.entry.forEach(entry => {
-        combined.entry.push(getStudyProps(entry, zipcode));
+        combined.entry.push(getStudyDetailProps(entry, zipcode));
       });
     });
 

@@ -118,7 +118,7 @@ const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacil
   ];
 };
 
-export const getStudyProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
+export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
   const { resource, search } = entry as BundleEntry & { resource: ResearchStudy };
   // Grab the locations so we only have to do this once
   const locations = getLocations(resource);
