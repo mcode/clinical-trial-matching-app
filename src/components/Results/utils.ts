@@ -1,7 +1,16 @@
-import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy } from 'fhir/r4';
+import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy, Location } from 'fhir/r4';
 import { format } from 'date-fns';
-import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyProps } from './types';
+import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyDetailProps } from './types';
 import { MainRowKeys } from '@/utils/exportData';
+import {
+  getZipcodeCoordinates,
+  getLocationsWithCoordinates,
+  getCoordinatesOfClosestLocation,
+  getDistanceBetweenPoints,
+  coordinatesAreEqual,
+  getLocations,
+  getCoordinatesForLocations,
+} from '@/utils/distanceUtils';
 
 export const getContact = (contact: ContactDetail): ContactProps => {
   return {
@@ -13,7 +22,7 @@ export const getContact = (contact: ContactDetail): ContactProps => {
 
 const getConditions = (study: ResearchStudy): string[] => study.condition?.map(({ text }) => text) || [];
 
-export const getDetails = (studyProps: StudyProps): StudyDetail[] => {
+export const getDetails = (studyProps: StudyDetailProps): StudyDetail[] => {
   const details = [
     { header: MainRowKeys.conditions, body: studyProps.conditions.join(', ') },
     { header: MainRowKeys.trialId, body: studyProps.trialId },
@@ -93,8 +102,27 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-export const getStudyProps = (entry: BundleEntry): StudyProps => {
+const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities: number = 1): ContactProps[] => {
+  // For now, this only supports getting the first facility.
+  const origin = getZipcodeCoordinates(zipcode);
+  const locationsWithCoordinates = getCoordinatesForLocations(locations);
+  const closest = getCoordinatesOfClosestLocation(origin, locationsWithCoordinates);
+  const distance = getDistanceBetweenPoints(origin, closest);
+
+  // Again, for now, just get the closest facility
+  const location = closest && locationsWithCoordinates.find(coordinatesAreEqual(closest));
+  return [{
+    ...getContact(location),
+    distance: distance !== null ? `${distance} miles` : 'Unknown distance',
+  }];
+
+}
+
+export const getStudyProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
   const { resource, search } = entry as BundleEntry & { resource: ResearchStudy };
+  // Grab the locations so we only have to do this once
+  const locations = getLocations(resource);
+
   return {
     conditions: getConditions(resource),
     trialId: getTrialId(resource),
@@ -110,5 +138,9 @@ export const getStudyProps = (entry: BundleEntry): StudyProps => {
     status: getStatus(resource),
     title: getTitle(resource),
     type: getType(resource),
+    closestFacilities: getClosestFacilities(locations, zipcode),
+    locations: locations
   };
 };
+
+

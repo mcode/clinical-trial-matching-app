@@ -1,11 +1,11 @@
-import { SavedStudiesAction, SavedStudiesState, BundleEntry } from '../components/Results/types';
+import { SavedStudiesAction, SavedStudiesState, StudyDetailProps } from '../components/Results/types';
 
 export const uninitializedState: SavedStudiesState = new Set<string>();
 
-export const getSavedStudies = (entries: BundleEntry[], ids: Set<string>): BundleEntry[] => {
+export const getSavedStudies = (entries: StudyDetailProps[], ids: Set<string>): StudyDetailProps[] => {
   const count = ids.size;
   if (count !== 0) {
-    return entries.filter(({ resource }) => ids.has(resource.id));
+    return entries.filter((study) => ids.has(study.trialId));
   }
   return entries;
 };
@@ -15,12 +15,12 @@ export const savedStudiesReducer = (state: SavedStudiesState, action: SavedStudi
     case 'setInitialState':
       return uninitializedState;
     case 'toggleSave':
-      const alreadySavedStudy = state.has(action.value.resource.id);
+      const alreadySavedStudy = state.has(action.value.trialId);
       const updated = new Set<string>(state);
       if (!alreadySavedStudy) {
-        return updated.add(action.value.resource.id);
+        return updated.add(action.value.trialId);
       } else {
-        updated.delete(action.value.resource.id);
+        updated.delete(action.value.trialId);
         return updated;
       }
   }

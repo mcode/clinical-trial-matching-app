@@ -57,6 +57,10 @@ export const getLocations = (study: ResearchStudy): Location[] => {
 
 export const getLocationsWithCoordinates = (study: ResearchStudy): Location[] => {
   const locations = getLocations(study);
+  return getCoordinatesForLocations(locations);
+};
+
+export const getCoordinatesForLocations = (locations: Location[]): Location[] => {
   const united_states = new RegExp(/(United States|United States of America|USA|US)/, 'i');
   const us_zip = new RegExp(/^\d{5}$/);
   const locationsWithCoordinates: Location[] = [];

@@ -2,7 +2,7 @@ import FileSaver from 'file-saver';
 import XLSX from 'xlsx';
 
 import { getContact, getStudyProps } from '@/components/Results/utils';
-import { BundleEntry, StudyProps, StudyDetail, ContactProps } from '../components/Results/types';
+import { BundleEntry, StudyDetailProps, StudyDetail, ContactProps } from '../components/Results/types';
 import { getLocations } from './distanceUtils';
 
 const SiteRowKeys = {
@@ -29,7 +29,7 @@ export const MainRowKeys = {
   contactEmail: 'Overall Contact Email',
 };
 
-const getMainRow = (studyProps: StudyProps): Record<string, string> =>
+const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
   convertToSpreadsheetRow([
     { header: MainRowKeys.trialId, body: studyProps.trialId },
     { header: MainRowKeys.likelihood, body: studyProps.likelihood.text },
@@ -54,14 +54,13 @@ const getSiteRow = (contact: ContactProps): Record<string, string> =>
     { header: SiteRowKeys.email, body: contact['email'] },
   ]);
 
-export const unpackStudies = (entries: BundleEntry[]): Record<string, string>[] => {
+export const unpackStudies = (entries: StudyDetailProps[]): Record<string, string>[] => {
   const matchCount: StudyDetail[] = [{ header: 'Match Count', body: entries.length.toString() }];
   let data: Record<string, string>[] = [convertToSpreadsheetRow(matchCount)];
 
   for (const entry of entries) {
-    const studyProps = getStudyProps(entry);
-    const mainRow = getMainRow(studyProps);
-    const siteRows = getLocations(entry.resource).map(getContact).map(getSiteRow);
+    const mainRow = getMainRow(entry);
+    const siteRows = entry.locations?.map(getContact).map(getSiteRow);
     const studyRow = [mainRow, ...siteRows];
     data = [...data, ...studyRow];
   }
