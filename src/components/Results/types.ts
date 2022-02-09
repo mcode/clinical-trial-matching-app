@@ -22,7 +22,7 @@ export type StudyDetailProps = {
   title: string;
   type: string;
   closestFacilities: ContactProps[];
-  locations?: Location[]; 
+  locations?: Location[];
 };
 
 export type SaveStudyHandler = MouseEventHandler<HTMLButtonElement>;

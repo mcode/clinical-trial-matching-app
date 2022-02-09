@@ -4,7 +4,6 @@ import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, S
 import { MainRowKeys } from '@/utils/exportData';
 import {
   getZipcodeCoordinates,
-  getLocationsWithCoordinates,
   getCoordinatesOfClosestLocation,
   getDistanceBetweenPoints,
   coordinatesAreEqual,
@@ -102,7 +101,7 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities: number = 1): ContactProps[] => {
+const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 1): ContactProps[] => {
   // For now, this only supports getting the first facility.
   const origin = getZipcodeCoordinates(zipcode);
   const locationsWithCoordinates = getCoordinatesForLocations(locations);
@@ -111,12 +110,13 @@ const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacil
 
   // Again, for now, just get the closest facility
   const location = closest && locationsWithCoordinates.find(coordinatesAreEqual(closest));
-  return [{
-    ...getContact(location),
-    distance: distance !== null ? `${distance} miles` : 'Unknown distance',
-  }];
-
-}
+  return [
+    {
+      ...getContact(location),
+      distance: distance !== null ? `${distance} miles` : 'Unknown distance',
+    },
+  ];
+};
 
 export const getStudyProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
   const { resource, search } = entry as BundleEntry & { resource: ResearchStudy };
@@ -139,8 +139,6 @@ export const getStudyProps = (entry: BundleEntry, zipcode: string): StudyDetailP
     title: getTitle(resource),
     type: getType(resource),
     closestFacilities: getClosestFacilities(locations, zipcode),
-    locations: locations
+    locations: locations,
   };
 };
-
-

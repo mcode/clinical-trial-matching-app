@@ -16,8 +16,8 @@ import { Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
-import { getDetails, getStudyProps } from './utils';
-import { SaveStudyHandler, BundleEntry, ContactProps } from './types';
+import { getDetails } from './utils';
+import { SaveStudyHandler } from './types';
 import UnsaveIcon from './UnsaveIcon';
 import { StudyDetailProps } from '.';
 

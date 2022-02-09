@@ -5,7 +5,7 @@ export const uninitializedState: SavedStudiesState = new Set<string>();
 export const getSavedStudies = (entries: StudyDetailProps[], ids: Set<string>): StudyDetailProps[] => {
   const count = ids.size;
   if (count !== 0) {
-    return entries.filter((study) => ids.has(study.trialId));
+    return entries.filter(study => ids.has(study.trialId));
   }
   return entries;
 };

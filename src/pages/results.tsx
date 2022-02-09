@@ -21,7 +21,7 @@ import {
 import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
-import { Results, ResultsHeader, SaveStudyHandler, BundleEntry, ContactProps, StudyDetailProps } from '@/components/Results';
+import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
 import { SearchParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
@@ -103,7 +103,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
   const handleExportSavedStudies = (): void => {
     const savedStudies = getSavedStudies(entries, state);
-    const data:Record<string, string>[] = unpackStudies(savedStudies);
+    const data: Record<string, string>[] = unpackStudies(savedStudies);
     exportSpreadsheetData(data, 'clinicalTrials');
   };
   const handleSaveStudy =
@@ -201,13 +201,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                   </Typography>
                 </Stack>
               )}
-              {!isIdle && !isLoading && (
-                <Results
-                  entries={entries}
-                  state={state}
-                  handleSaveStudy={handleSaveStudy}
-                />
-              )}
+              {!isIdle && !isLoading && <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} />}
               {!isIdle && !isLoading && data.errors?.length > 0 && (
                 <Snackbar
                   open={alertOpen}

@@ -3,9 +3,9 @@ import { Patient, User } from '@/utils/fhirConversionUtils';
 import { ParsedUrlQuery } from 'querystring';
 
 export type Results = {
-  total: Number,
-  entry: StudyDetailProps[]
-}
+  total: number;
+  entry: StudyDetailProps[];
+};
 
 export type ResultsResponse = {
   results?: Results;

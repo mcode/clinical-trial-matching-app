@@ -2,8 +2,7 @@ import { ReactElement } from 'react';
 import { Typography } from '@mui/material';
 
 import Study from './Study';
-import { ContactProps, SavedStudiesState, SaveStudyHandler } from './types';
-import { BundleEntry } from './types';
+import { SavedStudiesState, SaveStudyHandler } from './types';
 import { StudyDetailProps } from '.';
 
 export type ResultsProps = {
@@ -20,7 +19,7 @@ export type ErrorResponse = {
   error?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
-const Results = ({ entries, state, handleSaveStudy}: ResultsProps): ReactElement => (
+const Results = ({ entries, state, handleSaveStudy }: ResultsProps): ReactElement => (
   <>
     <Typography fontWeight="normal" mb={2} variant="h6">
       We found
@@ -30,7 +29,7 @@ const Results = ({ entries, state, handleSaveStudy}: ResultsProps): ReactElement
       matching trials...
     </Typography>
 
-    {entries.map((entry: StudyDetailProps, index: number) => (
+    {entries.map((entry: StudyDetailProps) => (
       <Study
         key={entry.trialId}
         entry={entry}

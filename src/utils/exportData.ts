@@ -1,9 +1,8 @@
 import FileSaver from 'file-saver';
 import XLSX from 'xlsx';
 
-import { getContact, getStudyProps } from '@/components/Results/utils';
-import { BundleEntry, StudyDetailProps, StudyDetail, ContactProps } from '../components/Results/types';
-import { getLocations } from './distanceUtils';
+import { getContact } from '@/components/Results/utils';
+import { StudyDetailProps, StudyDetail, ContactProps } from '../components/Results/types';
 
 const SiteRowKeys = {
   facility: 'Facility',
