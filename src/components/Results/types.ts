@@ -7,21 +7,21 @@ export type StatusProps = { text: string; color: string };
 export type StudyDetail = { header: string; body: string };
 
 export type StudyDetailProps = {
-  conditions: string[];
   trialId: string;
-  source: string;
-  description: string;
-  eligibility: string;
-  keywords: string[];
-  likelihood: LikelihoodProps;
-  period: string;
-  phase: string;
-  sponsor: ContactProps;
-  contacts: ContactProps[];
-  status: StatusProps;
-  title: string;
-  type: string;
-  closestFacilities: ContactProps[];
+  conditions?: string[];
+  source?: string;
+  description?: string;
+  eligibility?: string;
+  keywords?: string[];
+  likelihood?: LikelihoodProps;
+  period?: string;
+  phase?: string;
+  sponsor?: ContactProps;
+  contacts?: ContactProps[];
+  status?: StatusProps;
+  title?: string;
+  type?: string;
+  closestFacilities?: ContactProps[];
   locations?: Location[];
 };
 

@@ -31,26 +31,26 @@ export const MainRowKeys = {
 const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
   convertToSpreadsheetRow([
     { header: MainRowKeys.trialId, body: studyProps.trialId },
-    { header: MainRowKeys.likelihood, body: studyProps.likelihood.text },
-    { header: MainRowKeys.title, body: studyProps.title },
-    { header: MainRowKeys.status, body: studyProps.status.text },
-    { header: MainRowKeys.period, body: studyProps.period },
-    { header: MainRowKeys.phase, body: studyProps.phase },
-    { header: MainRowKeys.conditions, body: JSON.stringify(studyProps.conditions) },
-    { header: MainRowKeys.type, body: studyProps.type },
-    { header: MainRowKeys.description, body: studyProps.description },
-    { header: MainRowKeys.eligibility, body: studyProps.eligibility },
-    { header: MainRowKeys.sponsor, body: studyProps.sponsor.name },
-    { header: MainRowKeys.contactName, body: studyProps.contacts?.[0]?.name },
-    { header: MainRowKeys.contactPhone, body: studyProps.contacts?.[0]?.phone },
-    { header: MainRowKeys.contactEmail, body: studyProps.contacts?.[0]?.email },
+    { header: MainRowKeys.likelihood, body: studyProps.likelihood?.text || '' },
+    { header: MainRowKeys.title, body: studyProps.title || '' },
+    { header: MainRowKeys.status, body: studyProps.status?.text || '' },
+    { header: MainRowKeys.period, body: studyProps.period || '' },
+    { header: MainRowKeys.phase, body: studyProps.phase || '' },
+    { header: MainRowKeys.conditions, body: JSON.stringify(studyProps?.conditions) || '' },
+    { header: MainRowKeys.type, body: studyProps.type || '' },
+    { header: MainRowKeys.description, body: studyProps.description || '' },
+    { header: MainRowKeys.eligibility, body: studyProps.eligibility || '' },
+    { header: MainRowKeys.sponsor, body: studyProps.sponsor?.name || '' },
+    { header: MainRowKeys.contactName, body: studyProps.contacts?.[0]?.name || '' },
+    { header: MainRowKeys.contactPhone, body: studyProps.contacts?.[0]?.phone || '' },
+    { header: MainRowKeys.contactEmail, body: studyProps.contacts?.[0]?.email || '' },
   ]);
 
 const getSiteRow = (contact: ContactProps): Record<string, string> =>
   convertToSpreadsheetRow([
     { header: SiteRowKeys.facility, body: contact['name'] },
-    { header: SiteRowKeys.phone, body: contact['phone'] },
-    { header: SiteRowKeys.email, body: contact['email'] },
+    ...(contact?.phone ? [{ header: SiteRowKeys.phone, body: contact['phone'] }] : []),
+    ...(contact?.email ? [{ header: SiteRowKeys.email, body: contact['email'] }] : []),
   ]);
 
 export const unpackStudies = (entries: StudyDetailProps[]): Record<string, string>[] => {
@@ -60,7 +60,7 @@ export const unpackStudies = (entries: StudyDetailProps[]): Record<string, strin
   for (const entry of entries) {
     const mainRow = getMainRow(entry);
     const siteRows = entry.locations?.map(getContact).map(getSiteRow);
-    const studyRow = [mainRow, ...siteRows];
+    const studyRow = [mainRow, ...(siteRows || [])];
     data = [...data, ...studyRow];
   }
 

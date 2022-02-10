@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Results, { ResultsProps } from '../Results';
-import mockSearchResults from '@/__mocks__/results.json';
-import { BundleEntry, ContactProps } from '../types';
+import mockSearchResults from '@/__mocks__/resultDetails.json';
+import { StudyDetailProps } from '../types';
 import { uninitializedState } from '@/utils/resultsStateUtils';
 
 afterEach(() => {
@@ -10,24 +10,17 @@ afterEach(() => {
 });
 
 describe('<Results />', () => {
-  const entries = [mockSearchResults.entry[0], mockSearchResults.entry[1], mockSearchResults.entry[2]] as BundleEntry[];
-  const closestFacilities: ContactProps[] = [
-    { name: 'Facility 1', distance: '10 miles' },
-    { name: 'Facility 2', distance: '20 miles' },
-    { name: 'Facility 3', distance: '30 miles' },
-  ];
+  const entries = [
+    mockSearchResults.results.entry[0],
+    mockSearchResults.results.entry[1],
+    mockSearchResults.results.entry[2],
+  ] as StudyDetailProps[];
 
   const mockedOnClick = jest.fn();
   const handleSaveStudy = jest.fn(() => mockedOnClick);
 
   const ComponentWithoutSelectedStudies = (props: Partial<ResultsProps>) => (
-    <Results
-      entries={entries}
-      state={uninitializedState}
-      handleSaveStudy={handleSaveStudy}
-      closestFacilities={closestFacilities}
-      {...props}
-    />
+    <Results entries={entries} state={uninitializedState} handleSaveStudy={handleSaveStudy} {...props} />
   );
 
   const ComponentWithSelectedStudies = (props: Partial<ResultsProps>) => (
@@ -35,7 +28,6 @@ describe('<Results />', () => {
       entries={entries}
       state={new Set<string>(['NCT03473639', 'NCT03964532'])}
       handleSaveStudy={handleSaveStudy}
-      closestFacilities={closestFacilities}
       {...props}
     />
   );
