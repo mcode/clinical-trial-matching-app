@@ -4,11 +4,10 @@ import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, S
 import { MainRowKeys } from '@/utils/exportData';
 import {
   getZipcodeCoordinates,
-  getCoordinatesOfClosestLocation,
   getDistanceBetweenPoints,
-  coordinatesAreEqual,
   getLocations,
   getCoordinatesForLocations,
+  getLocationCoordinates,
 } from '@/utils/distanceUtils';
 
 export const getContact = (contact: ContactDetail): ContactProps => {
@@ -101,21 +100,24 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 1): ContactProps[] => {
-  // For now, this only supports getting the first facility.
+const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
-  const locationsWithCoordinates = getCoordinatesForLocations(locations);
-  const closest = getCoordinatesOfClosestLocation(origin, locationsWithCoordinates);
-  const distance = getDistanceBetweenPoints(origin, closest);
+  const locationCoordinates = getCoordinatesForLocations(locations);
+  const closest = locationCoordinates
+    .sort((first, second) => {
+      const firstToOrigin = getDistanceBetweenPoints(origin, getLocationCoordinates(first));
+      const secondToOrigin = getDistanceBetweenPoints(origin, getLocationCoordinates(second));
+      return firstToOrigin - secondToOrigin;
+    })
+    .slice(0, numOfFacilities);
 
-  // Again, for now, just get the closest facility
-  const location = closest && locationsWithCoordinates.find(coordinatesAreEqual(closest));
-  return [
-    {
+  return closest.map(location => {
+    const distance = getDistanceBetweenPoints(origin, getLocationCoordinates(location));
+    return {
       ...getContact(location),
       distance: distance !== null ? `${distance} miles` : 'Unknown distance',
-    },
-  ];
+    };
+  });
 };
 
 export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {

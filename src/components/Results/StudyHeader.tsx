@@ -20,7 +20,7 @@ import TargetIcon from './TargetIcon';
 import UnsaveIcon from './UnsaveIcon';
 import BookmarkCheckIcon from './BookmarkCheckIcon';
 
-import { StudyDetailProps, SaveStudyHandler, ContactProps } from './types';
+import { StudyDetailProps, SaveStudyHandler } from './types';
 import StudyDetailsButton from './StudyDetailsButton';
 
 type StudyHeaderProps = {
@@ -28,19 +28,13 @@ type StudyHeaderProps = {
   study: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
-  closestFacility: ContactProps;
 };
 
-const StudyHeader = ({
-  isExpanded,
-  study,
-  handleSaveStudy,
-  isStudySaved,
-  closestFacility,
-}: StudyHeaderProps): ReactElement => {
+const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: StudyHeaderProps): ReactElement => {
   const studyTags = [...study.conditions, study.phase, study.type];
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const closestFacility = study?.closestFacilities?.[0];
 
   return (
     <AccordionSummary
@@ -55,6 +49,7 @@ const StudyHeader = ({
         backgroundColor: isExpanded ? 'common.gray' : 'common.grayLighter',
         color: isExpanded ? 'common.white' : 'common.gray',
         p: 0,
+        '&.MuiAccordionSummary-root': { flexDirection: { xs: 'column', sm: 'row' } },
         '& .MuiAccordionSummary-content': { m: 0, flexDirection: { xs: 'column', sm: 'row' } },
       }}
     >
@@ -113,10 +108,12 @@ const StudyHeader = ({
               <Typography whiteSpace="nowrap">{study.likelihood.text}</Typography>
             </Stack>
 
-            <Stack alignItems="center" direction="row" spacing={1}>
-              <LocationOnIcon fontSize="small" sx={{ color: isExpanded ? 'common.white' : 'common.gray' }} />
-              <Typography>{closestFacility.distance}</Typography>
-            </Stack>
+            {closestFacility?.distance && (
+              <Stack alignItems="center" direction="row" spacing={1}>
+                <LocationOnIcon fontSize="small" sx={{ color: isExpanded ? 'common.white' : 'common.gray' }} />
+                <Typography>{closestFacility.distance}</Typography>
+              </Stack>
+            )}
 
             {study.period && (
               <Stack alignItems="center" direction="row" spacing={1}>
