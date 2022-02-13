@@ -31,7 +31,7 @@ type StudyHeaderProps = {
 };
 
 const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: StudyHeaderProps): ReactElement => {
-  const studyTags = [...study.conditions, study.phase, study.type];
+  const studyTags = [...study.conditions, study.phase, study.type].filter(tag => !!tag);
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const closestFacilityDistance = study?.closestFacilities?.[0]?.distance;
@@ -65,8 +65,8 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
           p={1}
           width={{ xs: 'fit-content', lg: '110px' }}
         >
-          <Typography color="common.white" fontWeight="600" sx={{ textTransform: 'uppercase' }} textAlign="center">
-            {study.status.text}
+          <Typography color="common.white" fontWeight="600" textTransform="uppercase" textAlign="center">
+            {study.status.label}
           </Typography>
         </Box>
 
@@ -111,7 +111,7 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
             {closestFacilityDistance && (
               <Stack alignItems="center" direction="row" spacing={1}>
                 <LocationOnIcon fontSize="small" sx={{ color: isExpanded ? 'common.white' : 'common.gray' }} />
-                <Typography>{closestFacilityDistance}</Typography>
+                <Typography>{`${closestFacilityDistance.quantity} ${closestFacilityDistance.units}`}</Typography>
               </Stack>
             )}
 

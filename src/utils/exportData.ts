@@ -33,7 +33,7 @@ const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
     { header: MainRowKeys.trialId, body: studyProps.trialId },
     { header: MainRowKeys.likelihood, body: studyProps.likelihood?.text || '' },
     { header: MainRowKeys.title, body: studyProps.title || '' },
-    { header: MainRowKeys.status, body: studyProps.status?.text || '' },
+    { header: MainRowKeys.status, body: studyProps.status?.label || '' },
     { header: MainRowKeys.period, body: studyProps.period || '' },
     { header: MainRowKeys.phase, body: studyProps.phase || '' },
     { header: MainRowKeys.conditions, body: JSON.stringify(studyProps?.conditions) || '' },

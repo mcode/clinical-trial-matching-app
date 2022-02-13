@@ -1,3 +1,7 @@
+import { ResearchStudy } from 'fhir/r4';
+
+export type FullSearchParameters = SearchParameters & Partial<FilterParameters> & Partial<MiscellaneousParameters>;
+
 export type SearchParameters = {
   matchingServices: string[];
   zipcode: string;
@@ -15,4 +19,15 @@ export type SearchParameters = {
   surgery: string;
   medications: string;
   radiation: string;
+};
+
+export type FilterParameters = {
+  sortingOptions?: string[];
+  recruitmentStatus?: ResearchStudy['status'][];
+  trialPhase?: string[];
+  studyType?: string[];
+};
+
+type MiscellaneousParameters = {
+  savedStudies: string[];
 };

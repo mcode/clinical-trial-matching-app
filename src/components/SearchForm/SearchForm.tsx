@@ -23,13 +23,15 @@ import {
 import SearchImage from '@/assets/images/search.png';
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType } from './types';
+import { SearchParameters, FullSearchParameters } from 'types/search-types';
 
 export type SearchFormProps = {
   defaultValues?: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
+  fullSearchParams?: FullSearchParameters;
 };
 
-const formDataToSearchQuery = (data: SearchFormValuesType) => ({
+export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
   ...data,
   // For the cancer types, encode the JSON objects
   // Boolean check is because JSON.stringify(null) === "null" and should be omitted
@@ -38,40 +40,43 @@ const formDataToSearchQuery = (data: SearchFormValuesType) => ({
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
 });
 
-const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
+const SearchForm = ({ defaultValues, fullWidth, fullSearchParams }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
-  const onSubmit = data => router.push({ pathname: '/results', query: formDataToSearchQuery(data) });
+  const onSubmit = (data: SearchFormValuesType) =>
+    router.push({ pathname: '/results', query: { ...fullSearchParams, ...formDataToSearchQuery(data) } });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box bgcolor="grey.200">
-        <Box p={{ xs: 0, md: 2 }} display={fullWidth ? 'none' : { xs: 'none', md: 'block' }}>
-          <Stack alignItems="center" direction={{ xs: 'column', lg: 'row' }} justifyContent="center">
-            <Box>
-              <Image
-                src={SearchImage}
-                alt="Clinical Trial Finder Search"
-                layout="fixed"
-                width={400}
-                height={190}
-                priority
-              />
-            </Box>
-
-            <Box ml={{ md: 0, lg: 10 }} textAlign={{ xs: 'center', lg: 'left' }}>
-              <Box fontSize={{ xs: 30, lg: 38, xl: 63 }} fontWeight={300}>
-                Let's find some clinical trials
+        {!(fullWidth || isSmallScreen) && (
+          <Box p={{ xs: 0, md: 2 }}>
+            <Stack alignItems="center" direction={{ xs: 'column', lg: 'row' }} justifyContent="center">
+              <Box>
+                <Image
+                  src={SearchImage}
+                  alt="Clinical Trial Finder Search"
+                  layout="fixed"
+                  width={400}
+                  height={190}
+                  priority
+                />
               </Box>
 
-              <Box color="grey.600" fontSize={{ xs: 20, lg: 25, xl: 28 }} fontWeight={300}>
-                Search with data populated from your record, or change to find matching trials
+              <Box ml={{ md: 0, lg: 10 }} textAlign={{ xs: 'center', lg: 'left' }}>
+                <Box fontSize={{ xs: 30, lg: 38, xl: 63 }} fontWeight={300}>
+                  Let's find some clinical trials
+                </Box>
+
+                <Box color="grey.600" fontSize={{ xs: 20, lg: 25, xl: 28 }} fontWeight={300}>
+                  Search with data populated from your record, or change to find matching trials
+                </Box>
               </Box>
-            </Box>
-          </Stack>
-        </Box>
+            </Stack>
+          </Box>
+        )}
 
         <Grid columns={8} container spacing={2} px={2} py={fullWidth ? 0 : { md: 2 }} pb={{ xs: 2 }} mt={0}>
           <Grid item xs={8}>

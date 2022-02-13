@@ -74,6 +74,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiDrawer: {
+      styleOverrides: {
+        root: {
+          '.MuiDrawer-paper': { boxSizing: 'border-box' },
+        },
+      },
+    },
     MuiTableCell: {
       variants: [
         {

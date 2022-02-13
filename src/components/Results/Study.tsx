@@ -112,31 +112,33 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
             {entry.contacts.map((contact, index) => (
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
-            <Accordion
-              disableGutters
-              square
-              sx={{
-                marginTop: 2,
-                '&.MuiAccordion-root': { boxShadow: 'none' },
-                '&.MuiAccordion-root:before': { backgroundColor: 'unset' },
-              }}
-            >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls={`study-${entry.trialId}-content`}
-                id={`study-${entry.trialId}-header`}
-                sx={{ '&.MuiAccordionSummary-root': { m: 0, flexDirection: 'row' } }}
+            {closestFacilities.length !== 0 && (
+              <Accordion
+                disableGutters
+                square
+                sx={{
+                  marginTop: 2,
+                  '&.MuiAccordion-root': { boxShadow: 'none' },
+                  '&.MuiAccordion-root:before': { backgroundColor: 'unset' },
+                }}
               >
-                <Typography fontWeight="700" sx={{ textTransform: 'uppercase' }}>
-                  Closest Facilities
-                </Typography>
-              </AccordionSummary>
-              <AccordionDetails sx={{ boxShadow: 'inset 0px 1px 0px 0px rgb(0 0 0 / 20%)' }}>
-                {closestFacilities.map((closestFacility, index) => (
-                  <StudyContact title={`Facility ${index + 1}`} contact={closestFacility} key={index} />
-                ))}
-              </AccordionDetails>
-            </Accordion>
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon />}
+                  aria-controls={`study-${entry.trialId}-content`}
+                  id={`study-${entry.trialId}-header`}
+                  sx={{ '&.MuiAccordionSummary-root': { m: 0, flexDirection: 'row' } }}
+                >
+                  <Typography fontWeight="700" sx={{ textTransform: 'uppercase' }}>
+                    Closest Facilities
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ boxShadow: 'inset 0px 1px 0px 0px rgb(0 0 0 / 20%)' }}>
+                  {closestFacilities.map((closestFacility, index) => (
+                    <StudyContact title={`Facility ${index + 1}`} contact={closestFacility} key={index} />
+                  ))}
+                </AccordionDetails>
+              </Accordion>
+            )}
           </Stack>
         </Stack>
       </AccordionDetails>

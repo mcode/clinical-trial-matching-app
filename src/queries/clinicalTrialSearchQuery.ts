@@ -1,5 +1,6 @@
 import { StudyDetailProps } from '@/components/Results';
 import { Patient, User } from '@/utils/fhirConversionUtils';
+import { ResearchStudy } from 'fhir/r4';
 import { ParsedUrlQuery } from 'querystring';
 
 export type Results = {
@@ -7,9 +8,16 @@ export type Results = {
   entry: StudyDetailProps[];
 };
 
+export type FilterOptions = {
+  recruitmentStatus: { name: ResearchStudy['status']; label: string; count: number }[];
+  trialPhase: { name: string; count: number }[];
+  studyType: { name: string; count: number }[];
+};
+
 export type ResultsResponse = {
   results?: StudyDetailProps[];
   errors?: ErrorResponse[];
+  filterOptions?: FilterOptions;
 };
 
 export type ErrorResponse = {

@@ -15,7 +15,8 @@
       ],
       "likelihood": {
         "text": "Unknown likelihood",
-        "color": "common.grayLight"
+        "color": "common.grayLight",
+        "score": -1
       },
       "period": null,
       "phase": "Phase 1",
@@ -30,7 +31,8 @@
         }
       ],
       "status": {
-        "text": "closed to accrual",
+        "name": "closed-to-accrual",
+        "label": "Closed to accrual",
         "color": "common.red"
       },
       "title": "Anti-Estrogen Therapy, Palbociclib, and Gedatolisib for Metastatic ER+, HER2- Breast Cancer",
@@ -59,11 +61,7 @@
           "interventions": []
         }
       ],
-      "closestFacilities": [
-        {
-          "distance": "Unknown distance"
-        }
-      ],
+      "closestFacilities": [],
       "locations": [
         {
           "resourceType": "Location",
@@ -574,7 +572,8 @@
       ],
       "likelihood": {
         "text": "Unknown likelihood",
-        "color": "common.grayLight"
+        "color": "common.grayLight",
+        "score": -1
       },
       "period": null,
       "phase": "Phase 1",
@@ -588,16 +587,13 @@
         }
       ],
       "status": {
-        "text": "active",
+        "name": "active",
+        "label": "Active",
         "color": "common.green"
       },
       "title": "Entinostat & Capecitabine for Stage II, Stage III and Metastatic HER2 Negative Breast Cancer",
       "type": "Interventional",
-      "closestFacilities": [
-        {
-          "distance": "Unknown distance"
-        }
-      ],
+      "closestFacilities": [],
       "locations": [
         {
           "resourceType": "Location",
@@ -653,7 +649,8 @@
       "keywords": ["PARP", "TREATMENT VACCINE", "TREATMENT BIOLOGICAL", "METASTATIC"],
       "likelihood": {
         "text": "Unknown likelihood",
-        "color": "common.grayLight"
+        "color": "common.grayLight",
+        "score": -1
       },
       "period": null,
       "phase": "Phase 1/Phase 2",
@@ -668,16 +665,13 @@
         }
       ],
       "status": {
-        "text": "active",
+        "name": "active",
+        "label": "Active",
         "color": "common.green"
       },
       "title": "Talazoparib and Avelumab for Advanced Breast Cancer (TALAVE)",
       "type": "Interventional",
-      "closestFacilities": [
-        {
-          "distance": "Unknown distance"
-        }
-      ],
+      "closestFacilities": [],
       "locations": [
         {
           "resourceType": "Location",
@@ -762,7 +756,8 @@
       "keywords": ["TREATMENT CHEMOTHERAPY", "BRCA1 2", "PARP", "METASTATIC", "TREATMENT BIOLOGICAL"],
       "likelihood": {
         "text": "Unknown likelihood",
-        "color": "common.grayLight"
+        "color": "common.grayLight",
+        "score": -1
       },
       "period": null,
       "phase": "Phase 1/Phase 2",
@@ -777,16 +772,13 @@
         }
       ],
       "status": {
-        "text": "active",
+        "name": "active",
+        "label": "Active",
         "color": "common.green"
       },
       "title": "Olaparib & Sapacitabine for People with Advanced Breast Cancer & an Inherited BRCA1/2 Mutation",
       "type": "Interventional",
-      "closestFacilities": [
-        {
-          "distance": "Unknown distance"
-        }
-      ],
+      "closestFacilities": [],
       "locations": [
         {
           "resourceType": "Location",
@@ -835,7 +827,8 @@
       "keywords": ["TREATMENT HORMONE", "METASTATIC", "OTHER TARGETED THERAPY", "TREATMENT BIOLOGICAL"],
       "likelihood": {
         "text": "Unknown likelihood",
-        "color": "common.grayLight"
+        "color": "common.grayLight",
+        "score": -1
       },
       "period": null,
       "phase": "Phase 1",
@@ -850,16 +843,13 @@
         }
       ],
       "status": {
-        "text": "active",
+        "name": "active",
+        "label": "Active",
         "color": "common.green"
       },
       "title": "Ipatasertib, Hormone Therapy and Ibrance for Metastatic Breast Cancer (TAKTIC)",
       "type": "Interventional",
-      "closestFacilities": [
-        {
-          "distance": "Unknown distance"
-        }
-      ],
+      "closestFacilities": [],
       "locations": [
         {
           "resourceType": "Location",
@@ -896,7 +886,8 @@
       "keywords": ["TREATMENT BIOLOGICAL", "METASTATIC", "PARP", "BRCA1 2"],
       "likelihood": {
         "text": "Unknown likelihood",
-        "color": "common.grayLight"
+        "color": "common.grayLight",
+        "score": -1
       },
       "period": null,
       "phase": "Phase 2",
@@ -911,16 +902,13 @@
         }
       ],
       "status": {
-        "text": "active",
+        "name": "active",
+        "label": "Active",
         "color": "common.green"
       },
       "title": "Talazoparib in Women With Metastatic Triple Negative or HR+, HER2- Breast Cancer with a Tumor (Not Inherited) BRCA1/2 Mutation",
       "type": "Interventional",
-      "closestFacilities": [
-        {
-          "distance": "Unknown distance"
-        }
-      ],
+      "closestFacilities": [],
       "locations": [
         {
           "resourceType": "Location",
