@@ -3,7 +3,6 @@ import { SearchParameters } from 'types/search-types';
 import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
-import { Results } from '@/queries/clinicalTrialSearchQuery';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { StudyDetailProps } from '@/components/Results';
 
@@ -122,7 +121,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
   const errors = wrapperResults.filter(result => result.status == 500);
 
   // Combine the responses that were successful
-  const combined:StudyDetailProps[] = []
+  const combined: StudyDetailProps[] = [];
 
   // Grab the zipcode from the query
   const zipcode = query.entry[0].resource.parameter[0].valueString as string;
