@@ -16,21 +16,20 @@ import { Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
-import { getDetails, getStudyProps } from './utils';
-import { SaveStudyHandler, BundleEntry, ContactProps } from './types';
+import { getDetails } from './utils';
+import { SaveStudyHandler } from './types';
 import UnsaveIcon from './UnsaveIcon';
+import { StudyDetailProps } from '.';
 
 type StudyProps = {
-  entry: BundleEntry;
+  entry: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
-  closestFacility: ContactProps;
 };
 
-const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyProps): ReactElement => {
+const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const studyProps = getStudyProps(entry);
-  const details = getDetails(studyProps);
+  const details = getDetails(entry);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
 
@@ -44,11 +43,10 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyP
     >
       <StudyHeader
         isExpanded={isExpanded}
-        studyId={entry.resource.id}
-        studyProps={studyProps}
+        study={entry}
         handleSaveStudy={handleSaveStudy}
         isStudySaved={isStudySaved}
-        closestFacility={closestFacility}
+        closestFacility={entry.closestFacilities[0]}
       />
 
       <AccordionDetails
@@ -106,11 +104,11 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyP
               text={isStudySaved ? 'Unsave study' : 'Save study'}
               onClick={handleSaveStudy}
             />
-            <StudyContact title="Sponsor" contact={studyProps.sponsor} />
-            {studyProps.contacts.map((contact, index) => (
+            <StudyContact title="Sponsor" contact={entry.sponsor} />
+            {entry.contacts.map((contact, index) => (
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
-            <StudyContact title="Closest Facility" contact={closestFacility} />
+            <StudyContact title="Closest Facility" contact={entry.closestFacilities[0]} />
           </Stack>
         </Stack>
       </AccordionDetails>

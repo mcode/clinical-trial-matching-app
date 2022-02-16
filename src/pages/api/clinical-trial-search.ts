@@ -1,30 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { SearchParameters } from 'types/search-types';
 import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
-import { ResearchStudy } from 'fhir/r4';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
-import { ContactProps } from '@/components/Results/types';
-import { getContact } from '@/components/Results/utils';
-import {
-  getZipcodeCoordinates,
-  getLocationsWithCoordinates,
-  getCoordinatesOfClosestLocation,
-  getDistanceBetweenPoints,
-  coordinatesAreEqual,
-} from '@/utils/distanceUtils';
-
-const getClosestFacility = (study: ResearchStudy, zipcode: string): ContactProps => {
-  const origin = getZipcodeCoordinates(zipcode);
-  const locations = getLocationsWithCoordinates(study);
-  const closest = getCoordinatesOfClosestLocation(origin, locations);
-  const distance = getDistanceBetweenPoints(origin, closest);
-  const location = closest && locations.find(coordinatesAreEqual(closest));
-  return {
-    ...getContact(location),
-    distance: distance !== null ? `${distance} miles` : 'Unknown distance',
-  };
-};
+import { getStudyDetailProps } from '@/components/Results/utils';
+import { StudyDetailProps } from '@/components/Results';
 
 // Matching services and their information
 const services = {
@@ -141,27 +121,22 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
   const errors = wrapperResults.filter(result => result.status == 500);
 
   // Combine the responses that were successful
-  const combined: Bundle = {
-    resourceType: 'Bundle',
-    type: 'searchset',
-    total: 0,
-    entry: [],
-  };
+  const combined: StudyDetailProps[] = [];
+
+  // Grab the zipcode from the query
+  const zipcode = query.entry[0].resource.parameter[0].valueString as string;
 
   wrapperResults
     .filter(result => result.status == 200)
     .forEach(searchset => {
-      // Each search set is also a Bundle so:
-      combined.total += searchset.response.total || 0;
-      combined.entry.push(...searchset.response.entry);
+      // Add the count to the total
+      // Transform each of the studies in the bundle
+      searchset?.response?.entry.forEach(entry => {
+        combined.push(getStudyDetailProps(entry, zipcode));
+      });
     });
 
-  const zipcode = query.entry[0].resource.parameter[0].valueString as string;
-  const closestFacilities: ContactProps[] = combined.entry?.map(({ resource }) =>
-    getClosestFacility(resource as ResearchStudy, zipcode)
-  );
-
-  return { results: combined, errors, closestFacilities };
+  return { results: combined, errors };
 }
 
 /**

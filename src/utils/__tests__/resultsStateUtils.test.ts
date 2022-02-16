@@ -1,9 +1,9 @@
 import { savedStudiesReducer, uninitializedState, getSavedStudies } from '../resultsStateUtils';
-import mockSearchResults from '@/__mocks__/results.json';
-import { BundleEntry } from '@/components/Results/types';
+import mockSearchResults from '@/__mocks__/resultDetails.json';
+import { StudyDetailProps } from '@/components/Results/types';
 
 describe('savedStudiesReducer', () => {
-  const entries = mockSearchResults.entry as BundleEntry[];
+  const entries = mockSearchResults.results as StudyDetailProps[];
 
   it('resets to the initial state', () => {
     expect(savedStudiesReducer(new Set<string>(['NCT02684032']), { type: 'setInitialState' })).toEqual(
@@ -25,7 +25,7 @@ describe('savedStudiesReducer', () => {
 });
 
 describe('getSavedStudies', () => {
-  const entries = mockSearchResults.entry as BundleEntry[];
+  const entries = mockSearchResults.results as StudyDetailProps[];
 
   it('gets all studies when none are saved', () => {
     expect(getSavedStudies([entries[0], entries[2]], uninitializedState)).toEqual([entries[0], entries[2]]);

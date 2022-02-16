@@ -20,13 +20,12 @@ import TargetIcon from './TargetIcon';
 import UnsaveIcon from './UnsaveIcon';
 import BookmarkCheckIcon from './BookmarkCheckIcon';
 
-import { StudyProps, SaveStudyHandler, ContactProps } from './types';
+import { StudyDetailProps, SaveStudyHandler, ContactProps } from './types';
 import StudyDetailsButton from './StudyDetailsButton';
 
 type StudyHeaderProps = {
   isExpanded: boolean;
-  studyId: string;
-  studyProps: StudyProps;
+  study: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
   closestFacility: ContactProps;
@@ -34,25 +33,24 @@ type StudyHeaderProps = {
 
 const StudyHeader = ({
   isExpanded,
-  studyId,
-  studyProps,
+  study,
   handleSaveStudy,
   isStudySaved,
   closestFacility,
 }: StudyHeaderProps): ReactElement => {
-  const studyTags = [...studyProps.conditions, studyProps.phase, studyProps.type];
+  const studyTags = [...study.conditions, study.phase, study.type];
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
     <AccordionSummary
-      aria-controls={`results-content-${studyId}`}
+      aria-controls={`results-content-${study.trialId}`}
       expandIcon={
         <IconButton aria-label="expand collapse">
           <ExpandMoreIcon fontSize="large" sx={{ color: isExpanded ? 'common.white' : 'common.gray', mx: 0 }} />
         </IconButton>
       }
-      id={`results-header-${studyId}`}
+      id={`results-header-${study.trialId}`}
       sx={{
         backgroundColor: isExpanded ? 'common.gray' : 'common.grayLighter',
         color: isExpanded ? 'common.white' : 'common.gray',
@@ -63,7 +61,7 @@ const StudyHeader = ({
       <Stack direction={{ xs: 'column', lg: 'row' }} flexGrow={1} spacing={{ xs: 0, lg: 4 }}>
         <Box
           alignItems="center"
-          bgcolor={studyProps.status.color}
+          bgcolor={study.status.color}
           display={{ xs: 'block', lg: 'flex' }}
           height="100%"
           justifyContent="center"
@@ -73,7 +71,7 @@ const StudyHeader = ({
           width={{ xs: 'fit-content', lg: '110px' }}
         >
           <Typography color="common.white" fontWeight="600" sx={{ textTransform: 'uppercase' }} textAlign="center">
-            {studyProps.status.text}
+            {study.status.text}
           </Typography>
         </Box>
 
@@ -87,7 +85,7 @@ const StudyHeader = ({
         >
           <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} flexGrow={1}>
             <Typography fontWeight="normal" lineHeight={1.2} mb={0.5} variant="h6">
-              {studyProps.title}
+              {study.title}
             </Typography>
 
             <Stack alignItems="center" direction="row" flexWrap="wrap">
@@ -111,8 +109,8 @@ const StudyHeader = ({
 
           <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} py={1} spacing={{ xs: 0, xl: 0.5 }}>
             <Stack alignItems="center" direction="row" spacing={1}>
-              <TargetIcon fontSize="inherit" sx={{ color: studyProps.likelihood.color, width: '20px' }} />
-              <Typography whiteSpace="nowrap">{studyProps.likelihood.text}</Typography>
+              <TargetIcon fontSize="inherit" sx={{ color: study.likelihood.color, width: '20px' }} />
+              <Typography whiteSpace="nowrap">{study.likelihood.text}</Typography>
             </Stack>
 
             <Stack alignItems="center" direction="row" spacing={1}>
@@ -120,10 +118,10 @@ const StudyHeader = ({
               <Typography>{closestFacility.distance}</Typography>
             </Stack>
 
-            {studyProps.period && (
+            {study.period && (
               <Stack alignItems="center" direction="row" spacing={1}>
                 <EventIcon fontSize="small" sx={{ color: isExpanded ? 'common.white' : 'common.gray' }} />
-                <Typography>{studyProps.period}</Typography>
+                <Typography>{study.period}</Typography>
               </Stack>
             )}
           </Stack>

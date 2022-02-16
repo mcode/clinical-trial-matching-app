@@ -2,15 +2,14 @@ import { ReactElement } from 'react';
 import { Typography } from '@mui/material';
 
 import Study from './Study';
-import { ContactProps, SavedStudiesState, SaveStudyHandler } from './types';
-import { BundleEntry } from './types';
+import { SavedStudiesState, SaveStudyHandler } from './types';
+import { StudyDetailProps } from '.';
 
 export type ResultsProps = {
-  entries: BundleEntry[];
+  entries: StudyDetailProps[];
   state: SavedStudiesState;
   errors?: ErrorResponse[];
-  handleSaveStudy: (study: BundleEntry) => SaveStudyHandler;
-  closestFacilities: ContactProps[];
+  handleSaveStudy: (study: StudyDetailProps) => SaveStudyHandler;
 };
 
 export type ErrorResponse = {
@@ -20,7 +19,7 @@ export type ErrorResponse = {
   error?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
-const Results = ({ entries, state, handleSaveStudy, closestFacilities }: ResultsProps): ReactElement => (
+const Results = ({ entries, state, handleSaveStudy }: ResultsProps): ReactElement => (
   <>
     <Typography fontWeight="normal" mb={2} variant="h6">
       We found
@@ -30,13 +29,12 @@ const Results = ({ entries, state, handleSaveStudy, closestFacilities }: Results
       matching trials...
     </Typography>
 
-    {entries.map((entry: BundleEntry, index: number) => (
+    {entries.map((entry: StudyDetailProps) => (
       <Study
-        key={entry.resource.id}
+        key={entry.trialId}
         entry={entry}
         handleSaveStudy={handleSaveStudy(entry)}
-        isStudySaved={state.has(entry.resource.id)}
-        closestFacility={closestFacilities[index]}
+        isStudySaved={state.has(entry.trialId)}
       />
     ))}
   </>
