@@ -5,6 +5,7 @@ import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
 import { Results } from '@/queries/clinicalTrialSearchQuery';
 import { getStudyDetailProps } from '@/components/Results/utils';
+import { StudyDetailProps } from '@/components/Results';
 
 // Matching services and their information
 const services = {
@@ -121,10 +122,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
   const errors = wrapperResults.filter(result => result.status == 500);
 
   // Combine the responses that were successful
-  const combined: Results = {
-    total: 0,
-    entry: [],
-  };
+  const combined:StudyDetailProps[] = []
 
   // Grab the zipcode from the query
   const zipcode = query.entry[0].resource.parameter[0].valueString as string;
@@ -133,10 +131,9 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
     .filter(result => result.status == 200)
     .forEach(searchset => {
       // Add the count to the total
-      combined.total += searchset.response?.total || 0;
       // Transform each of the studies in the bundle
       searchset?.response?.entry.forEach(entry => {
-        combined.entry.push(getStudyDetailProps(entry, zipcode));
+        combined.push(getStudyDetailProps(entry, zipcode));
       });
     });
 

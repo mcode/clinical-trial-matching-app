@@ -96,7 +96,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const drawerWidth = getDrawerWidth(isExtraSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const entries = useMemo(() => data?.results?.entry as StudyDetailProps[], [data]);
+  const entries = useMemo(() => data?.results as StudyDetailProps[], [data]);
   const [state, dispatch] = useReducer(savedStudiesReducer, uninitializedState);
 
   const alreadyHasSavedStudies = state.size !== 0;

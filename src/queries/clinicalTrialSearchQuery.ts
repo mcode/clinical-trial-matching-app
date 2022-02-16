@@ -8,7 +8,7 @@ export type Results = {
 };
 
 export type ResultsResponse = {
-  results?: Results;
+  results?: StudyDetailProps[];
   errors?: ErrorResponse[];
 };
 

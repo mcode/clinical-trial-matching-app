@@ -11,9 +11,9 @@ afterEach(() => {
 
 describe('<Results />', () => {
   const entries = [
-    mockSearchResults.results.entry[0],
-    mockSearchResults.results.entry[1],
-    mockSearchResults.results.entry[2],
+    mockSearchResults.results[0],
+    mockSearchResults.results[1],
+    mockSearchResults.results[2],
   ] as StudyDetailProps[];
 
   const mockedOnClick = jest.fn();
