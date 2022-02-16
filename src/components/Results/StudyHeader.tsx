@@ -34,7 +34,7 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
   const studyTags = [...study.conditions, study.phase, study.type];
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const closestFacility = study?.closestFacilities?.[0];
+  const closestFacilityDistance = study?.closestFacilities?.[0]?.distance;
 
   return (
     <AccordionSummary
@@ -108,10 +108,10 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
               <Typography whiteSpace="nowrap">{study.likelihood.text}</Typography>
             </Stack>
 
-            {closestFacility?.distance && (
+            {closestFacilityDistance && (
               <Stack alignItems="center" direction="row" spacing={1}>
                 <LocationOnIcon fontSize="small" sx={{ color: isExpanded ? 'common.white' : 'common.gray' }} />
-                <Typography>{closestFacility.distance}</Typography>
+                <Typography>{closestFacilityDistance}</Typography>
               </Stack>
             )}
 

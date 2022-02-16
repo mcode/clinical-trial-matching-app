@@ -102,22 +102,17 @@ const getType = (study: ResearchStudy): string => {
 
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
-  const locationCoordinates = getCoordinatesForLocations(locations);
-  const closest = locationCoordinates
-    .sort((first, second) => {
-      const firstToOrigin = getDistanceBetweenPoints(origin, getLocationCoordinates(first));
-      const secondToOrigin = getDistanceBetweenPoints(origin, getLocationCoordinates(second));
-      return firstToOrigin - secondToOrigin;
-    })
-    .slice(0, numOfFacilities);
-
-  return closest.map(location => {
-    const distance = getDistanceBetweenPoints(origin, getLocationCoordinates(location));
-    return {
-      ...getContact(location),
+  return getCoordinatesForLocations(locations)
+    .map(({ name, telecom, position }) => ({
+      contact: { name, telecom },
+      distance: getDistanceBetweenPoints(origin, getLocationCoordinates({ position } as Location)),
+    }))
+    .sort((first, second) => first.distance - second.distance)
+    .slice(0, numOfFacilities)
+    .map(({ contact, distance }) => ({
+      ...getContact(contact),
       distance: distance !== null ? `${distance} miles` : 'Unknown distance',
-    };
-  });
+    }));
 };
 
 export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
