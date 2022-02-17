@@ -61,7 +61,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
                     <TableRow
                       key={index}
                       sx={{
-                        display: { xs: 'flex', xl: 'table-row' },
+                        display: 'flex',
                         flexDirection: { xs: 'column', xl: 'row' },
                         '&:last-child td, &:last-child th': { xl: { border: 0 } },
                         '& td': {
@@ -76,13 +76,14 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
                           textTransform: 'uppercase',
                           textAlign: { xs: 'left', xl: 'right' },
                           verticalAlign: 'top',
+                          flex: { xl: 1 },
                         }}
                         component="th"
                       >
                         {header}
                       </TableCell>
 
-                      <TableCell sx={{ whiteSpace: 'pre-line' }} component="td">
+                      <TableCell sx={{ whiteSpace: 'pre-line', flex: { xl: 7 } }} component="td">
                         {body}
                       </TableCell>
                     </TableRow>
@@ -92,8 +93,13 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
             </TableContainer>
           </Stack>
 
-          <Stack p={2} sx={{ backgroundColor: 'common.grayLighter', maxHeight: '500px', overflowY: 'scroll' }}>
-            <StudyDetailsButton icon={<LaunchIcon />} text="More info" />
+          <Stack p={2} sx={{ backgroundColor: 'common.grayLighter' }}>
+            <StudyDetailsButton
+              icon={<LaunchIcon />}
+              text="More info"
+              target="_blank"
+              href={'https://www.clinicaltrials.gov/ct2/show/' + entry.trialId}
+            />
             <StudyDetailsButton
               icon={isStudySaved ? <UnsaveIcon /> : <SaveIcon />}
               text={isStudySaved ? 'Unsave study' : 'Save study'}

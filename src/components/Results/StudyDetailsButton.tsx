@@ -6,6 +6,8 @@ type StudyDetailsButtonProps = {
   icon: ReactElement;
   text: string;
   onClick?: SaveStudyHandler;
+  target?: string;
+  href?: string;
 };
 
 const StudyDetailsButton = ({ icon, text, ...props }: StudyDetailsButtonProps): ReactElement => (
