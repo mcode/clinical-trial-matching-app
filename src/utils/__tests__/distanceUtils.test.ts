@@ -3,10 +3,8 @@ import { GeolibInputCoordinates } from 'geolib/es/types';
 import {
   getZipcodeCoordinates,
   getLocationCoordinates,
-  getLocationsWithCoordinates,
-  coordinatesAreEqual,
+  getCoordinatesForLocations,
   getDistanceBetweenPoints,
-  getCoordinatesOfClosestLocation,
   getLocations,
 } from '../distanceUtils';
 
@@ -26,25 +24,6 @@ describe('getZipcodeCoordinates', () => {
   it('should return null when it cannot find the coordinates for a zip code', () => {
     const point: GeolibInputCoordinates = getZipcodeCoordinates('00000');
     expect(point).toBeNull();
-  });
-});
-
-describe('getCoordinatesOfClosestLocation', () => {
-  it('should get the existing coordinates of the closest location', () => {
-    const origin = { latitude: 42.499332, longitude: -71.281901 };
-    expect(getCoordinatesOfClosestLocation(origin, locationsWithAndWithoutCoordinates)).toEqual({
-      latitude: 13.5,
-      longitude: 37.7,
-    });
-  });
-
-  it('should return null when there are no locations with coordinates', () => {
-    const origin = { latitude: 42.499332, longitude: -71.281901 };
-    expect(getCoordinatesOfClosestLocation(origin, [locationsWithAndWithoutCoordinates[3]])).toBeNull();
-  });
-
-  it('should return null when there there is no origin', () => {
-    expect(getCoordinatesOfClosestLocation(null, locationsWithAndWithoutCoordinates)).toBeNull();
   });
 });
 
@@ -80,9 +59,9 @@ describe('getLocations', () => {
   });
 });
 
-describe('getLocationsWithCoordinates', () => {
-  it('should get all the locations that have coordinates or zip codes that can be converted to coordinates', () => {
-    expect(getLocationsWithCoordinates(researchStudyWithLocations)).toEqual([
+describe('getCoordinatesForLocations', () => {
+  it('should get the coordinates for locations that have coordinates or zip codes that can be converted to coordinates', () => {
+    expect(getCoordinatesForLocations(locationsWithAndWithoutCoordinates)).toEqual([
       {
         resourceType: 'Location',
         id: 'location-1',
@@ -102,17 +81,19 @@ describe('getLocationsWithCoordinates', () => {
         },
         position: { latitude: 38.950951, longitude: -77.229553 },
       },
+      {
+        resourceType: 'Location',
+        id: 'location-5',
+        name: 'Fifth Location (does not have local reference)',
+        address: {
+          postalCode: '70001',
+          country: 'USA',
+        },
+        position: {
+          latitude: 29.982705,
+          longitude: -90.169068,
+        },
+      },
     ]);
-  });
-});
-
-describe('coordinatesAreEqual', () => {
-  it("should assert whether a pair of coordinates and a location's coordinates are equal", () => {
-    expect(coordinatesAreEqual({ longitude: 13.5, latitude: 37.7 })(locationsWithAndWithoutCoordinates[0])).toBeFalsy();
-    expect(coordinatesAreEqual({ longitude: 13.5, latitude: 37.7 })(null)).toBeFalsy();
-    expect(coordinatesAreEqual(null)(locationsWithAndWithoutCoordinates[0])).toBeFalsy();
-    expect(
-      coordinatesAreEqual({ longitude: 37.7, latitude: 13.5 })(locationsWithAndWithoutCoordinates[0])
-    ).toBeTruthy();
   });
 });

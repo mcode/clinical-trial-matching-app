@@ -1,12 +1,15 @@
-import { ContactProps } from '@/components/Results';
+import { StudyDetailProps } from '@/components/Results';
 import { Patient, User } from '@/utils/fhirConversionUtils';
-import { Bundle } from 'fhir/r4';
 import { ParsedUrlQuery } from 'querystring';
 
+export type Results = {
+  total: number;
+  entry: StudyDetailProps[];
+};
+
 export type ResultsResponse = {
-  results?: Bundle;
+  results?: StudyDetailProps[];
   errors?: ErrorResponse[];
-  closestFacilities?: ContactProps[];
 };
 
 export type ErrorResponse = {

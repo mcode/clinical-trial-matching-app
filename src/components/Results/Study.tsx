@@ -2,53 +2,46 @@ import { ReactElement, useState, memo } from 'react';
 import {
   Accordion,
   AccordionDetails,
+  AccordionSummary,
   Stack,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableRow,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
-
+import { ExpandMore as ExpandMoreIcon, Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
-import { getDetails, getStudyProps } from './utils';
-import { SaveStudyHandler, BundleEntry, ContactProps } from './types';
+import { getDetails } from './utils';
+import { SaveStudyHandler } from './types';
 import UnsaveIcon from './UnsaveIcon';
+import { StudyDetailProps } from '.';
 
 type StudyProps = {
-  entry: BundleEntry;
+  entry: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
-  closestFacility: ContactProps;
 };
 
-const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyProps): ReactElement => {
+const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const studyProps = getStudyProps(entry);
-  const details = getDetails(studyProps);
+  const details = getDetails(entry);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
+  const closestFacilities = entry?.closestFacilities || [];
 
   return (
-    <Accordion
-      sx={{
-        marginBottom: 2,
-        '& .MuiAccordionSummary-root': { flexDirection: { xs: 'column', sm: 'row' } },
-      }}
-      onChange={(_event, expanded) => setIsExpanded(expanded)}
-    >
+    <Accordion sx={{ marginBottom: 2 }} onChange={(_event, expanded) => setIsExpanded(expanded)}>
       <StudyHeader
         isExpanded={isExpanded}
-        studyId={entry.resource.id}
-        studyProps={studyProps}
+        study={entry}
         handleSaveStudy={handleSaveStudy}
         isStudySaved={isStudySaved}
-        closestFacility={closestFacility}
       />
 
       <AccordionDetails
@@ -68,7 +61,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyP
                     <TableRow
                       key={index}
                       sx={{
-                        display: { xs: 'flex', xl: 'table-row' },
+                        display: 'flex',
                         flexDirection: { xs: 'column', xl: 'row' },
                         '&:last-child td, &:last-child th': { xl: { border: 0 } },
                         '& td': {
@@ -83,13 +76,14 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyP
                           textTransform: 'uppercase',
                           textAlign: { xs: 'left', xl: 'right' },
                           verticalAlign: 'top',
+                          flex: { xl: 1 },
                         }}
                         component="th"
                       >
                         {header}
                       </TableCell>
 
-                      <TableCell sx={{ whiteSpace: 'pre-line' }} component="td">
+                      <TableCell sx={{ whiteSpace: 'pre-line', flex: { xl: 7 } }} component="td">
                         {body}
                       </TableCell>
                     </TableRow>
@@ -100,17 +94,46 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, closestFacility }: StudyP
           </Stack>
 
           <Stack p={2} sx={{ backgroundColor: 'common.grayLighter' }}>
-            <StudyDetailsButton icon={<LaunchIcon />} text="More info" />
+            <StudyDetailsButton
+              icon={<LaunchIcon />}
+              text="More info"
+              target="_blank"
+              href={'https://www.clinicaltrials.gov/ct2/show/' + entry.trialId}
+            />
             <StudyDetailsButton
               icon={isStudySaved ? <UnsaveIcon /> : <SaveIcon />}
               text={isStudySaved ? 'Unsave study' : 'Save study'}
               onClick={handleSaveStudy}
             />
-            <StudyContact title="Sponsor" contact={studyProps.sponsor} />
-            {studyProps.contacts.map((contact, index) => (
+            <StudyContact title="Sponsor" contact={entry.sponsor} />
+            {entry.contacts.map((contact, index) => (
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
-            <StudyContact title="Closest Facility" contact={closestFacility} />
+            <Accordion
+              disableGutters
+              square
+              sx={{
+                marginTop: 2,
+                '&.MuiAccordion-root': { boxShadow: 'none' },
+                '&.MuiAccordion-root:before': { backgroundColor: 'unset' },
+              }}
+            >
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon />}
+                aria-controls={`study-${entry.trialId}-content`}
+                id={`study-${entry.trialId}-header`}
+                sx={{ '&.MuiAccordionSummary-root': { m: 0, flexDirection: 'row' } }}
+              >
+                <Typography fontWeight="700" sx={{ textTransform: 'uppercase' }}>
+                  Closest Facilities
+                </Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={{ boxShadow: 'inset 0px 1px 0px 0px rgb(0 0 0 / 20%)' }}>
+                {closestFacilities.map((closestFacility, index) => (
+                  <StudyContact title={`Facility ${index + 1}`} contact={closestFacility} key={index} />
+                ))}
+              </AccordionDetails>
+            </Accordion>
           </Stack>
         </Stack>
       </AccordionDetails>

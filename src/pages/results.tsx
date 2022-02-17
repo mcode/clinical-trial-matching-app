@@ -21,7 +21,7 @@ import {
 import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
-import { Results, ResultsHeader, SaveStudyHandler, BundleEntry, ContactProps } from '@/components/Results';
+import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
 import { SearchParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
@@ -96,19 +96,18 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const drawerWidth = getDrawerWidth(isExtraSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const entries = useMemo(() => data?.results?.entry as BundleEntry[], [data]);
-  const closestFacilities = useMemo(() => data?.closestFacilities as ContactProps[], [data]);
+  const entries = useMemo(() => data?.results as StudyDetailProps[], [data]);
   const [state, dispatch] = useReducer(savedStudiesReducer, uninitializedState);
 
   const alreadyHasSavedStudies = state.size !== 0;
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
   const handleExportSavedStudies = (): void => {
     const savedStudies = getSavedStudies(entries, state);
-    const data = unpackStudies(savedStudies);
+    const data: Record<string, string>[] = unpackStudies(savedStudies);
     exportSpreadsheetData(data, 'clinicalTrials');
   };
   const handleSaveStudy =
-    (entry: BundleEntry): SaveStudyHandler =>
+    (entry: StudyDetailProps): SaveStudyHandler =>
     event => {
       // When the save button is in the accordion actions, we don't want it to expand/collapse the accordion.
       event.stopPropagation();
@@ -202,15 +201,8 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                   </Typography>
                 </Stack>
               )}
-              {!isIdle && !isLoading && (
-                <Results
-                  entries={entries}
-                  state={state}
-                  handleSaveStudy={handleSaveStudy}
-                  closestFacilities={closestFacilities}
-                />
-              )}
-              {!isIdle && !isLoading && data.errors?.length > 0 && (
+              {!isIdle && !isLoading && <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} />}
+              {!isIdle && !isLoading && data?.errors?.length > 0 && (
                 <Snackbar
                   open={alertOpen}
                   anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}

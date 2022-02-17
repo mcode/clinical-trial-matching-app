@@ -1,4 +1,3 @@
-import { ResearchStudy } from 'fhir/r4';
 import { exportSpreadsheetData, unpackStudies } from '../exportData';
 import FileSaver from 'file-saver';
 
@@ -11,10 +10,11 @@ describe('unpackStudies', () => {
     expect(
       unpackStudies([
         {
-          fullUrl: 'http://www.example.com/',
-          resource: {
-            resourceType: 'ResearchStudy',
-          } as ResearchStudy,
+          trialId: 'NCT02684032',
+          likelihood: {
+            text: 'Unknown likelihood',
+            color: 'common.grayLight',
+          },
         },
       ])
     ).toEqual(
@@ -22,7 +22,19 @@ describe('unpackStudies', () => {
         expect.objectContaining({ 'Match Count': '1' }),
         expect.objectContaining({
           'Match Likelihood': 'Unknown likelihood',
-          Conditions: '[]',
+          'Trial Id': 'NCT02684032',
+          Conditions: '',
+          Description: '',
+          Eligibility: '',
+          'Overall Contact': '',
+          'Overall Contact Email': '',
+          'Overall Contact Phone': '',
+          'Overall Status': '',
+          Period: '',
+          Phase: '',
+          Sponsor: '',
+          'Study Type': '',
+          Title: '',
         }),
       ])
     );
@@ -32,116 +44,62 @@ describe('unpackStudies', () => {
     expect(
       unpackStudies([
         {
-          fullUrl: 'http://www.example.com/',
-          resource: {
-            resourceType: 'ResearchStudy',
-            id: 'ID',
-            title: 'Example Research Study',
-            description: 'A test research study object for testing this feature.',
-            identifier: [
-              {
-                use: 'official',
-                system: 'http://clinicaltrials.gov',
-                value: 'EXAMPLE',
-              },
-            ],
-            status: 'active',
-            phase: {
-              coding: [
+          trialId: 'EXAMPLE',
+          title: 'Example Research Study',
+          description: 'A test research study object for testing this feature.',
+          status: { text: 'active', color: 'common.red' },
+          phase: 'Active',
+          conditions: ['condition-1', 'condition-2'],
+          source: 'Unknown',
+          eligibility: 'Example Criteria',
+          keywords: ['keyword'],
+          likelihood: {
+            text: 'Possible match',
+            color: 'common.yellow',
+          },
+          period: 'Jan 2, 2021 - Mar 4, 2021',
+          sponsor: {
+            name: 'Example Sponsor Organization',
+          },
+          contacts: [
+            {
+              name: 'Example Contact',
+              phone: '781-555-0100',
+              email: 'email@example.com',
+            },
+          ],
+          type: 'Example Type',
+          closestFacilities: [
+            {
+              distance: 'Unknown distance',
+            },
+          ],
+          locations: [
+            {
+              resourceType: 'Location',
+              id: 'location-0',
+              name: 'First Location',
+              telecom: [
                 {
-                  system: 'http://terminology.hl7.org/CodeSystem/research-study-phase',
-                  code: 'active',
-                  display: 'Active',
+                  system: 'phone',
+                  value: '123456789',
+                  use: 'work',
                 },
               ],
-              text: 'Active',
             },
-            category: [{ text: 'Study Type: Example Type' }],
-            contact: [
-              {
-                name: 'Example Contact',
-                telecom: [
-                  {
-                    system: 'phone',
-                    value: '781-555-0100',
-                    use: 'work',
-                  },
-                  {
-                    system: 'email',
-                    value: 'email@example.com',
-                    use: 'work',
-                  },
-                ],
-              },
-            ],
-            enrollment: [
-              {
-                reference: '#group1',
-                type: 'Group',
-                display: 'Example Criteria',
-              },
-            ],
-            sponsor: {
-              reference: '#org1',
-              type: 'Organization',
+            {
+              resourceType: 'Location',
+              id: 'location-1',
+              name: 'Second Location',
+              telecom: [
+                {
+                  system: 'email',
+                  value: 'email@example.com',
+                  use: 'work',
+                },
+              ],
             },
-            contained: [
-              {
-                resourceType: 'Group',
-                id: 'group1',
-                type: 'person',
-                actual: false,
-              },
-              {
-                resourceType: 'Organization',
-                id: 'org1',
-                name: 'Example Sponsor Organization',
-              },
-              {
-                resourceType: 'Location',
-                id: 'location-1',
-                name: 'First Location',
-                telecom: [
-                  {
-                    system: 'phone',
-                    value: '123456789',
-                    use: 'work',
-                  },
-                ],
-              },
-              {
-                resourceType: 'Location',
-                id: 'location-2',
-                name: 'Second Location',
-                telecom: [
-                  {
-                    system: 'email',
-                    value: 'email@example.com',
-                    use: 'work',
-                  },
-                ],
-              },
-            ],
-            site: [
-              {
-                reference: '#location-1',
-                type: 'Location',
-              },
-              {
-                reference: '#location-2',
-                type: 'Location',
-              },
-            ],
-            condition: [{ text: 'condition-1' }, { text: 'condition-2' }],
-            period: {
-              start: '2021-1-2',
-              end: '2021-3-4',
-            },
-          },
-          search: {
-            mode: 'match',
-            score: 0.74,
-          },
+          ],
         },
       ])
     ).toEqual(

@@ -1,7 +1,14 @@
-import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy } from 'fhir/r4';
+import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy, Location } from 'fhir/r4';
 import { format } from 'date-fns';
-import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyProps } from './types';
+import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyDetailProps } from './types';
 import { MainRowKeys } from '@/utils/exportData';
+import {
+  getZipcodeCoordinates,
+  getDistanceBetweenPoints,
+  getLocations,
+  getCoordinatesForLocations,
+  getLocationCoordinates,
+} from '@/utils/distanceUtils';
 
 export const getContact = (contact: ContactDetail): ContactProps => {
   return {
@@ -13,7 +20,7 @@ export const getContact = (contact: ContactDetail): ContactProps => {
 
 const getConditions = (study: ResearchStudy): string[] => study.condition?.map(({ text }) => text) || [];
 
-export const getDetails = (studyProps: StudyProps): StudyDetail[] => {
+export const getDetails = (studyProps: StudyDetailProps): StudyDetail[] => {
   const details = [
     { header: MainRowKeys.conditions, body: studyProps.conditions.join(', ') },
     { header: MainRowKeys.trialId, body: studyProps.trialId },
@@ -93,8 +100,26 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-export const getStudyProps = (entry: BundleEntry): StudyProps => {
+const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
+  const origin = getZipcodeCoordinates(zipcode);
+  return getCoordinatesForLocations(locations)
+    .map(({ name, telecom, position }) => ({
+      contact: { name, telecom },
+      distance: getDistanceBetweenPoints(origin, getLocationCoordinates({ position } as Location)),
+    }))
+    .sort((first, second) => first.distance - second.distance)
+    .slice(0, numOfFacilities)
+    .map(({ contact, distance }) => ({
+      ...getContact(contact),
+      distance: distance !== null ? `${distance} miles` : 'Unknown distance',
+    }));
+};
+
+export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
   const { resource, search } = entry as BundleEntry & { resource: ResearchStudy };
+  // Grab the locations so we only have to do this once
+  const locations = getLocations(resource);
+
   return {
     conditions: getConditions(resource),
     trialId: getTrialId(resource),
@@ -110,5 +135,7 @@ export const getStudyProps = (entry: BundleEntry): StudyProps => {
     status: getStatus(resource),
     title: getTitle(resource),
     type: getType(resource),
+    closestFacilities: getClosestFacilities(locations, zipcode),
+    locations: locations,
   };
 };
