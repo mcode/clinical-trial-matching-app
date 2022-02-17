@@ -4,11 +4,10 @@ import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, S
 import { MainRowKeys } from '@/utils/exportData';
 import {
   getZipcodeCoordinates,
-  getCoordinatesOfClosestLocation,
   getDistanceBetweenPoints,
-  coordinatesAreEqual,
   getLocations,
   getCoordinatesForLocations,
+  getLocationCoordinates,
 } from '@/utils/distanceUtils';
 
 export const getContact = (contact: ContactDetail): ContactProps => {
@@ -101,21 +100,19 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
-const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 1): ContactProps[] => {
-  // For now, this only supports getting the first facility.
+const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
-  const locationsWithCoordinates = getCoordinatesForLocations(locations);
-  const closest = getCoordinatesOfClosestLocation(origin, locationsWithCoordinates);
-  const distance = getDistanceBetweenPoints(origin, closest);
-
-  // Again, for now, just get the closest facility
-  const location = closest && locationsWithCoordinates.find(coordinatesAreEqual(closest));
-  return [
-    {
-      ...getContact(location),
+  return getCoordinatesForLocations(locations)
+    .map(({ name, telecom, position }) => ({
+      contact: { name, telecom },
+      distance: getDistanceBetweenPoints(origin, getLocationCoordinates({ position } as Location)),
+    }))
+    .sort((first, second) => first.distance - second.distance)
+    .slice(0, numOfFacilities)
+    .map(({ contact, distance }) => ({
+      ...getContact(contact),
       distance: distance !== null ? `${distance} miles` : 'Unknown distance',
-    },
-  ];
+    }));
 };
 
 export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {

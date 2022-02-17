@@ -202,7 +202,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                 </Stack>
               )}
               {!isIdle && !isLoading && <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} />}
-              {!isIdle && !isLoading && data.errors?.length > 0 && (
+              {!isIdle && !isLoading && data?.errors?.length > 0 && (
                 <Snackbar
                   open={alertOpen}
                   anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
