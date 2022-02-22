@@ -60,6 +60,24 @@ export type instant = string; // "2018-04-30T13:31:44.140-04:00"
 export type dateTime = string;
 
 /**
+ * This is called "fhirDate" to make it clearly different from the built-in
+ * JavaScript Date type.
+ * A date, or partial date (e.g. just year or year + month) as used in human
+ * communication. The format is YYYY, YYYY-MM, or YYYY-MM-DD, e.g. 2018,
+ * 1973-06, or 1905-08-23. There SHALL be no time zone. Dates SHALL be valid
+ * dates
+ *
+ * Patterns:
+ * - `YYYY-MM-DD`
+ * - `YYYY-MM`
+ * - `YYYY`
+ *
+ * Regex:
+ * ([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1]))?)?
+ */
+export type fhirDate = string;
+
+/**
  * Any non-negative integer (e.g. >= 0)
  * Regex: [0]|([1-9][0-9]*)
  */
@@ -100,6 +118,8 @@ export type valueX =
   | 'valueAnnotation'
   | 'valueSignature'
   | 'valueMeta';
+
+export type AdministrativeGender = 'male' | 'female' | 'other' | 'unknown';
 
 export interface Element {
   id?: id;
@@ -179,6 +199,8 @@ export interface Observation extends Resource {
 
 export interface Patient extends Resource {
   resourceType: 'Patient';
+  gender?: AdministrativeGender;
+  birthDate?: fhirDate;
 }
 
 export interface Practitioner extends Resource {

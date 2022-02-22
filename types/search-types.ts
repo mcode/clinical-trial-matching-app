@@ -3,6 +3,8 @@ export type SearchParameters = {
   zipcode: string;
   travelDistance: string;
   age: string;
+  // This is the "administrative gender" of the patient.
+  gender: string;
   cancerType: string;
   cancerSubtype: string;
   metastasis: string;
