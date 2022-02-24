@@ -21,6 +21,7 @@ import { getDetails } from './utils';
 import { SaveStudyHandler } from './types';
 import UnsaveIcon from './UnsaveIcon';
 import { StudyDetailProps } from '.';
+import ArmInterventions from './ArmInterventions';
 
 type StudyProps = {
   entry: StudyDetailProps;
@@ -88,6 +89,48 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
                       </TableCell>
                     </TableRow>
                   ))}
+
+                  {/* Arms and Interventions  */}
+                  {entry.arms && entry.arms.length > 0 && (
+                    <TableRow
+                      key={details.length}
+                      sx={{
+                        display: 'flex',
+                        flexDirection: { xs: 'column', xl: 'row' },
+                        '&:last-child td, &:last-child th': { xl: { border: 0 } },
+                        '& td': {
+                          xs: { border: 0 },
+                          xl: { borderBottom: '1px solid rgba(224, 224, 224, 1)' },
+                        },
+                      }}
+                    >
+                      <TableCell
+                        variant="head"
+                        sx={{
+                          textTransform: 'uppercase',
+                          textAlign: { xs: 'left', xl: 'right' },
+                          verticalAlign: 'top',
+                          flex: { xl: 1 },
+                        }}
+                        component="th"
+                      >
+                        Arms and Interventions
+                      </TableCell>
+
+                      <TableCell sx={{ whiteSpace: 'pre-line', flex: { xl: 7 } }} component="td">
+                        <Stack>
+                          {entry.arms.map((arm, index) => (
+                            <ArmInterventions
+                              key={index}
+                              display={arm.display}
+                              description={arm.description}
+                              interventions={arm.interventions}
+                            />
+                          ))}
+                        </Stack>
+                      </TableCell>
+                    </TableRow>
+                  )}
                 </TableBody>
               </Table>
             </TableContainer>
