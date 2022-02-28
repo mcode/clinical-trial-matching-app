@@ -59,32 +59,12 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
               <Table size={isExtraLargeScreen ? 'medium' : 'small'} stickyHeader={!isExtraLargeScreen}>
                 <TableBody>
                   {details.map(({ header, body }, index) => (
-                    <TableRow
-                      key={index}
-                      sx={{
-                        display: 'flex',
-                        flexDirection: { xs: 'column', xl: 'row' },
-                        '&:last-child td, &:last-child th': { xl: { border: 0 } },
-                        '& td': {
-                          xs: { border: 0 },
-                          xl: { borderBottom: '1px solid rgba(224, 224, 224, 1)' },
-                        },
-                      }}
-                    >
-                      <TableCell
-                        variant="head"
-                        sx={{
-                          textTransform: 'uppercase',
-                          textAlign: { xs: 'left', xl: 'right' },
-                          verticalAlign: 'top',
-                          flex: { xl: 1 },
-                        }}
-                        component="th"
-                      >
+                    <TableRow key={index}>
+                      <TableCell variant="head" component="th">
                         {header}
                       </TableCell>
 
-                      <TableCell sx={{ whiteSpace: 'pre-line', flex: { xl: 7 } }} component="td">
+                      <TableCell variant="body" component="td">
                         {body}
                       </TableCell>
                     </TableRow>
@@ -92,32 +72,12 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
 
                   {/* Arms and Interventions  */}
                   {entry.arms && entry.arms.length > 0 && (
-                    <TableRow
-                      key={details.length}
-                      sx={{
-                        display: 'flex',
-                        flexDirection: { xs: 'column', xl: 'row' },
-                        '&:last-child td, &:last-child th': { xl: { border: 0 } },
-                        '& td': {
-                          xs: { border: 0 },
-                          xl: { borderBottom: '1px solid rgba(224, 224, 224, 1)' },
-                        },
-                      }}
-                    >
-                      <TableCell
-                        variant="head"
-                        sx={{
-                          textTransform: 'uppercase',
-                          textAlign: { xs: 'left', xl: 'right' },
-                          verticalAlign: 'top',
-                          flex: { xl: 1 },
-                        }}
-                        component="th"
-                      >
+                    <TableRow key={details.length}>
+                      <TableCell variant="head" component="th">
                         Arms and Interventions
                       </TableCell>
 
-                      <TableCell sx={{ whiteSpace: 'pre-line', flex: { xl: 7 } }} component="td">
+                      <TableCell variant="body" component="td">
                         <Stack>
                           {entry.arms.map((arm, index) => (
                             <ArmInterventions

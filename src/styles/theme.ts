@@ -74,6 +74,42 @@ const theme = createTheme({
         },
       },
     },
+    MuiTableCell: {
+      variants: [
+        {
+          props: { variant: 'head' },
+          style: {
+            textTransform: 'uppercase',
+            [breakpoints.between('xs', 'xl')]: { textAlign: 'left' },
+            [breakpoints.up('xl')]: { textAlign: 'right', flex: 1 },
+            verticalAlign: 'top',
+          },
+        },
+        {
+          props: { variant: 'body' },
+          style: {
+            whiteSpace: 'pre-line',
+            [breakpoints.up('xl')]: { flex: 7 },
+          },
+        },
+      ],
+    },
+    MuiTableRow: {
+      styleOverrides: {
+        root: {
+          display: 'flex',
+          [breakpoints.between('xs', 'xl')]: {
+            flexDirection: 'column',
+            '& td': { border: 0 },
+          },
+          [breakpoints.up('xl')]: {
+            flexDirection: 'row',
+            '& td': { borderBottom: '1px solid rgba(224, 224, 224, 1)' },
+            '&:last-child td, &:last-child th': { border: 0 },
+          },
+        },
+      },
+    }
   },
   palette: {
     primary: {
