@@ -2,9 +2,11 @@
  * This module is used to filter FHIR records.
  */
 
-import { Bundle, BundleEntry, Condition, Resource } from 'types/fhir-types';
+import { Bundle, BundleEntry, Condition, Resource,Observation } from 'types/fhir-types';
 import { NamedSNOMEDCode } from './fhirConversionUtils';
 import { MCODE_PRIMARY_CANCER_CONDITION, MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, SNOMED_CODE_URI } from './fhirConstants';
+import { isNumericLiteral } from 'typescript';
+import { json } from 'jest.config';
 
 export const addResource = (bundle: Bundle, resource: Resource): void => {
   const entry: BundleEntry = {
@@ -92,3 +94,52 @@ export const addCancerHistologyMorphology = (
   }
   return condition;
 };
+
+export function convertStringtoResource ({ bundle, valueString, id, profile_value, codingSystem, codingSystemCode }: { bundle; valueString: string; id; profile_value; codingSystem; codingSystemCode; }): void
+{
+    // Create the Condition - done separate from the function call to ensure proper TypeScript checking
+    let code:any=null;
+    let resource : Observation;
+    if ( codingSystemCode) {
+      code={
+        coding: [
+          {
+            system: codingSystem,
+            code: codingSystemCode, 
+          },
+        ],
+      }  
+    } 
+    if (code){ 
+        let resource : Observation= {
+          resourceType: "Observation",
+          id: id,
+          meta: {
+            profile: profile_value,
+          },
+        code,
+        valueString,
+        };
+        addResource(bundle, resource);
+      } else {
+         
+          let resource : Observation= {
+            resourceType: "Observation",
+            id: id,
+            meta: {
+              profile: profile_value,
+            },
+            valueString,
+          };
+          addResource(bundle, resource);
+      }
+        
+    
+    
+
+     
+    console.log(`**** resource for  =${id} is...\r\n `+JSON.stringify(resource));  
+    console.log("*************************************"); 
+    
+   
+  };

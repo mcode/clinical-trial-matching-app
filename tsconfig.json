@@ -17,8 +17,10 @@
     "paths": {
       "@/*": ["src/*"]
     },
+   
     "typeRoots": ["./node_modules/@types", "./types"]
   },
+  "compileOnSave": true,
   "exclude": ["node_modules", ".next", "out"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
   "ts-node": {

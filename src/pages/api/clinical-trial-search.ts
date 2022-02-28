@@ -1,11 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { SearchParameters } from 'types/search-types';
-import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
+import { Bundle, Condition, Patient, Resource,Observation } from 'types/fhir-types';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
-import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
+import { addCancerHistologyMorphology,convertStringtoResource, addCancerType } from '@/utils/fhirFilter';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { StudyDetailProps } from '@/components/Results';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
+//import {MCODE_CANCER_STAGE_GROUP,MCODE_ECOG_PERFORMANCE_STATUS,MCODE_KARNOFSKY_PERFORMANCE_STATUS, MCODE_PRIMARY_CANCER_CONDITION, MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, SNOMED_CODE_URI } from  "";
+import * as fhirConstants from 'src/utils/fhirConstants';
 
 // Matching services and their information
 const services = {
@@ -100,6 +102,103 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   if (cancerSubtype) {
     addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
   }
+
+  const ecogScore = searchParams['ecogScore'];
+  let cancerEcogScore: Observation;
+  console.log("*************  fhirConstantt.MCODE_ECOG_PERF_STAT="+fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS);
+  if ( ecogScore!=null){
+    let id= "mcode-ecog-performance-status";
+    let profileValue:string= fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
+    let codingSystem:string= "http://loinc.org";
+    let codingSystemCode:string= "89247-1";  
+    convertStringtoResource({ bundle: patientBundle, valueString: ecogScore, id, profile_value: profileValue, codingSystem, codingSystemCode });
+
+     
+  }
+
+  const karnofskyScore =searchParams.karnofskyScore;  
+  let karnofskyScoreResource: Observation; 
+  if ( karnofskyScore ) {
+    let id= "mcode-karnofsky-performance-status";
+    let profileValue:string = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
+    let codingSystem:string = "http://loinc.org";
+    let codingSystemCode:string = "LL4986-7"; 
+    console.log("Yep karnofskyScore="+karnofskyScore);
+
+   convertStringtoResource({ bundle: patientBundle, valueString: karnofskyScore, id, profile_value: profileValue, codingSystem, codingSystemCode });
+
+   
+  }
+ 
+  const stageParm =searchParams.stage;
+  console.log("Stage Value="+stageParm);
+  let stageResource: Observation;
+  if ( stageParm!=null){  
+         
+    let id= "mcode-cancer-stage-group";
+    let profileValue:string=fhirConstants.MCODE_CANCER_STAGE_GROUP;
+    let codingSystem:string= "http://loinc.org";
+    let codingSystemCode:string= "21914-7"; 
+    let valueCodebeConcept={
+      "coding" : [
+        {
+          "system" : "http://cancerstaging.org",
+          "code" : "3C",
+          "display" : "IIIC"
+        }
+      ]
+    }
+    const metastasisParm =searchParams.metastasis; 
+    
+    if ( metastasisParm){  
+           
+      let id= 'tnm-clinical-distant-metastases-category-cM0';
+      let profileValue:string=fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
+      let codingSystem:string= null;
+      let codingSystemCode:string= null; 
+      convertStringtoResource({ bundle: patientBundle, valueString:stageParm, id, profile_value: profileValue, codingSystem, codingSystemCode });
+    } 
+
+    const bioMarkersParm =searchParams.bioMarkers; 
+    if ( bioMarkersParm){  
+           
+      let id= 'mcode-tumor-marker';
+      let profileValue:string=fhirConstants.MCODE_TUMOR_MARKER;
+      let codingSystem:string= "http://loinc.org";
+      let codingSystemCode:string= "21907-1"; 
+      convertStringtoResource({ bundle: patientBundle, valueString:metastasisParm, id, profile_value: profileValue, codingSystem, codingSystemCode });
+    } 
+    const medicationsParm =searchParams.medications; 
+    if ( medicationsParm){  
+           
+      let id= 'mcode-cancer-related-medication-statement';
+      let profileValue:string=fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
+      let codingSystem:string= "";
+      let codingSystemCode:string= ""; 
+      convertStringtoResource({ bundle: patientBundle, valueString:medicationsParm, id, profile_value: profileValue, codingSystem, codingSystemCode });
+    }  
+    const surgeryParm =searchParams.surgery; 
+    if ( surgeryParm){  
+           
+      let id= 'mcode-cancer-related-surgical-procedure';
+      let profileValue:string=fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
+      let codingSystem:string= "";
+      let codingSystemCode:string= ""; 
+      convertStringtoResource({ bundle: patientBundle, valueString:surgeryParm, id, profile_value: profileValue, codingSystem, codingSystemCode });
+    }  
+ 
+    const radiationParm =searchParams.radiation; 
+    if ( surgeryParm){  
+           
+      let id= 'mcode-cancer-related-radiation-procedure';
+      let profileValue:string=fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
+      let codingSystem:string= "";
+      let codingSystemCode:string= ""; 
+      convertStringtoResource({ bundle: patientBundle, valueString:radiationParm, id, profile_value: profileValue, codingSystem, codingSystemCode });
+    } 
+
+console.log(`***************** profile value is ${fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE}...`);
+  } 
 
   console.log(JSON.stringify(patientBundle, null, 2));
 
