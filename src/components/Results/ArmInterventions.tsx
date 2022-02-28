@@ -14,7 +14,7 @@ const ArmInterventions = ({ display, description, interventions }: ArmGroup): Re
     {interventions && interventions.length > 0 && (
       <Stack>
         <Box fontWeight="600" ml={2} sx={{ textTransform: 'uppercase' }}>
-          Interventions{' '}
+          Interventions
         </Box>
         <Stack>
           {interventions.map((intervention, index) => (

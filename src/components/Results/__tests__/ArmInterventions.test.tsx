@@ -7,7 +7,7 @@ afterEach(() => {
   jest.clearAllMocks();
 });
 
-describe('<ArmsInterventions />', () => {
+describe('<ArmInterventions />', () => {
   const arms = mockSearchResults.results[0].arms as ArmGroup[];
 
   const ComponentWithInterventions = (props: Partial<ArmGroup>) => (

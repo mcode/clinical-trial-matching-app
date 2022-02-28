@@ -110,7 +110,7 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Dont bother if there are no arms and interventions
   const noArms: boolean = study.arm == undefined || study.arm == null || study.arm.length == 0;
-  const noInterventions: boolean = study.protocol == undefined || study.protocol == null || study.arm.length == 0;
+  const noInterventions: boolean = study.protocol == undefined || study.protocol == null || study.protocol.length == 0;
   if (noArms || noInterventions) {
     return [];
   }
@@ -121,7 +121,7 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Map the references in the protocol to the local reference
   const interventions = study?.protocol?.map(item =>
-    item.reference.length < 1 ? null : (getIntervention(item.reference.substr(1)) as PlanDefinition)
+    item.reference.length == 0 ? null : (getIntervention(item.reference.substr(1)) as PlanDefinition)
   );
 
   // Set up the arm groups -- we'll use the name of the arm group as the key.
@@ -137,13 +137,13 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
   for (const intervention of interventions) {
     // Text of the subjectCodeableConcept is the arm group; this is necessary for us to map!
     if (intervention?.subjectCodeableConcept?.text) {
-      const formated_intervention = {
+      const formatted_intervention = {
         ...(intervention?.type?.text && { type: intervention.type.text }),
         ...(intervention?.title && { title: intervention.title }),
         ...(intervention?.subtitle && { subtitle: intervention.subtitle }),
         ...(intervention?.description && { description: intervention.description }),
       };
-      arms[intervention.subjectCodeableConcept.text].interventions.push(formated_intervention);
+      arms[intervention.subjectCodeableConcept.text].interventions.push(formatted_intervention);
     }
   }
 
