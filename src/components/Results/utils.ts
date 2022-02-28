@@ -103,10 +103,6 @@ const getType = (study: ResearchStudy): string => {
 
 const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
   const arms = {};
-  // console.log("Arm", study.arm);
-  // console.log("Interventions", study.protocol);
-  // console.log("References", study.contained.filter(item => item.resourceType == 'PlanDefinition'));
-  // console.log("Study", JSON.stringify(study, null, 2));
 
   // Dont bother if there are no arms and interventions
   const noArms: boolean = study.arm == undefined || study.arm == null || study.arm.length == 0;
@@ -147,7 +143,6 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
     }
   }
 
-  console.log('Arms and interventions', JSON.stringify(Object.values(arms), null, 2));
   return Object.values(arms);
 };
 
