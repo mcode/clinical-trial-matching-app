@@ -109,7 +109,7 @@ const theme = createTheme({
           },
         },
       },
-    }
+    },
   },
   palette: {
     primary: {
