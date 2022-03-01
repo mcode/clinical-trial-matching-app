@@ -203,7 +203,7 @@ console.log(`***************** profile value is ${fhirConstants.MCODE_CANCER_REL
   console.log(JSON.stringify(patientBundle, null, 2));
 
   return patientBundle;
-}
+} 
 
 /**
  * Calls all selected wrappers and combines the results
