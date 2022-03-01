@@ -35,6 +35,30 @@
       },
       "title": "Anti-Estrogen Therapy, Palbociclib, and Gedatolisib for Metastatic ER+, HER2- Breast Cancer",
       "type": "Interventional",
+      "arms": [
+        {
+          "display": "Experimental: Arm I (paclitaxel, radium Ra 223 dichloride)",
+          "description": "Patients receive paclitaxel IV over 1 hour on days 1, 8, and 15 and radium Ra 223 dichloride IV over 1 minute on day 1. Treatment with radium Ra 223 dichloride repeats every 28 days for 6 cycles and treatment with paclitaxel repeats every 28 days in the absence of disease progression or unacceptable toxicity.",
+          "interventions": [
+            {
+              "type": "Drug",
+              "title": "Paclitaxel",
+              "subtitle": "Anzatax",
+              "description": "Given IV"
+            },
+            {
+              "type": "Radiation",
+              "title": "Radium Ra 223 Dichloride",
+              "description": "Given IV"
+            }
+          ]
+        },
+        {
+          "display": "Active Comparator: Arm II (paclitaxel)",
+          "description": "Patients receive paclitaxel IV over 1 hour on days 1, 8, and 15. Cycles repeat every 28 days in the absence of disease progression or unacceptable toxicity.",
+          "interventions": []
+        }
+      ],
       "closestFacilities": [
         {
           "distance": "Unknown distance"

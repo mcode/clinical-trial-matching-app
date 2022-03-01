@@ -101,8 +101,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
   }
 
-  console.log(JSON.stringify(patientBundle, null, 2));
-
   return patientBundle;
 }
 
