@@ -105,7 +105,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   const ecogScore = searchParams['ecogScore'];
   let cancerEcogScore: Observation;
-  console.log("*************  fhirConstantt.MCODE_ECOG_PERF_STAT="+fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS);
+ 
   if ( ecogScore!=null){
     let id= "mcode-ecog-performance-status";
     let profileValue:string= fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
@@ -123,31 +123,26 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     let profileValue:string = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
     let codingSystem:string = "http://loinc.org";
     let codingSystemCode:string = "LL4986-7"; 
-    console.log("Yep karnofskyScore="+karnofskyScore);
+    
 
    convertStringtoResource({ bundle: patientBundle, valueString: karnofskyScore, id, profile_value: profileValue, codingSystem, codingSystemCode });
 
    
   }
  
-  const stageParm =searchParams.stage;
-  console.log("Stage Value="+stageParm);
-  let stageResource: Observation;
-  if ( stageParm!=null){  
+    const stageParm =searchParams.stage;
+    let stageResource: Observation;
+    if ( stageParm!=null){  
          
-    let id= "mcode-cancer-stage-group";
-    let profileValue:string=fhirConstants.MCODE_CANCER_STAGE_GROUP;
-    let codingSystem:string= "http://loinc.org";
-    let codingSystemCode:string= "21914-7"; 
-    let valueCodebeConcept={
-      "coding" : [
-        {
-          "system" : "http://cancerstaging.org",
-          "code" : "3C",
-          "display" : "IIIC"
-        }
-      ]
+      let id= "mcode-cancer-stage-group";
+      let profileValue:string=fhirConstants.MCODE_CANCER_STAGE_GROUP;
+      let codingSystem:string= "http://loinc.org";
+      let codingSystemCode:string= "21914-7"; 
+      convertStringtoResource({ bundle: patientBundle, valueString: stageParm, id, profile_value: profileValue, codingSystem, codingSystemCode });
     }
+   
+    
+
     const metastasisParm =searchParams.metastasis; 
     
     if ( metastasisParm){  
@@ -192,12 +187,11 @@ function buildBundle(searchParams: SearchParameters): Bundle {
            
       let id= 'mcode-cancer-related-radiation-procedure';
       let profileValue:string=fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
-      let codingSystem:string= "";
+      let codingSystem:string= "";  
       let codingSystemCode:string= ""; 
       convertStringtoResource({ bundle: patientBundle, valueString:radiationParm, id, profile_value: profileValue, codingSystem, codingSystemCode });
     } 
 
-console.log(`***************** profile value is ${fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE}...`);
   } 
 
   console.log(JSON.stringify(patientBundle, null, 2));

@@ -100,6 +100,7 @@ export function convertStringtoResource ({ bundle, valueString, id, profile_valu
     // Create the Condition - done separate from the function call to ensure proper TypeScript checking
     let code:any=null;
     let resource : Observation;
+
     if ( codingSystemCode) {
       code={
         coding: [
@@ -138,8 +139,8 @@ export function convertStringtoResource ({ bundle, valueString, id, profile_valu
     
 
      
-    console.log(`**** resource for  =${id} is...\r\n `+JSON.stringify(resource));  
-    console.log("*************************************"); 
+      
+  
     
    
   };
