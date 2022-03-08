@@ -129,6 +129,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
 
   // Combine the responses that were successful
   const combined: StudyDetailProps[] = [];
+  const uniqueTrialIds = new Set<string>();
 
   // Grab the zipcode from the query
   const zipcode = query.entry[0].resource.parameter[0].valueString as string;
@@ -140,8 +141,11 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
       // Transform each of the studies in the bundle
       searchset?.response?.entry.forEach((entry: BundleEntry) => {
         const otherTrialId = entry.resource.identifier?.[0]?.value;
-        const foundDuplicateTrial = combined.find(({ trialId }) => trialId === otherTrialId);
-        if (!foundDuplicateTrial) combined.push(getStudyDetailProps(entry, zipcode));
+        const foundDuplicateTrial = uniqueTrialIds.has(otherTrialId);
+        if (!foundDuplicateTrial) {
+          uniqueTrialIds.add(otherTrialId);
+          combined.push(getStudyDetailProps(entry, zipcode));
+        }
       });
     });
 
