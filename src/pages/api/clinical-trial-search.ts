@@ -4,7 +4,7 @@ import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
 import { getStudyDetailProps } from '@/components/Results/utils';
-import { StudyDetailProps } from '@/components/Results';
+import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 
 // Matching services and their information
@@ -138,8 +138,10 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
     .forEach(searchset => {
       // Add the count to the total
       // Transform each of the studies in the bundle
-      searchset?.response?.entry.forEach(entry => {
-        combined.push(getStudyDetailProps(entry, zipcode));
+      searchset?.response?.entry.forEach((entry: BundleEntry) => {
+        const otherTrialId = entry.resource.identifier?.[0]?.value;
+        const foundDuplicateTrial = combined.find(({ trialId }) => trialId === otherTrialId);
+        if (!foundDuplicateTrial) combined.push(getStudyDetailProps(entry, zipcode));
       });
     });
 
