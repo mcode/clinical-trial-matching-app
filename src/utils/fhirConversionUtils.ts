@@ -188,6 +188,34 @@ const getDisplays = (resource: { medicationCodeableConcept?: CodeableConcept; co
   return [];
 };
 
+/***
+ * Type guard for the NamedSNOMEDCode
+ */
+export const isNamedSNOMEDCode = (o: unknown): o is NamedSNOMEDCode => {
+  if (typeof o === 'object' && o !== null) {
+    const code = o as NamedSNOMEDCode;
+    return typeof code.display === 'string' && (typeof code.code === 'string' || typeof code.code === 'number');
+  } else {
+    return false;
+  }
+};
+
+/**
+ * Parses a string that contains a JSON description of a named SNOMED code to a NamedSNOMEDCode object.
+ * @param code the code to convert
+ * @returns the parsed code
+ */
+export const parseNamedSNOMEDCode = (code: string): NamedSNOMEDCode => {
+  try {
+    const result: NamedSNOMEDCode = JSON.parse(code);
+    // Make sure this is valid
+    return isNamedSNOMEDCode(result) ? result : undefined;
+  } catch (ex) {
+    // JSON parse error, return undefined
+    return undefined;
+  }
+};
+
 const getStage = (condition: Condition): string => {
   const snomedToStageMap = {
     '261613009': '0',

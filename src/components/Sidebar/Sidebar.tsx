@@ -4,8 +4,8 @@ import { FilterAlt as FilterIcon, Search as SearchIcon } from '@mui/icons-materi
 
 import SidebarAccordion from './SidebarAccordion';
 import PatientCard from '@/components/PatientCard';
-import SearchForm from '@/components/SearchForm';
-import { Patient } from '@/utils/fhirConversionUtils';
+import SearchForm, { SearchFormValuesType } from '@/components/SearchForm';
+import { NamedSNOMEDCode, Patient, parseNamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 
 type SidebarProps = {
   patient: Patient;
@@ -17,11 +17,21 @@ const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
+const ensureNamedSNOMEDCode = (value?: string | string[]): NamedSNOMEDCode => {
+  if (!value) return undefined;
+  if (Array.isArray(value)) {
+    // For now, take the first value, if any
+    return value.length >= 1 ? parseNamedSNOMEDCode(value[0]) : undefined;
+  } else {
+    return parseNamedSNOMEDCode(value);
+  }
+};
+
 const Sidebar = ({ patient, disabled }: SidebarProps): ReactElement => {
   const { query } = useRouter();
 
   const matchingServices = query.matchingServices || [];
-  const defaultValues = {
+  const defaultValues: Partial<SearchFormValuesType> = {
     matchingServices: {
       breastCancerTrials: matchingServices.includes('breastCancerTrials'),
       trialjectory: matchingServices.includes('trialjectory'),
@@ -30,8 +40,8 @@ const Sidebar = ({ patient, disabled }: SidebarProps): ReactElement => {
     zipcode: (query.zipcode as string) || '',
     travelDistance: (query.travelDistance as string) || '',
     age: (query.age as string) || '',
-    cancerType: null, // TODO: Pull out of query
-    cancerSubtype: null, // TODO: Pull out of query
+    cancerType: ensureNamedSNOMEDCode(query.cancerType),
+    cancerSubtype: ensureNamedSNOMEDCode(query.cancerSubtype),
     metastasis: ensureArray(query.metastasis),
     stage: (query.stage as string) || null,
     ecogScore: (query.ecogScore as string) || null,
