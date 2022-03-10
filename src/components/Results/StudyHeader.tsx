@@ -102,7 +102,7 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
             </Stack>
           </Stack>
 
-          <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} py={1} spacing={{ xs: 0, xl: 0.5 }}>
+          <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} py={1} spacing={{ xs: 0, xl: 0.5 }} style={{maxWidth: 160}}>
             <Stack alignItems="center" direction="row" spacing={1}>
               <TargetIcon fontSize="inherit" sx={{ color: study.likelihood.color, width: '20px' }} />
               <Typography whiteSpace="nowrap">{study.likelihood.text}</Typography>
