@@ -4,7 +4,7 @@ import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, addCancerType } from '@/utils/fhirFilter';
 import { getStudyDetailProps } from '@/components/Results/utils';
-import { StudyDetailProps } from '@/components/Results';
+import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 
 // Matching services and their information
@@ -129,6 +129,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
 
   // Combine the responses that were successful
   const combined: StudyDetailProps[] = [];
+  const uniqueTrialIds = new Set<string>();
 
   // Grab the zipcode from the query
   const zipcode = query.entry[0].resource.parameter[0].valueString as string;
@@ -138,8 +139,13 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
     .forEach(searchset => {
       // Add the count to the total
       // Transform each of the studies in the bundle
-      searchset?.response?.entry.forEach(entry => {
-        combined.push(getStudyDetailProps(entry, zipcode));
+      searchset?.response?.entry.forEach((entry: BundleEntry) => {
+        const otherTrialId = entry.resource.identifier?.[0]?.value;
+        const foundDuplicateTrial = uniqueTrialIds.has(otherTrialId);
+        if (!foundDuplicateTrial) {
+          uniqueTrialIds.add(otherTrialId);
+          combined.push(getStudyDetailProps(entry, zipcode));
+        }
       });
     });
 
