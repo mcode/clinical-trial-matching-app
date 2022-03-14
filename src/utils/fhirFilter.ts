@@ -93,57 +93,6 @@ export const addCancerHistologyMorphology = (
   return condition;
 };
 
-<<<<<<< HEAD
-export function convertStringtoResource ({ bundle, valueString, id, profile_value, codingSystem, codingSystemCode }: { bundle; valueString: string; id; profile_value; codingSystem; codingSystemCode; }): void
-{
-    // Create the Condition - done separate from the function call to ensure proper TypeScript checking
-    let code:any=null;
-    let resource : Observation;
-
-    if ( codingSystemCode) {
-      code={
-        coding: [
-          {
-            system: codingSystem,
-            code: codingSystemCode, 
-          },
-        ],
-      }  
-    } 
-    if (code){ 
-        let resource : Observation= {
-          resourceType: "Observation",
-          id: id,
-          meta: {
-            profile: profile_value,
-          },
-        code,
-        valueString,
-        };
-        addResource(bundle, resource);
-      } else {
-         
-          let resource : Observation= {
-            resourceType: "Observation",
-            id: id,
-            meta: {
-              profile: profile_value,
-            },
-            valueString,
-          };
-          addResource(bundle, resource);
-      }
-        
-    
-    
-
-     
-      
-  
-    
-   
-  };
-=======
 export function convertStringtoResource({
   bundle,
   valueString,
@@ -198,4 +147,3 @@ export function convertStringtoResource({
   console.log(`**** resource for  =${id} is...\r\n ` + JSON.stringify(resource));
   console.log('*************************************');
 }
->>>>>>> 24bde663229bb03be5fa015eaf3a2ad22dc9d66b
