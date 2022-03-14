@@ -6,6 +6,19 @@ export type LikelihoodProps = { text: string; color: string };
 export type StatusProps = { text: string; color: string };
 export type StudyDetail = { header: string; body: string };
 
+export type Intervention = {
+  type?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+};
+
+export type ArmGroup = {
+  display?: string;
+  description?: string;
+  interventions?: Intervention[];
+};
+
 export type StudyDetailProps = {
   trialId: string;
   conditions?: string[];
@@ -21,6 +34,7 @@ export type StudyDetailProps = {
   status?: StatusProps;
   title?: string;
   type?: string;
+  arms?: ArmGroup[];
   closestFacilities?: ContactProps[];
   locations?: Location[];
 };

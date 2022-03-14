@@ -1,4 +1,4 @@
-import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy, Location } from 'fhir/r4';
+import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy, Location, PlanDefinition } from 'fhir/r4';
 import { format } from 'date-fns';
 import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyDetailProps } from './types';
 import { MainRowKeys } from '@/utils/exportData';
@@ -9,6 +9,7 @@ import {
   getCoordinatesForLocations,
   getLocationCoordinates,
 } from '@/utils/distanceUtils';
+import { ArmGroup } from '.';
 
 export const getContact = (contact: ContactDetail): ContactProps => {
   return {
@@ -100,6 +101,51 @@ const getType = (study: ResearchStudy): string => {
   }
 };
 
+const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
+  const arms = {};
+
+  // Dont bother if there are no arms and interventions
+  const noArms: boolean = study.arm == undefined || study.arm == null || study.arm.length == 0;
+  const noInterventions: boolean = study.protocol == undefined || study.protocol == null || study.protocol.length == 0;
+  if (noArms || noInterventions) {
+    return [];
+  }
+
+  // Function for looking up local reference
+  const getIntervention = (referenceId: string) =>
+    study.contained.find(({ resourceType, id }) => resourceType === 'PlanDefinition' && referenceId === id);
+
+  // Map the references in the protocol to the local reference
+  const interventions = study?.protocol?.map(item =>
+    item.reference.length == 0 ? null : (getIntervention(item.reference.substr(1)) as PlanDefinition)
+  );
+
+  // Set up the arm groups -- we'll use the name of the arm group as the key.
+  for (const arm of study.arm) {
+    arms[arm.name] = {
+      display: arm.type ? (arm?.type?.text ? arm.type.text + ': ' + arm.name : '') : '',
+      ...(arm.description && { description: arm.description }),
+      interventions: [],
+    } as ArmGroup;
+  }
+
+  // Map the interventions to their arm group.
+  for (const intervention of interventions) {
+    // Text of the subjectCodeableConcept is the arm group; this is necessary for us to map!
+    if (intervention?.subjectCodeableConcept?.text) {
+      const formatted_intervention = {
+        ...(intervention?.type?.text && { type: intervention.type.text }),
+        ...(intervention?.title && { title: intervention.title }),
+        ...(intervention?.subtitle && { subtitle: intervention.subtitle }),
+        ...(intervention?.description && { description: intervention.description }),
+      };
+      arms[intervention.subjectCodeableConcept.text].interventions.push(formatted_intervention);
+    }
+  }
+
+  return Object.values(arms);
+};
+
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
   return getCoordinatesForLocations(locations)
@@ -135,6 +181,7 @@ export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyD
     status: getStatus(resource),
     title: getTitle(resource),
     type: getType(resource),
+    arms: getArmsAndInterventions(resource),
     closestFacilities: getClosestFacilities(locations, zipcode),
     locations: locations,
   };
