@@ -78,7 +78,7 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
           p={2}
           spacing={{ xs: 0, xl: 4 }}
         >
-          <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} flex={{ xl: "8 4" }}>
+          <Stack alignSelf={{ xs: 'flex-start', xl: 'center' }} flex={{ xl: '8 4' }}>
             <Typography fontWeight="normal" lineHeight={1.2} mb={0.5} variant="h6">
               {study.title}
             </Typography>
