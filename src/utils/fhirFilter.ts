@@ -144,6 +144,5 @@ export function convertStringtoResource({
     addResource(bundle, resource);
   }
 
-  console.log(`**** resource for  =${id} is...\r\n ` + JSON.stringify(resource));
-  console.log('*************************************');
+  
 }

@@ -104,8 +104,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   }
 
   const ecogScore = searchParams['ecogScore'];
-  console.log('*************  fhirConstantt.MCODE_ECOG_PERF_STAT=' + fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS);
-  if (ecogScore != null) {
+   if (ecogScore != null) {
     const id = 'mcode-ecog-performance-status';
     const profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
     const codingSystem = 'http://loinc.org';
@@ -126,8 +125,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
     const codingSystem = 'http://loinc.org';
     const codingSystemCode = 'LL4986-7';
-    console.log('Yep karnofskyScore=' + karnofskyScore);
-
+  
     convertStringtoResource({
       bundle: patientBundle,
       valueString: karnofskyScore,
@@ -139,8 +137,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   }
 
   const stageParm = searchParams.stage;
-  console.log('Stage Value=' + stageParm);
-  if (stageParm != null) {
+   if (stageParm != null) {
     const id = 'mcode-cancer-stage-group';
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
     const codingSystem = 'http://loinc.org';
@@ -234,8 +231,9 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystemCode,
     });
   }
-
-  console.log(JSON.stringify(patientBundle, null, 2));
+  if ( process.env.REACT_APP_DEBUG =="true") {
+    console.log(JSON.stringify(patientBundle, null, 2));
+  }
 
   return patientBundle;
 }
