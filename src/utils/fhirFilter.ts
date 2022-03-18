@@ -110,7 +110,6 @@ export function convertStringtoResource({
 }): void {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
   let code: CodeableConcept = null;
-  let resource: Observation;
   if (codingSystemCode) {
     code = {
       coding: [
@@ -143,6 +142,4 @@ export function convertStringtoResource({
     };
     addResource(bundle, resource);
   }
-
-  
 }
