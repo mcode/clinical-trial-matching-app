@@ -6,7 +6,6 @@ import { addCancerHistologyMorphology, convertStringtoResource, addCancerType } 
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { StudyDetailProps } from '@/components/Results';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
-//import {MCODE_CANCER_STAGE_GROUP,MCODE_ECOG_PERFORMANCE_STATUS,MCODE_KARNOFSKY_PERFORMANCE_STATUS, MCODE_PRIMARY_CANCER_CONDITION, MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, SNOMED_CODE_URI } from  "";
 import * as fhirConstants from 'src/utils/fhirConstants';
 
 // Matching services and their information
