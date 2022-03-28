@@ -11,14 +11,14 @@ export type SearchParameters = {
   gender: string;
   cancerType: string;
   cancerSubtype: string;
-  metastasis: string;
+  metastasis: string[];
   stage: string;
   ecogScore: string;
   karnofskyScore: string;
-  bioMarkers: string;
-  surgery: string;
-  medications: string;
-  radiation: string;
+  biomarkers: string[];
+  surgery: string[];
+  medications: string[];
+  radiation: string[];
 };
 
 export type FilterParameters = {

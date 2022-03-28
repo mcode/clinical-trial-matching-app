@@ -176,7 +176,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     });
   }
 
-  const bioMarkersParm = searchParams.bioMarkers;
+  const bioMarkersParm = searchParams.biomarkers;
   if (bioMarkersParm) {
     const id = 'mcode-tumor-marker';
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
