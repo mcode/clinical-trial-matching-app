@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from 'react';
 import { AccordionDetails, Typography } from '@mui/material';
 import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material';
-import { BorderlessAccordion, BorderlessAccordionSummary } from '../Results/BorderlessAccordion';
+import { BorderlessAccordion, BorderlessAccordionSummary } from './BorderlessAccordion';
 
 export type FilterAccordionProps = {
   children: ReactNode;

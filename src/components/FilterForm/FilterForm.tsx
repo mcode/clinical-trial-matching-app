@@ -19,7 +19,7 @@ import { RecruitmentStatusCheckbox, SortingOptionCheckbox, StudyTypeCheckbox, Tr
 import { FilterFormValuesType } from './types';
 import { FilterParameters, FullSearchParameters } from 'types/search-types';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import FilterAccordion from '../Sidebar/FilterAccordion';
+import FilterAccordion from './FilterAccordion';
 import { ResearchStudy } from 'fhir/r4';
 
 export type FilterFormProps = {
