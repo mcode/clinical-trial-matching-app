@@ -113,20 +113,11 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
             {closestFacilities.length !== 0 && (
-              <Accordion
-                disableGutters
-                square
-                sx={{
-                  marginTop: 2,
-                  '&.MuiAccordion-root': { boxShadow: 'none' },
-                  '&.MuiAccordion-root:before': { backgroundColor: 'unset' },
-                }}
-              >
+              <Accordion disableGutters square sx={{ marginTop: 2 }} className="borderless">
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls={`study-${entry.trialId}-content`}
                   id={`study-${entry.trialId}-header`}
-                  sx={{ '&.MuiAccordionSummary-root': { m: 0, flexDirection: 'row' } }}
                 >
                   <Typography fontWeight="700" sx={{ textTransform: 'uppercase' }}>
                     Closest Facilities

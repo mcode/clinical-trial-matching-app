@@ -32,6 +32,22 @@ const breakpoints = createBreakpoints({
 const theme = createTheme({
   breakpoints,
   components: {
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          '&.borderless': {
+            boxShadow: 'none',
+            '&::before': { backgroundColor: 'unset' },
+          },
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: { margin: 0, flexDirection: 'row', minHeight: 'unset' },
+        content: { overflowWrap: 'break-word' },
+      },
+    },
     MuiAutocomplete: {
       styleOverrides: {
         root: {
