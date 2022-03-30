@@ -1,5 +1,5 @@
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { ResearchStudy } from 'fhir/r4';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import FilterForm, { FilterFormProps } from '../FilterForm';
@@ -55,6 +55,10 @@ const createQueryClient = () =>
     },
   });
 
+// MUI checkbox inputs don't change state when checked, there's an SVG element on top that changes.
+const checkboxExists = (name: string) => (_: string, element: HTMLElement) =>
+  element.querySelector(`input[name='${name}']`) && element.querySelector("[data-testid='CheckBoxIcon']") && true;
+
 describe('<FilterForm />', () => {
   const Component = (props: Partial<FilterFormProps>) => (
     <QueryClientProvider client={createQueryClient()}>
@@ -84,13 +88,17 @@ describe('<FilterForm />', () => {
   it('autopopulates with default data', () => {
     render(<Component />);
 
-    const getCheckbox = (testId: string) => within(screen.getByTestId(testId)).getByRole('checkbox');
+    expect(screen.queryByTestId(checkboxExists('sortingOptions.matchLikelihood'))).not.toBeInTheDocument();
+    expect(screen.queryByTestId(checkboxExists('sortingOptions.distance'))).toBeInTheDocument();
+    expect(screen.queryByTestId(checkboxExists('sortingOptions.savedStatus'))).not.toBeInTheDocument();
 
-    // MUI checkboxes don't get checked, only the SVG elements change!
-    // Maybe mock the Checkbox element?
-    expect(getCheckbox('filterOptions.recruitmentStatus.active')).toHaveProperty('checked', true);
-    expect(getCheckbox('filterOptions.trialPhase.Phase 1')).toHaveProperty('checked', true);
-    expect(getCheckbox('Interventional')).toHaveProperty('checked', true);
-    expect(getCheckbox('Observational (Patient Registry)')).toHaveProperty('checked', true);
+    expect(screen.queryByTestId(checkboxExists('filterOptions.recruitmentStatus.active'))).toBeInTheDocument();
+
+    expect(screen.queryByTestId(checkboxExists('filterOptions.trialPhase.Phase 1'))).toBeInTheDocument();
+
+    expect(screen.queryByTestId(checkboxExists('filterOptions.studyType.Interventional'))).toBeInTheDocument();
+    expect(
+      screen.queryByTestId(checkboxExists('filterOptions.studyType.Observational (Patient Registry)'))
+    ).toBeInTheDocument();
   });
 });
