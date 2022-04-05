@@ -47,7 +47,8 @@ const getLikelihood = (search: BundleEntrySearch): LikelihoodProps => {
   if (score >= 0.75) return { text: 'High-likelihood match', color: 'common.green', score };
   else if (score >= 0.01) return { text: 'Possible match', color: 'common.yellow', score };
   else if (score < 0.01) return { text: 'No match', color: 'common.red', score };
-  else return { text: 'Unknown likelihood', color: 'common.grayLight', score };
+  // Even if a trial doesn't have a likelihood, it might be better for the patient to decide whether it's a match than for them to never see it
+  else return { text: 'High-likelihood match', color: 'common.green', score: 1 };
 };
 
 const getPeriod = (study: ResearchStudy): string => {
@@ -173,9 +174,13 @@ const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacil
           : {}),
       };
     })
-    .sort((first, second) =>
-      first.distance && second.distance ? first.distance.quantity - second.distance.quantity : 0
-    )
+    .sort((first, second) => {
+      if (first.distance?.quantity && second.distance?.quantity) {
+        return first.distance.quantity - second.distance.quantity;
+      } else {
+        return 0;
+      }
+    })
     .slice(0, numOfFacilities);
 };
 

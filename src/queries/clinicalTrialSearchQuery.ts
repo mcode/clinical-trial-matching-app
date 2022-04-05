@@ -9,10 +9,12 @@ export type Results = {
 };
 
 export type FilterOptions = {
-  recruitmentStatus: { name: ResearchStudy['status']; label: string; count: number }[];
-  trialPhase: { name: string; count: number }[];
-  studyType: { name: string; count: number }[];
+  recruitmentStatus: FilterOption[];
+  trialPhase: FilterOption[];
+  studyType: FilterOption[];
 };
+
+export type FilterOption = { name: string | ResearchStudy['status']; label?: string; count: number };
 
 export type ResultsResponse = {
   results?: StudyDetailProps[];

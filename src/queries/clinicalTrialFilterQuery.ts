@@ -20,7 +20,7 @@ const clinicalTrialFilterQuery = async (
   };
   const filtered = getFilteredResults(sorted, filterParameters);
 
-  // Dynamically generate filter options, count for each label depends on inputted parameters
+  // Dynamically generate filter options
   const filterOptions = getFilterOptions(sorted, filterParameters);
 
   return { results: filtered, errors, filterOptions };

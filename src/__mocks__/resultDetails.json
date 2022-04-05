@@ -63,10 +63,7 @@
       ],
       "closestFacilities": [
         {
-          "distance": {
-            "quantity": 215,
-            "units": "miles"
-          }
+          "name": "University of Alabama at Birmingham"
         }
       ],
       "locations": [
@@ -602,6 +599,19 @@
       "type": "Interventional",
       "closestFacilities": [
         {
+          "name": "University of Virginia",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "SEH3AA@virginia.edu",
+              "use": "work"
+            },
+            {
+              "system": "phone",
+              "value": "434-297-7827",
+              "use": "work"
+            }
+          ],
           "distance": {
             "quantity": 215,
             "units": "miles"
@@ -687,6 +697,19 @@
       "type": "Interventional",
       "closestFacilities": [
         {
+          "name": "University of Utah, Huntsman Cancer Institute",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "Anne.Fitzgerald@hci.utah.edu",
+              "use": "work"
+            },
+            {
+              "system": "phone",
+              "value": "801-213-6230",
+              "use": "work"
+            }
+          ],
           "distance": {
             "quantity": 118.9,
             "units": "miles"
@@ -879,6 +902,19 @@
       "type": "Interventional",
       "closestFacilities": [
         {
+          "name": "Massachusetts General Hospital Cancer Center",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "Bardia.aditya@mgh.harvard.edu",
+              "use": "work"
+            },
+            {
+              "system": "phone",
+              "value": "617-724-4000",
+              "use": "work"
+            }
+          ],
           "distance": {
             "quantity": 17,
             "units": "miles"
@@ -944,6 +980,19 @@
       "type": "Interventional",
       "closestFacilities": [
         {
+          "name": "MD Anderson Cancer Center",
+          "telecom": [
+            {
+              "system": "email",
+              "value": "sdamodaran@mdanderson.org",
+              "use": "work"
+            },
+            {
+              "system": "phone",
+              "value": "713-792-2817",
+              "use": "work"
+            }
+          ],
           "distance": {
             "quantity": 0,
             "units": "miles"
