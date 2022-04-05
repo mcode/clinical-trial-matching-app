@@ -24,7 +24,8 @@ const svc = new Service({
   script: scriptPath,
   workingDirectory: workingDirectory,
   env: {
-    NODE_ENV: 'production'
+    name: 'NODE_ENV',
+    value: 'production'
   }
 });
 
