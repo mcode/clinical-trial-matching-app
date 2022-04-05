@@ -11,9 +11,9 @@ type MatchingServicesProps = {
 };
 
 const MATCHING_SERVICES = [
-  { name: 'breastCancerTrials', label: 'BreastCancerTrials.org', defaultValue: true },
-  { name: 'trialjectory', label: 'Trialjectory', defaultValue: false },
-  { name: 'trialscope', label: 'Trialscope', defaultValue: false },
+  // { name: 'breastCancerTrials', label: 'BreastCancerTrials.org', defaultValue: true },
+  { name: 'trialjectory', label: 'Trialjectory', defaultValue: true },
+  // { name: 'trialscope', label: 'Trialscope', defaultValue: false },
 ] as const;
 
 const MatchingServices = ({ control, fullWidth }: MatchingServicesProps): ReactElement => (

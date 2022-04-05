@@ -10,13 +10,13 @@ import * as fhirConstants from 'src/utils/fhirConstants';
 
 // Matching services and their information
 const services = {
-  breastCancerTrials: {
-    serviceName: 'Breast Cancer Trials',
-    url: 'http://localhost:3001',
-    searchRoute: '/getClinicalTrial',
-  },
+  // breastCancerTrials: {
+  //   serviceName: 'Breast Cancer Trials',
+  //   url: 'http://localhost:3001',
+  //   searchRoute: '/getClinicalTrial',
+  // },
   trialjectory: { serviceName: 'TrialJectory', url: 'http://localhost:3000', searchRoute: '/getClinicalTrial' },
-  trialscope: { serviceName: 'TrialScope', url: 'http://localhost:3000', searchRoute: '/getClinicalTrial' },
+  //trialscope: { serviceName: 'TrialScope', url: 'http://localhost:3000', searchRoute: '/getClinicalTrial' },
 };
 
 /**
