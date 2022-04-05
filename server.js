@@ -32,4 +32,8 @@ app
       console.log(`> Ready on http://localhost:${port}`);
     });
   })
-  .catch(() => process.exit(1));
+  .catch(e => {
+    console.error('Could not start server:');
+    console.error(e);
+    process.exit(1);
+  });
