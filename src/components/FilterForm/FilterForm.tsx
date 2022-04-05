@@ -1,6 +1,5 @@
 import { ReactElement } from 'react';
-import { Controller } from 'react-hook-form';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { useRouter } from 'next/router';
 import {
   Box,
@@ -17,10 +16,9 @@ import { Search as SearchIcon } from '@mui/icons-material';
 
 import { RecruitmentStatusCheckbox, SortingOptionCheckbox, StudyTypeCheckbox, TrialPhaseCheckbox } from './FormFields';
 import { FilterFormValuesType } from './types';
-import { FilterParameters, FullSearchParameters } from 'types/search-types';
+import { FilterParameters, FullSearchParameters, SortingParameters } from 'types/search-types';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import FilterAccordion from './FilterAccordion';
-import { ResearchStudy } from 'fhir/r4';
 
 export type FilterFormProps = {
   defaultValues?: Partial<FilterFormValuesType>;
@@ -30,13 +28,14 @@ export type FilterFormProps = {
   disabled?: boolean;
 };
 
-export const formDataToFilterQuery = (data: FilterFormValuesType): FilterParameters => ({
-  sortingOptions: Object.keys(data.sortingOptions).filter(option => data.sortingOptions[option]),
-  recruitmentStatus: (Object.keys(data.filterOptions.recruitmentStatus) as ResearchStudy['status'][]).filter(
-    option => data.filterOptions.recruitmentStatus[option]
-  ),
-  trialPhase: Object.keys(data.filterOptions.trialPhase).filter(option => data.filterOptions.trialPhase[option]),
-  studyType: Object.keys(data.filterOptions.studyType).filter(option => data.filterOptions.studyType[option]),
+export const formDataToFilterQuery = ({
+  sortingOptions,
+  filterOptions: { recruitmentStatus, trialPhase, studyType },
+}: FilterFormValuesType): FilterParameters & SortingParameters => ({
+  sortingOptions: Object.keys(sortingOptions).filter(option => sortingOptions[option]),
+  recruitmentStatus: Object.keys(recruitmentStatus).filter(option => recruitmentStatus[option]),
+  trialPhase: Object.keys(trialPhase).filter(option => trialPhase[option]),
+  studyType: Object.keys(studyType).filter(option => studyType[option]),
 });
 
 const SORTING_OPTIONS = [
@@ -44,47 +43,6 @@ const SORTING_OPTIONS = [
   { name: 'distance', label: 'Distance', defaultValue: false },
   { name: 'savedStatus', label: 'Saved Status', defaultValue: false },
 ] as const;
-
-const renderCheckboxes =
-  (
-    prefix: string,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    control: any,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    render: (props: any) => ReactElement
-  ) =>
-  ({
-    name,
-    label = name,
-    count,
-    defaultValue = false,
-  }: {
-    name: ResearchStudy['status'] | string;
-    label?: string;
-    count?: number;
-    defaultValue?: boolean;
-  }) =>
-    name &&
-    (count !== undefined ? (
-      <Stack direction="row" justifyContent="space-between" alignItems="center" key={name}>
-        <FormControlLabel
-          key={name}
-          control={
-            <Controller name={`${prefix}.${name}`} defaultValue={defaultValue} control={control} render={render} />
-          }
-          label={label}
-        />
-        <Typography textAlign="right">{count}</Typography>
-      </Stack>
-    ) : (
-      <FormControlLabel
-        key={name}
-        control={
-          <Controller name={`${prefix}.${name}`} defaultValue={defaultValue} control={control} render={render} />
-        }
-        label={label}
-      />
-    ));
 
 const FilterForm = ({
   defaultValues,
@@ -111,7 +69,20 @@ const FilterForm = ({
           <Grid item xs={8}>
             <FilterAccordion title="Sort By" defaultExpanded disabled={disabled}>
               <FormControl component="fieldset" disabled={disabled}>
-                {SORTING_OPTIONS.map(renderCheckboxes('sortingOptions', control, SortingOptionCheckbox))}
+                {SORTING_OPTIONS.map(({ name, label, defaultValue }) => (
+                  <FormControlLabel
+                    key={name}
+                    control={
+                      <Controller
+                        name={`sortingOptions.${name}`}
+                        defaultValue={defaultValue}
+                        control={control}
+                        render={SortingOptionCheckbox}
+                      />
+                    }
+                    label={label}
+                  />
+                ))}
               </FormControl>
             </FilterAccordion>
           </Grid>
@@ -122,23 +93,62 @@ const FilterForm = ({
                 <FormControl component="fieldset" disabled={disabled}>
                   {(filterOptions?.recruitmentStatus || []).length !== 0 && (
                     <FilterAccordion title="Recruitment Status" defaultExpanded disabled={disabled}>
-                      {filterOptions.recruitmentStatus.map(
-                        renderCheckboxes('filterOptions.recruitmentStatus', control, RecruitmentStatusCheckbox)
-                      )}
+                      {filterOptions.recruitmentStatus.map(({ name, label, count }) => (
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={`${name}`}>
+                          <FormControlLabel
+                            control={
+                              <Controller
+                                name={`filterOptions.recruitmentStatus.${name}`}
+                                defaultValue={false}
+                                control={control}
+                                render={RecruitmentStatusCheckbox}
+                              />
+                            }
+                            label={label}
+                          />
+                          <Typography textAlign="right">{count}</Typography>
+                        </Stack>
+                      ))}
                     </FilterAccordion>
                   )}
                   {(filterOptions?.trialPhase || []).length !== 0 && (
                     <FilterAccordion title="Trial Phase" defaultExpanded disabled={disabled}>
-                      {filterOptions.trialPhase.map(
-                        renderCheckboxes('filterOptions.trialPhase', control, TrialPhaseCheckbox)
-                      )}
+                      {filterOptions.trialPhase.map(({ name, label = name, count }) => (
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={`${name}`}>
+                          <FormControlLabel
+                            control={
+                              <Controller
+                                name={`filterOptions.trialPhase.${name}`}
+                                defaultValue={false}
+                                control={control}
+                                render={TrialPhaseCheckbox}
+                              />
+                            }
+                            label={label}
+                          />
+                          <Typography textAlign="right">{count}</Typography>
+                        </Stack>
+                      ))}
                     </FilterAccordion>
                   )}
                   {(filterOptions?.studyType || []).length !== 0 && (
                     <FilterAccordion title="Study Type" defaultExpanded disabled={disabled}>
-                      {filterOptions.studyType.map(
-                        renderCheckboxes('filterOptions.studyType', control, StudyTypeCheckbox)
-                      )}
+                      {filterOptions.studyType.map(({ name, label = name, count }) => (
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={`${name}`}>
+                          <FormControlLabel
+                            control={
+                              <Controller
+                                name={`filterOptions.studyType.${name}`}
+                                defaultValue={false}
+                                control={control}
+                                render={StudyTypeCheckbox}
+                              />
+                            }
+                            label={label}
+                          />
+                          <Typography textAlign="right">{count}</Typography>
+                        </Stack>
+                      ))}
                     </FilterAccordion>
                   )}
                 </FormControl>

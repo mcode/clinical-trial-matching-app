@@ -36,14 +36,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       : [searchParams.matchingServices];
 
   const results = await callWrappers(chosenServices, patientBundle);
-
-  // in the future we're doing this? -> aggregation().sorting().filtering().paging()
-  // CD: something of that sort
-  // JQ: does it matter what the return type is of each function call?
-  // CD: just the paging one, looks like your conventional page. other functions, make sure they return the information that's relevant.
-
-  // supposedly react-query does pagination for us
-
   res.status(200).json(results);
 };
 
@@ -252,9 +244,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
  * @param query Query to be sent to all matching services
  * @returns Responses from called wrappers
  */
-// this is the aggregation function- calls each wrapper individually and aggregates them into an array.
 async function callWrappers(matchingServices: string[], query: Bundle) {
-  // calls all the applicable services individually
   const wrapperResults = await Promise.all(
     matchingServices.map(async service => {
       const results = await callWrapper(
@@ -303,12 +293,6 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
  * @param serviceName Name of the service
  * @returns Response from wrapper
  */
-// CD: we should cache each wrapper call
-// this just calls a single wrapper, like BCT or TJ
-// is this already cached? - no, given the way this is written, this will refetch the query. It's using fetch and not useQuery.
-// import { QueryClient, useQuery } from 'react-query'; <- this useQuery
-// CD: is it possible to call queries directly instead of using fetch? e.g. can you just chain useQuery?
-// regardless of whether they cache or not, we'd probably want to do something of this variety
 async function callWrapper(url: string, query: string, serviceName: string) {
   return fetch(url, {
     cache: 'no-store',

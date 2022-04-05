@@ -1,5 +1,3 @@
-import { ResearchStudy } from 'fhir/r4';
-
 export type FilterFormValuesType = {
   sortingOptions: {
     matchLikelihood: boolean;
@@ -7,7 +5,7 @@ export type FilterFormValuesType = {
     savedStatus: boolean;
   };
   filterOptions: {
-    recruitmentStatus: { [key in ResearchStudy['status']]: boolean };
+    recruitmentStatus: { [key: string]: boolean };
     trialPhase: { [key: string]: boolean };
     studyType: { [key: string]: boolean };
   };

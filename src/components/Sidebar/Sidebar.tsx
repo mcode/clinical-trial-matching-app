@@ -12,7 +12,6 @@ import { formDataToSearchQuery } from '../SearchForm/SearchForm';
 import { SavedStudiesState } from '../Results';
 import { FullSearchParameters } from 'types/search-types';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { ResearchStudy } from 'fhir/r4';
 
 type SidebarProps = {
   patient: Patient;
@@ -53,7 +52,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
   };
 
   const sortingOptions = query.sortingOptions || [];
-  const recruitmentStatus = ensureArray(query.recruitmentStatus) as ResearchStudy['status'][];
+  const recruitmentStatus = ensureArray(query.recruitmentStatus);
   const trialPhase = ensureArray(query.trialPhase);
   const studyType = ensureArray(query.studyType);
 
@@ -64,9 +63,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
       savedStatus: sortingOptions.includes('savedStatus'),
     },
     filterOptions: {
-      recruitmentStatus: Object.fromEntries(recruitmentStatus.map(key => [key, true])) as {
-        [key in ResearchStudy['status']]: boolean;
-      },
+      recruitmentStatus: Object.fromEntries(recruitmentStatus.map(key => [key, true])),
       trialPhase: Object.fromEntries(trialPhase.map(key => [key, true])),
       studyType: Object.fromEntries(studyType.map(key => [key, true])),
     },

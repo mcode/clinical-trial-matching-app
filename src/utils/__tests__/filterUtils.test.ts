@@ -1,7 +1,6 @@
 import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { StudyDetailProps } from '@/components/Results/types';
 import { getFilteredResults, getFilterOptions, getSortedResults } from '../filterUtils';
-import { ResearchStudy } from 'fhir/r4';
 
 const results = mockSearchResults.results as StudyDetailProps[];
 const idsOfOriginalResults = ['NCT02684032', 'NCT03473639', 'NCT03964532', 'NCT03641755', 'NCT03959891', 'NCT03990896'];
@@ -12,12 +11,20 @@ const getTrialId = (study: StudyDetailProps): string => study.trialId;
 
 describe('getSortedResults', () => {
   it('does not sort when no sorting options are supplied', () => {
-    const actual = getSortedResults(results, [], []);
+    const parameters = {
+      sortingOptions: [],
+      savedStudies: [],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getTrialId)).toEqual(idsOfOriginalResults);
   });
 
   it('sorts by match likelihood in descending order', () => {
-    const actual = getSortedResults(results, ['matchLikelihood'], []);
+    const parameters = {
+      sortingOptions: ['matchLikelihood'],
+      savedStudies: [],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getLikelihood)).toEqual([1, undefined, 0.46, 0.46, 0.46, 0]);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03473639',
@@ -30,7 +37,11 @@ describe('getSortedResults', () => {
   });
 
   it('sorts by distance in ascending order', () => {
-    const actual = getSortedResults(results, ['distance'], []);
+    const parameters = {
+      sortingOptions: ['distance'],
+      savedStudies: [],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getMiles)).toEqual([0, 17, 17, 118.9, 215, undefined]);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03990896',
@@ -43,7 +54,11 @@ describe('getSortedResults', () => {
   });
 
   it('sorts by saved status from saved to unsaved trials', () => {
-    const actual = getSortedResults(results, ['savedStatus'], ['NCT03964532', 'NCT03959891']);
+    const parameters = {
+      sortingOptions: ['savedStatus'],
+      savedStudies: ['NCT03964532', 'NCT03959891'],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03964532',
       'NCT03959891',
@@ -55,7 +70,11 @@ describe('getSortedResults', () => {
   });
 
   it('sorts by match likelihood and distance', () => {
-    const actual = getSortedResults(results, ['matchLikelihood', 'distance'], []);
+    const parameters = {
+      sortingOptions: ['matchLikelihood', 'distance'],
+      savedStudies: [],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getLikelihood)).toEqual([undefined, 1, 0.46, 0.46, 0.46, 0]);
     expect(actual.map(getMiles)).toEqual([0, 215, 17, 17, undefined, 118.9]);
     expect(actual.map(getTrialId)).toEqual([
@@ -69,7 +88,11 @@ describe('getSortedResults', () => {
   });
 
   it('sorts by saved status and match likelihood', () => {
-    const actual = getSortedResults(results, ['matchLikelihood', 'savedStatus'], ['NCT03964532', 'NCT03959891']);
+    const parameters = {
+      sortingOptions: ['matchLikelihood', 'savedStatus'],
+      savedStudies: ['NCT03964532', 'NCT03959891'],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getLikelihood)).toEqual([0.46, 0, 1, undefined, 0.46, 0.46]);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03959891',
@@ -82,7 +105,11 @@ describe('getSortedResults', () => {
   });
 
   it('sorts by saved status and distance', () => {
-    const actual = getSortedResults(results, ['distance', 'savedStatus'], ['NCT03964532', 'NCT03959891']);
+    const parameters = {
+      sortingOptions: ['distance', 'savedStatus'],
+      savedStudies: ['NCT03964532', 'NCT03959891'],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getMiles)).toEqual([17, 118.9, 0, 17, 215, undefined]);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03959891',
@@ -95,11 +122,11 @@ describe('getSortedResults', () => {
   });
 
   it('sorts by saved status, match likelihood, and distance', () => {
-    const actual = getSortedResults(
-      results,
-      ['matchLikelihood', 'distance', 'savedStatus'],
-      ['NCT03641755', 'NCT03964532']
-    );
+    const parameters = {
+      sortingOptions: ['matchLikelihood', 'distance', 'savedStatus'],
+      savedStudies: ['NCT03641755', 'NCT03964532'],
+    };
+    const actual = getSortedResults(results, parameters);
     expect(actual.map(getLikelihood)).toEqual([0.46, 0, undefined, 1, 0.46, 0.46]);
     expect(actual.map(getMiles)).toEqual([17, 118.9, 0, 215, 17, undefined]);
     expect(actual.map(getTrialId)).toEqual([
@@ -116,7 +143,6 @@ describe('getSortedResults', () => {
 describe('getFilteredResults', () => {
   it('does not filter when no filter options are supplied', () => {
     const parameters = {
-      sortingOptions: [],
       recruitmentStatus: [],
       trialPhase: [],
       studyType: [],
@@ -127,8 +153,7 @@ describe('getFilteredResults', () => {
 
   it('filters by recruitment status', () => {
     const parameters = {
-      sortingOptions: [],
-      recruitmentStatus: ['active'] as ResearchStudy['status'][],
+      recruitmentStatus: ['active'],
       trialPhase: [],
       studyType: [],
     };
@@ -138,7 +163,6 @@ describe('getFilteredResults', () => {
 
   it('filters by trial phase', () => {
     const parameters = {
-      sortingOptions: [],
       recruitmentStatus: [],
       trialPhase: ['Phase 1'],
       studyType: [],
@@ -149,7 +173,6 @@ describe('getFilteredResults', () => {
 
   it('filters by study type', () => {
     const parameters = {
-      sortingOptions: [],
       recruitmentStatus: [],
       trialPhase: [],
       studyType: ['Observational'],
@@ -160,8 +183,7 @@ describe('getFilteredResults', () => {
 
   it('filters by recruitment status, trial phase, and study type', () => {
     const parameters = {
-      sortingOptions: [],
-      recruitmentStatus: ['active'] as ResearchStudy['status'][],
+      recruitmentStatus: ['active'],
       trialPhase: ['Phase 1/Phase 2'],
       studyType: ['Interventional', 'Observational'],
     };
@@ -174,7 +196,6 @@ describe('getFilterOptions', () => {
   it('gets filter options counting the total amount of studies when no parameters are supplied', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: [],
         studyType: [],
@@ -183,7 +204,7 @@ describe('getFilterOptions', () => {
       expect.objectContaining({
         recruitmentStatus: expect.arrayContaining([
           { name: 'active', label: 'Active', count: 5 },
-          { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+          { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
         ]),
         trialPhase: expect.arrayContaining([
           { name: 'Phase 1', count: 3 },
@@ -198,8 +219,7 @@ describe('getFilterOptions', () => {
   it('gets filter options by only selecting recruitment status', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['active'] as ResearchStudy['status'][],
+        recruitmentStatus: ['active'],
         trialPhase: [],
         studyType: [],
       })
@@ -207,7 +227,7 @@ describe('getFilterOptions', () => {
       expect.objectContaining({
         recruitmentStatus: expect.arrayContaining([
           { name: 'active', label: 'Active', count: 5 },
-          { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+          { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
         ]),
         trialPhase: expect.arrayContaining([
           { name: 'Phase 1', count: 2 },
@@ -220,8 +240,7 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['in-review'] as ResearchStudy['status'][],
+        recruitmentStatus: ['in-review'],
         trialPhase: [],
         studyType: [],
       })
@@ -229,7 +248,7 @@ describe('getFilterOptions', () => {
       expect.objectContaining({
         recruitmentStatus: expect.arrayContaining([
           { name: 'active', label: 'Active', count: 5 },
-          { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+          { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
         ]),
         trialPhase: expect.arrayContaining([
           { name: 'Phase 1', count: 0 },
@@ -244,7 +263,6 @@ describe('getFilterOptions', () => {
   it('gets filter options by only selecting trial phase', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: ['Phase 1'],
         studyType: [],
@@ -253,7 +271,7 @@ describe('getFilterOptions', () => {
       expect.objectContaining({
         recruitmentStatus: expect.arrayContaining([
           { name: 'active', label: 'Active', count: 2 },
-          { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+          { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
         ]),
         trialPhase: expect.arrayContaining([
           { name: 'Phase 1', count: 3 },
@@ -266,7 +284,6 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: ['Phase 3'],
         studyType: [],
@@ -275,7 +292,7 @@ describe('getFilterOptions', () => {
       expect.objectContaining({
         recruitmentStatus: expect.arrayContaining([
           { name: 'active', label: 'Active', count: 0 },
-          { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+          { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
         ]),
         trialPhase: expect.arrayContaining([
           { name: 'Phase 1', count: 3 },
@@ -290,7 +307,6 @@ describe('getFilterOptions', () => {
   it('gets filter options by only selecting study type', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: [],
         studyType: ['Interventional'],
@@ -299,7 +315,7 @@ describe('getFilterOptions', () => {
       expect.objectContaining({
         recruitmentStatus: expect.arrayContaining([
           { name: 'active', label: 'Active', count: 5 },
-          { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+          { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
         ]),
         trialPhase: expect.arrayContaining([
           { name: 'Phase 1', count: 3 },
@@ -312,7 +328,6 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: [],
         studyType: ['Observational'],
@@ -321,7 +336,7 @@ describe('getFilterOptions', () => {
       expect.objectContaining({
         recruitmentStatus: expect.arrayContaining([
           { name: 'active', label: 'Active', count: 0 },
-          { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+          { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
         ]),
         trialPhase: expect.arrayContaining([
           { name: 'Phase 1', count: 0 },
@@ -336,15 +351,14 @@ describe('getFilterOptions', () => {
   it('gets filter options by selecting recruitment status and trial phase', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['closed-to-accrual'] as ResearchStudy['status'][],
+        recruitmentStatus: ['closed-to-accrual'],
         trialPhase: ['Phase 1'],
         studyType: [],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 2 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 1 },
@@ -356,15 +370,14 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['in-review'] as ResearchStudy['status'][],
+        recruitmentStatus: ['in-review'],
         trialPhase: ['Phase 1'],
         studyType: [],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 2 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 0 },
@@ -376,15 +389,14 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['in-review'] as ResearchStudy['status'][],
+        recruitmentStatus: ['in-review'],
         trialPhase: ['Phase 3'],
         studyType: [],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 0 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 0 },
@@ -398,15 +410,14 @@ describe('getFilterOptions', () => {
   it('gets filter options by selecting recruitment status and study type', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['closed-to-accrual'] as ResearchStudy['status'][],
+        recruitmentStatus: ['closed-to-accrual'],
         trialPhase: [],
         studyType: ['Interventional'],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 5 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 1 },
@@ -418,15 +429,14 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['in-review'] as ResearchStudy['status'][],
+        recruitmentStatus: ['in-review'],
         trialPhase: [],
         studyType: ['Interventional'],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 5 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 0 },
@@ -438,15 +448,14 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['in-review'] as ResearchStudy['status'][],
+        recruitmentStatus: ['in-review'],
         trialPhase: [],
         studyType: ['Observational'],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 0 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 0 },
@@ -460,7 +469,6 @@ describe('getFilterOptions', () => {
   it('gets filter options by selecting trial phase and study type', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: ['Phase 2'],
         studyType: ['Interventional'],
@@ -468,7 +476,7 @@ describe('getFilterOptions', () => {
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 1 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 3 },
@@ -480,7 +488,6 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: ['Phase 2'],
         studyType: ['Observational'],
@@ -488,7 +495,7 @@ describe('getFilterOptions', () => {
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 0 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 0 },
@@ -500,7 +507,6 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
         recruitmentStatus: [],
         trialPhase: ['Phase 3'],
         studyType: ['Observational'],
@@ -508,7 +514,7 @@ describe('getFilterOptions', () => {
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 0 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 0 },
@@ -522,15 +528,14 @@ describe('getFilterOptions', () => {
   it('gets filter options by selecting recruitment status, trial phase, and study type', () => {
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['active'] as ResearchStudy['status'][],
+        recruitmentStatus: ['active'],
         trialPhase: ['Phase 1/Phase 2'],
         studyType: ['Interventional', 'Observational'],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 2 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 2 },
@@ -542,15 +547,14 @@ describe('getFilterOptions', () => {
 
     expect(
       getFilterOptions(results, {
-        sortingOptions: [],
-        recruitmentStatus: ['in-review'] as ResearchStudy['status'][],
+        recruitmentStatus: ['in-review'],
         trialPhase: ['Phase 1/Phase 2'],
         studyType: ['Interventional', 'Observational'],
       })
     ).toEqual({
       recruitmentStatus: expect.arrayContaining([
         { name: 'active', label: 'Active', count: 2 },
-        { name: 'closed-to-accrual', label: 'Closed to accrual', count: 0 },
+        { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 0 },
       ]),
       trialPhase: expect.arrayContaining([
         { name: 'Phase 1', count: 0 },

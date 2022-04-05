@@ -22,7 +22,7 @@ import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
-import { FullSearchParameters, SearchParameters } from 'types/search-types';
+import { FilterParameters, FullSearchParameters, SearchParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { uninitializedState, savedStudiesReducer, getSavedStudies } from '@/utils/resultsStateUtils';
@@ -80,7 +80,8 @@ const MainContent = styled(Paper)`
   flex: 1 0 auto;
 `;
 
-const getBasicSearchParams = (fullSearchParams: FullSearchParameters): SearchParameters =>
+// Don't want to trigger search query if only filter parameters change
+const getSearchParams = (fullSearchParams: FullSearchParameters): SearchParameters =>
   Object.keys(fullSearchParams)
     .filter(key =>
       [
@@ -101,11 +102,20 @@ const getBasicSearchParams = (fullSearchParams: FullSearchParameters): SearchPar
       return obj;
     }, {} as SearchParameters);
 
+// Don't want to trigger pagination query if only pagination parameters change
+const getFilterParams = (fullSearchParams: FullSearchParameters): FilterParameters =>
+  Object.keys(fullSearchParams)
+    .filter(key => ['sortingOptions', 'recruitmentStatus', 'trialPhase', 'studyType', 'savedStudies'].includes(key))
+    .reduce((obj, key) => {
+      obj[key] = fullSearchParams[key];
+      return obj;
+    }, {} as FilterParameters);
+
 const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
 
   const { data: searchData } = useQuery(
-    ['clinical-trials', getBasicSearchParams(searchParams), patient],
+    ['clinical-trials', getSearchParams(searchParams), patient],
     () => clinicalTrialSearchQuery(patient, user, searchParams),
     {
       enabled: typeof window !== 'undefined',
@@ -114,13 +124,15 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   );
 
   const { isIdle, isLoading, data } = useQuery(
-    ['clinical-trials', searchData, searchParams],
+    ['clinical-trials', searchData, getFilterParams(searchParams)],
     () => clinicalTrialFilterQuery(searchData, searchParams),
     {
       enabled: !!searchData && typeof window !== 'undefined',
       refetchOnMount: false,
     }
   );
+
+  // TODO: pagination query
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(true);

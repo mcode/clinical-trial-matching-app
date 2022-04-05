@@ -1,6 +1,5 @@
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import { render, screen } from '@testing-library/react';
-import { ResearchStudy } from 'fhir/r4';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import FilterForm, { FilterFormProps } from '../FilterForm';
 
@@ -13,7 +12,7 @@ const defaultValues = {
   filterOptions: {
     recruitmentStatus: {
       active: true,
-    } as { [key in ResearchStudy['status']]: boolean },
+    },
     trialPhase: {
       'Phase 1': true,
     },

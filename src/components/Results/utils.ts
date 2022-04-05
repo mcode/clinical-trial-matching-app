@@ -57,7 +57,7 @@ const getPeriod = (study: ResearchStudy): string => {
   return startDate ? (endDate ? `${startDate} - ${endDate}` : startDate) : null;
 };
 
-const getPhase = (study: ResearchStudy): string => study.phase?.text;
+const getPhase = (study: ResearchStudy): string => study.phase?.text || 'Unknown Trial Phase';
 
 const getContacts = (study: ResearchStudy): ContactProps[] => {
   return study?.contact?.map(getContact) || [];
@@ -92,7 +92,7 @@ const getStatus = (study: ResearchStudy): StatusProps => {
     case 'withdrawn':
       return { name: study.status, label, color: 'common.red' };
     default:
-      return { name: study.status, label, color: 'common.gray' };
+      return { name: 'unknown-recruitment-status', label: 'Unknown Recruitment Status', color: 'common.gray' };
   }
 };
 
@@ -108,6 +108,7 @@ const getType = (study: ResearchStudy): string => {
     const matchWithoutIllegalCharacters = match.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
     if (matchWithoutIllegalCharacters) return matchWithoutIllegalCharacters;
   }
+  return 'Unknown Study Type';
 };
 
 const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
