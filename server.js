@@ -2,6 +2,7 @@ const nextjs = require('next');
 const { default: getConfig } = require('next/config');
 const express = require('express');
 const session = require('express-session');
+const MemoryStore = require('memorystore')(session);
 
 const port = parseInt(process.env.PORT, 10) || 3200;
 const dev = process.env.NODE_ENV !== 'production';
@@ -17,7 +18,11 @@ app
 
     server.use(
       session({
+        cookie: { maxAge: 24 * 60 * 60 * 1000 },
         secret: serverRuntimeConfig.sessionSecretKey,
+        store: new MemoryStore({
+          checkPeriod: 24 * 60 * 60 * 1000, // Expire sessions after 24 hours
+        }),
         resave: false,
         saveUninitialized: false,
       })
