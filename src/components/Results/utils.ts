@@ -1,6 +1,14 @@
 import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy, Location, PlanDefinition } from 'fhir/r4';
 import { format } from 'date-fns';
-import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyDetailProps } from './types';
+import {
+  BundleEntry,
+  ContactProps,
+  LikelihoodProps,
+  StatusProps,
+  StudyDetail,
+  StudyDetailProps,
+  TypeProps,
+} from './types';
 import { MainRowKeys } from '@/utils/exportData';
 import {
   getZipcodeCoordinates,
@@ -98,17 +106,19 @@ const getStatus = (study: ResearchStudy): StatusProps => {
 
 const getTitle = (study: ResearchStudy): string => study.title;
 
-const getType = (study: ResearchStudy): string => {
+const getType = (study: ResearchStudy): TypeProps => {
   for (const { text } of study.category || []) {
     const match = text.match(/Study Type: (.+)$/)?.[1];
     // https://react-hook-form.com/api/useform/register/
     // React Hook Form uses array brackets and periods to create nested structures.
     // We use the study type to create checkbox filters in the Sidebar.
     // Unless we remove those characters, passing in the Study Type as the Controller.name will break its state.
-    const matchWithoutIllegalCharacters = match.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
-    if (matchWithoutIllegalCharacters) return matchWithoutIllegalCharacters;
+    const matchWithoutIllegalCharacters = match?.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
+    if (matchWithoutIllegalCharacters) {
+      return { name: matchWithoutIllegalCharacters, label: match };
+    }
   }
-  return 'Unknown Study Type';
+  return { name: 'Unknown Study Type' };
 };
 
 const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {

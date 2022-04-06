@@ -36,7 +36,7 @@
         "color": "common.red"
       },
       "title": "Anti-Estrogen Therapy, Palbociclib, and Gedatolisib for Metastatic ER+, HER2- Breast Cancer",
-      "type": "Interventional",
+      "type": { "name": "Interventional" },
       "arms": [
         {
           "display": "Experimental: Arm I (paclitaxel, radium Ra 223 dichloride)",
@@ -596,7 +596,7 @@
         "color": "common.green"
       },
       "title": "Entinostat & Capecitabine for Stage II, Stage III and Metastatic HER2 Negative Breast Cancer",
-      "type": "Interventional",
+      "type": { "name": "Interventional" },
       "closestFacilities": [
         {
           "name": "University of Virginia",
@@ -694,7 +694,7 @@
         "color": "common.green"
       },
       "title": "Talazoparib and Avelumab for Advanced Breast Cancer (TALAVE)",
-      "type": "Interventional",
+      "type": { "name": "Interventional" },
       "closestFacilities": [
         {
           "name": "University of Utah, Huntsman Cancer Institute",
@@ -821,7 +821,7 @@
         "color": "common.green"
       },
       "title": "Olaparib & Sapacitabine for People with Advanced Breast Cancer & an Inherited BRCA1/2 Mutation",
-      "type": "Interventional",
+      "type": { "name": "Interventional" },
       "closestFacilities": [
         {
           "distance": {
@@ -899,7 +899,7 @@
         "color": "common.green"
       },
       "title": "Ipatasertib, Hormone Therapy and Ibrance for Metastatic Breast Cancer (TAKTIC)",
-      "type": "Interventional",
+      "type": { "name": "Interventional" },
       "closestFacilities": [
         {
           "name": "Massachusetts General Hospital Cancer Center",
@@ -977,7 +977,7 @@
         "color": "common.green"
       },
       "title": "Talazoparib in Women With Metastatic Triple Negative or HR+, HER2- Breast Cancer with a Tumor (Not Inherited) BRCA1/2 Mutation",
-      "type": "Interventional",
+      "type": { "name": "Interventional" },
       "closestFacilities": [
         {
           "name": "MD Anderson Cancer Center",

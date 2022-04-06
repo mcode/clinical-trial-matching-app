@@ -31,7 +31,7 @@ type StudyHeaderProps = {
 };
 
 const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: StudyHeaderProps): ReactElement => {
-  const studyTags = [...study.conditions, study.phase, study.type].filter(tag => !!tag);
+  const studyTags = [...study.conditions, study.phase, study.type?.label || study.type?.name].filter(tag => !!tag);
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const closestFacilityDistance = study?.closestFacilities?.[0]?.distance;

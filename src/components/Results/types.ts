@@ -13,6 +13,7 @@ export type StatusProps = {
   label: string;
   color: string;
 };
+export type TypeProps = { name: string; label?: string };
 export type StudyDetail = { header: string; body: string };
 
 export type Intervention = {
@@ -42,7 +43,7 @@ export type StudyDetailProps = {
   contacts?: ContactProps[];
   status?: StatusProps;
   title?: string;
-  type?: string;
+  type?: TypeProps;
   arms?: ArmGroup[];
   closestFacilities?: ContactProps[];
   locations?: Location[];

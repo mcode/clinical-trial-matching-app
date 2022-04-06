@@ -70,7 +70,7 @@ describe('unpackStudies', () => {
               email: 'email@example.com',
             },
           ],
-          type: 'Example Type',
+          type: { name: 'Example Type' },
           closestFacilities: [
             {
               distance: {

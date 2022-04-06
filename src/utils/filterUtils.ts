@@ -59,7 +59,7 @@ export const getFilteredResults = (
   const filterFunction = (entry: StudyDetailProps): boolean => {
     const filterByRecruitmentStatus = filteringByRecruitmentStatus || recruitmentStatus.includes(entry.status.name);
     const filterByTrialPhase = filteringByTrialPhase || trialPhase.includes(entry.phase);
-    const filterByStudyType = filteringByStudyType || studyType.includes(entry.type);
+    const filterByStudyType = filteringByStudyType || studyType.includes(entry.type?.name);
     return filterByRecruitmentStatus && filterByTrialPhase && filterByStudyType;
   };
   return results.filter(filterFunction);
@@ -73,7 +73,7 @@ const getCheckedEntryMap = (
   status: boolean;
   phase: boolean;
 } => ({
-  type: studyType.length === 0 || studyType.includes(type),
+  type: studyType.length === 0 || studyType.includes(type.name),
   status: recruitmentStatus.length === 0 || recruitmentStatus.includes(status?.name),
   phase: trialPhase.length === 0 || trialPhase.includes(phase),
 });
@@ -86,7 +86,7 @@ const getIntializedEntryMap = (
   status: FilterOption;
   phase: FilterOption;
 } => {
-  const typeExists = ({ name }: FilterOption): boolean => name === type;
+  const typeExists = ({ name }: FilterOption): boolean => name === type.name;
   const statusExists = ({ name, label }: FilterOption): boolean => name === status?.name && label === status?.label;
   const phaseExists = ({ name }: FilterOption): boolean => name === phase;
 
@@ -111,18 +111,16 @@ export const getFilterOptions = (results: StudyDetailProps[], parameters: Filter
 
     if (!initialized.type) {
       const count = checked.status && checked.phase ? 1 : 0;
-      filterOptions.studyType.push({ name: type, count });
+      const { name, label } = { ...type };
+      filterOptions.studyType.push({ name, label, count });
     } else if (checked.status && checked.phase) {
       initialized.type.count += 1;
     }
 
     if (!initialized.status) {
       const count = checked.type && checked.phase ? 1 : 0;
-      filterOptions.recruitmentStatus.push({
-        name: status.name,
-        label: status.label,
-        count,
-      });
+      const { name, label } = { ...status };
+      filterOptions.recruitmentStatus.push({ name, label, count });
     } else if (checked.type && checked.phase) {
       initialized.status.count += 1;
     }

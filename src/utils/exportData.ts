@@ -37,7 +37,7 @@ const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
     { header: MainRowKeys.period, body: studyProps.period || '' },
     { header: MainRowKeys.phase, body: studyProps.phase || '' },
     { header: MainRowKeys.conditions, body: JSON.stringify(studyProps?.conditions) || '' },
-    { header: MainRowKeys.type, body: studyProps.type || '' },
+    { header: MainRowKeys.type, body: studyProps.type?.label || studyProps.type?.name || '' },
     { header: MainRowKeys.description, body: studyProps.description || '' },
     { header: MainRowKeys.eligibility, body: studyProps.eligibility || '' },
     { header: MainRowKeys.sponsor, body: studyProps.sponsor?.name || '' },
