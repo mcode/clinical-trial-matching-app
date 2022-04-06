@@ -26,7 +26,7 @@ import { SearchFormValuesType } from './types';
 import { SearchParameters, FullSearchParameters } from 'types/search-types';
 
 export type SearchFormProps = {
-  defaultValues?: Partial<SearchFormValuesType>;
+  defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
   fullSearchParams?: FullSearchParameters;
 };

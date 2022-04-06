@@ -21,10 +21,11 @@ import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import FilterAccordion from './FilterAccordion';
 
 export type FilterFormProps = {
-  defaultValues?: Partial<FilterFormValuesType>;
+  defaultValues: Partial<FilterFormValuesType>;
+  blankValues: Partial<FilterFormValuesType>;
   fullWidth?: boolean;
   fullSearchParams?: FullSearchParameters;
-  filterOptions?: FilterOptions;
+  filterOptions: FilterOptions;
   disabled?: boolean;
 };
 
@@ -46,6 +47,7 @@ const SORTING_OPTIONS = [
 
 const FilterForm = ({
   defaultValues,
+  blankValues,
   fullWidth,
   fullSearchParams,
   filterOptions,
@@ -54,7 +56,7 @@ const FilterForm = ({
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const { handleSubmit, control } = useForm<FilterFormValuesType>({ defaultValues });
+  const { handleSubmit, control, reset } = useForm<FilterFormValuesType>({ defaultValues });
 
   const onSubmit = (data: FilterFormValuesType) =>
     router.push({
@@ -66,7 +68,16 @@ const FilterForm = ({
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box bgcolor="grey.200">
         <Grid columns={8} container spacing={2} px={2} py={fullWidth ? 0 : { md: 2 }} pb={{ xs: 2 }} mt={0}>
-          <Grid item xs={8}>
+          <Grid
+            item
+            xs={8}
+            sx={{ flexDirection: 'row-reverse', justifyContent: 'space-between', alignItems: 'flex-start' }}
+            display="flex"
+          >
+            <Button onClick={() => reset(blankValues)} disabled={disabled} variant="text">
+              Clear all
+            </Button>
+
             <FilterAccordion title="Sort By" defaultExpanded disabled={disabled}>
               <FormControl component="fieldset" disabled={disabled}>
                 {SORTING_OPTIONS.map(({ name, label, defaultValue }) => (

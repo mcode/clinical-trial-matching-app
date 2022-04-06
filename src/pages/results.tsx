@@ -22,7 +22,7 @@ import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
-import { FilterParameters, FullSearchParameters, SearchParameters } from 'types/search-types';
+import { FilterParameters, FullSearchParameters, SearchParameters, SortingParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { uninitializedState, savedStudiesReducer, getSavedStudies } from '@/utils/resultsStateUtils';
@@ -80,36 +80,39 @@ const MainContent = styled(Paper)`
   flex: 1 0 auto;
 `;
 
-// Don't want to trigger search query if only filter parameters change
-const getSearchParams = (fullSearchParams: FullSearchParameters): SearchParameters =>
-  Object.keys(fullSearchParams)
-    .filter(key =>
-      [
-        'matchingServices',
-        'zipcode',
-        'travelDistance',
-        'age',
-        'cancerType',
-        'cancerSubtype',
-        'metastasis',
-        'stage',
-        'ecogScore',
-        'karnofskyScore',
-      ].includes(key)
-    )
-    .reduce((obj, key) => {
-      obj[key] = fullSearchParams[key];
-      return obj;
-    }, {} as SearchParameters);
+const getParameters = <T extends Partial<FullSearchParameters>>(keys: (keyof T)[]) => {
+  return function (fullSearchParams: FullSearchParameters) {
+    return Object.keys(fullSearchParams)
+      .filter(key => keys.includes(key as keyof T))
+      .reduce((obj, key) => {
+        obj[key] = fullSearchParams[key];
+        return obj;
+      }, {} as T);
+  };
+};
 
-// Don't want to trigger pagination query if only pagination parameters change
-const getFilterParams = (fullSearchParams: FullSearchParameters): FilterParameters =>
-  Object.keys(fullSearchParams)
-    .filter(key => ['sortingOptions', 'recruitmentStatus', 'trialPhase', 'studyType', 'savedStudies'].includes(key))
-    .reduce((obj, key) => {
-      obj[key] = fullSearchParams[key];
-      return obj;
-    }, {} as FilterParameters);
+// Don't want to trigger search query if only filter parameters change
+const getSearchParams = getParameters<SearchParameters>([
+  'matchingServices',
+  'zipcode',
+  'travelDistance',
+  'age',
+  'cancerType',
+  'cancerSubtype',
+  'metastasis',
+  'stage',
+  'ecogScore',
+  'karnofskyScore',
+]);
+
+// Don't want to trigger filter query if only pagination parameters change
+const getFilterParams = getParameters<FilterParameters & SortingParameters>([
+  'recruitmentStatus',
+  'trialPhase',
+  'studyType',
+  'sortingOptions',
+  'savedStudies',
+]);
 
 const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);

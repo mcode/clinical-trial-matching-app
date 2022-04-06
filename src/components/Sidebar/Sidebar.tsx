@@ -69,6 +69,19 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
     },
   };
 
+  const blankFilterValues: FilterFormValuesType = {
+    sortingOptions: {
+      matchLikelihood: false,
+      distance: false,
+      savedStatus: false,
+    },
+    filterOptions: {
+      recruitmentStatus: Object.fromEntries(recruitmentStatus.map(key => [key, false])),
+      trialPhase: Object.fromEntries(trialPhase.map(key => [key, false])),
+      studyType: Object.fromEntries(studyType.map(key => [key, false])),
+    },
+  };
+
   const fullSearchParams: FullSearchParameters = {
     ...formDataToSearchQuery(defaultSearchValues),
     ...formDataToFilterQuery(defaultFilterValues),
@@ -87,6 +100,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
         <FilterForm
           fullWidth
           defaultValues={defaultFilterValues}
+          blankValues={blankFilterValues}
           fullSearchParams={fullSearchParams}
           filterOptions={filterOptions}
           disabled={disabled}

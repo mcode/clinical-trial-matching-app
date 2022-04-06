@@ -1,4 +1,4 @@
-import { createTheme, lighten } from '@mui/material/styles';
+import { createTheme, lighten, responsiveFontSizes } from '@mui/material/styles';
 import { createBreakpoints } from '@mui/system';
 
 declare module '@mui/material/styles/createPalette' {
@@ -171,9 +171,6 @@ const theme = createTheme({
     fontWeightMedium: 600,
     h6: {
       fontWeight: 600,
-      [breakpoints.down('sm')]: {
-        fontSize: '1.2rem',
-      },
     },
     subtitle2: {
       fontWeight: 600,
@@ -187,4 +184,6 @@ const theme = createTheme({
   },
 });
 
-export default theme;
+const themeWithResponsiveFontSizes = responsiveFontSizes(theme);
+
+export default themeWithResponsiveFontSizes;

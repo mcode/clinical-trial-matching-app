@@ -27,6 +27,7 @@ const FilterAccordion = ({ children, defaultExpanded, title, disabled }: FilterA
         mt: '1px',
         '&.MuiAccordionSummary-root': { justifyContent: 'flex-start' },
         '& .MuiAccordionSummary-content': { margin: 0, flexGrow: 0 },
+        px: { xs: 0, sm: 'unset' },
       }}
     >
       <Typography fontWeight="600" textTransform="uppercase">
@@ -34,7 +35,7 @@ const FilterAccordion = ({ children, defaultExpanded, title, disabled }: FilterA
       </Typography>
     </AccordionSummary>
 
-    <AccordionDetails sx={{ py: 0, pl: { xs: 2, sm: 4 }, pr: 2 }}>{children}</AccordionDetails>
+    <AccordionDetails sx={{ py: 0, pl: { xs: 0, sm: 4 }, pr: { xs: 0, sm: 2 } }}>{children}</AccordionDetails>
   </Accordion>
 );
 

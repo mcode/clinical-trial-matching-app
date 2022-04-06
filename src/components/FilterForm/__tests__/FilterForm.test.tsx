@@ -18,7 +18,25 @@ const defaultValues = {
     },
     studyType: {
       Interventional: true,
-      'Observational (Patient Registry)': true,
+    },
+  },
+};
+
+const blankValues = {
+  sortingOptions: {
+    matchLikelihood: false,
+    distance: false,
+    savedStatus: false,
+  },
+  filterOptions: {
+    recruitmentStatus: {
+      active: false,
+    },
+    trialPhase: {
+      'Phase 1': false,
+    },
+    studyType: {
+      Interventional: false,
     },
   },
 };
@@ -26,7 +44,7 @@ const defaultValues = {
 const filterOptions = {
   recruitmentStatus: [
     { name: 'active', label: 'Active', count: 245 },
-    { name: 'closed-to-accrual', label: 'Closed to accrual', count: 1 },
+    { name: 'closed-to-accrual', label: 'Closed to Accrual', count: 1 },
     { name: 'approved', label: 'Approved', count: 7 },
   ],
   trialPhase: [
@@ -61,12 +79,14 @@ const checkboxExists = (name: string) => (_: string, element: HTMLElement) =>
 describe('<FilterForm />', () => {
   const Component = (props: Partial<FilterFormProps>) => (
     <QueryClientProvider client={createQueryClient()}>
-      <FilterForm defaultValues={defaultValues} filterOptions={filterOptions} {...props} />
+      <FilterForm defaultValues={defaultValues} blankValues={blankValues} filterOptions={filterOptions} {...props} />
     </QueryClientProvider>
   );
 
   it('renders the filter form and all the filter form fields', () => {
     render(<Component />);
+
+    expect(screen.getByRole('button', { name: /clear all/i }));
 
     expect(screen.getByText(/sort by/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('sortingOptions')).toHaveLength(3);
@@ -90,14 +110,18 @@ describe('<FilterForm />', () => {
     expect(screen.queryByTestId(checkboxExists('sortingOptions.matchLikelihood'))).not.toBeInTheDocument();
     expect(screen.queryByTestId(checkboxExists('sortingOptions.distance'))).toBeInTheDocument();
     expect(screen.queryByTestId(checkboxExists('sortingOptions.savedStatus'))).not.toBeInTheDocument();
-
     expect(screen.queryByTestId(checkboxExists('filterOptions.recruitmentStatus.active'))).toBeInTheDocument();
-
     expect(screen.queryByTestId(checkboxExists('filterOptions.trialPhase.Phase 1'))).toBeInTheDocument();
-
     expect(screen.queryByTestId(checkboxExists('filterOptions.studyType.Interventional'))).toBeInTheDocument();
-    expect(
-      screen.queryByTestId(checkboxExists('filterOptions.studyType.Observational (Patient Registry)'))
-    ).toBeInTheDocument();
+  });
+
+  it('unchecks all checkboxes when the clear all button is clicked', () => {
+    render(<Component />);
+
+    screen.getByRole('button', { name: /clear all/i }).click();
+    expect(screen.queryByTestId(checkboxExists('sortingOptions.distance'))).not.toBeInTheDocument();
+    expect(screen.queryByTestId(checkboxExists('filterOptions.recruitmentStatus.active'))).not.toBeInTheDocument();
+    expect(screen.queryByTestId(checkboxExists('filterOptions.trialPhase.Phase 1'))).not.toBeInTheDocument();
+    expect(screen.queryByTestId(checkboxExists('filterOptions.studyType.Interventional'))).not.toBeInTheDocument();
   });
 });
