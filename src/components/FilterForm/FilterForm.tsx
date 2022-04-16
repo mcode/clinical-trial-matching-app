@@ -16,7 +16,12 @@ import {
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
-import { RecruitmentStatusCheckbox, StudyTypeCheckbox, TrialPhaseCheckbox } from './FormFields';
+import {
+  RecruitmentStatusCheckbox,
+  // SortingOptionCheckbox,
+  StudyTypeCheckbox,
+  TrialPhaseCheckbox,
+} from './FormFields';
 import { FilterFormValuesType } from './types';
 import { FilterParameters, FullSearchParameters, SortingParameters } from 'types/search-types';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
@@ -85,17 +90,13 @@ const FilterForm = ({
                 <Controller
                   name="sortingOption"
                   control={control}
-                  render={({ field }) => {
-                    const { onChange, value } = field;
-                    console.log('field', field);
-                    return (
-                      <RadioGroup onChange={onChange} value={value}>
-                        {SORTING_OPTIONS.map(({ name, label }) => (
-                          <FormControlLabel key={name} name={name} value={name} control={<Radio />} label={label} />
-                        ))}
-                      </RadioGroup>
-                    );
-                  }}
+                  render={({ field }) => (
+                    <RadioGroup {...field} defaultValue={SORTING_OPTIONS[0].name}>
+                      {SORTING_OPTIONS.map(({ name, label }) => (
+                        <FormControlLabel key={name} value={name} control={<Radio />} label={label} />
+                      ))}
+                    </RadioGroup>
+                  )}
                 />
               </FormControl>
             </FilterAccordion>

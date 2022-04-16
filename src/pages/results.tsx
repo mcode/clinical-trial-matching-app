@@ -82,14 +82,10 @@ const MainContent = styled(Paper)`
 
 const getParameters = <T extends Partial<FullSearchParameters>>(keys: (keyof T)[]) => {
   return function (fullSearchParams: FullSearchParameters) {
-    const validKeys = Object.keys(fullSearchParams);
-    const parameters = {} as T;
-    for (const key of keys) {
-      if (key in validKeys) {
-        parameters[key] = fullSearchParams[key as string];
-      }
-    }
-    return parameters;
+    return keys.reduce((obj, key) => {
+      obj[key] = fullSearchParams[key as string];
+      return obj;
+    }, {} as T);
   };
 };
 
@@ -136,9 +132,6 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
       refetchOnMount: false,
     }
   );
-
-  console.log('getSearchParams(searchParams)', getSearchParams(searchParams));
-  console.log('getFilterParams(searchParams)', getFilterParams(searchParams));
 
   // TODO: pagination query
 
