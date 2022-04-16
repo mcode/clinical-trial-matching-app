@@ -58,16 +58,6 @@ const theme = createTheme({
         },
       },
     },
-    MuiFilledInput: {
-      styleOverrides: {
-        root: {
-          backgroundColor: colors.white,
-          '&:hover': {
-            backgroundColor: lighten(colors.blue, 0.9),
-          },
-        },
-      },
-    },
     MuiButton: {
       variants: [
         {
@@ -79,6 +69,22 @@ const theme = createTheme({
           },
         },
       ],
+    },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: colors.blue,
+          '.Mui-checked': {
+            '&, & + .MuiFormControlLabel-label': {
+              fontWeight: 'bold',
+              color: colors.blue,
+              '&:hover': {
+                backgroundColor: lighten(colors.blue, 0.9),
+              },
+            },
+          },
+        },
+      },
     },
     MuiChip: {
       styleOverrides: {
@@ -94,6 +100,23 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '.MuiDrawer-paper': { boxSizing: 'border-box' },
+        },
+      },
+    },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colors.white,
+          '&:hover': {
+            backgroundColor: lighten(colors.blue, 0.9),
+          },
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          color: colors.blue,
         },
       },
     },

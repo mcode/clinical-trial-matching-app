@@ -82,12 +82,14 @@ const MainContent = styled(Paper)`
 
 const getParameters = <T extends Partial<FullSearchParameters>>(keys: (keyof T)[]) => {
   return function (fullSearchParams: FullSearchParameters) {
-    return Object.keys(fullSearchParams)
-      .filter(key => keys.includes(key as keyof T))
-      .reduce((obj, key) => {
-        obj[key] = fullSearchParams[key];
-        return obj;
-      }, {} as T);
+    const validKeys = Object.keys(fullSearchParams);
+    const parameters = {} as T;
+    for (const key of keys) {
+      if (key in validKeys) {
+        parameters[key] = fullSearchParams[key as string];
+      }
+    }
+    return parameters;
   };
 };
 
@@ -110,7 +112,7 @@ const getFilterParams = getParameters<FilterParameters & SortingParameters>([
   'recruitmentStatus',
   'trialPhase',
   'studyType',
-  'sortingOptions',
+  'sortingOption',
   'savedStudies',
 ]);
 
@@ -127,13 +129,16 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   );
 
   const { isIdle, isLoading, data } = useQuery(
-    ['clinical-trials', searchData, getFilterParams(searchParams)],
+    ['clinical-trials', searchData, getFilterParams(searchParams)], // the params is causing the filter query to not rerun!
     () => clinicalTrialFilterQuery(searchData, searchParams),
     {
       enabled: !!searchData && typeof window !== 'undefined',
       refetchOnMount: false,
     }
   );
+
+  console.log('getSearchParams(searchParams)', getSearchParams(searchParams));
+  console.log('getFilterParams(searchParams)', getFilterParams(searchParams));
 
   // TODO: pagination query
 

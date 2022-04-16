@@ -26,6 +26,6 @@ export type FilterParameters = {
 };
 
 export type SortingParameters = {
-  sortingOptions: string[];
+  sortingOption: string;
   savedStudies?: string[];
 };

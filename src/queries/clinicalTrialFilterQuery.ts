@@ -9,7 +9,7 @@ const clinicalTrialFilterQuery = async (
   searchParams: ParsedUrlQuery
 ): Promise<ResultsResponse> => {
   const sortingParameters: SortingParameters = {
-    sortingOptions: ensureArray(searchParams.sortingOptions),
+    sortingOption: searchParams.sortingOption as string,
     savedStudies: ensureArray(searchParams.savedStudies),
   };
   const filterParameters: FilterParameters = {

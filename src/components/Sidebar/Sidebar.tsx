@@ -51,17 +51,13 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
     medications: ensureArray(query.medications),
   };
 
-  const sortingOptions = query.sortingOptions || [];
+  const sortingOption = query.sortingOption as FilterFormValuesType['sortingOption'];
   const recruitmentStatus = ensureArray(query.recruitmentStatus);
   const trialPhase = ensureArray(query.trialPhase);
   const studyType = ensureArray(query.studyType);
 
   const defaultFilterValues: FilterFormValuesType = {
-    sortingOptions: {
-      matchLikelihood: sortingOptions.includes('matchLikelihood'),
-      distance: sortingOptions.includes('distance'),
-      savedStatus: sortingOptions.includes('savedStatus'),
-    },
+    sortingOption,
     filterOptions: {
       recruitmentStatus: Object.fromEntries(recruitmentStatus.map(key => [key, true])),
       trialPhase: Object.fromEntries(trialPhase.map(key => [key, true])),
@@ -70,11 +66,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
   };
 
   const blankFilterValues: FilterFormValuesType = {
-    sortingOptions: {
-      matchLikelihood: false,
-      distance: false,
-      savedStatus: false,
-    },
+    sortingOption: 'matchLikelihood',
     filterOptions: {
       recruitmentStatus: Object.fromEntries(recruitmentStatus.map(key => [key, false])),
       trialPhase: Object.fromEntries(trialPhase.map(key => [key, false])),

@@ -10,39 +10,41 @@ const getLikelihood = (study: StudyDetailProps): number => study.likelihood.scor
 const getTrialId = (study: StudyDetailProps): string => study.trialId;
 
 describe('getSortedResults', () => {
-  it('does not sort when no sorting options are supplied', () => {
+  it('does not sort when no sorting option is supplied', () => {
     const parameters = {
-      sortingOptions: [],
+      sortingOption: '',
       savedStudies: [],
     };
     const actual = getSortedResults(results, parameters);
     expect(actual.map(getTrialId)).toEqual(idsOfOriginalResults);
   });
 
-  it('sorts by match likelihood in descending order', () => {
+  it('sorts by match likelihood in descending order, distance in ascending order, and saved status from saved to unsaved trials', () => {
     const parameters = {
-      sortingOptions: ['matchLikelihood'],
+      sortingOption: 'matchLikelihood',
       savedStudies: [],
     };
     const actual = getSortedResults(results, parameters);
-    expect(actual.map(getLikelihood)).toEqual([1, undefined, 0.46, 0.46, 0.46, 0]);
+    expect(actual.map(getLikelihood)).toEqual([1, 0.5, 0.46, 0.46, 0.46, 0]);
+    expect(actual.map(getMiles)).toEqual([215, 0, 17, 17, undefined, 118.9]);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03473639',
       'NCT03990896',
-      'NCT02684032',
       'NCT03641755',
       'NCT03959891',
+      'NCT02684032',
       'NCT03964532',
     ]);
   });
 
-  it('sorts by distance in ascending order', () => {
+  it('sorts by distance in ascending order, match likelihood in descending order, and saved status from saved to unsaved trials', () => {
     const parameters = {
-      sortingOptions: ['distance'],
+      sortingOption: 'distance',
       savedStudies: [],
     };
     const actual = getSortedResults(results, parameters);
     expect(actual.map(getMiles)).toEqual([0, 17, 17, 118.9, 215, undefined]);
+    expect(actual.map(getLikelihood)).toEqual([0.5, 0.46, 0.46, 0, 1, 0.46]);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03990896',
       'NCT03641755',
@@ -53,88 +55,20 @@ describe('getSortedResults', () => {
     ]);
   });
 
-  it('sorts by saved status from saved to unsaved trials', () => {
+  it('sorts by saved status from saved to unsaved trials, match likelihood in descending order, and distance in ascending order', () => {
     const parameters = {
-      sortingOptions: ['savedStatus'],
+      sortingOption: 'savedStatus',
       savedStudies: ['NCT03964532', 'NCT03959891'],
     };
     const actual = getSortedResults(results, parameters);
-    expect(actual.map(getTrialId)).toEqual([
-      'NCT03964532',
-      'NCT03959891',
-      'NCT02684032',
-      'NCT03473639',
-      'NCT03641755',
-      'NCT03990896',
-    ]);
-  });
-
-  it('sorts by match likelihood and distance', () => {
-    const parameters = {
-      sortingOptions: ['matchLikelihood', 'distance'],
-      savedStudies: [],
-    };
-    const actual = getSortedResults(results, parameters);
-    expect(actual.map(getLikelihood)).toEqual([undefined, 1, 0.46, 0.46, 0.46, 0]);
-    expect(actual.map(getMiles)).toEqual([0, 215, 17, 17, undefined, 118.9]);
-    expect(actual.map(getTrialId)).toEqual([
-      'NCT03990896',
-      'NCT03473639',
-      'NCT03641755',
-      'NCT03959891',
-      'NCT02684032',
-      'NCT03964532',
-    ]);
-  });
-
-  it('sorts by saved status and match likelihood', () => {
-    const parameters = {
-      sortingOptions: ['matchLikelihood', 'savedStatus'],
-      savedStudies: ['NCT03964532', 'NCT03959891'],
-    };
-    const actual = getSortedResults(results, parameters);
-    expect(actual.map(getLikelihood)).toEqual([0.46, 0, 1, undefined, 0.46, 0.46]);
+    expect(actual.map(getLikelihood)).toEqual([0.46, 0, 1, 0.5, 0.46, 0.46]);
+    expect(actual.map(getMiles)).toEqual([17, 118.9, 215, 0, 17, undefined]);
     expect(actual.map(getTrialId)).toEqual([
       'NCT03959891',
       'NCT03964532',
       'NCT03473639',
       'NCT03990896',
-      'NCT02684032',
       'NCT03641755',
-    ]);
-  });
-
-  it('sorts by saved status and distance', () => {
-    const parameters = {
-      sortingOptions: ['distance', 'savedStatus'],
-      savedStudies: ['NCT03964532', 'NCT03959891'],
-    };
-    const actual = getSortedResults(results, parameters);
-    expect(actual.map(getMiles)).toEqual([17, 118.9, 0, 17, 215, undefined]);
-    expect(actual.map(getTrialId)).toEqual([
-      'NCT03959891',
-      'NCT03964532',
-      'NCT03990896',
-      'NCT03641755',
-      'NCT03473639',
-      'NCT02684032',
-    ]);
-  });
-
-  it('sorts by saved status, match likelihood, and distance', () => {
-    const parameters = {
-      sortingOptions: ['matchLikelihood', 'distance', 'savedStatus'],
-      savedStudies: ['NCT03641755', 'NCT03964532'],
-    };
-    const actual = getSortedResults(results, parameters);
-    expect(actual.map(getLikelihood)).toEqual([0.46, 0, undefined, 1, 0.46, 0.46]);
-    expect(actual.map(getMiles)).toEqual([17, 118.9, 0, 215, 17, undefined]);
-    expect(actual.map(getTrialId)).toEqual([
-      'NCT03641755',
-      'NCT03964532',
-      'NCT03990896',
-      'NCT03473639',
-      'NCT03959891',
       'NCT02684032',
     ]);
   });

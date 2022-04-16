@@ -78,7 +78,7 @@ const SearchPage = ({
       <PatientCard patient={patient} />
       <SearchForm
         defaultValues={defaultValues}
-        fullSearchParams={{ sortingOptions: ['matchLikelihood'] } as FullSearchParameters}
+        fullSearchParams={{ sortingOption: 'matchLikelihood' } as FullSearchParameters}
       />
     </>
   );

@@ -1,9 +1,5 @@
 export type FilterFormValuesType = {
-  sortingOptions: {
-    matchLikelihood: boolean;
-    distance: boolean;
-    savedStatus: boolean;
-  };
+  sortingOption: 'matchLikelihood' | 'distance' | 'savedStatus';
   filterOptions: {
     recruitmentStatus: { [key: string]: boolean };
     trialPhase: { [key: string]: boolean };

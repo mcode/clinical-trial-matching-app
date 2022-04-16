@@ -7,6 +7,8 @@ import {
   FormControl,
   FormControlLabel,
   Grid,
+  Radio,
+  RadioGroup,
   Stack,
   Typography,
   useMediaQuery,
@@ -14,7 +16,7 @@ import {
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
-import { RecruitmentStatusCheckbox, SortingOptionCheckbox, StudyTypeCheckbox, TrialPhaseCheckbox } from './FormFields';
+import { RecruitmentStatusCheckbox, StudyTypeCheckbox, TrialPhaseCheckbox } from './FormFields';
 import { FilterFormValuesType } from './types';
 import { FilterParameters, FullSearchParameters, SortingParameters } from 'types/search-types';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
@@ -30,19 +32,19 @@ export type FilterFormProps = {
 };
 
 export const formDataToFilterQuery = ({
-  sortingOptions,
+  sortingOption,
   filterOptions: { recruitmentStatus, trialPhase, studyType },
 }: FilterFormValuesType): FilterParameters & SortingParameters => ({
-  sortingOptions: Object.keys(sortingOptions).filter(option => sortingOptions[option]),
+  sortingOption,
   recruitmentStatus: Object.keys(recruitmentStatus).filter(option => recruitmentStatus[option]),
   trialPhase: Object.keys(trialPhase).filter(option => trialPhase[option]),
   studyType: Object.keys(studyType).filter(option => studyType[option]),
 });
 
 const SORTING_OPTIONS = [
-  { name: 'matchLikelihood', label: 'Match Likelihood', defaultValue: true },
-  { name: 'distance', label: 'Distance', defaultValue: false },
-  { name: 'savedStatus', label: 'Saved Status', defaultValue: false },
+  { name: 'matchLikelihood', label: 'Match Likelihood' },
+  { name: 'distance', label: 'Distance' },
+  { name: 'savedStatus', label: 'Saved Status' },
 ] as const;
 
 const FilterForm = ({
@@ -80,20 +82,21 @@ const FilterForm = ({
 
             <FilterAccordion title="Sort By" defaultExpanded disabled={disabled}>
               <FormControl component="fieldset" disabled={disabled}>
-                {SORTING_OPTIONS.map(({ name, label, defaultValue }) => (
-                  <FormControlLabel
-                    key={name}
-                    control={
-                      <Controller
-                        name={`sortingOptions.${name}`}
-                        defaultValue={defaultValue}
-                        control={control}
-                        render={SortingOptionCheckbox}
-                      />
-                    }
-                    label={label}
-                  />
-                ))}
+                <Controller
+                  name="sortingOption"
+                  control={control}
+                  render={({ field }) => {
+                    const { onChange, value } = field;
+                    console.log('field', field);
+                    return (
+                      <RadioGroup onChange={onChange} value={value}>
+                        {SORTING_OPTIONS.map(({ name, label }) => (
+                          <FormControlLabel key={name} name={name} value={name} control={<Radio />} label={label} />
+                        ))}
+                      </RadioGroup>
+                    );
+                  }}
+                />
               </FormControl>
             </FilterAccordion>
           </Grid>
@@ -105,8 +108,9 @@ const FilterForm = ({
                   {(filterOptions?.recruitmentStatus || []).length !== 0 && (
                     <FilterAccordion title="Recruitment Status" defaultExpanded disabled={disabled}>
                       {filterOptions.recruitmentStatus.map(({ name, label, count }) => (
-                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={`${name}`}>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={name}>
                           <FormControlLabel
+                            key={name}
                             control={
                               <Controller
                                 name={`filterOptions.recruitmentStatus.${name}`}
@@ -116,6 +120,7 @@ const FilterForm = ({
                               />
                             }
                             label={label}
+                            sx={{ px: { xs: 0, sm: 2 } }}
                           />
                           <Typography textAlign="right">{count}</Typography>
                         </Stack>
@@ -125,8 +130,9 @@ const FilterForm = ({
                   {(filterOptions?.trialPhase || []).length !== 0 && (
                     <FilterAccordion title="Trial Phase" defaultExpanded disabled={disabled}>
                       {filterOptions.trialPhase.map(({ name, label = name, count }) => (
-                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={`${name}`}>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={name}>
                           <FormControlLabel
+                            key={name}
                             control={
                               <Controller
                                 name={`filterOptions.trialPhase.${name}`}
@@ -136,6 +142,7 @@ const FilterForm = ({
                               />
                             }
                             label={label}
+                            sx={{ px: { xs: 0, sm: 2 } }}
                           />
                           <Typography textAlign="right">{count}</Typography>
                         </Stack>
@@ -145,8 +152,9 @@ const FilterForm = ({
                   {(filterOptions?.studyType || []).length !== 0 && (
                     <FilterAccordion title="Study Type" defaultExpanded disabled={disabled}>
                       {filterOptions.studyType.map(({ name, label = name, count }) => (
-                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={`${name}`}>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" key={name}>
                           <FormControlLabel
+                            key={name}
                             control={
                               <Controller
                                 name={`filterOptions.studyType.${name}`}
@@ -156,6 +164,7 @@ const FilterForm = ({
                               />
                             }
                             label={label}
+                            sx={{ px: { xs: 0, sm: 2 } }}
                           />
                           <Typography textAlign="right">{count}</Typography>
                         </Stack>

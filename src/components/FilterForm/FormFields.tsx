@@ -1,16 +1,16 @@
 import { ReactElement } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
-import { Checkbox } from '@mui/material';
+import { Checkbox, Radio } from '@mui/material';
 
 import { FilterFormValuesType } from './types';
 
 // ----- FIELDS ----- //
 
-export const SortingOptionCheckbox = ({
-  field,
-}: {
-  field: ControllerRenderProps<FilterFormValuesType, `sortingOptions.${keyof FilterFormValuesType['sortingOptions']}`>;
-}): ReactElement => <Checkbox {...field} checked={field.value} data-testid="sortingOptions" value="on" />;
+// export const SortingOptionRadio = ({
+//   field,
+// }: {
+//   field: ControllerRenderProps<FilterFormValuesType, `${keyof FilterFormValuesType['sortingOption']}`>;
+// }): ReactElement => <Radio {...field} checked={field.value} data-testid="sortingOption" value="on" />;
 
 export const RecruitmentStatusCheckbox = ({
   field,

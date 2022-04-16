@@ -35,7 +35,7 @@ const FilterAccordion = ({ children, defaultExpanded, title, disabled }: FilterA
       </Typography>
     </AccordionSummary>
 
-    <AccordionDetails sx={{ py: 0, pl: { xs: 0, sm: 4 }, pr: { xs: 0, sm: 2 } }}>{children}</AccordionDetails>
+    <AccordionDetails sx={{ py: 0, px: { xs: 0, sm: 2 } }}>{children}</AccordionDetails>
   </Accordion>
 );
 

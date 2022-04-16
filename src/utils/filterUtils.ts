@@ -7,42 +7,58 @@ const getDistanceQuantity = (study: StudyDetailProps) =>
   study.closestFacilities?.[0]?.distance.units === 'miles' &&
   study.closestFacilities?.[0]?.distance?.quantity;
 
+const sortBySavedStatus = (savedStudies: string[], first: StudyDetailProps, second: StudyDetailProps) => {
+  // Saved to unsaved trials
+  const firstIsSaved = savedStudies.includes(first.trialId);
+  const secondIsSaved = savedStudies.includes(second.trialId);
+  if (!(firstIsSaved && secondIsSaved)) {
+    if (firstIsSaved) return -1;
+    if (secondIsSaved) return 1;
+  }
+  return 0;
+};
+
+const sortByMatchLikelihood = (first: StudyDetailProps, second: StudyDetailProps) => {
+  // Highest to lowest likelihood
+  const firstLikelihood = first.likelihood.score;
+  const secondLikelihood = second.likelihood.score;
+  if (firstLikelihood > secondLikelihood) return -1;
+  if (firstLikelihood < secondLikelihood) return 1;
+  return 0;
+};
+
+const sortByDistance = (first: StudyDetailProps, second: StudyDetailProps) => {
+  // Lowest to highest distance
+  const firstDistance = getDistanceQuantity(first);
+  const secondDistance = getDistanceQuantity(second);
+
+  // A trial may as well be infinitely distant if it has no distance
+  if (!(firstDistance === undefined && secondDistance === undefined)) {
+    if (firstDistance === undefined || firstDistance > secondDistance) return 1;
+    if (secondDistance === undefined || firstDistance < secondDistance) return -1;
+  }
+  return 0;
+};
+
 export const getSortedResults = (
   results: StudyDetailProps[],
-  { sortingOptions, savedStudies }: SortingParameters
+  { sortingOption, savedStudies }: SortingParameters
 ): StudyDetailProps[] => {
   const sortingFunction = (first: StudyDetailProps, second: StudyDetailProps) => {
-    // Saved to unsaved trials
-    if (sortingOptions.includes('savedStatus')) {
-      const firstIsSaved = savedStudies.includes(first.trialId);
-      const secondIsSaved = savedStudies.includes(second.trialId);
-      if (!(firstIsSaved && secondIsSaved)) {
-        if (firstIsSaved) return -1;
-        if (secondIsSaved) return 1;
-      }
-    }
+    const matchLikelihood = () => sortByMatchLikelihood(first, second);
+    const distance = () => sortByDistance(first, second);
+    const savedStatus = () => sortBySavedStatus(savedStudies, first, second);
 
-    // Highest to lowest likelihood
-    if (sortingOptions.includes('matchLikelihood')) {
-      // Even if a trial doesn't have a likelihood, it might be better for the patient to decide whether it's a match than for them to never see it
-      const firstLikelihood = first.likelihood?.score === undefined ? 1 : first.likelihood?.score;
-      const secondLikelihood = second.likelihood?.score === undefined ? 1 : second.likelihood?.score;
-      if (firstLikelihood > secondLikelihood) return -1;
-      if (firstLikelihood < secondLikelihood) return 1;
+    switch (sortingOption) {
+      case 'matchLikelihood':
+        return matchLikelihood() || distance() || savedStatus();
+      case 'distance':
+        return distance() || matchLikelihood() || savedStatus();
+      case 'savedStatus':
+        return savedStatus() || matchLikelihood() || distance();
+      default:
+        return 0;
     }
-
-    // Lowest to highest distance
-    if (sortingOptions.includes('distance')) {
-      const firstDistance = getDistanceQuantity(first);
-      const secondDistance = getDistanceQuantity(second);
-      // A trial may as well be infinitely distant if it has no distance
-      if (!(firstDistance === undefined && secondDistance === undefined)) {
-        if (firstDistance === undefined || firstDistance > secondDistance) return 1;
-        if (secondDistance === undefined || firstDistance < secondDistance) return -1;
-      }
-    }
-
-    return 0;
   };
 
   return results.slice().sort(sortingFunction);

@@ -56,7 +56,7 @@ const getLikelihood = (search: BundleEntrySearch): LikelihoodProps => {
   else if (score >= 0.01) return { text: 'Possible match', color: 'common.yellow', score };
   else if (score < 0.01) return { text: 'No match', color: 'common.red', score };
   // Even if a trial doesn't have a likelihood, it might be better for the patient to decide whether it's a match than for them to never see it
-  else return { text: 'High-likelihood match', color: 'common.green', score: 1 };
+  else return { text: 'Possible match', color: 'common.yellow', score: 0.5 };
 };
 
 const getPeriod = (study: ResearchStudy): string => {
