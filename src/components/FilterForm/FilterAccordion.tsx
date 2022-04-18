@@ -1,17 +1,55 @@
 import type { ReactElement, ReactNode } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, FormControlLabel, Stack, Typography } from '@mui/material';
 import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material';
+import { FilterOption, FilterOptions } from '@/queries/clinicalTrialSearchQuery';
+import { Control, Controller } from 'react-hook-form';
+import { FilterCheckbox } from './FormFields';
+import { FilterFormValuesType } from './types';
 
 export type FilterAccordionProps = {
-  children: ReactNode;
-  defaultExpanded?: boolean;
+  children?: ReactNode;
   title: string;
   disabled: boolean;
+  options?: FilterOption[];
+  control?: Control<FilterFormValuesType>;
+  controllerName?: keyof FilterOptions;
 };
 
-const FilterAccordion = ({ children, defaultExpanded, title, disabled }: FilterAccordionProps): ReactElement => (
+const renderFilterCheckboxes = (
+  options: FilterOption[],
+  controllerName: keyof FilterFormValuesType['filterOptions'],
+  control: Control<FilterFormValuesType>
+): ReactNode => {
+  return options.map(({ name, label = name, count }) => (
+    <Stack direction="row" justifyContent="space-between" alignItems="center" key={name}>
+      <FormControlLabel
+        key={name}
+        control={
+          <Controller
+            name={`filterOptions.${controllerName}.${name}`}
+            defaultValue={false}
+            control={control}
+            render={FilterCheckbox}
+          />
+        }
+        label={label}
+        sx={{ px: { xs: 0, sm: 2 } }}
+      />
+      <Typography textAlign="right">{count}</Typography>
+    </Stack>
+  ));
+};
+
+const FilterAccordion = ({
+  children,
+  title,
+  disabled,
+  options,
+  control,
+  controllerName,
+}: FilterAccordionProps): ReactElement => (
   <Accordion
-    defaultExpanded={defaultExpanded}
+    defaultExpanded
     disableGutters
     square
     disabled={disabled}
@@ -35,7 +73,11 @@ const FilterAccordion = ({ children, defaultExpanded, title, disabled }: FilterA
       </Typography>
     </AccordionSummary>
 
-    <AccordionDetails sx={{ py: 0, px: { xs: 0, sm: 2 } }}>{children}</AccordionDetails>
+    <AccordionDetails sx={{ py: 0, px: { xs: 0, sm: 2 } }}>
+      {(options || []).length !== 0 && control && controllerName
+        ? renderFilterCheckboxes(options, controllerName, control)
+        : children}
+    </AccordionDetails>
   </Accordion>
 );
 
