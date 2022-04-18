@@ -7,8 +7,6 @@ import {
   FormControl,
   FormControlLabel,
   Grid,
-  Radio,
-  RadioGroup,
   Stack,
   Typography,
   useMediaQuery,
@@ -16,12 +14,7 @@ import {
 } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 
-import {
-  RecruitmentStatusCheckbox,
-  // SortingOptionCheckbox,
-  StudyTypeCheckbox,
-  TrialPhaseCheckbox,
-} from './FormFields';
+import { FilterCheckbox, SortingRadioGroup } from './FormFields';
 import { FilterFormValuesType } from './types';
 import { FilterParameters, FullSearchParameters, SortingParameters } from 'types/search-types';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
@@ -45,12 +38,6 @@ export const formDataToFilterQuery = ({
   trialPhase: Object.keys(trialPhase).filter(option => trialPhase[option]),
   studyType: Object.keys(studyType).filter(option => studyType[option]),
 });
-
-const SORTING_OPTIONS = [
-  { name: 'matchLikelihood', label: 'Match Likelihood' },
-  { name: 'distance', label: 'Distance' },
-  { name: 'savedStatus', label: 'Saved Status' },
-] as const;
 
 const FilterForm = ({
   defaultValues,
@@ -86,18 +73,8 @@ const FilterForm = ({
             </Button>
 
             <FilterAccordion title="Sort By" defaultExpanded disabled={disabled}>
-              <FormControl component="fieldset" disabled={disabled}>
-                <Controller
-                  name="sortingOption"
-                  control={control}
-                  render={({ field }) => (
-                    <RadioGroup {...field} defaultValue={SORTING_OPTIONS[0].name}>
-                      {SORTING_OPTIONS.map(({ name, label }) => (
-                        <FormControlLabel key={name} value={name} control={<Radio />} label={label} />
-                      ))}
-                    </RadioGroup>
-                  )}
-                />
+              <FormControl disabled={disabled}>
+                <Controller name="sortingOption" control={control} render={SortingRadioGroup} />
               </FormControl>
             </FilterAccordion>
           </Grid>
@@ -117,7 +94,7 @@ const FilterForm = ({
                                 name={`filterOptions.recruitmentStatus.${name}`}
                                 defaultValue={false}
                                 control={control}
-                                render={RecruitmentStatusCheckbox}
+                                render={FilterCheckbox}
                               />
                             }
                             label={label}
@@ -139,7 +116,7 @@ const FilterForm = ({
                                 name={`filterOptions.trialPhase.${name}`}
                                 defaultValue={false}
                                 control={control}
-                                render={TrialPhaseCheckbox}
+                                render={FilterCheckbox}
                               />
                             }
                             label={label}
@@ -161,7 +138,7 @@ const FilterForm = ({
                                 name={`filterOptions.studyType.${name}`}
                                 defaultValue={false}
                                 control={control}
-                                render={StudyTypeCheckbox}
+                                render={FilterCheckbox}
                               />
                             }
                             label={label}

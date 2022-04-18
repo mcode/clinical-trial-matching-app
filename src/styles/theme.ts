@@ -74,15 +74,6 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           color: colors.blue,
-          '.Mui-checked': {
-            '&, & + .MuiFormControlLabel-label': {
-              fontWeight: 'bold',
-              color: colors.blue,
-              '&:hover': {
-                backgroundColor: lighten(colors.blue, 0.9),
-              },
-            },
-          },
         },
       },
     },
