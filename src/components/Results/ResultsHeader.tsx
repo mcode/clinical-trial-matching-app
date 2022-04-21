@@ -52,7 +52,7 @@ const ResultsHeader = ({
       </IconButton>
 
       <Stack direction="row">
-        {alreadyHasSavedStudies && (
+        {showExport && alreadyHasSavedStudies && (
           <Button sx={{ mr: 2 }} onClick={handleClearSavedStudies}>
             Clear saved trials
           </Button>
