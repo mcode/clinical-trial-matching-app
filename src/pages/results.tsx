@@ -30,6 +30,12 @@ import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import { ensureArray } from '@/components/Sidebar/Sidebar';
+import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
+import getConfig from 'next/config';
+
+const {
+  publicRuntimeConfig: { sendLocationData },
+} = getConfig();
 
 type ResultsPageProps = {
   patient: Patient;
@@ -89,11 +95,9 @@ const getParameters = <T extends Partial<FullSearchParameters>>(keys: (keyof T)[
   };
 };
 
-// Don't want to trigger search query if only filter parameters change
+// Don't want to trigger search query if only distance-filter parameters change
 const getSearchParams = getParameters<SearchParameters>([
   'matchingServices',
-  'zipcode',
-  'travelDistance',
   'age',
   'cancerType',
   'cancerSubtype',
@@ -101,7 +105,12 @@ const getSearchParams = getParameters<SearchParameters>([
   'stage',
   'ecogScore',
   'karnofskyScore',
+  // If we're not sending location data, we get all trials back
+  ...(sendLocationData ? ['zipcode' as keyof SearchParameters, 'travelDistance' as keyof SearchParameters] : []),
 ]);
+
+// Don't want to trigger distance-filter query if only search parameters change
+const getDistanceParams = getParameters<SearchParameters>(['zipcode', 'travelDistance']);
 
 // Don't want to trigger filter query if only pagination parameters change
 const getFilterParams = getParameters<FilterParameters & SortingParameters>([
@@ -124,11 +133,20 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     }
   );
 
-  const { isIdle, isLoading, data } = useQuery(
-    ['clinical-trials', searchData, getFilterParams(searchParams)], // the params is causing the filter query to not rerun!
-    () => clinicalTrialFilterQuery(searchData, searchParams),
+  const { data: distanceFilteredData } = useQuery(
+    ['clinical-trials', searchData, getDistanceParams(searchParams)],
+    () => clinicalTrialDistanceQuery(searchData, searchParams),
     {
       enabled: !!searchData && typeof window !== 'undefined',
+      refetchOnMount: false,
+    }
+  );
+
+  const { isIdle, isLoading, data } = useQuery(
+    ['clinical-trials', distanceFilteredData, getFilterParams(searchParams)],
+    () => clinicalTrialFilterQuery(distanceFilteredData, searchParams),
+    {
+      enabled: !!distanceFilteredData && typeof window !== 'undefined',
       refetchOnMount: false,
     }
   );
