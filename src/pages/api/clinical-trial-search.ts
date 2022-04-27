@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { SearchParameters } from 'types/search-types';
 import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
-import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
+import { parseNamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { addCancerHistologyMorphology, convertStringtoResource, addCancerType } from '@/utils/fhirFilter';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { BundleEntry, StudyDetailProps } from '@/components/Results';
@@ -38,17 +38,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
   const results = await callWrappers(chosenServices, patientBundle);
   res.status(200).json(results);
 };
-
-function parseNamedSNOMEDCode(code: string): NamedSNOMEDCode {
-  try {
-    const result: NamedSNOMEDCode = JSON.parse(code);
-    // Make sure this is valid
-    return typeof result.display === 'string' && typeof result.code === 'string' ? result : undefined;
-  } catch (ex) {
-    // JSON parse error, return undefined
-    return undefined;
-  }
-}
 
 /**
  * Builds bundle with search parameter and entries
