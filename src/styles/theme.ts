@@ -1,4 +1,4 @@
-import { createTheme, lighten } from '@mui/material/styles';
+import { createTheme, lighten, responsiveFontSizes } from '@mui/material/styles';
 import { createBreakpoints } from '@mui/system';
 
 declare module '@mui/material/styles/createPalette' {
@@ -32,22 +32,28 @@ const breakpoints = createBreakpoints({
 const theme = createTheme({
   breakpoints,
   components: {
+    MuiAccordion: {
+      styleOverrides: {
+        root: {
+          '&.borderless': {
+            boxShadow: 'none',
+            '&::before': { backgroundColor: 'unset' },
+          },
+        },
+      },
+    },
+    MuiAccordionSummary: {
+      styleOverrides: {
+        root: { margin: 0, flexDirection: 'row', minHeight: 'unset' },
+        content: { overflowWrap: 'break-word' },
+      },
+    },
     MuiAutocomplete: {
       styleOverrides: {
         root: {
           '.MuiInputBase-adornedStart': {
             paddingBottom: '5px',
             paddingTop: '28px',
-          },
-        },
-      },
-    },
-    MuiFilledInput: {
-      styleOverrides: {
-        root: {
-          backgroundColor: colors.white,
-          '&:hover': {
-            backgroundColor: lighten(colors.blue, 0.9),
           },
         },
       },
@@ -64,6 +70,13 @@ const theme = createTheme({
         },
       ],
     },
+    MuiCheckbox: {
+      styleOverrides: {
+        root: {
+          color: colors.blue,
+        },
+      },
+    },
     MuiChip: {
       styleOverrides: {
         root: { display: 'flex', flexDirection: 'row', height: 'unset' },
@@ -71,6 +84,30 @@ const theme = createTheme({
           overflowWrap: 'break-word',
           whiteSpace: 'normal',
           textOverflow: 'clip',
+        },
+      },
+    },
+    MuiDrawer: {
+      styleOverrides: {
+        root: {
+          '.MuiDrawer-paper': { boxSizing: 'border-box' },
+        },
+      },
+    },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colors.white,
+          '&:hover': {
+            backgroundColor: lighten(colors.blue, 0.9),
+          },
+        },
+      },
+    },
+    MuiRadio: {
+      styleOverrides: {
+        root: {
+          color: colors.blue,
         },
       },
     },
@@ -148,9 +185,6 @@ const theme = createTheme({
     fontWeightMedium: 600,
     h6: {
       fontWeight: 600,
-      [breakpoints.down('sm')]: {
-        fontSize: '1.2rem',
-      },
     },
     subtitle2: {
       fontWeight: 600,
@@ -164,4 +198,6 @@ const theme = createTheme({
   },
 });
 
-export default theme;
+const themeWithResponsiveFontSizes = responsiveFontSizes(theme);
+
+export default themeWithResponsiveFontSizes;

@@ -22,16 +22,19 @@ import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
-import { SearchParameters } from 'types/search-types';
+import { FilterParameters, FullSearchParameters, SearchParameters, SortingParameters } from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { uninitializedState, savedStudiesReducer, getSavedStudies } from '@/utils/resultsStateUtils';
 import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
+import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
+import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
+import { ensureArray } from '@/components/Sidebar/Sidebar';
 
 type ResultsPageProps = {
   patient: Patient;
   user: User;
-  searchParams: SearchParameters;
+  searchParams: FullSearchParameters;
 };
 
 const openTransition = (theme: Theme) =>
@@ -77,27 +80,76 @@ const MainContent = styled(Paper)`
   flex: 1 0 auto;
 `;
 
+const getParameters = <T extends Partial<FullSearchParameters>>(keys: (keyof T)[]) => {
+  return function (fullSearchParams: FullSearchParameters) {
+    return keys.reduce((obj, key) => {
+      obj[key] = fullSearchParams[key as string];
+      return obj;
+    }, {} as T);
+  };
+};
+
+// Don't want to trigger search query if only filter parameters change
+const getSearchParams = getParameters<SearchParameters>([
+  'matchingServices',
+  'zipcode',
+  'travelDistance',
+  'age',
+  'cancerType',
+  'cancerSubtype',
+  'metastasis',
+  'stage',
+  'ecogScore',
+  'karnofskyScore',
+]);
+
+// Don't want to trigger filter query if only pagination parameters change
+const getFilterParams = getParameters<FilterParameters & SortingParameters>([
+  'recruitmentStatus',
+  'trialPhase',
+  'studyType',
+  'sortingOption',
+  'savedStudies',
+]);
+
 const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
-  const { isIdle, isLoading, data } = useQuery(
-    ['clinical-trials', searchParams, patient],
+
+  const { data: searchData } = useQuery(
+    ['clinical-trials', getSearchParams(searchParams), patient],
     () => clinicalTrialSearchQuery(patient, user, searchParams),
     {
       enabled: typeof window !== 'undefined',
       refetchOnMount: false,
     }
   );
+
+  const { isIdle, isLoading, data } = useQuery(
+    ['clinical-trials', searchData, getFilterParams(searchParams)], // the params is causing the filter query to not rerun!
+    () => clinicalTrialFilterQuery(searchData, searchParams),
+    {
+      enabled: !!searchData && typeof window !== 'undefined',
+      refetchOnMount: false,
+    }
+  );
+
+  // TODO: pagination query
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(true);
   const theme = useTheme();
   const toggleDrawer = () => setOpen(!open);
   const toggleMobileDrawer = () => setMobileOpen(!mobileOpen);
-  const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const drawerWidth = getDrawerWidth(isExtraSmallScreen);
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const drawerWidth = getDrawerWidth(isSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
   const entries = useMemo(() => data?.results as StudyDetailProps[], [data]);
-  const [state, dispatch] = useReducer(savedStudiesReducer, uninitializedState);
+  const filterOptions = useMemo(() => data?.filterOptions as FilterOptions, [data]);
+  const [state, dispatch] = useReducer(
+    savedStudiesReducer,
+    (searchParams.savedStudies && new Set<string>(ensureArray(searchParams.savedStudies))) || uninitializedState
+  );
 
   const alreadyHasSavedStudies = state.size !== 0;
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
@@ -137,41 +189,38 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
             sx={{
               display: { xs: 'block', lg: 'none' },
               width: drawerWidth,
-              '& .MuiDrawer-paper': {
-                boxSizing: 'border-box',
-                width: drawerWidth,
-              },
+              '& .MuiDrawer-paper': { width: drawerWidth },
             }}
             variant="temporary"
             open={mobileOpen}
           >
-            <Sidebar patient={patient} disabled={isIdle || isLoading} />
+            <Sidebar
+              patient={patient}
+              disabled={isIdle || isLoading}
+              savedStudies={state}
+              filterOptions={filterOptions}
+            />
           </Drawer>
 
           <Drawer
             sx={{
               display: { xs: 'none', lg: 'block' },
               width: drawerWidth,
-              '& .MuiDrawer-paper': {
-                boxSizing: 'border-box',
-                position: 'relative',
-                width: drawerWidth,
-              },
+              '& .MuiDrawer-paper': { position: 'relative', width: drawerWidth },
             }}
             variant="persistent"
             anchor="left"
             open={open}
           >
-            <Sidebar patient={patient} disabled={isIdle || isLoading} />
+            <Sidebar
+              patient={patient}
+              disabled={isIdle || isLoading}
+              savedStudies={state}
+              filterOptions={filterOptions}
+            />
           </Drawer>
 
-          <SlidingStack
-            alignItems="stretch"
-            flexGrow={1}
-            open={open}
-            shrink={isExtraSmallScreen}
-            sx={{ overflowY: 'auto' }}
-          >
+          <SlidingStack alignItems="stretch" flexGrow={1} open={open} shrink={isSmallScreen} sx={{ overflowY: 'auto' }}>
             <ResultsHeader
               isOpen={open}
               toggleDrawer={toggleDrawer}

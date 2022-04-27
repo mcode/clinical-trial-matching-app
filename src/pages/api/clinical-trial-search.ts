@@ -34,8 +34,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     searchParams.matchingServices && Array.isArray(searchParams.matchingServices)
       ? searchParams.matchingServices
       : [searchParams.matchingServices];
-  const results = await callWrappers(chosenServices, patientBundle);
 
+  const results = await callWrappers(chosenServices, patientBundle);
   res.status(200).json(results);
 };
 
@@ -157,7 +157,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     });
   }
 
-  const bioMarkersParm = searchParams.bioMarkers;
+  const bioMarkersParm = searchParams.biomarkers;
   if (bioMarkersParm) {
     const id = 'mcode-tumor-marker';
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;

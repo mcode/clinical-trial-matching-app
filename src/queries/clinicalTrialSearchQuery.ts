@@ -7,9 +7,18 @@ export type Results = {
   entry: StudyDetailProps[];
 };
 
+export type FilterOptions = {
+  recruitmentStatus: FilterOption[];
+  trialPhase: FilterOption[];
+  studyType: FilterOption[];
+};
+
+export type FilterOption = { name: string; label?: string; count: number };
+
 export type ResultsResponse = {
   results?: StudyDetailProps[];
   errors?: ErrorResponse[];
+  filterOptions?: FilterOptions;
 };
 
 export type ErrorResponse = {

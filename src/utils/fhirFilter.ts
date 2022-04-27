@@ -102,7 +102,7 @@ export function convertStringtoResource({
   codingSystemCode,
 }: {
   bundle: Bundle;
-  valueString: string;
+  valueString: string | string[];
   id: string;
   profile_value: string;
   codingSystem: string;

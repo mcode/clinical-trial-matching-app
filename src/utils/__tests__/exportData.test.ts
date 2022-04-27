@@ -14,6 +14,7 @@ describe('unpackStudies', () => {
           likelihood: {
             text: 'Unknown likelihood',
             color: 'common.grayLight',
+            score: undefined,
           },
         },
       ])
@@ -47,7 +48,7 @@ describe('unpackStudies', () => {
           trialId: 'EXAMPLE',
           title: 'Example Research Study',
           description: 'A test research study object for testing this feature.',
-          status: { text: 'active', color: 'common.red' },
+          status: { name: 'active', label: 'Active', color: 'common.red' },
           phase: 'Active',
           conditions: ['condition-1', 'condition-2'],
           source: 'Unknown',
@@ -56,6 +57,7 @@ describe('unpackStudies', () => {
           likelihood: {
             text: 'Possible match',
             color: 'common.yellow',
+            score: 0.5,
           },
           period: 'Jan 2, 2021 - Mar 4, 2021',
           sponsor: {
@@ -68,10 +70,13 @@ describe('unpackStudies', () => {
               email: 'email@example.com',
             },
           ],
-          type: 'Example Type',
+          type: { name: 'Example Type' },
           closestFacilities: [
             {
-              distance: 'Unknown distance',
+              distance: {
+                quantity: 2.0,
+                units: 'miles',
+              },
             },
           ],
           locations: [
@@ -112,7 +117,7 @@ describe('unpackStudies', () => {
           'Match Likelihood': 'Possible match',
           Period: 'Jan 2, 2021 - Mar 4, 2021',
           Title: 'Example Research Study',
-          'Overall Status': 'active',
+          'Overall Status': 'Active',
           Phase: 'Active',
           Conditions: '["condition-1","condition-2"]',
           'Study Type': 'Example Type',

@@ -24,6 +24,7 @@ import {
   User,
 } from '@/utils/fhirConversionUtils';
 import { MCODE_STRUCTURE_DEFINITION } from '@/utils/fhirConstants';
+import { FullSearchParameters } from 'types/search-types';
 
 type SearchPageProps = {
   patient: Patient;
@@ -75,7 +76,10 @@ const SearchPage = ({
 
       <Header userName={user?.name} />
       <PatientCard patient={patient} />
-      <SearchForm defaultValues={defaultValues} />
+      <SearchForm
+        defaultValues={defaultValues}
+        fullSearchParams={{ sortingOption: 'matchLikelihood' } as FullSearchParameters}
+      />
     </>
   );
 };

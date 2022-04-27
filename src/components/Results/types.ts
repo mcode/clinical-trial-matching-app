@@ -1,9 +1,19 @@
-import { Location } from 'fhir/r4';
+import { Location, ResearchStudy } from 'fhir/r4';
 import { MouseEventHandler } from 'react';
 
-export type ContactProps = { name?: string; phone?: string; email?: string; distance?: string };
-export type LikelihoodProps = { text: string; color: string };
-export type StatusProps = { text: string; color: string };
+export type ContactProps = {
+  name?: string;
+  phone?: string;
+  email?: string;
+  distance?: { quantity: number; units: string };
+};
+export type LikelihoodProps = { text: string; color: string; score: number };
+export type StatusProps = {
+  name: ResearchStudy['status'] | 'unknown-recruitment-status';
+  label: string;
+  color: string;
+};
+export type TypeProps = { name: string; label?: string };
 export type StudyDetail = { header: string; body: string };
 
 export type Intervention = {
@@ -33,7 +43,7 @@ export type StudyDetailProps = {
   contacts?: ContactProps[];
   status?: StatusProps;
   title?: string;
-  type?: string;
+  type?: TypeProps;
   arms?: ArmGroup[];
   closestFacilities?: ContactProps[];
   locations?: Location[];

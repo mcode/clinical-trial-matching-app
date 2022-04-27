@@ -38,7 +38,7 @@ const StudyContact = ({ contact, title }: StudyContactProps): ReactElement => (
     {contact.distance && (
       <Stack alignItems="center" direction="row" ml={4}>
         <LocationOnIcon fontSize="small" sx={{ marginRight: 1 }} />
-        {contact.distance}
+        {`${contact.distance.quantity} ${contact.distance.units}`}
       </Stack>
     )}
   </Stack>

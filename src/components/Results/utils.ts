@@ -1,6 +1,14 @@
 import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy, Location, PlanDefinition } from 'fhir/r4';
 import { format } from 'date-fns';
-import { BundleEntry, ContactProps, LikelihoodProps, StatusProps, StudyDetail, StudyDetailProps } from './types';
+import {
+  BundleEntry,
+  ContactProps,
+  LikelihoodProps,
+  StatusProps,
+  StudyDetail,
+  StudyDetailProps,
+  TypeProps,
+} from './types';
 import { MainRowKeys } from '@/utils/exportData';
 import {
   getZipcodeCoordinates,
@@ -44,10 +52,11 @@ const getKeywords = (study: ResearchStudy): string[] => study.keyword?.map(({ te
 
 const getLikelihood = (search: BundleEntrySearch): LikelihoodProps => {
   const score = search?.score;
-  if (score >= 0.75) return { text: 'High-likelihood match', color: 'common.green' };
-  else if (score >= 0.01) return { text: 'Possible match', color: 'common.yellow' };
-  else if (score < 0.01) return { text: 'No match', color: 'common.red' };
-  else return { text: 'Unknown likelihood', color: 'common.grayLight' };
+  if (score >= 0.75) return { text: 'High-likelihood match', color: 'common.green', score };
+  else if (score >= 0.01) return { text: 'Possible match', color: 'common.yellow', score };
+  else if (score < 0.01) return { text: 'No match', color: 'common.red', score };
+  // Even if a trial doesn't have a likelihood, it might be better for the patient to decide whether it's a match than for them to never see it
+  else return { text: 'Possible match', color: 'common.yellow', score: 0.5 };
 };
 
 const getPeriod = (study: ResearchStudy): string => {
@@ -56,7 +65,7 @@ const getPeriod = (study: ResearchStudy): string => {
   return startDate ? (endDate ? `${startDate} - ${endDate}` : startDate) : null;
 };
 
-const getPhase = (study: ResearchStudy): string => study.phase?.text;
+const getPhase = (study: ResearchStudy): string => study.phase?.text || 'Unknown Trial Phase';
 
 const getContacts = (study: ResearchStudy): ContactProps[] => {
   return study?.contact?.map(getContact) || [];
@@ -71,34 +80,45 @@ const getSponsor = (study: ResearchStudy): ContactProps => {
 };
 
 const getStatus = (study: ResearchStudy): StatusProps => {
-  const status = study.status?.replace(/-/g, ' ');
+  const label = study.status
+    ?.replace(/-/g, ' ')
+    .replace(/\w+\b(?<!\b(to|and))/g, word => word[0].toUpperCase() + word.slice(1));
+
   switch (study.status) {
     case 'active':
     case 'administratively-completed':
     case 'approved':
     case 'completed':
-      return { text: status, color: 'common.green' };
+      return { name: study.status, label, color: 'common.green' };
     case 'in-review':
-      return { text: status, color: 'common.yellow' };
+      return { name: study.status, label, color: 'common.yellow' };
     case 'closed-to-accrual':
     case 'closed-to-accrual-and-intervention':
     case 'disapproved':
     case 'temporarily-closed-to-accrual':
     case 'temporarily-closed-to-accrual-and-intervention':
     case 'withdrawn':
-      return { text: status, color: 'common.red' };
+      return { name: study.status, label, color: 'common.red' };
     default:
-      return { text: status, color: 'common.gray' };
+      return { name: 'unknown-recruitment-status', label: 'Unknown Recruitment Status', color: 'common.gray' };
   }
 };
 
 const getTitle = (study: ResearchStudy): string => study.title;
 
-const getType = (study: ResearchStudy): string => {
+const getType = (study: ResearchStudy): TypeProps => {
   for (const { text } of study.category || []) {
     const match = text.match(/Study Type: (.+)$/)?.[1];
-    if (match) return match;
+    // https://react-hook-form.com/api/useform/register/
+    // React Hook Form uses array brackets and periods to create nested structures.
+    // We use the study type to create checkbox filters in the Sidebar.
+    // Unless we remove those characters, passing in the Study Type as the Controller.name will break its state.
+    const matchWithoutIllegalCharacters = match?.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
+    if (matchWithoutIllegalCharacters) {
+      return { name: matchWithoutIllegalCharacters, label: match };
+    }
   }
+  return { name: 'Unknown Study Type' };
 };
 
 const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
@@ -149,16 +169,30 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
   return getCoordinatesForLocations(locations)
-    .map(({ name, telecom, position }) => ({
-      contact: { name, telecom },
-      distance: getDistanceBetweenPoints(origin, getLocationCoordinates({ position } as Location)),
-    }))
-    .sort((first, second) => first.distance - second.distance)
-    .slice(0, numOfFacilities)
-    .map(({ contact, distance }) => ({
-      ...getContact(contact),
-      distance: distance !== null ? `${distance} miles` : 'Unknown distance',
-    }));
+    .map(({ name, telecom, position }) => {
+      const positionCoordinates = getLocationCoordinates({ position } as Location);
+      const quantity = getDistanceBetweenPoints(origin, positionCoordinates);
+
+      return {
+        contact: { name, telecom },
+        ...(origin && quantity
+          ? {
+              distance: {
+                quantity,
+                units: 'miles',
+              },
+            }
+          : {}),
+      };
+    })
+    .sort((first, second) => {
+      if (first.distance?.quantity && second.distance?.quantity) {
+        return first.distance.quantity - second.distance.quantity;
+      } else {
+        return 0;
+      }
+    })
+    .slice(0, numOfFacilities);
 };
 
 export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
