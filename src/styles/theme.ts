@@ -104,6 +104,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiPagination: {
+      styleOverrides: {
+        root: {
+          marginLeft: '36px',
+        },
+      },
+    },
     MuiRadio: {
       styleOverrides: {
         root: {
@@ -130,6 +137,22 @@ const theme = createTheme({
           },
         },
       ],
+    },
+    MuiTablePagination: {
+      styleOverrides: {
+        spacer: { flex: 'none' },
+        toolbar: {
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          [breakpoints.between('xs', 'lg')]: { justifyContent: 'center' },
+          [breakpoints.up('lg')]: { justifyContent: 'flex-end' },
+        },
+        selectLabel: { display: 'flex' },
+        input: { display: 'flex' },
+        displayedRows: { display: 'flex' },
+        actions: { display: 'flex' },
+      },
     },
     MuiTableRow: {
       styleOverrides: {

@@ -19,6 +19,7 @@ export type ResultsResponse = {
   results?: StudyDetailProps[];
   errors?: ErrorResponse[];
   filterOptions?: FilterOptions;
+  total?: number;
 };
 
 export type ErrorResponse = {

@@ -4,6 +4,9 @@ import Results, { ResultsProps } from '../Results';
 import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { StudyDetailProps } from '../types';
 import { uninitializedState } from '@/utils/resultsStateUtils';
+import { createMockRouter } from '@/utils/testUtils';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
+import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -19,23 +22,47 @@ describe('<Results />', () => {
   const mockedOnClick = jest.fn();
   const handleSaveStudy = jest.fn(() => mockedOnClick);
 
+  const router = createMockRouter({
+    query: {
+      page: DEFAULT_PAGE,
+      pageSize: DEFAULT_PAGE_SIZE,
+    },
+  });
+
   const ComponentWithoutSelectedStudies = (props: Partial<ResultsProps>) => (
-    <Results entries={entries} state={uninitializedState} handleSaveStudy={handleSaveStudy} {...props} />
+    <Results
+      response={{ results: entries, total: 123 }}
+      state={uninitializedState}
+      handleSaveStudy={handleSaveStudy}
+      {...props}
+    />
   );
 
   const ComponentWithSelectedStudies = (props: Partial<ResultsProps>) => (
     <Results
-      entries={entries}
+      response={{ results: entries, total: 123 }}
       state={new Set<string>(['NCT03473639', 'NCT03964532'])}
       handleSaveStudy={handleSaveStudy}
       {...props}
     />
   );
 
-  it('renders save buttons for all studies when no studies are selected', () => {
-    render(<ComponentWithoutSelectedStudies />);
+  it('renders the total number of studies', () => {
+    render(
+      <RouterContext.Provider value={router}>
+        <ComponentWithoutSelectedStudies />
+      </RouterContext.Provider>
+    );
 
-    expect(screen.getByRole('heading', { name: /we found 3 matching trials\.\.\./i })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: /we found 123 matching trials\.\.\./i })).toBeInTheDocument();
+  });
+
+  it('renders studies and save buttons for all studies when no studies are selected', () => {
+    render(
+      <RouterContext.Provider value={router}>
+        <ComponentWithoutSelectedStudies />
+      </RouterContext.Provider>
+    );
 
     const saveButtons = screen.queryAllByRole('button', { name: /^save study$/i });
     expect(saveButtons.length).toBe(3);
@@ -43,10 +70,12 @@ describe('<Results />', () => {
     expect(mockedOnClick).toHaveBeenCalledTimes(1);
   });
 
-  it('renders an unsave button for every selected study', () => {
-    render(<ComponentWithSelectedStudies />);
-
-    expect(screen.getByRole('heading', { name: /we found 3 matching trials\.\.\./i })).toBeInTheDocument();
+  it('renders studies and an unsave button for every selected study', () => {
+    render(
+      <RouterContext.Provider value={router}>
+        <ComponentWithSelectedStudies />
+      </RouterContext.Provider>
+    );
 
     const saveButtons = screen.queryAllByRole('button', { name: /^save study$/i });
     expect(saveButtons.length).toBe(1);

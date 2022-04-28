@@ -25,6 +25,7 @@ import {
 } from '@/utils/fhirConversionUtils';
 import { MCODE_STRUCTURE_DEFINITION } from '@/utils/fhirConstants';
 import { FullSearchParameters } from 'types/search-types';
+import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 
 type SearchPageProps = {
   patient: Patient;
@@ -78,7 +79,9 @@ const SearchPage = ({
       <PatientCard patient={patient} />
       <SearchForm
         defaultValues={defaultValues}
-        fullSearchParams={{ sortingOption: 'matchLikelihood' } as FullSearchParameters}
+        fullSearchParams={
+          { sortingOption: 'matchLikelihood', page: DEFAULT_PAGE, pageSize: DEFAULT_PAGE_SIZE } as FullSearchParameters
+        }
       />
     </>
   );

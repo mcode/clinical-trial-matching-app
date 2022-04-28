@@ -5,7 +5,7 @@ import { FilterParameters, SortingParameters } from 'types/search-types';
 import { ResultsResponse } from './clinicalTrialSearchQuery';
 
 const clinicalTrialFilterQuery = async (
-  { results, errors }: ResultsResponse,
+  response: ResultsResponse,
   searchParams: ParsedUrlQuery
 ): Promise<ResultsResponse> => {
   const sortingParameters: SortingParameters = {
@@ -18,13 +18,13 @@ const clinicalTrialFilterQuery = async (
     studyType: ensureArray(searchParams.studyType),
   };
 
-  const sorted = getSortedResults(results, sortingParameters);
+  const sorted = getSortedResults(response.results, sortingParameters);
   const filtered = getFilteredResults(sorted, filterParameters);
 
   // Dynamically generate filter options
   const filterOptions = getFilterOptions(sorted, filterParameters);
 
-  return { results: filtered, errors, filterOptions };
+  return { ...response, results: filtered, filterOptions };
 };
 
 export default clinicalTrialFilterQuery;

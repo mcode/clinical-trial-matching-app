@@ -12,6 +12,7 @@ import { formDataToSearchQuery } from '../SearchForm/SearchForm';
 import { SavedStudiesState } from '../Results';
 import { FullSearchParameters } from 'types/search-types';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
+import { DEFAULT_PAGE } from '@/queries/clinicalTrialPaginationQuery';
 
 type SidebarProps = {
   patient: Patient;
@@ -88,6 +89,8 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
     ...formDataToSearchQuery(defaultSearchValues),
     ...formDataToFilterQuery(defaultFilterValues),
     savedStudies: Array.from(savedStudies),
+    page: DEFAULT_PAGE,
+    pageSize: query.pageSize as string,
   };
 
   return (

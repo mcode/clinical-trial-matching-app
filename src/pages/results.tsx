@@ -22,7 +22,13 @@ import styled from '@emotion/styled';
 import Header from '@/components/Header';
 import Sidebar from '@/components/Sidebar';
 import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
-import { FilterParameters, FullSearchParameters, SearchParameters, SortingParameters } from 'types/search-types';
+import {
+  FilterParameters,
+  FullSearchParameters,
+  PaginationParameters,
+  SearchParameters,
+  SortingParameters,
+} from 'types/search-types';
 import { clinicalTrialSearchQuery } from '@/queries';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { uninitializedState, savedStudiesReducer, getSavedStudies } from '@/utils/resultsStateUtils';
@@ -32,6 +38,7 @@ import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import { ensureArray } from '@/components/Sidebar/Sidebar';
 import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import getConfig from 'next/config';
+import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
 
 const {
   publicRuntimeConfig: { sendLocationData },
@@ -121,6 +128,8 @@ const getFilterParams = getParameters<FilterParameters & SortingParameters>([
   'savedStudies',
 ]);
 
+const getPaginationParams = getParameters<PaginationParameters>(['page', 'pageSize']);
+
 const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
 
@@ -142,7 +151,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     }
   );
 
-  const { isIdle, isLoading, data } = useQuery(
+  const { data: filteredData } = useQuery(
     ['clinical-trials', distanceFilteredData, getFilterParams(searchParams)],
     () => clinicalTrialFilterQuery(distanceFilteredData, searchParams),
     {
@@ -151,7 +160,14 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     }
   );
 
-  // TODO: pagination query
+  const { isIdle, isLoading, data } = useQuery(
+    ['clinical-trials', filteredData, getPaginationParams(searchParams)],
+    () => clinicalTrialPaginationQuery(filteredData, searchParams),
+    {
+      enabled: !!filteredData && typeof window !== 'undefined',
+      refetchOnMount: false,
+    }
+  );
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(true);
@@ -162,7 +178,6 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const drawerWidth = getDrawerWidth(isSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const entries = useMemo(() => data?.results as StudyDetailProps[], [data]);
   const filterOptions = useMemo(() => data?.filterOptions as FilterOptions, [data]);
   const [state, dispatch] = useReducer(
     savedStudiesReducer,
@@ -172,9 +187,9 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const alreadyHasSavedStudies = state.size !== 0;
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
   const handleExportSavedStudies = (): void => {
-    const savedStudies = getSavedStudies(entries, state);
-    const data: Record<string, string>[] = unpackStudies(savedStudies);
-    exportSpreadsheetData(data, 'clinicalTrials');
+    const savedStudies = getSavedStudies(data.results, state);
+    const spreadsheetData: Record<string, string>[] = unpackStudies(savedStudies);
+    exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
   };
   const handleSaveStudy =
     (entry: StudyDetailProps): SaveStudyHandler =>
@@ -268,7 +283,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                   </Typography>
                 </Stack>
               )}
-              {!isIdle && !isLoading && <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} />}
+              {!isIdle && !isLoading && <Results response={data} state={state} handleSaveStudy={handleSaveStudy} />}
               {!isIdle && !isLoading && data?.errors?.length > 0 && (
                 <Snackbar
                   open={alertOpen}
