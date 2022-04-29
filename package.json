@@ -96,5 +96,8 @@
       "last 2 safari versions",
       "last 2 edge versions"
     ]
+  },
+  "optionalDependencies": {
+    "connect-sqlite3": "^0.9.13"
   }
 }

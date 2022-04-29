@@ -15,13 +15,26 @@ app
 
     const server = express();
 
-    server.use(
-      session({
-        secret: serverRuntimeConfig.sessionSecretKey,
-        resave: false,
-        saveUninitialized: false,
-      })
-    );
+    let sessionOptions = {
+      secret: serverRuntimeConfig.sessionSecretKey,
+      resave: false,
+      saveUninitialized: false,
+    };
+    if (!dev) {
+      // If in production mode, use the sqlite session store
+      try {
+        const SQLiteStore = require('connect-sqlite3')(session);
+        sessionOptions.store = new SQLiteStore({
+          db: 'sessions.db',
+        });
+      } catch (ex) {
+        console.error(
+          'Unable to load connect-sqlite3 - it is marked optional but is recommended for when running in production'
+        );
+        console.error(ex);
+      }
+    }
+    server.use(session(sessionOptions));
 
     server.all('*', function nextMiddleware(req, res) {
       return handle(req, res);
