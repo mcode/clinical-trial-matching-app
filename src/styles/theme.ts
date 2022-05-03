@@ -104,13 +104,6 @@ const theme = createTheme({
         },
       },
     },
-    MuiPagination: {
-      styleOverrides: {
-        root: {
-          marginLeft: '36px',
-        },
-      },
-    },
     MuiRadio: {
       styleOverrides: {
         root: {
@@ -145,12 +138,20 @@ const theme = createTheme({
           flexDirection: 'row',
           flexWrap: 'wrap',
           alignItems: 'center',
-          [breakpoints.between('xs', 'lg')]: { justifyContent: 'center' },
+          [breakpoints.between('xs', 'lg')]: { justifyContent: 'center', padding: 0 },
           [breakpoints.up('lg')]: { justifyContent: 'flex-end' },
         },
-        selectLabel: { display: 'flex' },
+        selectLabel: {
+          display: 'flex',
+          [breakpoints.between('xs', 'md')]: { marginLeft: 0 },
+          [breakpoints.up('md')]: { marginLeft: '36px' },
+        },
         input: { display: 'flex' },
-        displayedRows: { display: 'flex' },
+        displayedRows: {
+          display: 'flex',
+          [breakpoints.between('xs', 'md')]: { marginRight: 0 },
+          [breakpoints.up('md')]: { marginRight: '36px' },
+        },
         actions: { display: 'flex' },
       },
     },
