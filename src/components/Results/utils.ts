@@ -31,6 +31,8 @@ const getConditions = (study: ResearchStudy): string[] => study.condition?.map((
 
 export const getDetails = (studyProps: StudyDetailProps): StudyDetail[] => {
   const details = [
+    { header: MainRowKeys.phase, body: studyProps.phase },
+    { header: MainRowKeys.type, body: studyProps.type?.name || studyProps.type?.label },
     { header: MainRowKeys.conditions, body: studyProps.conditions.join(', ') },
     { header: MainRowKeys.trialId, body: studyProps.trialId },
     { header: MainRowKeys.source, body: studyProps.source },

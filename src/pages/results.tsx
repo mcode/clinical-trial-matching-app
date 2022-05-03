@@ -161,7 +161,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const handleSaveStudy =
     (entry: StudyDetailProps): SaveStudyHandler =>
     event => {
-      // When the save button is in the accordion actions, we don't want it to expand/collapse the accordion.
+      // We don't want to expand/collapse the accordion when triggering the save button.
       event.stopPropagation();
       dispatch({ type: 'toggleSave', value: entry });
     };
