@@ -1,4 +1,4 @@
-import { ReactElement, useMemo, useReducer, useState, SyntheticEvent } from 'react';
+import { MutableRefObject, ReactElement, SyntheticEvent, useMemo, useReducer, useRef, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { GetServerSideProps } from 'next';
@@ -151,9 +151,9 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     (searchParams.savedStudies && new Set<string>(ensureArray(searchParams.savedStudies))) || uninitializedState
   );
 
-  const alreadyHasSavedStudies = state.size !== 0;
+  const hasSavedStudies = state.size !== 0;
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
-  const handleExportSavedStudies = (): void => {
+  const handleExportStudies = (): void => {
     const savedStudies = getSavedStudies(entries, state);
     const data: Record<string, string>[] = unpackStudies(savedStudies);
     exportSpreadsheetData(data, 'clinicalTrials');
@@ -172,6 +172,8 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     }
     setAlertOpen(false);
   };
+
+  const scrollableParent: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
 
   return (
     <>
@@ -220,24 +222,23 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
             />
           </Drawer>
 
-          <SlidingStack alignItems="stretch" flexGrow={1} open={open} shrink={isSmallScreen} sx={{ overflowY: 'auto' }}>
+          <SlidingStack
+            ref={scrollableParent}
+            alignItems="stretch"
+            flexGrow={1}
+            open={open}
+            shrink={isSmallScreen}
+            sx={{ overflowY: 'auto' }}
+          >
             <ResultsHeader
               isOpen={open}
-              toggleDrawer={toggleDrawer}
-              toggleMobileDrawer={toggleMobileDrawer}
-              alreadyHasSavedStudies={alreadyHasSavedStudies}
-              handleClearSavedStudies={handleClearSavedStudies}
-              handleExportStudies={handleExportSavedStudies}
+              {...{ toggleMobileDrawer, hasSavedStudies, handleClearSavedStudies, handleExportStudies, toggleDrawer }}
               showExport={!isIdle && !isLoading}
             />
             <MainContent
               elevation={0}
               sx={[
-                {
-                  flex: '1 1 auto',
-                  overflowY: 'auto',
-                  p: 3,
-                },
+                { flex: '1 1 auto', overflowY: 'auto', p: 3 },
                 (isIdle || isLoading) && { display: 'flex', justifyContent: 'center', alignItems: 'center' },
               ]}
               square
@@ -250,7 +251,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                   </Typography>
                 </Stack>
               )}
-              {!isIdle && !isLoading && <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} />}
+              {!isIdle && !isLoading && <Results {...{ entries, state, handleSaveStudy, scrollableParent }} />}
               {!isIdle && !isLoading && data?.errors?.length > 0 && (
                 <Snackbar
                   open={alertOpen}

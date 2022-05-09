@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { MutableRefObject, ReactElement } from 'react';
 import { Typography } from '@mui/material';
 
 import Study from './Study';
@@ -10,6 +10,7 @@ export type ResultsProps = {
   state: SavedStudiesState;
   errors?: ErrorResponse[];
   handleSaveStudy: (study: StudyDetailProps) => SaveStudyHandler;
+  scrollableParent: MutableRefObject<HTMLElement>;
 };
 
 export type ErrorResponse = {
@@ -19,7 +20,7 @@ export type ErrorResponse = {
   error?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
-const Results = ({ entries, state, handleSaveStudy }: ResultsProps): ReactElement => (
+const Results = ({ entries, state, handleSaveStudy, ...props }: ResultsProps): ReactElement => (
   <>
     <Typography fontWeight="normal" mb={2} variant="h6">
       We found
@@ -31,6 +32,7 @@ const Results = ({ entries, state, handleSaveStudy }: ResultsProps): ReactElemen
 
     {entries.map((entry: StudyDetailProps) => (
       <Study
+        {...props}
         key={entry.trialId}
         entry={entry}
         handleSaveStudy={handleSaveStudy(entry)}

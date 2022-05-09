@@ -4,6 +4,8 @@ import Results, { ResultsProps } from '../Results';
 import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { StudyDetailProps } from '../types';
 import { uninitializedState } from '@/utils/resultsStateUtils';
+import { MutableRefObject, useRef } from 'react';
+import { Stack } from '@mui/material';
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -19,17 +21,22 @@ describe('<Results />', () => {
   const mockedOnClick = jest.fn();
   const handleSaveStudy = jest.fn(() => mockedOnClick);
 
+  // Don't re-implement React's codebase
+  const Parent = ({ state, ...props }: Partial<ResultsProps>) => {
+    const ref: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
+    return (
+      <Stack ref={ref} data-testid="parent" style={{ overflowY: 'auto' }}>
+        <Results entries={entries} state={state} handleSaveStudy={handleSaveStudy} scrollableParent={ref} {...props} />
+      </Stack>
+    );
+  };
+
   const ComponentWithoutSelectedStudies = (props: Partial<ResultsProps>) => (
-    <Results entries={entries} state={uninitializedState} handleSaveStudy={handleSaveStudy} {...props} />
+    <Parent state={uninitializedState} {...props} />
   );
 
   const ComponentWithSelectedStudies = (props: Partial<ResultsProps>) => (
-    <Results
-      entries={entries}
-      state={new Set<string>(['NCT03473639', 'NCT03964532'])}
-      handleSaveStudy={handleSaveStudy}
-      {...props}
-    />
+    <Parent state={new Set<string>(['NCT03473639', 'NCT03964532'])} {...props} />
   );
 
   it('renders save buttons for all studies when no studies are selected', () => {

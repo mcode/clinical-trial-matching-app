@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import { MutableRefObject, ReactElement } from 'react';
 import {
   AccordionActions,
   AccordionSummary,
@@ -28,9 +28,16 @@ type StudyHeaderProps = {
   study: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
+  scrollableParent: MutableRefObject<HTMLElement>;
 };
 
-const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: StudyHeaderProps): ReactElement => {
+const StudyHeader = ({
+  isExpanded,
+  study,
+  handleSaveStudy,
+  isStudySaved,
+  scrollableParent,
+}: StudyHeaderProps): ReactElement => {
   const tags = [study.phase, study.type?.label || study.type?.name, ...study.conditions].filter(tag => !!tag);
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
@@ -84,7 +91,7 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
             </Typography>
 
             <Stack alignItems="center" direction="row" flexWrap="wrap">
-              <StudyTags isExpanded={isExpanded} tags={tags} />
+              <StudyTags {...{ isExpanded, tags, scrollableParent }} />
             </Stack>
           </Stack>
 
