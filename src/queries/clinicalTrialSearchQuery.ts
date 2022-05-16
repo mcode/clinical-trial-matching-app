@@ -28,6 +28,14 @@ export type ErrorResponse = {
   error?: any; // eslint-disable-line @typescript-eslint/no-explicit-any
 };
 
+export type Service = {
+  name: string;
+  label: string;
+  url: string;
+  searchRoute: string;
+  defaultValue?: boolean;
+};
+
 const clinicalTrialSearchQuery = async (
   patient: Patient,
   user: User,

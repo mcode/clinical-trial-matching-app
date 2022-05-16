@@ -8,21 +8,11 @@ import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 import * as fhirConstants from 'src/utils/fhirConstants';
 import getConfig from 'next/config';
+import { Service } from '@/queries/clinicalTrialSearchQuery';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, reactAppDebug },
+  publicRuntimeConfig: { sendLocationData, defaultZipCode, reactAppDebug, services },
 } = getConfig();
-
-// Matching services and their information
-const services = {
-  breastCancerTrials: {
-    serviceName: 'Breast Cancer Trials',
-    url: 'http://localhost:3001',
-    searchRoute: '/getClinicalTrial',
-  },
-  trialjectory: { serviceName: 'TrialJectory', url: 'http://localhost:3000', searchRoute: '/getClinicalTrial' },
-  trialscope: { serviceName: 'TrialScope', url: 'http://localhost:3000', searchRoute: '/getClinicalTrial' },
-};
 
 /**
  * API/Query handler For clinical-trial-search
@@ -246,13 +236,9 @@ function buildBundle(searchParams: SearchParameters): Bundle {
  */
 async function callWrappers(matchingServices: string[], query: Bundle, patientZipCode: string) {
   const wrapperResults = await Promise.all(
-    matchingServices.map(async service => {
-      const results = await callWrapper(
-        services[service].url + services[service].searchRoute,
-        JSON.stringify(query, null, 2),
-        services[service].serviceName
-      );
-
+    matchingServices.map(async name => {
+      const { url, searchRoute, label } = services.find((service: Service) => service.name === name);
+      const results = await callWrapper(url + searchRoute, JSON.stringify(query, null, 2), label);
       return results;
     })
   );

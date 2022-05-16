@@ -30,7 +30,7 @@ describe('<SearchForm />', () => {
     render(<Component />);
 
     expect(screen.getByText(/let's find some clinical trials/i)).toBeInTheDocument();
-    expect(screen.queryAllByTestId('matchingServices')).toHaveLength(3);
+    expect(screen.queryAllByTestId('matchingServices')).toHaveLength(2);
     expect(screen.getByTestId('zipcode')).toBeInTheDocument();
     expect(screen.getByTestId('travelDistance')).toBeInTheDocument();
     expect(screen.getByTestId('age')).toBeInTheDocument();

@@ -1,11 +1,7 @@
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 
 export type SearchFormValuesType = {
-  matchingServices: {
-    breastCancerTrials: boolean;
-    trialjectory: boolean;
-    trialscope: boolean;
-  };
+  matchingServices: { [key: string]: boolean };
   zipcode: string;
   travelDistance: string;
   age: string;
