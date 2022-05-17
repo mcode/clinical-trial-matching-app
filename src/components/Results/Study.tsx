@@ -1,4 +1,4 @@
-import { ReactElement, useState, memo } from 'react';
+import { ReactElement, useState, memo, MutableRefObject } from 'react';
 import {
   Accordion,
   AccordionDetails,
@@ -27,9 +27,10 @@ type StudyProps = {
   entry: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
+  scrollableParent: MutableRefObject<HTMLElement>;
 };
 
-const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactElement => {
+const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
   const details = getDetails(entry);
   const theme = useTheme();
@@ -38,12 +39,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved }: StudyProps): ReactEleme
 
   return (
     <Accordion sx={{ marginBottom: 2 }} onChange={(_event, expanded) => setIsExpanded(expanded)}>
-      <StudyHeader
-        isExpanded={isExpanded}
-        study={entry}
-        handleSaveStudy={handleSaveStudy}
-        isStudySaved={isStudySaved}
-      />
+      <StudyHeader isExpanded={isExpanded} study={entry} {...{ handleSaveStudy, isStudySaved, scrollableParent }} />
 
       <AccordionDetails
         sx={{
