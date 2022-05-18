@@ -1,18 +1,18 @@
-import { ChangeEvent, MouseEvent, PropsWithChildren, ReactElement } from 'react';
+import { DEFAULT_PAGE } from '@/queries/clinicalTrialPaginationQuery';
+import { ResultsResponse } from '@/queries/clinicalTrialSearchQuery';
 import { Pagination, TablePagination, Typography } from '@mui/material';
+import { TablePaginationActionsProps } from '@mui/material/TablePagination/TablePaginationActions';
 import { useRouter } from 'next/router';
-
+import { ChangeEvent, MouseEvent, MutableRefObject, PropsWithChildren, ReactElement } from 'react';
+import { StudyDetailProps } from '.';
 import Study from './Study';
 import { SavedStudiesState, SaveStudyHandler } from './types';
-import { StudyDetailProps } from '.';
-import { ResultsResponse } from '@/queries/clinicalTrialSearchQuery';
-import { DEFAULT_PAGE } from '@/queries/clinicalTrialPaginationQuery';
-import { TablePaginationActionsProps } from '@mui/material/TablePagination/TablePaginationActions';
 
 export type ResultsProps = {
   response: ResultsResponse;
   state: SavedStudiesState;
   handleSaveStudy: (study: StudyDetailProps) => SaveStudyHandler;
+  scrollableParent: MutableRefObject<HTMLElement>;
 };
 
 const getPagination = ({
@@ -31,7 +31,7 @@ const getPagination = ({
   />
 );
 
-const Results = ({ response: { results, total }, state, handleSaveStudy }: ResultsProps): ReactElement => {
+const Results = ({ response: { results, total }, state, handleSaveStudy, ...props }: ResultsProps): ReactElement => {
   const router = useRouter();
   const currentZeroIndexedPage = parseInt(router.query.page as string) - 1;
   const pageSize = parseInt(router.query.pageSize as string);
@@ -60,6 +60,7 @@ const Results = ({ response: { results, total }, state, handleSaveStudy }: Resul
 
       {results.map((entry: StudyDetailProps) => (
         <Study
+          {...props}
           key={entry.trialId}
           entry={entry}
           handleSaveStudy={handleSaveStudy(entry)}

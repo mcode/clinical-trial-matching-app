@@ -117,7 +117,7 @@ const theme = createTheme({
           props: { variant: 'head' },
           style: {
             textTransform: 'uppercase',
-            [breakpoints.between('xs', 'xl')]: { textAlign: 'left' },
+            [breakpoints.between('xs', 'xl')]: { textAlign: 'left', zIndex: 'auto' },
             [breakpoints.up('xl')]: { textAlign: 'right', flex: 1 },
             verticalAlign: 'top',
           },

@@ -1,9 +1,8 @@
-import { ReactElement } from 'react';
+import { MutableRefObject, ReactElement } from 'react';
 import {
   AccordionActions,
   AccordionSummary,
   Box,
-  Chip,
   IconButton,
   Stack,
   Typography,
@@ -22,16 +21,24 @@ import BookmarkCheckIcon from './BookmarkCheckIcon';
 
 import { StudyDetailProps, SaveStudyHandler } from './types';
 import StudyDetailsButton from './StudyDetailsButton';
+import StudyTags from './StudyTags';
 
 type StudyHeaderProps = {
   isExpanded: boolean;
   study: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
+  scrollableParent: MutableRefObject<HTMLElement>;
 };
 
-const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: StudyHeaderProps): ReactElement => {
-  const studyTags = [...study.conditions, study.phase, study.type?.label || study.type?.name].filter(tag => !!tag);
+const StudyHeader = ({
+  isExpanded,
+  study,
+  handleSaveStudy,
+  isStudySaved,
+  scrollableParent,
+}: StudyHeaderProps): ReactElement => {
+  const tags = [study.phase, study.type?.label || study.type?.name, ...study.conditions].filter(tag => !!tag);
   const theme = useTheme();
   const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const closestFacilityDistance = study?.closestFacilities?.[0]?.distance;
@@ -84,21 +91,7 @@ const StudyHeader = ({ isExpanded, study, handleSaveStudy, isStudySaved }: Study
             </Typography>
 
             <Stack alignItems="center" direction="row" flexWrap="wrap">
-              {studyTags.map((tag, index) => (
-                <Chip
-                  key={index}
-                  label={tag}
-                  sx={{
-                    backgroundColor: isExpanded ? 'common.white' : 'common.grayLight',
-                    color: isExpanded ? 'common.gray' : 'common.grayLighter',
-                    fontWeight: '600',
-                    marginRight: 1,
-                    marginTop: 0.5,
-                    textTransform: 'uppercase',
-                  }}
-                  size="small"
-                />
-              ))}
+              <StudyTags {...{ isExpanded, tags, scrollableParent }} />
             </Stack>
           </Stack>
 

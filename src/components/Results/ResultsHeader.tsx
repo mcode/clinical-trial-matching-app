@@ -10,7 +10,7 @@ export type ResultsHeaderProps = {
   isOpen: boolean;
   toggleDrawer: () => void;
   toggleMobileDrawer: () => void;
-  alreadyHasSavedStudies: boolean;
+  hasSavedStudies: boolean;
   handleClearSavedStudies: () => void;
   handleExportStudies: () => void;
   showExport: boolean;
@@ -20,7 +20,7 @@ const ResultsHeader = ({
   isOpen,
   toggleDrawer,
   toggleMobileDrawer,
-  alreadyHasSavedStudies,
+  hasSavedStudies,
   handleClearSavedStudies,
   handleExportStudies,
   showExport,
@@ -52,7 +52,7 @@ const ResultsHeader = ({
       </IconButton>
 
       <Stack direction="row">
-        {showExport && alreadyHasSavedStudies && (
+        {showExport && hasSavedStudies && (
           <Button sx={{ mr: 2 }} onClick={handleClearSavedStudies}>
             Clear saved trials
           </Button>
@@ -60,7 +60,7 @@ const ResultsHeader = ({
 
         {showExport && (
           <Button sx={{ mr: 2 }} onClick={handleExportStudies}>
-            {alreadyHasSavedStudies ? 'Export Saved' : 'Export All'}
+            {hasSavedStudies ? 'Export Saved' : 'Export All'}
           </Button>
         )}
       </Stack>

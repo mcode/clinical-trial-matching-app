@@ -1,12 +1,14 @@
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import Results, { ResultsProps } from '../Results';
-import mockSearchResults from '@/__mocks__/resultDetails.json';
-import { StudyDetailProps } from '../types';
+import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { uninitializedState } from '@/utils/resultsStateUtils';
 import { createMockRouter } from '@/utils/testUtils';
+import mockSearchResults from '@/__mocks__/resultDetails.json';
+import { Stack } from '@mui/material';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
-import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
+import { MutableRefObject, useRef } from 'react';
+import Results, { ResultsProps } from '../Results';
+import { StudyDetailProps } from '../types';
 
 afterEach(() => {
   jest.clearAllMocks();
@@ -29,22 +31,28 @@ describe('<Results />', () => {
     },
   });
 
+  // Don't re-implement React's codebase
+  const Parent = ({ state, ...props }: Partial<ResultsProps>) => {
+    const ref: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
+    return (
+      <Stack ref={ref} data-testid="parent" style={{ overflowY: 'auto' }}>
+        <Results
+          response={{ results: entries, total: 123 }}
+          state={state}
+          handleSaveStudy={handleSaveStudy}
+          scrollableParent={ref}
+          {...props}
+        />
+      </Stack>
+    );
+  };
+
   const ComponentWithoutSelectedStudies = (props: Partial<ResultsProps>) => (
-    <Results
-      response={{ results: entries, total: 123 }}
-      state={uninitializedState}
-      handleSaveStudy={handleSaveStudy}
-      {...props}
-    />
+    <Parent state={uninitializedState} {...props} />
   );
 
   const ComponentWithSelectedStudies = (props: Partial<ResultsProps>) => (
-    <Results
-      response={{ results: entries, total: 123 }}
-      state={new Set<string>(['NCT03473639', 'NCT03964532'])}
-      handleSaveStudy={handleSaveStudy}
-      {...props}
-    />
+    <Parent state={new Set<string>(['NCT03473639', 'NCT03964532'])} {...props} />
   );
 
   it('renders the total number of studies', () => {

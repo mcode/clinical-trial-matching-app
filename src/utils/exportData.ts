@@ -17,7 +17,7 @@ export const MainRowKeys = {
   title: 'Title',
   status: 'Overall Status',
   period: 'Period',
-  phase: 'Phase',
+  phase: 'Trial Phase',
   conditions: 'Conditions',
   type: 'Study Type',
   description: 'Description',
