@@ -7,6 +7,11 @@ import { getStudyDetailProps } from '@/components/Results/utils';
 import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 import * as fhirConstants from 'src/utils/fhirConstants';
+import getConfig from 'next/config';
+
+const {
+  publicRuntimeConfig: { sendLocationData, defaultZipCode, reactAppDebug },
+} = getConfig();
 
 // Matching services and their information
 const services = {
@@ -35,7 +40,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       ? searchParams.matchingServices
       : [searchParams.matchingServices];
 
-  const results = await callWrappers(chosenServices, patientBundle);
+  const results = await callWrappers(chosenServices, patientBundle, searchParams['zipcode']);
   res.status(200).json(results);
 };
 
@@ -46,12 +51,17 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
  * @returns
  */
 function buildBundle(searchParams: SearchParameters): Bundle {
+  const zipCode = sendLocationData ? searchParams['zipcode'] : defaultZipCode;
+  const travelDistance = sendLocationData ? searchParams['travelDistance'] : undefined;
+
+  !sendLocationData && console.log(`Using default zip code ${defaultZipCode} and travel distance ${travelDistance}`);
+
   const trialParams: Resource = {
     resourceType: 'Parameters',
     id: '0',
     parameter: [
-      ...(searchParams['zipcode'] && [{ name: 'zipCode', valueString: searchParams['zipcode'] }]),
-      ...(searchParams['travelDistance'] && [{ name: 'travelRadius', valueString: searchParams['travelDistance'] }]),
+      ...(zipCode ? [{ name: 'zipCode', valueString: zipCode }] : []),
+      ...(travelDistance ? [{ name: 'travelRadius', valueString: travelDistance }] : []),
     ],
   };
 
@@ -219,7 +229,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystemCode,
     });
   }
-  if (process.env.REACT_APP_DEBUG == 'true') {
+  if (reactAppDebug) {
     console.log(JSON.stringify(patientBundle, null, 2));
   }
 
@@ -231,9 +241,10 @@ function buildBundle(searchParams: SearchParameters): Bundle {
  *
  * @param matchingServices Selected matching services to use
  * @param query Query to be sent to all matching services
+ * @param patientZipCode Patient's zip code which may not have been sent to matching services
  * @returns Responses from called wrappers
  */
-async function callWrappers(matchingServices: string[], query: Bundle) {
+async function callWrappers(matchingServices: string[], query: Bundle, patientZipCode: string) {
   const wrapperResults = await Promise.all(
     matchingServices.map(async service => {
       const results = await callWrapper(
@@ -253,9 +264,6 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
   const combined: StudyDetailProps[] = [];
   const uniqueTrialIds = new Set<string>();
 
-  // Grab the zipcode from the query
-  const zipcode = query.entry[0].resource.parameter[0].valueString as string;
-
   wrapperResults
     .filter(result => result.status == 200)
     .forEach(searchset => {
@@ -266,7 +274,7 @@ async function callWrappers(matchingServices: string[], query: Bundle) {
         const foundDuplicateTrial = uniqueTrialIds.has(otherTrialId);
         if (!foundDuplicateTrial) {
           uniqueTrialIds.add(otherTrialId);
-          combined.push(getStudyDetailProps(entry, zipcode));
+          combined.push(getStudyDetailProps(entry, patientZipCode));
         }
       });
     });
