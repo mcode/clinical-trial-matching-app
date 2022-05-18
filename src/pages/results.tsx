@@ -1,37 +1,44 @@
+import Header from '@/components/Header';
+import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
+import Sidebar from '@/components/Sidebar';
+import { ensureArray } from '@/components/Sidebar/Sidebar';
+import { clinicalTrialSearchQuery } from '@/queries';
+import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
+import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
+import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
+import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
+import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
+import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
+import { getSavedStudies, savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
+import styled from '@emotion/styled';
+import {
+  Alert,
+  CircularProgress,
+  Drawer,
+  Paper,
+  Snackbar,
+  SnackbarCloseReason,
+  Stack,
+  Theme,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import smart from 'fhirclient';
+import type Client from 'fhirclient/lib/Client';
+import { GetServerSideProps } from 'next';
+import getConfig from 'next/config';
+import Head from 'next/head';
 import { MutableRefObject, ReactElement, SyntheticEvent, useMemo, useReducer, useRef, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
-import { GetServerSideProps } from 'next';
-import Head from 'next/head';
-import smart from 'fhirclient';
-import type Client from 'fhirclient/lib/Client';
 import {
-  Drawer,
-  Paper,
-  Stack,
-  Theme,
-  useTheme,
-  useMediaQuery,
-  CircularProgress,
-  Snackbar,
-  Alert,
-  SnackbarCloseReason,
-  Typography,
-} from '@mui/material';
-import styled from '@emotion/styled';
-import Header from '@/components/Header';
-import Sidebar from '@/components/Sidebar';
-import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
-import { FilterParameters, FullSearchParameters, SearchParameters, SortingParameters } from 'types/search-types';
-import { clinicalTrialSearchQuery } from '@/queries';
-import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
-import { uninitializedState, savedStudiesReducer, getSavedStudies } from '@/utils/resultsStateUtils';
-import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
-import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
-import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { ensureArray } from '@/components/Sidebar/Sidebar';
-import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
-import getConfig from 'next/config';
+  FilterParameters,
+  FullSearchParameters,
+  PaginationParameters,
+  SearchParameters,
+  SortingParameters,
+} from 'types/search-types';
 
 const {
   publicRuntimeConfig: { sendLocationData },
@@ -121,6 +128,8 @@ const getFilterParams = getParameters<FilterParameters & SortingParameters>([
   'savedStudies',
 ]);
 
+const getPaginationParams = getParameters<PaginationParameters>(['page', 'pageSize']);
+
 const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
 
@@ -142,7 +151,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     }
   );
 
-  const { isIdle, isLoading, data } = useQuery(
+  const { data: filteredData } = useQuery(
     ['clinical-trials', distanceFilteredData, getFilterParams(searchParams)],
     () => clinicalTrialFilterQuery(distanceFilteredData, searchParams),
     {
@@ -151,7 +160,14 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     }
   );
 
-  // TODO: pagination query
+  const { isIdle, isLoading, data } = useQuery(
+    ['clinical-trials', filteredData, getPaginationParams(searchParams)],
+    () => clinicalTrialPaginationQuery(filteredData, searchParams),
+    {
+      enabled: !!filteredData && typeof window !== 'undefined',
+      refetchOnMount: false,
+    }
+  );
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(true);
@@ -162,7 +178,6 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const drawerWidth = getDrawerWidth(isSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const entries = useMemo(() => data?.results as StudyDetailProps[], [data]);
   const filterOptions = useMemo(() => data?.filterOptions as FilterOptions, [data]);
   const [state, dispatch] = useReducer(
     savedStudiesReducer,
@@ -172,9 +187,9 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const hasSavedStudies = state.size !== 0;
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
   const handleExportStudies = (): void => {
-    const savedStudies = getSavedStudies(entries, state);
-    const data: Record<string, string>[] = unpackStudies(savedStudies);
-    exportSpreadsheetData(data, 'clinicalTrials');
+    const savedStudies = getSavedStudies(data.results, state);
+    const spreadsheetData: Record<string, string>[] = unpackStudies(savedStudies);
+    exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
   };
   const handleSaveStudy =
     (entry: StudyDetailProps): SaveStudyHandler =>
@@ -269,7 +284,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
                   </Typography>
                 </Stack>
               )}
-              {!isIdle && !isLoading && <Results {...{ entries, state, handleSaveStudy, scrollableParent }} />}
+              {!isIdle && !isLoading && <Results response={data} {...{ state, handleSaveStudy, scrollableParent }} />}
               {!isIdle && !isLoading && data?.errors?.length > 0 && (
                 <Snackbar
                   open={alertOpen}

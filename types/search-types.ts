@@ -1,4 +1,4 @@
-export type FullSearchParameters = SearchParameters & SortingParameters & FilterParameters;
+export type FullSearchParameters = SearchParameters & SortingParameters & FilterParameters & PaginationParameters;
 
 export type SearchParameters = {
   matchingServices: string[];
@@ -28,4 +28,9 @@ export type FilterParameters = {
 export type SortingParameters = {
   sortingOption: string;
   savedStudies?: string[];
+};
+
+export type PaginationParameters = {
+  page: string;
+  pageSize: string;
 };

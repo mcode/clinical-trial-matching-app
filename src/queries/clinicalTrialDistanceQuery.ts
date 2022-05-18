@@ -21,7 +21,7 @@ const clinicalTrialDistanceQuery = async (
   };
   const filtered = response.results.filter(isStudyWithinRange);
 
-  return { results: filtered, errors: response.errors };
+  return { ...response, results: filtered };
 };
 
 export default clinicalTrialDistanceQuery;
