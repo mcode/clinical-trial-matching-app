@@ -1,13 +1,7 @@
-import React, { ReactElement } from 'react';
-import { GetServerSideProps } from 'next';
-import Head from 'next/head';
-import smart from 'fhirclient';
-import type Client from 'fhirclient/lib/Client';
-import { fhirclient } from 'fhirclient/lib/types';
-
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
+import { MCODE_STRUCTURE_DEFINITION } from '@/utils/fhirConstants';
 import {
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
@@ -23,9 +17,12 @@ import {
   PrimaryCancerCondition,
   User,
 } from '@/utils/fhirConversionUtils';
-import { MCODE_STRUCTURE_DEFINITION } from '@/utils/fhirConstants';
-import { FullSearchParameters } from 'types/search-types';
-import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
+import smart from 'fhirclient';
+import type Client from 'fhirclient/lib/Client';
+import { fhirclient } from 'fhirclient/lib/types';
+import { GetServerSideProps } from 'next';
+import Head from 'next/head';
+import React, { ReactElement } from 'react';
 
 type SearchPageProps = {
   patient: Patient;
@@ -77,12 +74,7 @@ const SearchPage = ({
 
       <Header userName={user?.name} />
       <PatientCard patient={patient} />
-      <SearchForm
-        defaultValues={defaultValues}
-        fullSearchParams={
-          { sortingOption: 'matchLikelihood', page: DEFAULT_PAGE, pageSize: DEFAULT_PAGE_SIZE } as FullSearchParameters
-        }
-      />
+      <SearchForm defaultValues={defaultValues} />
     </>
   );
 };

@@ -1,16 +1,18 @@
-import type { ReactElement } from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
+import SearchImage from '@/assets/images/search.png';
+import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { Search as SearchIcon } from '@mui/icons-material';
-
+import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import type { ReactElement } from 'react';
+import { Controller, useForm } from 'react-hook-form';
+import { SearchParameters } from 'types/search-types';
 import {
   AgeTextField,
   BiomarkersAutocomplete,
   CancerStageAutocomplete,
-  CancerTypeAutocomplete,
   CancerSubtypeAutocomplete,
+  CancerTypeAutocomplete,
   ECOGScoreAutocomplete,
   KarnofskyScoreAutocomplete,
   MedicationsAutocomplete,
@@ -20,15 +22,12 @@ import {
   TravelDistanceTextField,
   ZipcodeTextField,
 } from './FormFields';
-import SearchImage from '@/assets/images/search.png';
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType } from './types';
-import { SearchParameters, FullSearchParameters } from 'types/search-types';
 
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
-  fullSearchParams?: FullSearchParameters;
 };
 
 export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
@@ -40,13 +39,21 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
 });
 
-const SearchForm = ({ defaultValues, fullWidth, fullSearchParams }: SearchFormProps): ReactElement => {
+const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
   const onSubmit = (data: SearchFormValuesType) =>
-    router.push({ pathname: '/results', query: { ...fullSearchParams, ...formDataToSearchQuery(data) } });
+    router.push({
+      pathname: '/results',
+      query: {
+        ...formDataToSearchQuery(data),
+        sortingOption: 'matchLikelihood',
+        page: DEFAULT_PAGE,
+        pageSize: DEFAULT_PAGE_SIZE,
+      },
+    });
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -80,7 +87,7 @@ const SearchForm = ({ defaultValues, fullWidth, fullSearchParams }: SearchFormPr
 
         <Grid columns={8} container spacing={2} px={2} py={fullWidth ? 0 : { md: 2 }} pb={{ xs: 2 }} mt={0}>
           <Grid item xs={8}>
-            <MatchingServices control={control} fullWidth={fullWidth} />
+            <MatchingServices {...{ control, fullWidth }} />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
