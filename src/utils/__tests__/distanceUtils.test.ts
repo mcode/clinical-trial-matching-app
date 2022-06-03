@@ -1,11 +1,11 @@
 import { locationsWithAndWithoutCoordinates, researchStudyWithLocations } from '@/__mocks__/testEntries';
 import { GeolibInputCoordinates } from 'geolib/es/types';
 import {
-  getZipcodeCoordinates,
-  getLocationCoordinates,
   getCoordinatesForLocations,
   getDistanceBetweenPoints,
+  getLocationCoordinates,
   getLocations,
+  getZipcodeCoordinates,
 } from '../distanceUtils';
 
 describe('getZipcodeCoordinates', () => {

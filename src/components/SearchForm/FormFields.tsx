@@ -1,10 +1,9 @@
+import { fetchCancerSubtypeCodesQuery, fetchCancerTypeCodesQuery } from '@/queries';
+import { Autocomplete, Checkbox, Chip, TextField, Typography } from '@mui/material';
 import { ReactElement, useMemo, useState } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
 import { useQuery } from 'react-query';
-import { Autocomplete, Checkbox, Chip, TextField, Typography } from '@mui/material';
-
 import { SearchFormValuesType } from './types';
-import { fetchCancerSubtypeCodesQuery, fetchCancerTypeCodesQuery } from '@/queries';
 
 const AutocompleteMulti = ({ field, label, options }): ReactElement => (
   <Autocomplete

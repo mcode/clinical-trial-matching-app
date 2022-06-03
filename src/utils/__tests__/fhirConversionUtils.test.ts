@@ -1,28 +1,28 @@
 import {
-  convertFhirKarnofskyPerformanceStatus,
-  convertFhirEcogPerformanceStatus,
-  convertFhirMedicationStatements,
-  convertFhirPrimaryCancerCondition,
-  convertFhirRadiationProcedures,
-  convertFhirSecondaryCancerConditions,
-  convertFhirSurgeryProcedures,
-  convertFhirTumorMarkers,
-  convertFhirPatient,
-} from '../fhirConversionUtils';
-import {
+  fhirEcogPerformanceStatusBundle,
   fhirEmptyBundle,
   fhirKarnofskyPerformanceStatusBundle,
-  fhirEcogPerformanceStatusBundle,
   fhirMedicationStatementBundle,
+  fhirPatient,
   fhirPrimaryCancerConditionBundle,
   fhirPrimaryCancerConditionBundle2,
   fhirRadiationProcedureBundle,
   fhirSecondaryCancerConditionBundle,
   fhirSurgeryProcedureBundle,
   fhirTumorMarkerBundle,
-  fhirPatient,
 } from '@/__mocks__/bundles';
 import mockPatient from '@/__mocks__/patient';
+import {
+  convertFhirEcogPerformanceStatus,
+  convertFhirKarnofskyPerformanceStatus,
+  convertFhirMedicationStatements,
+  convertFhirPatient,
+  convertFhirPrimaryCancerCondition,
+  convertFhirRadiationProcedures,
+  convertFhirSecondaryCancerConditions,
+  convertFhirSurgeryProcedures,
+  convertFhirTumorMarkers,
+} from '../fhirConversionUtils';
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
   it('gets the Karnofsky score from a bundle', () => {

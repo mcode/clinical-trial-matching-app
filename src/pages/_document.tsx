@@ -1,9 +1,8 @@
-import React, { Children } from 'react';
-import NextDocument from 'next/document';
-import createEmotionServer from '@emotion/server/create-instance';
 import emotionCache from '@/emotionCache';
-
+import createEmotionServer from '@emotion/server/create-instance';
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
+import NextDocument from 'next/document';
+import React, { Children } from 'react';
 
 const { extractCriticalToChunks } = createEmotionServer(emotionCache);
 

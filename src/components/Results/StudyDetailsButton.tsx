@@ -1,5 +1,5 @@
-import type { ReactElement } from 'react';
 import { Button } from '@mui/material';
+import type { ReactElement } from 'react';
 import { SaveStudyHandler } from './types';
 
 type StudyDetailsButtonProps = {

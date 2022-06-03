@@ -1,20 +1,17 @@
-import { ReactElement, useCallback, useEffect, useState } from 'react';
+import emotionCache from '@/emotionCache';
+import theme from '@/styles/theme';
 import { CacheProvider } from '@emotion/react';
-import { CircularProgress, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { Hydrate } from 'react-query/hydration';
-import { ReactQueryDevtools } from 'react-query/devtools';
-
 import '@fontsource/open-sans/300.css';
 import '@fontsource/open-sans/400.css';
 import '@fontsource/open-sans/600.css';
 import '@fontsource/open-sans/700.css';
 import '@fontsource/open-sans/800.css';
-
-import emotionCache from '@/emotionCache';
-import theme from '@/styles/theme';
-
+import { CircularProgress, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material';
 import type { AppProps } from 'next/app';
+import { ReactElement, useCallback, useEffect, useState } from 'react';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
+import { Hydrate } from 'react-query/hydration';
 
 const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
   const [loading, setLoading] = useState(false);

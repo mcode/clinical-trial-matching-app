@@ -1,7 +1,7 @@
-import type { ReactElement, ReactNode } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, FormControlLabel, Stack, Typography } from '@mui/material';
-import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material';
 import { FilterOption, FilterOptions } from '@/queries/clinicalTrialSearchQuery';
+import { ArrowDropDown as ArrowDropDownIcon } from '@mui/icons-material';
+import { Accordion, AccordionDetails, AccordionSummary, FormControlLabel, Stack, Typography } from '@mui/material';
+import type { ReactElement, ReactNode } from 'react';
 import { Control, Controller } from 'react-hook-form';
 import { FilterCheckbox } from './FormFields';
 import { FilterFormValuesType } from './types';

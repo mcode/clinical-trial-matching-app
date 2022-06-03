@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import { Alert, Box, Container } from '@mui/material';
+import smart from 'fhirclient';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
-import smart from 'fhirclient';
-import { Alert, Box, Container } from '@mui/material';
+import React, { ReactElement } from 'react';
 
 const { publicRuntimeConfig } = getConfig();
 

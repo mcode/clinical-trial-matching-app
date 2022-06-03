@@ -1,7 +1,7 @@
-import { ParsedUrlQuery } from 'querystring';
-import { ResultsResponse } from './clinicalTrialSearchQuery';
 import { StudyDetailProps } from '@/components/Results';
 import getConfig from 'next/config';
+import { ParsedUrlQuery } from 'querystring';
+import { ResultsResponse } from './clinicalTrialSearchQuery';
 
 const {
   publicRuntimeConfig: { sendLocationData },

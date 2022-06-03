@@ -2,9 +2,9 @@
  * This module is used to filter FHIR records.
  */
 
-import { Bundle, BundleEntry, CodeableConcept, Condition, Resource, Observation } from 'types/fhir-types';
+import { Bundle, BundleEntry, CodeableConcept, Condition, Observation, Resource } from 'types/fhir-types';
+import { MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, MCODE_PRIMARY_CANCER_CONDITION, SNOMED_CODE_URI } from './fhirConstants';
 import { NamedSNOMEDCode } from './fhirConversionUtils';
-import { MCODE_PRIMARY_CANCER_CONDITION, MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, SNOMED_CODE_URI } from './fhirConstants';
 
 export const addResource = (bundle: Bundle, resource: Resource): void => {
   const entry: BundleEntry = {

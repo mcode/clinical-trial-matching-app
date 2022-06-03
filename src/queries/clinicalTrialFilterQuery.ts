@@ -1,5 +1,5 @@
 import { ensureArray } from '@/components/Sidebar/Sidebar';
-import { getSortedResults, getFilteredResults, getFilterOptions } from '@/utils/filterUtils';
+import { getFilteredResults, getFilterOptions, getSortedResults } from '@/utils/filterUtils';
 import { ParsedUrlQuery } from 'querystring';
 import { FilterParameters, SortingParameters } from 'types/search-types';
 import { ResultsResponse } from './clinicalTrialSearchQuery';

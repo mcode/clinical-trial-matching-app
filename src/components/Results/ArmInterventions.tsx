@@ -1,7 +1,7 @@
-import type { ReactElement } from 'react';
 import { Box, Stack } from '@mui/material';
-import { ArmGroup } from '.';
+import type { ReactElement } from 'react';
 import React from 'react';
+import { ArmGroup } from '.';
 
 const ArmInterventions = ({ display, description, interventions }: ArmGroup): ReactElement => (
   <Stack pb={2}>

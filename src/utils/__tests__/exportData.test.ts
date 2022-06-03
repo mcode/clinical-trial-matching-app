@@ -1,5 +1,5 @@
-import { exportSpreadsheetData, unpackStudies } from '../exportData';
 import FileSaver from 'file-saver';
+import { exportSpreadsheetData, unpackStudies } from '../exportData';
 
 describe('unpackStudies', () => {
   it('works on an empty array', () => {

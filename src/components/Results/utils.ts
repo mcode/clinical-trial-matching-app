@@ -1,5 +1,14 @@
-import { BundleEntrySearch, ContactDetail, Organization, ResearchStudy, Location, PlanDefinition } from 'fhir/r4';
+import {
+  getCoordinatesForLocations,
+  getDistanceBetweenPoints,
+  getLocationCoordinates,
+  getLocations,
+  getZipcodeCoordinates,
+} from '@/utils/distanceUtils';
+import { MainRowKeys } from '@/utils/exportData';
 import { format } from 'date-fns';
+import { BundleEntrySearch, ContactDetail, Location, Organization, PlanDefinition, ResearchStudy } from 'fhir/r4';
+import { ArmGroup } from '.';
 import {
   BundleEntry,
   ContactProps,
@@ -9,15 +18,6 @@ import {
   StudyDetailProps,
   TypeProps,
 } from './types';
-import { MainRowKeys } from '@/utils/exportData';
-import {
-  getZipcodeCoordinates,
-  getDistanceBetweenPoints,
-  getLocations,
-  getCoordinatesForLocations,
-  getLocationCoordinates,
-} from '@/utils/distanceUtils';
-import { ArmGroup } from '.';
 
 export const getContact = (contact: ContactDetail): ContactProps => {
   return {

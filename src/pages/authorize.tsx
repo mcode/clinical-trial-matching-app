@@ -1,7 +1,7 @@
-import React, { ReactElement } from 'react';
-import { GetServerSideProps } from 'next';
-import smart from 'fhirclient';
 import { Alert, Box, Container } from '@mui/material';
+import smart from 'fhirclient';
+import { GetServerSideProps } from 'next';
+import React, { ReactElement } from 'react';
 
 type AuthorizePageProps = {
   errorMessage: string;

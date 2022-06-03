@@ -1,6 +1,6 @@
-import { savedStudiesReducer, uninitializedState, getSavedStudies } from '../resultsStateUtils';
-import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { StudyDetailProps } from '@/components/Results/types';
+import mockSearchResults from '@/__mocks__/resultDetails.json';
+import { getSavedStudies, savedStudiesReducer, uninitializedState } from '../resultsStateUtils';
 
 describe('savedStudiesReducer', () => {
   const entries = mockSearchResults.results as StudyDetailProps[];

@@ -1,9 +1,8 @@
-import type { ReactElement } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { AppBar, Box, Stack, useTheme, useMediaQuery } from '@mui/material';
-
 import Logo from '@/assets/images/logo.png';
+import { AppBar, Box, Stack, useMediaQuery, useTheme } from '@mui/material';
+import Image from 'next/image';
+import Link from 'next/link';
+import type { ReactElement } from 'react';
 
 export type HeaderProps = {
   userName?: string;

@@ -1,6 +1,6 @@
+import mockUser from '@/__mocks__/user';
 import { render, screen } from '@testing-library/react';
 import Header, { HeaderProps } from '../Header';
-import mockUser from '@/__mocks__/user';
 
 describe('<Header />', () => {
   const Component = (props: Partial<HeaderProps>) => <Header {...props} />;

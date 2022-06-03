@@ -1,14 +1,13 @@
+import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
+import { Search as SearchIcon } from '@mui/icons-material';
+import { Box, Button, FormControl, Grid, useMediaQuery, useTheme } from '@mui/material';
+import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { useRouter } from 'next/router';
-import { Box, Button, FormControl, Grid, useMediaQuery, useTheme } from '@mui/material';
-import { Search as SearchIcon } from '@mui/icons-material';
-
+import { FilterParameters, FullSearchParameters, SortingParameters } from 'types/search-types';
+import FilterAccordion from './FilterAccordion';
 import { SortingRadioGroup } from './FormFields';
 import { FilterFormValuesType } from './types';
-import { FilterParameters, FullSearchParameters, SortingParameters } from 'types/search-types';
-import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import FilterAccordion from './FilterAccordion';
 
 export type FilterFormProps = {
   defaultValues: Partial<FilterFormValuesType>;
