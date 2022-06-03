@@ -39,13 +39,9 @@ const ensureNamedSNOMEDCode = (value?: string | string[]): NamedSNOMEDCode => {
 const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProps): ReactElement => {
   const { query } = useRouter();
 
-  const matchingServices = query.matchingServices || [];
+  const matchingServices = ensureArray(query.matchingServices);
   const defaultSearchValues = {
-    matchingServices: {
-      breastCancerTrials: matchingServices.includes('breastCancerTrials'),
-      trialjectory: matchingServices.includes('trialjectory'),
-      trialscope: matchingServices.includes('trialscope'),
-    },
+    matchingServices: Object.fromEntries(matchingServices.map(key => [key, true])),
     zipcode: (query.zipcode as string) || '',
     travelDistance: (query.travelDistance as string) || '',
     age: (query.age as string) || '',

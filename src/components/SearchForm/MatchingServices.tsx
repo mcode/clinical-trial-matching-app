@@ -4,17 +4,17 @@ import { Box, FormControl, FormControlLabel, FormGroup, FormLabel, Stack } from 
 
 import { MatchingServiceCheckbox } from './FormFields';
 import { SearchFormValuesType } from './types';
+import getConfig from 'next/config';
+import { Service } from '@/queries/clinicalTrialSearchQuery';
+
+const {
+  publicRuntimeConfig: { services },
+} = getConfig();
 
 type MatchingServicesProps = {
   control: Control<SearchFormValuesType>;
   fullWidth?: boolean;
 };
-
-const MATCHING_SERVICES = [
-  { name: 'breastCancerTrials', label: 'BreastCancerTrials.org', defaultValue: true },
-  { name: 'trialjectory', label: 'Trialjectory', defaultValue: false },
-  { name: 'trialscope', label: 'Trialscope', defaultValue: false },
-] as const;
 
 const MatchingServices = ({ control, fullWidth }: MatchingServicesProps): ReactElement => (
   <Box bgcolor={theme => theme.palette.common.white} borderRadius="5px" px={1.5} py={0.5}>
@@ -25,18 +25,18 @@ const MatchingServices = ({ control, fullWidth }: MatchingServicesProps): ReactE
 
       <FormGroup>
         <Stack direction={fullWidth ? 'column' : { xs: 'column', md: 'row' }}>
-          {MATCHING_SERVICES.map(matchingService => (
+          {services.map(({ name, label, defaultValue = false }: Service) => (
             <FormControlLabel
-              key={matchingService.name}
+              key={name}
               control={
                 <Controller
-                  name={`matchingServices.${matchingService.name}`}
-                  defaultValue={matchingService.defaultValue}
+                  name={`matchingServices.${name}`}
+                  defaultValue={defaultValue}
                   control={control}
                   render={MatchingServiceCheckbox}
                 />
               }
-              label={matchingService.label}
+              label={label}
             />
           ))}
         </Stack>
