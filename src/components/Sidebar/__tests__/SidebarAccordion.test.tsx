@@ -1,16 +1,15 @@
-import { render, screen } from '@testing-library/react';
-import { Person as PersonIcon } from '@mui/icons-material';
-import SidebarAccordion, { SidebarAccordionProps } from '../SidebarAccordion';
 import mockUser from '@/__mocks__/user';
+import { Person as PersonIcon } from '@mui/icons-material';
+import { render, screen } from '@testing-library/react';
+import SidebarAccordion, { SidebarAccordionProps } from '../SidebarAccordion';
 
 const title = 'Provider Information';
 const icon = <PersonIcon fontSize="large" />;
 const child = <p>{mockUser.name}</p>;
-const disabled = false;
 
 describe('<SidebarAccordion />', () => {
   const Component = (props: Partial<SidebarAccordionProps>) => (
-    <SidebarAccordion icon={icon} title={title} disabled={disabled} {...props}>
+    <SidebarAccordion icon={icon} title={title} {...props}>
       {child}
     </SidebarAccordion>
   );

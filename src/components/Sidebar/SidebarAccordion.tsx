@@ -1,23 +1,18 @@
-import type { ReactElement, ReactNode } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Stack, Typography } from '@mui/material';
 import { ExpandMore as ExpandMoreIcon } from '@mui/icons-material';
+import { Accordion, AccordionDetails, AccordionSummary, Stack, Typography } from '@mui/material';
+import type { ReactElement, ReactNode, SyntheticEvent } from 'react';
 
 export type SidebarAccordionProps = {
   children: ReactNode;
-  defaultExpanded?: boolean;
   icon: ReactNode;
   title: string;
-  disabled: boolean;
+  disabled?: boolean;
+  expanded?: boolean;
+  onChange?: (event: SyntheticEvent<Element, Event>, expanded: boolean) => void;
 };
 
-const SidebarAccordion = ({
-  children,
-  defaultExpanded,
-  icon,
-  title,
-  disabled,
-}: SidebarAccordionProps): ReactElement => (
-  <Accordion defaultExpanded={defaultExpanded} disableGutters square disabled={disabled}>
+const SidebarAccordion = ({ children, icon, title, ...props }: SidebarAccordionProps): ReactElement => (
+  <Accordion disableGutters square {...props}>
     <AccordionSummary
       expandIcon={<ExpandMoreIcon fontSize="large" sx={{ color: 'common.white' }} />}
       aria-controls="sidebar-accordion-content"
