@@ -32,7 +32,7 @@ module.exports = {
         label: 'LUNGevity',
         url: 'http://localhost:3003',
         searchRoute: '/getClinicalTrial',
-      }
+      },
     ],
   },
   serverRuntimeConfig: {
