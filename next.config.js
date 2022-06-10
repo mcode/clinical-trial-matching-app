@@ -9,23 +9,28 @@ module.exports = {
     reactAppDebug: eval(process.env.REACT_APP_DEBUG),
     services: [
       {
+        name: 'ancora',
+        label: 'Ancora.ai',
+        url: 'http://localhost:3002',
+        searchRoute: '/getClinicalTrial',
+      },
+      {
         name: 'breastCancerTrials',
         label: 'BreastCancerTrials.org',
-        url: 'http://localhost:3001',
+        url: 'http://localhost:3000',
         searchRoute: '/getClinicalTrial',
         defaultValue: true,
       },
       {
-        name: 'trialjectory',
-        label: 'TrialJectory',
-        url: 'http://localhost:3000',
+        name: 'lungevity',
+        label: 'LUNGevity',
+        url: 'http://localhost:3003',
         searchRoute: '/getClinicalTrial',
       },
-      // We'll be phasing out TrialScope
       {
-        name: 'trialscope',
-        label: 'TrialScope',
-        url: 'http://localhost:3000',
+        name: 'trialjectory',
+        label: 'TrialJectory',
+        url: 'http://localhost:3001',
         searchRoute: '/getClinicalTrial',
       },
     ],
