@@ -1,6 +1,6 @@
-import { ReactElement } from 'react';
-import { GetServerSideProps } from 'next';
 import smart from 'fhirclient';
+import { GetServerSideProps } from 'next';
+import { ReactElement } from 'react';
 
 const IndexPage = (): ReactElement => null;
 

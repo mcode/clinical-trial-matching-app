@@ -1,5 +1,5 @@
-import { ReactElement } from 'react';
 import { GetServerSideProps } from 'next';
+import { ReactElement } from 'react';
 
 const ResultsDetailsPage = (): ReactElement => null;
 

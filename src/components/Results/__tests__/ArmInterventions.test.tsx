@@ -1,7 +1,7 @@
-import { render, screen } from '@testing-library/react';
 import mockSearchResults from '@/__mocks__/resultDetails.json';
-import { ArmGroup } from '../types';
+import { render, screen } from '@testing-library/react';
 import ArmInterventions from '../ArmInterventions';
+import { ArmGroup } from '../types';
 
 afterEach(() => {
   jest.clearAllMocks();

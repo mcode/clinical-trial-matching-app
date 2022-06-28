@@ -1,10 +1,10 @@
-import { ReactElement, memo } from 'react';
-import { Button, IconButton, Stack } from '@mui/material';
 import {
   ChevronLeft as ChevronLeftIcon,
   ChevronRight as ChevronRightIcon,
   Menu as MenuIcon,
 } from '@mui/icons-material';
+import { Button, IconButton, Stack } from '@mui/material';
+import { memo, ReactElement } from 'react';
 
 export type ResultsHeaderProps = {
   isOpen: boolean;

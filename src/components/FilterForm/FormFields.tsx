@@ -1,7 +1,6 @@
+import { Checkbox, FormControlLabel, Radio, RadioGroup } from '@mui/material';
 import { ReactElement } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
-import { Checkbox, FormControlLabel, Radio, RadioGroup } from '@mui/material';
-
 import { FilterFormValuesType } from './types';
 
 // ----- FIELDS ----- //

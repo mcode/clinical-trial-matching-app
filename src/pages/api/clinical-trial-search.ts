@@ -1,14 +1,14 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { SearchParameters } from 'types/search-types';
-import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
-import { parseNamedSNOMEDCode } from '@/utils/fhirConversionUtils';
-import { addCancerHistologyMorphology, convertStringtoResource, addCancerType } from '@/utils/fhirFilter';
-import { getStudyDetailProps } from '@/components/Results/utils';
 import { BundleEntry, StudyDetailProps } from '@/components/Results';
-import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
-import * as fhirConstants from 'src/utils/fhirConstants';
-import getConfig from 'next/config';
+import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
+import { parseNamedSNOMEDCode } from '@/utils/fhirConversionUtils';
+import { addCancerHistologyMorphology, addCancerType, convertStringtoResource } from '@/utils/fhirFilter';
+import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import getConfig from 'next/config';
+import * as fhirConstants from 'src/utils/fhirConstants';
+import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
+import { SearchParameters } from 'types/search-types';
 
 const {
   publicRuntimeConfig: { sendLocationData, defaultZipCode, reactAppDebug, services },

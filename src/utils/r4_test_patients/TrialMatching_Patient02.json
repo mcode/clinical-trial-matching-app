@@ -12,9 +12,7 @@
         "resourceType": "Patient",
         "id": "mCODETrialMatchingPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient"]
         },
         "text": {
           "status": "generated",
@@ -29,29 +27,24 @@
         "name": [
           {
             "family": "TrialMatching",
-            "given": [
-              "Patient",
-              "D"
-            ]
+            "given": ["Patient", "D"]
           }
         ],
         "gender": "female",
         "birthDate": "1973-01-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Patient"
       }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingTNMClinicalStageGroupPatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingTNMClinicalStageGroupPatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingTNMClinicalStageGroupPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-clinical-stage-group"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-clinical-stage-group"]
         },
         "text": {
           "status": "generated",
@@ -89,9 +82,9 @@
         }
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
-      }      
+      }
     },
     {
       "fullUrl": "urn:uuid:mCODETrialMatchingPrimaryCancerConditionPatientExample02",
@@ -99,9 +92,7 @@
         "resourceType": "Condition",
         "id": "mCODETrialMatchingPrimaryCancerConditionPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"]
         },
         "text": {
           "status": "generated",
@@ -180,17 +171,15 @@
       "request": {
         "method": "POST",
         "url": "Condition"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingSecondaryCancerConditionPatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingSecondaryCancerConditionPatientExample02",
       "resource": {
         "resourceType": "Condition",
         "id": "mCODETrialMatchingSecondaryCancerConditionPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition"]
         },
         "text": {
           "status": "extensions",
@@ -237,7 +226,7 @@
         }
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Condition"
       }
     },
@@ -247,9 +236,7 @@
         "resourceType": "Observation",
         "id": "mCODETrialMatchingTumorMarkerPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
         },
         "text": {
           "status": "generated",
@@ -289,19 +276,17 @@
         }
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker02PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker02PatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingTumorMarker02PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
         },
         "text": {
           "status": "generated",
@@ -341,19 +326,17 @@
         }
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker03PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker03PatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingTumorMarker03PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
         },
         "text": {
           "status": "generated",
@@ -393,19 +376,17 @@
         }
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
       }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker04PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker04PatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingTumorMarker04PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
         },
         "text": {
           "status": "generated",
@@ -445,19 +426,17 @@
         }
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariantPatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariantPatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingCancerGeneticVariantPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"]
         },
         "text": {
           "status": "generated",
@@ -528,19 +507,17 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariant02PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariant02PatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingCancerGeneticVariant02PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"]
         },
         "text": {
           "status": "generated",
@@ -611,19 +588,17 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariant03PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariant03PatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingCancerGeneticVariant03PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"]
         },
         "text": {
           "status": "generated",
@@ -694,9 +669,9 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
-      }      
+      }
     },
     {
       "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker05PatientExample02",
@@ -704,9 +679,7 @@
         "resourceType": "Observation",
         "id": "mCODETrialMatchingTumorMarker05PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
         },
         "text": {
           "status": "generated",
@@ -744,21 +717,19 @@
             }
           ]
         }
-        },
-        "request": {
-          "method": "POST", 
-          "url": "Observation"
-        }
       },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedSurgicalProcedurePatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedSurgicalProcedurePatientExample02",
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedSurgicalProcedurePatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-surgical-procedure"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-surgical-procedure"]
         },
         "text": {
           "status": "generated",
@@ -785,19 +756,17 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Procedure"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02",
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
         },
         "text": {
           "status": "generated",
@@ -835,19 +804,17 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Procedure"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02",
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
         },
         "text": {
           "status": "generated",
@@ -885,19 +852,17 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Procedure"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02",
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
         },
         "text": {
           "status": "generated",
@@ -935,19 +900,17 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Procedure"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02",
       "resource": {
         "resourceType": "Procedure",
         "id": "mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
         },
         "text": {
           "status": "generated",
@@ -985,19 +948,17 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Procedure"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatementPatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatementPatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatementPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1019,19 +980,17 @@
         "effectiveDateTime": "2019-06-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement02PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement02PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement02PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1053,19 +1012,17 @@
         "effectiveDateTime": "2019-06-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement03PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement03PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement03PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1087,19 +1044,17 @@
         "effectiveDateTime": "2019-07-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }    
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement04PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement04PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement04PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1121,19 +1076,17 @@
         "effectiveDateTime": "2019-08-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement05PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement05PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement05PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1155,19 +1108,17 @@
         "effectiveDateTime": "2019-09-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement06PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement06PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement06PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1189,19 +1140,17 @@
         "effectiveDateTime": "2019-09-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }    
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement07PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement07PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement07PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1223,19 +1172,17 @@
         "effectiveDateTime": "2019-10-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }  
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement08PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement08PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement08PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1257,19 +1204,17 @@
         "effectiveDateTime": "2019-12-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
       }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement09PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement09PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement09PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1291,19 +1236,17 @@
         "effectiveDateTime": "2019-12-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement10PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement10PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement10PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1325,19 +1268,17 @@
         "effectiveDateTime": "2020-01-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
-      }      
+      }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement11PatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement11PatientExample02",
       "resource": {
         "resourceType": "MedicationStatement",
         "id": "mCODETrialMatchingCancerMedicationStatement11PatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
         },
         "text": {
           "status": "generated",
@@ -1359,19 +1300,17 @@
         "effectiveDateTime": "2020-02-01"
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "MedicationStatement"
       }
     },
     {
-      "fullUrl": "urn:uuid:mCODETrialMatchingECOGPerformanceStatusPatientExample02", 
+      "fullUrl": "urn:uuid:mCODETrialMatchingECOGPerformanceStatusPatientExample02",
       "resource": {
         "resourceType": "Observation",
         "id": "mCODETrialMatchingECOGPerformanceStatusPatientExample02",
         "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-ecog-performance-status"
-          ]
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-ecog-performance-status"]
         },
         "text": {
           "status": "generated",
@@ -1404,10 +1343,9 @@
         ]
       },
       "request": {
-        "method": "POST", 
+        "method": "POST",
         "url": "Observation"
       }
     }
   ]
 }
-  

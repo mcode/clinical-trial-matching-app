@@ -1,6 +1,6 @@
+import mockPatient from '@/__mocks__/patient';
 import { render, screen } from '@testing-library/react';
 import PatientCard, { PatientCardProps } from '../PatientCard';
-import mockPatient from '@/__mocks__/patient';
 
 describe('<PatientCard />', () => {
   const Component = (props: Partial<PatientCardProps>) => <PatientCard patient={mockPatient} {...props} />;

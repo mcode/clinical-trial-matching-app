@@ -1,5 +1,5 @@
-import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { StudyDetailProps } from '@/components/Results/types';
+import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { getFilteredResults, getFilterOptions, getSortedResults } from '../filterUtils';
 
 const results = mockSearchResults.results as StudyDetailProps[];

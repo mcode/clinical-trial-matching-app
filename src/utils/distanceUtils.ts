@@ -1,7 +1,7 @@
+import { Location, Reference, ResearchStudy } from 'fhir/r4';
+import { convertDistance, getLatitude, getLongitude, getPreciseDistance } from 'geolib';
 import { GeolibInputCoordinates } from 'geolib/es/types';
 import data from 'us-zips';
-import { convertDistance, getPreciseDistance, getLatitude, getLongitude } from 'geolib';
-import { Location, Reference, ResearchStudy } from 'fhir/r4';
 
 export const getZipcodeCoordinates = (zipcode: string): GeolibInputCoordinates => {
   return data[zipcode] || null;

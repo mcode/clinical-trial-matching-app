@@ -1,8 +1,7 @@
-import type { ReactElement } from 'react';
-import { Box, Stack, Typography } from '@mui/material';
-import { AccountCircle as AccountCircleIcon } from '@mui/icons-material';
-
 import type { Patient } from '@/utils/fhirConversionUtils';
+import { AccountCircle as AccountCircleIcon } from '@mui/icons-material';
+import { Box, Stack, Typography } from '@mui/material';
+import type { ReactElement } from 'react';
 
 export type PatientCardProps = {
   patient: Patient;

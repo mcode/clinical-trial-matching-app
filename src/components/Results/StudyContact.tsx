@@ -1,7 +1,6 @@
-import type { ReactElement } from 'react';
-import { Box, Stack } from '@mui/material';
 import { Email as EmailIcon, LocationOn as LocationOnIcon, Phone as PhoneIcon } from '@mui/icons-material';
-
+import { Box, Stack } from '@mui/material';
+import type { ReactElement } from 'react';
 import { ContactProps } from './types';
 
 type StudyContactProps = {

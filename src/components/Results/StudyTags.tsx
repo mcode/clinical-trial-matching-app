@@ -1,5 +1,5 @@
 import { Button, Chip, ClickAwayListener, Fade, Paper, Popper, useMediaQuery, useTheme } from '@mui/material';
-import { ReactElement, MouseEvent, useEffect, useState, MutableRefObject } from 'react';
+import { MouseEvent, MutableRefObject, ReactElement, useEffect, useState } from 'react';
 
 export type StudyTagsProps = {
   isExpanded: boolean;

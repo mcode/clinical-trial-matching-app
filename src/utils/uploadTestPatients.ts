@@ -1,9 +1,9 @@
-import * as fs from 'fs';
-import * as path from 'path';
-import * as mkdirp from 'mkdirp';
-import * as https from 'https';
-import { Bundle, BundleEntry, FhirResource, OperationOutcome, Patient, Resource } from 'fhir/r4';
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios';
+import { Bundle, BundleEntry, FhirResource, OperationOutcome, Patient, Resource } from 'fhir/r4';
+import * as fs from 'fs';
+import * as https from 'https';
+import * as mkdirp from 'mkdirp';
+import * as path from 'path';
 
 type Result = {
   'resource id': string;

@@ -1,4 +1,9 @@
-import { MutableRefObject, ReactElement } from 'react';
+import {
+  Event as EventIcon,
+  ExpandMore as ExpandMoreIcon,
+  LocationOn as LocationOnIcon,
+  Save as SaveIcon,
+} from '@mui/icons-material';
 import {
   AccordionActions,
   AccordionSummary,
@@ -9,19 +14,13 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import {
-  Event as EventIcon,
-  ExpandMore as ExpandMoreIcon,
-  LocationOn as LocationOnIcon,
-  Save as SaveIcon,
-} from '@mui/icons-material';
-import TargetIcon from './TargetIcon';
-import UnsaveIcon from './UnsaveIcon';
+import { MutableRefObject, ReactElement } from 'react';
 import BookmarkCheckIcon from './BookmarkCheckIcon';
-
-import { StudyDetailProps, SaveStudyHandler } from './types';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyTags from './StudyTags';
+import TargetIcon from './TargetIcon';
+import { SaveStudyHandler, StudyDetailProps } from './types';
+import UnsaveIcon from './UnsaveIcon';
 
 type StudyHeaderProps = {
   isExpanded: boolean;

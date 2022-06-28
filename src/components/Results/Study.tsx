@@ -1,4 +1,4 @@
-import { ReactElement, useState, memo, MutableRefObject } from 'react';
+import { ExpandMore as ExpandMoreIcon, Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
 import {
   Accordion,
   AccordionDetails,
@@ -13,15 +13,15 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { ExpandMore as ExpandMoreIcon, Launch as LaunchIcon, Save as SaveIcon } from '@mui/icons-material';
+import { memo, MutableRefObject, ReactElement, useState } from 'react';
+import { StudyDetailProps } from '.';
+import ArmInterventions from './ArmInterventions';
 import StudyContact from './StudyContact';
 import StudyDetailsButton from './StudyDetailsButton';
 import StudyHeader from './StudyHeader';
-import { getDetails } from './utils';
 import { SaveStudyHandler } from './types';
 import UnsaveIcon from './UnsaveIcon';
-import { StudyDetailProps } from '.';
-import ArmInterventions from './ArmInterventions';
+import { getDetails } from './utils';
 
 type StudyProps = {
   entry: StudyDetailProps;
