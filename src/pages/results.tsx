@@ -309,11 +309,24 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 export default ResultsPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  // if you're in testing env just return static values rather than actually mock out fhirclient. arguably you'd want to test out the methods. easier to mock out client there
+  // if (env == production) {
+  //   return {
+  //     props: {
+  //       patient: convertFhirPatient(fhirPatient),
+  //       user: convertFhirUser(fhirUser),
+  //       searchParams: query,
+  //       dehydratedState: dehydrate(queryClient),
+  //     },
+  //   };
+  // }
+
   const { req, res, query } = context;
   const queryClient = new QueryClient();
 
   let fhirClient: Client;
   try {
+    // possibly stub this out in testing, for Cypress?
     fhirClient = await smart(req, res).ready();
   } catch (e) {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };

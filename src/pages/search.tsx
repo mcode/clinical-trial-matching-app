@@ -21,8 +21,13 @@ import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import { GetServerSideProps } from 'next';
+import getConfig from 'next/config';
 import Head from 'next/head';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
+import developmentModeProps from '../../cypress/fixtures/searchServerSideProps';
+const {
+  publicRuntimeConfig: { inDevelopmentMode },
+} = getConfig();
 
 type SearchPageProps = {
   patient: Patient;
@@ -82,10 +87,17 @@ const SearchPage = ({
 export default SearchPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  // if you're in testing env just return static values rather than actually mock out fhirclient. arguably you'd want to test out the methods. easier to mock out client there
+  if (inDevelopmentMode) {
+    return developmentModeProps;
+  }
+
   const { req, res } = context;
 
   let fhirClient: Client;
   try {
+    // possibly stub this out in testing, for Cypress?
+    // fhirclient stuff might all run in the server
     fhirClient = await smart(req, res).ready();
   } catch (e) {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
