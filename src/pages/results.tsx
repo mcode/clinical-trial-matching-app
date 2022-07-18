@@ -198,7 +198,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
       event.stopPropagation();
       dispatch({ type: 'toggleSave', value: entry });
     };
-  const handleClose = (event: SyntheticEvent<Element, Event>, reason?: SnackbarCloseReason) => {
+  const handleClose = (_event: SyntheticEvent<Element, Event>, reason?: SnackbarCloseReason) => {
     // Don't close if we're just clicking "off" of the element
     if (reason === 'clickaway') {
       return;

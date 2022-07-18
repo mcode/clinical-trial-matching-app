@@ -24,7 +24,7 @@ import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
 import { ReactElement } from 'react';
-import developmentModeProps from '../../cypress/fixtures/searchServerSideProps';
+import * as developmentModeProps from '../../cypress/fixtures/searchServerSideProps.json';
 const {
   publicRuntimeConfig: { inDevelopmentMode },
 } = getConfig();
@@ -89,6 +89,7 @@ export default SearchPage;
 export const getServerSideProps: GetServerSideProps = async context => {
   // if you're in testing env just return static values rather than actually mock out fhirclient. arguably you'd want to test out the methods. easier to mock out client there
   if (inDevelopmentMode) {
+    // return { ...developmentModeProps, redirect: { destination: '/launch', permanent: false } };
     return developmentModeProps;
   }
 
