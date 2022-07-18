@@ -17,8 +17,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "typeRoots": ["./node_modules/@types", "./types"],
-    "incremental": true
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
   "compileOnSave": true,
   "exclude": ["node_modules", ".next", "out"],

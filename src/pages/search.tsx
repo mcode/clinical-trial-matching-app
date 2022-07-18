@@ -88,9 +88,11 @@ export default SearchPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
   // if you're in testing env just return static values rather than actually mock out fhirclient. arguably you'd want to test out the methods. easier to mock out client there
+  console.log('inDevelopmentMode', inDevelopmentMode);
+  console.log('developmentModeProps', developmentModeProps);
+
   if (inDevelopmentMode) {
-    // return { ...developmentModeProps, redirect: { destination: '/launch', permanent: false } };
-    return developmentModeProps;
+    return { props: developmentModeProps.props };
   }
 
   const { req, res } = context;
