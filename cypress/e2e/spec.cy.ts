@@ -1,11 +1,11 @@
-describe('Loads the app', () => {
+describe('Tests the end-to-end functionality of the app', () => {
   const APP_URL = 'http://localhost:3200';
 
   beforeEach(() => {
     cy.viewport('macbook-16');
   });
 
-  it.only('Loads the search form', () => {
+  it('Tests the search page', () => {
     // Skip the launch page since we are not loading data from the EHR
     cy.fixture('searchServerSideProps').then(({ props }) => {
       cy.visit(`${APP_URL}/search`);
@@ -31,17 +31,17 @@ describe('Loads the app', () => {
         .should('be.checked');
 
       // Check patient record was loaded in
-      cy.get('p').contains(patient.name).contains(patient.gender).contains(patient.age);
+      cy.get('[data-testid="patientName"]').contains(patient.name);
+      cy.get('[data-testid="patientGender"]').contains(patient.gender);
+      cy.get('[data-testid="patientAge"]').contains(patient.age);
       cy.get('[data-testid="zipcode"]').within(() =>
         cy.get(`input[type="text"]`).should('have.value', patient.zipcode)
       );
       cy.get('[data-testid="age"]').within(() => cy.get(`input[type="number"]`).should('have.value', patient.age));
       cy.get('[data-testid="cancerType"]').within(() =>
-        cy.get(`input[type="text"]`).should('have.value', primaryCancerCondition.cancerType)
+        cy.get(`input[type="text"]`).should('have.value', primaryCancerCondition.cancerType.display)
       );
-      cy.get('[data-testid="cancerSubtype"]').within(() =>
-        cy.get(`input[type="text"]`).should('have.value', primaryCancerCondition.cancerSubtype)
-      );
+      cy.get('[data-testid="cancerSubtype"]').within(() => cy.get(`input[type="text"]`).should('be.empty'));
       cy.get('[data-testid="stage"]').within(() =>
         cy.get(`input[type="text"]`).should('have.value', primaryCancerCondition.stage)
       );
@@ -65,6 +65,8 @@ describe('Loads the app', () => {
       cy.get('[data-testid="cancerSubtype"]').within(() =>
         cy.get(`input[type="text"]`).should('have.value', selectedCancerSubtype)
       );
+
+      //
     });
   });
 });

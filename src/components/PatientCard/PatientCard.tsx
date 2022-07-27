@@ -14,10 +14,14 @@ const PatientCard = ({ patient }: PatientCardProps): ReactElement => (
     </Stack>
 
     <Box>
-      <Typography fontWeight={700}>{patient.name}</Typography>
+      <Typography fontWeight={700} data-testid="patientName">
+        {patient.name}
+      </Typography>
       <Stack direction="row">
-        <Typography mr={2}>{patient.gender}</Typography>
-        <Typography>{patient.age} yrs</Typography>
+        <Typography mr={2} data-testid="patientGender">
+          {patient.gender}
+        </Typography>
+        <Typography data-testid="patientAge">{patient.age} yrs</Typography>
       </Stack>
     </Box>
   </Stack>
