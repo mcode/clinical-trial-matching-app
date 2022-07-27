@@ -1,3 +1,4 @@
+import * as searchServerSideProps from '../fixtures/searchServerSideProps.json';
 describe('Tests the end-to-end functionality of the app', () => {
   const APP_URL = 'http://localhost:3200';
 
@@ -6,67 +7,68 @@ describe('Tests the end-to-end functionality of the app', () => {
   });
 
   it('Tests the search page', () => {
+    const containsEveryExpectedItem = (arr: string[]) => () =>
+      cy.get(`[role="button"]`).each((item, index) => cy.wrap(item).contains(arr[index]));
+    const hasText = (value: string) => () => cy.get(`input[type="text"]`).should('have.value', value);
+    const hasNumber = (value: number) => () => cy.get(`input[type="number"]`).should('have.value', value);
+    const isEmpty = () => cy.get(`input[type="text"]`).should('be.empty');
+    const selectedCancerSubtype = 'Juvenile carcinoma of the breast (morphologic abnormality)';
+
+    const {
+      patient,
+      user,
+      primaryCancerCondition,
+      metastasis,
+      ecogScore,
+      karnofskyScore,
+      biomarkers,
+      radiation,
+      surgery,
+      medications,
+    } = searchServerSideProps.props;
+
     // Skip the launch page since we are not loading data from the EHR
-    cy.fixture('searchServerSideProps').then(({ props }) => {
-      cy.visit(`${APP_URL}/search`);
 
-      const {
-        patient,
-        user,
-        primaryCancerCondition,
-        metastasis,
-        ecogScore,
-        karnofskyScore,
-        biomarkers,
-        radiation,
-        surgery,
-        medications,
-      } = props;
+    cy.visit(`${APP_URL}/search`);
 
-      const selectedCancerSubtype = 'Juvenile carcinoma of the breast (morphologic abnormality)';
+    // At least one matching service is checked
+    cy.get('[data-testid="matchingServices"]').get('[name="matchingServices.breastCancerTrials"]').should('be.checked');
 
-      // See that at least one matching service is checked
-      cy.get('[data-testid="matchingServices"]')
-        .get('[name="matchingServices.breastCancerTrials"]')
-        .should('be.checked');
+    // Mock user was loaded in
+    cy.get('[data-testid="userName"]').contains(user.name);
 
-      // Check patient record was loaded in
-      cy.get('[data-testid="patientName"]').contains(patient.name);
-      cy.get('[data-testid="patientGender"]').contains(patient.gender);
-      cy.get('[data-testid="patientAge"]').contains(patient.age);
-      cy.get('[data-testid="zipcode"]').within(() =>
-        cy.get(`input[type="text"]`).should('have.value', patient.zipcode)
-      );
-      cy.get('[data-testid="age"]').within(() => cy.get(`input[type="number"]`).should('have.value', patient.age));
-      cy.get('[data-testid="cancerType"]').within(() =>
-        cy.get(`input[type="text"]`).should('have.value', primaryCancerCondition.cancerType.display)
-      );
-      cy.get('[data-testid="cancerSubtype"]').within(() => cy.get(`input[type="text"]`).should('be.empty'));
-      cy.get('[data-testid="stage"]').within(() =>
-        cy.get(`input[type="text"]`).should('have.value', primaryCancerCondition.stage)
-      );
-      cy.get('[data-testid="ecogScore"]').within(() => cy.get(`input[type="text"]`).should('have.value', ecogScore));
-      cy.get('[data-testid="karnofskyScore"]').within(() =>
-        cy.get(`input[type="text"]`).should('have.value', karnofskyScore)
-      );
-      cy.get('[data-testid="metastasis"]').within(() => cy.get(`[role="button"]`).contains(metastasis[0]));
-      cy.get('[data-testid="biomarkers"]').within(() => cy.get(`[role="button"]`).contains(biomarkers[0]));
-      cy.get('[data-testid="radiation"]').within(() => cy.get(`[role="button"]`).contains(radiation[0]));
-      cy.get('[data-testid="surgery"]').within(() => cy.get(`[role="button"]`).contains(surgery[0]));
-      cy.get('[data-testid="medications"]').within(() => cy.get(`[role="button"]`).contains(medications[0]));
+    // Mock patient record was loaded in
+    cy.get('[data-testid="patientName"]').contains(patient.name);
+    cy.get('[data-testid="patientGender"]').contains(patient.gender);
+    cy.get('[data-testid="patientAge"]').contains(patient.age);
+    cy.get('[data-testid="zipcode"]').within(hasText(patient.zipcode));
+    cy.get('[data-testid="age"]').within(hasNumber(Number(patient.age)));
+    cy.get('[data-testid="cancerType"]').within(hasText(primaryCancerCondition.cancerType.display));
+    cy.get('[data-testid="cancerSubtype"]').within(isEmpty);
+    cy.get('[data-testid="stage"]').within(hasText(primaryCancerCondition.stage));
+    cy.get('[data-testid="ecogScore"]').within(hasText(ecogScore));
+    cy.get('[data-testid="karnofskyScore"]').within(hasText(karnofskyScore));
+    cy.get('[data-testid="metastasis"]').within(containsEveryExpectedItem(metastasis));
+    cy.get('[data-testid="biomarkers"]').within(containsEveryExpectedItem(biomarkers));
+    cy.get('[data-testid="radiation"]').within(containsEveryExpectedItem(radiation));
+    cy.get('[data-testid="surgery"]').within(containsEveryExpectedItem(surgery));
+    cy.get('[data-testid="medications"]').within(containsEveryExpectedItem(medications));
 
-      // Select cancer subtype
-      cy.scrollTo(0, 100);
-      cy.get('[data-testid="cancerSubtype"]')
-        .click()
-        .get('.MuiAutocomplete-popper [role="listbox"]')
-        .contains(selectedCancerSubtype)
-        .click();
-      cy.get('[data-testid="cancerSubtype"]').within(() =>
-        cy.get(`input[type="text"]`).should('have.value', selectedCancerSubtype)
-      );
+    // Select cancer subtype
+    cy.scrollTo(0, 100);
+    cy.get('[data-testid="cancerSubtype"]')
+      .click()
+      .get('.MuiAutocomplete-popper [role="listbox"]')
+      .contains(selectedCancerSubtype)
+      .click();
+    cy.get('[data-testid="cancerSubtype"]').within(hasText(selectedCancerSubtype));
 
-      //
-    });
+    // Click search
+    cy.get('button[type="submit"]')
+      .contains(/search/i)
+      .click();
+    // cy.submit('form');
+
+    // Check that the following query parameters were populated from the search form?
   });
 });

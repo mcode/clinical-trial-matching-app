@@ -29,7 +29,7 @@ const Header = ({ userName }: HeaderProps): ReactElement => {
         </Link>
 
         {userName && !isExtraSmallScreen && (
-          <Box color="common.white" fontWeight="600" mr={1} textAlign="right">
+          <Box color="common.white" fontWeight="600" mr={1} textAlign="right" data-testid="userName">
             {userName}
           </Box>
         )}
