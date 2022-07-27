@@ -87,20 +87,12 @@ const SearchPage = ({
 export default SearchPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  // if you're in testing env just return static values rather than actually mock out fhirclient. arguably you'd want to test out the methods. easier to mock out client there
-  console.log('inDevelopmentMode', inDevelopmentMode);
-  console.log('developmentModeProps', developmentModeProps);
-
-  if (inDevelopmentMode) {
-    return { props: developmentModeProps.props };
-  }
+  if (inDevelopmentMode) return { props: developmentModeProps.props };
 
   const { req, res } = context;
 
   let fhirClient: Client;
   try {
-    // possibly stub this out in testing, for Cypress?
-    // fhirclient stuff might all run in the server
     fhirClient = await smart(req, res).ready();
   } catch (e) {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
