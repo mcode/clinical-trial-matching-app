@@ -7,6 +7,7 @@ module.exports = {
     defaultZipCode: process.env.DEFAULT_ZIP_CODE,
     sendLocationData: eval(process.env.SEND_LOCATION_DATA),
     reactAppDebug: eval(process.env.REACT_APP_DEBUG),
+    inDevelopmentMode: eval(process.env.IN_DEVELOPMENT_MODE),
     services: [
       {
         name: 'ancora',

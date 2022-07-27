@@ -21,8 +21,13 @@ import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import { GetServerSideProps } from 'next';
+import getConfig from 'next/config';
 import Head from 'next/head';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
+import * as developmentModeProps from '../../cypress/fixtures/searchServerSideProps.json';
+const {
+  publicRuntimeConfig: { inDevelopmentMode },
+} = getConfig();
 
 type SearchPageProps = {
   patient: Patient;
@@ -82,6 +87,8 @@ const SearchPage = ({
 export default SearchPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  if (inDevelopmentMode) return { props: developmentModeProps.props };
+
   const { req, res } = context;
 
   let fhirClient: Client;
