@@ -1,0 +1,1509 @@
+{
+	"entry": [
+		{
+			"entryType": "CancerType",
+			"code": "441313008",
+			"display": "Indolent multiple myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "440422002",
+			"display": "Asymptomatic multiple myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "425657001",
+			"display": "Osteosclerotic myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "415110002",
+			"display": "Plasma cell myeloma/plasmacytoma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "414553000",
+			"display": "Kappa light chain myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "413587002",
+			"display": "Smoldering myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "313427003",
+			"display": "Lambda light chain myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "285422003",
+			"display": "Immunoglobulin D myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "285421005",
+			"display": "Immunoglobulin G myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "285420006",
+			"display": "Immunoglobulin A myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "277580004",
+			"display": "Non-secretory myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "277579002",
+			"display": "Light chain myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "109989006",
+			"display": "Multiple myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "95210003",
+			"display": "Plasma cell leukemia, disease (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "413587002",
+			"display": "Smoldering myeloma (disorder)"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009389",
+			"display": "Tresaderm"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1049383",
+			"display": "Dexium"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "134920",
+			"display": "Maxitrol"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "203704",
+			"display": "Dexasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "203705",
+			"display": "Maxidex"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2045405",
+			"display": "Dexycu"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2108016",
+			"display": "Dextenza"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "219289",
+			"display": "Poly-Dex"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "220330",
+			"display": "Tobradex"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "227682",
+			"display": "Decadron"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2286256",
+			"display": "Hemady"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "404930",
+			"display": "Ciprodex"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "854178",
+			"display": "Ozurdex"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1998481",
+			"display": "TaperDex 12 Day Taper Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1998482",
+			"display": "TaperDex 6 Day Taper Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2118829",
+			"display": "HiDex 1.5 MG Tablet 6-day 21 Count Taper Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2118835",
+			"display": "TaperDex 1.5 MG Tablet 7-Day 27 Count Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2121735",
+			"display": "Dxevo 11 Day Taper Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2387356",
+			"display": "Zcort 1.5 MG Tablet 7 Day 25 Count Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "795716",
+			"display": "Decadron 5-12 Pak"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "797022",
+			"display": "DexPak 10 Day TaperPak"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "797023",
+			"display": "DexPak TaperPak 13 Day Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "847225",
+			"display": "DexPak TaperPak 6 Day Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1869595",
+			"display": "{27 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1943550",
+			"display": "{49 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2121587",
+			"display": "{39 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2387355",
+			"display": "{25 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "759481",
+			"display": "{51 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "759696",
+			"display": "{12 (dexamethasone 0.75 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "759697",
+			"display": "{35 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "846192",
+			"display": "{21 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "3264",
+			"display": "dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1007105",
+			"display": "astemizole / dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1007256",
+			"display": "clioquinol / dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1007423",
+			"display": "dexamethasone / oxytetracycline"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1007483",
+			"display": "dexamethasone / hypromellose"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1007628",
+			"display": "dexamethasone / dobesilic acid / lidocaine"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1007854",
+			"display": "clotrimazole / dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1008217",
+			"display": "clemastine / dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1008930",
+			"display": "dexamethasone / phenylephrine"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009150",
+			"display": "dexamethasone / sodium phosphate"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009387",
+			"display": "dexamethasone / neomycin / thiabendazole"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "214478",
+			"display": "dexamethasone / lidocaine"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "216524",
+			"display": "dexamethasone / neomycin"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "216525",
+			"display": "dexamethasone / neomycin / polymyxin B"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "465397",
+			"display": "ciprofloxacin / dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "687304",
+			"display": "dexamethasone / tramazoline"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "813683",
+			"display": "dexamethasone / theophylline"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "814504",
+			"display": "dexamethasone / indomethacin"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "815833",
+			"display": "chloramphenicol / dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "818139",
+			"display": "dexamethasone / terfenadine"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "820465",
+			"display": "carisoprodol / dexamethasone / ibuprofen"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "821542",
+			"display": "cyproheptadine / dexamethasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "822000",
+			"display": "carisoprodol / dexamethasone / tenoxicam"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "883815",
+			"display": "dexamethasone / tobramycin"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "22690",
+			"display": "dexamethasone acetate"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "22694",
+			"display": "dexamethasone trimethyl acetate"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "235486",
+			"display": "dexamethasone phosphate"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2378841",
+			"display": "dexamethasone acetate anhydrous"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "3265",
+			"display": "dexamethasone isonicotinate"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "48933",
+			"display": "dexamethasone sodium phosphate"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009392",
+			"display": "Tresaderm (dexamethasone 1 MG / neomycin 3.2 MG / thiabendazole 40 MG) per ML Topical Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1011080",
+			"display": "Tobradex (dexamethasone 0.05 % / tobramycin 0.3 % ) Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1049386",
+			"display": "Dexium 2 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "105392",
+			"display": "Decadron 0.5 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1087757",
+			"display": "Dexasone 2 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1087919",
+			"display": "Dexium 3 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2045409",
+			"display": "0.005 ML Dexycu 103.4 MG/ML Injection"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "205669",
+			"display": "Maxidex 0.1 % Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "205712",
+			"display": "Decadron 4 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "205717",
+			"display": "Decadron 6 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "208591",
+			"display": "Maxitrol (neomycin 3.5 MG / polymyxin B 10,000 UNT / dexamethasone 1 MG) per 1 ML Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "208593",
+			"display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10,000 UNT) per ML Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "208601",
+			"display": "Maxitrol (neomycin 3.5 MG / polymyxin b 10,000 UNT / dexamethasone 1 MG) per GM Ophthalmic Ointment"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "208602",
+			"display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10 UNT/MG) Ophthalmic Ointment"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "208813",
+			"display": "TobraDex (dexamethasone 0.1 % / tobramycin 0.3 % ) Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "208821",
+			"display": "Tobradex (tobramycin 0.3 % / dexamethasone 0.1 % ) Ophthalmic Ointment"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2108020",
+			"display": "Dextenza 0.4 MG Ophthalmic Insert"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2286261",
+			"display": "Hemady 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "343040",
+			"display": "Decadron 0.75 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "404630",
+			"display": "Ciprodex (ciprofloxacin 0.3 % / dexamethasone 0.1 % ) Otic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "755976",
+			"display": "Decadron 0.1 MG/ML Oral Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "854181",
+			"display": "Ozurdex 0.7 MG Intravitreal Drug Implant"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009390",
+			"display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML [Tresaderm]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1011079",
+			"display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML [Tobradex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1049384",
+			"display": "dexamethasone 2 MG/ML [Dexium]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1087756",
+			"display": "dexamethasone 2 MG/ML [Dexasone]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1087918",
+			"display": "dexamethasone 3 MG/ML [Dexium]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2045406",
+			"display": "dexamethasone 103.4 MG/ML [Dexycu]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2108017",
+			"display": "dexamethasone 0.4 MG [Dextenza]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2286257",
+			"display": "dexamethasone 20 MG [Hemady]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "545158",
+			"display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML [Ciprodex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "564044",
+			"display": "dexamethasone 0.5 MG [Decadron]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "566561",
+			"display": "dexamethasone 1 MG/ML [Maxidex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "566581",
+			"display": "dexamethasone 0.1 MG/ML [Decadron]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "566603",
+			"display": "dexamethasone 4 MG [Decadron]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "566608",
+			"display": "dexamethasone 6 MG [Decadron]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "569262",
+			"display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Maxitrol]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "569264",
+			"display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Poly-Dex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "569272",
+			"display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Maxitrol]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "569273",
+			"display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Poly-Dex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "569462",
+			"display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML [Tobradex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "569470",
+			"display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG [Tobradex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "575233",
+			"display": "dexamethasone 0.75 MG [Decadron]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "854179",
+			"display": "dexamethasone 0.7 MG [Ozurdex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009391",
+			"display": "dexamethasone / neomycin / thiabendazole Topical Solution [Tresaderm]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1049385",
+			"display": "dexamethasone Injectable Solution [Dexium]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2045407",
+			"display": "dexamethasone Injection [Dexycu]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2108018",
+			"display": "dexamethasone Drug Implant [Dextenza]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2286258",
+			"display": "dexamethasone Oral Tablet [Hemady]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "363482",
+			"display": "dexamethasone Injectable Solution [Dexasone]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "365818",
+			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Poly-Dex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "365842",
+			"display": "dexamethasone Ophthalmic Suspension [Maxidex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "367266",
+			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Poly-Dex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "369461",
+			"display": "dexamethasone Oral Tablet [Decadron]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "405941",
+			"display": "ciprofloxacin / dexamethasone Otic Suspension [Ciprodex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "757087",
+			"display": "dexamethasone Oral Solution [Decadron]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "854180",
+			"display": "dexamethasone Drug Implant [Ozurdex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "93249",
+			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Maxitrol]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "93250",
+			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Maxitrol]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "94334",
+			"display": "dexamethasone / tobramycin Ophthalmic Suspension [Tobradex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "94335",
+			"display": "dexamethasone / tobramycin Ophthalmic Ointment [Tobradex]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1170296",
+			"display": "Decadron Oral Liquid Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1170297",
+			"display": "Decadron Oral Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1170298",
+			"display": "Decadron Pill"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1170903",
+			"display": "Ciprodex Otic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1175250",
+			"display": "Dexasone Injectable Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1175843",
+			"display": "Dexium Injectable Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1177629",
+			"display": "Ozurdex Drug Implant Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1179099",
+			"display": "Tobradex Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1179675",
+			"display": "Tresaderm Topical Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1181604",
+			"display": "Maxidex Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1182730",
+			"display": "Maxitrol Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1182982",
+			"display": "Poly-Dex Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2045408",
+			"display": "Dexycu Injectable Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2108019",
+			"display": "Dextenza Drug Implant Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2286259",
+			"display": "Hemady Oral Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2286260",
+			"display": "Hemady Pill"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009388",
+			"display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML Topical Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1049400",
+			"display": "dexamethasone sodium phosphate 4 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1116927",
+			"display": "dexamethasone phosphate 4 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1249712",
+			"display": "dexamethasone sodium phosphate 0.4 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1374372",
+			"display": "dexamethasone acetate 8 MG/ML Injectable Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1812079",
+			"display": "1 ML dexamethasone phosphate 10 MG/ML Injection"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1812095",
+			"display": "1 ML dexamethasone phosphate 4 MG/ML Prefilled Syringe"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1812194",
+			"display": "1 ML dexamethasone phosphate 4 MG/ML Injection"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "197576",
+			"display": "dexamethasone 0.25 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "197577",
+			"display": "dexamethasone 0.5 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "197579",
+			"display": "dexamethasone 1 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "197580",
+			"display": "dexamethasone 1.5 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "197581",
+			"display": "dexamethasone 2 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "197582",
+			"display": "dexamethasone 4 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "197583",
+			"display": "dexamethasone 6 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2045404",
+			"display": "0.005 ML dexamethasone 103.4 MG/ML Injection"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2099700",
+			"display": "1 ML dexamethasone phosphate 10 MG/ML Prefilled Syringe"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2108015",
+			"display": "dexamethasone 0.4 MG Drug Implant"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2261802",
+			"display": "dexamethasone 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "226343",
+			"display": "dexamethasone phosphate 1 MG/ML Ophthalmic Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "227142",
+			"display": "dexamethasone 1 MG/ML / hypromellose 5 MG/ML Ophthalmic Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "248175",
+			"display": "dexamethasone 0.02 MG/ACTUAT / tramazoline 0.12 MG/ACTUAT Nasal Spray"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309679",
+			"display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG Ophthalmic Ointment"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309680",
+			"display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309682",
+			"display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG Ophthalmic Ointment"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309683",
+			"display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309684",
+			"display": "dexamethasone 1 MG/ML Oral Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309686",
+			"display": "dexamethasone 0.1 MG/ML Oral Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309692",
+			"display": "dexamethasone 1 MG/ML Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "309696",
+			"display": "dexamethasone phosphate 10 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "343033",
+			"display": "dexamethasone 0.75 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "388755",
+			"display": "dexamethasone 1 MG/ML Topical Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "403908",
+			"display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML Otic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "435681",
+			"display": "dexamethasone 2 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "849115",
+			"display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "854177",
+			"display": "dexamethasone 0.7 MG Drug Implant"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "880649",
+			"display": "dexamethasone 3 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1049399",
+			"display": "dexamethasone sodium phosphate 4 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1116926",
+			"display": "dexamethasone phosphate 4 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1249711",
+			"display": "dexamethasone sodium phosphate 0.4 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1374371",
+			"display": "dexamethasone acetate 8 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1812078",
+			"display": "dexamethasone phosphate 10 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2045403",
+			"display": "dexamethasone 103.4 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2261801",
+			"display": "dexamethasone 20 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "2265538",
+			"display": "dexamethasone phosphate 1 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315773",
+			"display": "dexamethasone 0.1 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315774",
+			"display": "dexamethasone 0.25 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315775",
+			"display": "dexamethasone 0.5 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315776",
+			"display": "dexamethasone 1 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315777",
+			"display": "dexamethasone 1.5 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315778",
+			"display": "dexamethasone 4 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315779",
+			"display": "dexamethasone 6 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "317346",
+			"display": "dexamethasone 2 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "317629",
+			"display": "dexamethasone 1 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "332981",
+			"display": "dexamethasone 3 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "332984",
+			"display": "dexamethasone 0.4 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "335766",
+			"display": "dexamethasone 0.02 MG/ACTUAT"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "339981",
+			"display": "dexamethasone 0.001 MG/MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "345816",
+			"display": "dexamethasone 0.75 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "438889",
+			"display": "dexamethasone 0.5 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "451789",
+			"display": "dexamethasone 2 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "854175",
+			"display": "dexamethasone 0.7 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1009386",
+			"display": "dexamethasone / neomycin / thiabendazole Topical Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1812073",
+			"display": "dexamethasone Injection"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1812094",
+			"display": "dexamethasone Prefilled Syringe"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "371721",
+			"display": "dexamethasone Injectable Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "371723",
+			"display": "dexamethasone Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "371725",
+			"display": "dexamethasone Injectable Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "371728",
+			"display": "dexamethasone Oral Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "371729",
+			"display": "dexamethasone Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "374438",
+			"display": "dexamethasone / tobramycin Ophthalmic Ointment"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "374698",
+			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "374699",
+			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "377418",
+			"display": "dexamethasone Ophthalmic Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "377456",
+			"display": "dexamethasone / hypromellose Ophthalmic Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "378984",
+			"display": "dexamethasone / tobramycin Ophthalmic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "393151",
+			"display": "dexamethasone Topical Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "393542",
+			"display": "dexamethasone / tramazoline Nasal Spray"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "405942",
+			"display": "ciprofloxacin / dexamethasone Otic Suspension"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "854176",
+			"display": "dexamethasone Drug Implant"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1152113",
+			"display": "ciprofloxacin / dexamethasone Otic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154245",
+			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154246",
+			"display": "dexamethasone / neomycin / thiabendazole Topical Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154247",
+			"display": "dexamethasone / neomycin Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154249",
+			"display": "dexamethasone / neomycin Topical Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154524",
+			"display": "dexamethasone / tobramycin Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154525",
+			"display": "dexamethasone / hypromellose Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154527",
+			"display": "dexamethasone / tramazoline Inhalant Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154528",
+			"display": "dexamethasone / tramazoline Nasal Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154529",
+			"display": "dexamethasone Drug Implant Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154531",
+			"display": "dexamethasone Injectable Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154532",
+			"display": "dexamethasone Nasal Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154533",
+			"display": "dexamethasone Ophthalmic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154534",
+			"display": "dexamethasone Oral Liquid Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154535",
+			"display": "dexamethasone Oral Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154536",
+			"display": "dexamethasone Otic Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154537",
+			"display": "dexamethasone Pill"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1154539",
+			"display": "dexamethasone Topical Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303126",
+			"display": "Rayos"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "227730",
+			"display": "Deltasone"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "10312",
+			"display": "Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "763179",
+			"display": "{48 (predniSONE 5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "763181",
+			"display": "{21 (predniSONE 5 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "763183",
+			"display": "{48 (predniSONE 10 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "763185",
+			"display": "{21 (predniSONE 10 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "8640",
+			"display": "predniSONE"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1008942",
+			"display": "chloramphenicol / predniSONE"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "815961",
+			"display": "piroxicam / predniSONE"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303131",
+			"display": "Rayos 1 MG Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303134",
+			"display": "Rayos 2 MG Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303137",
+			"display": "Rayos 5 MG Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "206997",
+			"display": "Deltasone 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303127",
+			"display": "predniSONE 1 MG [Rayos]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303133",
+			"display": "predniSONE 2 MG [Rayos]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303136",
+			"display": "predniSONE 5 MG [Rayos]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "567793",
+			"display": "predniSONE 20 MG [Deltasone]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303128",
+			"display": "predniSONE Delayed Release Oral Tablet [Rayos]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "92354",
+			"display": "predniSONE Oral Tablet [Deltasone]"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1172410",
+			"display": "Deltasone Oral Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1172411",
+			"display": "Deltasone Pill"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303129",
+			"display": "Rayos Oral Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303130",
+			"display": "Rayos Pill"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303125",
+			"display": "predniSONE 1 MG Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303132",
+			"display": "predniSONE 2 MG Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303135",
+			"display": "predniSONE 5 MG Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "198144",
+			"display": "predniSONE 1 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "198145",
+			"display": "predniSONE 10 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "198146",
+			"display": "predniSONE 2.5 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "198148",
+			"display": "predniSONE 50 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "205301",
+			"display": "predniSONE 5 MG/ML Oral Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "312615",
+			"display": "predniSONE 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "312617",
+			"display": "predniSONE 5 MG Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "315187",
+			"display": "predniSONE 1 MG/ML Oral Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "316580",
+			"display": "predniSONE 1 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "316581",
+			"display": "predniSONE 2.5 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "316582",
+			"display": "predniSONE 20 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "316584",
+			"display": "predniSONE 5 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "316585",
+			"display": "predniSONE 5 MG/ML"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "316586",
+			"display": "predniSONE 50 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "317475",
+			"display": "predniSONE 1 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "317663",
+			"display": "predniSONE 10 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "335473",
+			"display": "predniSONE 2 MG"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1303124",
+			"display": "predniSONE Delayed Release Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "373583",
+			"display": "predniSONE Oral Solution"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "373585",
+			"display": "predniSONE Oral Tablet"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1161704",
+			"display": "predniSONE Oral Liquid Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1161705",
+			"display": "predniSONE Oral Product"
+		},
+		{
+			"entryType": "CancerType",
+			"code": "1161706",
+			"display": "predniSONE Pill"
+		}
+	]
+}
