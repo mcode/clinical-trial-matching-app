@@ -124,7 +124,7 @@ const getType = (study: ResearchStudy): TypeProps => {
 };
 
 const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
-  const arms = {};
+  const arms = new Map<string, ArmGroup>();
 
   // Dont bother if there are no arms and interventions
   const noArms: boolean = study.arm == undefined || study.arm == null || study.arm.length == 0;
@@ -144,11 +144,11 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Set up the arm groups -- we'll use the name of the arm group as the key.
   for (const arm of study.arm) {
-    arms[arm.name] = {
+    arms.set(arm.name, {
       display: arm.type ? (arm?.type?.text ? arm.type.text + ': ' + arm.name : '') : '',
       ...(arm.description && { description: arm.description }),
       interventions: [],
-    } as ArmGroup;
+    });
   }
 
   // Map the interventions to their arm group.
@@ -161,11 +161,14 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
         ...(intervention?.subtitle && { subtitle: intervention.subtitle }),
         ...(intervention?.description && { description: intervention.description }),
       };
-      arms[intervention.subjectCodeableConcept.text].interventions.push(formatted_intervention);
+      const arm = arms.get(intervention.subjectCodeableConcept.text);
+      if (arm) {
+        arm.interventions.push(formatted_intervention);
+      }
     }
   }
 
-  return Object.values(arms);
+  return Array.from(arms.values());
 };
 
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
