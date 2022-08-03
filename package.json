@@ -19,7 +19,8 @@
     "test:ci": "jest",
     "upload-test-patients": "ts-node ./src/utils/uploadTestPatients.ts",
     "upload-test-patients:dump": "ts-node ./src/utils/uploadTestPatients.ts --dump",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "e2e": "NODE_ENV=test node server.js"
   },
   "dependencies": {
     "@emotion/cache": "^11.4.0",

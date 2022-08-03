@@ -1,7 +1,7 @@
 import { Service } from '@/queries/clinicalTrialSearchQuery';
 import { Box, FormControl, FormControlLabel, FormGroup, FormLabel, Stack } from '@mui/material';
 import getConfig from 'next/config';
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import { Control, Controller } from 'react-hook-form';
 import { MatchingServiceCheckbox } from './FormFields';
 import { SearchFormValuesType } from './types';

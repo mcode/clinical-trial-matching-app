@@ -24,9 +24,9 @@ import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
 import { ReactElement } from 'react';
-import * as developmentModeProps from '../../cypress/fixtures/searchServerSideProps.json';
+import * as testModeProps from '../../cypress/fixtures/searchServerSideProps.json';
 const {
-  publicRuntimeConfig: { inDevelopmentMode },
+  publicRuntimeConfig: { inTestMode },
 } = getConfig();
 
 type SearchPageProps = {
@@ -87,7 +87,7 @@ const SearchPage = ({
 export default SearchPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
-  if (inDevelopmentMode) return { props: developmentModeProps.props };
+  if (inTestMode) return { props: testModeProps.props };
 
   const { req, res } = context;
 

@@ -31,8 +31,13 @@ describe('Tests the end-to-end functionality of the app', () => {
 
     cy.visit(`${APP_URL}/search`);
 
-    // At least one matching service is checked
-    cy.get('[data-testid="matchingServices"]').get('[name="matchingServices.breastCancerTrials"]').should('be.checked');
+    // Mock matching services were loaded in
+    cy.get('[data-testid="matchingServices"]').get('[name="matchingServices.service-1"]').should('not.be.checked');
+    cy.get('[data-testid="matchingServices"]')
+      .get('[name="matchingServices.service-2"]')
+      .should('be.checked')
+      .click()
+      .should('not.be.checked');
 
     // Mock user was loaded in
     cy.get('[data-testid="userName"]').contains(user.name);
@@ -64,9 +69,9 @@ describe('Tests the end-to-end functionality of the app', () => {
     cy.get('[data-testid="cancerSubtype"]').within(hasText(selectedCancerSubtype));
 
     // Click search
-    cy.get('button[type="submit"]')
-      .contains(/search/i)
-      .click();
+    // cy.get('button[type="submit"]')
+    //   .contains(/search/i)
+    //   .click();
     // cy.submit('form');
 
     // Check that the following query parameters were populated from the search form?
