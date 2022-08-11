@@ -1,0 +1,2119 @@
+{
+	"entry": [
+		{
+			"entryType": "Medication",
+			"code": "1726098",
+			"display": "Bendeka"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178262",
+			"display": "Belrapzo"
+		},
+		{
+			"entryType": "Medication",
+			"code": "741098",
+			"display": "Treanda"
+		},
+		{
+			"entryType": "Medication",
+			"code": "134547",
+			"display": "bendamustine"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1114693",
+			"display": "bendamustine hydrochloride"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726102",
+			"display": "Bendeka 25 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805004",
+			"display": "Treanda 100 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805009",
+			"display": "Treanda 25 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178266",
+			"display": "Belrapzo 25 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726099",
+			"display": "bendamustine hydrochloride 25 MG/ML [Bendeka]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805002",
+			"display": "bendamustine hydrochloride 100 MG [Treanda]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805008",
+			"display": "bendamustine hydrochloride 25 MG [Treanda]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178263",
+			"display": "bendamustine hydrochloride 25 MG/ML [Belrapzo]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726100",
+			"display": "bendamustine Injectable Solution [Bendeka]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805003",
+			"display": "bendamustine Injection [Treanda]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178264",
+			"display": "bendamustine Injectable Solution [Belrapzo]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1179668",
+			"display": "Treanda Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726101",
+			"display": "Bendeka Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178265",
+			"display": "Belrapzo Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726097",
+			"display": "bendamustine hydrochloride 25 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805001",
+			"display": "bendamustine hydrochloride 100 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805007",
+			"display": "bendamustine hydrochloride 25 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726096",
+			"display": "bendamustine hydrochloride 25 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1804999",
+			"display": "bendamustine hydrochloride 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805006",
+			"display": "bendamustine hydrochloride 25 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1805000",
+			"display": "bendamustine Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "790322",
+			"display": "bendamustine Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1160009",
+			"display": "bendamustine Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "3002",
+			"display": "cyclophosphamide"
+		},
+		{
+			"entryType": "Medication",
+			"code": "690313",
+			"display": "cyclophosphamide / mannitol"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1545988",
+			"display": "cyclophosphamide anhydrous"
+		},
+		{
+			"entryType": "Medication",
+			"code": "221085",
+			"display": "cyclophosphamide lyophilized"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1437968",
+			"display": "cyclophosphamide 25 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1437969",
+			"display": "cyclophosphamide 50 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1734917",
+			"display": "cyclophosphamide 500 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1734919",
+			"display": "cyclophosphamide 1000 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1734921",
+			"display": "cyclophosphamide 2000 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "197549",
+			"display": "cyclophosphamide 25 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "197550",
+			"display": "cyclophosphamide 50 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2386859",
+			"display": "cyclophosphamide 200 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2568661",
+			"display": "5 ML cyclophosphamide 200 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2568663",
+			"display": "2.5 ML cyclophosphamide 200 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1734915",
+			"display": "cyclophosphamide 500 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1734918",
+			"display": "cyclophosphamide 1000 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1734920",
+			"display": "cyclophosphamide 2000 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2386858",
+			"display": "cyclophosphamide 200 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "315746",
+			"display": "cyclophosphamide 25 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "315747",
+			"display": "cyclophosphamide 50 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1437967",
+			"display": "cyclophosphamide Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1734916",
+			"display": "cyclophosphamide Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "371664",
+			"display": "cyclophosphamide Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "376666",
+			"display": "cyclophosphamide Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1156181",
+			"display": "cyclophosphamide Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1156182",
+			"display": "cyclophosphamide Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1156183",
+			"display": "cyclophosphamide Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1274581",
+			"display": "LipoDox"
+		},
+		{
+			"entryType": "Medication",
+			"code": "42512",
+			"display": "Adriamycin"
+		},
+		{
+			"entryType": "Medication",
+			"code": "80773",
+			"display": "Doxil"
+		},
+		{
+			"entryType": "Medication",
+			"code": "3639",
+			"display": "DOXOrubicin"
+		},
+		{
+			"entryType": "Medication",
+			"code": "142433",
+			"display": "DOXOrubicin hydrochloride"
+		},
+		{
+			"entryType": "Medication",
+			"code": "214525",
+			"display": "DOXOrubicin liposome"
+		},
+		{
+			"entryType": "Medication",
+			"code": "466523",
+			"display": "DOXOrubicin hydrochloride liposome"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790128",
+			"display": "Doxil 50 MG per 25 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790131",
+			"display": "Doxil 20 MG per 10 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790177",
+			"display": "LipoDox 50 MG per 25 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790181",
+			"display": "LipoDox 20 MG per 10 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799305",
+			"display": "5 ML Adriamycin 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799307",
+			"display": "ADRIAMYCIN 50 MG per 25 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799308",
+			"display": "ADRIAMYCIN 20 MG per 10 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799310",
+			"display": "Adriamycin 2 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2001100",
+			"display": "Adriamycin 50 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2001102",
+			"display": "Adriamycin 10 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1191499",
+			"display": "DOXOrubicin hydrochloride liposome 2 MG/ML [Doxil]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1247774",
+			"display": "DOXOrubicin hydrochloride liposome 2 MG/ML [LipoDox]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799302",
+			"display": "DOXOrubicin hydrochloride 2 MG/ML [Adriamycin]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2001099",
+			"display": "DOXOrubicin hydrochloride 50 MG [Adriamycin]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2001101",
+			"display": "DOXOrubicin hydrochloride 10 MG [Adriamycin]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799303",
+			"display": "DOXOrubicin Injection [Adriamycin]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799309",
+			"display": "DOXOrubicin Injectable Solution [Adriamycin]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2284504",
+			"display": "DOXOrubicin Injection [LipoDox]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2284506",
+			"display": "DOXOrubicin Injection [Doxil]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1175913",
+			"display": "Doxil Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1247776",
+			"display": "LipoDox Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1799304",
+			"display": "Adriamycin Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1191138",
+			"display": "DOXOrubicin hydrochloride 2 MG/ML Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790095",
+			"display": "DOXOrubicin hydrochloride 50 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790097",
+			"display": "5 ML DOXOrubicin hydrochloride 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790099",
+			"display": "10 ML DOXOrubicin hydrochloride 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790100",
+			"display": "25 ML DOXOrubicin hydrochloride 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790103",
+			"display": "DOXOrubicin hydrochloride 10 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790115",
+			"display": "10 ML DOXOrubicin hydrochloride liposome 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790127",
+			"display": "25 ML DOXOrubicin hydrochloride liposome 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1872062",
+			"display": "DOXOrubicin hydrochloride 20 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1191137",
+			"display": "DOXOrubicin hydrochloride 2 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1191495",
+			"display": "DOXOrubicin hydrochloride liposome 2 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790093",
+			"display": "DOXOrubicin hydrochloride 50 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790102",
+			"display": "DOXOrubicin hydrochloride 10 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1872061",
+			"display": "DOXOrubicin hydrochloride 20 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1790094",
+			"display": "DOXOrubicin Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "374376",
+			"display": "DOXOrubicin Injectable Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1160774",
+			"display": "DOXOrubicin Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "151325",
+			"display": "Alkeran"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1745086",
+			"display": "Evomela"
+		},
+		{
+			"entryType": "Medication",
+			"code": "6718",
+			"display": "melphalan"
+		},
+		{
+			"entryType": "Medication",
+			"code": "235857",
+			"display": "melphalan hydrochloride"
+		},
+		{
+			"entryType": "Medication",
+			"code": "105562",
+			"display": "Alkeran 2 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1745090",
+			"display": "Evomela 50 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "876399",
+			"display": "Alkeran 50 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1740951",
+			"display": "melphalan 50 MG [Alkeran]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1745087",
+			"display": "melphalan 50 MG [Evomela]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "564088",
+			"display": "melphalan 2 MG [Alkeran]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1740952",
+			"display": "melphalan Injection [Alkeran]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1745088",
+			"display": "melphalan Injection [Evomela]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "368873",
+			"display": "melphalan Oral Tablet [Alkeran]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1176189",
+			"display": "Alkeran Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1176190",
+			"display": "Alkeran Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1176191",
+			"display": "Alkeran Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1745089",
+			"display": "Evomela Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "197919",
+			"display": "melphalan 2 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "311487",
+			"display": "melphalan 50 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1740948",
+			"display": "melphalan 50 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "317646",
+			"display": "melphalan 2 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1740949",
+			"display": "melphalan Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "372756",
+			"display": "melphalan Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1159787",
+			"display": "melphalan Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1159788",
+			"display": "melphalan Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1159789",
+			"display": "melphalan Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603356",
+			"display": "Farydak"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603350",
+			"display": "panobinostat"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603349",
+			"display": "panobinostat lactate"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603361",
+			"display": "Farydak 10 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603365",
+			"display": "Farydak 15 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603369",
+			"display": "Farydak 20 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603357",
+			"display": "panobinostat 10 MG [Farydak]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603364",
+			"display": "panobinostat 15 MG [Farydak]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603368",
+			"display": "panobinostat 20 MG [Farydak]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603358",
+			"display": "panobinostat Oral Capsule [Farydak]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603359",
+			"display": "Farydak Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603360",
+			"display": "Farydak Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603355",
+			"display": "panobinostat 10 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603363",
+			"display": "panobinostat 15 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603367",
+			"display": "panobinostat 20 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603351",
+			"display": "panobinostat 10 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603362",
+			"display": "panobinostat 15 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603366",
+			"display": "panobinostat 20 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603354",
+			"display": "panobinostat Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603352",
+			"display": "panobinostat Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1603353",
+			"display": "panobinostat Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "356733",
+			"display": "Velcade"
+		},
+		{
+			"entryType": "Medication",
+			"code": "358258",
+			"display": "bortezomib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "402244",
+			"display": "Velcade 3.5 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1804996",
+			"display": "bortezomib 3.5 MG [Velcade]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1804997",
+			"display": "bortezomib Injection [Velcade]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1187756",
+			"display": "Velcade Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "402243",
+			"display": "bortezomib 3.5 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1804993",
+			"display": "bortezomib 3.5 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1804994",
+			"display": "bortezomib Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1163075",
+			"display": "bortezomib Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1302971",
+			"display": "Kyprolis"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1302966",
+			"display": "carfilzomib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806937",
+			"display": "Kyprolis 30 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806942",
+			"display": "Kyprolis 60 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2046644",
+			"display": "Kyprolis 10 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806935",
+			"display": "carfilzomib 30 MG [Kyprolis]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806941",
+			"display": "carfilzomib 60 MG [Kyprolis]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2046643",
+			"display": "carfilzomib 10 MG [Kyprolis]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806936",
+			"display": "carfilzomib Injection [Kyprolis]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1302974",
+			"display": "Kyprolis Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806934",
+			"display": "carfilzomib 30 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806940",
+			"display": "carfilzomib 60 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2046642",
+			"display": "carfilzomib 10 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806932",
+			"display": "carfilzomib 30 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806939",
+			"display": "carfilzomib 60 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2046641",
+			"display": "carfilzomib 10 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1806933",
+			"display": "carfilzomib Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1302968",
+			"display": "carfilzomib Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723758",
+			"display": "Ninlaro"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723735",
+			"display": "ixazomib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723734",
+			"display": "ixazomib citrate"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723763",
+			"display": "Ninlaro 2.3 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723767",
+			"display": "Ninlaro 3 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723772",
+			"display": "Ninlaro 4 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723759",
+			"display": "ixazomib 2.3 MG [Ninlaro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723766",
+			"display": "ixazomib 3 MG [Ninlaro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723771",
+			"display": "ixazomib 4 MG [Ninlaro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723760",
+			"display": "ixazomib Oral Capsule [Ninlaro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723761",
+			"display": "Ninlaro Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723762",
+			"display": "Ninlaro Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723757",
+			"display": "ixazomib 2.3 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723765",
+			"display": "ixazomib 3 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723770",
+			"display": "ixazomib 4 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723753",
+			"display": "ixazomib 2.3 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723764",
+			"display": "ixazomib 3 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723769",
+			"display": "ixazomib 4 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723756",
+			"display": "ixazomib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723754",
+			"display": "ixazomib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723755",
+			"display": "ixazomib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721952",
+			"display": "Darzalex"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375137",
+			"display": "Darzalex Faspro"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721947",
+			"display": "daratumumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2372199",
+			"display": "daratumumab / hyaluronidase"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375130",
+			"display": "daratumumab-fihj"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721956",
+			"display": "5 ML Darzalex 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726440",
+			"display": "20 ML Darzalex 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375141",
+			"display": "DARZALEX Faspro 1800 MG / 30,000 UNT per 15 mL Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721953",
+			"display": "daratumumab 20 MG/ML [Darzalex]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375138",
+			"display": "daratumumab-fihj 120 MG/ML / hyaluronidase-fihj 2000 UNT/ML [Darzalex Faspro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721954",
+			"display": "daratumumab Injection [Darzalex]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375139",
+			"display": "daratumumab / hyaluronidase Injection [Darzalex Faspro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721955",
+			"display": "Darzalex Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375140",
+			"display": "Darzalex Faspro Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721951",
+			"display": "5 ML daratumumab 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726439",
+			"display": "20 ML daratumumab 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375136",
+			"display": "15 ML daratumumab-fihj 120 MG/ML / hyaluronidase-fihj 2000 UNT/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721948",
+			"display": "daratumumab 20 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375131",
+			"display": "daratumumab-fihj 120 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721950",
+			"display": "daratumumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375135",
+			"display": "daratumumab / hyaluronidase Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721949",
+			"display": "daratumumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2375134",
+			"display": "daratumumab / hyaluronidase Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726111",
+			"display": "Empliciti"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726104",
+			"display": "elotuzumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726115",
+			"display": "Empliciti 300 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726119",
+			"display": "Empliciti 400 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726112",
+			"display": "elotuzumab 300 MG [Empliciti]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726118",
+			"display": "elotuzumab 400 MG [Empliciti]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726113",
+			"display": "elotuzumab Injection [Empliciti]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726114",
+			"display": "Empliciti Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726110",
+			"display": "elotuzumab 300 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726117",
+			"display": "elotuzumab 400 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726107",
+			"display": "elotuzumab 300 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726116",
+			"display": "elotuzumab 400 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726109",
+			"display": "elotuzumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1726108",
+			"display": "elotuzumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282024",
+			"display": "Sarclisa"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282018",
+			"display": "isatuximab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282019",
+			"display": "isatuximab-irfc"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282028",
+			"display": "5 ML Sarclisa 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282032",
+			"display": "25 ML Sarclisa 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282025",
+			"display": "isatuximab-irfc 20 MG/ML [Sarclisa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282026",
+			"display": "isatuximab Injection [Sarclisa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282027",
+			"display": "Sarclisa Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282023",
+			"display": "5 ML isatuximab-irfc 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282031",
+			"display": "25 ML isatuximab-irfc 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282020",
+			"display": "isatuximab-irfc 20 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282022",
+			"display": "isatuximab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2282021",
+			"display": "isatuximab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "337535",
+			"display": "Revlimid"
+		},
+		{
+			"entryType": "Medication",
+			"code": "342369",
+			"display": "lenalidomide"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1242233",
+			"display": "Revlimid 2.5 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1429367",
+			"display": "Revlimid 20 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "616114",
+			"display": "Revlimid 10 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "616116",
+			"display": "Revlimid 5 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643714",
+			"display": "Revlimid 15 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643722",
+			"display": "Revlimid 25 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1242232",
+			"display": "lenalidomide 2.5 MG [Revlimid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1429366",
+			"display": "lenalidomide 20 MG [Revlimid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "616112",
+			"display": "lenalidomide 10 MG [Revlimid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "616115",
+			"display": "lenalidomide 5 MG [Revlimid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643713",
+			"display": "lenalidomide 15 MG [Revlimid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643721",
+			"display": "lenalidomide 25 MG [Revlimid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "616113",
+			"display": "lenalidomide Oral Capsule [Revlimid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1182522",
+			"display": "Revlimid Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1182529",
+			"display": "Revlimid Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1242231",
+			"display": "lenalidomide 2.5 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1428947",
+			"display": "lenalidomide 20 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "602910",
+			"display": "lenalidomide 10 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "602912",
+			"display": "lenalidomide 5 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643712",
+			"display": "lenalidomide 15 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643720",
+			"display": "lenalidomide 25 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1242230",
+			"display": "lenalidomide 2.5 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1428946",
+			"display": "lenalidomide 20 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "602908",
+			"display": "lenalidomide 10 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "602911",
+			"display": "lenalidomide 5 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643711",
+			"display": "lenalidomide 15 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "643719",
+			"display": "lenalidomide 25 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "602909",
+			"display": "lenalidomide Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1162569",
+			"display": "lenalidomide Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1162570",
+			"display": "lenalidomide Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "220239",
+			"display": "Thalomid"
+		},
+		{
+			"entryType": "Medication",
+			"code": "10432",
+			"display": "thalidomide"
+		},
+		{
+			"entryType": "Medication",
+			"code": "213360",
+			"display": "Thalomid 50 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "404449",
+			"display": "Thalomid 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "404450",
+			"display": "Thalomid 200 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "700418",
+			"display": "Thalomid 150 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "573254",
+			"display": "thalidomide 50 MG [Thalomid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "576406",
+			"display": "thalidomide 100 MG [Thalomid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "576407",
+			"display": "thalidomide 200 MG [Thalomid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "700417",
+			"display": "thalidomide 150 MG [Thalomid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "366451",
+			"display": "thalidomide Oral Capsule [Thalomid]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1184929",
+			"display": "Thalomid Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1184930",
+			"display": "Thalomid Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "200390",
+			"display": "thalidomide 50 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "360176",
+			"display": "thalidomide 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "360177",
+			"display": "thalidomide 200 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "700416",
+			"display": "thalidomide 150 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "316784",
+			"display": "thalidomide 50 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "360321",
+			"display": "thalidomide 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "360322",
+			"display": "thalidomide 200 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "700415",
+			"display": "thalidomide 150 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "374072",
+			"display": "thalidomide Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1164873",
+			"display": "thalidomide Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1164874",
+			"display": "thalidomide Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369719",
+			"display": "Pomalyst"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369713",
+			"display": "pomalidomide"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369728",
+			"display": "Pomalyst 2 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369724",
+			"display": "Pomalyst 1 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369736",
+			"display": "Pomalyst 4 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369732",
+			"display": "Pomalyst 3 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369720",
+			"display": "pomalidomide 1 MG [Pomalyst]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369727",
+			"display": "pomalidomide 2 MG [Pomalyst]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369731",
+			"display": "pomalidomide 3 MG [Pomalyst]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369735",
+			"display": "pomalidomide 4 MG [Pomalyst]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369721",
+			"display": "pomalidomide Oral Capsule [Pomalyst]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369730",
+			"display": "pomalidomide 3 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369718",
+			"display": "pomalidomide 1 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369726",
+			"display": "pomalidomide 2 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369734",
+			"display": "pomalidomide 4 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369714",
+			"display": "pomalidomide 1 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369725",
+			"display": "pomalidomide 2 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369729",
+			"display": "pomalidomide 3 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369733",
+			"display": "pomalidomide 4 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369717",
+			"display": "pomalidomide Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369715",
+			"display": "pomalidomide Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369716",
+			"display": "pomalidomide Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369722",
+			"display": "Pomalyst Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1369723",
+			"display": "Pomalyst Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178397",
+			"display": "Xpovio"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178403",
+			"display": "Xpovio 60 MG Weekly Dose Carton Pack, 4 Blister Cards, 3 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548742",
+			"display": "Xpovio 100 MG Weekly Dose Carton Pack, 4 Blister Cards, 2 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2382993",
+			"display": "Xpovio 40 MG Weekly Dose Carton Pack, 4 Blister Cards, 2 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178409",
+			"display": "Xpovio 100 MG Weekly Dose Carton Pack, 4 Blister Cards, 5 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548736",
+			"display": "Xpovio 60 MG Weekly Dose Carton Pack, 4 Blister Cards, 1 Tablet Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548769",
+			"display": "Xpovio 40 MG Weekly Dose Carton Pack, 4 Blister Cards, 1 Tablet Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178407",
+			"display": "Xpovio 80 MG Twice Weekly (160 MG total weekly) Dose Carton Pack, 4 Blister Cards, 8 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2382991",
+			"display": "Xpovio 40 MG Twice Weekly (80 MG total weekly) Dose Carton Pack, 4 Blister Cards, 4 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2382990",
+			"display": "Xpovio 60 MG Twice Weekly (120 MG total weekly) Dose Carton Pack, 4 Blister Cards, 6 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548767",
+			"display": "Xpovio 40 MG Twice Weekly (80 MG total weekly) Dose Carton Pack, 4 Blister Cards, 2 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178405",
+			"display": "Xpovio 80 MG Weekly Dose Carton Pack, 4 Blister Cards, 4 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548766",
+			"display": "Xpovio 80 MG Weekly Dose Carton Pack, 4 Blister Cards, 2 Tablets Each"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548763",
+			"display": "{8 (selinexor 40 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2382989",
+			"display": "{24 (selinexor 20 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178396",
+			"display": "{12 (selinexor 20 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548739",
+			"display": "{8 (selinexor 50 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178408",
+			"display": "{20 (selinexor 20 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178406",
+			"display": "{32 (selinexor 20 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2382992",
+			"display": "{8 (selinexor 20 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548768",
+			"display": "{4 (selinexor 40 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178404",
+			"display": "{16 (selinexor 20 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548733",
+			"display": "{4 (selinexor 60 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178390",
+			"display": "selinexor"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178402",
+			"display": "Xpovio 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548765",
+			"display": "Xpovio 40 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548741",
+			"display": "Xpovio 50 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548735",
+			"display": "Xpovio 60 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178398",
+			"display": "selinexor 20 MG [Xpovio]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548734",
+			"display": "selinexor 60 MG [Xpovio]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548740",
+			"display": "selinexor 50 MG [Xpovio]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548764",
+			"display": "selinexor 40 MG [Xpovio]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178399",
+			"display": "selinexor Oral Tablet [Xpovio]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548732",
+			"display": "selinexor 60 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548762",
+			"display": "selinexor 40 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178395",
+			"display": "selinexor 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548738",
+			"display": "selinexor 50 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178391",
+			"display": "selinexor 20 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548731",
+			"display": "selinexor 60 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548737",
+			"display": "selinexor 50 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2548761",
+			"display": "selinexor 40 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178394",
+			"display": "selinexor Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178392",
+			"display": "selinexor Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178393",
+			"display": "selinexor Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178400",
+			"display": "Xpovio Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2178401",
+			"display": "Xpovio Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536435",
+			"display": "Abecma"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536430",
+			"display": "idecabtagene vicleucel"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536439",
+			"display": "Abecma 460000000 CELLS per 30 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536451",
+			"display": "Abecma 460000000 CELLS per 100 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536445",
+			"display": "Abecma 460000000 CELLS per 70 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536436",
+			"display": "idecabtagene vicleucel 15333333 CELLS/ML [Abecma]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536444",
+			"display": "idecabtagene vicleucel 6571428 CELLS/ML [Abecma]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536450",
+			"display": "idecabtagene vicleucel 4600000 CELLS/ML [Abecma]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536437",
+			"display": "idecabtagene vicleucel Injection [Abecma]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536449",
+			"display": "100 ML idecabtagene vicleucel 4600000 CELLS/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536443",
+			"display": "70 ML idecabtagene vicleucel 6571428 CELLS/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536434",
+			"display": "30 ML idecabtagene vicleucel 15333333 CELLS/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536431",
+			"display": "idecabtagene vicleucel 15333333 CELLS/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536442",
+			"display": "idecabtagene vicleucel 6571428 CELLS/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536448",
+			"display": "idecabtagene vicleucel 4600000 CELLS/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536433",
+			"display": "idecabtagene vicleucel Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536432",
+			"display": "idecabtagene vicleucel Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2536438",
+			"display": "Abecma Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747562",
+			"display": "Venclexta"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747580",
+			"display": "Venclexta Starting Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747575",
+			"display": "{14 (venetoclax 10 MG Oral Tablet) / 21 (venetoclax 100 MG Oral Tablet) / 7 (venetoclax 50 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747556",
+			"display": "venetoclax"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747567",
+			"display": "Venclexta 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747577",
+			"display": "Venclexta 10 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747579",
+			"display": "Venclexta 50 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747563",
+			"display": "venetoclax 100 MG [Venclexta]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747576",
+			"display": "venetoclax 10 MG [Venclexta]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747578",
+			"display": "venetoclax 50 MG [Venclexta]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747564",
+			"display": "venetoclax Oral Tablet [Venclexta]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747565",
+			"display": "Venclexta Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747566",
+			"display": "Venclexta Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747561",
+			"display": "venetoclax 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747572",
+			"display": "venetoclax 10 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747574",
+			"display": "venetoclax 50 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747557",
+			"display": "venetoclax 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747571",
+			"display": "venetoclax 10 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747573",
+			"display": "venetoclax 50 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747560",
+			"display": "venetoclax Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747558",
+			"display": "venetoclax Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1747559",
+			"display": "venetoclax Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1597263",
+			"display": "Blincyto"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1597258",
+			"display": "blinatumomab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1597267",
+			"display": "Blincyto 35 MCG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1651252",
+			"display": "blinatumomab 0.035 MG [Blincyto]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1651253",
+			"display": "blinatumomab Injection [Blincyto]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1597266",
+			"display": "Blincyto Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1597262",
+			"display": "blinatumomab 0.035 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1651249",
+			"display": "blinatumomab 0.035 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1651250",
+			"display": "blinatumomab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1597260",
+			"display": "blinatumomab Injectable Product"
+		}
+	]
+}

@@ -1,0 +1,169 @@
+{
+	"entry": [
+		{
+			"entryType": "Surgery",
+			"code": "SCT#49795001",
+			"display": "Total pneumonectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#232646009",
+			"display": "Completion pneumonectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#232647000",
+			"display": "Pneumonectomy with tracheobronchoplasty (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "232643001",
+			"display": "Intrapericardial pneumonectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "232642006",
+			"display": "Extrapericardial pneumonectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#735015005",
+			"display": "Complete excision of left lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#735016006",
+			"display": "Complete excision of right lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "232644007",
+			"display": "Extrapleural pneumonectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "25321000",
+			"display": " Thoracoscopic pneumonectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "91596000",
+			"display": "Complete excision of lung with mediastinal dissection (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "232647000",
+			"display": "Pneumonectomy with tracheobronchoplasty (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "43232006",
+			"display": "Extrapleural pneumonectomy with empyemectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#125571002",
+			"display": "Lobectomy (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#173171007",
+			"display": "Lobectomy of lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "359623004",
+			"display": "Total lobectomy of lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "359615001",
+			"display": "Partial lobectomy of lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "75935006",
+			"display": "Thoracoscopic lobectomy of lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "726426008",
+			"display": "Lobectomy of lower lobe of left lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "726427004",
+			"display": "Lobectomy of upper lobe of left lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "726425007",
+			"display": "Lobectomy of lower lobe of right lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "726428009",
+			"display": "Lobectomy of upper lobe of right lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "736974006",
+			"display": "Excision of middle lobe of right lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "119000",
+			"display": "Thoracoscopic partial lobectomy of lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "739139005",
+			"display": "Excision of middle and lower lobe of right lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "739141006",
+			"display": "Excision of middle and upper lobe of right lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "84840003",
+			"display": "Total lobectomy of lung with concomitant decortication (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "232641004",
+			"display": "Lobectomy of lung with excision of part of adjacent lobe (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#20418004",
+			"display": "Wedge resection (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "SCT#444188003",
+			"display": "Thoracoscopic wedge resection of lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "173172000",
+			"display": "Excision of segment of lung (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "232647000",
+			"display": "Pneumonectomy with tracheobronchoplasty (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "447975009",
+			"display": "Sleeve resection of bronchus and anastomosis (procedure)"
+		},
+		{
+			"entryType": "Surgery",
+			"code": "116165008",
+			"display": "Bronchial sleeve resection with pulmonary resection (procedure)"
+		}
+	]
+}

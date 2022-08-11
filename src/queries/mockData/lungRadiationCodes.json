@@ -1,0 +1,179 @@
+{
+	"entry": [
+		{
+			"entryType": "Radiation",
+			"code": "152198000",
+			"display": "Brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "14473006",
+			"display": "Surface brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228685000",
+			"display": "Gammamed brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228689006",
+			"display": "Gold 198 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228687008",
+			"display": "Selectron brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228692005",
+			"display": "Radon 222 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "836429007",
+			"display": "Injection of radioactive implant into malignant neoplasm for brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "394902000",
+			"display": "High dose brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228681009",
+			"display": "Cobalt 60 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "700357007",
+			"display": "Radium 223 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228690002",
+			"display": "Iodine 125 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "700356003",
+			"display": "Radium 226 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228677009",
+			"display": "Cesium 137 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228696008",
+			"display": "Yttrium 90 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228684001",
+			"display": "Iridium 192 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "113120007",
+			"display": "Interstitial brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "384691004",
+			"display": "Intraluminal brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228694006",
+			"display": "Strontium 90 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228695007",
+			"display": "Tantalum 182 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "384692006",
+			"display": "Intracavitary brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228691003",
+			"display": "Phosphorus 32 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228693000",
+			"display": "Ruthenium 106 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228686004",
+			"display": "Microselectron brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228688003",
+			"display": "Californium 252 brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "448137007",
+			"display": "Brachytherapy using radioiodine (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "714029009",
+			"display": "Preoperative high dose brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "228682002",
+			"display": "Cobalt 60 brachytherapy manual loading (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "438629002",
+			"display": "High dose rate electronic brachytherapy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "773335005",
+			"display": "Epiretinal brachytherapy with vitrectomy (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "448552007",
+			"display": "Interstitial brachytherapy using gold grain (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "312244008",
+			"display": "Cobalt 60 brachytherapy remote afterloading (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "312243002",
+			"display": "Cesium 137 brachytherapy remote afterloading (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "449157000",
+			"display": "Interstitial brachytherapy using iridium wire (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "448467008",
+			"display": "Interstitial brachytherapy using cesium needle (procedure)"
+		},
+		{
+			"entryType": "Radiation",
+			"code": "431399005",
+			"display": "Brachytherapy using iodine (131-I) ethiodized oil (procedure)"
+		}
+	]
+}

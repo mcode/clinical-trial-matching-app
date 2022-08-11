@@ -1,0 +1,179 @@
+{
+	"entry": [
+		{
+			"entryType": "Biomarker",
+			"code": "93690-6",
+			"display": "BRAF gene V600 mutations [Identifier] in Plasma cell-free DNA by Molecular genetics method Nominal"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "97025-1",
+			"display": "BRAF gene V600 mutations [Identifier] in Tissue by Molecular genetics method Nominal"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "58415-1",
+			"display": "BRAF gene p.Val600Glu [Presence] in Tissue by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "85101-4",
+			"display": "BRAF gene p.Val600Glu [Presence] in Bone marrow by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "89861-9",
+			"display": "BRAF gene p.Val600Lys [Presence] in Tissue by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "85299-6",
+			"display": "BRAF V600E mutant protein [Presence] in Cancer specimen by Immune stain"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "83061-2",
+			"display": "BRAF gene [VCF] in Cancer specimen by Sequencing"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "53844-7",
+			"display": "BRAF gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "58483-9",
+			"display": "BRAF gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "85511-4",
+			"display": "BRAF gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "81705-6",
+			"display": "BRAF protein [Presence] in Cancer specimen by Immune stain"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "10828004",
+			"display": "Positive (qualifier value)"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "HGNC:9955",
+			"display": "RELA"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "77170-9",
+			"display": "PDGFRA gene p.Asp842Val [Presence] in Blood or Tissue by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "55092-1",
+			"display": "PDGFRA gene rearrangements [Presence] in Blood or Tissue by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "71357-8",
+			"display": "PDGFRA gene exon 18 targeted mutation analysis in Blood or Tissue by Sequencing"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "HGNC:8803",
+			"display": "PDGFRA"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "90926-7",
+			"display": "MET gene amplification in Blood or Tissue by FISH"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "92906-7",
+			"display": "MET gene copy number/nucleus in Blood or Tissue by FISH"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "92907-5",
+			"display": "MET gene copy number/Chromosome 7 copy number in Blood or Tissue by FISH"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "100026-4",
+			"display": "MET gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "82264-3",
+			"display": "MET by measured RMR panel"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "82268-4",
+			"display": "MET by population RMR panel"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "82273-4",
+			"display": "MET by predicted RMR panel"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "82260-1",
+			"display": "MET by standard RMR panel"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "HGNC:7029",
+			"display": "MET"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "95772-0",
+			"display": "IDH1 and IDH2 genes targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "100022-3",
+			"display": "IDH1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "HGNC:5382",
+			"display": "IDH1"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "1p19q",
+			"display": "No good mapping"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "53841-3",
+			"display": "ATRX gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "HGNC:886",
+			"display": "ATRX"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "95778-7",
+			"display": "TERT gene promotor region targeted mutation analysis in Tissue by Molecular genetics method"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "HGNC:11730",
+			"display": "TERT"
+		},
+		{
+			"entryType": "Biomarker",
+			"code": "HGNC:4764",
+			"display": "H3-3A"
+		}
+	]
+}

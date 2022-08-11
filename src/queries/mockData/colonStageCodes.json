@@ -1,0 +1,44 @@
+{
+	"entry": [
+		{
+			"entryType": "Stage",
+			"code": "0",
+			"display": "Same as breast"
+		},
+		{
+			"entryType": "Stage",
+			"code": "1",
+			"display": "Same as breast"
+		},
+		{
+			"entryType": "Stage",
+			"code": "2",
+			"display": "Same as breast"
+		},
+		{
+			"entryType": "Stage",
+			"code": "3.1",
+			"display": "Same as breast"
+		},
+		{
+			"entryType": "Stage",
+			"code": "3.2",
+			"display": "Same as breast"
+		},
+		{
+			"entryType": "Stage",
+			"code": "3.3",
+			"display": "Same as breast"
+		},
+		{
+			"entryType": "Stage",
+			"code": "3.4",
+			"display": "Same as breast"
+		},
+		{
+			"entryType": "Stage",
+			"code": "4",
+			"display": "Same as breast"
+		}
+	]
+}

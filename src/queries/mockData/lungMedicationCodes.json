@@ -1,0 +1,2139 @@
+{
+	"entry": [
+		{
+			"entryType": "Medication",
+			"code": "1535993",
+			"display": "Cyramza"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535922",
+			"display": "ramucirumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657777",
+			"display": "Cyramza 100 MG per 10 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657781",
+			"display": "Cyramza 500 MG per 50 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535994",
+			"display": "ramucirumab 10 MG/ML [Cyramza]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657776",
+			"display": "ramucirumab Injection [Cyramza]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535996",
+			"display": "Cyramza Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657775",
+			"display": "10 ML ramucirumab 10 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657780",
+			"display": "50 ML ramucirumab 10 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535989",
+			"display": "ramucirumab 10 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657774",
+			"display": "ramucirumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535990",
+			"display": "ramucirumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "337526",
+			"display": "Tarceva"
+		},
+		{
+			"entryType": "Medication",
+			"code": "337525",
+			"display": "erlotinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "477320",
+			"display": "erlotinib hydrochloride"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1088251",
+			"display": "Tarceva 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1088253",
+			"display": "Tarceva 150 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1088255",
+			"display": "Tarceva 25 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1088250",
+			"display": "erlotinib 100 MG [Tarceva]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1088252",
+			"display": "erlotinib 150 MG [Tarceva]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1088254",
+			"display": "erlotinib 25 MG [Tarceva]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "540423",
+			"display": "erlotinib Oral Tablet [Tarceva]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "603208",
+			"display": "erlotinib 25 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "603206",
+			"display": "erlotinib 150 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "603203",
+			"display": "erlotinib 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "603202",
+			"display": "erlotinib 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "603205",
+			"display": "erlotinib 150 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "603207",
+			"display": "erlotinib 25 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "477321",
+			"display": "erlotinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1162503",
+			"display": "erlotinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1162504",
+			"display": "erlotinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1179040",
+			"display": "Tarceva Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1179041",
+			"display": "Tarceva Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430268",
+			"display": "Gilotrif"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430438",
+			"display": "afatinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430441",
+			"display": "afatinib dimaleate"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430453",
+			"display": "Gilotrif 30 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430457",
+			"display": "Gilotrif 40 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430449",
+			"display": "Gilotrif 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430447",
+			"display": "afatinib 20 MG [Gilotrif]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430452",
+			"display": "afatinib 30 MG [Gilotrif]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430456",
+			"display": "afatinib 40 MG [Gilotrif]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430448",
+			"display": "afatinib Oral Tablet [Gilotrif]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430451",
+			"display": "afatinib 30 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430446",
+			"display": "afatinib 20 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430455",
+			"display": "afatinib 40 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430442",
+			"display": "afatinib 20 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430450",
+			"display": "afatinib 30 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430454",
+			"display": "afatinib 40 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430445",
+			"display": "afatinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430443",
+			"display": "afatinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430444",
+			"display": "afatinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430271",
+			"display": "Gilotrif Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1430272",
+			"display": "Gilotrif Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "281883",
+			"display": "Iressa"
+		},
+		{
+			"entryType": "Medication",
+			"code": "328134",
+			"display": "gefitinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "402091",
+			"display": "Iressa 250 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "576099",
+			"display": "gefitinib 250 MG [Iressa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "402435",
+			"display": "gefitinib Oral Tablet [Iressa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "349472",
+			"display": "gefitinib 250 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "358777",
+			"display": "gefitinib 250 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "378629",
+			"display": "gefitinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1156708",
+			"display": "gefitinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1156709",
+			"display": "gefitinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1176762",
+			"display": "Iressa Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1176763",
+			"display": "Iressa Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721566",
+			"display": "Tagrisso"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721560",
+			"display": "osimertinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721559",
+			"display": "osimertinib mesylate"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721583",
+			"display": "Tagrisso 80 MG (as osimertinib mesylate 95.4 MG) Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721571",
+			"display": "Tagrisso 40 MG (as osimertinib mesylate 47.7 MG) Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721567",
+			"display": "osimertinib 40 MG [Tagrisso]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721582",
+			"display": "osimertinib 80 MG [Tagrisso]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721568",
+			"display": "osimertinib Oral Tablet [Tagrisso]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721581",
+			"display": "osimertinib 80 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721565",
+			"display": "osimertinib 40 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721561",
+			"display": "osimertinib 40 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721580",
+			"display": "osimertinib 80 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721564",
+			"display": "osimertinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721562",
+			"display": "osimertinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721563",
+			"display": "osimertinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721569",
+			"display": "Tagrisso Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1721570",
+			"display": "Tagrisso Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058916",
+			"display": "Vizimpro"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058849",
+			"display": "dacomitinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058848",
+			"display": "dacomitinib anhydrous"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058932",
+			"display": "Vizimpro 45 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058926",
+			"display": "Vizimpro 30 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058922",
+			"display": "Vizimpro 15 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058917",
+			"display": "dacomitinib 15 MG [Vizimpro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058925",
+			"display": "dacomitinib 30 MG [Vizimpro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058931",
+			"display": "dacomitinib 45 MG [Vizimpro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058919",
+			"display": "dacomitinib Oral Tablet [Vizimpro]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058930",
+			"display": "dacomitinib 45 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058915",
+			"display": "dacomitinib 15 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058924",
+			"display": "dacomitinib 30 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058910",
+			"display": "dacomitinib 15 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058923",
+			"display": "dacomitinib 30 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058929",
+			"display": "dacomitinib 45 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058914",
+			"display": "dacomitinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058911",
+			"display": "dacomitinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058913",
+			"display": "dacomitinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058920",
+			"display": "Vizimpro Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058921",
+			"display": "Vizimpro Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570743",
+			"display": "Exkivity"
+		},
+		{
+			"entryType": "Medication",
+			"code": "316965",
+			"display": "Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570736",
+			"display": "mobocertinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570737",
+			"display": "mobocertinib succinate"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570748",
+			"display": "Exkivity 40 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570744",
+			"display": "mobocertinib 40 MG [Exkivity]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570747",
+			"display": "mobocertinib Oral Capsule [Exkivity]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570742",
+			"display": "mobocertinib 40 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570738",
+			"display": "mobocertinib 40 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570741",
+			"display": "mobocertinib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570739",
+			"display": "mobocertinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570740",
+			"display": "mobocertinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570745",
+			"display": "Exkivity Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2570746",
+			"display": "Exkivity Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1114071",
+			"display": "Caprelsa"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1098413",
+			"display": "vandetanib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1114074",
+			"display": "Caprelsa 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1114096",
+			"display": "Caprelsa 300 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1114072",
+			"display": "vandetanib 100 MG [Caprelsa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1114095",
+			"display": "vandetanib 300 MG [Caprelsa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1114073",
+			"display": "vandetanib Oral Tablet [Caprelsa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1172982",
+			"display": "Caprelsa Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1173663",
+			"display": "Caprelsa Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1098416",
+			"display": "vandetanib 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1098418",
+			"display": "vandetanib 300 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1098414",
+			"display": "vandetanib 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1098417",
+			"display": "vandetanib 300 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1098415",
+			"display": "vandetanib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1160503",
+			"display": "vandetanib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1160504",
+			"display": "vandetanib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "675979",
+			"display": "Vectibix"
+		},
+		{
+			"entryType": "Medication",
+			"code": "263034",
+			"display": "panitumumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657723",
+			"display": "Vectibix 400 MG per 20 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657705",
+			"display": "Vectibix 100 MG per 5 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "667895",
+			"display": "panitumumab 20 MG/ML [Vectibix]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657704",
+			"display": "panitumumab Injection [Vectibix]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657703",
+			"display": "5 ML panitumumab 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657722",
+			"display": "20 ML panitumumab 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "667879",
+			"display": "panitumumab 20 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657702",
+			"display": "panitumumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1160730",
+			"display": "panitumumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1187748",
+			"display": "Vectibix Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "355460",
+			"display": "Erbitux"
+		},
+		{
+			"entryType": "Medication",
+			"code": "318341",
+			"display": "cetuximab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657660",
+			"display": "Erbitux 100 MG per 50 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657664",
+			"display": "Erbitux 200 MG per 100 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "544717",
+			"display": "cetuximab 2 MG/ML [Erbitux]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657659",
+			"display": "cetuximab Injection [Erbitux]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657663",
+			"display": "100 ML cetuximab 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657658",
+			"display": "50 ML cetuximab 2 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "485253",
+			"display": "cetuximab 2 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657657",
+			"display": "cetuximab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1161239",
+			"display": "cetuximab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1168274",
+			"display": "Erbitux Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723746",
+			"display": "Portrazza"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723738",
+			"display": "necitumumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723750",
+			"display": "50 ML Portrazza 16 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723747",
+			"display": "necitumumab 16 MG/ML [Portrazza]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723748",
+			"display": "necitumumab Injection [Portrazza]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723745",
+			"display": "50 ML necitumumab 16 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723741",
+			"display": "necitumumab 16 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723744",
+			"display": "necitumumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723742",
+			"display": "necitumumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1723749",
+			"display": "Portrazza Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362235",
+			"display": "Tabrecta"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362165",
+			"display": "capmatinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362259",
+			"display": "capmatinib hydrochloride"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362244",
+			"display": "Tabrecta 200 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362240",
+			"display": "Tabrecta 150 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362236",
+			"display": "capmatinib 150 MG [Tabrecta]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362243",
+			"display": "capmatinib 200 MG [Tabrecta]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362237",
+			"display": "capmatinib Oral Tablet [Tabrecta]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362234",
+			"display": "capmatinib 150 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362242",
+			"display": "capmatinib 200 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362230",
+			"display": "capmatinib 150 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362241",
+			"display": "capmatinib 200 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362233",
+			"display": "capmatinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362231",
+			"display": "capmatinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362232",
+			"display": "capmatinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362238",
+			"display": "Tabrecta Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2362239",
+			"display": "Tabrecta Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394942",
+			"display": "Gavreto"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394936",
+			"display": "pralsetinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394947",
+			"display": "Gavreto 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394943",
+			"display": "pralsetinib 100 MG [Gavreto]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394944",
+			"display": "pralsetinib Oral Capsule [Gavreto]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394941",
+			"display": "pralsetinib 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394937",
+			"display": "pralsetinib 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394940",
+			"display": "pralsetinib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394938",
+			"display": "pralsetinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394939",
+			"display": "pralsetinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394945",
+			"display": "Gavreto Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2394946",
+			"display": "Gavreto Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1371046",
+			"display": "KADCYLA"
+		},
+		{
+			"entryType": "Medication",
+			"code": "224905",
+			"display": "trastuzumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1371041",
+			"display": "ado-trastuzumab emtansine"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658087",
+			"display": "KADCYLA 100 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658091",
+			"display": "KADCYLA 160 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658085",
+			"display": "ado-trastuzumab emtansine 100 MG [KADCYLA]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658090",
+			"display": "ado-trastuzumab emtansine 160 MG [KADCYLA]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658086",
+			"display": "trastuzumab Injection [KADCYLA]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1371049",
+			"display": "KADCYLA Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658084",
+			"display": "ado-trastuzumab emtansine 100 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658089",
+			"display": "ado-trastuzumab emtansine 160 MG Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658082",
+			"display": "ado-trastuzumab emtansine 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1658088",
+			"display": "ado-trastuzumab emtansine 160 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1922508",
+			"display": "trastuzumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1162762",
+			"display": "trastuzumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148499",
+			"display": "Xalkori"
+		},
+		{
+			"entryType": "Medication",
+			"code": "316965",
+			"display": "Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148495",
+			"display": "crizotinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148506",
+			"display": "Xalkori 250 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148502",
+			"display": "Xalkori 200 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148500",
+			"display": "crizotinib 200 MG [Xalkori]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148505",
+			"display": "crizotinib 250 MG [Xalkori]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148501",
+			"display": "crizotinib Oral Capsule [Xalkori]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148504",
+			"display": "crizotinib 250 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148498",
+			"display": "crizotinib 200 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148496",
+			"display": "crizotinib 200 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148503",
+			"display": "crizotinib 250 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1148497",
+			"display": "crizotinib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1165616",
+			"display": "crizotinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1165617",
+			"display": "crizotinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1186298",
+			"display": "Xalkori Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1186299",
+			"display": "Xalkori Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535463",
+			"display": "Zykadia"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535457",
+			"display": "ceritinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2121061",
+			"display": "Zykadia 150 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535468",
+			"display": "Zykadia 150 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535464",
+			"display": "ceritinib 150 MG [Zykadia]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535465",
+			"display": "ceritinib Oral Capsule [Zykadia]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2121060",
+			"display": "ceritinib Oral Tablet [Zykadia]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535462",
+			"display": "ceritinib 150 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2121059",
+			"display": "ceritinib 150 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535458",
+			"display": "ceritinib 150 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535461",
+			"display": "ceritinib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2121058",
+			"display": "ceritinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535459",
+			"display": "ceritinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535460",
+			"display": "ceritinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535466",
+			"display": "Zykadia Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1535467",
+			"display": "Zykadia Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727480",
+			"display": "Alecensa"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727455",
+			"display": "alectinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727454",
+			"display": "alectinib hydrochloride"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727485",
+			"display": "Alecensa 150 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727481",
+			"display": "alectinib 150 MG [Alecensa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727482",
+			"display": "alectinib Oral Capsule [Alecensa]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727479",
+			"display": "alectinib 150 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727475",
+			"display": "alectinib 150 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727478",
+			"display": "alectinib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727476",
+			"display": "alectinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727477",
+			"display": "alectinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727483",
+			"display": "Alecensa Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1727484",
+			"display": "Alecensa Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921223",
+			"display": "Alunbrig"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988786",
+			"display": "Alunbrig Initiation Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988785",
+			"display": "{23 (brigatinib 180 MG Oral Tablet) / 7 (brigatinib 90 MG Oral Tablet) } Pack"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921217",
+			"display": "brigatinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988768",
+			"display": "Alunbrig 90 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921228",
+			"display": "Alunbrig 30 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988772",
+			"display": "Alunbrig 180 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988767",
+			"display": "brigatinib 90 MG [Alunbrig]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988771",
+			"display": "brigatinib 180 MG [Alunbrig]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921224",
+			"display": "brigatinib 30 MG [Alunbrig]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921225",
+			"display": "brigatinib Oral Tablet [Alunbrig]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921222",
+			"display": "brigatinib 30 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1925494",
+			"display": "brigatinib 90 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988770",
+			"display": "brigatinib 180 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1988769",
+			"display": "brigatinib 180 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921218",
+			"display": "brigatinib 30 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1925493",
+			"display": "brigatinib 90 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921221",
+			"display": "brigatinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921219",
+			"display": "brigatinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921220",
+			"display": "brigatinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921226",
+			"display": "Alunbrig Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1921227",
+			"display": "Alunbrig Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103170",
+			"display": "Lorbrena"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103164",
+			"display": "lorlatinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103179",
+			"display": "Lorbrena 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103175",
+			"display": "Lorbrena 25 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103171",
+			"display": "lorlatinib 25 MG [Lorbrena]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103178",
+			"display": "lorlatinib 100 MG [Lorbrena]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103172",
+			"display": "lorlatinib Oral Tablet [Lorbrena]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103169",
+			"display": "lorlatinib 25 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103177",
+			"display": "lorlatinib 100 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103165",
+			"display": "lorlatinib 25 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103176",
+			"display": "lorlatinib 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103168",
+			"display": "lorlatinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103166",
+			"display": "lorlatinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103167",
+			"display": "lorlatinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103173",
+			"display": "Lorbrena Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2103174",
+			"display": "Lorbrena Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425223",
+			"display": "Tafinlar"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424911",
+			"display": "dabrafenib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425222",
+			"display": "dabrafenib mesylate"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425228",
+			"display": "Tafinlar 50 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425230",
+			"display": "Tafinlar 75 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425224",
+			"display": "dabrafenib 50 MG [Tafinlar]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425229",
+			"display": "dabrafenib 75 MG [Tafinlar]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425225",
+			"display": "dabrafenib Oral Capsule [Tafinlar]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424918",
+			"display": "dabrafenib 75 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424916",
+			"display": "dabrafenib 50 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424912",
+			"display": "dabrafenib 50 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424917",
+			"display": "dabrafenib 75 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424915",
+			"display": "dabrafenib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424913",
+			"display": "dabrafenib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1424914",
+			"display": "dabrafenib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425226",
+			"display": "Tafinlar Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425227",
+			"display": "Tafinlar Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425105",
+			"display": "Mekinist"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425099",
+			"display": "trametinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425098",
+			"display": "trametinib dimethyl sulfoxide"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425118",
+			"display": "Mekinist 2 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425110",
+			"display": "Mekinist 0.5 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425106",
+			"display": "trametinib 0.5 MG [Mekinist]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425117",
+			"display": "trametinib 2 MG [Mekinist]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425107",
+			"display": "trametinib Oral Tablet [Mekinist]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425116",
+			"display": "trametinib 2 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425104",
+			"display": "trametinib 0.5 MG Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425100",
+			"display": "trametinib 0.5 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425115",
+			"display": "trametinib 2 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425103",
+			"display": "trametinib Oral Tablet"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425101",
+			"display": "trametinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425102",
+			"display": "trametinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425108",
+			"display": "Mekinist Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1425109",
+			"display": "Mekinist Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105640",
+			"display": "Vitrakvi"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105628",
+			"display": "larotrectinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2104548",
+			"display": "larotrectinib sulfate"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105645",
+			"display": "Vitrakvi 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105653",
+			"display": "Vitrakvi 20 MG/ML Oral Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105657",
+			"display": "Vitrakvi 25 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105641",
+			"display": "larotrectinib 100 MG [Vitrakvi]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105650",
+			"display": "larotrectinib 20 MG/ML [Vitrakvi]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105656",
+			"display": "larotrectinib 25 MG [Vitrakvi]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105642",
+			"display": "larotrectinib Oral Capsule [Vitrakvi]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105651",
+			"display": "larotrectinib Oral Solution [Vitrakvi]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105633",
+			"display": "larotrectinib 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105655",
+			"display": "larotrectinib 25 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105649",
+			"display": "larotrectinib 20 MG/ML Oral Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105629",
+			"display": "larotrectinib 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105646",
+			"display": "larotrectinib 20 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105654",
+			"display": "larotrectinib 25 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105632",
+			"display": "larotrectinib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105648",
+			"display": "larotrectinib Oral Solution"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105630",
+			"display": "larotrectinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105631",
+			"display": "larotrectinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105647",
+			"display": "larotrectinib Oral Liquid Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105643",
+			"display": "Vitrakvi Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105644",
+			"display": "Vitrakvi Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2105652",
+			"display": "Vitrakvi Oral Liquid Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197868",
+			"display": "Rozlytrek"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197862",
+			"display": "entrectinib"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197873",
+			"display": "Rozlytrek 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197877",
+			"display": "Rozlytrek 200 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197869",
+			"display": "entrectinib 100 MG [Rozlytrek]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197876",
+			"display": "entrectinib 200 MG [Rozlytrek]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197870",
+			"display": "entrectinib Oral Capsule [Rozlytrek]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197875",
+			"display": "entrectinib 200 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197867",
+			"display": "entrectinib 100 MG Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197863",
+			"display": "entrectinib 100 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197874",
+			"display": "entrectinib 200 MG"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197866",
+			"display": "entrectinib Oral Capsule"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197864",
+			"display": "entrectinib Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197865",
+			"display": "entrectinib Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197871",
+			"display": "Rozlytrek Oral Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2197872",
+			"display": "Rozlytrek Pill"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919508",
+			"display": "Imfinzi"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919503",
+			"display": "durvalumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919512",
+			"display": "2.4 ML Imfinzi 50 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919516",
+			"display": "10 ML Imfinzi 50 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919509",
+			"display": "durvalumab 50 MG/ML [Imfinzi]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919510",
+			"display": "durvalumab Injection [Imfinzi]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919515",
+			"display": "10 ML durvalumab 50 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919507",
+			"display": "2.4 ML durvalumab 50 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919504",
+			"display": "durvalumab 50 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919506",
+			"display": "durvalumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919505",
+			"display": "durvalumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1919511",
+			"display": "Imfinzi Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1094837",
+			"display": "Yervoy"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1094833",
+			"display": "ipilimumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657013",
+			"display": "Yervoy 50 MG per 10 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657007",
+			"display": "Yervoy 200 MG per 40 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1094838",
+			"display": "ipilimumab 5 MG/ML [Yervoy]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657006",
+			"display": "ipilimumab Injection [Yervoy]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657012",
+			"display": "10 ML ipilimumab 5 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657005",
+			"display": "40 ML ipilimumab 5 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1094834",
+			"display": "ipilimumab 5 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1657004",
+			"display": "ipilimumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1161327",
+			"display": "ipilimumab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1186646",
+			"display": "Yervoy Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058831",
+			"display": "Libtayo"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058826",
+			"display": "cemiplimab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058825",
+			"display": "cemiplimab-rwlc"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058835",
+			"display": "Libtayo 350 MG per 7 ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058832",
+			"display": "cemiplimab-rwlc 50 MG/ML [Libtayo]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058833",
+			"display": "cemiplimab Injection [Libtayo]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058834",
+			"display": "Libtayo Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058830",
+			"display": "7 ML cemiplimab-rwlc 50 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058827",
+			"display": "cemiplimab-rwlc 50 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058829",
+			"display": "cemiplimab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2058828",
+			"display": "cemiplimab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539973",
+			"display": "Jemperli"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539967",
+			"display": "dostarlimab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539968",
+			"display": "dostarlimab-gxly"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539977",
+			"display": "10 ML Jemperli 50 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539974",
+			"display": "dostarlimab-gxly 50 MG/ML [Jemperli]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539975",
+			"display": "dostarlimab Injection [Jemperli]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539976",
+			"display": "Jemperli Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539972",
+			"display": "10 ML dostarlimab-gxly 50 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539969",
+			"display": "dostarlimab-gxly 50 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539971",
+			"display": "dostarlimab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "2539970",
+			"display": "dostarlimab Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875543",
+			"display": "Bavencio"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875534",
+			"display": "avelumab"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875547",
+			"display": "10 ML Bavencio 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875544",
+			"display": "avelumab 20 MG/ML [Bavencio]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875545",
+			"display": "avelumab Injection [Bavencio]"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875546",
+			"display": "Bavencio Injectable Product"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875542",
+			"display": "10 ML avelumab 20 MG/ML Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875539",
+			"display": "avelumab 20 MG/ML"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875541",
+			"display": "avelumab Injection"
+		},
+		{
+			"entryType": "Medication",
+			"code": "1875540",
+			"display": "avelumab Injectable Product"
+		}
+	]
+}
