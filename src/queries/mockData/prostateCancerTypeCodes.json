@@ -1,0 +1,104 @@
+{
+  "entry": [
+    {
+      "entryType": "prostate",
+      "code": "254900004",
+      "display": "Carcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "399068003",
+      "display": "Malignant tumor of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "715412008",
+      "display": "Familial malignant neoplasm of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "722103009",
+      "display": "Hormone sensitive prostate cancer (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "93974005",
+      "display": "Primary malignant neoplasm of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "399490008",
+      "display": "Adenocarcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "823017009",
+      "display": "Infiltrating duct carcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "1098981000119100",
+      "display": "Recurrent malignant neoplasm of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "822970008",
+      "display": "Acinar cell cystadenocarcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "712849003",
+      "display": "Primary malignant neoplasm of prostate metastatic to bone (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "427492003",
+      "display": "Hormone refractory prostate cancer (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "399590005",
+      "display": "Squamous cell carcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "396198006",
+      "display": "Small cell carcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "369486003",
+      "display": "Malignant tumor involving prostate by separate metastasis from bladder (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "369485004",
+      "display": "Malignant tumor involving prostate by direct extension from bladder (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "314969001",
+      "display": "Local recurrence of malignant tumor of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "278060005",
+      "display": "Endometrioid carcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "399490008",
+      "display": "Adenocarcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "822970008",
+      "display": "Acinar cell cystadenocarcinoma of prostate (disorder)"
+    },
+    {
+      "entryType": "prostate",
+      "code": "823017009",
+      "display": "Infiltrating duct carcinoma of prostate (disorder)"
+    }
+  ]
+}

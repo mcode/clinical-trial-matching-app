@@ -1,0 +1,834 @@
+{
+  "entry": [
+    {
+      "entryType": "brain",
+      "code": "254938000",
+      "display": "Astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "763865009",
+      "display": "Pilocytic astrocytoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1157070004",
+      "display": "Pilomyxoid astrocytoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "99131000119108",
+      "display": "Astrocytoma of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1157060001",
+      "display": "Diffuse astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "100731000119107",
+      "display": "Low grade astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "100721000119109",
+      "display": "High grade astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "277461004",
+      "display": "Anaplastic astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156417006",
+      "display": "Fibrillary astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156456000",
+      "display": "Pilomyxoid astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156415003",
+      "display": "Protoplasmic astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156416002",
+      "display": "Gemistocytic astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682451000119107",
+      "display": "Primary astrocytoma of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "277507004",
+      "display": "Pilocytic astrocytoma of cerebellum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682481000119100",
+      "display": "Primary astrocytoma of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682471000119103",
+      "display": "Primary astrocytoma of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1196844004",
+      "display": "Primary malignant astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682221000119103",
+      "display": "Primary anaplastic astrocytoma of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682231000119100",
+      "display": "Primary anaplastic astrocytoma of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682251000119106",
+      "display": "Primary anaplastic astrocytoma of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "82501000119102",
+      "display": "Anaplastic astrocytoma of central nervous system (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682241000119109",
+      "display": "Primary anaplastic astrocytoma of occipital lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#93727008",
+      "display": "Primary malignant neoplasm of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#428061005",
+      "display": "Malignant neoplasm of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#254938000",
+      "display": " Astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#443936004",
+      "display": "Oligodendroglioma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#254940005",
+      "display": "Oligodendroglioma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#276828006",
+      "display": "Glioblastoma multiforme of brain"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#443333004",
+      "display": "   Medulloblastoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#1157071000",
+      "display": "   Anaplastic ganglioglioma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#404037002",
+      "display": "Malignant peripheral nerve sheath tumor (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "687331000119109",
+      "display": "Primary oligodendroglioma of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "687361000119101",
+      "display": "Primary oligodendroglioma of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156406005",
+      "display": "Anaplastic oligodendroglioma of central nervous system (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "716647001",
+      "display": "Mixed oligoastrocytoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156414004",
+      "display": "Giant cell glioblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684901000119107",
+      "display": "Primary glioblastoma multiforme of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "16845341000119100",
+      "display": "Primary glioblastoma multiforme of brainstem (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "16845301000119100",
+      "display": "Primary glioblastoma multiforme of cerebellum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684911000119105",
+      "display": "Primary glioblastoma multiforme of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684931000119100",
+      "display": "Primary glioblastoma multiforme of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684941000119109",
+      "display": "Primary glioblastoma multiforme of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684921000119103",
+      "display": "Primary glioblastoma multiforme of occipital lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "687351000119103",
+      "display": "Primary oligodendroglioma of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "686461000119108",
+      "display": "Primary malignant glioma of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "686451000119106",
+      "display": "Primary malignant glioma of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "686441000119109",
+      "display": "Primary malignant glioma of occipital lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "686431000119100",
+      "display": "Primary malignant glioma of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "683791000119100",
+      "display": "Primary ependymoma of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "683761000119107",
+      "display": "Primary ependymoma of brain ventricle (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "682261000119108",
+      "display": "Primary anaplastic astrocytoma of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "107581000119103",
+      "display": "Astrocytoma of brain stem (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "104981000119104",
+      "display": "Oligodendroglioma of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "96981000119102",
+      "display": "Malignant neoplasm of rectosigmoid junction metastatic to brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "90831000119105",
+      "display": "Grade 4 malignant glioma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "90811000119100",
+      "display": "Low grade malignant glioma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "87121000119102",
+      "display": "Malignant glioma of cerebellum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "87111000119109",
+      "display": "Malignant glioma of hypothalamus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "87091000119101",
+      "display": "Malignant glioma of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "11471000224106",
+      "display": "Diffuse intrinsic pontine glioma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1197343006",
+      "display": "Primary teratoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1197332003",
+      "display": "Primary malignant melanoma of central nervous system (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1197298003",
+      "display": "Primary malignant germ cell neoplasm of pineal gland (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1196898000",
+      "display": "Primary malignant atypical teratoid rhabdoid neoplasm of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1196860000",
+      "display": "Primary anaplastic large cell medulloblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1196839006",
+      "display": "Primary embryonal carcinoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1179377000",
+      "display": "Adenocarcinoma of pituitary gland (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156472008",
+      "display": "Papillary tumor of pineal region (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156471001",
+      "display": "Choroid plexus carcinoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156469001",
+      "display": "Large cell medulloblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156461003",
+      "display": "Gliosarcoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156460002",
+      "display": "Desmoplastic nodular medulloblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156455001",
+      "display": "Pleomorphic xanthoastrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156413005",
+      "display": "Gliomatosis cerebri (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "816205008",
+      "display": "Malignant pituitary blastoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "767448007",
+      "display": "Pineoblastoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "762457009",
+      "display": "Astroblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "735757008",
+      "display": "Primary ganglioneuroblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "715904005",
+      "display": "Pineal parenchymal tumor of intermediate differentiation (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "713325002",
+      "display": "Primary cerebral lymphoma co-occurrent with human immunodeficiency virus infection (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "699704002",
+      "display": "Classic medulloblastoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "699318007",
+      "display": "Supratentorial primitive neuroectodermal tumor (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "449420002",
+      "display": "Malignant neoplasm of cerebellum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "449253005",
+      "display": "Malignant epithelial neoplasm of hypothalamus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "448989001",
+      "display": "Malignant epithelial neoplasm of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "448863000",
+      "display": "Malignant epithelial neoplasm of pineal gland (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "448250003",
+      "display": "Malignant teratoma of pineal region (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "448248006",
+      "display": "Malignant neoplasm of axial suprasellar region of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "448218008",
+      "display": "Malignant neoplasm of cerebellopontine angle (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "443333004",
+      "display": "Medulloblastoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "429033009",
+      "display": "Malignant neoplasm of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93928006",
+      "display": "Primary malignant neoplasm of occipital lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93807001",
+      "display": "Primary malignant neoplasm of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93768004",
+      "display": "Primary malignant neoplasm of craniopharyngeal duct (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93749002",
+      "display": "Primary malignant neoplasm of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93748005",
+      "display": "Primary malignant neoplasm of cerebral ventricle (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93746009",
+      "display": "Primary malignant neoplasm of cerebellum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93726004",
+      "display": "Primary malignant neoplasm of brain stem (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "424276002",
+      "display": "Malignant glioma of brainstem (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "424151006",
+      "display": "Anaplastic glioma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363483004",
+      "display": "Malignant tumor of pineal gland (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363482009",
+      "display": "Malignant tumor of pituitary gland (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363473003",
+      "display": "Malignant neoplasm of brainstem (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363471001",
+      "display": "Malignant neoplasm of cerebral ventricles (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363470000",
+      "display": "Malignant neoplasm of occipital lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363469001",
+      "display": "Malignant neoplasm of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363468009",
+      "display": "Malignant neoplasm of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "363467004",
+      "display": "Malignant neoplasm of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "281560004",
+      "display": "Neuroblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "277505007",
+      "display": "Medulloblastoma of cerebellum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "276836002",
+      "display": "Primary cerebral lymphoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "276828006",
+      "display": "Glioblastoma multiforme of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "276826005",
+      "display": "Malignant glioma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "255112006",
+      "display": "Malignant tumor of pituitary and hypothalamus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "254969001",
+      "display": "Malignant tumor of olfactory tract (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "254955001",
+      "display": "Pituitary carcinoma (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188340000",
+      "display": "Malignant tumor of craniopharyngeal duct (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188339002",
+      "display": "Malignant neoplasm of pituitary gland and craniopharyngeal duct (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188308004",
+      "display": "Malignant neoplasm of olfactory bulb (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188302003",
+      "display": "Malignant neoplasm of tapetum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188301005",
+      "display": "Malignant neoplasm of corpus callosum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188298006",
+      "display": "Malignant neoplasm of pons (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188297001",
+      "display": "Malignant neoplasm of midbrain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188296005",
+      "display": "Malignant neoplasm of medulla oblongata (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188295009",
+      "display": "Malignant neoplasm of cerebral peduncle (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188293002",
+      "display": "Malignant neoplasm of floor of cerebral ventricle (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188292007",
+      "display": "Malignant tumor of choroid plexus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188290004",
+      "display": "Malignant neoplasm of uncus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188289008",
+      "display": "Malignant neoplasm of hippocampus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188287005",
+      "display": "Malignant neoplasm of thalamus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188286001",
+      "display": "Malignant tumor of hypothalamus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188285002",
+      "display": "Malignant neoplasm of globus pallidus (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188283009",
+      "display": "Malignant neoplasm of corpus striatum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188282004",
+      "display": "Malignant neoplasm of cerebral cortex (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188281006",
+      "display": "Malignant neoplasm of basal ganglia (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "188280007",
+      "display": "Malignant neoplasm of cerebrum (excluding lobes and ventricles) (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "109912006",
+      "display": "Overlapping malignant neoplasm of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "94086000",
+      "display": "Primary malignant neoplasm of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93964007",
+      "display": "Primary malignant neoplasm of pituitary gland (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93962006",
+      "display": "Primary malignant neoplasm of pineal gland (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "93946000",
+      "display": "Primary malignant neoplasm of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "100731000119107",
+      "display": "Low grade astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1157041008",
+      "display": "Astrocytoma low grade (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "100721000119109",
+      "display": "High grade astrocytoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "SCT#276828006",
+      "display": "Glioblastoma multiforme of brain"
+    },
+    {
+      "entryType": "brain",
+      "code": "1156414004",
+      "display": "Giant cell glioblastoma of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684901000119107",
+      "display": "Primary glioblastoma multiforme of cerebrum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "16845341000119100",
+      "display": "Primary glioblastoma multiforme of brainstem (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "16845301000119100",
+      "display": "Primary glioblastoma multiforme of cerebellum (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684911000119105",
+      "display": "Primary glioblastoma multiforme of frontal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684931000119100",
+      "display": "Primary glioblastoma multiforme of parietal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684941000119109",
+      "display": "Primary glioblastoma multiforme of temporal lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "684921000119103",
+      "display": "Primary glioblastoma multiforme of occipital lobe (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "147131000119101",
+      "display": "Glioblastoma multiforme of central nervous system (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1157062009",
+      "display": "Giant cell glioblastoma of central nervous system (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "393563007",
+      "display": "Glioblastoma multiforme (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "276829003",
+      "display": "Glioblastoma multiforme of spinal cord (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "276828006",
+      "display": "Glioblastoma multiforme of brain (disorder)"
+    },
+    {
+      "entryType": "brain",
+      "code": "1163375002",
+      "display": "Glioblastoma (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "44529004",
+      "display": "Giant cell glioblastoma (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "384992008",
+      "display": "Small cell glioblastoma (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "733837004",
+      "display": "Epithelioid glioblastoma (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "35262004",
+      "display": "Gliosarcoma (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "733889009",
+      "display": "Glioblastoma isocitrate dehydrogenase wildtype (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "733888001",
+      "display": "Glioblastoma isocitrate dehydrogenase 1 mutation (morphologic abnormality)"
+    },
+    {
+      "entryType": "brain",
+      "code": "189923008",
+      "display": "Monstrocellular sarcoma (morphologic abnormality)"
+    }
+  ]
+}

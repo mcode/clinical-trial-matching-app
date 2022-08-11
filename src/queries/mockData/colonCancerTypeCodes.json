@@ -1,0 +1,499 @@
+{
+  "entry": [
+    {
+      "entryType": "colon",
+      "code": "SCT#363406005",
+      "display": "Malignant neoplasm of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363410008",
+      "display": "Malignant tumor of sigmoid colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363412000",
+      "display": "Malignant tumor of ascending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363408006",
+      "display": "Malignant tumor of transverse colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363409003",
+      "display": "Malignant tumor of descending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363414004",
+      "display": "Malignant tumor of rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363407001",
+      "display": "Malignant tumor of hepatic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363413005",
+      "display": "Malignant tumor of splenic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#315058005",
+      "display": "Hereditary nonpolyposis colon cancer (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#109838007",
+      "display": "Overlapping malignant neoplasm of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#93761005",
+      "display": "Primary malignant neoplasm of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#94006002",
+      "display": "Primary malignant neoplasm of sigmoid colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#93683002",
+      "display": "Primary malignant neoplasm of ascending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#93771007",
+      "display": "Primary malignant neoplasm of descending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#94105000",
+      "display": "Primary malignant neoplasm of transverse colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#1197354001",
+      "display": "Primary malignant mesenchymal neoplasm of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#721698005",
+      "display": "Primary malignant neuroendocrine neoplasm of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#93826009",
+      "display": "Primary malignant neoplasm of hepatic flexure of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#94072004",
+      "display": "Primary malignant neoplasm of splenic flexure of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#1163568002",
+      "display": "Primary malignant neoplasm of overlapping sites of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#16636051000119105",
+      "display": "Primary malignant gastrointestinal stromal neoplasm of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "6.81651E+14",
+      "display": "Primary adenocarcinoma of descending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "6.81601E+14",
+      "display": "Primary adenocarcinoma of ascending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1.84881E+14",
+      "display": "Primary adenocarcinoma of rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "9.6281E+13",
+      "display": "Overlapping malignant neoplasm of colon and rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1.701E+12",
+      "display": "Primary adenocarcinoma of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1197359006",
+      "display": "Familial colorectal cancer type X (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1156795003",
+      "display": "Kaposi sarcoma of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1156788007",
+      "display": "Leiomyosarcoma of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "781382000",
+      "display": "Malignant neoplasm of colon and/or rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "766981007",
+      "display": "Squamous cell carcinoma of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "737058005",
+      "display": "Microsatellite instability-high colorectal cancer (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "726654006",
+      "display": "Malignant carcinoid tumor of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "721699002",
+      "display": "Primary adenocarcinoma of descending colon and splenic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "721697000",
+      "display": "Primary neuroendocrine carcinoma of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "721696009",
+      "display": "Primary adenocarcinoma of transverse colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "721695008",
+      "display": "Primary adenocarcinoma of ascending colon and right flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "425178004",
+      "display": "Adenocarcinoma of rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "314965007",
+      "display": "Local recurrence of malignant tumor of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "312115000",
+      "display": "Carcinoma of splenic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "312114001",
+      "display": "Carcinoma of hepatic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "312113007",
+      "display": "Carcinoma of descending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "312112002",
+      "display": "Carcinoma of transverse colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "312111009",
+      "display": "Carcinoma of ascending colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "301756000",
+      "display": "Adenocarcinoma of sigmoid colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "285611007",
+      "display": "Metastasis to colon of unknown primary (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "285312008",
+      "display": "Carcinoma of sigmoid colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "269544008",
+      "display": "Carcinoma of the rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "269533000",
+      "display": "Carcinoma of colon (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#363351006",
+      "display": "Malignant tumor of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#781382000",
+      "display": "Malignant neoplasm of colon and/or rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#737058005",
+      "display": "Microsatellite instability-high colorectal cancer (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#1197359006",
+      "display": "Familial colorectal cancer type X (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "16636101000119100",
+      "display": "Primary malignant gastrointestinal stromal neoplasm of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "184881000119106",
+      "display": "Primary adenocarcinoma of rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1197355000",
+      "display": "Primary malignant mesenchymal neoplasm of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1156797006",
+      "display": "Kaposi sarcoma of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "1156783003",
+      "display": "Leiomyosarcoma of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "448994001",
+      "display": "Malignant epithelial neoplasm of upper rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "766979005",
+      "display": "Squamous cell carcinoma of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "721701002",
+      "display": "Primary neuroendocrine carcinoma of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "721700001",
+      "display": "Primary malignant neuroendocrine neoplasm of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "96281000119107",
+      "display": "Overlapping malignant neoplasm of colon and rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "425178004",
+      "display": "Adenocarcinoma of rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369461007",
+      "display": "Malignant tumor involving rectum by separate metastasis from vagina (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369460008",
+      "display": "Malignant tumor involving rectum by separate metastasis from uterus (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369459003",
+      "display": "Malignant tumor involving rectum by separate metastasis from uterine cervix (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369458006",
+      "display": "Malignant tumor involving rectum by separate metastasis from prostate (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369457001",
+      "display": "Malignant tumor involving rectum by separate metastasis from ovary (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369456005",
+      "display": "Malignant tumor involving rectum by separate metastasis from fallopian tube (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369455009",
+      "display": "Malignant tumor involving rectum by separate metastasis from endometrium (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369454008",
+      "display": "Malignant tumor involving rectum by direct extension from vagina (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369453002",
+      "display": "Malignant tumor involving rectum by direct extension from uterus (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369452007",
+      "display": "Malignant tumor involving rectum by direct extension from uterine cervix (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369451000",
+      "display": "Malignant tumor involving rectum by direct extension from prostate (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369450004",
+      "display": "Malignant tumor involving rectum by direct extension from ovary (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369449004",
+      "display": "Malignant tumor involving rectum by direct extension from fallopian tube (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "369448007",
+      "display": "Malignant tumor involving rectum by direct extension from endometrium (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "363414004",
+      "display": "Malignant tumor of rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "363413005",
+      "display": "Malignant tumor of splenic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "363407001",
+      "display": "Malignant tumor of hepatic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "187760008",
+      "display": "Malignant neoplasm of rectum, rectosigmoid junction and anus (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "109839004",
+      "display": "Overlapping malignant neoplasm of rectum, anus and anal canal (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "93984006",
+      "display": "Primary malignant neoplasm of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "93980002",
+      "display": "Primary malignant neoplasm of rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "314966008",
+      "display": "Local recurrence of malignant tumor of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "312115000",
+      "display": "Carcinoma of splenic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "312114001",
+      "display": "Carcinoma of hepatic flexure (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "285612000",
+      "display": "Metastasis to rectum of unknown primary (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "276822007",
+      "display": "Malignant melanoma of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "269544008",
+      "display": "Carcinoma of the rectosigmoid junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "254586002",
+      "display": "Malignant tumor of anorectal junction (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "254582000",
+      "display": "Adenocarcinoma of rectum (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#315058005",
+      "display": "Hereditary nonpolyposis colon cancer (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#1197359006",
+      "display": "Familial colorectal cancer type X (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#315058005",
+      "display": "Hereditary nonpolyposis colon cancer (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#715866009",
+      "display": "Attenuated familial adenomatous polyposis (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#716318002",
+      "display": "Lynch syndrome (disorder)"
+    },
+    {
+      "entryType": "colon",
+      "code": "SCT#315058005",
+      "display": "Hereditary nonpolyposis colon cancer (disorder)"
+    }
+  ]
+}
