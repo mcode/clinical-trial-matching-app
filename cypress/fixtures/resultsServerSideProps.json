@@ -1,0 +1,15 @@
+{
+  "props": {
+    "patient": {
+      "id": "patient-123",
+      "name": "Nyota Uhura",
+      "gender": "female",
+      "age": "28",
+      "zipcode": "11111"
+    },
+    "user": {
+      "id": "user-123",
+      "name": "Dr. Leonard McCoy"
+    }
+  }
+}
