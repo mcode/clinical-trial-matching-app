@@ -143,3 +143,62 @@ export function convertStringtoResource({
     addResource(bundle, resource);
   }
 }
+export function convertNamedSNOMEDCodetoResource({
+  bundle,
+  codedValue,
+  id,
+  profile_value,
+  codingSystem,
+  codingSystemCode,
+}: {
+  bundle: Bundle;
+  codedValue: NamedSNOMEDCode;
+  id: string;
+  profile_value: string;
+  codingSystem: string;
+  codingSystemCode: string;
+}): void {
+  // Create the Condition - done separate from the function call to ensure proper TypeScript checking
+  let code: CodeableConcept = null;
+  let resourceType:any;
+  let fullurn="";
+  if (codedValue.entryType.toLowerCase()=="medication" ) {
+       resourceType='MedicationStatement';
+       fullURN="urn:uuid:medicationId-1";
+  
+  } else { 
+    resourceType="Observation";
+  }
+  if (codingSystemCode) {
+    code = {
+      coding: [
+        {
+          system: codingSystem,
+          code: codingSystemCode,
+        },
+      ],
+    };
+  }
+  if (code) {
+    const resource: Observation = {
+      resourceType: resourceType,
+      id: id,
+      meta: {
+        profile: [profile_value],
+      },
+      code,
+      codedValue,
+    };
+    addResource(bundle, resource);
+  } else {
+    const resource: Observation = {
+      resourceType: 'Observation',
+      id: id,
+      meta: {
+        profile: [profile_value],
+      },
+      valueString,
+    };
+    addResource(bundle, resource);
+  }
+}
