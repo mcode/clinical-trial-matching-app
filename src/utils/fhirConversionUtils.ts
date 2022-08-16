@@ -16,6 +16,7 @@ type FhirUserName = {
 };
 
 export type NamedSNOMEDCode = {
+  entryType: string;
   code: string | number;
   display: string;
 };
