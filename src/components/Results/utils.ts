@@ -171,20 +171,13 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
   return getCoordinatesForLocations(locations)
-    .map(({ name, telecom, position }) => {
+    .map(({ name, telecom, position }): ContactProps => {
       const positionCoordinates = getLocationCoordinates({ position } as Location);
       const quantity = getDistanceBetweenPoints(origin, positionCoordinates);
 
       return {
-        contact: { name, telecom },
-        ...(origin && quantity
-          ? {
-              distance: {
-                quantity,
-                units: 'miles',
-              },
-            }
-          : {}),
+        ...getContact({ name, telecom }),
+        ...(origin && quantity ? { distance: { quantity, units: 'miles' } } : {}),
       };
     })
     .sort((first, second) => {

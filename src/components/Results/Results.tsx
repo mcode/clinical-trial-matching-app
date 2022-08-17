@@ -36,7 +36,7 @@ const Results = ({ response: { results, total }, state, handleSaveStudy, ...prop
   const currentZeroIndexedPage = parseInt(router.query.page as string) - 1;
   const pageSize = parseInt(router.query.pageSize as string);
 
-  const handleChangePage = (event: MouseEvent<HTMLButtonElement> | null, oneIndexedPage: number) =>
+  const handleChangePage = (_event: MouseEvent<HTMLButtonElement> | null, oneIndexedPage: number) =>
     router.push({
       pathname: '/results',
       query: { ...router.query, page: oneIndexedPage },
