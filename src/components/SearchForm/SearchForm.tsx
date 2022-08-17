@@ -1,13 +1,12 @@
-import React, { useState } from 'react';
 import SearchImage from '@/assets/images/search.png';
-import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import type { ReactElement } from 'react';
-import { useEffect } from 'react';
+import React, { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
+import { cancerTypeDetails, cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
 import { SearchParameters } from 'types/search-types';
 import {
   AgeTextField,
@@ -27,12 +26,6 @@ import {
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType } from './types';
 
-import {
-  cancerTypeDetails,
-  cancerTypeObj,
-  cancerTypeOptions
-
-} from 'src/components/SearchForm/SearchFormOptions';
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
@@ -54,9 +47,8 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const { handleSubmit, control, watch } = useForm<SearchFormValuesType>({ defaultValues });
 
   const onSubmit = (data: SearchFormValuesType) => {
-
-    console.log(data)
-  }
+    console.log(data);
+  };
 
   /*router.push({
     pathname: '/results',
@@ -71,11 +63,10 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
 */
   //**** Russ */
 
-
-  const cancerType = watch('cancerType')
+  const cancerType = watch('cancerType');
 
   const [cancerTypes, setCancerTypes] = useState(cancerTypeOptions);
-  const [cancerCategory, setcancerCategory] = useState("cancerTypesOptions");
+  const [cancerCategory, setcancerCategory] = useState('cancerTypesOptions');
   //const [cancerTypes, setCancerTypes] = useState([]);
   const [cancerSubTypes, setCancerSubTypes] = useState([]);
   const [biomarkers, setBiomarkers] = useState([]);
@@ -84,34 +75,29 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const [procedures, setProcedures] = useState([]);
   const [radiations, setRadiations] = useState([]);
 
-
   for (var i = 0; i < cancerTypeOptions.length; i++) {
     //console.log(cancerTypeOptions[i]);
-
   }
   const [selectVal, setSelectVal] = useState({
     cancerType: cancerTypeOptions,
-    cancerSubType: "",
-    biomarker: "",
-    stage: "",
-    medication: "",
-    procedure: "",
+    cancerSubType: '',
+    biomarker: '',
+    stage: '',
+    medication: '',
+    procedure: '',
   });
-
 
   const onChange = event => handleChange(cancerTypes);
 
-
-  const handleChange = (e) => {
+  const handleChange = e => {
     const val = e.target.value;
 
-    console.log("***** got here " + watch());
-    console.log("cancerTypes=" + cancerTypes);
-    setcancerCategory(cancerTypes["val"].entryType);
-    console.log("cancerCategory=" + cancerCategory);
+    console.log('***** got here ' + watch());
+    console.log('cancerTypes=' + cancerTypes);
+    setcancerCategory(cancerTypes['val'].entryType);
+    console.log('cancerCategory=' + cancerCategory);
     switch (cancerCategory) {
-
-      case "":
+      case '':
         //setCancerTypes(breastCancer_cancerTypeOptions);
         setCancerSubTypes([]);
         setBiomarkers([]);
@@ -119,7 +105,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setMedications([]);
         setProcedures([]);
         break;
-      case "breast":
+      case 'breast':
         //setCancerTypes(breastCancer_cancerTypeOptions);
         setCancerSubTypes(cancerTypeDetails.brain.cancerSubtype);
         //setBiomarkers(breastCancer_biomarkersOptions);
@@ -127,7 +113,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         //setMedications(breastCancer_medicationsOptions);
         // setProcedures(breastCancer_proceduresOptions);
         break;
-      case "lung":
+      case 'lung':
         setCancerTypes(cancerTypeDetails.lung.cancerCodes);
         setCancerSubTypes(cancerTypeDetails.lung.cancerSubtype);
         setBiomarkers(cancerTypeDetails.lung.biomarkers);
@@ -136,7 +122,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setProcedures(cancerTypeDetails.lung.surgeryCodes);
 
         break;
-      case "colon":
+      case 'colon':
         setCancerTypes(cancerTypeDetails.colon.cancerCodes);
         setCancerSubTypes(cancerTypeDetails.colon.cancerSubtype);
         setBiomarkers(cancerTypeDetails.colon.biomarkers);
@@ -144,7 +130,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setMedications(cancerTypeDetails.colon.medications);
         setProcedures(cancerTypeDetails.colon.surgeryCodes);
         break;
-      case "brain":
+      case 'brain':
         setCancerTypes(cancerTypeDetails.brain.cancerCodes);
         setCancerSubTypes(cancerTypeDetails.brain.cancerSubtype);
         setBiomarkers(cancerTypeDetails.brain.biomarkers);
@@ -152,7 +138,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setMedications([]);
         setProcedures([]);
         break;
-      case "prostate":
+      case 'prostate':
         setCancerTypes(cancerTypeDetails.prostate.cancerCodes);
         setCancerSubTypes(cancerTypeDetails.prostate.cancerSubtype);
         setBiomarkers(cancerTypeDetails.prostate.biomarkers);
@@ -160,7 +146,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setMedications(cancerTypeDetails.prostate.medications);
         setProcedures(cancerTypeDetails.prostate.surgeryCodes);
         break;
-      case "mm":
+      case 'mm':
         setCancerTypes(cancerTypeDetails.mm.cancerCodes);
         setCancerSubTypes(cancerTypeDetails.mm.cancerSubtype);
         setStages(cancerTypeDetails.breast.stages);
@@ -173,19 +159,19 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
 
   /* end russ code*/
 
-  const handleTypeChange = (e) => {
+  const handleTypeChange = e => {
     const { name, value } = e.target;
     setSelectVal({
       ...selectVal,
       [name]: value,
     });
   };
-  const renderEmptyOption = (item) => {
-    return item.length > 0 ? <option value="none">Select Value</option> : "";
+  const renderEmptyOption = item => {
+    return item.length > 0 ? <option value="none">Select Value</option> : '';
   };
 
-  const renderSelectOptions = (typeList) => {
-    return typeList.map((item) => (
+  const renderSelectOptions = typeList => {
+    return typeList.map(item => (
       <option value={item} key={item}>
         {item}
       </option>
@@ -196,42 +182,56 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
     console.log(selectVal);
   };
 
-  const retrieveCancer = (cancer) => {
+  const retrieveCancer = cancer => {
     if (cancer !== null) {
-      console.log(cancerTypeOptions[0][cancer.entryType])
+      console.log(cancerTypeOptions[0][cancer.entryType]);
       if (cancerTypeOptions[0][cancer.entryType] !== undefined) {
-        if (cancerTypeOptions[0][cancer.entryType].cancerSubtype !== null || cancerTypeOptions[0][cancer.entryType].cancerSubtype?.length > 0) {
-          setCancerSubTypes(cancerTypeOptions[0][cancer.entryType].cancerSubtype?.entry)
+        if (
+          cancerTypeOptions[0][cancer.entryType].cancerSubtype !== null ||
+          cancerTypeOptions[0][cancer.entryType].cancerSubtype?.length > 0
+        ) {
+          setCancerSubTypes(cancerTypeOptions[0][cancer.entryType].cancerSubtype?.entry);
         }
-        if (cancerTypeOptions[0][cancer.entryType].surgeryCodes !== null || cancerTypeOptions[0][cancer.entryType].surgeryCodes?.length > 0) {
+        if (
+          cancerTypeOptions[0][cancer.entryType].surgeryCodes !== null ||
+          cancerTypeOptions[0][cancer.entryType].surgeryCodes?.length > 0
+        ) {
           setProcedures(cancerTypeOptions[0][cancer.entryType].surgeryCodes?.entry);
         }
-        if (cancerTypeOptions[0][cancer.entryType].medications !== null || cancerTypeOptions[0][cancer.entryType].medications?.length > 0) {
-          setMedications(cancerTypeOptions[0][cancer.entryType].medications?.entry)
+        if (
+          cancerTypeOptions[0][cancer.entryType].medications !== null ||
+          cancerTypeOptions[0][cancer.entryType].medications?.length > 0
+        ) {
+          setMedications(cancerTypeOptions[0][cancer.entryType].medications?.entry);
         }
-        if (cancerTypeOptions[0][cancer.entryType].stages !== null || cancerTypeOptions[0][cancer.entryType].stages?.length > 0) {
-          setStages(cancerTypeOptions[0][cancer.entryType].stages)
+        if (
+          cancerTypeOptions[0][cancer.entryType].stages !== null ||
+          cancerTypeOptions[0][cancer.entryType].stages?.length > 0
+        ) {
+          setStages(cancerTypeOptions[0][cancer.entryType].stages);
         }
-        if (cancerTypeOptions[0][cancer.entryType].radiationCodes !== null || cancerTypeOptions[0][cancer.entryType].radiationCodes?.length > 0) {
-          setRadiations(cancerTypeOptions[0][cancer.entryType].radiationCodes?.entry)
+        if (
+          cancerTypeOptions[0][cancer.entryType].radiationCodes !== null ||
+          cancerTypeOptions[0][cancer.entryType].radiationCodes?.length > 0
+        ) {
+          setRadiations(cancerTypeOptions[0][cancer.entryType].radiationCodes?.entry);
         }
-        if (cancerTypeOptions[0][cancer.entryType].biomarkers !== null || cancerTypeOptions[0][cancer.entryType].biomarkers?.length > 0) {
-          setBiomarkers(cancerTypeOptions[0][cancer.entryType].biomarkers?.entry)
+        if (
+          cancerTypeOptions[0][cancer.entryType].biomarkers !== null ||
+          cancerTypeOptions[0][cancer.entryType].biomarkers?.length > 0
+        ) {
+          setBiomarkers(cancerTypeOptions[0][cancer.entryType].biomarkers?.entry);
         }
       }
-
-
     } else {
-      setCancerSubTypes([])
-      setProcedures([])
-      setMedications([])
-      setStages([])
-      setRadiations([])
-      setBiomarkers([])
+      setCancerSubTypes([]);
+      setProcedures([]);
+      setMedications([]);
+      setStages([]);
+      setRadiations([]);
+      setBiomarkers([]);
     }
   };
-
-
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -303,12 +303,15 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
               control={control}
               render={({ field }) => <CancerSubtypeAutocomplete field={field} cancerSubTypes={cancerSubTypes} />}
             />
-
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
-            <Controller name="stage" defaultValue={null} control={control}
-              render={({ field }) => <CancerStageAutocomplete field={field} canceStages={stages} />} />
+            <Controller
+              name="stage"
+              defaultValue={null}
+              control={control}
+              render={({ field }) => <CancerStageAutocomplete field={field} canceStages={stages} />}
+            />
           </Grid>
 
           <Grid item xs={8} xl={fullWidth ? 8 : 2}>
@@ -329,20 +332,39 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="biomarkers" defaultValue={[]} control={control} render={({ field }) => <BiomarkersAutocomplete field={field} cancerBiomarkers={biomarkers} />} />
+            <Controller
+              name="biomarkers"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <BiomarkersAutocomplete field={field} cancerBiomarkers={biomarkers} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="radiation" defaultValue={[]} control={control} render={({ field }) => <RadiationAutocomplete field={field} radiations={radiations} />} />
+            <Controller
+              name="radiation"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <RadiationAutocomplete field={field} radiations={radiations} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="surgery" defaultValue={[]} control={control} render={({ field }) => <SurgeryAutocomplete field={field} cancerSurgery={procedures} />} />
+            <Controller
+              name="surgery"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <SurgeryAutocomplete field={field} cancerSurgery={procedures} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="medications" defaultValue={[]} control={control}
-              render={({ field }) => <MedicationsAutocomplete field={field} cancerMedication={medications} />} />
+            <Controller
+              name="medications"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <MedicationsAutocomplete field={field} cancerMedication={medications} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
