@@ -36,75 +36,118 @@ import prostateMedicationCodes from 'src/queries/mockData/prostateMedicationCode
 }*/
 export const breastCancerStages = [0, 1, 2.1, 2.2, 3.1, 3.2, 3.3, 4];
 //export const breastCancer_cancerTypeOptions=buildOptionListfromJSON(breastcancerCodes);
-export const breastCancerMedications = "";
-export const breastCancerSurgeryCodes = "";
-export const breastCancer_proceduresOptions = "";
-export const breastCancerBiomarkers="";
-export const breastCancer_biomarkersOptions="";
-export const breastCancerRadiationCodes="";
-export const breastCancerSubTypes="";
-export const breastCancerCodes='';
-export type cancerTypeDetails= {
-    category:       string,
-    cancerCodes:    NamedSNOMEDCode[],
-    cancerSubtype:  NamedSNOMEDCode[],
-    biomarkers:     NamedSNOMEDCode[],
-    surgeryCodes:   NamedSNOMEDCode[],
-    medications:    NamedSNOMEDCode[],
-    stages:         NamedSNOMEDCode[],
-    radiationCodes: NamedSNOMEDCode[]
+export const breastCancerMedications = '';
+export const breastCancerSurgeryCodes = '';
+export const breastCancer_proceduresOptions = '';
+export const breastCancerBiomarkers = '';
+export const breastCancer_biomarkersOptions = '';
+export const breastCancerRadiationCodes = '';
+export const breastCancerSubTypes = '';
+export const breastCancerCodes = '';
+export type cancerTypeDetails = {
+  category: string;
+  cancerCodes: NamedSNOMEDCode[];
+  cancerSubtype: NamedSNOMEDCode[];
+  biomarkers: NamedSNOMEDCode[];
+  surgeryCodes: NamedSNOMEDCode[];
+  medications: NamedSNOMEDCode[];
+  stages: NamedSNOMEDCode[];
+  radiationCodes: NamedSNOMEDCode[];
+};
+export type cancerTypeObj = {
+  lung: cancerTypeDetails;
+  breast: cancerTypeDetails;
+  prostate: cancerTypeDetails;
+  brain: cancerTypeDetails;
+  colon: cancerTypeDetails;
+  mm: cancerTypeDetails;
+};
 
+const tmp: cancerTypeObj = {
+  lung: buildCancerCodeJSON(
+    'lung',
+    lungCancerTypeCodes,
+    lungCancerSubTypeCodes,
+    lungMedicationCodes,
+    lungRadiationCodes,
+    lungSurgeryCodes,
+    breastCancerStages,
+    breastCancerBiomarkers
+  ),
+  colon: buildCancerCodeJSON(
+    'colon',
+    colonCancerTypeCodes,
+    '',
+    colonMedicationCodes,
+    colonRadiationCodes,
+    colonSurgeryCodes,
+    breastCancerStages,
+    ''
+  ),
+  brain: buildCancerCodeJSON(
+    'brain',
+    brainCancerTypeCodes,
+    brainCancerSubTypeCodes,
+    brainMedicationCodes,
+    brainRadiationCodes,
+    brainSurgeryCodes,
+    breastCancerStages,
+    brainBiomarkerCodes
+  ),
+  prostate: buildCancerCodeJSON('prostate', prostateCancerTypeCodes, '', '', '', '', breastCancerStages, ''),
+  breast: buildCancerCodeJSON(
+    'breast',
+    breastCancerCodes,
+    breastCancerSubTypes,
+    breastCancerMedications,
+    breastCancerRadiationCodes,
+    breastCancerSurgeryCodes,
+    breastCancerStages,
+    breastCancerBiomarkers
+  ),
+  mm: buildCancerCodeJSON(
+    'mm',
+    MultipleMyelomaCancerTypeCodes,
+    '',
+    MultipleMyelomaMedicationCodes,
+    '',
+    '',
+    breastCancerStages,
+    ''
+  ),
+};
 
-  };
-  export type cancerTypeObj = {
-    lung:       cancerTypeDetails;
-    breast:     cancerTypeDetails,
-    prostate:   cancerTypeDetails,
-    brain:      cancerTypeDetails,
-    colon:      cancerTypeDetails,
-    mm:      cancerTypeDetails,
-  };
+export const cancerTypeDetails: cancerTypeObj = tmp;
 
-
-let tmp: cancerTypeObj ={
-lung: buildCancerCodeJSON("lung", lungCancerTypeCodes,lungCancerSubTypeCodes,lungMedicationCodes,lungRadiationCodes,lungSurgeryCodes,breastCancerStages,breastCancerBiomarkers),
-colon:buildCancerCodeJSON("colon", colonCancerTypeCodes,""  ,colonMedicationCodes,colonRadiationCodes,colonSurgeryCodes,breastCancerStages,""),
-brain: buildCancerCodeJSON("brain", brainCancerTypeCodes,brainCancerSubTypeCodes,brainMedicationCodes,brainRadiationCodes ,brainSurgeryCodes,breastCancerStages,brainBiomarkerCodes),
-prostate:buildCancerCodeJSON("prostate", prostateCancerTypeCodes,"","","","",breastCancerStages,""),
-breast:buildCancerCodeJSON("breast", breastCancerCodes,breastCancerSubTypes,breastCancerMedications,breastCancerRadiationCodes,breastCancerSurgeryCodes,breastCancerStages,breastCancerBiomarkers),
-mm:buildCancerCodeJSON("mm", MultipleMyelomaCancerTypeCodes,"",MultipleMyelomaMedicationCodes,"","",breastCancerStages,"")
-
-
-}
-
-
-
-
-export const cancerTypeDetails:cancerTypeObj =tmp;
-
-var ctArray=[];
-ctArray.push(tmp)
+const ctArray: cancerTypeObj[] = [];
+ctArray.push(tmp);
 /*
 ctArray.push(cancerTypeDetails.prostate.cancerCodes);
 ctArray.push(cancerTypeDetails.colon.cancerCodes);
 ctArray.push(cancerTypeDetails.brain.cancerCodes);
 ctArray.push(cancerTypeDetails.lung.cancerCodes);*/
-export const cancerTypeOptions=ctArray;
+export const cancerTypeOptions = ctArray;
 
+function buildCancerCodeJSON(
+  category,
+  cancerCodes,
+  subTypeCodes,
+  medicationCodes,
+  radiationCodes,
+  surgeryCodes,
+  stages,
+  biomarkerCodes
+) {
+  const details: cancerTypeDetails = {
+    category: category,
+    cancerCodes: cancerCodes,
+    cancerSubtype: subTypeCodes,
+    biomarkers: biomarkerCodes,
+    medications: medicationCodes,
+    radiationCodes: radiationCodes,
+    surgeryCodes: surgeryCodes,
+    stages: stages,
+  };
 
-
-function buildCancerCodeJSON(category,cancerCodes,subTypeCodes,medicationCodes,radiationCodes,surgeryCodes,stages,biomarkerCodes){
-    var details:cancerTypeDetails={
-    category :        category,
-    cancerCodes :     cancerCodes,
-    cancerSubtype :   subTypeCodes,
-    biomarkers :      biomarkerCodes,
-    medications :     medicationCodes,
-    radiationCodes :  radiationCodes,
-    surgeryCodes :    surgeryCodes,
-    stages :          stages
-    }
-
-    return details;
-
+  return details;
 }
