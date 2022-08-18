@@ -80,10 +80,10 @@ export const CancerTypeAutocomplete = ({
       enabled: typeof window !== 'undefined',
    });*/
   // console.log(cancerTypeOptions)
-  const { data, isLoading } = cancerTypeOptions;
+  //const { data, isLoading } = cancerTypeOptions;
   // const [initialValue] = useState(field.value);
   // const options = useMemo(() => [initialValue, ...(data || [])].filter(Boolean), [initialValue, cancerTypeOptions]);
-  let newOptions = [];
+  const newOptions = [];
   for (const [key, value] of Object.entries(cancerTypeOptions[0])) {
     for (const [key2, cancerTypes] of Object.entries(value['cancerCodes'])) {
       cancerTypes.forEach(element => {
@@ -96,7 +96,7 @@ export const CancerTypeAutocomplete = ({
     <Autocomplete
       {...field}
       data-testid="cancerType"
-      loading={isLoading}
+      //loading={isLoading}
       onChange={(event, newValue) => {
         field.onChange(newValue);
         retrieveCancer(newValue);

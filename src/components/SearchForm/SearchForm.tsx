@@ -46,9 +46,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control, watch } = useForm<SearchFormValuesType>({ defaultValues });
 
-  const onSubmit = (data: SearchFormValuesType) => {
-    console.log(data);
-  };
+  const onSubmit = (data: SearchFormValuesType) => {};
 
   /*router.push({
     pathname: '/results',
@@ -75,9 +73,6 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const [procedures, setProcedures] = useState([]);
   const [radiations, setRadiations] = useState([]);
 
-  for (var i = 0; i < cancerTypeOptions.length; i++) {
-    //console.log(cancerTypeOptions[i]);
-  }
   const [selectVal, setSelectVal] = useState({
     cancerType: cancerTypeOptions,
     cancerSubType: '',
@@ -91,11 +86,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
 
   const handleChange = e => {
     const val = e.target.value;
-
-    console.log('***** got here ' + watch());
-    console.log('cancerTypes=' + cancerTypes);
     setcancerCategory(cancerTypes['val'].entryType);
-    console.log('cancerCategory=' + cancerCategory);
     switch (cancerCategory) {
       case '':
         //setCancerTypes(breastCancer_cancerTypeOptions);
@@ -111,7 +102,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         //setBiomarkers(breastCancer_biomarkersOptions);
         setStages(cancerTypeDetails.brain.stages);
         //setMedications(breastCancer_medicationsOptions);
-        // setProcedures(breastCancer_proceduresOptions);
+        //setProcedures(breastCancer_proceduresOptions);
         break;
       case 'lung':
         setCancerTypes(cancerTypeDetails.lung.cancerCodes);
@@ -156,8 +147,6 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setProcedures([]);
     }
   };
-
-  /* end russ code*/
 
   const handleTypeChange = e => {
     const { name, value } = e.target;
@@ -289,7 +278,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="cancerType"
-              defaultValue={cancerTypeOptions}
+              defaultValue={null}
               control={control}
               rules={{ required: true }}
               render={({ field }) => <CancerTypeAutocomplete field={field} retrieveCancer={retrieveCancer} />}
@@ -299,7 +288,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="cancerSubtype"
-              defaultValue={cancerSubTypes}
+              defaultValue={null}
               control={control}
               render={({ field }) => <CancerSubtypeAutocomplete field={field} cancerSubTypes={cancerSubTypes} />}
             />

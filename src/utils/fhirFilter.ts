@@ -160,14 +160,13 @@ export function convertNamedSNOMEDCodetoResource({
 }): void {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
   let code: CodeableConcept = null;
-  let resourceType:any;
-  let fullurn="";
-  if (codedValue.entryType.toLowerCase()=="medication" ) {
-       resourceType='MedicationStatement';
-       fullURN="urn:uuid:medicationId-1";
-  
-  } else { 
-    resourceType="Observation";
+  let resourceType: any;
+  let fullurn = '';
+  if (codedValue.entryType.toLowerCase() == 'medication') {
+    resourceType = 'MedicationStatement';
+    fullurn = 'urn:uuid:medicationId-1';
+  } else {
+    resourceType = 'Observation';
   }
   if (codingSystemCode) {
     code = {

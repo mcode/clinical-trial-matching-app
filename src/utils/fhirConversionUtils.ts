@@ -1,13 +1,9 @@
 import { CodeableConcept, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
-
 const MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR =
   'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior';
-
 const SNOMED_CODE_URI = 'http://snomed.info/sct';
-
 type FhirUser = fhirclient.FHIR.Patient | fhirclient.FHIR.Practitioner | fhirclient.FHIR.RelatedPerson;
-
 type FhirUserName = {
   prefix: string;
   given: string[];
@@ -255,6 +251,7 @@ const getCancerType = (condition: Condition): NamedSNOMEDCode | null => {
 
     if (code) {
       return {
+        entryType: 'CancerSubType',
         code: code.code,
         display: code.display ?? code.code,
       };
@@ -273,6 +270,7 @@ const getCancerSubtype = (condition: Condition): NamedSNOMEDCode | null => {
       ) {
         const code = extension.valueCodeableConcept.coding[0];
         return {
+          entryType: 'CancerSubType',
           code: code.code,
           display: code.display ?? code.code,
         };

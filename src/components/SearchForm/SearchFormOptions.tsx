@@ -55,7 +55,7 @@ export type cancerTypeObj = {
   mm: cancerTypeDetails;
 };
 
-let tmp: cancerTypeObj = {
+const tmp: cancerTypeObj = {
   lung: buildCancerCodeJSON(
     'lung',
     lungCancerTypeCodes,
@@ -111,7 +111,7 @@ let tmp: cancerTypeObj = {
 
 export const cancerTypeDetails: cancerTypeObj = tmp;
 
-var ctArray = [];
+const ctArray: cancerTypeObj[] = [];
 ctArray.push(tmp);
 /*
 ctArray.push(cancerTypeDetails.prostate.cancerCodes);
@@ -130,7 +130,7 @@ function buildCancerCodeJSON(
   stages,
   biomarkerCodes
 ) {
-  var details: cancerTypeDetails = {
+  const details: cancerTypeDetails = {
     category: category,
     cancerCodes: cancerCodes,
     cancerSubtype: subTypeCodes,
