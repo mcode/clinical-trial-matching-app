@@ -28,6 +28,7 @@ const getPagination = ({
     count={Math.ceil(count / rowsPerPage)}
     page={newZeroIndexedPage + 1}
     shape="rounded"
+    data-testid="pagination"
   />
 );
 
@@ -80,6 +81,7 @@ const Results = ({ response: { results, total }, state, handleSaveStudy, ...prop
         showFirstButton
         showLastButton
         ActionsComponent={getPagination}
+        data-testid="tablePagination"
       />
     </>
   );

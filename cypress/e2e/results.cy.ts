@@ -1,14 +1,7 @@
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import * as searchServerSideProps from '../fixtures/searchServerSideProps.json';
 
-const containsEveryExpectedItem = (arr: string[]) => () =>
-  cy.get(`[role="button"]`).each((item, index) => cy.wrap(item).contains(arr[index]));
-
 const hasText = (value: string) => () => cy.get(`input[type="text"]`).should('have.value', value);
-
-const hasNumber = (value: number) => () => cy.get(`input[type="number"]`).should('have.value', value);
-
-const isEmpty = () => cy.get(`input[type="text"]`).should('be.empty');
 
 describe('Tests the results page', () => {
   const {
@@ -72,24 +65,116 @@ describe('Tests the results page', () => {
   });
 
   it('can render a study with no closest facilities', () => {
-    cy.intercept('/api/clinical-trial-search', { fixture: 'resultDetailsWithInvalidZipcode.json' });
-    cy.visit(`/results?${queryParameters()}`, { failOnStatusCode: false });
-
     const trialId = 'NCT02488967';
-    cy.get(`#results-header-${trialId}`).click();
-    cy.get(`#study-${trialId}-header`).click();
+
+    cy.intercept('/api/clinical-trial-search', { fixture: 'resultDetailsWithInvalidZipcode.json' })
+      .visit(`/results?${queryParameters()}`, { failOnStatusCode: false })
+      .get(`#results-header-${trialId}`)
+      .click()
+      .get(`#study-${trialId}-header`)
+      .click();
+
     cy.contains(/no closest facilities/i);
   });
 
-  it.only('has clickable pagination', () => {
-    cy.intercept('/api/clinical-trial-search', { fixture: 'resultDetailsWithValidZipcode.json' });
-    cy.visit(`/results?${queryParameters()}`, { failOnStatusCode: false });
+  it.only('has working pagination', () => {
+    const pageParam = `page=${DEFAULT_PAGE}`;
+    const pageSizeParam = `pageSize=${DEFAULT_PAGE_SIZE}`;
+    const parameters = [pageParam, pageSizeParam].join('&');
 
-    // Can navigate to second page
+    cy.intercept('/api/clinical-trial-search', { fixture: 'resultDetailsWithValidZipcode.json' })
+      .visit(`/results?${parameters}`, { failOnStatusCode: false })
+      .wait(1000);
+
+    // Can navigate to next page
     cy.get('[data-testid="NavigateNextIcon"]').click();
 
+    // Can navigate to previous page
+    cy.get('[data-testid="NavigateBeforeIcon"]').click();
+
     // Can navigate to last page
-    cy.get('[data-testid="LastPageIcon"]').click();
+    cy.get('[data-testid="LastPageIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .parent()
+      .should('be.disabled');
+
+    // Can navigate to first page
+    cy.get('[data-testid="FirstPageIcon"]')
+      .click()
+      .get('[data-testid="NavigateBeforeIcon"]')
+      .parent()
+      .should('be.disabled');
+
+    // TODO: disable current button?
+    // Can navigate to self
+    cy.get('[data-testid="pagination"]').contains('1').click();
+
+    // Can navigate to numbered page other than self
+    cy.get('[data-testid="pagination"]').contains('2').click();
+
+    // Clicking on current page size closes the modal
+    cy.get('[data-testid="tablePagination"]')
+      .find('[data-testid="ArrowDropDownIcon"]')
+      .parent()
+      .click()
+      .get('[data-value="10"]')
+      .click();
+
+    // Correct amount of pages were produced
+    cy.get('[data-testid="NavigateBeforeIcon"]')
+      .parent()
+      .should('be.disabled')
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .parent()
+      .should('be.disabled');
+
+    // Click on all other page sizes
+    cy.get('[data-testid="tablePagination"]')
+      .find('[data-testid="ArrowDropDownIcon"]')
+      .parent()
+      .click()
+      .get('[data-value="25"]')
+      .click();
+
+    // Correct amount of pages were produced
+    cy.get('[data-testid="NavigateBeforeIcon"]')
+      .parent()
+      .should('be.disabled')
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .parent()
+      .should('be.disabled');
+
+    cy.get('[data-testid="tablePagination"]')
+      .find('[data-testid="ArrowDropDownIcon"]')
+      .parent()
+      .click()
+      .get('[data-value="50"]')
+      .click();
+
+    // Correct amount of pages were produced
+    cy.get('[data-testid="NavigateBeforeIcon"]')
+      .parent()
+      .should('be.disabled')
+      .get('[data-testid="NavigateNextIcon"]')
+      .click()
+      .get('[data-testid="NavigateNextIcon"]')
+      .parent()
+      .should('be.disabled');
   });
 
   it('Tests that there are studies with closest facilities on the results page', () => {
@@ -97,23 +182,38 @@ describe('Tests the results page', () => {
     cy.visit(`/results?${queryParameters()}`, { failOnStatusCode: false });
 
     // Change patient zipcode to valid one, like 02215
-    cy.get('[data-testid="ExpandMoreIcon"]').first().wait(1000).click();
-    cy.get('[data-testid="zipcode"]').clear().type('02215');
-    cy.get('button[type="submit"]')
+    cy.get('[data-testid="ExpandMoreIcon"]')
+      .first()
+      .wait(1000)
+      .click()
+      .get('[data-testid="zipcode"]')
+      .clear()
+      .type('02215')
+      .get('button[type="submit"]')
       .contains(/search/i)
       .click();
 
     // Check patient zipcode has changed
-    cy.get('[data-testid="ExpandMoreIcon"]').first().wait(1000).click();
-    cy.get('[data-testid="zipcode"]').within(hasText('02215'));
+    cy.get('[data-testid="ExpandMoreIcon"]')
+      .first()
+      .wait(1000)
+      .click()
+      .get('[data-testid="zipcode"]')
+      .within(hasText('02215'));
 
     // Change travel radius to 1 mile
-    cy.get('[data-testid="travelDistance"]').clear().type('1');
-    cy.get('button[type="submit"]')
+    cy.get('[data-testid="travelDistance"]')
+      .clear()
+      .type('1')
+      .get('button[type="submit"]')
       .contains(/search/i)
-      .click();
-    cy.get('[data-testid="ExpandMoreIcon"]').first().wait(1000).click();
-    cy.get('[data-testid="travelDistance"]').within(hasText('1'));
+      .click()
+      .get('[data-testid="ExpandMoreIcon"]')
+      .first()
+      .wait(1000)
+      .click()
+      .get('[data-testid="travelDistance"]')
+      .within(hasText('1'));
 
     // show that the intitial results are loaded in (no distance)
     // 1. distance/match likelihood will show same results for zipcode 11111

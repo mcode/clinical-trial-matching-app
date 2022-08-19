@@ -15,9 +15,12 @@ const clinicalTrialDistanceQuery = async (
   if (sendLocationData) return response;
 
   // Otherwise, patient zip code & distance weren't sent to the wrappers, so do that filtering here
-  const travelDistance = searchParams.travelDistance as string;
+  const travelDistance = parseInt(searchParams.travelDistance as string);
+  const noTravelDistance = isNaN(travelDistance);
+  if (noTravelDistance) return response;
+
   const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
-    return (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance);
+    return (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= travelDistance;
   };
   const filtered = response.results.filter(isStudyWithinRange);
 
