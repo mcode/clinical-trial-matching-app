@@ -1,10 +1,8 @@
-import { fetchCancerSubtypeCodesQuery, fetchCancerTypeCodesQuery } from '@/queries';
-import { Autocomplete, Checkbox, Chip, TextField, Typography } from '@mui/material';
-import { ReactElement, useMemo, useState } from 'react';
+import { Autocomplete, Checkbox, TextField } from '@mui/material';
+import { ReactElement, useState } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
-import { useQuery } from 'react-query';
-import { SearchFormValuesType } from './types';
 import { cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
+import { SearchFormValuesType } from './types';
 const AutocompleteMulti = ({ field, label, options }): ReactElement => (
   <Autocomplete
     {...field}
@@ -13,7 +11,6 @@ const AutocompleteMulti = ({ field, label, options }): ReactElement => (
     freeSolo
     multiple
     onChange={(event, newValue) => {
-      console.log(newValue);
       field.onChange(newValue);
     }}
     getOptionLabel={option => option?.display}
@@ -91,7 +88,7 @@ export const CancerTypeAutocomplete = ({
     for (const [key2, cancerTypes] of Object.entries(value['cancerCodes'])) {
       cancerTypes.forEach(element => {
         newOptions.push(element);
-        console.log('cancerTypeOPtion=' + JSON.stringify(element));
+        //console.log('cancerTypeOPtion=' + JSON.stringify(element));
       });
     }
   }
@@ -197,8 +194,10 @@ export const BiomarkersAutocomplete = ({
   cancerBiomarkers,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'biomarkers'>;
-  cancerBiomarkers: any;
-}): ReactElement => <AutocompleteMulti field={field} label="biomarkers" options={cancerBiomarkers} />;
+  cancerBiomarkers;
+}): ReactElement => {
+  return <AutocompleteMulti field={field} label="biomarkers" options={cancerBiomarkers} />;
+};
 
 export const RadiationAutocomplete = ({
   field,

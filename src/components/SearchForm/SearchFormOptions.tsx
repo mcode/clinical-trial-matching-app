@@ -1,32 +1,24 @@
-import { tmpdir } from 'os';
-import { isAssertEntry, isTemplateTail } from 'typescript';
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import brainBiomarkerCodes from 'src/queries/mockData/brainBiomarkerCodes.json';
 import brainCancerTypeCodes from 'src/queries/mockData/brainCancerTypeCodes.json';
 import brainMedicationCodes from 'src/queries/mockData/brainMedicationCodes.json';
-import breastcancerCodes from 'src/queries/mockData/breastcancerCodes.json';
-import brainSurgeryCodes from 'src/queries/mockData/empty.json';
-import brainCancerSubTypeCodes from 'src/queries/mockData/empty.json';
-import brainRadiationCodes from 'src/queries/mockData/empty.json';
-
-import colonBiomarkerCodes from 'src/queries/mockData/colonBiomarkerCodes.json';
 import colonCancerTypeCodes from 'src/queries/mockData/colonCancerTypeCodes.json';
 import colonMedicationCodes from 'src/queries/mockData/colonMedicationCodes.json';
 import colonRadiationCodes from 'src/queries/mockData/colonRadiationCodes.json';
-import colonStageCodes from 'src/queries/mockData/colonStageCodes.json';
 import colonSurgeryCodes from 'src/queries/mockData/colonSurgeryCodes.json';
-
+import {
+  default as brainCancerSubTypeCodes,
+  default as brainRadiationCodes,
+  default as brainSurgeryCodes,
+} from 'src/queries/mockData/empty.json';
 import lungCancerSubTypeCodes from 'src/queries/mockData/lungCancerSubTypeCodes.json';
 import lungCancerTypeCodes from 'src/queries/mockData/lungCancerTypeCodes.json';
 import lungMedicationCodes from 'src/queries/mockData/lungMedicationCodes.json';
 import lungRadiationCodes from 'src/queries/mockData/lungRadiationCodes.json';
 import lungSurgeryCodes from 'src/queries/mockData/lungSurgeryCodes.json';
-
 import MultipleMyelomaCancerTypeCodes from 'src/queries/mockData/MultipleMyelomaCancerTypeCodes.json';
 import MultipleMyelomaMedicationCodes from 'src/queries/mockData/MultipleMyelomaMedicationCodes.json';
-
 import prostateCancerTypeCodes from 'src/queries/mockData/prostateCancerTypeCodes.json';
-import prostateMedicationCodes from 'src/queries/mockData/prostateMedicationCodes.json';
 
 //import type { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 

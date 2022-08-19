@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import React, { useState } from 'react';
 import SearchImage from '@/assets/images/search.png';
-import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import type { ReactElement } from 'react';
-import { useEffect } from 'react';
-import { Controller, useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form'; 
+import { cancerTypeDetails, cancerTypeObj, cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
+
 import { SearchParameters } from 'types/search-types';
 import {
   AgeTextField,
@@ -28,12 +28,11 @@ import {
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType } from './types';
 
-import { cancerTypeDetails, cancerTypeObj, cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
 };
-
+/*
 export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
   ...data,
   // For the cancer types, encode the JSON objects
@@ -42,7 +41,7 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
 });
-
+*/
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
@@ -90,6 +89,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const handleChange = e => {
     const val = e.target.value;
     setcancerCategory(cancerTypes['val'].entryType);
+    //console.log('cancerCategory=' + cancerCategory);
     switch (cancerCategory) {
       case '':
         //setCancerTypes(breastCancer_cancerTypeOptions);
@@ -100,7 +100,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setProcedures([]);
         break;
       case 'breast':
-        setCancerTypes(breastCancer_cancerTypeOptions);
+        //setCancerTypes(breastCancer_cancerTypeOptions);
         setCancerSubTypes(cancerTypeDetails.brain.cancerSubtype);
         //setBiomarkers(breastCancer_biomarkersOptions);
         setStages(cancerTypeDetails.brain.stages);
@@ -151,32 +151,9 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
     }
   };
 
-  const handleTypeChange = e => {
-    const { name, value } = e.target;
-    setSelectVal({
-      ...selectVal,
-      [name]: value,
-    });
-  };
-  const renderEmptyOption = item => {
-    return item.length > 0 ? <option value="none">Select Value</option> : '';
-  };
-
-  const renderSelectOptions = typeList => {
-    return typeList.map(item => (
-      <option value={item} key={item}>
-        {item}
-      </option>
-    ));
-  };
-
-  const saveData = () => {
-    console.log(selectVal);
-  };
-
   const retrieveCancer = cancer => {
     if (cancer !== null) {
-      console.log(cancerTypeOptions[0][cancer.entryType]);
+      //console.log(cancerTypeOptions[0][cancer.entryType]);
       if (cancerTypeOptions[0][cancer.entryType] !== undefined) {
         if (
           cancerTypeOptions[0][cancer.entryType].cancerSubtype !== null ||

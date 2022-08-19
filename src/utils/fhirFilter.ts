@@ -2,6 +2,7 @@
  * This module is used to filter FHIR records.
  */
 
+import { MedicationStatement } from 'fhir/r4';
 import { Bundle, BundleEntry, CodeableConcept, Condition, Observation, Resource } from 'types/fhir-types';
 import { MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, MCODE_PRIMARY_CANCER_CONDITION, SNOMED_CODE_URI } from './fhirConstants';
 import { NamedSNOMEDCode } from './fhirConversionUtils';
@@ -159,45 +160,48 @@ export function convertNamedSNOMEDCodetoResource({
   codingSystemCode: string;
 }): void {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
-  let code: CodeableConcept = null;
-  let resourceType: any;
-  let fullurn = '';
+
+  const tmpCode: string | number = codedValue.code.toString();
+  const tmpDisplay = codedValue.display;
+  console.log('***********Got Here*******');
   if (codedValue.entryType.toLowerCase() == 'medication') {
-    resourceType = 'MedicationStatement';
-    fullurn = 'urn:uuid:medicationId-1';
-  } else {
-    resourceType = 'Observation';
-  }
-  if (codingSystemCode) {
-    code = {
-      coding: [
-        {
-          system: codingSystem,
-          code: codingSystemCode,
-        },
-      ],
-    };
-  }
-  if (code) {
-    const resource: Observation = {
-      resourceType: resourceType,
-      id: id,
+    const resource: MedicationStatement = {
+      resourceType: 'MedicationStatement',
+      status: 'completed',
+      medicationCodeableConcept: {
+        coding: [
+          {
+            system: codingSystem,
+            code: tmpCode,
+            display: tmpDisplay,
+          },
+        ],
+      },
       meta: {
         profile: [profile_value],
       },
-      code,
-      codedValue,
+      subject: undefined,
     };
+    console.log('outResource=' + JSON.stringify(resource));
     addResource(bundle, resource);
   } else {
     const resource: Observation = {
       resourceType: 'Observation',
-      id: id,
+      status: 'completed',
+      observation: {
+        coding: [
+          {
+            system: codingSystem,
+            code: tmpCode,
+            display: tmpDisplay,
+          },
+        ],
+      },
       meta: {
         profile: [profile_value],
-      },
-      valueString,
+      }
     };
+    console.log('outResource=' + JSON.stringify(resource));
     addResource(bundle, resource);
   }
 }

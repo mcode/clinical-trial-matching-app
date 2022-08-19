@@ -2,7 +2,12 @@ import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
 import { parseNamedSNOMEDCode } from '@/utils/fhirConversionUtils';
-import { addCancerHistologyMorphology, addCancerType, convertStringtoResource } from '@/utils/fhirFilter';
+import {
+  addCancerHistologyMorphology,
+  addCancerType,
+  convertStringtoResource,
+  convertNamedSNOMEDCodetoResource,
+} from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
@@ -71,7 +76,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       patient.birthDate = (new Date().getUTCFullYear() - age).toString();
     }
   }
-
+  console.log('***********Got Here1*******');
   // Initialize a patient bundle with our search information.
   const patientBundle: Bundle = {
     resourceType: 'Bundle',
@@ -123,16 +128,17 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystemCode,
     });
   }
-
-  const stageParm = searchParams.stage;
+  const stageParm = searchParams['stage'];
+  //const stageParm = searchParams.stage;
   if (stageParm != null) {
     const id = 'mcode-cancer-stage-group';
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
     const codingSystem = 'http://loinc.org';
     const codingSystemCode = '21914-7';
-    convertStringtoResource({
+
+    convertNamedSNOMEDCodetoResource({
       bundle: patientBundle,
-      valueString: stageParm,
+      codedValue: stageParm,
       id,
       profile_value: profileValue,
       codingSystem,
@@ -149,7 +155,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystemCode: string = null;
     convertStringtoResource({
       bundle: patientBundle,
-      valueString: stageParm,
+      valueString: metastasisParm,
       id,
       profile_value: profileValue,
       codingSystem,
@@ -163,14 +169,16 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
     const codingSystem = 'http://loinc.org';
     const codingSystemCode = '21907-1';
-    convertStringtoResource({
-      bundle: patientBundle,
-      valueString: metastasisParm,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
+    for (let i = 0; i < bioMarkersParm.length; i++) {
+      convertNamedSNOMEDCodetoResource({
+        bundle: patientBundle,
+        codedValue: bioMarkersParm[i],
+        id,
+        profile_value: profileValue,
+        codingSystem,
+        codingSystemCode,
+      });
+    }
   }
   const medicationsParm = searchParams.medications;
   if (medicationsParm) {
@@ -178,14 +186,16 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
     const codingSystem = '';
     const codingSystemCode = '';
-    convertStringtoResource({
-      bundle: patientBundle,
-      valueString: medicationsParm,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
+    for (let i = 0; i < medicationsParm.length; i++) {
+      convertNamedSNOMEDCodetoResource({
+        bundle: patientBundle,
+        codedValue: medicationsParm[i],
+        id,
+        profile_value: profileValue,
+        codingSystem,
+        codingSystemCode,
+      });
+    }
   }
 
   const surgeryParm = searchParams.surgery;
@@ -194,37 +204,42 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
-    convertStringtoResource({
-      bundle: patientBundle,
-      valueString: surgeryParm,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
+    for (let i = 0; i < surgeryParm.length; i++) {
+      convertNamedSNOMEDCodetoResource({
+        bundle: patientBundle,
+        codedValue: surgeryParm[i],
+        id,
+        profile_value: profileValue,
+        codingSystem,
+        codingSystemCode,
+      });
+    }
   }
 
   const radiationParm = searchParams.radiation;
-  if (surgeryParm) {
+  if (radiationParm) {
+    console.log('***** Calling function for Radiation');
     const id = 'mcode-cancer-related-radiation-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
-    convertStringtoResource({
-      bundle: patientBundle,
-      valueString: radiationParm,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
+    for (let i = 0; i < radiationParm.length; i++) {
+      convertNamedSNOMEDCodetoResource({
+        bundle: patientBundle,
+        codedValue: radiationParm[i],
+        id,
+        profile_value: profileValue,
+        codingSystem,
+        codingSystemCode,
+      });
+    }
   }
   if (reactAppDebug) {
     console.log(JSON.stringify(patientBundle, null, 2));
   }
 
   return patientBundle;
-}
+//}
 
 /**
  * Calls all selected wrappers and combines the results

@@ -1,3 +1,5 @@
+import { NamedSNOMEDCode } from "@/utils/fhirConversionUtils";
+
 export type FullSearchParameters = SearchParameters & SortingParameters & FilterParameters & PaginationParameters;
 
 export type SearchParameters = {
@@ -10,13 +12,13 @@ export type SearchParameters = {
   cancerType: string;
   cancerSubtype: string;
   metastasis: string[];
-  stage: string;
+  stage: NamedSNOMEDCode;
   ecogScore: string;
   karnofskyScore: string;
-  biomarkers: string[];
-  surgery: string[];
-  medications: string[];
-  radiation: string[];
+  biomarkers: NamedSNOMEDCode[];
+  surgery: NamedSNOMEDCode[];
+  medications: NamedSNOMEDCode[];
+  radiation: NamedSNOMEDCode[];
 };
 
 export type FilterParameters = {
