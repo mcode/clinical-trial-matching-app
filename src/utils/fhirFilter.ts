@@ -182,7 +182,6 @@ export function convertNamedSNOMEDCodetoResource({
       },
       subject: undefined,
     };
-    console.log('outResource=' + JSON.stringify(resource));
     addResource(bundle, resource);
   } else {
     const resource: Observation = {
@@ -199,7 +198,7 @@ export function convertNamedSNOMEDCodetoResource({
       },
       meta: {
         profile: [profile_value],
-      }
+      },
     };
     console.log('outResource=' + JSON.stringify(resource));
     addResource(bundle, resource);

@@ -239,7 +239,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   }
 
   return patientBundle;
-//}
+}
 
 /**
  * Calls all selected wrappers and combines the results

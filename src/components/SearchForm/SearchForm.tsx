@@ -100,7 +100,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         setProcedures([]);
         break;
       case 'breast':
-        //setCancerTypes(breastCancer_cancerTypeOptions);
+        setCancerTypes(cancerTypeDetails.breast.cancerCodes);
         setCancerSubTypes(cancerTypeDetails.brain.cancerSubtype);
         //setBiomarkers(breastCancer_biomarkersOptions);
         setStages(cancerTypeDetails.brain.stages);
