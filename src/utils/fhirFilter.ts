@@ -196,7 +196,6 @@ export function convertNamedSNOMEDCodetoResource({
       meta: {
         profile: [profile_value],
       },
-      valueString,
     };
     addResource(bundle, resource);
   }
