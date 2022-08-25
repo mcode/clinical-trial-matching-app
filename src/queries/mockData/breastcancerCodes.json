@@ -1,176 +1,175 @@
 {
   "entry": [
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "372137005",
       "display": "Primary malignant neoplasm of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "826978004",
       "display": "Solid ductal carcinoma in situ of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "278050001",
       "display": "Sarcoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "713609000",
       "display": "Invasive carcinoma of breast (disorder)"
     },
     {
-      
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "763479005",
       "display": "Metaplastic carcinoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "109888004",
       "display": "Lobular carcinoma in situ of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "254840009",
       "display": "Inflammatory carcinoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "254844000",
       "display": "Malignant phyllodes tumor of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "8145008",
       "display": "Mixed tumor, malignant (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "403946000",
       "display": "Paget's disease of nipple (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "254845004",
       "display": "Fibroadenoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "87737001",
       "display": "Signet ring cell carcinoma (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "408643008",
       "display": "Infiltrating duct carcinoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "278054005",
       "display": "Lobular carcinoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "444712000",
       "display": "Mucinous carcinoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "722523004",
       "display": "Mixed ductal and lobular carcinoma in situ of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "721596003",
       "display": "Solid papillary carcinoma in situ of breast (disorder)"
     }
   ],
   "subtypes": [
-    { "entryType" : "breast",
+    {
+      "entryType": "breast",
       "code": "43369006",
       "display": "Basal cell carcinoma, fibroepithelial (morphologic abnormality)"
     },
-    { "entryType" : "breast",
+    {
+      "entryType": "breast",
       "code": "2424003",
       "display": "Sarcoma, no International Classification of Diseases for Oncology subtype (morphologic abnormality)"
     },
-    { "entryType" : "breast",
-      "code": "82711006",
-      "display": "Infiltrating duct carcinoma (morphologic abnormality)"
-    },
-    { "entryType" : "breast",
+    { "entryType": "breast", "code": "82711006", "display": "Infiltrating duct carcinoma (morphologic abnormality)" },
+    {
+      "entryType": "breast",
       "code": "703644009",
       "display": "Adenomyoepithelioma with carcinoma (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "77284006",
       "display": "Lobular carcinoma in situ (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "254840009",
       "display": "Inflammatory carcinoma of breast (disorder)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "41919003",
       "display": "Juvenile carcinoma of the breast (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "87913009",
       "display": "Malignant phyllodes tumor (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "68453008",
       "display": "Carcinoma, no subtype (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "2985005",
       "display": "Paget's disease, mammary (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "863926008",
       "display": "Angiosarcoma (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "11671000",
       "display": "Adenoid cystic carcinoma (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "63264007",
       "display": "Carcinosarcoma (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "89740008",
       "display": "Lobular carcinoma (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "444057000",
       "display": "Infiltrating carcinoma with ductal and lobular features (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "68358000",
       "display": "Adenocarcinoma with spindle cell metaplasia (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "59367005",
       "display": "Adenosquamous carcinoma (morphologic abnormality)"
     },
     {
-      "entryType" : "breast",
+      "entryType": "breast",
       "code": "28899001",
       "display": "Squamous cell carcinoma, no International Classification of Diseases for Oncology subtype (morphologic abnormality)"
     }

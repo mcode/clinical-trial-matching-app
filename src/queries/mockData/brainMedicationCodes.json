@@ -1,3954 +1,3954 @@
 {
-	"entry": [
-		{
-			"entryType": "Medication",
-			"code": "261663",
-			"display": "Temodar"
-		},
-		{
-			"entryType": "Medication",
-			"code": "37776",
-			"display": "temozolomide"
-		},
-		{
-			"entryType": "Medication",
-			"code": "261289",
-			"display": "Temodar 20 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "835948",
-			"display": "Temodar 100 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "705619",
-			"display": "Temodar 180 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "261288",
-			"display": "Temodar 5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "705617",
-			"display": "Temodar 140 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "261290",
-			"display": "Temodar 100 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "261291",
-			"display": "Temodar 250 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "574513",
-			"display": "temozolomide 5 MG [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "574514",
-			"display": "temozolomide 20 MG [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "574515",
-			"display": "temozolomide 100 MG [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "574516",
-			"display": "temozolomide 250 MG [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "705616",
-			"display": "temozolomide 140 MG [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "705618",
-			"display": "temozolomide 180 MG [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "366431",
-			"display": "temozolomide Oral Capsule [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1724294",
-			"display": "temozolomide Injection [Temodar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "317160",
-			"display": "temozolomide 100 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "313209",
-			"display": "temozolomide 20 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "835945",
-			"display": "temozolomide 100 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "700883",
-			"display": "temozolomide 140 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "700885",
-			"display": "temozolomide 180 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "313211",
-			"display": "temozolomide 5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "313210",
-			"display": "temozolomide 250 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "330405",
-			"display": "temozolomide 20 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "330797",
-			"display": "temozolomide 100 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "331482",
-			"display": "temozolomide 5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "331483",
-			"display": "temozolomide 250 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "700882",
-			"display": "temozolomide 140 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "700884",
-			"display": "temozolomide 180 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "374610",
-			"display": "temozolomide Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1724292",
-			"display": "temozolomide Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1161485",
-			"display": "temozolomide Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1161486",
-			"display": "temozolomide Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1161487",
-			"display": "temozolomide Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1181413",
-			"display": "Temodar Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1181414",
-			"display": "Temodar Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1181415",
-			"display": "Temodar Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545771",
-			"display": "Gleostine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "6466",
-			"display": "lomustine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545778",
-			"display": "Gleostine 100 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720737",
-			"display": "Gleostine 5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545776",
-			"display": "Gleostine 10 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545780",
-			"display": "Gleostine 40 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545772",
-			"display": "lomustine 10 MG [Gleostine]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545777",
-			"display": "lomustine 100 MG [Gleostine]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545779",
-			"display": "lomustine 40 MG [Gleostine]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720736",
-			"display": "lomustine 5 MG [Gleostine]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545773",
-			"display": "lomustine Oral Capsule [Gleostine]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720735",
-			"display": "lomustine 5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197896",
-			"display": "lomustine 40 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197894",
-			"display": "lomustine 10 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197895",
-			"display": "lomustine 100 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "316160",
-			"display": "lomustine 10 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "316161",
-			"display": "lomustine 100 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "316162",
-			"display": "lomustine 40 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720734",
-			"display": "lomustine 5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "372631",
-			"display": "lomustine Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1165319",
-			"display": "lomustine Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1165320",
-			"display": "lomustine Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545774",
-			"display": "Gleostine Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1545775",
-			"display": "Gleostine Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "217357",
-			"display": "Gliadel"
-		},
-		{
-			"entryType": "Medication",
-			"code": "343027",
-			"display": "BiCNU"
-		},
-		{
-			"entryType": "Medication",
-			"code": "657710",
-			"display": "Drug Implant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2105",
-			"display": "carmustine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "105552",
-			"display": "BiCNU 100 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "212994",
-			"display": "BCNU 7.7 MG Drug Implant [Gliadel]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "572946",
-			"display": "carmustine 7.7 MG [Gliadel]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1729370",
-			"display": "carmustine 100 MG [BiCNU]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "405951",
-			"display": "carmustine Drug Implant [Gliadel]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1729371",
-			"display": "carmustine Injection [BiCNU]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309013",
-			"display": "carmustine 7.7 MG Drug Implant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309012",
-			"display": "carmustine 100 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "340520",
-			"display": "carmustine 7.7 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1729367",
-			"display": "carmustine 100 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "378774",
-			"display": "carmustine Drug Implant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1729368",
-			"display": "carmustine Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1151413",
-			"display": "carmustine Drug Implant Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1151727",
-			"display": "carmustine Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1171232",
-			"display": "Gliadel Drug Implant Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1173621",
-			"display": "BiCNU Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "203801",
-			"display": "Matulane"
-		},
-		{
-			"entryType": "Medication",
-			"code": "8702",
-			"display": "procarbazine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "66925",
-			"display": "procarbazine hydrochloride"
-		},
-		{
-			"entryType": "Medication",
-			"code": "207588",
-			"display": "Matulane 50 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "568345",
-			"display": "procarbazine 50 MG [Matulane]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "366728",
-			"display": "procarbazine Oral Capsule [Matulane]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "314167",
-			"display": "procarbazine 50 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "328546",
-			"display": "procarbazine 50 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "373602",
-			"display": "procarbazine Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1161732",
-			"display": "procarbazine Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1161733",
-			"display": "procarbazine Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1181565",
-			"display": "Matulane Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1181566",
-			"display": "Matulane Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "227575",
-			"display": "Vincasar"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304996",
-			"display": "Marqibo"
-		},
-		{
-			"entryType": "Medication",
-			"code": "11202",
-			"display": "vinCRIStine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "11203",
-			"display": "vinCRIStine sulfate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304990",
-			"display": "vinCRIStine sulfate liposome"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304991",
-			"display": "vinCRIStine liposome"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1863347",
-			"display": "Vincasar 1 MG per 1 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1305000",
-			"display": "Marqibo 5 MG per 31 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1863355",
-			"display": "Vincasar 2 MG per 2 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "894894",
-			"display": "vinCRIStine sulfate 1 MG/ML [Vincasar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304997",
-			"display": "vinCRIStine sulfate liposome 0.16 MG/ML [Marqibo]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1863346",
-			"display": "vinCRIStine Injection [Vincasar]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2284505",
-			"display": "vinCRIStine Injection [Marqibo]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304995",
-			"display": "31 ML vinCRIStine sulfate liposome 0.16 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1863343",
-			"display": "1 ML vinCRIStine sulfate 1 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1863354",
-			"display": "2 ML vinCRIStine sulfate 1 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "894892",
-			"display": "vinCRIStine sulfate 1 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304992",
-			"display": "vinCRIStine sulfate liposome 0.16 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1863342",
-			"display": "vinCRIStine Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1160531",
-			"display": "vinCRIStine Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304999",
-			"display": "Marqibo Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1186612",
-			"display": "Vincasar Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232155",
-			"display": "Eylea"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304480",
-			"display": "Zaltrap"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232150",
-			"display": "aflibercept"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304475",
-			"display": "ziv-aflibercept"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232159",
-			"display": "0.05 ML Eylea 40 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1723189",
-			"display": "8 ML Zaltrap 25 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1723194",
-			"display": "4 ML Zaltrap 25 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232156",
-			"display": "aflibercept 40 MG/ML [Eylea]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304481",
-			"display": "ziv-aflibercept 25 MG/ML [Zaltrap]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1723182",
-			"display": "aflibercept Injection [Eylea]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1723188",
-			"display": "aflibercept Injection [Zaltrap]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232158",
-			"display": "Eylea Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304483",
-			"display": "Zaltrap Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232154",
-			"display": "0.05 ML aflibercept 40 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1723187",
-			"display": "8 ML ziv-aflibercept 25 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1723193",
-			"display": "4 ML ziv-aflibercept 25 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232151",
-			"display": "aflibercept 40 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1304476",
-			"display": "ziv-aflibercept 25 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1723180",
-			"display": "aflibercept Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232152",
-			"display": "aflibercept Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1535993",
-			"display": "Cyramza"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1649574",
-			"display": "Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1151126",
-			"display": "Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1535922",
-			"display": "ramucirumab"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1657777",
-			"display": "Cyramza 100 MG per 10 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1657781",
-			"display": "Cyramza 500 MG per 50 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1535994",
-			"display": "ramucirumab 10 MG/ML [Cyramza]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1657776",
-			"display": "ramucirumab Injection [Cyramza]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1535996",
-			"display": "Cyramza Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1657775",
-			"display": "10 ML ramucirumab 10 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1657780",
-			"display": "50 ML ramucirumab 10 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1535989",
-			"display": "ramucirumab 10 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1657774",
-			"display": "ramucirumab Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1535990",
-			"display": "ramucirumab Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616274",
-			"display": "Sutent"
-		},
-		{
-			"entryType": "Medication",
-			"code": "357977",
-			"display": "SUNItinib"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616275",
-			"display": "SUNItinib malate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1541928",
-			"display": "Sutent 37.5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616283",
-			"display": "Sutent 12.5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616287",
-			"display": "Sutent 25 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616292",
-			"display": "Sutent 50 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1541927",
-			"display": "SUNItinib 37.5 MG [Sutent]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616281",
-			"display": "SUNItinib 12.5 MG [Sutent]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616286",
-			"display": "SUNItinib 25 MG [Sutent]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616291",
-			"display": "SUNItinib 50 MG [Sutent]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616282",
-			"display": "SUNItinib Oral Capsule [Sutent]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1185474",
-			"display": "Sutent Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1185475",
-			"display": "Sutent Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1541890",
-			"display": "SUNItinib 37.5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616279",
-			"display": "SUNItinib 12.5 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616285",
-			"display": "SUNItinib 25 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616289",
-			"display": "SUNItinib 50 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1541889",
-			"display": "SUNItinib 37.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616277",
-			"display": "SUNItinib 12.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616284",
-			"display": "SUNItinib 25 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616288",
-			"display": "SUNItinib 50 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "616278",
-			"display": "SUNItinib Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1160852",
-			"display": "SUNItinib Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1160853",
-			"display": "SUNItinib Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "619985",
-			"display": "NexAVAR"
-		},
-		{
-			"entryType": "Medication",
-			"code": "495881",
-			"display": "SORAfenib"
-		},
-		{
-			"entryType": "Medication",
-			"code": "597744",
-			"display": "SORAfenib tosylate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "615979",
-			"display": "NexAVAR 200 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "615977",
-			"display": "SORAfenib 200 MG [NexAVAR]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "615978",
-			"display": "SORAfenib Oral Tablet [NexAVAR]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1182862",
-			"display": "NexAVAR Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1182863",
-			"display": "NexAVAR Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "597747",
-			"display": "SORAfenib 200 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "597745",
-			"display": "SORAfenib 200 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "597746",
-			"display": "SORAfenib Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1159691",
-			"display": "SORAfenib Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1159692",
-			"display": "SORAfenib Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243005",
-			"display": "Inlyta"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1242999",
-			"display": "axitinib"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243010",
-			"display": "Inlyta 1 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243014",
-			"display": "Inlyta 5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243006",
-			"display": "axitinib 1 MG [Inlyta]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243013",
-			"display": "axitinib 5 MG [Inlyta]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243007",
-			"display": "axitinib Oral Tablet [Inlyta]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243008",
-			"display": "Inlyta Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243009",
-			"display": "Inlyta Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243004",
-			"display": "axitinib 1 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243012",
-			"display": "axitinib 5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243000",
-			"display": "axitinib 1 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243011",
-			"display": "axitinib 5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243003",
-			"display": "axitinib Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243001",
-			"display": "axitinib Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1243002",
-			"display": "axitinib Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312403",
-			"display": "Stivarga"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312397",
-			"display": "regorafenib"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1371319",
-			"display": "regorafenib monohydrate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312408",
-			"display": "Stivarga 40 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312404",
-			"display": "regorafenib 40 MG [Stivarga]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312405",
-			"display": "regorafenib Oral Tablet [Stivarga]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312406",
-			"display": "Stivarga Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312407",
-			"display": "Stivarga Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312402",
-			"display": "regorafenib 40 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312398",
-			"display": "regorafenib 40 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312401",
-			"display": "regorafenib Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312399",
-			"display": "regorafenib Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1312400",
-			"display": "regorafenib Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363274",
-			"display": "Cometriq"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790162",
-			"display": "Cabometyx"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363408",
-			"display": "Cometriq 140 MG Daily Dose Carton Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363410",
-			"display": "Cometriq 100 MG Daily Dose Carton Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1364581",
-			"display": "Cometriq 60 MG Daily Dose Carton Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363312",
-			"display": "{84 (cabozantinib 20 MG Oral Capsule) / 28 (cabozantinib 80 MG Oral Capsule) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363409",
-			"display": "{28 (cabozantinib 20 MG Oral Capsule) / 28 (cabozantinib 80 MG Oral Capsule) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1364580",
-			"display": "{84 (cabozantinib 20 MG Oral Capsule) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363268",
-			"display": "cabozantinib"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363267",
-			"display": "cabozantinib s-malate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363279",
-			"display": "Cometriq 20 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363284",
-			"display": "Cometriq 80 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790167",
-			"display": "Cabometyx 20 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790171",
-			"display": "Cabometyx 40 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790175",
-			"display": "Cabometyx 60 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363275",
-			"display": "cabozantinib 20 MG [Cometriq]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363283",
-			"display": "cabozantinib 80 MG [Cometriq]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790163",
-			"display": "cabozantinib 20 MG [Cabometyx]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790170",
-			"display": "cabozantinib 40 MG [Cabometyx]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790174",
-			"display": "cabozantinib 60 MG [Cabometyx]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363276",
-			"display": "cabozantinib Oral Capsule [Cometriq]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790164",
-			"display": "cabozantinib Oral Tablet [Cabometyx]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363277",
-			"display": "Cometriq Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363278",
-			"display": "Cometriq Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790165",
-			"display": "Cabometyx Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790166",
-			"display": "Cabometyx Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363273",
-			"display": "cabozantinib 20 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363281",
-			"display": "cabozantinib 80 MG Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790161",
-			"display": "cabozantinib 20 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790169",
-			"display": "cabozantinib 40 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790173",
-			"display": "cabozantinib 60 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363269",
-			"display": "cabozantinib 20 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363280",
-			"display": "cabozantinib 80 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790168",
-			"display": "cabozantinib 40 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790172",
-			"display": "cabozantinib 60 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363272",
-			"display": "cabozantinib Oral Capsule"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1790160",
-			"display": "cabozantinib Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363270",
-			"display": "cabozantinib Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1363271",
-			"display": "cabozantinib Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058831",
-			"display": "Libtayo"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058826",
-			"display": "cemiplimab"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058825",
-			"display": "cemiplimab-rwlc"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058835",
-			"display": "Libtayo 350 MG per 7 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058832",
-			"display": "cemiplimab-rwlc 50 MG/ML [Libtayo]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058833",
-			"display": "cemiplimab Injection [Libtayo]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058834",
-			"display": "Libtayo Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058830",
-			"display": "7 ML cemiplimab-rwlc 50 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058827",
-			"display": "cemiplimab-rwlc 50 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058829",
-			"display": "cemiplimab Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2058828",
-			"display": "cemiplimab Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792781",
-			"display": "Tecentriq"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792776",
-			"display": "atezolizumab"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792785",
-			"display": "20 ML Tecentriq 60 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2119696",
-			"display": "14 ML Tecentriq 60 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792782",
-			"display": "atezolizumab 60 MG/ML [Tecentriq]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792783",
-			"display": "atezolizumab Injection [Tecentriq]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792784",
-			"display": "Tecentriq Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792780",
-			"display": "20 ML atezolizumab 60 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2119695",
-			"display": "14 ML atezolizumab 60 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792777",
-			"display": "atezolizumab 60 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792779",
-			"display": "atezolizumab Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1792778",
-			"display": "atezolizumab Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539973",
-			"display": "Jemperli"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539967",
-			"display": "dostarlimab"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539968",
-			"display": "dostarlimab-gxly"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539977",
-			"display": "10 ML Jemperli 50 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539974",
-			"display": "dostarlimab-gxly 50 MG/ML [Jemperli]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539975",
-			"display": "dostarlimab Injection [Jemperli]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539976",
-			"display": "Jemperli Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539972",
-			"display": "10 ML dostarlimab-gxly 50 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539969",
-			"display": "dostarlimab-gxly 50 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539971",
-			"display": "dostarlimab Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2539970",
-			"display": "dostarlimab Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919508",
-			"display": "Imfinzi"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1649574",
-			"display": "Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1151126",
-			"display": "Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919503",
-			"display": "durvalumab"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919512",
-			"display": "2.4 ML Imfinzi 50 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919516",
-			"display": "10 ML Imfinzi 50 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919509",
-			"display": "durvalumab 50 MG/ML [Imfinzi]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919510",
-			"display": "durvalumab Injection [Imfinzi]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919511",
-			"display": "Imfinzi Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919507",
-			"display": "2.4 ML durvalumab 50 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919515",
-			"display": "10 ML durvalumab 50 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919504",
-			"display": "durvalumab 50 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919506",
-			"display": "durvalumab Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1919505",
-			"display": "durvalumab Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875543",
-			"display": "Bavencio"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875534",
-			"display": "avelumab"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875547",
-			"display": "10 ML Bavencio 20 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875544",
-			"display": "avelumab 20 MG/ML [Bavencio]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875545",
-			"display": "avelumab Injection [Bavencio]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875546",
-			"display": "Bavencio Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875542",
-			"display": "10 ML avelumab 20 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875539",
-			"display": "avelumab 20 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875541",
-			"display": "avelumab Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1875540",
-			"display": "avelumab Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "5879",
-			"display": "interferon alfa-2a"
-		},
-		{
-			"entryType": "Medication",
-			"code": "284174",
-			"display": "interferon alfa-2a 18000000 UNT/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "331515",
-			"display": "interferon alfa-2a 18000000 UNT/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "374394",
-			"display": "interferon alfa-2a Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158018",
-			"display": "interferon alfa-2a Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "545290",
-			"display": "Intron A"
-		},
-		{
-			"entryType": "Medication",
-			"code": "5880",
-			"display": "interferon alfa-2b"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1251596",
-			"display": "Intron A 18000000 UNT Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720881",
-			"display": "Intron A 10000000 UNT Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "207029",
-			"display": "Intron A 6,000,000 UNT/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "207035",
-			"display": "Intron A 50000000 UNT Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "545293",
-			"display": "Intron A 10,000,000 UNT/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720879",
-			"display": "interferon alfa-2b 10000000 UNT [Intron A]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720887",
-			"display": "interferon alfa-2b 50000000 UNT [Intron A]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720909",
-			"display": "interferon alfa-2b 18000000 UNT [Intron A]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "545291",
-			"display": "interferon alfa-2b 10000000 UNT/ML [Intron A]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "567825",
-			"display": "interferon alfa-2b 6000000 UNT/ML [Intron A]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720880",
-			"display": "interferon alfa-2b Injection [Intron A]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "362563",
-			"display": "interferon alfa-2b Injectable Solution [Intron A]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1173444",
-			"display": "Intron A Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1232574",
-			"display": "interferon alfa-2b 18000000 UNT Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720878",
-			"display": "interferon alfa-2b 10000000 UNT Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "204445",
-			"display": "interferon alfa-2b 6000000 UNT/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "311078",
-			"display": "interferon alfa-2b 50000000 UNT Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "545289",
-			"display": "interferon alfa-2b 10000000 UNT/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720876",
-			"display": "interferon alfa-2b 10000000 UNT"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720885",
-			"display": "interferon alfa-2b 50000000 UNT"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720907",
-			"display": "interferon alfa-2b 18000000 UNT"
-		},
-		{
-			"entryType": "Medication",
-			"code": "346254",
-			"display": "interferon alfa-2b 10000000 UNT/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "346257",
-			"display": "interferon alfa-2b 6000000 UNT/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720877",
-			"display": "interferon alfa-2b Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "370692",
-			"display": "interferon alfa-2b Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158020",
-			"display": "interferon alfa-2b Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "612937",
-			"display": "interferon alfa-n3"
-		},
-		{
-			"entryType": "Medication",
-			"code": "314687",
-			"display": "interferon alfa-3n,human leukocyte derived"
-		},
-		{
-			"entryType": "Medication",
-			"code": "202912",
-			"display": "interferon alfa-n1"
-		},
-		{
-			"entryType": "Medication",
-			"code": "261717",
-			"display": "interferon alfa-n1 lymphoblastoid"
-		},
-		{
-			"entryType": "Medication",
-			"code": "215103",
-			"display": "Alferon N"
-		},
-		{
-			"entryType": "Medication",
-			"code": "598014",
-			"display": "Alferon N 5,000,000 UNT/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "598012",
-			"display": "interferon alfa-n3 5000000 UNT/ML [Alferon N]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "598013",
-			"display": "interferon alfa-n3 Injectable Solution [Alferon N]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1175509",
-			"display": "Alferon N Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "615136",
-			"display": "interferon alfa-n3 5000000 UNT/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "615134",
-			"display": "interferon alfa-n3 5000000 UNT/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "615135",
-			"display": "interferon alfa-n3 Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158022",
-			"display": "interferon alfa-n3 Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "59744",
-			"display": "interferon alfacon-1"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1160699",
-			"display": "interferon alfacon-1 Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "153326",
-			"display": "Avonex"
-		},
-		{
-			"entryType": "Medication",
-			"code": "228271",
-			"display": "Rebif"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650282",
-			"display": "Rebif Rebidose Titration Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "795749",
-			"display": "Rebif Titration Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650268",
-			"display": "{6 (0.2 ML interferon beta-1a 0.044 MG/ML Auto-Injector) / 6 (0.5 ML interferon beta-1a 0.044 MG/ML Auto-Injector) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "758030",
-			"display": "{6 (0.2 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe) / 6 (0.5 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "75917",
-			"display": "interferon beta-1a"
-		},
-		{
-			"entryType": "Medication",
-			"code": "153324",
-			"display": "Avonex 30 MCG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1649996",
-			"display": "Rebif 22 MCG per 0.5 ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650004",
-			"display": "Rebif 44 MCG per 0.5 ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650012",
-			"display": "0.2 ML Rebif 0.044 MG/ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650901",
-			"display": "0.5 ML Avonex 0.06 MG/ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "727816",
-			"display": "Avonex 30 MCG per 0.5 ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "758027",
-			"display": "Rebif 44 MCG per 0.5 ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "758032",
-			"display": "Rebif 22 MCG per 0.5 ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "795748",
-			"display": "0.2 ML Rebif 0.044 MG/ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1651246",
-			"display": "interferon beta-1a 0.03 MG [Avonex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "575912",
-			"display": "interferon beta-1a 0.088 MG/ML [Rebif]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "575913",
-			"display": "interferon beta-1a 0.044 MG/ML [Rebif]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "727814",
-			"display": "interferon beta-1a 0.06 MG/ML [Avonex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1649995",
-			"display": "interferon beta-1a Auto-Injector [Rebif]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650900",
-			"display": "interferon beta-1a Auto-Injector [Avonex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1651247",
-			"display": "interferon beta-1a Injection [Avonex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "727815",
-			"display": "interferon beta-1a Prefilled Syringe [Avonex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "758026",
-			"display": "interferon beta-1a Prefilled Syringe [Rebif]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1175701",
-			"display": "Avonex Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1178325",
-			"display": "Rebif Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "153323",
-			"display": "interferon beta-1a 0.03 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1649994",
-			"display": "0.5 ML interferon beta-1a 0.044 MG/ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650003",
-			"display": "0.5 ML interferon beta-1a 0.088 MG/ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650011",
-			"display": "0.2 ML interferon beta-1a 0.044 MG/ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1650899",
-			"display": "0.5 ML interferon beta-1a 0.06 MG/ML Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "727813",
-			"display": "0.5 ML interferon beta-1a 0.06 MG/ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "758025",
-			"display": "0.5 ML interferon beta-1a 0.088 MG/ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "758028",
-			"display": "0.2 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "758029",
-			"display": "0.5 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1651243",
-			"display": "interferon beta-1a 0.03 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "358790",
-			"display": "interferon beta-1a 0.044 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "358791",
-			"display": "interferon beta-1a 0.088 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "727811",
-			"display": "interferon beta-1a 0.06 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1649993",
-			"display": "interferon beta-1a Auto-Injector"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1651244",
-			"display": "interferon beta-1a Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "727812",
-			"display": "interferon beta-1a Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158024",
-			"display": "interferon beta-1a Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "82828",
-			"display": "Betaseron"
-		},
-		{
-			"entryType": "Medication",
-			"code": "860241",
-			"display": "Extavia"
-		},
-		{
-			"entryType": "Medication",
-			"code": "72257",
-			"display": "interferon beta-1b"
-		},
-		{
-			"entryType": "Medication",
-			"code": "72258",
-			"display": "recombinant interferon beta-1b"
-		},
-		{
-			"entryType": "Medication",
-			"code": "207059",
-			"display": "Betaseron 0.3 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "860244",
-			"display": "Extavia 0.3 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1721325",
-			"display": "interferon beta-1b 0.3 MG [Betaseron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1721328",
-			"display": "interferon beta-1b 0.3 MG [Extavia]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1721326",
-			"display": "interferon beta-1b Injection [Betaseron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1721329",
-			"display": "interferon beta-1b Injection [Extavia]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1172925",
-			"display": "Betaseron Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1173906",
-			"display": "Extavia Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "198360",
-			"display": "interferon beta-1b 0.3 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1721322",
-			"display": "interferon beta-1b 0.3 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1721323",
-			"display": "interferon beta-1b Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1160700",
-			"display": "interferon beta-1b Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1421648",
-			"display": "gamma-interferon"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1421647",
-			"display": "interferon gamma, porcine recombinant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1314240",
-			"display": "interferon gamma-1a"
-		},
-		{
-			"entryType": "Medication",
-			"code": "258348",
-			"display": "Actimmune"
-		},
-		{
-			"entryType": "Medication",
-			"code": "5882",
-			"display": "interferon gamma-1b"
-		},
-		{
-			"entryType": "Medication",
-			"code": "751970",
-			"display": "Actimmune 0.1 MG per 0.5 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "751968",
-			"display": "interferon gamma-1b 0.2 MG/ML [Actimmune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720958",
-			"display": "interferon gamma-1b Injection [Actimmune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1169907",
-			"display": "Actimmune Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "240448",
-			"display": "0.5 ML interferon gamma-1b 0.2 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "360572",
-			"display": "interferon gamma-1b 0.2 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1720955",
-			"display": "interferon gamma-1b Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158025",
-			"display": "interferon gamma-1b Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "5885",
-			"display": "interferon type II"
-		},
-		{
-			"entryType": "Medication",
-			"code": "4381",
-			"display": "interferon-beta"
-		},
-		{
-			"entryType": "Medication",
-			"code": "203760",
-			"display": "Proleukin"
-		},
-		{
-			"entryType": "Medication",
-			"code": "70223",
-			"display": "aldesleukin"
-		},
-		{
-			"entryType": "Medication",
-			"code": "105648",
-			"display": "Proleukin 1.3 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1719783",
-			"display": "aldesleukin 22000000 UNT [Proleukin]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1719784",
-			"display": "aldesleukin Injection [Proleukin]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1180698",
-			"display": "Proleukin Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "307816",
-			"display": "aldesleukin 22000000 UNT Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1719780",
-			"display": "aldesleukin 22000000 UNT"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1719781",
-			"display": "aldesleukin Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154611",
-			"display": "aldesleukin Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845509",
-			"display": "Afinitor"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1151137",
-			"display": "Oral Liquid Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "141704",
-			"display": "everolimus"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1119402",
-			"display": "Afinitor 7.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1310138",
-			"display": "Afinitor Disperz 2 MG Tablet for Oral Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1310144",
-			"display": "Afinitor Disperz 3 MG Tablet for Oral Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1310147",
-			"display": "Afinitor Disperz 5 MG Tablet for Oral Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845512",
-			"display": "Afinitor 10 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845518",
-			"display": "Afinitor 5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "998191",
-			"display": "Afinitor 2.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1119401",
-			"display": "everolimus 7.5 MG [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1869515",
-			"display": "everolimus 2 MG [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1869520",
-			"display": "everolimus 3 MG [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845510",
-			"display": "everolimus 10 MG [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845517",
-			"display": "everolimus 5 MG [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "998190",
-			"display": "everolimus 2.5 MG [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1869516",
-			"display": "everolimus Tablet for Oral Suspension [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845511",
-			"display": "everolimus Oral Tablet [Afinitor]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1172066",
-			"display": "Afinitor Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1172067",
-			"display": "Afinitor Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1310137",
-			"display": "Afinitor Oral Liquid Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1119400",
-			"display": "everolimus 7.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1308428",
-			"display": "everolimus 2 MG Tablet for Oral Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1308430",
-			"display": "everolimus 3 MG Tablet for Oral Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1308432",
-			"display": "everolimus 5 MG Tablet for Oral Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845507",
-			"display": "everolimus 10 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845515",
-			"display": "everolimus 5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "998189",
-			"display": "everolimus 2.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1119399",
-			"display": "everolimus 7.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1869512",
-			"display": "everolimus 2 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1869518",
-			"display": "everolimus 3 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845505",
-			"display": "everolimus 10 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845514",
-			"display": "everolimus 5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "998188",
-			"display": "everolimus 2.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1869513",
-			"display": "everolimus Tablet for Oral Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "845506",
-			"display": "everolimus Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1163786",
-			"display": "everolimus Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1163787",
-			"display": "everolimus Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1308426",
-			"display": "everolimus Oral Liquid Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "723805",
-			"display": "Torisel"
-		},
-		{
-			"entryType": "Medication",
-			"code": "657797",
-			"display": "temsirolimus"
-		},
-		{
-			"entryType": "Medication",
-			"code": "725108",
-			"display": "Torisel 25 MG/ML per 1.2 ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "725106",
-			"display": "temsirolimus 25 MG/ML [Torisel]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1724306",
-			"display": "temsirolimus Injection [Torisel]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1178590",
-			"display": "Torisel Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "722289",
-			"display": "1.2 ML temsirolimus 25 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "722287",
-			"display": "temsirolimus 25 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1724304",
-			"display": "temsirolimus Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1161488",
-			"display": "temsirolimus Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977428",
-			"display": "Zortress"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2056897",
-			"display": "Zortress 1 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977431",
-			"display": "Zortress 0.25 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977436",
-			"display": "Zortress 0.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977440",
-			"display": "Zortress 0.75 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2056896",
-			"display": "everolimus 1 MG [Zortress]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977429",
-			"display": "everolimus 0.25 MG [Zortress]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977435",
-			"display": "everolimus 0.5 MG [Zortress]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977439",
-			"display": "everolimus 0.75 MG [Zortress]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977430",
-			"display": "everolimus Oral Tablet [Zortress]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1186316",
-			"display": "Zortress Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1186317",
-			"display": "Zortress Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2056895",
-			"display": "everolimus 1 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977427",
-			"display": "everolimus 0.25 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977434",
-			"display": "everolimus 0.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977438",
-			"display": "everolimus 0.75 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2056894",
-			"display": "everolimus 1 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977426",
-			"display": "everolimus 0.25 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977433",
-			"display": "everolimus 0.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "977437",
-			"display": "everolimus 0.75 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "258355",
-			"display": "Rapamune"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586864",
-			"display": "Fyarro"
-		},
-		{
-			"entryType": "Medication",
-			"code": "35302",
-			"display": "sirolimus"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586868",
-			"display": "Fyarro 100 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "351901",
-			"display": "Rapamune 1 MG/ML Oral Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "351989",
-			"display": "Rapamune 1 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "404432",
-			"display": "Rapamune 2 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "905160",
-			"display": "Rapamune 0.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586865",
-			"display": "sirolimus 100 MG [Fyarro]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "575659",
-			"display": "sirolimus 1 MG/ML [Rapamune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "575733",
-			"display": "sirolimus 1 MG [Rapamune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "576390",
-			"display": "sirolimus 2 MG [Rapamune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "905159",
-			"display": "sirolimus 0.5 MG [Rapamune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586867",
-			"display": "sirolimus Injection [Fyarro]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "364904",
-			"display": "sirolimus Oral Solution [Rapamune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "368672",
-			"display": "sirolimus Oral Tablet [Rapamune]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1177701",
-			"display": "Rapamune Oral Liquid Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1177702",
-			"display": "Rapamune Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1177703",
-			"display": "Rapamune Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586866",
-			"display": "Fyarro Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586863",
-			"display": "sirolimus 100 MG Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "314230",
-			"display": "sirolimus 1 MG/ML Oral Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "349208",
-			"display": "sirolimus 1 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "360110",
-			"display": "sirolimus 2 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "905158",
-			"display": "sirolimus 0.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586860",
-			"display": "sirolimus 100 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "333296",
-			"display": "sirolimus 1 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "350512",
-			"display": "sirolimus 1 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "360318",
-			"display": "sirolimus 2 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "905157",
-			"display": "sirolimus 0.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586862",
-			"display": "sirolimus Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "375278",
-			"display": "sirolimus Oral Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "378277",
-			"display": "sirolimus Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158757",
-			"display": "sirolimus Oral Liquid Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158758",
-			"display": "sirolimus Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1158759",
-			"display": "sirolimus Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2586861",
-			"display": "sirolimus Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009389",
-			"display": "Tresaderm"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1049383",
-			"display": "Dexium"
-		},
-		{
-			"entryType": "Medication",
-			"code": "134920",
-			"display": "Maxitrol"
-		},
-		{
-			"entryType": "Medication",
-			"code": "203704",
-			"display": "Dexasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "203705",
-			"display": "Maxidex"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2045405",
-			"display": "Dexycu"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2108016",
-			"display": "Dextenza"
-		},
-		{
-			"entryType": "Medication",
-			"code": "219289",
-			"display": "Poly-Dex"
-		},
-		{
-			"entryType": "Medication",
-			"code": "220330",
-			"display": "Tobradex"
-		},
-		{
-			"entryType": "Medication",
-			"code": "227682",
-			"display": "Decadron"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2286256",
-			"display": "Hemady"
-		},
-		{
-			"entryType": "Medication",
-			"code": "404930",
-			"display": "Ciprodex"
-		},
-		{
-			"entryType": "Medication",
-			"code": "854178",
-			"display": "Ozurdex"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1998481",
-			"display": "TaperDex 12 Day Taper Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1998482",
-			"display": "TaperDex 6 Day Taper Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2118829",
-			"display": "HiDex 1.5 MG Tablet 6-day 21 Count Taper Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2118835",
-			"display": "TaperDex 1.5 MG Tablet 7-Day 27 Count Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2121735",
-			"display": "Dxevo 11 Day Taper Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2387356",
-			"display": "Zcort 1.5 MG Tablet 7 Day 25 Count Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "795716",
-			"display": "Decadron 5-12 Pak"
-		},
-		{
-			"entryType": "Medication",
-			"code": "797022",
-			"display": "DexPak 10 Day TaperPak"
-		},
-		{
-			"entryType": "Medication",
-			"code": "797023",
-			"display": "DexPak TaperPak 13 Day Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "847225",
-			"display": "DexPak TaperPak 6 Day Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1869595",
-			"display": "{27 (dexamethasone 1.5 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1943550",
-			"display": "{49 (dexamethasone 1.5 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2121587",
-			"display": "{39 (dexamethasone 1.5 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2387355",
-			"display": "{25 (dexamethasone 1.5 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "759481",
-			"display": "{51 (dexamethasone 1.5 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "759696",
-			"display": "{12 (dexamethasone 0.75 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "759697",
-			"display": "{35 (dexamethasone 1.5 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "846192",
-			"display": "{21 (dexamethasone 1.5 MG Oral Tablet) } Pack"
-		},
-		{
-			"entryType": "Medication",
-			"code": "3264",
-			"display": "dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1007105",
-			"display": "astemizole / dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1007256",
-			"display": "clioquinol / dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1007423",
-			"display": "dexamethasone / oxytetracycline"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1007483",
-			"display": "dexamethasone / hypromellose"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1007628",
-			"display": "dexamethasone / dobesilic acid / lidocaine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1007854",
-			"display": "clotrimazole / dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1008217",
-			"display": "clemastine / dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1008930",
-			"display": "dexamethasone / phenylephrine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009150",
-			"display": "dexamethasone / sodium phosphate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009387",
-			"display": "dexamethasone / neomycin / thiabendazole"
-		},
-		{
-			"entryType": "Medication",
-			"code": "214478",
-			"display": "dexamethasone / lidocaine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "216524",
-			"display": "dexamethasone / neomycin"
-		},
-		{
-			"entryType": "Medication",
-			"code": "216525",
-			"display": "dexamethasone / neomycin / polymyxin B"
-		},
-		{
-			"entryType": "Medication",
-			"code": "465397",
-			"display": "ciprofloxacin / dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "687304",
-			"display": "dexamethasone / tramazoline"
-		},
-		{
-			"entryType": "Medication",
-			"code": "813683",
-			"display": "dexamethasone / theophylline"
-		},
-		{
-			"entryType": "Medication",
-			"code": "814504",
-			"display": "dexamethasone / indomethacin"
-		},
-		{
-			"entryType": "Medication",
-			"code": "815833",
-			"display": "chloramphenicol / dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "818139",
-			"display": "dexamethasone / terfenadine"
-		},
-		{
-			"entryType": "Medication",
-			"code": "820465",
-			"display": "carisoprodol / dexamethasone / ibuprofen"
-		},
-		{
-			"entryType": "Medication",
-			"code": "821542",
-			"display": "cyproheptadine / dexamethasone"
-		},
-		{
-			"entryType": "Medication",
-			"code": "822000",
-			"display": "carisoprodol / dexamethasone / tenoxicam"
-		},
-		{
-			"entryType": "Medication",
-			"code": "883815",
-			"display": "dexamethasone / tobramycin"
-		},
-		{
-			"entryType": "Medication",
-			"code": "22690",
-			"display": "dexamethasone acetate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "22694",
-			"display": "dexamethasone trimethyl acetate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "235486",
-			"display": "dexamethasone phosphate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2378841",
-			"display": "dexamethasone acetate anhydrous"
-		},
-		{
-			"entryType": "Medication",
-			"code": "3265",
-			"display": "dexamethasone isonicotinate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "48933",
-			"display": "dexamethasone sodium phosphate"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009392",
-			"display": "Tresaderm (dexamethasone 1 MG / neomycin 3.2 MG / thiabendazole 40 MG) per ML Topical Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1011080",
-			"display": "Tobradex (dexamethasone 0.05 % / tobramycin 0.3 % ) Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1049386",
-			"display": "Dexium 2 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "105392",
-			"display": "Decadron 0.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1087757",
-			"display": "Dexasone 2 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1087919",
-			"display": "Dexium 3 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2045409",
-			"display": "0.005 ML Dexycu 103.4 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "205669",
-			"display": "Maxidex 0.1 % Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "205712",
-			"display": "Decadron 4 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "205717",
-			"display": "Decadron 6 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "208591",
-			"display": "Maxitrol (neomycin 3.5 MG / polymyxin B 10,000 UNT / dexamethasone 1 MG) per 1 ML Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "208593",
-			"display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10,000 UNT) per ML Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "208601",
-			"display": "Maxitrol (neomycin 3.5 MG / polymyxin b 10,000 UNT / dexamethasone 1 MG) per GM Ophthalmic Ointment"
-		},
-		{
-			"entryType": "Medication",
-			"code": "208602",
-			"display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10 UNT/MG) Ophthalmic Ointment"
-		},
-		{
-			"entryType": "Medication",
-			"code": "208813",
-			"display": "TobraDex (dexamethasone 0.1 % / tobramycin 0.3 % ) Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "208821",
-			"display": "Tobradex (tobramycin 0.3 % / dexamethasone 0.1 % ) Ophthalmic Ointment"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2108020",
-			"display": "Dextenza 0.4 MG Ophthalmic Insert"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2286261",
-			"display": "Hemady 20 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "343040",
-			"display": "Decadron 0.75 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "404630",
-			"display": "Ciprodex (ciprofloxacin 0.3 % / dexamethasone 0.1 % ) Otic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "755976",
-			"display": "Decadron 0.1 MG/ML Oral Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "854181",
-			"display": "Ozurdex 0.7 MG Intravitreal Drug Implant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009390",
-			"display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML [Tresaderm]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1011079",
-			"display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML [Tobradex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1049384",
-			"display": "dexamethasone 2 MG/ML [Dexium]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1087756",
-			"display": "dexamethasone 2 MG/ML [Dexasone]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1087918",
-			"display": "dexamethasone 3 MG/ML [Dexium]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2045406",
-			"display": "dexamethasone 103.4 MG/ML [Dexycu]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2108017",
-			"display": "dexamethasone 0.4 MG [Dextenza]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2286257",
-			"display": "dexamethasone 20 MG [Hemady]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "545158",
-			"display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML [Ciprodex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "564044",
-			"display": "dexamethasone 0.5 MG [Decadron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "566561",
-			"display": "dexamethasone 1 MG/ML [Maxidex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "566581",
-			"display": "dexamethasone 0.1 MG/ML [Decadron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "566603",
-			"display": "dexamethasone 4 MG [Decadron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "566608",
-			"display": "dexamethasone 6 MG [Decadron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "569262",
-			"display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Maxitrol]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "569264",
-			"display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Poly-Dex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "569272",
-			"display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Maxitrol]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "569273",
-			"display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Poly-Dex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "569462",
-			"display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML [Tobradex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "569470",
-			"display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG [Tobradex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "575233",
-			"display": "dexamethasone 0.75 MG [Decadron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "854179",
-			"display": "dexamethasone 0.7 MG [Ozurdex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009391",
-			"display": "dexamethasone / neomycin / thiabendazole Topical Solution [Tresaderm]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1049385",
-			"display": "dexamethasone Injectable Solution [Dexium]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2045407",
-			"display": "dexamethasone Injection [Dexycu]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2108018",
-			"display": "dexamethasone Drug Implant [Dextenza]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2286258",
-			"display": "dexamethasone Oral Tablet [Hemady]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "363482",
-			"display": "dexamethasone Injectable Solution [Dexasone]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "365818",
-			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Poly-Dex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "365842",
-			"display": "dexamethasone Ophthalmic Suspension [Maxidex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "367266",
-			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Poly-Dex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "369461",
-			"display": "dexamethasone Oral Tablet [Decadron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "405941",
-			"display": "ciprofloxacin / dexamethasone Otic Suspension [Ciprodex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "757087",
-			"display": "dexamethasone Oral Solution [Decadron]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "854180",
-			"display": "dexamethasone Drug Implant [Ozurdex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "93249",
-			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Maxitrol]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "93250",
-			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Maxitrol]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "94334",
-			"display": "dexamethasone / tobramycin Ophthalmic Suspension [Tobradex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "94335",
-			"display": "dexamethasone / tobramycin Ophthalmic Ointment [Tobradex]"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1170296",
-			"display": "Decadron Oral Liquid Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1170297",
-			"display": "Decadron Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1170298",
-			"display": "Decadron Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1170903",
-			"display": "Ciprodex Otic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1175250",
-			"display": "Dexasone Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1175843",
-			"display": "Dexium Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1177629",
-			"display": "Ozurdex Drug Implant Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1179099",
-			"display": "Tobradex Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1179675",
-			"display": "Tresaderm Topical Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1181604",
-			"display": "Maxidex Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1182730",
-			"display": "Maxitrol Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1182982",
-			"display": "Poly-Dex Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2045408",
-			"display": "Dexycu Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2108019",
-			"display": "Dextenza Drug Implant Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2286259",
-			"display": "Hemady Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2286260",
-			"display": "Hemady Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009388",
-			"display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML Topical Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1049400",
-			"display": "dexamethasone sodium phosphate 4 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1116927",
-			"display": "dexamethasone phosphate 4 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1249712",
-			"display": "dexamethasone sodium phosphate 0.4 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1374372",
-			"display": "dexamethasone acetate 8 MG/ML Injectable Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1812079",
-			"display": "1 ML dexamethasone phosphate 10 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1812095",
-			"display": "1 ML dexamethasone phosphate 4 MG/ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1812194",
-			"display": "1 ML dexamethasone phosphate 4 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197576",
-			"display": "dexamethasone 0.25 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197577",
-			"display": "dexamethasone 0.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197579",
-			"display": "dexamethasone 1 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197580",
-			"display": "dexamethasone 1.5 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197581",
-			"display": "dexamethasone 2 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197582",
-			"display": "dexamethasone 4 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "197583",
-			"display": "dexamethasone 6 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2045404",
-			"display": "0.005 ML dexamethasone 103.4 MG/ML Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2099700",
-			"display": "1 ML dexamethasone phosphate 10 MG/ML Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2108015",
-			"display": "dexamethasone 0.4 MG Drug Implant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2261802",
-			"display": "dexamethasone 20 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "226343",
-			"display": "dexamethasone phosphate 1 MG/ML Ophthalmic Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "227142",
-			"display": "dexamethasone 1 MG/ML / hypromellose 5 MG/ML Ophthalmic Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "248175",
-			"display": "dexamethasone 0.02 MG/ACTUAT / tramazoline 0.12 MG/ACTUAT Nasal Spray"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309679",
-			"display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG Ophthalmic Ointment"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309680",
-			"display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309682",
-			"display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG Ophthalmic Ointment"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309683",
-			"display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309684",
-			"display": "dexamethasone 1 MG/ML Oral Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309686",
-			"display": "dexamethasone 0.1 MG/ML Oral Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309692",
-			"display": "dexamethasone 1 MG/ML Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "309696",
-			"display": "dexamethasone phosphate 10 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "343033",
-			"display": "dexamethasone 0.75 MG Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "388755",
-			"display": "dexamethasone 1 MG/ML Topical Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "403908",
-			"display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML Otic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "435681",
-			"display": "dexamethasone 2 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "849115",
-			"display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "854177",
-			"display": "dexamethasone 0.7 MG Drug Implant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "880649",
-			"display": "dexamethasone 3 MG/ML Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1049399",
-			"display": "dexamethasone sodium phosphate 4 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1116926",
-			"display": "dexamethasone phosphate 4 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1249711",
-			"display": "dexamethasone sodium phosphate 0.4 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1374371",
-			"display": "dexamethasone acetate 8 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1812078",
-			"display": "dexamethasone phosphate 10 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2045403",
-			"display": "dexamethasone 103.4 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2261801",
-			"display": "dexamethasone 20 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "2265538",
-			"display": "dexamethasone phosphate 1 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "315773",
-			"display": "dexamethasone 0.1 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "315774",
-			"display": "dexamethasone 0.25 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "315775",
-			"display": "dexamethasone 0.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "315776",
-			"display": "dexamethasone 1 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "315777",
-			"display": "dexamethasone 1.5 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "315778",
-			"display": "dexamethasone 4 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "315779",
-			"display": "dexamethasone 6 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "317346",
-			"display": "dexamethasone 2 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "317629",
-			"display": "dexamethasone 1 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "332981",
-			"display": "dexamethasone 3 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "332984",
-			"display": "dexamethasone 0.4 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "335766",
-			"display": "dexamethasone 0.02 MG/ACTUAT"
-		},
-		{
-			"entryType": "Medication",
-			"code": "339981",
-			"display": "dexamethasone 0.001 MG/MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "345816",
-			"display": "dexamethasone 0.75 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "438889",
-			"display": "dexamethasone 0.5 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "451789",
-			"display": "dexamethasone 2 MG/ML"
-		},
-		{
-			"entryType": "Medication",
-			"code": "854175",
-			"display": "dexamethasone 0.7 MG"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1009386",
-			"display": "dexamethasone / neomycin / thiabendazole Topical Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1812073",
-			"display": "dexamethasone Injection"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1812094",
-			"display": "dexamethasone Prefilled Syringe"
-		},
-		{
-			"entryType": "Medication",
-			"code": "371721",
-			"display": "dexamethasone Injectable Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "371723",
-			"display": "dexamethasone Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "371725",
-			"display": "dexamethasone Injectable Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "371728",
-			"display": "dexamethasone Oral Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "371729",
-			"display": "dexamethasone Oral Tablet"
-		},
-		{
-			"entryType": "Medication",
-			"code": "374438",
-			"display": "dexamethasone / tobramycin Ophthalmic Ointment"
-		},
-		{
-			"entryType": "Medication",
-			"code": "374698",
-			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "374699",
-			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment"
-		},
-		{
-			"entryType": "Medication",
-			"code": "377418",
-			"display": "dexamethasone Ophthalmic Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "377456",
-			"display": "dexamethasone / hypromellose Ophthalmic Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "378984",
-			"display": "dexamethasone / tobramycin Ophthalmic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "393151",
-			"display": "dexamethasone Topical Solution"
-		},
-		{
-			"entryType": "Medication",
-			"code": "393542",
-			"display": "dexamethasone / tramazoline Nasal Spray"
-		},
-		{
-			"entryType": "Medication",
-			"code": "405942",
-			"display": "ciprofloxacin / dexamethasone Otic Suspension"
-		},
-		{
-			"entryType": "Medication",
-			"code": "854176",
-			"display": "dexamethasone Drug Implant"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1152113",
-			"display": "ciprofloxacin / dexamethasone Otic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154245",
-			"display": "dexamethasone / neomycin / polymyxin B Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154246",
-			"display": "dexamethasone / neomycin / thiabendazole Topical Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154247",
-			"display": "dexamethasone / neomycin Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154249",
-			"display": "dexamethasone / neomycin Topical Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154524",
-			"display": "dexamethasone / tobramycin Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154525",
-			"display": "dexamethasone / hypromellose Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154527",
-			"display": "dexamethasone / tramazoline Inhalant Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154528",
-			"display": "dexamethasone / tramazoline Nasal Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154529",
-			"display": "dexamethasone Drug Implant Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154531",
-			"display": "dexamethasone Injectable Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154532",
-			"display": "dexamethasone Nasal Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154533",
-			"display": "dexamethasone Ophthalmic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154534",
-			"display": "dexamethasone Oral Liquid Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154535",
-			"display": "dexamethasone Oral Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154536",
-			"display": "dexamethasone Otic Product"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154537",
-			"display": "dexamethasone Pill"
-		},
-		{
-			"entryType": "Medication",
-			"code": "1154539",
-			"display": "dexamethasone Topical Product"
-		}
-	]
+  "entry": [
+    {
+      "entryType": "Medication",
+      "code": "261663",
+      "display": "Temodar"
+    },
+    {
+      "entryType": "Medication",
+      "code": "37776",
+      "display": "temozolomide"
+    },
+    {
+      "entryType": "Medication",
+      "code": "261289",
+      "display": "Temodar 20 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "835948",
+      "display": "Temodar 100 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "705619",
+      "display": "Temodar 180 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "261288",
+      "display": "Temodar 5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "705617",
+      "display": "Temodar 140 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "261290",
+      "display": "Temodar 100 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "261291",
+      "display": "Temodar 250 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "574513",
+      "display": "temozolomide 5 MG [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "574514",
+      "display": "temozolomide 20 MG [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "574515",
+      "display": "temozolomide 100 MG [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "574516",
+      "display": "temozolomide 250 MG [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "705616",
+      "display": "temozolomide 140 MG [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "705618",
+      "display": "temozolomide 180 MG [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "366431",
+      "display": "temozolomide Oral Capsule [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1724294",
+      "display": "temozolomide Injection [Temodar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "317160",
+      "display": "temozolomide 100 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "313209",
+      "display": "temozolomide 20 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "835945",
+      "display": "temozolomide 100 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "700883",
+      "display": "temozolomide 140 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "700885",
+      "display": "temozolomide 180 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "313211",
+      "display": "temozolomide 5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "313210",
+      "display": "temozolomide 250 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "330405",
+      "display": "temozolomide 20 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "330797",
+      "display": "temozolomide 100 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "331482",
+      "display": "temozolomide 5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "331483",
+      "display": "temozolomide 250 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "700882",
+      "display": "temozolomide 140 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "700884",
+      "display": "temozolomide 180 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "374610",
+      "display": "temozolomide Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1724292",
+      "display": "temozolomide Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1161485",
+      "display": "temozolomide Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1161486",
+      "display": "temozolomide Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1161487",
+      "display": "temozolomide Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1181413",
+      "display": "Temodar Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1181414",
+      "display": "Temodar Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1181415",
+      "display": "Temodar Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545771",
+      "display": "Gleostine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "6466",
+      "display": "lomustine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545778",
+      "display": "Gleostine 100 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720737",
+      "display": "Gleostine 5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545776",
+      "display": "Gleostine 10 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545780",
+      "display": "Gleostine 40 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545772",
+      "display": "lomustine 10 MG [Gleostine]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545777",
+      "display": "lomustine 100 MG [Gleostine]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545779",
+      "display": "lomustine 40 MG [Gleostine]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720736",
+      "display": "lomustine 5 MG [Gleostine]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545773",
+      "display": "lomustine Oral Capsule [Gleostine]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720735",
+      "display": "lomustine 5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197896",
+      "display": "lomustine 40 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197894",
+      "display": "lomustine 10 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197895",
+      "display": "lomustine 100 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "316160",
+      "display": "lomustine 10 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "316161",
+      "display": "lomustine 100 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "316162",
+      "display": "lomustine 40 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720734",
+      "display": "lomustine 5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "372631",
+      "display": "lomustine Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1165319",
+      "display": "lomustine Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1165320",
+      "display": "lomustine Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545774",
+      "display": "Gleostine Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1545775",
+      "display": "Gleostine Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "217357",
+      "display": "Gliadel"
+    },
+    {
+      "entryType": "Medication",
+      "code": "343027",
+      "display": "BiCNU"
+    },
+    {
+      "entryType": "Medication",
+      "code": "657710",
+      "display": "Drug Implant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2105",
+      "display": "carmustine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "105552",
+      "display": "BiCNU 100 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "212994",
+      "display": "BCNU 7.7 MG Drug Implant [Gliadel]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "572946",
+      "display": "carmustine 7.7 MG [Gliadel]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1729370",
+      "display": "carmustine 100 MG [BiCNU]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "405951",
+      "display": "carmustine Drug Implant [Gliadel]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1729371",
+      "display": "carmustine Injection [BiCNU]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309013",
+      "display": "carmustine 7.7 MG Drug Implant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309012",
+      "display": "carmustine 100 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "340520",
+      "display": "carmustine 7.7 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1729367",
+      "display": "carmustine 100 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "378774",
+      "display": "carmustine Drug Implant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1729368",
+      "display": "carmustine Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1151413",
+      "display": "carmustine Drug Implant Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1151727",
+      "display": "carmustine Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1171232",
+      "display": "Gliadel Drug Implant Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1173621",
+      "display": "BiCNU Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "203801",
+      "display": "Matulane"
+    },
+    {
+      "entryType": "Medication",
+      "code": "8702",
+      "display": "procarbazine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "66925",
+      "display": "procarbazine hydrochloride"
+    },
+    {
+      "entryType": "Medication",
+      "code": "207588",
+      "display": "Matulane 50 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "568345",
+      "display": "procarbazine 50 MG [Matulane]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "366728",
+      "display": "procarbazine Oral Capsule [Matulane]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "314167",
+      "display": "procarbazine 50 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "328546",
+      "display": "procarbazine 50 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "373602",
+      "display": "procarbazine Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1161732",
+      "display": "procarbazine Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1161733",
+      "display": "procarbazine Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1181565",
+      "display": "Matulane Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1181566",
+      "display": "Matulane Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "227575",
+      "display": "Vincasar"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304996",
+      "display": "Marqibo"
+    },
+    {
+      "entryType": "Medication",
+      "code": "11202",
+      "display": "vinCRIStine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "11203",
+      "display": "vinCRIStine sulfate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304990",
+      "display": "vinCRIStine sulfate liposome"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304991",
+      "display": "vinCRIStine liposome"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1863347",
+      "display": "Vincasar 1 MG per 1 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1305000",
+      "display": "Marqibo 5 MG per 31 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1863355",
+      "display": "Vincasar 2 MG per 2 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "894894",
+      "display": "vinCRIStine sulfate 1 MG/ML [Vincasar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304997",
+      "display": "vinCRIStine sulfate liposome 0.16 MG/ML [Marqibo]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1863346",
+      "display": "vinCRIStine Injection [Vincasar]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2284505",
+      "display": "vinCRIStine Injection [Marqibo]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304995",
+      "display": "31 ML vinCRIStine sulfate liposome 0.16 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1863343",
+      "display": "1 ML vinCRIStine sulfate 1 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1863354",
+      "display": "2 ML vinCRIStine sulfate 1 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "894892",
+      "display": "vinCRIStine sulfate 1 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304992",
+      "display": "vinCRIStine sulfate liposome 0.16 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1863342",
+      "display": "vinCRIStine Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1160531",
+      "display": "vinCRIStine Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304999",
+      "display": "Marqibo Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1186612",
+      "display": "Vincasar Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232155",
+      "display": "Eylea"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304480",
+      "display": "Zaltrap"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232150",
+      "display": "aflibercept"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304475",
+      "display": "ziv-aflibercept"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232159",
+      "display": "0.05 ML Eylea 40 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1723189",
+      "display": "8 ML Zaltrap 25 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1723194",
+      "display": "4 ML Zaltrap 25 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232156",
+      "display": "aflibercept 40 MG/ML [Eylea]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304481",
+      "display": "ziv-aflibercept 25 MG/ML [Zaltrap]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1723182",
+      "display": "aflibercept Injection [Eylea]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1723188",
+      "display": "aflibercept Injection [Zaltrap]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232158",
+      "display": "Eylea Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304483",
+      "display": "Zaltrap Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232154",
+      "display": "0.05 ML aflibercept 40 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1723187",
+      "display": "8 ML ziv-aflibercept 25 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1723193",
+      "display": "4 ML ziv-aflibercept 25 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232151",
+      "display": "aflibercept 40 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1304476",
+      "display": "ziv-aflibercept 25 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1723180",
+      "display": "aflibercept Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232152",
+      "display": "aflibercept Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1535993",
+      "display": "Cyramza"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1649574",
+      "display": "Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1151126",
+      "display": "Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1535922",
+      "display": "ramucirumab"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1657777",
+      "display": "Cyramza 100 MG per 10 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1657781",
+      "display": "Cyramza 500 MG per 50 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1535994",
+      "display": "ramucirumab 10 MG/ML [Cyramza]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1657776",
+      "display": "ramucirumab Injection [Cyramza]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1535996",
+      "display": "Cyramza Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1657775",
+      "display": "10 ML ramucirumab 10 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1657780",
+      "display": "50 ML ramucirumab 10 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1535989",
+      "display": "ramucirumab 10 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1657774",
+      "display": "ramucirumab Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1535990",
+      "display": "ramucirumab Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616274",
+      "display": "Sutent"
+    },
+    {
+      "entryType": "Medication",
+      "code": "357977",
+      "display": "SUNItinib"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616275",
+      "display": "SUNItinib malate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1541928",
+      "display": "Sutent 37.5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616283",
+      "display": "Sutent 12.5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616287",
+      "display": "Sutent 25 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616292",
+      "display": "Sutent 50 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1541927",
+      "display": "SUNItinib 37.5 MG [Sutent]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616281",
+      "display": "SUNItinib 12.5 MG [Sutent]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616286",
+      "display": "SUNItinib 25 MG [Sutent]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616291",
+      "display": "SUNItinib 50 MG [Sutent]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616282",
+      "display": "SUNItinib Oral Capsule [Sutent]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1185474",
+      "display": "Sutent Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1185475",
+      "display": "Sutent Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1541890",
+      "display": "SUNItinib 37.5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616279",
+      "display": "SUNItinib 12.5 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616285",
+      "display": "SUNItinib 25 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616289",
+      "display": "SUNItinib 50 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1541889",
+      "display": "SUNItinib 37.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616277",
+      "display": "SUNItinib 12.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616284",
+      "display": "SUNItinib 25 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616288",
+      "display": "SUNItinib 50 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "616278",
+      "display": "SUNItinib Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1160852",
+      "display": "SUNItinib Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1160853",
+      "display": "SUNItinib Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "619985",
+      "display": "NexAVAR"
+    },
+    {
+      "entryType": "Medication",
+      "code": "495881",
+      "display": "SORAfenib"
+    },
+    {
+      "entryType": "Medication",
+      "code": "597744",
+      "display": "SORAfenib tosylate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "615979",
+      "display": "NexAVAR 200 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "615977",
+      "display": "SORAfenib 200 MG [NexAVAR]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "615978",
+      "display": "SORAfenib Oral Tablet [NexAVAR]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1182862",
+      "display": "NexAVAR Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1182863",
+      "display": "NexAVAR Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "597747",
+      "display": "SORAfenib 200 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "597745",
+      "display": "SORAfenib 200 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "597746",
+      "display": "SORAfenib Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1159691",
+      "display": "SORAfenib Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1159692",
+      "display": "SORAfenib Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243005",
+      "display": "Inlyta"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1242999",
+      "display": "axitinib"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243010",
+      "display": "Inlyta 1 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243014",
+      "display": "Inlyta 5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243006",
+      "display": "axitinib 1 MG [Inlyta]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243013",
+      "display": "axitinib 5 MG [Inlyta]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243007",
+      "display": "axitinib Oral Tablet [Inlyta]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243008",
+      "display": "Inlyta Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243009",
+      "display": "Inlyta Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243004",
+      "display": "axitinib 1 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243012",
+      "display": "axitinib 5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243000",
+      "display": "axitinib 1 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243011",
+      "display": "axitinib 5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243003",
+      "display": "axitinib Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243001",
+      "display": "axitinib Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1243002",
+      "display": "axitinib Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312403",
+      "display": "Stivarga"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312397",
+      "display": "regorafenib"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1371319",
+      "display": "regorafenib monohydrate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312408",
+      "display": "Stivarga 40 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312404",
+      "display": "regorafenib 40 MG [Stivarga]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312405",
+      "display": "regorafenib Oral Tablet [Stivarga]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312406",
+      "display": "Stivarga Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312407",
+      "display": "Stivarga Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312402",
+      "display": "regorafenib 40 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312398",
+      "display": "regorafenib 40 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312401",
+      "display": "regorafenib Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312399",
+      "display": "regorafenib Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1312400",
+      "display": "regorafenib Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363274",
+      "display": "Cometriq"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790162",
+      "display": "Cabometyx"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363408",
+      "display": "Cometriq 140 MG Daily Dose Carton Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363410",
+      "display": "Cometriq 100 MG Daily Dose Carton Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1364581",
+      "display": "Cometriq 60 MG Daily Dose Carton Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363312",
+      "display": "{84 (cabozantinib 20 MG Oral Capsule) / 28 (cabozantinib 80 MG Oral Capsule) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363409",
+      "display": "{28 (cabozantinib 20 MG Oral Capsule) / 28 (cabozantinib 80 MG Oral Capsule) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1364580",
+      "display": "{84 (cabozantinib 20 MG Oral Capsule) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363268",
+      "display": "cabozantinib"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363267",
+      "display": "cabozantinib s-malate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363279",
+      "display": "Cometriq 20 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363284",
+      "display": "Cometriq 80 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790167",
+      "display": "Cabometyx 20 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790171",
+      "display": "Cabometyx 40 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790175",
+      "display": "Cabometyx 60 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363275",
+      "display": "cabozantinib 20 MG [Cometriq]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363283",
+      "display": "cabozantinib 80 MG [Cometriq]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790163",
+      "display": "cabozantinib 20 MG [Cabometyx]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790170",
+      "display": "cabozantinib 40 MG [Cabometyx]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790174",
+      "display": "cabozantinib 60 MG [Cabometyx]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363276",
+      "display": "cabozantinib Oral Capsule [Cometriq]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790164",
+      "display": "cabozantinib Oral Tablet [Cabometyx]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363277",
+      "display": "Cometriq Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363278",
+      "display": "Cometriq Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790165",
+      "display": "Cabometyx Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790166",
+      "display": "Cabometyx Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363273",
+      "display": "cabozantinib 20 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363281",
+      "display": "cabozantinib 80 MG Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790161",
+      "display": "cabozantinib 20 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790169",
+      "display": "cabozantinib 40 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790173",
+      "display": "cabozantinib 60 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363269",
+      "display": "cabozantinib 20 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363280",
+      "display": "cabozantinib 80 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790168",
+      "display": "cabozantinib 40 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790172",
+      "display": "cabozantinib 60 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363272",
+      "display": "cabozantinib Oral Capsule"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1790160",
+      "display": "cabozantinib Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363270",
+      "display": "cabozantinib Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1363271",
+      "display": "cabozantinib Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058831",
+      "display": "Libtayo"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058826",
+      "display": "cemiplimab"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058825",
+      "display": "cemiplimab-rwlc"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058835",
+      "display": "Libtayo 350 MG per 7 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058832",
+      "display": "cemiplimab-rwlc 50 MG/ML [Libtayo]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058833",
+      "display": "cemiplimab Injection [Libtayo]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058834",
+      "display": "Libtayo Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058830",
+      "display": "7 ML cemiplimab-rwlc 50 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058827",
+      "display": "cemiplimab-rwlc 50 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058829",
+      "display": "cemiplimab Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2058828",
+      "display": "cemiplimab Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792781",
+      "display": "Tecentriq"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792776",
+      "display": "atezolizumab"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792785",
+      "display": "20 ML Tecentriq 60 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2119696",
+      "display": "14 ML Tecentriq 60 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792782",
+      "display": "atezolizumab 60 MG/ML [Tecentriq]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792783",
+      "display": "atezolizumab Injection [Tecentriq]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792784",
+      "display": "Tecentriq Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792780",
+      "display": "20 ML atezolizumab 60 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2119695",
+      "display": "14 ML atezolizumab 60 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792777",
+      "display": "atezolizumab 60 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792779",
+      "display": "atezolizumab Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1792778",
+      "display": "atezolizumab Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539973",
+      "display": "Jemperli"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539967",
+      "display": "dostarlimab"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539968",
+      "display": "dostarlimab-gxly"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539977",
+      "display": "10 ML Jemperli 50 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539974",
+      "display": "dostarlimab-gxly 50 MG/ML [Jemperli]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539975",
+      "display": "dostarlimab Injection [Jemperli]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539976",
+      "display": "Jemperli Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539972",
+      "display": "10 ML dostarlimab-gxly 50 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539969",
+      "display": "dostarlimab-gxly 50 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539971",
+      "display": "dostarlimab Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2539970",
+      "display": "dostarlimab Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919508",
+      "display": "Imfinzi"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1649574",
+      "display": "Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1151126",
+      "display": "Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919503",
+      "display": "durvalumab"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919512",
+      "display": "2.4 ML Imfinzi 50 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919516",
+      "display": "10 ML Imfinzi 50 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919509",
+      "display": "durvalumab 50 MG/ML [Imfinzi]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919510",
+      "display": "durvalumab Injection [Imfinzi]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919511",
+      "display": "Imfinzi Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919507",
+      "display": "2.4 ML durvalumab 50 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919515",
+      "display": "10 ML durvalumab 50 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919504",
+      "display": "durvalumab 50 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919506",
+      "display": "durvalumab Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1919505",
+      "display": "durvalumab Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875543",
+      "display": "Bavencio"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875534",
+      "display": "avelumab"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875547",
+      "display": "10 ML Bavencio 20 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875544",
+      "display": "avelumab 20 MG/ML [Bavencio]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875545",
+      "display": "avelumab Injection [Bavencio]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875546",
+      "display": "Bavencio Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875542",
+      "display": "10 ML avelumab 20 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875539",
+      "display": "avelumab 20 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875541",
+      "display": "avelumab Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1875540",
+      "display": "avelumab Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "5879",
+      "display": "interferon alfa-2a"
+    },
+    {
+      "entryType": "Medication",
+      "code": "284174",
+      "display": "interferon alfa-2a 18000000 UNT/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "331515",
+      "display": "interferon alfa-2a 18000000 UNT/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "374394",
+      "display": "interferon alfa-2a Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158018",
+      "display": "interferon alfa-2a Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "545290",
+      "display": "Intron A"
+    },
+    {
+      "entryType": "Medication",
+      "code": "5880",
+      "display": "interferon alfa-2b"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1251596",
+      "display": "Intron A 18000000 UNT Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720881",
+      "display": "Intron A 10000000 UNT Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "207029",
+      "display": "Intron A 6,000,000 UNT/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "207035",
+      "display": "Intron A 50000000 UNT Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "545293",
+      "display": "Intron A 10,000,000 UNT/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720879",
+      "display": "interferon alfa-2b 10000000 UNT [Intron A]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720887",
+      "display": "interferon alfa-2b 50000000 UNT [Intron A]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720909",
+      "display": "interferon alfa-2b 18000000 UNT [Intron A]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "545291",
+      "display": "interferon alfa-2b 10000000 UNT/ML [Intron A]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "567825",
+      "display": "interferon alfa-2b 6000000 UNT/ML [Intron A]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720880",
+      "display": "interferon alfa-2b Injection [Intron A]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "362563",
+      "display": "interferon alfa-2b Injectable Solution [Intron A]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1173444",
+      "display": "Intron A Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1232574",
+      "display": "interferon alfa-2b 18000000 UNT Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720878",
+      "display": "interferon alfa-2b 10000000 UNT Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "204445",
+      "display": "interferon alfa-2b 6000000 UNT/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "311078",
+      "display": "interferon alfa-2b 50000000 UNT Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "545289",
+      "display": "interferon alfa-2b 10000000 UNT/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720876",
+      "display": "interferon alfa-2b 10000000 UNT"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720885",
+      "display": "interferon alfa-2b 50000000 UNT"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720907",
+      "display": "interferon alfa-2b 18000000 UNT"
+    },
+    {
+      "entryType": "Medication",
+      "code": "346254",
+      "display": "interferon alfa-2b 10000000 UNT/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "346257",
+      "display": "interferon alfa-2b 6000000 UNT/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720877",
+      "display": "interferon alfa-2b Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "370692",
+      "display": "interferon alfa-2b Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158020",
+      "display": "interferon alfa-2b Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "612937",
+      "display": "interferon alfa-n3"
+    },
+    {
+      "entryType": "Medication",
+      "code": "314687",
+      "display": "interferon alfa-3n,human leukocyte derived"
+    },
+    {
+      "entryType": "Medication",
+      "code": "202912",
+      "display": "interferon alfa-n1"
+    },
+    {
+      "entryType": "Medication",
+      "code": "261717",
+      "display": "interferon alfa-n1 lymphoblastoid"
+    },
+    {
+      "entryType": "Medication",
+      "code": "215103",
+      "display": "Alferon N"
+    },
+    {
+      "entryType": "Medication",
+      "code": "598014",
+      "display": "Alferon N 5,000,000 UNT/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "598012",
+      "display": "interferon alfa-n3 5000000 UNT/ML [Alferon N]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "598013",
+      "display": "interferon alfa-n3 Injectable Solution [Alferon N]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1175509",
+      "display": "Alferon N Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "615136",
+      "display": "interferon alfa-n3 5000000 UNT/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "615134",
+      "display": "interferon alfa-n3 5000000 UNT/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "615135",
+      "display": "interferon alfa-n3 Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158022",
+      "display": "interferon alfa-n3 Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "59744",
+      "display": "interferon alfacon-1"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1160699",
+      "display": "interferon alfacon-1 Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "153326",
+      "display": "Avonex"
+    },
+    {
+      "entryType": "Medication",
+      "code": "228271",
+      "display": "Rebif"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650282",
+      "display": "Rebif Rebidose Titration Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "795749",
+      "display": "Rebif Titration Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650268",
+      "display": "{6 (0.2 ML interferon beta-1a 0.044 MG/ML Auto-Injector) / 6 (0.5 ML interferon beta-1a 0.044 MG/ML Auto-Injector) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "758030",
+      "display": "{6 (0.2 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe) / 6 (0.5 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "75917",
+      "display": "interferon beta-1a"
+    },
+    {
+      "entryType": "Medication",
+      "code": "153324",
+      "display": "Avonex 30 MCG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1649996",
+      "display": "Rebif 22 MCG per 0.5 ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650004",
+      "display": "Rebif 44 MCG per 0.5 ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650012",
+      "display": "0.2 ML Rebif 0.044 MG/ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650901",
+      "display": "0.5 ML Avonex 0.06 MG/ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "727816",
+      "display": "Avonex 30 MCG per 0.5 ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "758027",
+      "display": "Rebif 44 MCG per 0.5 ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "758032",
+      "display": "Rebif 22 MCG per 0.5 ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "795748",
+      "display": "0.2 ML Rebif 0.044 MG/ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1651246",
+      "display": "interferon beta-1a 0.03 MG [Avonex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "575912",
+      "display": "interferon beta-1a 0.088 MG/ML [Rebif]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "575913",
+      "display": "interferon beta-1a 0.044 MG/ML [Rebif]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "727814",
+      "display": "interferon beta-1a 0.06 MG/ML [Avonex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1649995",
+      "display": "interferon beta-1a Auto-Injector [Rebif]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650900",
+      "display": "interferon beta-1a Auto-Injector [Avonex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1651247",
+      "display": "interferon beta-1a Injection [Avonex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "727815",
+      "display": "interferon beta-1a Prefilled Syringe [Avonex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "758026",
+      "display": "interferon beta-1a Prefilled Syringe [Rebif]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1175701",
+      "display": "Avonex Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1178325",
+      "display": "Rebif Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "153323",
+      "display": "interferon beta-1a 0.03 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1649994",
+      "display": "0.5 ML interferon beta-1a 0.044 MG/ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650003",
+      "display": "0.5 ML interferon beta-1a 0.088 MG/ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650011",
+      "display": "0.2 ML interferon beta-1a 0.044 MG/ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1650899",
+      "display": "0.5 ML interferon beta-1a 0.06 MG/ML Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "727813",
+      "display": "0.5 ML interferon beta-1a 0.06 MG/ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "758025",
+      "display": "0.5 ML interferon beta-1a 0.088 MG/ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "758028",
+      "display": "0.2 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "758029",
+      "display": "0.5 ML interferon beta-1a 0.044 MG/ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1651243",
+      "display": "interferon beta-1a 0.03 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "358790",
+      "display": "interferon beta-1a 0.044 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "358791",
+      "display": "interferon beta-1a 0.088 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "727811",
+      "display": "interferon beta-1a 0.06 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1649993",
+      "display": "interferon beta-1a Auto-Injector"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1651244",
+      "display": "interferon beta-1a Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "727812",
+      "display": "interferon beta-1a Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158024",
+      "display": "interferon beta-1a Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "82828",
+      "display": "Betaseron"
+    },
+    {
+      "entryType": "Medication",
+      "code": "860241",
+      "display": "Extavia"
+    },
+    {
+      "entryType": "Medication",
+      "code": "72257",
+      "display": "interferon beta-1b"
+    },
+    {
+      "entryType": "Medication",
+      "code": "72258",
+      "display": "recombinant interferon beta-1b"
+    },
+    {
+      "entryType": "Medication",
+      "code": "207059",
+      "display": "Betaseron 0.3 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "860244",
+      "display": "Extavia 0.3 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1721325",
+      "display": "interferon beta-1b 0.3 MG [Betaseron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1721328",
+      "display": "interferon beta-1b 0.3 MG [Extavia]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1721326",
+      "display": "interferon beta-1b Injection [Betaseron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1721329",
+      "display": "interferon beta-1b Injection [Extavia]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1172925",
+      "display": "Betaseron Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1173906",
+      "display": "Extavia Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "198360",
+      "display": "interferon beta-1b 0.3 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1721322",
+      "display": "interferon beta-1b 0.3 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1721323",
+      "display": "interferon beta-1b Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1160700",
+      "display": "interferon beta-1b Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1421648",
+      "display": "gamma-interferon"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1421647",
+      "display": "interferon gamma, porcine recombinant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1314240",
+      "display": "interferon gamma-1a"
+    },
+    {
+      "entryType": "Medication",
+      "code": "258348",
+      "display": "Actimmune"
+    },
+    {
+      "entryType": "Medication",
+      "code": "5882",
+      "display": "interferon gamma-1b"
+    },
+    {
+      "entryType": "Medication",
+      "code": "751970",
+      "display": "Actimmune 0.1 MG per 0.5 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "751968",
+      "display": "interferon gamma-1b 0.2 MG/ML [Actimmune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720958",
+      "display": "interferon gamma-1b Injection [Actimmune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1169907",
+      "display": "Actimmune Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "240448",
+      "display": "0.5 ML interferon gamma-1b 0.2 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "360572",
+      "display": "interferon gamma-1b 0.2 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1720955",
+      "display": "interferon gamma-1b Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158025",
+      "display": "interferon gamma-1b Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "5885",
+      "display": "interferon type II"
+    },
+    {
+      "entryType": "Medication",
+      "code": "4381",
+      "display": "interferon-beta"
+    },
+    {
+      "entryType": "Medication",
+      "code": "203760",
+      "display": "Proleukin"
+    },
+    {
+      "entryType": "Medication",
+      "code": "70223",
+      "display": "aldesleukin"
+    },
+    {
+      "entryType": "Medication",
+      "code": "105648",
+      "display": "Proleukin 1.3 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1719783",
+      "display": "aldesleukin 22000000 UNT [Proleukin]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1719784",
+      "display": "aldesleukin Injection [Proleukin]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1180698",
+      "display": "Proleukin Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "307816",
+      "display": "aldesleukin 22000000 UNT Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1719780",
+      "display": "aldesleukin 22000000 UNT"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1719781",
+      "display": "aldesleukin Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154611",
+      "display": "aldesleukin Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845509",
+      "display": "Afinitor"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1151137",
+      "display": "Oral Liquid Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "141704",
+      "display": "everolimus"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1119402",
+      "display": "Afinitor 7.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1310138",
+      "display": "Afinitor Disperz 2 MG Tablet for Oral Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1310144",
+      "display": "Afinitor Disperz 3 MG Tablet for Oral Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1310147",
+      "display": "Afinitor Disperz 5 MG Tablet for Oral Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845512",
+      "display": "Afinitor 10 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845518",
+      "display": "Afinitor 5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "998191",
+      "display": "Afinitor 2.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1119401",
+      "display": "everolimus 7.5 MG [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1869515",
+      "display": "everolimus 2 MG [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1869520",
+      "display": "everolimus 3 MG [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845510",
+      "display": "everolimus 10 MG [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845517",
+      "display": "everolimus 5 MG [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "998190",
+      "display": "everolimus 2.5 MG [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1869516",
+      "display": "everolimus Tablet for Oral Suspension [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845511",
+      "display": "everolimus Oral Tablet [Afinitor]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1172066",
+      "display": "Afinitor Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1172067",
+      "display": "Afinitor Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1310137",
+      "display": "Afinitor Oral Liquid Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1119400",
+      "display": "everolimus 7.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1308428",
+      "display": "everolimus 2 MG Tablet for Oral Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1308430",
+      "display": "everolimus 3 MG Tablet for Oral Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1308432",
+      "display": "everolimus 5 MG Tablet for Oral Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845507",
+      "display": "everolimus 10 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845515",
+      "display": "everolimus 5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "998189",
+      "display": "everolimus 2.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1119399",
+      "display": "everolimus 7.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1869512",
+      "display": "everolimus 2 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1869518",
+      "display": "everolimus 3 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845505",
+      "display": "everolimus 10 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845514",
+      "display": "everolimus 5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "998188",
+      "display": "everolimus 2.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1869513",
+      "display": "everolimus Tablet for Oral Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "845506",
+      "display": "everolimus Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1163786",
+      "display": "everolimus Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1163787",
+      "display": "everolimus Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1308426",
+      "display": "everolimus Oral Liquid Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "723805",
+      "display": "Torisel"
+    },
+    {
+      "entryType": "Medication",
+      "code": "657797",
+      "display": "temsirolimus"
+    },
+    {
+      "entryType": "Medication",
+      "code": "725108",
+      "display": "Torisel 25 MG/ML per 1.2 ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "725106",
+      "display": "temsirolimus 25 MG/ML [Torisel]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1724306",
+      "display": "temsirolimus Injection [Torisel]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1178590",
+      "display": "Torisel Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "722289",
+      "display": "1.2 ML temsirolimus 25 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "722287",
+      "display": "temsirolimus 25 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1724304",
+      "display": "temsirolimus Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1161488",
+      "display": "temsirolimus Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977428",
+      "display": "Zortress"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2056897",
+      "display": "Zortress 1 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977431",
+      "display": "Zortress 0.25 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977436",
+      "display": "Zortress 0.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977440",
+      "display": "Zortress 0.75 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2056896",
+      "display": "everolimus 1 MG [Zortress]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977429",
+      "display": "everolimus 0.25 MG [Zortress]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977435",
+      "display": "everolimus 0.5 MG [Zortress]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977439",
+      "display": "everolimus 0.75 MG [Zortress]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977430",
+      "display": "everolimus Oral Tablet [Zortress]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1186316",
+      "display": "Zortress Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1186317",
+      "display": "Zortress Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2056895",
+      "display": "everolimus 1 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977427",
+      "display": "everolimus 0.25 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977434",
+      "display": "everolimus 0.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977438",
+      "display": "everolimus 0.75 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2056894",
+      "display": "everolimus 1 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977426",
+      "display": "everolimus 0.25 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977433",
+      "display": "everolimus 0.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "977437",
+      "display": "everolimus 0.75 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "258355",
+      "display": "Rapamune"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586864",
+      "display": "Fyarro"
+    },
+    {
+      "entryType": "Medication",
+      "code": "35302",
+      "display": "sirolimus"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586868",
+      "display": "Fyarro 100 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "351901",
+      "display": "Rapamune 1 MG/ML Oral Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "351989",
+      "display": "Rapamune 1 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "404432",
+      "display": "Rapamune 2 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "905160",
+      "display": "Rapamune 0.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586865",
+      "display": "sirolimus 100 MG [Fyarro]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "575659",
+      "display": "sirolimus 1 MG/ML [Rapamune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "575733",
+      "display": "sirolimus 1 MG [Rapamune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "576390",
+      "display": "sirolimus 2 MG [Rapamune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "905159",
+      "display": "sirolimus 0.5 MG [Rapamune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586867",
+      "display": "sirolimus Injection [Fyarro]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "364904",
+      "display": "sirolimus Oral Solution [Rapamune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "368672",
+      "display": "sirolimus Oral Tablet [Rapamune]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1177701",
+      "display": "Rapamune Oral Liquid Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1177702",
+      "display": "Rapamune Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1177703",
+      "display": "Rapamune Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586866",
+      "display": "Fyarro Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586863",
+      "display": "sirolimus 100 MG Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "314230",
+      "display": "sirolimus 1 MG/ML Oral Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "349208",
+      "display": "sirolimus 1 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "360110",
+      "display": "sirolimus 2 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "905158",
+      "display": "sirolimus 0.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586860",
+      "display": "sirolimus 100 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "333296",
+      "display": "sirolimus 1 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "350512",
+      "display": "sirolimus 1 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "360318",
+      "display": "sirolimus 2 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "905157",
+      "display": "sirolimus 0.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586862",
+      "display": "sirolimus Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "375278",
+      "display": "sirolimus Oral Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "378277",
+      "display": "sirolimus Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158757",
+      "display": "sirolimus Oral Liquid Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158758",
+      "display": "sirolimus Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1158759",
+      "display": "sirolimus Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2586861",
+      "display": "sirolimus Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009389",
+      "display": "Tresaderm"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1049383",
+      "display": "Dexium"
+    },
+    {
+      "entryType": "Medication",
+      "code": "134920",
+      "display": "Maxitrol"
+    },
+    {
+      "entryType": "Medication",
+      "code": "203704",
+      "display": "Dexasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "203705",
+      "display": "Maxidex"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2045405",
+      "display": "Dexycu"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2108016",
+      "display": "Dextenza"
+    },
+    {
+      "entryType": "Medication",
+      "code": "219289",
+      "display": "Poly-Dex"
+    },
+    {
+      "entryType": "Medication",
+      "code": "220330",
+      "display": "Tobradex"
+    },
+    {
+      "entryType": "Medication",
+      "code": "227682",
+      "display": "Decadron"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2286256",
+      "display": "Hemady"
+    },
+    {
+      "entryType": "Medication",
+      "code": "404930",
+      "display": "Ciprodex"
+    },
+    {
+      "entryType": "Medication",
+      "code": "854178",
+      "display": "Ozurdex"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1998481",
+      "display": "TaperDex 12 Day Taper Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1998482",
+      "display": "TaperDex 6 Day Taper Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2118829",
+      "display": "HiDex 1.5 MG Tablet 6-day 21 Count Taper Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2118835",
+      "display": "TaperDex 1.5 MG Tablet 7-Day 27 Count Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2121735",
+      "display": "Dxevo 11 Day Taper Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2387356",
+      "display": "Zcort 1.5 MG Tablet 7 Day 25 Count Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "795716",
+      "display": "Decadron 5-12 Pak"
+    },
+    {
+      "entryType": "Medication",
+      "code": "797022",
+      "display": "DexPak 10 Day TaperPak"
+    },
+    {
+      "entryType": "Medication",
+      "code": "797023",
+      "display": "DexPak TaperPak 13 Day Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "847225",
+      "display": "DexPak TaperPak 6 Day Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1869595",
+      "display": "{27 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1943550",
+      "display": "{49 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2121587",
+      "display": "{39 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2387355",
+      "display": "{25 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "759481",
+      "display": "{51 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "759696",
+      "display": "{12 (dexamethasone 0.75 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "759697",
+      "display": "{35 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "846192",
+      "display": "{21 (dexamethasone 1.5 MG Oral Tablet) } Pack"
+    },
+    {
+      "entryType": "Medication",
+      "code": "3264",
+      "display": "dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1007105",
+      "display": "astemizole / dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1007256",
+      "display": "clioquinol / dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1007423",
+      "display": "dexamethasone / oxytetracycline"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1007483",
+      "display": "dexamethasone / hypromellose"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1007628",
+      "display": "dexamethasone / dobesilic acid / lidocaine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1007854",
+      "display": "clotrimazole / dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1008217",
+      "display": "clemastine / dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1008930",
+      "display": "dexamethasone / phenylephrine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009150",
+      "display": "dexamethasone / sodium phosphate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009387",
+      "display": "dexamethasone / neomycin / thiabendazole"
+    },
+    {
+      "entryType": "Medication",
+      "code": "214478",
+      "display": "dexamethasone / lidocaine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "216524",
+      "display": "dexamethasone / neomycin"
+    },
+    {
+      "entryType": "Medication",
+      "code": "216525",
+      "display": "dexamethasone / neomycin / polymyxin B"
+    },
+    {
+      "entryType": "Medication",
+      "code": "465397",
+      "display": "ciprofloxacin / dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "687304",
+      "display": "dexamethasone / tramazoline"
+    },
+    {
+      "entryType": "Medication",
+      "code": "813683",
+      "display": "dexamethasone / theophylline"
+    },
+    {
+      "entryType": "Medication",
+      "code": "814504",
+      "display": "dexamethasone / indomethacin"
+    },
+    {
+      "entryType": "Medication",
+      "code": "815833",
+      "display": "chloramphenicol / dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "818139",
+      "display": "dexamethasone / terfenadine"
+    },
+    {
+      "entryType": "Medication",
+      "code": "820465",
+      "display": "carisoprodol / dexamethasone / ibuprofen"
+    },
+    {
+      "entryType": "Medication",
+      "code": "821542",
+      "display": "cyproheptadine / dexamethasone"
+    },
+    {
+      "entryType": "Medication",
+      "code": "822000",
+      "display": "carisoprodol / dexamethasone / tenoxicam"
+    },
+    {
+      "entryType": "Medication",
+      "code": "883815",
+      "display": "dexamethasone / tobramycin"
+    },
+    {
+      "entryType": "Medication",
+      "code": "22690",
+      "display": "dexamethasone acetate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "22694",
+      "display": "dexamethasone trimethyl acetate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "235486",
+      "display": "dexamethasone phosphate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2378841",
+      "display": "dexamethasone acetate anhydrous"
+    },
+    {
+      "entryType": "Medication",
+      "code": "3265",
+      "display": "dexamethasone isonicotinate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "48933",
+      "display": "dexamethasone sodium phosphate"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009392",
+      "display": "Tresaderm (dexamethasone 1 MG / neomycin 3.2 MG / thiabendazole 40 MG) per ML Topical Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1011080",
+      "display": "Tobradex (dexamethasone 0.05 % / tobramycin 0.3 % ) Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1049386",
+      "display": "Dexium 2 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "105392",
+      "display": "Decadron 0.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1087757",
+      "display": "Dexasone 2 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1087919",
+      "display": "Dexium 3 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2045409",
+      "display": "0.005 ML Dexycu 103.4 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "205669",
+      "display": "Maxidex 0.1 % Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "205712",
+      "display": "Decadron 4 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "205717",
+      "display": "Decadron 6 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "208591",
+      "display": "Maxitrol (neomycin 3.5 MG / polymyxin B 10,000 UNT / dexamethasone 1 MG) per 1 ML Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "208593",
+      "display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10,000 UNT) per ML Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "208601",
+      "display": "Maxitrol (neomycin 3.5 MG / polymyxin b 10,000 UNT / dexamethasone 1 MG) per GM Ophthalmic Ointment"
+    },
+    {
+      "entryType": "Medication",
+      "code": "208602",
+      "display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10 UNT/MG) Ophthalmic Ointment"
+    },
+    {
+      "entryType": "Medication",
+      "code": "208813",
+      "display": "TobraDex (dexamethasone 0.1 % / tobramycin 0.3 % ) Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "208821",
+      "display": "Tobradex (tobramycin 0.3 % / dexamethasone 0.1 % ) Ophthalmic Ointment"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2108020",
+      "display": "Dextenza 0.4 MG Ophthalmic Insert"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2286261",
+      "display": "Hemady 20 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "343040",
+      "display": "Decadron 0.75 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "404630",
+      "display": "Ciprodex (ciprofloxacin 0.3 % / dexamethasone 0.1 % ) Otic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "755976",
+      "display": "Decadron 0.1 MG/ML Oral Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "854181",
+      "display": "Ozurdex 0.7 MG Intravitreal Drug Implant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009390",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML [Tresaderm]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1011079",
+      "display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML [Tobradex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1049384",
+      "display": "dexamethasone 2 MG/ML [Dexium]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1087756",
+      "display": "dexamethasone 2 MG/ML [Dexasone]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1087918",
+      "display": "dexamethasone 3 MG/ML [Dexium]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2045406",
+      "display": "dexamethasone 103.4 MG/ML [Dexycu]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2108017",
+      "display": "dexamethasone 0.4 MG [Dextenza]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2286257",
+      "display": "dexamethasone 20 MG [Hemady]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "545158",
+      "display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML [Ciprodex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "564044",
+      "display": "dexamethasone 0.5 MG [Decadron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "566561",
+      "display": "dexamethasone 1 MG/ML [Maxidex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "566581",
+      "display": "dexamethasone 0.1 MG/ML [Decadron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "566603",
+      "display": "dexamethasone 4 MG [Decadron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "566608",
+      "display": "dexamethasone 6 MG [Decadron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "569262",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Maxitrol]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "569264",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Poly-Dex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "569272",
+      "display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Maxitrol]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "569273",
+      "display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Poly-Dex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "569462",
+      "display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML [Tobradex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "569470",
+      "display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG [Tobradex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "575233",
+      "display": "dexamethasone 0.75 MG [Decadron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "854179",
+      "display": "dexamethasone 0.7 MG [Ozurdex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009391",
+      "display": "dexamethasone / neomycin / thiabendazole Topical Solution [Tresaderm]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1049385",
+      "display": "dexamethasone Injectable Solution [Dexium]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2045407",
+      "display": "dexamethasone Injection [Dexycu]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2108018",
+      "display": "dexamethasone Drug Implant [Dextenza]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2286258",
+      "display": "dexamethasone Oral Tablet [Hemady]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "363482",
+      "display": "dexamethasone Injectable Solution [Dexasone]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "365818",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Poly-Dex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "365842",
+      "display": "dexamethasone Ophthalmic Suspension [Maxidex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "367266",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Poly-Dex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "369461",
+      "display": "dexamethasone Oral Tablet [Decadron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "405941",
+      "display": "ciprofloxacin / dexamethasone Otic Suspension [Ciprodex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "757087",
+      "display": "dexamethasone Oral Solution [Decadron]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "854180",
+      "display": "dexamethasone Drug Implant [Ozurdex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "93249",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Maxitrol]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "93250",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Maxitrol]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "94334",
+      "display": "dexamethasone / tobramycin Ophthalmic Suspension [Tobradex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "94335",
+      "display": "dexamethasone / tobramycin Ophthalmic Ointment [Tobradex]"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1170296",
+      "display": "Decadron Oral Liquid Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1170297",
+      "display": "Decadron Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1170298",
+      "display": "Decadron Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1170903",
+      "display": "Ciprodex Otic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1175250",
+      "display": "Dexasone Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1175843",
+      "display": "Dexium Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1177629",
+      "display": "Ozurdex Drug Implant Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1179099",
+      "display": "Tobradex Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1179675",
+      "display": "Tresaderm Topical Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1181604",
+      "display": "Maxidex Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1182730",
+      "display": "Maxitrol Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1182982",
+      "display": "Poly-Dex Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2045408",
+      "display": "Dexycu Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2108019",
+      "display": "Dextenza Drug Implant Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2286259",
+      "display": "Hemady Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2286260",
+      "display": "Hemady Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009388",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML Topical Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1049400",
+      "display": "dexamethasone sodium phosphate 4 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1116927",
+      "display": "dexamethasone phosphate 4 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1249712",
+      "display": "dexamethasone sodium phosphate 0.4 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1374372",
+      "display": "dexamethasone acetate 8 MG/ML Injectable Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1812079",
+      "display": "1 ML dexamethasone phosphate 10 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1812095",
+      "display": "1 ML dexamethasone phosphate 4 MG/ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1812194",
+      "display": "1 ML dexamethasone phosphate 4 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197576",
+      "display": "dexamethasone 0.25 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197577",
+      "display": "dexamethasone 0.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197579",
+      "display": "dexamethasone 1 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197580",
+      "display": "dexamethasone 1.5 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197581",
+      "display": "dexamethasone 2 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197582",
+      "display": "dexamethasone 4 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "197583",
+      "display": "dexamethasone 6 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2045404",
+      "display": "0.005 ML dexamethasone 103.4 MG/ML Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2099700",
+      "display": "1 ML dexamethasone phosphate 10 MG/ML Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2108015",
+      "display": "dexamethasone 0.4 MG Drug Implant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2261802",
+      "display": "dexamethasone 20 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "226343",
+      "display": "dexamethasone phosphate 1 MG/ML Ophthalmic Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "227142",
+      "display": "dexamethasone 1 MG/ML / hypromellose 5 MG/ML Ophthalmic Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "248175",
+      "display": "dexamethasone 0.02 MG/ACTUAT / tramazoline 0.12 MG/ACTUAT Nasal Spray"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309679",
+      "display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG Ophthalmic Ointment"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309680",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309682",
+      "display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG Ophthalmic Ointment"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309683",
+      "display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309684",
+      "display": "dexamethasone 1 MG/ML Oral Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309686",
+      "display": "dexamethasone 0.1 MG/ML Oral Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309692",
+      "display": "dexamethasone 1 MG/ML Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "309696",
+      "display": "dexamethasone phosphate 10 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "343033",
+      "display": "dexamethasone 0.75 MG Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "388755",
+      "display": "dexamethasone 1 MG/ML Topical Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "403908",
+      "display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML Otic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "435681",
+      "display": "dexamethasone 2 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "849115",
+      "display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "854177",
+      "display": "dexamethasone 0.7 MG Drug Implant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "880649",
+      "display": "dexamethasone 3 MG/ML Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1049399",
+      "display": "dexamethasone sodium phosphate 4 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1116926",
+      "display": "dexamethasone phosphate 4 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1249711",
+      "display": "dexamethasone sodium phosphate 0.4 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1374371",
+      "display": "dexamethasone acetate 8 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1812078",
+      "display": "dexamethasone phosphate 10 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2045403",
+      "display": "dexamethasone 103.4 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2261801",
+      "display": "dexamethasone 20 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "2265538",
+      "display": "dexamethasone phosphate 1 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "315773",
+      "display": "dexamethasone 0.1 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "315774",
+      "display": "dexamethasone 0.25 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "315775",
+      "display": "dexamethasone 0.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "315776",
+      "display": "dexamethasone 1 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "315777",
+      "display": "dexamethasone 1.5 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "315778",
+      "display": "dexamethasone 4 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "315779",
+      "display": "dexamethasone 6 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "317346",
+      "display": "dexamethasone 2 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "317629",
+      "display": "dexamethasone 1 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "332981",
+      "display": "dexamethasone 3 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "332984",
+      "display": "dexamethasone 0.4 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "335766",
+      "display": "dexamethasone 0.02 MG/ACTUAT"
+    },
+    {
+      "entryType": "Medication",
+      "code": "339981",
+      "display": "dexamethasone 0.001 MG/MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "345816",
+      "display": "dexamethasone 0.75 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "438889",
+      "display": "dexamethasone 0.5 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "451789",
+      "display": "dexamethasone 2 MG/ML"
+    },
+    {
+      "entryType": "Medication",
+      "code": "854175",
+      "display": "dexamethasone 0.7 MG"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1009386",
+      "display": "dexamethasone / neomycin / thiabendazole Topical Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1812073",
+      "display": "dexamethasone Injection"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1812094",
+      "display": "dexamethasone Prefilled Syringe"
+    },
+    {
+      "entryType": "Medication",
+      "code": "371721",
+      "display": "dexamethasone Injectable Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "371723",
+      "display": "dexamethasone Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "371725",
+      "display": "dexamethasone Injectable Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "371728",
+      "display": "dexamethasone Oral Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "371729",
+      "display": "dexamethasone Oral Tablet"
+    },
+    {
+      "entryType": "Medication",
+      "code": "374438",
+      "display": "dexamethasone / tobramycin Ophthalmic Ointment"
+    },
+    {
+      "entryType": "Medication",
+      "code": "374698",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "374699",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment"
+    },
+    {
+      "entryType": "Medication",
+      "code": "377418",
+      "display": "dexamethasone Ophthalmic Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "377456",
+      "display": "dexamethasone / hypromellose Ophthalmic Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "378984",
+      "display": "dexamethasone / tobramycin Ophthalmic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "393151",
+      "display": "dexamethasone Topical Solution"
+    },
+    {
+      "entryType": "Medication",
+      "code": "393542",
+      "display": "dexamethasone / tramazoline Nasal Spray"
+    },
+    {
+      "entryType": "Medication",
+      "code": "405942",
+      "display": "ciprofloxacin / dexamethasone Otic Suspension"
+    },
+    {
+      "entryType": "Medication",
+      "code": "854176",
+      "display": "dexamethasone Drug Implant"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1152113",
+      "display": "ciprofloxacin / dexamethasone Otic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154245",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154246",
+      "display": "dexamethasone / neomycin / thiabendazole Topical Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154247",
+      "display": "dexamethasone / neomycin Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154249",
+      "display": "dexamethasone / neomycin Topical Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154524",
+      "display": "dexamethasone / tobramycin Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154525",
+      "display": "dexamethasone / hypromellose Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154527",
+      "display": "dexamethasone / tramazoline Inhalant Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154528",
+      "display": "dexamethasone / tramazoline Nasal Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154529",
+      "display": "dexamethasone Drug Implant Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154531",
+      "display": "dexamethasone Injectable Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154532",
+      "display": "dexamethasone Nasal Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154533",
+      "display": "dexamethasone Ophthalmic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154534",
+      "display": "dexamethasone Oral Liquid Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154535",
+      "display": "dexamethasone Oral Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154536",
+      "display": "dexamethasone Otic Product"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154537",
+      "display": "dexamethasone Pill"
+    },
+    {
+      "entryType": "Medication",
+      "code": "1154539",
+      "display": "dexamethasone Topical Product"
+    }
+  ]
 }

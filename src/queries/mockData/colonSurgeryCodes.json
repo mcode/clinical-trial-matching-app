@@ -1,664 +1,664 @@
 {
-	"entry": [
-		{
-			"entryType": "Surgery",
-			"code": "10371000132109",
-			"display": "Colonoscopic snare polypectomy of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "858579005",
-			"display": "Panproctocolectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "787876003",
-			"display": "Laparoscopic total colectomy and ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "787875004",
-			"display": "Laparoscopic total colectomy and loop ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "787874000",
-			"display": "Laparoscopic total colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "787109009",
-			"display": "Excision of entire colon and entire rectum"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "787108001",
-			"display": "Laparoscopic restorative proctocolectomy with ileal pouch anal anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "773129000",
-			"display": "Combined endoscopic and laparoscopic excision of polyp of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "773128008",
-			"display": "Endoscopic snare resection of lesion of colon using full thickness resection device"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "771568007",
-			"display": "Fiberoptic endoscopic excision of lesion of colonic mucous membrane"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "738552004",
-			"display": "Partial resection of colon with stoma"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "738551006",
-			"display": "Right colectomy with stoma"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "713165008",
-			"display": "Laparoscopic total colectomy with ileo-rectal anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "450462007",
-			"display": "Subtotal excision of colon and rectum and creation of colonic pouch"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "450461000",
-			"display": "Subtotal excision of colon and creation of colonic pouch"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "448050005",
-			"display": "Colectomy and side to side anastomosis of ileum to colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "447946003",
-			"display": "Right hemicolectomy and ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "447166008",
-			"display": "Hand assisted laparoscopic extended right colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "446747005",
-			"display": "Sigmoidoscopy and excision of mucosa of sigmoid colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "446521004",
-			"display": "Colonoscopy and excision of mucosa of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "446472006",
-			"display": "Incision of colon and excision of polyp"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "446228006",
-			"display": "Hand assisted laparoscopic extended left colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "446223002",
-			"display": "Hand assisted laparoscopic right colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "446222007",
-			"display": "Hand assisted laparoscopic left colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "445884009",
-			"display": "Wedge resection of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "444165004",
-			"display": "Excision of part of colon and excision of terminal ileum with ileocolic anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "443909001",
-			"display": "Excision of part of colon with mobilisation of splenic flexure"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "443480008",
-			"display": "Laparoscopic excision of part of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "440033009",
-			"display": "Laparoscopic fixation of prolapse of rectum with resection of sigmoid"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "427997001",
-			"display": "Subtotal excision of colon and rectum and creation of colonic pouch and anastomosis of colon to anus"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "426699005",
-			"display": "Endoscopic submucosal resection of lesion of sigmoid colon using rigid sigmoidoscope"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "425851003",
-			"display": "Fibreoptic endoscopic submucosal resection of lesion of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "386197003",
-			"display": "Excision of diverticula of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "359571009",
-			"display": "Right colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "315327002",
-			"display": "Sigmoid colectomy with stoma"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "315326006",
-			"display": "Sigmoid colectomy with anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "315325005",
-			"display": "Left hemicolectomy with stoma"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "315324009",
-			"display": "Left hemicolectomy with anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "315322008",
-			"display": "Transverse colectomy with anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "315321001",
-			"display": "Right hemicolectomy and anastomosis of ileum to colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "311774002",
-			"display": "Colonoscopic polypectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307669001",
-			"display": "Total colectomy, ileostomy and closure of rectal stump"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307667004",
-			"display": "Total colectomy, ileostomy and rectal mucous fistula"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307666008",
-			"display": "Total colectomy and ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307662005",
-			"display": "Excision of colocutaneous fistula"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307659007",
-			"display": "Subtotal colectomy with ileorectal anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307658004",
-			"display": "Sigmoid colectomy and colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307657009",
-			"display": "Left hemicolectomy and colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307656000",
-			"display": "Subtotal colectomy with ileosigmoid anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307654002",
-			"display": "Subtotal colectomy with caecorectal anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307648003",
-			"display": "Sigmoid colectomy and ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307645000",
-			"display": "Transverse colectomy and colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307644001",
-			"display": "Transverse colectomy and ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307586000",
-			"display": "Laparoscopic transverse colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307507006",
-			"display": "Excision jejunocolic fistula"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "304587000",
-			"display": "Excision of colonic pouch"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "304583001",
-			"display": "Extended right hemicolectomy and ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "301699000",
-			"display": "Snare resection of lesion of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "287815004",
-			"display": "Excision of excess colostomy mucosa"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "276190007",
-			"display": "Ileocolic resection"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "275017002",
-			"display": "Duhamel removal of colorectal septum"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "274025005",
-			"display": "Colonic polypectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "265412004",
-			"display": "Rectosigmoidectomy and rectopexy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "265411006",
-			"display": "Partial excision of rectum and sigmoid colon for prolapse"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "235325001",
-			"display": "Extended left hemicolectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174207007",
-			"display": "Endoscopic snare resection of lesion of sigmoid colon using rigid sigmoidoscope"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174171002",
-			"display": "Fiberoptic endoscopic snare resection of lesion of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174101001",
-			"display": "Sigmoid colectomy and anastomosis of colon to rectum"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174100000",
-			"display": "Sigmoid colectomy and end-to-end anastomosis of ileum to rectum"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174094003",
-			"display": "Left hemicolectomy and end-to-end anastomosis of colon to colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174093009",
-			"display": "Left hemicolectomy and end to end anastomosis of colon to rectum"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174087001",
-			"display": "Transverse colectomy and anastomosis of ileum to colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174086005",
-			"display": "Transverse colectomy and end-to-end anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174081000",
-			"display": "Right hemicolectomy and side-to-side anastomosis of ileum to transverse colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174080004",
-			"display": "Right hemicolectomy and end to end anastomosis of ileum to colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174073001",
-			"display": "Extended right hemicolectomy and anastomosis of ileum to colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174072006",
-			"display": "Extended right hemicolectomy and end-to-end anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174071004",
-			"display": "Extended right hemicolectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "174059005",
-			"display": "Excision of colon and rectum"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "89339008",
-			"display": "Partial colectomy with coloproctostomy and colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "87602008",
-			"display": "Closure of enterostomy of large intestine with resection and anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "87279008",
-			"display": "Excision of lesion of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "84952009",
-			"display": "Resection of colon for interposition"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "84604002",
-			"display": "Sigmoid colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "82900007",
-			"display": "Partial colectomy with coloproctostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "82619000",
-			"display": "Left colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "81092009",
-			"display": "Transsacral rectosigmoidectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "80294005",
-			"display": "Total abdominal colectomy with rectal mucosectomy and ileoanal anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "75404005",
-			"display": "Epiploectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "75312003",
-			"display": "Partial colectomy with ileostomy and creation of mucofistula"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "73996007",
-			"display": "Proctopexy combined with sigmoid resection by abdominal approach"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "73509004",
-			"display": "Partial colectomy with skin level colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "54164009",
-			"display": "Rectosigmoidectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "53003006",
-			"display": "Resection of splenic flexure of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "50774009",
-			"display": "Laparoscopic-assisted right colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "44751009",
-			"display": "Total abdominal colectomy with proctectomy and continent ileostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "44642007",
-			"display": "Partial colectomy with colostomy and creation of mucofistula"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "44378008",
-			"display": "Partial colectomy with anastomosis"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "43075005",
-			"display": "Partial resection of colon"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "41330009",
-			"display": "Laparoscopic-assisted left colectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "1186912002",
-			"display": "Laparoscopic low anterior resection of rectum with construction of colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "448653006",
-			"display": "Anterior resection of rectum and total mesorectal excision with colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "447982008",
-			"display": "Low anterior resection of rectum with colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "398740003",
-			"display": "Colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "387607004",
-			"display": "Construction of diverting colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "387606008",
-			"display": "Construction of end colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "386829005",
-			"display": "Temporary colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "386828002",
-			"display": "Creation of defunctioning colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "386651004",
-			"display": "Cystocolostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307657009",
-			"display": "Left hemicolectomy and colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "307645000",
-			"display": "Transverse colectomy and colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "299682000",
-			"display": "Construction of sigmoid loop colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "299681007",
-			"display": "Construction of transverse loop colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "261766001",
-			"display": "Construction of divided colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "89642006",
-			"display": "Anterior resection of rectum with colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "89339008",
-			"display": "Partial colectomy with coloproctostomy and colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "73509004",
-			"display": "Partial colectomy with skin level colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "62069000",
-			"display": "Delayed opening colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "54629001",
-			"display": "Permanent magnetic colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "51977003",
-			"display": "Repair of rectourethral fistula with colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "49924002",
-			"display": "Perineal colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "46295004",
-			"display": "Proctectomy by abdominoperineal resection with colostomy, one stage"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "44642007",
-			"display": "Partial colectomy with colostomy and creation of mucofistula"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "37828009",
-			"display": "Suture of small intestine with colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "35535008",
-			"display": "Transverse colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "25196007",
-			"display": "Proctectomy by abdominoperineal resection with colostomy, two stages"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "24221008",
-			"display": "Repair of rectovesical fistula with colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "17671008",
-			"display": "Laparoscopic-assisted anterior resection of rectum with colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "16564004",
-			"display": "Hartmann operation, rectal resection"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "11626008",
-			"display": "Miles operation, complete proctectomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "9905009",
-			"display": "Loop colostomy"
-		},
-		{
-			"entryType": "Surgery",
-			"code": "4044002",
-			"display": "Permanent colostomy"
-		}
-	]
+  "entry": [
+    {
+      "entryType": "Surgery",
+      "code": "10371000132109",
+      "display": "Colonoscopic snare polypectomy of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "858579005",
+      "display": "Panproctocolectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "787876003",
+      "display": "Laparoscopic total colectomy and ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "787875004",
+      "display": "Laparoscopic total colectomy and loop ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "787874000",
+      "display": "Laparoscopic total colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "787109009",
+      "display": "Excision of entire colon and entire rectum"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "787108001",
+      "display": "Laparoscopic restorative proctocolectomy with ileal pouch anal anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "773129000",
+      "display": "Combined endoscopic and laparoscopic excision of polyp of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "773128008",
+      "display": "Endoscopic snare resection of lesion of colon using full thickness resection device"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "771568007",
+      "display": "Fiberoptic endoscopic excision of lesion of colonic mucous membrane"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "738552004",
+      "display": "Partial resection of colon with stoma"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "738551006",
+      "display": "Right colectomy with stoma"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "713165008",
+      "display": "Laparoscopic total colectomy with ileo-rectal anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "450462007",
+      "display": "Subtotal excision of colon and rectum and creation of colonic pouch"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "450461000",
+      "display": "Subtotal excision of colon and creation of colonic pouch"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "448050005",
+      "display": "Colectomy and side to side anastomosis of ileum to colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "447946003",
+      "display": "Right hemicolectomy and ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "447166008",
+      "display": "Hand assisted laparoscopic extended right colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "446747005",
+      "display": "Sigmoidoscopy and excision of mucosa of sigmoid colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "446521004",
+      "display": "Colonoscopy and excision of mucosa of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "446472006",
+      "display": "Incision of colon and excision of polyp"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "446228006",
+      "display": "Hand assisted laparoscopic extended left colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "446223002",
+      "display": "Hand assisted laparoscopic right colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "446222007",
+      "display": "Hand assisted laparoscopic left colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "445884009",
+      "display": "Wedge resection of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "444165004",
+      "display": "Excision of part of colon and excision of terminal ileum with ileocolic anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "443909001",
+      "display": "Excision of part of colon with mobilisation of splenic flexure"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "443480008",
+      "display": "Laparoscopic excision of part of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "440033009",
+      "display": "Laparoscopic fixation of prolapse of rectum with resection of sigmoid"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "427997001",
+      "display": "Subtotal excision of colon and rectum and creation of colonic pouch and anastomosis of colon to anus"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "426699005",
+      "display": "Endoscopic submucosal resection of lesion of sigmoid colon using rigid sigmoidoscope"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "425851003",
+      "display": "Fibreoptic endoscopic submucosal resection of lesion of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "386197003",
+      "display": "Excision of diverticula of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "359571009",
+      "display": "Right colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "315327002",
+      "display": "Sigmoid colectomy with stoma"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "315326006",
+      "display": "Sigmoid colectomy with anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "315325005",
+      "display": "Left hemicolectomy with stoma"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "315324009",
+      "display": "Left hemicolectomy with anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "315322008",
+      "display": "Transverse colectomy with anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "315321001",
+      "display": "Right hemicolectomy and anastomosis of ileum to colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "311774002",
+      "display": "Colonoscopic polypectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307669001",
+      "display": "Total colectomy, ileostomy and closure of rectal stump"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307667004",
+      "display": "Total colectomy, ileostomy and rectal mucous fistula"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307666008",
+      "display": "Total colectomy and ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307662005",
+      "display": "Excision of colocutaneous fistula"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307659007",
+      "display": "Subtotal colectomy with ileorectal anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307658004",
+      "display": "Sigmoid colectomy and colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307657009",
+      "display": "Left hemicolectomy and colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307656000",
+      "display": "Subtotal colectomy with ileosigmoid anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307654002",
+      "display": "Subtotal colectomy with caecorectal anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307648003",
+      "display": "Sigmoid colectomy and ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307645000",
+      "display": "Transverse colectomy and colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307644001",
+      "display": "Transverse colectomy and ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307586000",
+      "display": "Laparoscopic transverse colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307507006",
+      "display": "Excision jejunocolic fistula"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "304587000",
+      "display": "Excision of colonic pouch"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "304583001",
+      "display": "Extended right hemicolectomy and ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "301699000",
+      "display": "Snare resection of lesion of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "287815004",
+      "display": "Excision of excess colostomy mucosa"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "276190007",
+      "display": "Ileocolic resection"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "275017002",
+      "display": "Duhamel removal of colorectal septum"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "274025005",
+      "display": "Colonic polypectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "265412004",
+      "display": "Rectosigmoidectomy and rectopexy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "265411006",
+      "display": "Partial excision of rectum and sigmoid colon for prolapse"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "235325001",
+      "display": "Extended left hemicolectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174207007",
+      "display": "Endoscopic snare resection of lesion of sigmoid colon using rigid sigmoidoscope"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174171002",
+      "display": "Fiberoptic endoscopic snare resection of lesion of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174101001",
+      "display": "Sigmoid colectomy and anastomosis of colon to rectum"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174100000",
+      "display": "Sigmoid colectomy and end-to-end anastomosis of ileum to rectum"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174094003",
+      "display": "Left hemicolectomy and end-to-end anastomosis of colon to colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174093009",
+      "display": "Left hemicolectomy and end to end anastomosis of colon to rectum"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174087001",
+      "display": "Transverse colectomy and anastomosis of ileum to colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174086005",
+      "display": "Transverse colectomy and end-to-end anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174081000",
+      "display": "Right hemicolectomy and side-to-side anastomosis of ileum to transverse colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174080004",
+      "display": "Right hemicolectomy and end to end anastomosis of ileum to colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174073001",
+      "display": "Extended right hemicolectomy and anastomosis of ileum to colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174072006",
+      "display": "Extended right hemicolectomy and end-to-end anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174071004",
+      "display": "Extended right hemicolectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "174059005",
+      "display": "Excision of colon and rectum"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "89339008",
+      "display": "Partial colectomy with coloproctostomy and colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "87602008",
+      "display": "Closure of enterostomy of large intestine with resection and anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "87279008",
+      "display": "Excision of lesion of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "84952009",
+      "display": "Resection of colon for interposition"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "84604002",
+      "display": "Sigmoid colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "82900007",
+      "display": "Partial colectomy with coloproctostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "82619000",
+      "display": "Left colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "81092009",
+      "display": "Transsacral rectosigmoidectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "80294005",
+      "display": "Total abdominal colectomy with rectal mucosectomy and ileoanal anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "75404005",
+      "display": "Epiploectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "75312003",
+      "display": "Partial colectomy with ileostomy and creation of mucofistula"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "73996007",
+      "display": "Proctopexy combined with sigmoid resection by abdominal approach"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "73509004",
+      "display": "Partial colectomy with skin level colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "54164009",
+      "display": "Rectosigmoidectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "53003006",
+      "display": "Resection of splenic flexure of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "50774009",
+      "display": "Laparoscopic-assisted right colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "44751009",
+      "display": "Total abdominal colectomy with proctectomy and continent ileostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "44642007",
+      "display": "Partial colectomy with colostomy and creation of mucofistula"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "44378008",
+      "display": "Partial colectomy with anastomosis"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "43075005",
+      "display": "Partial resection of colon"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "41330009",
+      "display": "Laparoscopic-assisted left colectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "1186912002",
+      "display": "Laparoscopic low anterior resection of rectum with construction of colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "448653006",
+      "display": "Anterior resection of rectum and total mesorectal excision with colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "447982008",
+      "display": "Low anterior resection of rectum with colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "398740003",
+      "display": "Colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "387607004",
+      "display": "Construction of diverting colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "387606008",
+      "display": "Construction of end colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "386829005",
+      "display": "Temporary colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "386828002",
+      "display": "Creation of defunctioning colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "386651004",
+      "display": "Cystocolostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307657009",
+      "display": "Left hemicolectomy and colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "307645000",
+      "display": "Transverse colectomy and colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "299682000",
+      "display": "Construction of sigmoid loop colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "299681007",
+      "display": "Construction of transverse loop colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "261766001",
+      "display": "Construction of divided colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "89642006",
+      "display": "Anterior resection of rectum with colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "89339008",
+      "display": "Partial colectomy with coloproctostomy and colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "73509004",
+      "display": "Partial colectomy with skin level colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "62069000",
+      "display": "Delayed opening colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "54629001",
+      "display": "Permanent magnetic colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "51977003",
+      "display": "Repair of rectourethral fistula with colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "49924002",
+      "display": "Perineal colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "46295004",
+      "display": "Proctectomy by abdominoperineal resection with colostomy, one stage"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "44642007",
+      "display": "Partial colectomy with colostomy and creation of mucofistula"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "37828009",
+      "display": "Suture of small intestine with colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "35535008",
+      "display": "Transverse colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "25196007",
+      "display": "Proctectomy by abdominoperineal resection with colostomy, two stages"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "24221008",
+      "display": "Repair of rectovesical fistula with colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "17671008",
+      "display": "Laparoscopic-assisted anterior resection of rectum with colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "16564004",
+      "display": "Hartmann operation, rectal resection"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "11626008",
+      "display": "Miles operation, complete proctectomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "9905009",
+      "display": "Loop colostomy"
+    },
+    {
+      "entryType": "Surgery",
+      "code": "4044002",
+      "display": "Permanent colostomy"
+    }
+  ]
 }

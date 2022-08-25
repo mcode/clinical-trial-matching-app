@@ -1,554 +1,554 @@
 {
-	"entry": [
-		{
-			"entryType": "Biomarker",
-			"code": "p53",
-			"display": "Same as breast"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "pik3ca",
-			"display": "Same as breast"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "pten",
-			"display": "Same as breast"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "ntrk_fusion",
-			"display": "Same as breast"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "55770-2",
-			"display": "EGFR gene exon 20 insertion [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "55768-6",
-			"display": "EGFR gene c.2303G>T [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85383-8",
-			"display": "EGFR gene c.2369C>T actual/normal in Plasma cell-free DNA by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "55766-0",
-			"display": "EGFR gene c.2573T>G [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "55767-8",
-			"display": "EGFR gene c.2582T>A [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "55769-4",
-			"display": "EGFR gene c.2369C>T [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "55764-5",
-			"display": "EGFR gene exon 19 deletion [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "55765-2",
-			"display": "EGFR gene c.2156G>C+2155G>A+2155G>T [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21665-5",
-			"display": "EGFR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21666-3",
-			"display": "EGFR gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "42782-3",
-			"display": "Epidermal growth factor receptor.phosphorylated Ag [Presence] in Tissue by Immune stain"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "13659-8",
-			"display": "Epidermal growth factor receptor [Mass/mass] in Tissue"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "14050-9",
-			"display": "Epidermal growth factor receptor [Moles/mass] in Tissue"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "45066-8",
-			"display": "Creatinine and Glomerular filtration rate.predicted panel - Serum, Plasma or Blood LHC-Forms"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "39004-7",
-			"display": "Epidermal growth factor receptor Ag [Presence] in Tissue"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "32581-1",
-			"display": "Epidermal growth factor receptor Ag [Presence] in Tissue by Immune stain"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:3236",
-			"display": "EGFR"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "96893-3",
-			"display": "ERBB2 gene duplication in Tumor by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "74885-5",
-			"display": "ERBB2 gene (HER2) duplication associated observations panel - Tissue by FISH LHC-Forms"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "31150-6",
-			"display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "74860-8",
-			"display": "ERBB2 gene copy number/nucleus in Tissue by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85318-4",
-			"display": "ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "49683-6",
-			"display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "42783-1",
-			"display": "ERBB2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:3430",
-			"display": "ERBB2"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81420-2",
-			"display": "KRAS and NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "83059-6",
-			"display": "KRAS gene [VCF] in Cancer specimen by Sequencing"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21703-4",
-			"display": "KRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "75974-6",
-			"display": "KRAS gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21702-6",
-			"display": "KRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "53620-1",
-			"display": "KRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85509-8",
-			"display": "KRAS gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "82535-6",
-			"display": "KRAS gene full mutation analysis in Blood or Tissue by Sequencing"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "#10828004",
-			"display": "CancerGeneticVariant valueCodeableConcept "
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:6407",
-			"display": "KRAS"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "83060-4",
-			"display": "NRAS gene [VCF] in Cancer specimen by Sequencing"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85510-6",
-			"display": "NRAS gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81420-2",
-			"display": "KRAS and NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21720-8",
-			"display": "NRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21719-0",
-			"display": "NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "53621-9",
-			"display": "NRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:7989",
-			"display": "NRAS"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "93690-6",
-			"display": "BRAF gene V600 mutations [Identifier] in Plasma cell-free DNA by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "97025-1",
-			"display": "BRAF gene V600 mutations [Identifier] in Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "58415-1",
-			"display": "BRAF gene p.Val600Glu [Presence] in Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85101-4",
-			"display": "BRAF gene p.Val600Glu [Presence] in Bone marrow by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "89861-9",
-			"display": "BRAF gene p.Val600Lys [Presence] in Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85299-6",
-			"display": "BRAF V600E mutant protein [Presence] in Cancer specimen by Immune stain"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "83061-2",
-			"display": "BRAF gene [VCF] in Cancer specimen by Sequencing"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "53844-7",
-			"display": "BRAF gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "58483-9",
-			"display": "BRAF gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85511-4",
-			"display": "BRAF gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81705-6",
-			"display": "BRAF protein [Presence] in Cancer specimen by Immune stain"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:1097",
-			"display": "BRAF"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "83062-0",
-			"display": "PIK3CA gene [VCF] in Cancer specimen by Sequencing"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "60034-6",
-			"display": "PIK3CA gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "85507-2",
-			"display": "PIK3CA gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "63419-6",
-			"display": "PIK3CA gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "60033-8",
-			"display": "PIK3CA gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:8975",
-			"display": "PIK3CA"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:8979",
-			"display": "PIK3R1"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC#12774",
-			"display": "WNT1"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "42786-4",
-			"display": "HER3 Ag [Presence] in Tissue by Immune stain"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:3431",
-			"display": "ERBB3"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81708-0",
-			"display": "Microsatellite markers exhibiting instability/Microsatellite instability markers assessed in Cancer specimen"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81711-4",
-			"display": "Microsatellite instability marker panel - Cancer specimen LHC-Forms"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81696-7",
-			"display": "Microsatellite instability markers assessed [#] in Cancer specimen"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81697-5",
-			"display": "Microsatellite instability marker BAT25 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81698-3",
-			"display": "Microsatellite instability marker BAT26 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81704-9",
-			"display": "Microsatellite instability marker D17S250 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81702-3",
-			"display": "Microsatellite instability marker D2S123 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81703-1",
-			"display": "Microsatellite instability marker D5S346 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81701-5",
-			"display": "Microsatellite instability marker MONO27 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81699-1",
-			"display": "Microsatellite instability marker NR21 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81700-7",
-			"display": "Microsatellite instability marker NR24 in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81709-8",
-			"display": "Microsatellite markers exhibiting instability [#] in Cancer specimen"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "43368-0",
-			"display": "Microsatellite instability [Identifier] in Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "81695-9",
-			"display": "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "62862-8",
-			"display": "Microsatellite instability [Presence] in Tissue by Immune stain"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "dmmr",
-			"display": "Can't find a good mapping"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "90927-5",
-			"display": "RET gene rearrangements in Blood or Tissue by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21734-9",
-			"display": "RET gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "40693-4",
-			"display": "RET gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21733-1",
-			"display": "RET gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "94224-3",
-			"display": "RET gene full mutation analysis in Blood or Tissue by Sequencing"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:9967",
-			"display": "RET"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "78916-4",
-			"display": "FGFR1 gene rearrangements [Interpretation] in Blood or Tissue by FISH Narrative"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "78915-6",
-			"display": "FGFR1 gene rearrangements [Presence] in Blood or Tissue by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "42785-6",
-			"display": "FGFR1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "78917-2",
-			"display": "Cells.FGFR1 gene rearrangements/Cells counted in Blood or Tissue by FISH"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:3688",
-			"display": "FGFR1"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "38412-3",
-			"display": "FGFR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21674-7",
-			"display": "FGFR2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21675-4",
-			"display": "FGFR2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "48972-4",
-			"display": "FGFR2 gene+FGFR3 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:3689",
-			"display": "FGFR2"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21678-8",
-			"display": "FGFR3 gene p.Gly380Arg [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21679-6",
-			"display": "FGFR3 gene p.Lys650Glu [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "82137-1",
-			"display": "FGFR3 gene p.Gly380Arg targeted mutation analysis in Amniotic fluid or Chorionic villus sample by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21677-0",
-			"display": "FGFR3 gene p.Gly375Cys [Presence] in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "22074-9",
-			"display": "FGFR3 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "38413-1",
-			"display": "FGFR3 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "21676-2",
-			"display": "FGFR3 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "75391-3",
-			"display": "FGFR3 gene targeted mutation analysis in Amniotic fluid or Chorionic villus sample by Molecular genetics method"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:3690",
-			"display": "FGFR3"
-		},
-		{
-			"entryType": "Biomarker",
-			"code": "HGNC:7997",
-			"display": "NRG1"
-		}
-	]
+  "entry": [
+    {
+      "entryType": "Biomarker",
+      "code": "p53",
+      "display": "Same as breast"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "pik3ca",
+      "display": "Same as breast"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "pten",
+      "display": "Same as breast"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "ntrk_fusion",
+      "display": "Same as breast"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "55770-2",
+      "display": "EGFR gene exon 20 insertion [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "55768-6",
+      "display": "EGFR gene c.2303G>T [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85383-8",
+      "display": "EGFR gene c.2369C>T actual/normal in Plasma cell-free DNA by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "55766-0",
+      "display": "EGFR gene c.2573T>G [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "55767-8",
+      "display": "EGFR gene c.2582T>A [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "55769-4",
+      "display": "EGFR gene c.2369C>T [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "55764-5",
+      "display": "EGFR gene exon 19 deletion [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "55765-2",
+      "display": "EGFR gene c.2156G>C+2155G>A+2155G>T [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21665-5",
+      "display": "EGFR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21666-3",
+      "display": "EGFR gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "42782-3",
+      "display": "Epidermal growth factor receptor.phosphorylated Ag [Presence] in Tissue by Immune stain"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "13659-8",
+      "display": "Epidermal growth factor receptor [Mass/mass] in Tissue"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "14050-9",
+      "display": "Epidermal growth factor receptor [Moles/mass] in Tissue"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "45066-8",
+      "display": "Creatinine and Glomerular filtration rate.predicted panel - Serum, Plasma or Blood LHC-Forms"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "39004-7",
+      "display": "Epidermal growth factor receptor Ag [Presence] in Tissue"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "32581-1",
+      "display": "Epidermal growth factor receptor Ag [Presence] in Tissue by Immune stain"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:3236",
+      "display": "EGFR"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "96893-3",
+      "display": "ERBB2 gene duplication in Tumor by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "74885-5",
+      "display": "ERBB2 gene (HER2) duplication associated observations panel - Tissue by FISH LHC-Forms"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "31150-6",
+      "display": "ERBB2 gene duplication [Presence] in Tissue by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "74860-8",
+      "display": "ERBB2 gene copy number/nucleus in Tissue by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85318-4",
+      "display": "ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "49683-6",
+      "display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "42783-1",
+      "display": "ERBB2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:3430",
+      "display": "ERBB2"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81420-2",
+      "display": "KRAS and NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "83059-6",
+      "display": "KRAS gene [VCF] in Cancer specimen by Sequencing"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21703-4",
+      "display": "KRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "75974-6",
+      "display": "KRAS gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21702-6",
+      "display": "KRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "53620-1",
+      "display": "KRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85509-8",
+      "display": "KRAS gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "82535-6",
+      "display": "KRAS gene full mutation analysis in Blood or Tissue by Sequencing"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "#10828004",
+      "display": "CancerGeneticVariant valueCodeableConcept "
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:6407",
+      "display": "KRAS"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "83060-4",
+      "display": "NRAS gene [VCF] in Cancer specimen by Sequencing"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85510-6",
+      "display": "NRAS gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81420-2",
+      "display": "KRAS and NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21720-8",
+      "display": "NRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21719-0",
+      "display": "NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "53621-9",
+      "display": "NRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:7989",
+      "display": "NRAS"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "93690-6",
+      "display": "BRAF gene V600 mutations [Identifier] in Plasma cell-free DNA by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "97025-1",
+      "display": "BRAF gene V600 mutations [Identifier] in Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "58415-1",
+      "display": "BRAF gene p.Val600Glu [Presence] in Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85101-4",
+      "display": "BRAF gene p.Val600Glu [Presence] in Bone marrow by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "89861-9",
+      "display": "BRAF gene p.Val600Lys [Presence] in Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85299-6",
+      "display": "BRAF V600E mutant protein [Presence] in Cancer specimen by Immune stain"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "83061-2",
+      "display": "BRAF gene [VCF] in Cancer specimen by Sequencing"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "53844-7",
+      "display": "BRAF gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "58483-9",
+      "display": "BRAF gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85511-4",
+      "display": "BRAF gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81705-6",
+      "display": "BRAF protein [Presence] in Cancer specimen by Immune stain"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:1097",
+      "display": "BRAF"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "83062-0",
+      "display": "PIK3CA gene [VCF] in Cancer specimen by Sequencing"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "60034-6",
+      "display": "PIK3CA gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "85507-2",
+      "display": "PIK3CA gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "63419-6",
+      "display": "PIK3CA gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "60033-8",
+      "display": "PIK3CA gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:8975",
+      "display": "PIK3CA"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:8979",
+      "display": "PIK3R1"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC#12774",
+      "display": "WNT1"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "42786-4",
+      "display": "HER3 Ag [Presence] in Tissue by Immune stain"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:3431",
+      "display": "ERBB3"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81708-0",
+      "display": "Microsatellite markers exhibiting instability/Microsatellite instability markers assessed in Cancer specimen"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81711-4",
+      "display": "Microsatellite instability marker panel - Cancer specimen LHC-Forms"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81696-7",
+      "display": "Microsatellite instability markers assessed [#] in Cancer specimen"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81697-5",
+      "display": "Microsatellite instability marker BAT25 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81698-3",
+      "display": "Microsatellite instability marker BAT26 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81704-9",
+      "display": "Microsatellite instability marker D17S250 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81702-3",
+      "display": "Microsatellite instability marker D2S123 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81703-1",
+      "display": "Microsatellite instability marker D5S346 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81701-5",
+      "display": "Microsatellite instability marker MONO27 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81699-1",
+      "display": "Microsatellite instability marker NR21 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81700-7",
+      "display": "Microsatellite instability marker NR24 in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81709-8",
+      "display": "Microsatellite markers exhibiting instability [#] in Cancer specimen"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "43368-0",
+      "display": "Microsatellite instability [Identifier] in Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "81695-9",
+      "display": "Microsatellite instability [Interpretation] in Cancer specimen Qualitative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "62862-8",
+      "display": "Microsatellite instability [Presence] in Tissue by Immune stain"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "dmmr",
+      "display": "Can't find a good mapping"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "90927-5",
+      "display": "RET gene rearrangements in Blood or Tissue by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21734-9",
+      "display": "RET gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "40693-4",
+      "display": "RET gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21733-1",
+      "display": "RET gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "94224-3",
+      "display": "RET gene full mutation analysis in Blood or Tissue by Sequencing"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:9967",
+      "display": "RET"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "78916-4",
+      "display": "FGFR1 gene rearrangements [Interpretation] in Blood or Tissue by FISH Narrative"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "78915-6",
+      "display": "FGFR1 gene rearrangements [Presence] in Blood or Tissue by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "42785-6",
+      "display": "FGFR1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "78917-2",
+      "display": "Cells.FGFR1 gene rearrangements/Cells counted in Blood or Tissue by FISH"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:3688",
+      "display": "FGFR1"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "38412-3",
+      "display": "FGFR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21674-7",
+      "display": "FGFR2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21675-4",
+      "display": "FGFR2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "48972-4",
+      "display": "FGFR2 gene+FGFR3 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:3689",
+      "display": "FGFR2"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21678-8",
+      "display": "FGFR3 gene p.Gly380Arg [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21679-6",
+      "display": "FGFR3 gene p.Lys650Glu [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "82137-1",
+      "display": "FGFR3 gene p.Gly380Arg targeted mutation analysis in Amniotic fluid or Chorionic villus sample by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21677-0",
+      "display": "FGFR3 gene p.Gly375Cys [Presence] in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "22074-9",
+      "display": "FGFR3 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "38413-1",
+      "display": "FGFR3 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "21676-2",
+      "display": "FGFR3 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "75391-3",
+      "display": "FGFR3 gene targeted mutation analysis in Amniotic fluid or Chorionic villus sample by Molecular genetics method"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:3690",
+      "display": "FGFR3"
+    },
+    {
+      "entryType": "Biomarker",
+      "code": "HGNC:7997",
+      "display": "NRG1"
+    }
+  ]
 }

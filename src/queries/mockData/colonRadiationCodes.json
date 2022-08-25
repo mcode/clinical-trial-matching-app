@@ -1,14 +1,14 @@
 {
-	"entry": [
-		{
-			"entryType": "Radiation",
-			"code": "ablation",
-			"display": "Same as breast"
-		},
-		{
-			"entryType": "Radiation",
-			"code": "embolization",
-			"display": "Not surgery or radiation "
-		}
-	]
+  "entry": [
+    {
+      "entryType": "Radiation",
+      "code": "ablation",
+      "display": "Same as breast"
+    },
+    {
+      "entryType": "Radiation",
+      "code": "embolization",
+      "display": "Not surgery or radiation "
+    }
+  ]
 }
