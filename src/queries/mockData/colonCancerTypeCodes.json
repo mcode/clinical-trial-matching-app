@@ -137,18 +137,8 @@
     },
     {
       "entryType": "colon",
-      "code": "781382000",
-      "display": "Malignant neoplasm of colon and/or rectum (disorder)"
-    },
-    {
-      "entryType": "colon",
       "code": "766981007",
       "display": "Squamous cell carcinoma of colon (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "737058005",
-      "display": "Microsatellite instability-high colorectal cancer (disorder)"
     },
     {
       "entryType": "colon",
@@ -247,11 +237,6 @@
     },
     {
       "entryType": "colon",
-      "code": "184881000119106",
-      "display": "Primary adenocarcinoma of rectosigmoid junction (disorder)"
-    },
-    {
-      "entryType": "colon",
       "code": "1197355000",
       "display": "Primary malignant mesenchymal neoplasm of rectum (disorder)"
     },
@@ -284,16 +269,6 @@
       "entryType": "colon",
       "code": "721700001",
       "display": "Primary malignant neuroendocrine neoplasm of rectum (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "96281000119107",
-      "display": "Overlapping malignant neoplasm of colon and rectum (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "425178004",
-      "display": "Adenocarcinoma of rectosigmoid junction (disorder)"
     },
     {
       "entryType": "colon",
@@ -364,16 +339,6 @@
       "entryType": "colon",
       "code": "369448007",
       "display": "Malignant tumor involving rectum by direct extension from endometrium (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "363414004",
-      "display": "Malignant tumor of rectosigmoid junction (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "363413005",
-      "display": "Malignant tumor of splenic flexure (disorder)"
     },
     {
       "entryType": "colon",
