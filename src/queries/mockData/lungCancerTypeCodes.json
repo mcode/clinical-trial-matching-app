@@ -322,11 +322,6 @@
     },
     {
       "entryType": "lung",
-      "code": "67841000119103",
-      "display": "Primary small cell malignant neoplasm of lung, TNM stage 4 (disorder)"
-    },
-    {
-      "entryType": "lung",
       "code": "1179762006",
       "display": "Malignant neoplasm of middle lobe of right lung (disorder)"
     },
@@ -769,11 +764,6 @@
       "entryType": "lung",
       "code": "SCT#1081921000119108",
       "display": "Primary small cell carcinoma of upper lobe of right lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "67841000119103",
-      "display": "Primary small cell malignant neoplasm of lung, TNM stage 4 (disorder)"
     },
     {
       "entryType": "lung",
