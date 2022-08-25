@@ -2,12 +2,7 @@ import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
 import { parseNamedSNOMEDCode } from '@/utils/fhirConversionUtils';
-import {
-  addCancerHistologyMorphology,
-  addCancerType,
-  convertStringtoResource,
-  convertNamedSNOMEDCodetoResource,
-} from '@/utils/fhirFilter';
+import { addCancerHistologyMorphology, addCancerType, convertNamedSNOMEDCodetoResource } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
@@ -135,7 +130,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
     const codingSystem = 'http://loinc.org';
     const codingSystemCode = '21914-7';
-
+    console.log('processing stage value=' + JSON.stringify(stageParm));
     convertNamedSNOMEDCodetoResource({
       bundle: patientBundle,
       codedValue: stageParm,
