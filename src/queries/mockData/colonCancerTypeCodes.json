@@ -42,11 +42,6 @@
     },
     {
       "entryType": "colon",
-      "code": "SCT#315058005",
-      "display": "Hereditary nonpolyposis colon cancer (disorder)"
-    },
-    {
-      "entryType": "colon",
       "code": "SCT#109838007",
       "display": "Overlapping malignant neoplasm of colon (disorder)"
     },
@@ -107,33 +102,28 @@
     },
     {
       "entryType": "colon",
-      "code": "6.81651E+14",
+      "code": "681651000119102",
       "display": "Primary adenocarcinoma of descending colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "6.81601E+14",
+      "code": "681601000119101",
       "display": "Primary adenocarcinoma of ascending colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "1.84881E+14",
+      "code": "184881000119106",
       "display": "Primary adenocarcinoma of rectosigmoid junction (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "9.6281E+13",
+      "code": "96281000119107",
       "display": "Overlapping malignant neoplasm of colon and rectum (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "1.701E+12",
+      "code": "1701000119104",
       "display": "Primary adenocarcinoma of colon (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "1197359006",
-      "display": "Familial colorectal cancer type X (disorder)"
     },
     {
       "entryType": "colon",
@@ -202,11 +192,6 @@
     },
     {
       "entryType": "colon",
-      "code": "312114001",
-      "display": "Carcinoma of hepatic flexure (disorder)"
-    },
-    {
-      "entryType": "colon",
       "code": "312113007",
       "display": "Carcinoma of descending colon (disorder)"
     },
@@ -237,11 +222,6 @@
     },
     {
       "entryType": "colon",
-      "code": "269544008",
-      "display": "Carcinoma of the rectosigmoid junction (disorder)"
-    },
-    {
-      "entryType": "colon",
       "code": "269533000",
       "display": "Carcinoma of colon (disorder)"
     },
@@ -259,11 +239,6 @@
       "entryType": "colon",
       "code": "SCT#737058005",
       "display": "Microsatellite instability-high colorectal cancer (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "SCT#1197359006",
-      "display": "Familial colorectal cancer type X (disorder)"
     },
     {
       "entryType": "colon",
@@ -402,11 +377,6 @@
     },
     {
       "entryType": "colon",
-      "code": "363407001",
-      "display": "Malignant tumor of hepatic flexure (disorder)"
-    },
-    {
-      "entryType": "colon",
       "code": "187760008",
       "display": "Malignant neoplasm of rectum, rectosigmoid junction and anus (disorder)"
     },
@@ -429,11 +399,6 @@
       "entryType": "colon",
       "code": "314966008",
       "display": "Local recurrence of malignant tumor of rectum (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "312115000",
-      "display": "Carcinoma of splenic flexure (disorder)"
     },
     {
       "entryType": "colon",
@@ -477,11 +442,6 @@
     },
     {
       "entryType": "colon",
-      "code": "SCT#315058005",
-      "display": "Hereditary nonpolyposis colon cancer (disorder)"
-    },
-    {
-      "entryType": "colon",
       "code": "SCT#715866009",
       "display": "Attenuated familial adenomatous polyposis (disorder)"
     },
@@ -489,11 +449,6 @@
       "entryType": "colon",
       "code": "SCT#716318002",
       "display": "Lynch syndrome (disorder)"
-    },
-    {
-      "entryType": "colon",
-      "code": "SCT#315058005",
-      "display": "Hereditary nonpolyposis colon cancer (disorder)"
     }
   ]
 }

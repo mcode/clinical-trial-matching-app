@@ -283,7 +283,7 @@
     {
       "entryType": "lung",
       "code": "1081921000119100",
-      "display": "Primary small cell carcinoma of upper lobe of right lung (disorder)"
+      "display": "Primary small cell carcinoma of upper lobe of right lung"
     },
     {
       "entryType": "lung",
@@ -324,21 +324,6 @@
       "entryType": "lung",
       "code": "67841000119103",
       "display": "Primary small cell malignant neoplasm of lung, TNM stage 4 (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "67831000119107",
-      "display": "Primary small cell malignant neoplasm of lung, TNM stage 3 (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "67821000119109",
-      "display": "Primary small cell malignant neoplasm of lung, TNM stage 2 (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "67811000119102",
-      "display": "Primary small cell malignant neoplasm of lung, TNM stage 1 (disorder)"
     },
     {
       "entryType": "lung",
@@ -637,11 +622,6 @@
     },
     {
       "entryType": "lung",
-      "code": "254632001",
-      "display": "Small cell carcinoma of lung (disorder)"
-    },
-    {
-      "entryType": "lung",
       "code": "254631008",
       "display": "Giant cell carcinoma of lung (disorder)"
     },
@@ -747,43 +727,18 @@
     },
     {
       "entryType": "lung",
-      "code": "SCT#254632001",
-      "display": " Small cell carcinoma of lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#15955941000119102",
-      "display": "Primary small cell carcinoma of left lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#15955901000119104",
-      "display": "Primary small cell carcinoma of right lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#1081861000119105",
-      "display": "Primary small cell carcinoma of upper lobe of left lung (disorder)"
-    },
-    {
-      "entryType": "lung",
       "code": "SCT#1081841000119106",
-      "display": "Primary small cell carcinoma of lower lobe of left lung (disorder)"
+      "display": "Primary small cell carcinoma of lower lobe of left lung"
     },
     {
       "entryType": "lung",
       "code": "SCT#1081891000119103",
-      "display": "Primary small cell carcinoma of lower lobe of right lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#1081921000119108",
-      "display": "Primary small cell carcinoma of upper lobe of right lung (disorder)"
+      "display": "Primary small cell carcinoma of lower lobe of right lung"
     },
     {
       "entryType": "lung",
       "code": "SCT#1081911000119101",
-      "display": "Primary small cell carcinoma of middle lobe of right lung (disorder)"
+      "display": "Primary small cell carcinoma of middle lobe of right lung"
     },
     {
       "entryType": "lung",
@@ -802,38 +757,13 @@
     },
     {
       "entryType": "lung",
-      "code": "254633006",
-      "display": "Oat cell carcinoma of lung (disorder)"
-    },
-    {
-      "entryType": "lung",
       "code": "SCT#254632001",
       "display": " Small cell carcinoma of lung (disorder)"
     },
     {
       "entryType": "lung",
-      "code": "SCT#15955941000119102",
-      "display": "Primary small cell carcinoma of left lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#15955901000119104",
-      "display": "Primary small cell carcinoma of right lung (disorder)"
-    },
-    {
-      "entryType": "lung",
       "code": "SCT#1081861000119105",
-      "display": "Primary small cell carcinoma of upper lobe of left lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#1081841000119106",
-      "display": "Primary small cell carcinoma of lower lobe of left lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#1081891000119103",
-      "display": "Primary small cell carcinoma of lower lobe of right lung (disorder)"
+      "display": "Primary small cell carcinoma of upper lobe of left lung"
     },
     {
       "entryType": "lung",
@@ -842,28 +772,8 @@
     },
     {
       "entryType": "lung",
-      "code": "SCT#1081911000119101",
-      "display": "Primary small cell carcinoma of middle lobe of right lung (disorder)"
-    },
-    {
-      "entryType": "lung",
       "code": "67841000119103",
       "display": "Primary small cell malignant neoplasm of lung, TNM stage 4 (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "254633006",
-      "display": "Oat cell carcinoma of lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "683991000119103",
-      "display": "Extensive stage primary small cell carcinoma of lung (disorder)"
-    },
-    {
-      "entryType": "lung",
-      "code": "SCT#683991000119103",
-      "display": "Extensive stage primary small cell carcinoma of lung (disorder)"
     },
     {
       "entryType": "lung",

@@ -27,16 +27,6 @@
     },
     {
       "entryType": "brain",
-      "code": "100731000119107",
-      "display": "Low grade astrocytoma of brain (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "100721000119109",
-      "display": "High grade astrocytoma of brain (disorder)"
-    },
-    {
-      "entryType": "brain",
       "code": "277461004",
       "display": "Anaplastic astrocytoma of brain (disorder)"
     },
@@ -177,16 +167,6 @@
     },
     {
       "entryType": "brain",
-      "code": "1156414004",
-      "display": "Giant cell glioblastoma of brain (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "684901000119107",
-      "display": "Primary glioblastoma multiforme of cerebrum (disorder)"
-    },
-    {
-      "entryType": "brain",
       "code": "16845341000119100",
       "display": "Primary glioblastoma multiforme of brainstem (disorder)"
     },
@@ -204,16 +184,6 @@
       "entryType": "brain",
       "code": "684931000119100",
       "display": "Primary glioblastoma multiforme of parietal lobe (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "684941000119109",
-      "display": "Primary glioblastoma multiforme of temporal lobe (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "684921000119103",
-      "display": "Primary glioblastoma multiforme of occipital lobe (disorder)"
     },
     {
       "entryType": "brain",
@@ -557,11 +527,6 @@
     },
     {
       "entryType": "brain",
-      "code": "276828006",
-      "display": "Glioblastoma multiforme of brain (disorder)"
-    },
-    {
-      "entryType": "brain",
       "code": "276826005",
       "display": "Malignant glioma of brain (disorder)"
     },
@@ -722,11 +687,6 @@
     },
     {
       "entryType": "brain",
-      "code": "SCT#276828006",
-      "display": "Glioblastoma multiforme of brain"
-    },
-    {
-      "entryType": "brain",
       "code": "1156414004",
       "display": "Giant cell glioblastoma of brain (disorder)"
     },
@@ -734,26 +694,6 @@
       "entryType": "brain",
       "code": "684901000119107",
       "display": "Primary glioblastoma multiforme of cerebrum (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "16845341000119100",
-      "display": "Primary glioblastoma multiforme of brainstem (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "16845301000119100",
-      "display": "Primary glioblastoma multiforme of cerebellum (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "684911000119105",
-      "display": "Primary glioblastoma multiforme of frontal lobe (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "684931000119100",
-      "display": "Primary glioblastoma multiforme of parietal lobe (disorder)"
     },
     {
       "entryType": "brain",
@@ -784,11 +724,6 @@
       "entryType": "brain",
       "code": "276829003",
       "display": "Glioblastoma multiforme of spinal cord (disorder)"
-    },
-    {
-      "entryType": "brain",
-      "code": "276828006",
-      "display": "Glioblastoma multiforme of brain (disorder)"
     },
     {
       "entryType": "brain",

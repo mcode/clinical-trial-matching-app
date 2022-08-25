@@ -52,11 +52,6 @@
     },
     {
       "entryType": "Surgery",
-      "code": "232647000",
-      "display": "Pneumonectomy with tracheobronchoplasty (procedure)"
-    },
-    {
-      "entryType": "Surgery",
       "code": "43232006",
       "display": "Extrapleural pneumonectomy with empyemectomy (procedure)"
     },
@@ -149,11 +144,6 @@
       "entryType": "Surgery",
       "code": "173172000",
       "display": "Excision of segment of lung (procedure)"
-    },
-    {
-      "entryType": "Surgery",
-      "code": "232647000",
-      "display": "Pneumonectomy with tracheobronchoplasty (procedure)"
     },
     {
       "entryType": "Surgery",

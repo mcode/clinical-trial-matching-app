@@ -32,11 +32,6 @@
     },
     {
       "entryType": "prostate",
-      "code": "823017009",
-      "display": "Infiltrating duct carcinoma of prostate (disorder)"
-    },
-    {
-      "entryType": "prostate",
       "code": "1098981000119100",
       "display": "Recurrent malignant neoplasm of prostate (disorder)"
     },
@@ -84,16 +79,6 @@
       "entryType": "prostate",
       "code": "278060005",
       "display": "Endometrioid carcinoma of prostate (disorder)"
-    },
-    {
-      "entryType": "prostate",
-      "code": "399490008",
-      "display": "Adenocarcinoma of prostate (disorder)"
-    },
-    {
-      "entryType": "prostate",
-      "code": "822970008",
-      "display": "Acinar cell cystadenocarcinoma of prostate (disorder)"
     },
     {
       "entryType": "prostate",
