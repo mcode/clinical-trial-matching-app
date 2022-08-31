@@ -1,10 +1,10 @@
 import SearchImage from '@/assets/images/search.png';
+import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import type { ReactElement } from 'react';
-import React, { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { cancerTypeDetails, cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
 import { SearchParameters } from 'types/search-types';
@@ -39,27 +39,22 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
 });
-
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control, watch } = useForm<SearchFormValuesType>({ defaultValues });
 
-  const onSubmit = (data: SearchFormValuesType) => {};
-
-  /*router.push({
-    pathname: '/results',
-
-    query: {
-      ...formDataToSearchQuery(data),
-      sortingOption: 'matchLikelihood',
-      page: DEFAULT_PAGE,
-      pageSize: DEFAULT_PAGE_SIZE,
-    },
-  });
-*/
-  //**** Russ */
+  const onSubmit = (data: SearchFormValuesType) =>
+    router.push({
+      pathname: '/results',
+      query: {
+        ...formDataToSearchQuery(data),
+        sortingOption: 'matchLikelihood',
+        page: DEFAULT_PAGE,
+        pageSize: DEFAULT_PAGE_SIZE,
+      },
+    });
 
   const cancerType = watch('cancerType');
 
@@ -89,7 +84,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
     setcancerCategory(cancerTypes['val'].entryType);
     switch (cancerCategory) {
       case '':
-        //setCancerTypes(breastCancer_cancerTypeOptions);
+        setCancerTypes([]);
         setCancerSubTypes([]);
         setBiomarkers([]);
         setStages([]);
@@ -98,11 +93,11 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         break;
       case 'breast':
         setCancerTypes(cancerTypeDetails.breast.cancerCodes);
-        setCancerSubTypes(cancerTypeDetails.brain.cancerSubtype);
-        //setBiomarkers(breastCancer_biomarkersOptions);
-        setStages(cancerTypeDetails.brain.stages);
-        //setMedications(breastCancer_medicationsOptions);
-        //setProcedures(breastCancer_proceduresOptions);
+        setCancerSubTypes(cancerTypeDetails.breast.cancerSubtype);
+        setBiomarkers(cancerTypeDetails.breast.biomarkers);
+        setStages(cancerTypeDetails.breast.stages);
+        setMedications(cancerTypeDetails.breast.medications);
+        setProcedures(cancerTypeDetails.breast.surgeryCodes);
         break;
       case 'lung':
         setCancerTypes(cancerTypeDetails.lung.cancerCodes);

@@ -2,102 +2,102 @@
   "entry": [
     {
       "entryType": "colon",
-      "code": "SCT#363406005",
+      "code": "363406005",
       "display": "Malignant neoplasm of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#363410008",
+      "code": "363410008",
       "display": "Malignant tumor of sigmoid colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#363412000",
+      "code": "363412000",
       "display": "Malignant tumor of ascending colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#363408006",
+      "code": "363408006",
       "display": "Malignant tumor of transverse colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#363409003",
+      "code": "363409003",
       "display": "Malignant tumor of descending colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#363414004",
+      "code": "363414004",
       "display": "Malignant tumor of rectosigmoid junction (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#363407001",
+      "code": "363407001",
       "display": "Malignant tumor of hepatic flexure (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#363413005",
+      "code": "363413005",
       "display": "Malignant tumor of splenic flexure (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#109838007",
+      "code": "109838007",
       "display": "Overlapping malignant neoplasm of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#93761005",
+      "code": "93761005",
       "display": "Primary malignant neoplasm of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#94006002",
+      "code": "94006002",
       "display": "Primary malignant neoplasm of sigmoid colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#93683002",
+      "code": "93683002",
       "display": "Primary malignant neoplasm of ascending colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#93771007",
+      "code": "93771007",
       "display": "Primary malignant neoplasm of descending colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#94105000",
+      "code": "94105000",
       "display": "Primary malignant neoplasm of transverse colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#1197354001",
+      "code": "1197354001",
       "display": "Primary malignant mesenchymal neoplasm of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#721698005",
+      "code": "721698005",
       "display": "Primary malignant neuroendocrine neoplasm of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#93826009",
+      "code": "93826009",
       "display": "Primary malignant neoplasm of hepatic flexure of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#94072004",
+      "code": "94072004",
       "display": "Primary malignant neoplasm of splenic flexure of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#1163568002",
+      "code": "1163568002",
       "display": "Primary malignant neoplasm of overlapping sites of colon (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#16636051000119105",
+      "code": "16636051000119105",
       "display": "Primary malignant gastrointestinal stromal neoplasm of colon (disorder)"
     },
     {
@@ -217,17 +217,17 @@
     },
     {
       "entryType": "colon",
-      "code": "SCT#363351006",
+      "code": "363351006",
       "display": "Malignant tumor of rectum (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#781382000",
+      "code": "781382000",
       "display": "Malignant neoplasm of colon and/or rectum (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#737058005",
+      "code": "737058005",
       "display": "Microsatellite instability-high colorectal cancer (disorder)"
     },
     {
@@ -397,22 +397,22 @@
     },
     {
       "entryType": "colon",
-      "code": "SCT#315058005",
+      "code": "315058005",
       "display": "Hereditary nonpolyposis colon cancer (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#1197359006",
+      "code": "1197359006",
       "display": "Familial colorectal cancer type X (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#715866009",
+      "code": "715866009",
       "display": "Attenuated familial adenomatous polyposis (disorder)"
     },
     {
       "entryType": "colon",
-      "code": "SCT#716318002",
+      "code": "716318002",
       "display": "Lynch syndrome (disorder)"
     }
   ]

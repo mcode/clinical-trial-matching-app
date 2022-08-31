@@ -11,7 +11,6 @@ const AutocompleteMulti = ({ field, label, options }): ReactElement => (
     freeSolo
     multiple
     onChange={(event, newValue) => {
-      console.log(newValue);
       field.onChange(newValue);
     }}
     getOptionLabel={option => option?.display}
@@ -185,6 +184,7 @@ export const MetastasisAutocomplete = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
 }): ReactElement => (
+  // eslint-disable-next-line prettier/prettier
   <AutocompleteMulti field={field} label="metastasis" options={['metastasis-1', 'metastasis-2', 'metastasis-3']} />
 );
 
@@ -193,8 +193,10 @@ export const BiomarkersAutocomplete = ({
   cancerBiomarkers,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'biomarkers'>;
-  cancerBiomarkers: any;
-}): ReactElement => <AutocompleteMulti field={field} label="biomarkers" options={cancerBiomarkers} />;
+  cancerBiomarkers;
+}): ReactElement => {
+  return <AutocompleteMulti field={field} label="biomarkers" options={cancerBiomarkers} />;
+};
 
 export const RadiationAutocomplete = ({
   field,

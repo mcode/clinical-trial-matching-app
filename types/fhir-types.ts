@@ -192,7 +192,10 @@ export interface Meta extends Element {
 export interface Condition extends Resource {
   resourceType: 'Condition';
 }
-
+export interface MedicationStatement extends Resource {
+  resourceType: 'MedicationStatement';
+  medicationCodeableConcept: Coding[];
+}
 export interface Observation extends Resource {
   resourceType: 'Observation';
 }
