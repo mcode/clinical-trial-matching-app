@@ -2,67 +2,67 @@
   "entry": [
     {
       "entryType": "CancerSubType",
-      "code": "SCT#254626006",
+      "code": "254626006",
       "display": "Adenocarcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#15956341000119105",
+      "code": "15956341000119105",
       "display": "Adenocarcinoma of left lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#15956381000119100",
+      "code": "15956381000119100",
       "display": "Adenocarcinoma of right lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#707451005",
+      "code": "707451005",
       "display": "Primary adenocarcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#707452003",
+      "code": "707452003",
       "display": "Primary mucinous adenocarcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#707411007",
+      "code": "707411007",
       "display": "Primary papillary adenocarcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#711414003",
+      "code": "711414003",
       "display": "Primary clear cell adenocarcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#789695003",
+      "code": "789695003",
       "display": "Non-mucinous adenocarcinoma in situ of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1078881000119102",
+      "code": "1078881000119102",
       "display": "Primary adenocarcinoma of lower lobe of left lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1078901000119100",
+      "code": "1078901000119100",
       "display": "Primary adenocarcinoma of upper lobe of left lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1078931000119107",
+      "code": "1078931000119107",
       "display": "Primary adenocarcinoma of lower lobe of right lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1078961000119104",
+      "code": "1078961000119104",
       "display": "Primary adenocarcinoma of upper lobe of right lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1078951000119101",
+      "code": "1078951000119101",
       "display": "Primary adenocarcinoma of middle lobe of right lung (disorder)"
     },
     {
@@ -127,82 +127,82 @@
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1187332001",
+      "code": "1187332001",
       "display": "Adenocarcinoma (morphologic abnormality)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#254634000",
+      "code": "254634000",
       "display": "Squamous cell carcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#12240951000119107",
+      "code": "12240951000119107",
       "display": "Squamous cell carcinoma of left lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#12240991000119102",
+      "code": "12240991000119102",
       "display": "Squamous cell carcinoma of right lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#707454002",
+      "code": "707454002",
       "display": "Primary basaloid squamous cell carcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#707455001",
+      "code": "707455001",
       "display": "Primary papillary squamous cell carcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#707453008",
+      "code": "707453008",
       "display": "Primary clear cell squamous cell carcinoma of lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#425376008",
+      "code": "425376008",
       "display": "Squamous cell carcinoma of lung, TNM stage 4 (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#425230006",
+      "code": "425230006",
       "display": "Squamous cell carcinoma of lung, TNM stage 3 (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#423295000",
+      "code": "423295000",
       "display": "Squamous cell carcinoma of lung, TNM stage 1 (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#423468007",
+      "code": "423468007",
       "display": "Squamous cell carcinoma of lung, TNM stage 2 (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1082141000119108",
+      "code": "1082141000119108",
       "display": "Primary squamous cell carcinoma of upper lobe of left lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1082111000119109",
+      "code": "1082111000119109",
       "display": "Primary squamous cell carcinoma of lower lobe of left lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1082231000119109",
+      "code": "1082231000119109",
       "display": "Primary squamous cell carcinoma of lower lobe of right lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1082271000119107",
+      "code": "1082271000119107",
       "display": "Primary squamous cell carcinoma of upper lobe of right lung (disorder)"
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#1082251000119103",
+      "code": "1082251000119103",
       "display": "Primary squamous cell carcinoma of middle lobe of right lung (disorder)"
     },
     {
@@ -242,7 +242,7 @@
     },
     {
       "entryType": "CancerSubType",
-      "code": "SCT#254629004",
+      "code": "254629004",
       "display": "Large cell carcinoma of lung (disorder)"
     },
     {

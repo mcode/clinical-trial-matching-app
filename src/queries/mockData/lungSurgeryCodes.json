@@ -2,17 +2,17 @@
   "entry": [
     {
       "entryType": "Surgery",
-      "code": "SCT#49795001",
+      "code": "49795001",
       "display": "Total pneumonectomy (procedure)"
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#232646009",
+      "code": "232646009",
       "display": "Completion pneumonectomy (procedure)"
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#232647000",
+      "code": "232647000",
       "display": "Pneumonectomy with tracheobronchoplasty (procedure)"
     },
     {
@@ -27,12 +27,12 @@
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#735015005",
+      "code": "735015005",
       "display": "Complete excision of left lung (procedure)"
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#735016006",
+      "code": "735016006",
       "display": "Complete excision of right lung (procedure)"
     },
     {
@@ -57,12 +57,12 @@
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#125571002",
+      "code": "125571002",
       "display": "Lobectomy (procedure)"
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#173171007",
+      "code": "173171007",
       "display": "Lobectomy of lung (procedure)"
     },
     {
@@ -132,12 +132,12 @@
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#20418004",
+      "code": "20418004",
       "display": "Wedge resection (procedure)"
     },
     {
       "entryType": "Surgery",
-      "code": "SCT#444188003",
+      "code": "444188003",
       "display": "Thoracoscopic wedge resection of lung (procedure)"
     },
     {

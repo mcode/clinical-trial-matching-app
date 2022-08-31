@@ -186,6 +186,7 @@ export const MetastasisAutocomplete = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
 }): ReactElement => (
+  // eslint-disable-next-line prettier/prettier
   <AutocompleteMulti field={field} label="metastasis" options={['metastasis-1', 'metastasis-2', 'metastasis-3']} />
 );
 

@@ -94,7 +94,7 @@ export const addCancerHistologyMorphology = (
   return condition;
 };
 
-export function convertStringtoResource({
+export function convertStringToResource({
   bundle,
   valueString,
   id,
