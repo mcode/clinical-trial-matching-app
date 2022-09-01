@@ -9,11 +9,11 @@ export type SearchFormValuesType = {
   cancerType: NamedSNOMEDCode | null;
   cancerSubtype: NamedSNOMEDCode | null;
   metastasis: string[];
-  stage: string;
+  stage: NamedSNOMEDCode;
   ecogScore: string;
   karnofskyScore: string;
-  biomarkers: string[];
-  radiation: string[];
-  surgery: string[];
-  medications: string[];
+  biomarkers: NamedSNOMEDCode[];
+  radiation: NamedSNOMEDCode[];
+  surgery: NamedSNOMEDCode[];
+  medications: NamedSNOMEDCode[];
 };

@@ -2,6 +2,11 @@ import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import brainBiomarkerCodes from 'src/queries/mockData/brainBiomarkerCodes.json';
 import brainCancerTypeCodes from 'src/queries/mockData/brainCancerTypeCodes.json';
 import brainMedicationCodes from 'src/queries/mockData/brainMedicationCodes.json';
+import breastCancerBiomarkers from 'src/queries/mockData/breastCancerBiomarkerCodes.json';
+import breastCancerMedications from 'src/queries/mockData/breastCancerMedicationCodes.json';
+import breastCancerStages from 'src/queries/mockData/breastCancerStageCodes.json';
+//import breastCancerSurgeryCodes from 'src/queries/mockData/breastCancerSurgeryCodes.json';
+import breastCancerTypeCodes from 'src/queries/mockData/breastCancerTypeCodes.json';
 import colonCancerTypeCodes from 'src/queries/mockData/colonCancerTypeCodes.json';
 import colonMedicationCodes from 'src/queries/mockData/colonMedicationCodes.json';
 import colonRadiationCodes from 'src/queries/mockData/colonRadiationCodes.json';
@@ -17,19 +22,9 @@ import lungMedicationCodes from 'src/queries/mockData/lungMedicationCodes.json';
 import lungRadiationCodes from 'src/queries/mockData/lungRadiationCodes.json';
 import lungSurgeryCodes from 'src/queries/mockData/lungSurgeryCodes.json';
 import multipleMyelomaCancerTypeCodes from 'src/queries/mockData/MultipleMyelomaCancerTypeCodes.json';
-import MultipleMyelomaMedicationCodes from 'src/queries/mockData/MultipleMyelomaMedicationCodes.json';
+import multipleMyelomaMedicationCodes from 'src/queries/mockData/MultipleMyelomaMedicationCodes.json';
 import prostateCancerTypeCodes from 'src/queries/mockData/prostateCancerTypeCodes.json';
 
-export const breastCancerStages = [0, 1, 2.1, 2.2, 3.1, 3.2, 3.3, 4];
-export const breastCancer_cancerTypeOptions = buildOptionListfromJSON(breastcancerCodes);
-export const breastCancerMedications = '';
-export const breastCancerSurgeryCodes = '';
-export const breastCancer_proceduresOptions = '';
-export const breastCancerBiomarkers = '';
-export const breastCancer_biomarkersOptions = '';
-export const breastCancerRadiationCodes = '';
-export const breastCancerSubTypes = '';
-export const breastCancerCodes = '';
 export type CancerTypeDetails = {
   category: string;
   cancerCodes: NamedSNOMEDCode[];
@@ -44,59 +39,68 @@ export type CancerTypeDetails = {
 export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
   lung: buildCancerCodeJSON(
     'lung',
-    lungCancerTypeCodes,
-    lungCancerSubTypeCodes,
-    lungMedicationCodes,
-    lungRadiationCodes,
-    lungSurgeryCodes,
-    breastCancerStages,
-    breastCancerBiomarkers
+    lungCancerTypeCodes.entry,
+    lungCancerSubTypeCodes.entry,
+    lungMedicationCodes.entry,
+    lungRadiationCodes.entry,
+    lungSurgeryCodes.entry,
+    breastCancerStages.entry,
+    breastCancerBiomarkers.entry
   ),
   colon: buildCancerCodeJSON(
     'colon',
-    colonCancerTypeCodes,
+    colonCancerTypeCodes.entry,
     '',
-    colonMedicationCodes,
-    colonRadiationCodes,
-    colonSurgeryCodes,
-    breastCancerStages,
+    colonMedicationCodes.entry,
+    colonRadiationCodes.entry,
+    colonSurgeryCodes.entry,
+    breastCancerStages.entry,
     ''
   ),
   brain: buildCancerCodeJSON(
     'brain',
-    brainCancerTypeCodes,
-    brainCancerSubTypeCodes,
-    brainMedicationCodes,
-    brainRadiationCodes,
-    brainSurgeryCodes,
-    breastCancerStages,
-    brainBiomarkerCodes
+    brainCancerTypeCodes.entry,
+    brainCancerSubTypeCodes.entry,
+    brainMedicationCodes.entry,
+    brainRadiationCodes.entry,
+    brainSurgeryCodes.entry,
+    breastCancerStages.entry,
+    brainBiomarkerCodes.entry
   ),
-  prostate: buildCancerCodeJSON('prostate', prostateCancerTypeCodes, '', '', '', '', breastCancerStages, ''),
+  prostate: buildCancerCodeJSON(
+    'prostate',
+    prostateCancerTypeCodes.entry,
+    '',
+    '',
+    '',
+    '',
+    breastCancerStages.entry,
+    ''
+  ),
   breast: buildCancerCodeJSON(
     'breast',
-    breastCancerCodes,
-    breastCancerSubTypes,
-    breastCancerMedications,
-    breastCancerRadiationCodes,
-    breastCancerSurgeryCodes,
-    breastCancerStages,
-    breastCancerBiomarkers
+    breastCancerTypeCodes.entry,
+    '',
+    breastCancerMedications.entry,
+    '',
+    '',
+    breastCancerStages.entry,
+    breastCancerBiomarkers.entry
   ),
   mm: buildCancerCodeJSON(
     'mm',
-    multipleMyelomaCancerTypeCodes,
+    multipleMyelomaCancerTypeCodes.entry,
     '',
-    MultipleMyelomaMedicationCodes,
+    multipleMyelomaMedicationCodes.entry,
     '',
     '',
-    breastCancerStages,
+    breastCancerStages.entry,
     ''
   ),
 };
 
 export const cancerTypeOptions: NamedSNOMEDCode[] = Object.values(cancerTypeDetails).reduce<NamedSNOMEDCode[]>(
-  (codes, details) => {
+  (codes: NamedSNOMEDCode[], details) => {
     codes.push(...details.cancerCodes);
     return codes;
   },
@@ -104,14 +108,14 @@ export const cancerTypeOptions: NamedSNOMEDCode[] = Object.values(cancerTypeDeta
 );
 
 function buildCancerCodeJSON(
-  category,
-  cancerCodes,
-  subTypeCodes,
-  medicationCodes,
-  radiationCodes,
-  surgeryCodes,
-  stages,
-  biomarkerCodes
+  category: string,
+  cancerCodes: NamedSNOMEDCode[],
+  subTypeCodes: NamedSNOMEDCode[],
+  medicationCodes: NamedSNOMEDCode[],
+  radiationCodes: NamedSNOMEDCode[],
+  surgeryCodes: NamedSNOMEDCode[],
+  stages: NamedSNOMEDCode[],
+  biomarkerCodes: NamedSNOMEDCode[]
 ) {
   const details: CancerTypeDetails = {
     category: category,

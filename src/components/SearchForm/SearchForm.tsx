@@ -37,6 +37,11 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   // Boolean check is because JSON.stringify(null) === "null" and should be omitted
   cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
+  biomarkers: data.biomarkers ? JSON.stringify(data.biomarkers) : undefined,
+  stage: data.stage ? JSON.stringify(data.stage) : undefined,
+  medications: data.medications ? JSON.stringify(data.medications) : undefined,
+  surgery: data.surgery ? JSON.stringify(data.surgery) : undefined,
+  radiation: data.radiation ? JSON.stringify(data.radiation) : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
 });
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
@@ -77,134 +82,46 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
     procedure: '',
   });
 
-  const onChange = event => handleChange(cancerTypes);
-
-  const handleChange = e => {
-    const val = e.target.value;
-    setcancerCategory(cancerTypes['val'].entryType);
-    switch (cancerCategory) {
-      case '':
-        setCancerTypes([]);
-        setCancerSubTypes([]);
-        setBiomarkers([]);
-        setStages([]);
-        setMedications([]);
-        setProcedures([]);
-        break;
-      case 'breast':
-        setCancerTypes(cancerTypeDetails.breast.cancerCodes);
-        setCancerSubTypes(cancerTypeDetails.breast.cancerSubtype);
-        setBiomarkers(cancerTypeDetails.breast.biomarkers);
-        setStages(cancerTypeDetails.breast.stages);
-        setMedications(cancerTypeDetails.breast.medications);
-        setProcedures(cancerTypeDetails.breast.surgeryCodes);
-        break;
-      case 'lung':
-        setCancerTypes(cancerTypeDetails.lung.cancerCodes);
-        setCancerSubTypes(cancerTypeDetails.lung.cancerSubtype);
-        setBiomarkers(cancerTypeDetails.lung.biomarkers);
-        setStages(cancerTypeDetails.lung.stages);
-        setMedications(cancerTypeDetails.lung.medications);
-        setProcedures(cancerTypeDetails.lung.surgeryCodes);
-
-        break;
-      case 'colon':
-        setCancerTypes(cancerTypeDetails.colon.cancerCodes);
-        setCancerSubTypes(cancerTypeDetails.colon.cancerSubtype);
-        setBiomarkers(cancerTypeDetails.colon.biomarkers);
-        setStages(cancerTypeDetails.colon.stages);
-        setMedications(cancerTypeDetails.colon.medications);
-        setProcedures(cancerTypeDetails.colon.surgeryCodes);
-        break;
-      case 'brain':
-        setCancerTypes(cancerTypeDetails.brain.cancerCodes);
-        setCancerSubTypes(cancerTypeDetails.brain.cancerSubtype);
-        setBiomarkers(cancerTypeDetails.brain.biomarkers);
-        setStages(cancerTypeDetails.breast.stages);
-        setMedications([]);
-        setProcedures([]);
-        break;
-      case 'prostate':
-        setCancerTypes(cancerTypeDetails.prostate.cancerCodes);
-        setCancerSubTypes(cancerTypeDetails.prostate.cancerSubtype);
-        setBiomarkers(cancerTypeDetails.prostate.biomarkers);
-        setStages(cancerTypeDetails.prostate.stages);
-        setMedications(cancerTypeDetails.prostate.medications);
-        setProcedures(cancerTypeDetails.prostate.surgeryCodes);
-        break;
-      case 'mm':
-        setCancerTypes(cancerTypeDetails.mm.cancerCodes);
-        setCancerSubTypes(cancerTypeDetails.mm.cancerSubtype);
-        setStages(cancerTypeDetails.breast.stages);
-        setBiomarkers([]);
-        setStages([]);
-        setMedications([]);
-        setProcedures([]);
-    }
-  };
-
-  const handleTypeChange = e => {
-    const { name, value } = e.target;
-    setSelectVal({
-      ...selectVal,
-      [name]: value,
-    });
-  };
-  const renderEmptyOption = item => {
-    return item.length > 0 ? <option value="none">Select Value</option> : '';
-  };
-
-  const renderSelectOptions = typeList => {
-    return typeList.map(item => (
-      <option value={item} key={item}>
-        {item}
-      </option>
-    ));
-  };
-
-  const saveData = () => {
-    console.log(selectVal);
-  };
-
   const retrieveCancer = cancer => {
     if (cancer !== null) {
-      console.log(cancerTypeOptions[0][cancer.entryType]);
-      if (cancerTypeOptions[0][cancer.entryType] !== undefined) {
+      if (cancer.entryType !== undefined) {
         if (
-          cancerTypeOptions[0][cancer.entryType].cancerSubtype !== null ||
-          cancerTypeOptions[0][cancer.entryType].cancerSubtype?.length > 0
+          cancerTypeDetails[cancer.entryType].cancerSubtype !== null ||
+          cancerTypeDetails[cancer.entryType].cancerSubtype?.length > 0
         ) {
-          setCancerSubTypes(cancerTypeOptions[0][cancer.entryType].cancerSubtype?.entry);
+          setCancerSubTypes(cancerTypeDetails[cancer.entryType].cancerSubtype);
         }
         if (
-          cancerTypeOptions[0][cancer.entryType].surgeryCodes !== null ||
-          cancerTypeOptions[0][cancer.entryType].surgeryCodes?.length > 0
+          cancerTypeDetails[cancer.entryType].surgeryCodes !== null ||
+          cancerTypeDetails[cancer.entryType].surgeryCodes?.length > 0
         ) {
-          setProcedures(cancerTypeOptions[0][cancer.entryType].surgeryCodes?.entry);
+          setProcedures(cancerTypeDetails[cancer.entryType].surgeryCodes);
+        }
+
+        if (
+          cancerTypeDetails[cancer.entryType].medications !== null ||
+          cancerTypeDetails[cancer.entryType].medications?.length > 0
+        ) {
+          console.log('medications=' + JSON.stringify(cancer));
+          setMedications(cancerTypeDetails[cancer.entryType].medications);
         }
         if (
-          cancerTypeOptions[0][cancer.entryType].medications !== null ||
-          cancerTypeOptions[0][cancer.entryType].medications?.length > 0
+          cancerTypeDetails[cancer.entryType].stages !== null ||
+          cancerTypeDetails[cancer.entryType].stages?.length > 0
         ) {
-          setMedications(cancerTypeOptions[0][cancer.entryType].medications?.entry);
+          setStages(cancerTypeDetails[cancer.entryType].stages);
         }
         if (
-          cancerTypeOptions[0][cancer.entryType].stages !== null ||
-          cancerTypeOptions[0][cancer.entryType].stages?.length > 0
+          cancerTypeDetails[cancer.entryType].radiationCodes !== null ||
+          cancerTypeDetails[cancer.entryType].radiationCodes?.length > 0
         ) {
-          setStages(cancerTypeOptions[0][cancer.entryType].stages);
+          setRadiations(cancerTypeDetails[cancer.entryType].radiationCodes);
         }
         if (
-          cancerTypeOptions[0][cancer.entryType].radiationCodes !== null ||
-          cancerTypeOptions[0][cancer.entryType].radiationCodes?.length > 0
+          cancerTypeDetails[cancer.entryType].biomarkers !== null ||
+          cancerTypeDetails[cancer.entryType].biomarkers?.length > 0
         ) {
-          setRadiations(cancerTypeOptions[0][cancer.entryType].radiationCodes?.entry);
-        }
-        if (
-          cancerTypeOptions[0][cancer.entryType].biomarkers !== null ||
-          cancerTypeOptions[0][cancer.entryType].biomarkers?.length > 0
-        ) {
-          setBiomarkers(cancerTypeOptions[0][cancer.entryType].biomarkers?.entry);
+          setBiomarkers(cancerTypeDetails[cancer.entryType].biomarkers);
         }
       }
     } else {

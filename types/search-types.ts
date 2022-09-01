@@ -13,10 +13,10 @@ export type SearchParameters = {
   stage: string;
   ecogScore: string;
   karnofskyScore: string;
-  biomarkers: string[];
-  surgery: string[];
-  medications: string[];
-  radiation: string[];
+  biomarkers: string;
+  surgery: string;
+  medications: string;
+  radiation: string;
 };
 
 export type FilterParameters = {
