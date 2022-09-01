@@ -76,7 +76,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       patient.birthDate = (new Date().getUTCFullYear() - age).toString();
     }
   }
-  console.log('***********Got Here1*******');
+
   // Initialize a patient bundle with our search information.
   const patientBundle: Bundle = {
     resourceType: 'Bundle',
@@ -86,6 +86,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
   // codes if they exist.
+  console.log('SearchParms=' + JSON.stringify(searchParams));
   const cancerType = parseNamedSNOMEDCode(searchParams['cancerType']);
   let cancerRecord: Condition;
   if (cancerType) {
@@ -128,22 +129,23 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystemCode,
     });
   }
-  const stageParm = searchParams['stage'];
-  //const stageParm = searchParams.stage;
-  if (stageParm != null) {
+
+  if (searchParams.stage.length > 0) {
     const id = 'mcode-cancer-stage-group';
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
-    const codingSystem = 'http://loinc.org';
-    const codingSystemCode = '21914-7';
-    console.log('processing stage value=' + JSON.stringify(stageParm));
-    convertNamedSNOMEDCodetoResource({
-      bundle: patientBundle,
-      codedValue: stageParm,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
+    const codingSystem = '';
+    const codingSystemCode = '';
+    for (let i = 0; i < searchParams.stage.length; i++) {
+      const medicationsParm = parseNamedSNOMEDCode(searchParams.stage[i]);
+      convertNamedSNOMEDCodetoResource({
+        bundle: patientBundle,
+        codedValue: medicationsParm[i],
+        id,
+        profile_value: profileValue,
+        codingSystem,
+        codingSystemCode,
+      });
+    }
   }
 
   const metastasisParm = searchParams.metastasis;
@@ -162,30 +164,16 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystemCode,
     });
   }
-  for (let i = 0; i < searchParams.biomarkers.length; i++) {
-    const bioMarkersParm = parseNamedSNOMEDCode(searchParams.biomarkers[i]);
-    if (bioMarkersParm) {
-      const id = 'mcode-tumor-marker';
-      const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
-      const codingSystem = 'http://loinc.org';
-      const codingSystemCode = '21907-1';
-      convertStringToResource({
-        bundle: patientBundle,
-        valueString: bioMarkersParm[i],
-        id,
-        profile_value: profileValue,
-        codingSystem,
-        codingSystemCode,
-      });
-    }
-  }
-  const medicationsParm = searchParams.medications;
-  if (medicationsParm) {
-    const id = 'mcode-cancer-related-medication-statement';
-    const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
+
+  const biomarkers = parseNamedSNOMEDCode(searchParams['biomarkers']);
+  console.log('adding biomarkers to bundle');
+  if (searchParams.biomarkers.length > 0) {
+    const id = 'mcode-tumor-marker';
+    const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
     const codingSystem = '';
     const codingSystemCode = '';
-    for (let i = 0; i < medicationsParm.length; i++) {
+    for (let i = 0; i < biomarkers.length; i++) {
+      const medicationsParm = parseNamedSNOMEDCode(searchParams.biomarkers[i]);
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
         codedValue: medicationsParm[i],
@@ -196,17 +184,35 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       });
     }
   }
-
-  const surgeryParm = searchParams.surgery;
-  if (surgeryParm) {
+  console.log('adding medications to bundle');
+  if (searchParams.medications.length > 0) {
+    const id = 'mcode-cancer-related-medication-statement';
+    const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
+    const codingSystem = '';
+    const codingSystemCode = '';
+    for (let i = 0; i < searchParams.medications.length; i++) {
+      const medicationsParm = parseNamedSNOMEDCode(searchParams.medications[i]);
+      convertNamedSNOMEDCodetoResource({
+        bundle: patientBundle,
+        codedValue: medicationsParm[i],
+        id,
+        profile_value: profileValue,
+        codingSystem,
+        codingSystemCode,
+      });
+    }
+  }
+  console.log('adding surgery to bundle');
+  if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-surgical-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
-    for (let i = 0; i < surgeryParm.length; i++) {
+    for (let i = 0; i < searchParams.surgery.length; i++) {
+      const parm = parseNamedSNOMEDCode(searchParams.surgery[i]);
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
-        codedValue: surgeryParm[i],
+        codedValue: parm,
         id,
         profile_value: profileValue,
         codingSystem,
@@ -214,18 +220,17 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       });
     }
   }
-
-  const radiationParm = searchParams.radiation;
-  if (radiationParm) {
-    console.log('***** Calling function for Radiation');
+  console.log('adding radiation to bundle');
+  if (searchParams.radiation.length > 0) {
     const id = 'mcode-cancer-related-radiation-procedure';
-    const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
+    const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
-    for (let i = 0; i < radiationParm.length; i++) {
+    for (let i = 0; i < searchParams.surgery.length; i++) {
+      const parm = parseNamedSNOMEDCode(searchParams.radiation[i]);
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
-        codedValue: radiationParm[i],
+        codedValue: parm,
         id,
         profile_value: profileValue,
         codingSystem,
@@ -233,6 +238,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       });
     }
   }
+  console.log('bundle=' + JSON.stringify(patientBundle));
   if (reactAppDebug) {
     console.log(JSON.stringify(patientBundle, null, 2));
   }

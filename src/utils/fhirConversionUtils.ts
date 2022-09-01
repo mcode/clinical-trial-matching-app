@@ -212,7 +212,16 @@ export const parseNamedSNOMEDCode = (code: string): NamedSNOMEDCode => {
     return undefined;
   }
 };
-
+export const parseNamedSNOMEDCodeArray = (code: string): NamedSNOMEDCode[] => {
+  try {
+    const result: NamedSNOMEDCodeArray = JSON.parse(code);
+    // Make sure this is valid
+    return isNamedSNOMEDCode(result) ? result : undefined;
+  } catch (ex) {
+    // JSON parse error, return undefined
+    return undefined;
+  }
+};
 const getStage = (condition: Condition): string => {
   const snomedToStageMap = {
     '261613009': '0',
