@@ -214,9 +214,14 @@ export const parseNamedSNOMEDCode = (code: string): NamedSNOMEDCode => {
 };
 export const parseNamedSNOMEDCodeArray = (code: string): NamedSNOMEDCode[] => {
   try {
-    const result: NamedSNOMEDCodeArray = JSON.parse(code);
-    // Make sure this is valid
-    return isNamedSNOMEDCode(result) ? result : undefined;
+    const result: NamedSNOMEDCode[] = JSON.parse(code);
+    for (let i = 0; i < result.length; i++) {
+      console.log('result[' + i + '=' + result[i]);
+      if (!isNamedSNOMEDCode(result[i])) {
+        throw 'JSON parse error';
+      }
+    }
+    return result;
   } catch (ex) {
     // JSON parse error, return undefined
     return undefined;
