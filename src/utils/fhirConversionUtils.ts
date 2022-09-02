@@ -216,7 +216,6 @@ export const parseNamedSNOMEDCodeArray = (code: string): NamedSNOMEDCode[] => {
   try {
     const result: NamedSNOMEDCode[] = JSON.parse(code);
     for (let i = 0; i < result.length; i++) {
-      console.log('result[' + i + '=' + result[i]);
       if (!isNamedSNOMEDCode(result[i])) {
         throw 'JSON parse error';
       }

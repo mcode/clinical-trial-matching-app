@@ -168,9 +168,8 @@ export function convertNamedSNOMEDCodetoResource({
 
   const tmpCode: string | number = codedValue.code.toString();
   const tmpDisplay = codedValue.display;
-  console.log('***********Got Here*******');
+
   if (profile_value == MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
-    console.log('***********Got Here*******');
     const resource: MedicationStatement = {
       resourceType: 'MedicationStatement',
       status: 'completed',
@@ -206,7 +205,7 @@ export function convertNamedSNOMEDCodetoResource({
         profile: [profile_value],
       },
     };
-    console.log('outResource=' + JSON.stringify(resource));
+
     addResource(bundle, resource);
   }
 }

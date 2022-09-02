@@ -102,7 +102,6 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           cancerTypeDetails[cancer.entryType].medications !== null ||
           cancerTypeDetails[cancer.entryType].medications?.length > 0
         ) {
-          console.log('medications=' + JSON.stringify(cancer));
           setMedications(cancerTypeDetails[cancer.entryType].medications);
         }
         if (

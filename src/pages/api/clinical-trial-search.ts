@@ -86,7 +86,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
   // codes if they exist.
-  console.log('SearchParms=' + JSON.stringify(searchParams));
   const cancerType = parseNamedSNOMEDCode(searchParams['cancerType']);
   let cancerRecord: Condition;
   if (cancerType) {
@@ -166,7 +165,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   }
 
   const biomarkers = parseNamedSNOMEDCodeArray(searchParams['biomarkers']);
-  console.log('adding biomarkers to bundle');
   if (searchParams.biomarkers.length > 0) {
     const id = 'mcode-tumor-marker';
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
@@ -183,7 +181,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       });
     }
   }
-  console.log('adding medications to bundle');
+
   const medications = parseNamedSNOMEDCodeArray(searchParams['medications']);
   if (searchParams.medications.length > 0) {
     const id = 'mcode-cancer-related-medication-statement';
@@ -201,7 +199,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       });
     }
   }
-  console.log('adding surgery to bundle');
   const surgery = parseNamedSNOMEDCodeArray(searchParams['surgery']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-surgical-procedure';
@@ -219,7 +216,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       });
     }
   }
-  console.log('adding radiation to bundle');
+
   const radiation = parseNamedSNOMEDCodeArray(searchParams['surgery']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-radiation-procedure';
@@ -237,7 +234,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       });
     }
   }
-  console.log('bundle=' + JSON.stringify(patientBundle));
+
   if (reactAppDebug) {
     console.log(JSON.stringify(patientBundle, null, 2));
   }
