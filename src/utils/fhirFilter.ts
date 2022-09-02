@@ -4,7 +4,12 @@
 
 import { MedicationStatement } from 'fhir/r4';
 import { Bundle, BundleEntry, CodeableConcept, Condition, Observation, Resource } from 'types/fhir-types';
-import { MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, MCODE_PRIMARY_CANCER_CONDITION, SNOMED_CODE_URI } from './fhirConstants';
+import {
+  MCODE_CANCER_RELATED_MEDICATION_STATEMENT,
+  MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
+  MCODE_PRIMARY_CANCER_CONDITION,
+  SNOMED_CODE_URI,
+} from './fhirConstants';
 import { NamedSNOMEDCode } from './fhirConversionUtils';
 
 export const addResource = (bundle: Bundle, resource: Resource): void => {
@@ -164,7 +169,8 @@ export function convertNamedSNOMEDCodetoResource({
   const tmpCode: string | number = codedValue.code.toString();
   const tmpDisplay = codedValue.display;
   console.log('***********Got Here*******');
-  if (codedValue.entryType.toLowerCase() == 'medication') {
+  if (profile_value == MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
+    console.log('***********Got Here*******');
     const resource: MedicationStatement = {
       resourceType: 'MedicationStatement',
       status: 'completed',

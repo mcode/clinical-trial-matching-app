@@ -1,7 +1,7 @@
 import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
-import { parseNamedSNOMEDCode } from '@/utils/fhirConversionUtils';
+import { parseNamedSNOMEDCode, parseNamedSNOMEDCodeArray } from '@/utils/fhirConversionUtils';
 import {
   addCancerHistologyMorphology,
   addCancerType,
@@ -136,7 +136,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < searchParams.stage.length; i++) {
-      const medicationsParm = parseNamedSNOMEDCode(searchParams.stage[i]);
+      const medicationsParm = parseNamedSNOMEDCodeArray(searchParams.stage[i]);
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
         codedValue: medicationsParm[i],
@@ -165,7 +165,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     });
   }
 
-  const biomarkers = parseNamedSNOMEDCode(searchParams['biomarkers']);
+  const biomarkers = parseNamedSNOMEDCodeArray(searchParams['biomarkers']);
   console.log('adding biomarkers to bundle');
   if (searchParams.biomarkers.length > 0) {
     const id = 'mcode-tumor-marker';
@@ -173,10 +173,9 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < biomarkers.length; i++) {
-      const medicationsParm = parseNamedSNOMEDCode(searchParams.biomarkers[i]);
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
-        codedValue: medicationsParm[i],
+        codedValue: biomarkers[i],
         id,
         profile_value: profileValue,
         codingSystem,
@@ -185,16 +184,16 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     }
   }
   console.log('adding medications to bundle');
+  const medications = parseNamedSNOMEDCodeArray(searchParams['medications']);
   if (searchParams.medications.length > 0) {
     const id = 'mcode-cancer-related-medication-statement';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
     const codingSystem = '';
     const codingSystemCode = '';
-    for (let i = 0; i < searchParams.medications.length; i++) {
-      const medicationsParm = parseNamedSNOMEDCode(searchParams.medications[i]);
+    for (let i = 0; i < medications.length; i++) {
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
-        codedValue: medicationsParm[i],
+        codedValue: medications[i],
         id,
         profile_value: profileValue,
         codingSystem,
@@ -203,16 +202,16 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     }
   }
   console.log('adding surgery to bundle');
+  const surgery = parseNamedSNOMEDCodeArray(searchParams['surgery']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-surgical-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
-    for (let i = 0; i < searchParams.surgery.length; i++) {
-      const parm = parseNamedSNOMEDCode(searchParams.surgery[i]);
+    for (let i = 0; i < surgery.length; i++) {
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
-        codedValue: parm,
+        codedValue: surgery[i],
         id,
         profile_value: profileValue,
         codingSystem,
@@ -221,16 +220,16 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     }
   }
   console.log('adding radiation to bundle');
-  if (searchParams.radiation.length > 0) {
+  const radiation = parseNamedSNOMEDCodeArray(searchParams['surgery']);
+  if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-radiation-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
-    for (let i = 0; i < searchParams.surgery.length; i++) {
-      const parm = parseNamedSNOMEDCode(searchParams.radiation[i]);
+    for (let i = 0; i < radiation.length; i++) {
       convertNamedSNOMEDCodetoResource({
         bundle: patientBundle,
-        codedValue: parm,
+        codedValue: radiation[i],
         id,
         profile_value: profileValue,
         codingSystem,
