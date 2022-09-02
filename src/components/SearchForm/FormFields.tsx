@@ -75,23 +75,6 @@ export const CancerTypeAutocomplete = ({
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
   retrieveCancer: Function;
 }): ReactElement => {
-  /*  const { data, isLoading } = useQuery(['cancer-type-codes'], () => fetchCancerTypeCodesQuery(), {
-      enabled: typeof window !== 'undefined',
-   });*/
-  // console.log(cancerTypeOptions)
-  //const { data, isLoading } = cancerTypeOptions;
-  // const [initialValue] = useState(field.value);
-  // const options = useMemo(() => [initialValue, ...(data || [])].filter(Boolean), [initialValue, cancerTypeOptions]);
-  //const newOptions = [];
-  /*for (const [key, value] of Object.entries(cancerTypeOptions)) {
-    for (const [key2, cancerTypes] of Object.entries(value['cancerCodes'])) {
-      cancerTypes.forEach(element => {
-        newOptions.push(element);
-        //console.log('cancerTypeOPtion=' + JSON.stringify(element));
-      });
-    }
-  }
-  */
   const newOptions = cancerTypeOptions;
 
   return (

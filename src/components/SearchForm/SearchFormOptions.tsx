@@ -50,12 +50,12 @@ export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
   colon: buildCancerCodeJSON(
     'colon',
     colonCancerTypeCodes.entry,
-    '',
+    null,
     colonMedicationCodes.entry,
     colonRadiationCodes.entry,
     colonSurgeryCodes.entry,
     breastCancerStages.entry,
-    ''
+    null
   ),
   brain: buildCancerCodeJSON(
     'brain',
@@ -70,32 +70,32 @@ export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
   prostate: buildCancerCodeJSON(
     'prostate',
     prostateCancerTypeCodes.entry,
-    '',
-    '',
-    '',
-    '',
+    null,
+    null,
+    null,
+    null,
     breastCancerStages.entry,
-    ''
+    null
   ),
   breast: buildCancerCodeJSON(
     'breast',
     breastCancerTypeCodes.entry,
-    '',
+    null,
     breastCancerMedications.entry,
-    '',
-    '',
+    null,
+    null,
     breastCancerStages.entry,
     breastCancerBiomarkers.entry
   ),
   mm: buildCancerCodeJSON(
     'mm',
     multipleMyelomaCancerTypeCodes.entry,
-    '',
+    null,
     multipleMyelomaMedicationCodes.entry,
-    '',
-    '',
+    null,
+    null,
     breastCancerStages.entry,
-    ''
+    null
   ),
 };
 
