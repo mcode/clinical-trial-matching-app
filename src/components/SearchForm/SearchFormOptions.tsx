@@ -1,29 +1,29 @@
 import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
-import brainBiomarkerCodes from 'src/queries/mockData/brainBiomarkerCodes.json';
-import brainCancerTypeCodes from 'src/queries/mockData/brainCancerTypeCodes.json';
-import brainMedicationCodes from 'src/queries/mockData/brainMedicationCodes.json';
-import breastCancerBiomarkers from 'src/queries/mockData/breastCancerBiomarkerCodes.json';
-import breastCancerMedications from 'src/queries/mockData/breastCancerMedicationCodes.json';
-import breastCancerStages from 'src/queries/mockData/breastCancerStageCodes.json';
-//import breastCancerSurgeryCodes from 'src/queries/mockData/breastCancerSurgeryCodes.json';
-import breastCancerTypeCodes from 'src/queries/mockData/breastCancerTypeCodes.json';
-import colonCancerTypeCodes from 'src/queries/mockData/colonCancerTypeCodes.json';
-import colonMedicationCodes from 'src/queries/mockData/colonMedicationCodes.json';
-import colonRadiationCodes from 'src/queries/mockData/colonRadiationCodes.json';
-import colonSurgeryCodes from 'src/queries/mockData/colonSurgeryCodes.json';
+import BRAIN_BIOMARKER_CODES from 'src/queries/mockData/brainBiomarkerCodes.json';
+import BRAIN_CANCER_TYPE_CODES from 'src/queries/mockData/brainCancerTypeCodes.json';
+import BRAIN_MEDICATION_CODES from 'src/queries/mockData/brainMedicationCodes.json';
+import BREAST_CANCER_BIOMARKERS from 'src/queries/mockData/breastCancerBiomarkerCodes.json';
+import BREAST_CANCER_MEDICATIONS from 'src/queries/mockData/breastCancerMedicationCodes.json';
+import BREAST_CANCER_STAGES from 'src/queries/mockData/breastCancerStageCodes.json';
+//import BreastCancerSurgeryCodes from 'src/queries/mockData/breastCancerSurgeryCodes.json';
+import BREAST_CANCER_TYPE_CODES from 'src/queries/mockData/breastCancerTypeCodes.json';
+import COLON_CANCER_TYPE_CODES from 'src/queries/mockData/colonCancerTypeCodes.json';
+import COLON_MEDICATION_CODES from 'src/queries/mockData/colonMedicationCodes.json';
+import COLON_RADIATION_CODES from 'src/queries/mockData/colonRadiationCodes.json';
+import COLON_SURGERY_CODES from 'src/queries/mockData/colonSurgeryCodes.json';
 import {
-  default as brainCancerSubTypeCodes,
-  default as brainRadiationCodes,
-  default as brainSurgeryCodes,
+  default as BRAIN_CANCER_SUBTYPE_CODES,
+  default as BRAIN_RADIATION_CODES,
+  default as BRAIN_SURGERY_CODES,
 } from 'src/queries/mockData/empty.json';
-import lungCancerSubTypeCodes from 'src/queries/mockData/lungCancerSubTypeCodes.json';
-import lungCancerTypeCodes from 'src/queries/mockData/lungCancerTypeCodes.json';
-import lungMedicationCodes from 'src/queries/mockData/lungMedicationCodes.json';
-import lungRadiationCodes from 'src/queries/mockData/lungRadiationCodes.json';
-import lungSurgeryCodes from 'src/queries/mockData/lungSurgeryCodes.json';
-import multipleMyelomaCancerTypeCodes from 'src/queries/mockData/MultipleMyelomaCancerTypeCodes.json';
-import multipleMyelomaMedicationCodes from 'src/queries/mockData/MultipleMyelomaMedicationCodes.json';
-import prostateCancerTypeCodes from 'src/queries/mockData/prostateCancerTypeCodes.json';
+import LUNG_CANCER_SUBTYPE_CODES from 'src/queries/mockData/lungCancerSubTypeCodes.json';
+import LUNG_CANCER_TYPE_CODES from 'src/queries/mockData/lungCancerTypeCodes.json';
+import LUNG_MEDICATION_CODES from 'src/queries/mockData/lungMedicationCodes.json';
+import LUNG_RADIATION_CODES from 'src/queries/mockData/lungRadiationCodes.json';
+import LUNG_SURGERY_CODES from 'src/queries/mockData/lungSurgeryCodes.json';
+import MULTIPLE_MYELOMA_CANCERTYPE_CODES from 'src/queries/mockData/MultipleMyelomaCancerTypeCodes.json';
+import MULTIPLE_MYELOMA_MEDICATION_CODES from 'src/queries/mockData/MultipleMyelomaMedicationCodes.json';
+import PROSTATE_CANCER_TYPE_CODES from 'src/queries/mockData/prostateCancerTypeCodes.json';
 
 export type CancerTypeDetails = {
   category: string;
@@ -35,66 +35,66 @@ export type CancerTypeDetails = {
   stages: NamedSNOMEDCode[];
   radiationCodes: NamedSNOMEDCode[];
 };
-
+console.log('BREAST_CANCER_STAGES=');
 export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
   lung: buildCancerCodeJSON(
     'lung',
-    lungCancerTypeCodes.entry,
-    lungCancerSubTypeCodes.entry,
-    lungMedicationCodes.entry,
-    lungRadiationCodes.entry,
-    lungSurgeryCodes.entry,
-    breastCancerStages.entry,
-    breastCancerBiomarkers.entry
+    LUNG_CANCER_TYPE_CODES.entry,
+    LUNG_CANCER_SUBTYPE_CODES.entry,
+    LUNG_MEDICATION_CODES.entry,
+    LUNG_RADIATION_CODES.entry,
+    LUNG_SURGERY_CODES.entry,
+    BREAST_CANCER_STAGES.entry,
+    BREAST_CANCER_BIOMARKERS.entry
   ),
   colon: buildCancerCodeJSON(
     'colon',
-    colonCancerTypeCodes.entry,
+    COLON_CANCER_TYPE_CODES.entry,
     null,
-    colonMedicationCodes.entry,
-    colonRadiationCodes.entry,
-    colonSurgeryCodes.entry,
-    breastCancerStages.entry,
+    COLON_MEDICATION_CODES.entry,
+    COLON_RADIATION_CODES.entry,
+    COLON_SURGERY_CODES.entry,
+    BREAST_CANCER_STAGES.entry,
     null
   ),
   brain: buildCancerCodeJSON(
     'brain',
-    brainCancerTypeCodes.entry,
-    brainCancerSubTypeCodes.entry,
-    brainMedicationCodes.entry,
-    brainRadiationCodes.entry,
-    brainSurgeryCodes.entry,
-    breastCancerStages.entry,
-    brainBiomarkerCodes.entry
+    BRAIN_CANCER_TYPE_CODES.entry,
+    BRAIN_CANCER_SUBTYPE_CODES.entry,
+    BRAIN_MEDICATION_CODES.entry,
+    BRAIN_RADIATION_CODES.entry,
+    BRAIN_SURGERY_CODES.entry,
+    BREAST_CANCER_STAGES.entry,
+    BRAIN_BIOMARKER_CODES.entry
   ),
   prostate: buildCancerCodeJSON(
     'prostate',
-    prostateCancerTypeCodes.entry,
+    PROSTATE_CANCER_TYPE_CODES.entry,
     null,
     null,
     null,
     null,
-    breastCancerStages.entry,
+    BREAST_CANCER_STAGES.entry,
     null
   ),
   breast: buildCancerCodeJSON(
     'breast',
-    breastCancerTypeCodes.entry,
+    BREAST_CANCER_TYPE_CODES.entry,
     null,
-    breastCancerMedications.entry,
+    BREAST_CANCER_MEDICATIONS.entry,
     null,
     null,
-    breastCancerStages.entry,
-    breastCancerBiomarkers.entry
+    BREAST_CANCER_STAGES.entry,
+    BREAST_CANCER_BIOMARKERS.entry
   ),
   mm: buildCancerCodeJSON(
     'mm',
-    multipleMyelomaCancerTypeCodes.entry,
+    MULTIPLE_MYELOMA_CANCERTYPE_CODES.entry,
     null,
-    multipleMyelomaMedicationCodes.entry,
+    MULTIPLE_MYELOMA_MEDICATION_CODES.entry,
     null,
     null,
-    breastCancerStages.entry,
+    BREAST_CANCER_STAGES.entry,
     null
   ),
 };
