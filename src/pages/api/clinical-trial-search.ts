@@ -5,14 +5,16 @@ import { parseNamedSNOMEDCode, parseNamedSNOMEDCodeArray } from '@/utils/fhirCon
 import {
   addCancerHistologyMorphology,
   addCancerType,
-  convertNamedSNOMEDCodetoResource,
-  convertStringToResource,
+  convertNamedSNOMEDCodeToMedicationStatement,
+  convertNamedSNOMEDCodetoObservation,
+  convertStringToObservation,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
+import { MedicationStatement } from 'fhir/r4';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
 import * as fhirConstants from 'src/utils/fhirConstants';
-import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
+import { Bundle, Condition, Observation, Patient, Resource } from 'types/fhir-types';
 import { SearchParameters } from 'types/search-types';
 
 const {
@@ -102,7 +104,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
     const codingSystem = 'http://loinc.org';
     const codingSystemCode = '89247-1';
-    convertStringToResource({
+    const resource: Observation = convertStringToObservation({
       bundle: patientBundle,
       valueString: ecogScore,
       id,
@@ -110,6 +112,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystem,
       codingSystemCode,
     });
+    patientBundle.entry.push({ resource: resource });
   }
 
   const karnofskyScore = searchParams.karnofskyScore;
@@ -119,7 +122,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = 'http://loinc.org';
     const codingSystemCode = 'LL4986-7';
 
-    convertStringToResource({
+    const resource: Observation = convertStringToObservation({
       bundle: patientBundle,
       valueString: karnofskyScore,
       id,
@@ -127,6 +130,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystem,
       codingSystemCode,
     });
+    patientBundle.entry.push({ resource: resource });
   }
 
   if (searchParams.stage.length > 0) {
@@ -135,15 +139,16 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < searchParams.stage.length; i++) {
-      const medicationsParm = parseNamedSNOMEDCodeArray(searchParams.stage[i]);
-      convertNamedSNOMEDCodetoResource({
+      const stageParm = parseNamedSNOMEDCodeArray(searchParams.stage[i]);
+      const resource = convertNamedSNOMEDCodetoObservation({
         bundle: patientBundle,
-        codedValue: medicationsParm[i],
+        codedValue: stageParm[i],
         id,
         profile_value: profileValue,
         codingSystem,
         codingSystemCode,
       });
+      patientBundle.entry.push({ resource: resource });
     }
   }
 
@@ -154,7 +159,8 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
     const codingSystem: string = null;
     const codingSystemCode: string = null;
-    convertStringToResource({
+
+    const resource = convertStringToObservation({
       bundle: patientBundle,
       valueString: stageParm,
       id,
@@ -162,6 +168,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystem,
       codingSystemCode,
     });
+    patientBundle.entry.push({ resource: resource });
   }
 
   const biomarkers = parseNamedSNOMEDCodeArray(searchParams['biomarkers']);
@@ -171,7 +178,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < biomarkers.length; i++) {
-      convertNamedSNOMEDCodetoResource({
+      const resource = convertNamedSNOMEDCodetoObservation({
         bundle: patientBundle,
         codedValue: biomarkers[i],
         id,
@@ -179,6 +186,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
         codingSystem,
         codingSystemCode,
       });
+      patientBundle.entry.push({ resource: resource });
     }
   }
 
@@ -189,7 +197,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < medications.length; i++) {
-      convertNamedSNOMEDCodetoResource({
+      const resource: MedicationStatement = convertNamedSNOMEDCodeToMedicationStatement({
         bundle: patientBundle,
         codedValue: medications[i],
         id,
@@ -197,6 +205,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
         codingSystem,
         codingSystemCode,
       });
+      patientBundle.entry.push({ resource: resource });
     }
   }
   const surgery = parseNamedSNOMEDCodeArray(searchParams['surgery']);
@@ -206,7 +215,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < surgery.length; i++) {
-      convertNamedSNOMEDCodetoResource({
+      const resource = convertNamedSNOMEDCodetoObservation({
         bundle: patientBundle,
         codedValue: surgery[i],
         id,
@@ -214,6 +223,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
         codingSystem,
         codingSystemCode,
       });
+      patientBundle.entry.push({ resource: resource });
     }
   }
 
@@ -224,7 +234,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < radiation.length; i++) {
-      convertNamedSNOMEDCodetoResource({
+      const resource = convertNamedSNOMEDCodetoObservation({
         bundle: patientBundle,
         codedValue: radiation[i],
         id,
@@ -232,6 +242,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
         codingSystem,
         codingSystemCode,
       });
+      patientBundle.entry.push({ resource: resource });
     }
   }
 

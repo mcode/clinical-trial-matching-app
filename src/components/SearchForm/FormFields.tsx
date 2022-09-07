@@ -1,3 +1,4 @@
+import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
 import { ReactElement, useState } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
@@ -99,7 +100,7 @@ export const CancerSubtypeAutocomplete = ({
   cancerSubTypes,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerSubtype'>;
-  cancerSubTypes: any;
+  cancerSubTypes: NamedSNOMEDCode[];
 }): ReactElement => {
   const [initialValue] = useState(field.value);
 
@@ -122,7 +123,7 @@ export const CancerStageAutocomplete = ({
   cancerStages,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerSubtype'>;
-  cancerStages: any;
+  cancerStages: NamedSNOMEDCode[];
 }): ReactElement => {
   const [initialValue] = useState(field.value);
 
@@ -139,22 +140,6 @@ export const CancerStageAutocomplete = ({
     />
   );
 };
-/*
-export const CancerStageAutocomplete = ({
-  field,
-  cancerStages: cancerStages,
-}: {
-  field: ControllerRenderProps<SearchFormValuesType, 'stage'>;
-  cancerStages: any;
-}): ReactElement => (
-  <Autocomplete
-    {...field}
-    data-testid="stage"
-    options={cancerStages}
-    renderInput={params => <TextField variant="filled" label="Stage" placeholder="" {...params} />}
-  />
-);
-*/
 
 export const ECOGScoreAutocomplete = ({
   field,
@@ -198,7 +183,7 @@ export const BiomarkersAutocomplete = ({
   cancerBiomarkers,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'biomarkers'>;
-  cancerBiomarkers;
+  cancerBiomarkers: NamedSNOMEDCode[];
 }): ReactElement => {
   return <AutocompleteMulti field={field} label="biomarkers" options={cancerBiomarkers} />;
 };
@@ -218,7 +203,7 @@ export const SurgeryAutocomplete = ({
   cancerSurgery,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'surgery'>;
-  cancerSurgery: any;
+  cancerSurgery: NamedSNOMEDCode[];
 }): ReactElement => <AutocompleteMulti field={field} label="surgery" options={cancerSurgery} />;
 
 export const MedicationsAutocomplete = ({
@@ -226,5 +211,5 @@ export const MedicationsAutocomplete = ({
   cancerMedication,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'medications'>;
-  cancerMedication: any;
+  cancerMedication;
 }): ReactElement => <AutocompleteMulti field={field} label="medications" options={cancerMedication} />;
