@@ -4,12 +4,7 @@
 
 import { MedicationStatement } from 'fhir/r4';
 import { Bundle, BundleEntry, CodeableConcept, Condition, Observation, Resource } from 'types/fhir-types';
-import {
-  MCODE_CANCER_RELATED_MEDICATION_STATEMENT,
-  MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
-  MCODE_PRIMARY_CANCER_CONDITION,
-  SNOMED_CODE_URI,
-} from './fhirConstants';
+import { MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, MCODE_PRIMARY_CANCER_CONDITION, SNOMED_CODE_URI } from './fhirConstants';
 import { NamedSNOMEDCode } from './fhirConversionUtils';
 
 export const addResource = (bundle: Bundle, resource: Resource): void => {
@@ -99,7 +94,7 @@ export const addCancerHistologyMorphology = (
   return condition;
 };
 
-export function convertStringToResource({
+export function convertStringToObservation({
   bundle,
   valueString,
   id,
@@ -113,7 +108,7 @@ export function convertStringToResource({
   profile_value: string;
   codingSystem: string;
   codingSystemCode: string;
-}): void {
+}): Observation {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
   let code: CodeableConcept = null;
   if (codingSystemCode) {
@@ -126,6 +121,7 @@ export function convertStringToResource({
       ],
     };
   }
+  let retResource: Observation = null;
   if (code) {
     const resource: Observation = {
       resourceType: 'Observation',
@@ -136,7 +132,7 @@ export function convertStringToResource({
       code,
       valueString,
     };
-    addResource(bundle, resource);
+    retResource = resource;
   } else {
     const resource: Observation = {
       resourceType: 'Observation',
@@ -146,10 +142,11 @@ export function convertStringToResource({
       },
       valueString,
     };
-    addResource(bundle, resource);
+    retResource = resource;
   }
+  return retResource;
 }
-export function convertNamedSNOMEDCodetoResource({
+export function convertNamedSNOMEDCodetoObservation({
   bundle,
   codedValue,
   id,
@@ -163,49 +160,69 @@ export function convertNamedSNOMEDCodetoResource({
   profile_value: string;
   codingSystem: string;
   codingSystemCode: string;
-}): void {
+}): Observation {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
 
   const tmpCode: string | number = codedValue.code.toString();
   const tmpDisplay = codedValue.display;
 
-  if (profile_value == MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
-    const resource: MedicationStatement = {
-      resourceType: 'MedicationStatement',
-      status: 'completed',
-      medicationCodeableConcept: {
-        coding: [
-          {
-            system: codingSystem,
-            code: tmpCode,
-            display: tmpDisplay,
-          },
-        ],
-      },
-      meta: {
-        profile: [profile_value],
-      },
-      subject: undefined,
-    };
-    addResource(bundle, resource);
-  } else {
-    const resource: Observation = {
-      resourceType: 'Observation',
-      status: 'completed',
-      observation: {
-        coding: [
-          {
-            system: codingSystem,
-            code: tmpCode,
-            display: tmpDisplay,
-          },
-        ],
-      },
-      meta: {
-        profile: [profile_value],
-      },
-    };
+  const resource: Observation = {
+    resourceType: 'Observation',
+    status: 'completed',
+    medicationCodeableConcept: {
+      coding: [
+        {
+          system: codingSystem,
+          code: tmpCode,
+          display: tmpDisplay,
+        },
+      ],
+    },
+    meta: {
+      profile: [profile_value],
+    },
+    subject: undefined,
+  };
 
-    addResource(bundle, resource);
-  }
+  return resource;
+}
+
+export function convertNamedSNOMEDCodeToMedicationStatement({
+  bundle,
+  codedValue,
+  id,
+  profile_value,
+  codingSystem,
+  codingSystemCode,
+}: {
+  bundle: Bundle;
+  codedValue: NamedSNOMEDCode;
+  id: string;
+  profile_value: string;
+  codingSystem: string;
+  codingSystemCode: string;
+}): MedicationStatement {
+  // Create the Condition - done separate from the function call to ensure proper TypeScript checking
+
+  const tmpCode: string | number = codedValue.code.toString();
+  const tmpDisplay = codedValue.display;
+
+  const resource: MedicationStatement = {
+    resourceType: 'MedicationStatement',
+    status: 'completed',
+    observation: {
+      coding: [
+        {
+          system: codingSystem,
+          code: tmpCode,
+          display: tmpDisplay,
+        },
+      ],
+    },
+    meta: {
+      profile: [profile_value],
+    },
+  };
+
+  return resource;
 }
