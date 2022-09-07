@@ -1,83 +1,83 @@
 {
   "entry": [
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "Code",
+      "display": "Name",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261613009",
+      "display": "Stage 0 (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261644000",
+      "display": "Stage 0a (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261645004",
+      "display": "Stage 0is (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "258219007",
+      "display": "Stage 2 (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261614003",
+      "display": "Stage 2A (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261615002",
+      "display": "Stage 2B (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261637009",
+      "display": "Stage 2C (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "258224005",
+      "display": "Stage 3 (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261638004",
+      "display": "Stage 3A (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261639007",
+      "display": "Stage 3B (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261640009",
+      "display": "Stage 3C (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "258228008",
+      "display": "Stage 4 (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261642001",
+      "display": "Stage 4A (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "261643006",
+      "display": "Stage 4B (qualifier value)",
       "entryType": "stage"
     },
     {
-      "code": "261616001",
-      "display": "Stage 4S (qualifier value)",
+      "code": "313046007",
+      "display": "Stage 4C (qualifier value)",
       "entryType": "stage"
     },
     {

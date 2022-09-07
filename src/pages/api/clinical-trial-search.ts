@@ -235,9 +235,9 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     }
   }
 
-  if (reactAppDebug) {
-    console.log(JSON.stringify(patientBundle, null, 2));
-  }
+  //if (reactAppDebug) {
+  console.log(JSON.stringify(patientBundle, null, 2));
+  //}
 
   return patientBundle;
 }
