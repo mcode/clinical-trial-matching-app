@@ -130,7 +130,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystem,
       codingSystemCode,
     });
-    patientBundle.entry.push({ resource: resource });
+    patientBundle.entryPatientPatient.push({ resource: resource });
   }
 
   if (searchParams.stage.length > 0) {
@@ -205,6 +205,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
         codingSystem,
         codingSystemCode,
       });
+
       patientBundle.entry.push({ resource: resource });
     }
   }
