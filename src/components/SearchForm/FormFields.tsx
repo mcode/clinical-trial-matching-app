@@ -4,7 +4,7 @@ import { ReactElement, useState } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
 import { cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
 import { SearchFormValuesType } from './types';
-const AutocompleteMulti = ({ field, label, options }): ReactElement => (
+const AutocompleteMulti = ({ field, label, options }): ReactElement => ({field:}
   <Autocomplete
     {...field}
     disabled={options === undefined || options === null || options?.length === 0 ? true : false}
@@ -14,8 +14,8 @@ const AutocompleteMulti = ({ field, label, options }): ReactElement => (
     onChange={(event, newValue) => {
       field.onChange(newValue);
     }}
-    getOptionLabel={option => option?.display}
     options={options}
+    getOptionLabel={option => option?.display}
     renderInput={params => (
       <TextField
         variant="filled"
@@ -108,7 +108,7 @@ export const CancerSubtypeAutocomplete = ({
     <Autocomplete
       {...field}
       data-testid="cancerSubtype"
-      disabled={cancerSubTypes === null || cancerSubTypes === '' ? true : false}
+      disabled={cancerSubTypes === null ? true : false}
       onChange={(_event, value) => field.onChange(value)}
       options={cancerSubTypes}
       getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
@@ -131,7 +131,7 @@ export const CancerStageAutocomplete = ({
     <Autocomplete
       {...field}
       data-testid="cancerSubtype"
-      disabled={cancerStages === null || cancerStages === '' ? true : false}
+      disabled={cancerStages === null ? true : false}
       onChange={(_event, value) => field.onChange(value)}
       options={cancerStages}
       getOptionLabel={option => String(option?.display ?? option?.code ?? '')}

@@ -204,6 +204,7 @@ export interface Patient extends Resource {
   resourceType: 'Patient';
   gender?: AdministrativeGender;
   birthDate?: fhirDate;
+  age?: number;
 }
 
 export interface Practitioner extends Resource {
