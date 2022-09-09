@@ -4,7 +4,7 @@
 
 import { Bundle, BundleEntry, CodeableConcept, Condition, Observation, Resource } from 'types/fhir-types';
 import { MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, MCODE_PRIMARY_CANCER_CONDITION, SNOMED_CODE_URI } from './fhirConstants';
-import { NamedSNOMEDCode, Patient } from './fhirConversionUtils';
+import { CodedValueType as CodedValueType, Patient } from './fhirConversionUtils';
 
 export const addResource = (bundle: Bundle, resource: Resource): void => {
   const entry: BundleEntry = {
@@ -17,7 +17,7 @@ export const addResource = (bundle: Bundle, resource: Resource): void => {
   }
 };
 
-export const addCancerType = (bundle: Bundle, code: NamedSNOMEDCode): Condition => {
+export const addCancerType = (bundle: Bundle, code: CodedValueType): Condition => {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
   const resource: Condition = {
     resourceType: 'Condition',
@@ -68,7 +68,7 @@ function findCondition(bundleOrCondition: Bundle | Condition, profile: string): 
  */
 export const addCancerHistologyMorphology = (
   bundleOrCondition: Bundle | Condition,
-  code: NamedSNOMEDCode
+  code: CodedValueType
 ): Condition => {
   // Find the actual condition
   let condition = findCondition(bundleOrCondition, MCODE_PRIMARY_CANCER_CONDITION);
@@ -145,16 +145,14 @@ export function convertStringToObservation({
   }
   return retResource;
 }
-export function convertNamedSNOMEDCodetoObservation({
-  bundle,
+export function convertCodedValueToObervation({
   codedValue,
   id,
   profile_value,
   codingSystem,
   codingSystemCode,
 }: {
-  bundle: Bundle;
-  codedValue: NamedSNOMEDCode;
+  codedValue: CodedValueType;
   id: string;
   profile_value: string;
   codingSystem: string;
@@ -168,15 +166,15 @@ export function convertNamedSNOMEDCodetoObservation({
   const resource: Observation = {
     resourceType: 'Observation',
     status: 'completed',
-    medicationCodeableConcept: {
-      coding: [
-        {
-          system: codingSystem,
-          code: tmpCode,
-          display: tmpDisplay,
-        },
-      ],
-    },
+    // Observation: {
+    coding: [
+      {
+        system: codingSystem,
+        code: tmpCode,
+        display: tmpDisplay,
+      },
+    ],
+    // },
     meta: {
       profile: [profile_value],
     },
@@ -186,16 +184,14 @@ export function convertNamedSNOMEDCodetoObservation({
   return resource;
 }
 
-export function convertNamedSNOMEDCodeToMedicationStatement({
-  bundle,
+export function convertCodedValueToMedicationStatement({
   codedValue,
   id,
   profile_value,
   codingSystem,
   codingSystemCode,
 }: {
-  bundle: Bundle;
-  codedValue: NamedSNOMEDCode;
+  codedValue: CodedValueType;
   id: string;
   profile_value: string;
   codingSystem: string;

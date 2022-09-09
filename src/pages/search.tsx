@@ -3,6 +3,7 @@ import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
 import { MCODE_STRUCTURE_DEFINITION } from '@/utils/fhirConstants';
 import {
+  CodedValueType,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
   convertFhirMedicationStatements,
@@ -13,6 +14,7 @@ import {
   convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
   convertFhirUser,
+  parseCodedValue,
   Patient,
   PrimaryCancerCondition,
   User,
@@ -31,10 +33,10 @@ type SearchPageProps = {
   metastasis: string[];
   ecogScore: string;
   karnofskyScore: string;
-  biomarkers: string[];
-  radiation: string[];
-  surgery: string[];
-  medications: string[];
+  biomarkers: CodedValueType[];
+  radiation: CodedValueType[];
+  surgery: CodedValueType[];
+  medications: CodedValueType[];
 };
 
 const SearchPage = ({
@@ -54,7 +56,7 @@ const SearchPage = ({
     gender: patient.gender || 'unknown',
     cancerType: primaryCancerCondition.cancerType,
     cancerSubtype: primaryCancerCondition.cancerSubtype,
-    stage: primaryCancerCondition.stage,
+    stage: parseCodedValue(primaryCancerCondition.stage),
     travelDistance: '100',
     zipcode: patient.zipcode || '',
     metastasis,

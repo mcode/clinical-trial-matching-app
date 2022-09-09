@@ -1,4 +1,4 @@
-import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
+import { CodedValueType } from '@/utils/fhirConversionUtils';
 import BRAIN_BIOMARKER_CODES from 'src/queries/mockData/brainBiomarkerCodes.json';
 import BRAIN_CANCER_TYPE_CODES from 'src/queries/mockData/brainCancerTypeCodes.json';
 import BRAIN_MEDICATION_CODES from 'src/queries/mockData/brainMedicationCodes.json';
@@ -27,13 +27,13 @@ import PROSTATE_CANCER_TYPE_CODES from 'src/queries/mockData/prostateCancerTypeC
 
 export type CancerTypeDetails = {
   category: string;
-  cancerCodes: NamedSNOMEDCode[];
-  cancerSubtype: NamedSNOMEDCode[];
-  biomarkers: NamedSNOMEDCode[];
-  surgeryCodes: NamedSNOMEDCode[];
-  medications: NamedSNOMEDCode[];
-  stages: NamedSNOMEDCode[];
-  radiationCodes: NamedSNOMEDCode[];
+  cancerCodes: CodedValueType[];
+  cancerSubtype: CodedValueType[];
+  biomarkers: CodedValueType[];
+  surgeryCodes: CodedValueType[];
+  medications: CodedValueType[];
+  stages: CodedValueType[];
+  radiationCodes: CodedValueType[];
 };
 console.log('BREAST_CANCER_STAGES=');
 export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
@@ -99,8 +99,8 @@ export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
   ),
 };
 
-export const cancerTypeOptions: NamedSNOMEDCode[] = Object.values(cancerTypeDetails).reduce<NamedSNOMEDCode[]>(
-  (codes: NamedSNOMEDCode[], details) => {
+export const cancerTypeOptions: CodedValueType[] = Object.values(cancerTypeDetails).reduce<CodedValueType[]>(
+  (codes: CodedValueType[], details) => {
     codes.push(...details.cancerCodes);
     return codes;
   },
@@ -109,13 +109,13 @@ export const cancerTypeOptions: NamedSNOMEDCode[] = Object.values(cancerTypeDeta
 
 function buildCancerCodeJSON(
   category: string,
-  cancerCodes: NamedSNOMEDCode[],
-  subTypeCodes: NamedSNOMEDCode[],
-  medicationCodes: NamedSNOMEDCode[],
-  radiationCodes: NamedSNOMEDCode[],
-  surgeryCodes: NamedSNOMEDCode[],
-  stages: NamedSNOMEDCode[],
-  biomarkerCodes: NamedSNOMEDCode[]
+  cancerCodes: CodedValueType[],
+  subTypeCodes: CodedValueType[],
+  medicationCodes: CodedValueType[],
+  radiationCodes: CodedValueType[],
+  surgeryCodes: CodedValueType[],
+  stages: CodedValueType[],
+  biomarkerCodes: CodedValueType[]
 ) {
   const details: CancerTypeDetails = {
     category: category,

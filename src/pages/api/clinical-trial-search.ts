@@ -1,12 +1,15 @@
 import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
-import { parseNamedSNOMEDCode, parseNamedSNOMEDCodeArray } from '@/utils/fhirConversionUtils';
+import {
+  parseCodedValue as parseCodedValueType,
+  parseCodedValueArray as parseCodedValueArray,
+} from '@/utils/fhirConversionUtils';
 import {
   addCancerHistologyMorphology,
   addCancerType,
-  convertNamedSNOMEDCodeToMedicationStatement,
-  convertNamedSNOMEDCodetoObservation,
+  convertCodedValueToMedicationStatement as convertCodedValueToMedicationStatement,
+  convertCodedValueToObervation as convertCodedValueTypeToObservation,
   convertStringToObservation,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
@@ -88,12 +91,12 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
   // codes if they exist.
-  const cancerType = parseNamedSNOMEDCode(searchParams['cancerType']);
+  const cancerType = parseCodedValueType(searchParams['cancerType']);
   let cancerRecord: Condition;
   if (cancerType) {
     cancerRecord = addCancerType(patientBundle, cancerType);
   }
-  const cancerSubtype = parseNamedSNOMEDCode(searchParams['cancerSubtype']);
+  const cancerSubtype = parseCodedValueType(searchParams['cancerSubtype']);
   if (cancerSubtype) {
     addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
   }
@@ -130,7 +133,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       codingSystem,
       codingSystemCode,
     });
-    patientBundle.entryPatientPatient.push({ resource: resource });
+    patientBundle.entry.push({ resource: resource });
   }
 
   if (searchParams.stage.length > 0) {
@@ -138,18 +141,15 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
     const codingSystem = '';
     const codingSystemCode = '';
-    for (let i = 0; i < searchParams.stage.length; i++) {
-      const stageParm = parseNamedSNOMEDCodeArray(searchParams.stage[i]);
-      const resource = convertNamedSNOMEDCodetoObservation({
-        bundle: patientBundle,
-        codedValue: stageParm[i],
-        id,
-        profile_value: profileValue,
-        codingSystem,
-        codingSystemCode,
-      });
-      patientBundle.entry.push({ resource: resource });
-    }
+    const stageParm = parseCodedValueType(searchParams.stage);
+    const resource = convertCodedValueTypeToObservation({
+      codedValue: stageParm,
+      id,
+      profile_value: profileValue,
+      codingSystem,
+      codingSystemCode,
+    });
+    patientBundle.entry.push({ resource: resource });
   }
 
   const metastasisParm = searchParams.metastasis;
@@ -171,15 +171,14 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     patientBundle.entry.push({ resource: resource });
   }
 
-  const biomarkers = parseNamedSNOMEDCodeArray(searchParams['biomarkers']);
+  const biomarkers = parseCodedValueArray(searchParams['biomarkers']);
   if (searchParams.biomarkers.length > 0) {
     const id = 'mcode-tumor-marker';
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < biomarkers.length; i++) {
-      const resource = convertNamedSNOMEDCodetoObservation({
-        bundle: patientBundle,
+      const resource = convertCodedValueTypeToObservation({
         codedValue: biomarkers[i],
         id,
         profile_value: profileValue,
@@ -190,15 +189,14 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     }
   }
 
-  const medications = parseNamedSNOMEDCodeArray(searchParams['medications']);
+  const medications = parseCodedValueArray(searchParams['medications']);
   if (searchParams.medications.length > 0) {
     const id = 'mcode-cancer-related-medication-statement';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < medications.length; i++) {
-      const resource: MedicationStatement = convertNamedSNOMEDCodeToMedicationStatement({
-        bundle: patientBundle,
+      const resource: MedicationStatement = convertCodedValueToMedicationStatement({
         codedValue: medications[i],
         id,
         profile_value: profileValue,
@@ -209,15 +207,14 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       patientBundle.entry.push({ resource: resource });
     }
   }
-  const surgery = parseNamedSNOMEDCodeArray(searchParams['surgery']);
+  const surgery = parseCodedValueArray(searchParams['surgery']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-surgical-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < surgery.length; i++) {
-      const resource = convertNamedSNOMEDCodetoObservation({
-        bundle: patientBundle,
+      const resource = convertCodedValueTypeToObservation({
         codedValue: surgery[i],
         id,
         profile_value: profileValue,
@@ -228,15 +225,14 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     }
   }
 
-  const radiation = parseNamedSNOMEDCodeArray(searchParams['surgery']);
+  const radiation = parseCodedValueArray(searchParams['surgery']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-radiation-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
     const codingSystem = '';
     const codingSystemCode = '';
     for (let i = 0; i < radiation.length; i++) {
-      const resource = convertNamedSNOMEDCodetoObservation({
-        bundle: patientBundle,
+      const resource = convertCodedValueTypeToObservation({
         codedValue: radiation[i],
         id,
         profile_value: profileValue,

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { cancerTypeDetails, cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
+import { cancerTypeDetails } from 'src/components/SearchForm/SearchFormOptions';
 import { SearchParameters } from 'types/search-types';
 import {
   AgeTextField,
@@ -48,7 +48,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const { handleSubmit, control, watch } = useForm<SearchFormValuesType>({ defaultValues });
+  const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
 
   const onSubmit = (data: SearchFormValuesType) =>
     router.push({
@@ -61,18 +61,13 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
       },
     });
 
-  const cancerType = watch('cancerType');
-
-  const [cancerTypes, setCancerTypes] = useState(cancerTypeOptions);
-  const [cancerCategory, setcancerCategory] = useState('cancerTypesOptions');
-  //const [cancerTypes, setCancerTypes] = useState([]);
   const [cancerSubTypes, setCancerSubTypes] = useState([]);
   const [biomarkers, setBiomarkers] = useState([]);
   const [stages, setStages] = useState([]);
   const [medications, setMedications] = useState([]);
   const [procedures, setProcedures] = useState([]);
   const [radiations, setRadiations] = useState([]);
-
+  /*
   const [selectVal, setSelectVal] = useState({
     cancerType: cancerTypeOptions,
     cancerSubType: '',
@@ -81,7 +76,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
     medication: '',
     procedure: '',
   });
-
+*/
   const retrieveCancer = cancer => {
     if (cancer !== null) {
       if (cancer.entryType !== undefined) {
