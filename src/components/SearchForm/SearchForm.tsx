@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { cancerTypeDetails } from 'src/components/SearchForm/SearchFormOptions';
+import { cancerTypeDetails } from 'src/components/SearchForm/SearchFormOptions.tsx';
 import { SearchParameters } from 'types/search-types';
 import {
   AgeTextField,
