@@ -1,4 +1,4 @@
-import { NamedSNOMEDCode } from '@/utils/fhirConversionUtils';
+import { CodedValueType } from '@/utils/fhirConversionUtils';
 
 export type SearchFormValuesType = {
   matchingServices: { [key: string]: boolean };
@@ -6,14 +6,14 @@ export type SearchFormValuesType = {
   travelDistance: string;
   age: string;
   gender: string;
-  cancerType: NamedSNOMEDCode | null;
-  cancerSubtype: NamedSNOMEDCode | null;
+  cancerType: CodedValueType | null;
+  cancerSubtype: CodedValueType | null;
   metastasis: string[];
-  stage: NamedSNOMEDCode;
+  stage: CodedValueType;
   ecogScore: string;
   karnofskyScore: string;
-  biomarkers: NamedSNOMEDCode[];
-  radiation: NamedSNOMEDCode[];
-  surgery: NamedSNOMEDCode[];
-  medications: NamedSNOMEDCode[];
+  biomarkers: CodedValueType[];
+  radiation: CodedValueType[];
+  surgery: CodedValueType[];
+  medications: CodedValueType[];
 };

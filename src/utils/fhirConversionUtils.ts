@@ -11,7 +11,7 @@ type FhirUserName = {
   suffix?: string[];
 };
 
-export type NamedSNOMEDCode = {
+export type CodedValueType = {
   entryType: string;
   code: string | number;
   display: string;
@@ -26,8 +26,8 @@ export type Patient = {
 };
 
 export type PrimaryCancerCondition = {
-  cancerType: NamedSNOMEDCode | null;
-  cancerSubtype: NamedSNOMEDCode | null;
+  cancerType: CodedValueType | null;
+  cancerSubtype: CodedValueType | null;
   stage: string;
 };
 
@@ -186,11 +186,11 @@ const getDisplays = (resource: { medicationCodeableConcept?: CodeableConcept; co
 };
 
 /***
- * Type guard for the NamedSNOMEDCode
+ * Type guard for the CodedValueType
  */
-export const isNamedSNOMEDCode = (o: unknown): o is NamedSNOMEDCode => {
+export const isCodedValueType = (o: unknown): o is CodedValueType => {
   if (typeof o === 'object' && o !== null) {
-    const code = o as NamedSNOMEDCode;
+    const code = o as CodedValueType;
     return typeof code.display === 'string' && (typeof code.code === 'string' || typeof code.code === 'number');
   } else {
     return false;
@@ -198,25 +198,25 @@ export const isNamedSNOMEDCode = (o: unknown): o is NamedSNOMEDCode => {
 };
 
 /**
- * Parses a string that contains a JSON description of a named SNOMED code to a NamedSNOMEDCode object.
+ * Parses a string that contains a JSON description of a named SNOMED code to a CodedValueType object.
  * @param code the code to convert
  * @returns the parsed code
  */
-export const parseNamedSNOMEDCode = (code: string): NamedSNOMEDCode => {
+export const parseCodedValue = (code: string): CodedValueType => {
   try {
-    const result: NamedSNOMEDCode = JSON.parse(code);
+    const result: CodedValueType = JSON.parse(code);
     // Make sure this is valid
-    return isNamedSNOMEDCode(result) ? result : undefined;
+    return isCodedValueType(result) ? result : undefined;
   } catch (ex) {
     // JSON parse error, return undefined
     return undefined;
   }
 };
-export const parseNamedSNOMEDCodeArray = (code: string): NamedSNOMEDCode[] => {
+export const parseCodedValueArray = (code: string): CodedValueType[] => {
   try {
-    const result: NamedSNOMEDCode[] = JSON.parse(code);
+    const result: CodedValueType[] = JSON.parse(code);
     for (let i = 0; i < result.length; i++) {
-      if (!isNamedSNOMEDCode(result[i])) {
+      if (!isCodedValueType(result[i])) {
         throw 'JSON parse error';
       }
     }
@@ -256,7 +256,7 @@ const getStage = (condition: Condition): string => {
   return stages?.length ? stages[0] : null;
 };
 
-const getCancerType = (condition: Condition): NamedSNOMEDCode | null => {
+const getCancerType = (condition: Condition): CodedValueType | null => {
   if (Array.isArray(condition?.code?.coding)) {
     // Prefer SNOMED over anything else, else take the first code with a display
     let code = condition.code.coding.find(({ system }) => system === SNOMED_CODE_URI);
@@ -274,7 +274,7 @@ const getCancerType = (condition: Condition): NamedSNOMEDCode | null => {
   return null;
 };
 
-const getCancerSubtype = (condition: Condition): NamedSNOMEDCode | null => {
+const getCancerSubtype = (condition: Condition): CodedValueType | null => {
   if (Array.isArray(condition?.extension)) {
     for (const extension of condition.extension) {
       if (
