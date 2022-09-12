@@ -1,6 +1,6 @@
 import { DEFAULT_PAGE } from '@/queries/clinicalTrialPaginationQuery';
 import { ResultsResponse } from '@/queries/clinicalTrialSearchQuery';
-import { Pagination, TablePagination, Typography } from '@mui/material';
+import { Pagination, PaginationItem, TablePagination, Typography } from '@mui/material';
 import { TablePaginationActionsProps } from '@mui/material/TablePagination/TablePaginationActions';
 import { useRouter } from 'next/router';
 import { ChangeEvent, MouseEvent, MutableRefObject, PropsWithChildren, ReactElement } from 'react';
@@ -29,6 +29,14 @@ const getPagination = ({
     page={newZeroIndexedPage + 1}
     shape="rounded"
     data-testid="pagination"
+    renderItem={item => {
+      const onCurrentPage = item.selected === true;
+      const onFirstPage = newZeroIndexedPage === 0;
+      const disableBackwardsButtons = (item.type === 'previous' || item.type === 'first') && onFirstPage;
+      const onLastPage = newZeroIndexedPage + 1 === Math.ceil(count / rowsPerPage);
+      const disableForwardButtons = (item.type === 'next' || item.type === 'last') && onLastPage;
+      return <PaginationItem {...item} disabled={onCurrentPage || disableBackwardsButtons || disableForwardButtons} />;
+    }}
   />
 );
 
