@@ -61,6 +61,8 @@ export const ZipcodeTextField = ({
     label="Zip Code"
     required
     variant="filled"
+    type="number"
+    inputProps={{ min: 0 }}
     {...field}
   />
 );
@@ -70,14 +72,32 @@ export const TravelDistanceTextField = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'travelDistance'>;
 }): ReactElement => (
-  <TextField data-testid="travelDistance" fullWidth label="Travel Distance (miles)" variant="filled" {...field} />
+  <TextField
+    data-testid="travelDistance"
+    fullWidth
+    label="Travel Distance (miles)"
+    variant="filled"
+    type="number"
+    inputProps={{ min: 0 }}
+    {...field}
+  />
 );
 
 export const AgeTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'age'>;
-}): ReactElement => <TextField data-testid="age" fullWidth label="Age" type="number" variant="filled" {...field} />;
+}): ReactElement => (
+  <TextField
+    data-testid="age"
+    fullWidth
+    label="Age"
+    variant="filled"
+    type="number"
+    inputProps={{ min: 0 }}
+    {...field}
+  />
+);
 
 export const CancerTypeAutocomplete = ({
   field,
