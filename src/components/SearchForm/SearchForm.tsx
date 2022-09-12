@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { cancerTypeDetails } from 'src/components/SearchForm/SearchFormOptions';
 import { SearchParameters } from 'types/search-types';
 import {
   AgeTextField,
@@ -24,6 +23,7 @@ import {
   ZipcodeTextField,
 } from './FormFields';
 import MatchingServices from './MatchingServices';
+import { cancerTypeDetails } from './SearchFormOptions';
 import { SearchFormValuesType } from './types';
 
 export type SearchFormProps = {
