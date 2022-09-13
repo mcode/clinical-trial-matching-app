@@ -48,7 +48,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
   const handleChange = (panel: SidebarExpand) => (_event: SyntheticEvent, isExpanded: boolean) => {
     setExpanded(isExpanded ? panel : SidebarExpand.Neither);
   };
-  console.log('Query=', query);
+
   const matchingServices = ensureArray(query.matchingServices);
   const defaultSearchValues = {
     matchingServices: Object.fromEntries(matchingServices.map(key => [key, true])),
