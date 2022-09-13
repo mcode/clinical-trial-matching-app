@@ -2,7 +2,7 @@ import { CodedValueType } from '@/utils/fhirConversionUtils';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
 import { ReactElement, useState } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
-import { cancerTypeOptions } from 'src/components/SearchForm/SearchFormOptions';
+import { cancerTypeOptions } from './SearchFormOptions';
 import { SearchFormValuesType } from './types';
 const AutocompleteMulti = <T extends 'metastasis' | 'biomarkers' | 'radiation' | 'surgery' | 'medications'>({
   field,
