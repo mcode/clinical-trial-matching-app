@@ -108,7 +108,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystem = 'http://loinc.org';
     const codingSystemCode = '89247-1';
     const resource: Observation = convertStringToObservation({
-      bundle: patientBundle,
       valueString: ecogScore,
       id,
       profile_value: profileValue,
@@ -126,7 +125,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystemCode = 'LL4986-7';
 
     const resource: Observation = convertStringToObservation({
-      bundle: patientBundle,
       valueString: karnofskyScore,
       id,
       profile_value: profileValue,
@@ -140,14 +138,12 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const id = 'mcode-cancer-stage-group';
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
     const codingSystem = '';
-    const codingSystemCode = '';
     const stageParm = parseCodedValueType(searchParams.stage);
     const resource = convertCodedValueTypeToObservation({
       codedValue: stageParm,
       id,
       profile_value: profileValue,
       codingSystem,
-      codingSystemCode,
     });
     patientBundle.entry.push({ resource: resource });
   }
@@ -161,8 +157,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const codingSystemCode: string = null;
 
     const resource = convertStringToObservation({
-      bundle: patientBundle,
-      valueString: stageParm,
+      valueString: metastasisParm,
       id,
       profile_value: profileValue,
       codingSystem,
@@ -176,14 +171,12 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const id = 'mcode-tumor-marker';
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
     const codingSystem = '';
-    const codingSystemCode = '';
     for (let i = 0; i < biomarkers.length; i++) {
       const resource = convertCodedValueTypeToObservation({
         codedValue: biomarkers[i],
         id,
         profile_value: profileValue,
         codingSystem,
-        codingSystemCode,
       });
       patientBundle.entry.push({ resource: resource });
     }
@@ -194,14 +187,12 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const id = 'mcode-cancer-related-medication-statement';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
     const codingSystem = '';
-    const codingSystemCode = '';
     for (let i = 0; i < medications.length; i++) {
       const resource: MedicationStatement = convertCodedValueToMedicationStatement({
         codedValue: medications[i],
         id,
         profile_value: profileValue,
         codingSystem,
-        codingSystemCode,
       });
 
       patientBundle.entry.push({ resource: resource });
@@ -212,40 +203,36 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const id = 'mcode-cancer-related-surgical-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = '';
-    const codingSystemCode = '';
     for (let i = 0; i < surgery.length; i++) {
       const resource = convertCodedValueTypeToObservation({
         codedValue: surgery[i],
         id,
         profile_value: profileValue,
         codingSystem,
-        codingSystemCode,
       });
       patientBundle.entry.push({ resource: resource });
     }
   }
 
-  const radiation = parseCodedValueArray(searchParams['surgery']);
+  const radiation = parseCodedValueArray(searchParams['radiation']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-radiation-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
     const codingSystem = '';
-    const codingSystemCode = '';
     for (let i = 0; i < radiation.length; i++) {
       const resource = convertCodedValueTypeToObservation({
         codedValue: radiation[i],
         id,
         profile_value: profileValue,
         codingSystem,
-        codingSystemCode,
       });
       patientBundle.entry.push({ resource: resource });
     }
   }
 
-  //if (reactAppDebug) {
-  console.log(JSON.stringify(patientBundle, null, 2));
-  //}
+  if (reactAppDebug) {
+    console.log(JSON.stringify(patientBundle, null, 2));
+  }
 
   return patientBundle;
 }
