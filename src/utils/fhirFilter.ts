@@ -95,14 +95,12 @@ export const addCancerHistologyMorphology = (
 };
 
 export function convertStringToObservation({
-  bundle,
   valueString,
   id,
   profile_value,
   codingSystem,
   codingSystemCode,
 }: {
-  bundle: Bundle;
   valueString: string | string[];
   id: string;
   profile_value: string;
@@ -151,13 +149,11 @@ export function convertCodedValueToObervation({
   id,
   profile_value,
   codingSystem,
-  codingSystemCode,
 }: {
   codedValue: CodedValueType;
   id: string;
   profile_value: string;
   codingSystem: string;
-  codingSystemCode: string;
 }): Observation {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
 
@@ -166,6 +162,7 @@ export function convertCodedValueToObervation({
 
   const resource: Observation = {
     resourceType: 'Observation',
+    id: id,
     status: 'completed',
     // Observation: {
     coding: [
@@ -190,13 +187,11 @@ export function convertCodedValueToMedicationStatement({
   id,
   profile_value,
   codingSystem,
-  codingSystemCode,
 }: {
   codedValue: CodedValueType;
   id: string;
   profile_value: string;
   codingSystem: string;
-  codingSystemCode: string;
 }): MedicationStatement {
   // Create the Condition - done separate from the function call to ensure proper TypeScript checking
 
@@ -211,6 +206,7 @@ export function convertCodedValueToMedicationStatement({
   };
   const resource: MedicationStatement = {
     resourceType: 'MedicationStatement',
+    id: id,
     subject: search_patient,
     status: 'completed',
     medicationCodeableConcept: {
