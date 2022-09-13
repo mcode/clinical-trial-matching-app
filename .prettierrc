@@ -7,5 +7,5 @@
 
   "arrowParens": "avoid",
 
-  "endOfLine": "auto"
+  "endOfLine": "lf"
 }
