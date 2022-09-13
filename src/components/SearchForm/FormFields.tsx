@@ -140,7 +140,7 @@ export const CancerStageAutocomplete = ({
   return (
     <Autocomplete
       {...field}
-      data-testid="cancerSubtype"
+      data-testid="stage"
       disabled={cancerStages === null ? true : false}
       onChange={(_event, value) => field.onChange(value)}
       options={cancerStages}
