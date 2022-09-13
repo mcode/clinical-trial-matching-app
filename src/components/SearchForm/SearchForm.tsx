@@ -103,9 +103,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           cancerTypeDetails[cancer.entryType].stages !== null ||
           cancerTypeDetails[cancer.entryType].stages?.length > 0
         ) {
-          console.log('cancerStages=' + JSON.stringify(cancerTypeDetails['breast'].stages));
           setStages(cancerTypeDetails['breast'].stages);
-          console.log('Got here');
         }
         if (
           cancerTypeDetails[cancer.entryType].radiationCodes !== null ||

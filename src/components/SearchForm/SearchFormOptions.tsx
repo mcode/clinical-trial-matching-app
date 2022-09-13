@@ -35,7 +35,7 @@ export type CancerTypeDetails = {
   stages: CodedValueType[];
   radiationCodes: CodedValueType[];
 };
-console.log('BREAST_CANCER_STAGES=');
+
 export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
   lung: buildCancerCodeJSON(
     'lung',
