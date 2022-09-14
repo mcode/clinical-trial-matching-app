@@ -31,10 +31,10 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const ensureCodedValueType = (value?: string): CodedValueType => {
+const ensureCodedValueType = (value?: string | string[]): CodedValueType => {
   if (!value) return undefined;
   if (Array.isArray(value)) {
-    // For now, take the first value, if anys
+    // For now, take the first value, if any
     return value.length >= 1 ? parseCodedValue(value[0]) : undefined;
   } else {
     return parseCodedValue(value);
@@ -56,17 +56,17 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
     travelDistance: (query.travelDistance as string) || '',
     age: (query.age as string) || '',
     gender: (query.gender as string) || '',
-    cancerType: ensureCodedValueType(query.cancerType as string),
-    cancerSubtype: ensureCodedValueType(query.cancerSubtype as string),
+    cancerType: ensureCodedValueType(query.cancerType),
+    cancerSubtype: ensureCodedValueType(query.cancerSubtype),
     metastasis: ensureArray(query.metastasis),
     //stage: (query.stage as string) || null,
-    stage: ensureCodedValueType(query.stage as string),
+    stage: ensureCodedValueType(query.stage),
     ecogScore: (query.ecogScore as string) || null,
     karnofskyScore: (query.karnofskyScore as string) || null,
-    biomarkers: parseCodedValueArray(query.biomarkers as string),
-    radiation: parseCodedValueArray(query.radiation as string),
-    surgery: parseCodedValueArray(query.surgery as string),
-    medications: parseCodedValueArray(query.medications as string),
+    biomarkers: parseCodedValueArray(query.biomarkers),
+    radiation: parseCodedValueArray(query.radiation),
+    surgery: parseCodedValueArray(query.surgery),
+    medications: parseCodedValueArray(query.medications),
   };
 
   const sortingOption = query.sortingOption as FilterFormValuesType['sortingOption'];
