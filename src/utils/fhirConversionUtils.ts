@@ -212,15 +212,29 @@ export const parseCodedValue = (code: string): CodedValueType => {
     return undefined;
   }
 };
-export const parseCodedValueArray = (code: string): CodedValueType[] => {
-  try {
-    const result: CodedValueType[] = JSON.parse(code);
-    for (let i = 0; i < result.length; i++) {
-      if (!isCodedValueType(result[i])) {
-        return undefined;
-      }
+
+export const parseCodedValueArray = (code: string | string[]): CodedValueType[] | undefined => {
+  if (Array.isArray(code)) {
+    // For now, if the code is a string array, only use the first value
+    if (code.length < 1) {
+      return undefined;
+    } else {
+      code = code[0];
     }
-    return result;
+  }
+  try {
+    const json: unknown = JSON.parse(code);
+    if (Array.isArray(json)) {
+      const result = json as CodedValueType[];
+      for (let i = 0; i < result.length; i++) {
+        if (!isCodedValueType(result[i])) {
+          throw 'JSON parse error';
+        }
+      }
+      return result;
+    }
+    // Unable to parse
+    return undefined;
   } catch (ex) {
     // JSON parse error, return undefined
     return undefined;

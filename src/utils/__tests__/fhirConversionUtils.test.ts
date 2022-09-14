@@ -22,6 +22,7 @@ import {
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
+  parseCodedValueArray,
 } from '../fhirConversionUtils';
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
@@ -127,5 +128,22 @@ describe('convertFhirTumorMarkers', () => {
       'PR Ag Br ca spec Ql ImStn +',
     ]);
     expect(convertFhirTumorMarkers(fhirEmptyBundle)).toEqual([]);
+  });
+});
+
+describe('parseCodedValueArray', () => {
+  it('parses a string', () => {
+    expect(parseCodedValueArray('[{"display":"Display","code":"123"}]')).toEqual([{ display: 'Display', code: '123' }]);
+    expect(parseCodedValueArray('[{"display":"Display","code":123}]')).toEqual([{ display: 'Display', code: 123 }]);
+  });
+  it('parses the first value from an array', () => {
+    expect(parseCodedValueArray(['[{"display":"Display","code":"123"}]', 'ignored invalid data'])).toEqual([
+      { display: 'Display', code: '123' },
+    ]);
+  });
+  it('returns undefined on an invalid string', () => {
+    expect(parseCodedValueArray('["hello"]')).toBeUndefined();
+    expect(parseCodedValueArray('"not an array"')).toBeUndefined();
+    expect(parseCodedValueArray('invalid JSON')).toBeUndefined();
   });
 });
