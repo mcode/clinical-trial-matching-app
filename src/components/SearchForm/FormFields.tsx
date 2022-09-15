@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CodedValueType } from '@/utils/fhirConversionUtils';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
 import { ReactElement, useState } from 'react';
@@ -84,7 +83,7 @@ export const CancerTypeAutocomplete = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
   // eslint-disable-next-line @typescript-eslint/ban-types
-  retrieveCancer: Function;
+  retrieveCancer: (value: string) => void;
 }): ReactElement => {
   const newOptions = cancerTypeOptions;
 
@@ -184,7 +183,6 @@ export const MetastasisAutocomplete = ({
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
 }): ReactElement => (
-  // eslint-disable-next-line prettier/prettier
   <AutocompleteMulti field={field} label="metastasis" options={['metastasis-1', 'metastasis-2', 'metastasis-3']} />
 );
 
