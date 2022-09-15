@@ -137,7 +137,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   if (searchParams.stage.length > 0) {
     const id = 'mcode-cancer-stage-group';
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
-    const codingSystem = '';
+    const codingSystem = 'http://snomed.info/sct';
     const stageParm = parseCodedValueType(searchParams.stage);
     const resource = convertCodedValueTypeToObservation({
       codedValue: stageParm,
@@ -170,7 +170,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   if (searchParams.biomarkers.length > 0) {
     const id = 'mcode-tumor-marker';
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
-    const codingSystem = '';
+    const codingSystem = 'http://snomed.info/sct';
     for (let i = 0; i < biomarkers.length; i++) {
       const resource = convertCodedValueTypeToObservation({
         codedValue: biomarkers[i],
@@ -186,7 +186,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   if (searchParams.medications.length > 0) {
     const id = 'mcode-cancer-related-medication-statement';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
-    const codingSystem = '';
+    const codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
     for (let i = 0; i < medications.length; i++) {
       const resource: MedicationStatement = convertCodedValueToMedicationStatement({
         codedValue: medications[i],
@@ -202,7 +202,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-surgical-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
-    const codingSystem = '';
+    const codingSystem = 'http://snomed.info/sct';
     for (let i = 0; i < surgery.length; i++) {
       const resource = convertCodedValueTypeToObservation({
         codedValue: surgery[i],
@@ -218,7 +218,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-radiation-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
-    const codingSystem = '';
+    const codingSystem = 'http://snomed.info/sct';
     for (let i = 0; i < radiation.length; i++) {
       const resource = convertCodedValueTypeToObservation({
         codedValue: radiation[i],
