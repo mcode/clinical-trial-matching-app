@@ -1,6 +1,6 @@
 import { CodedValueType } from '@/utils/fhirConversionUtils';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
-import { ReactElement, useState } from 'react';
+import { ReactElement } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
 import { cancerTypeOptions } from './SearchFormOptions';
 import { SearchFormValuesType } from './types';
@@ -110,8 +110,6 @@ export const CancerSubtypeAutocomplete = ({
   field: ControllerRenderProps<SearchFormValuesType, 'cancerSubtype'>;
   cancerSubTypes: CodedValueType[];
 }): ReactElement => {
-  const [initialValue] = useState(field.value);
-
   return (
     <Autocomplete
       {...field}
