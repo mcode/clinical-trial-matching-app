@@ -133,8 +133,6 @@ export const CancerStageAutocomplete = ({
   field: ControllerRenderProps<SearchFormValuesType, 'stage'>;
   cancerStages: CodedValueType[];
 }): ReactElement => {
-  const [initialValue] = useState(field.value);
-
   return (
     <Autocomplete
       {...field}

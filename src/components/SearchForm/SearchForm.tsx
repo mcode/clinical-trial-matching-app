@@ -67,16 +67,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const [medications, setMedications] = useState([]);
   const [procedures, setProcedures] = useState([]);
   const [radiations, setRadiations] = useState([]);
-  /*
-  const [selectVal, setSelectVal] = useState({
-    cancerType: cancerTypeOptions,
-    cancerSubType: '',
-    biomarker: '',
-    stage: '',
-    medication: '',
-    procedure: '',
-  });
-*/
+
   const retrieveCancer = cancer => {
     if (cancer !== null) {
       if (cancer.entryType !== undefined) {

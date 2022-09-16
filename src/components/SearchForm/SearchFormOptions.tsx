@@ -24,7 +24,7 @@ import MULTIPLE_MYELOMA_CANCERTYPE_CODES from '../../queries/mockData/MultipleMy
 import MULTIPLE_MYELOMA_MEDICATION_CODES from '../../queries/mockData/MultipleMyelomaMedicationCodes.json';
 import PROSTATE_CANCER_TYPE_CODES from '../../queries/mockData/prostateCancerTypeCodes.json';
 
-export type CancerTypeDetails = {
+export type CancerTypeDetailType = {
   category: string;
   cancerCodes: CodedValueType[];
   cancerSubtype: CodedValueType[];
@@ -34,70 +34,8 @@ export type CancerTypeDetails = {
   stages: CodedValueType[];
   radiationCodes: CodedValueType[];
 };
-/*
-export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
-  lung: buildCancerCodeJSON(
-    'lung',
-    LUNG_CANCER_TYPE_CODES.entry,
-    LUNG_CANCER_SUBTYPE_CODES.entry,
-    LUNG_MEDICATION_CODES.entry,
-    LUNG_RADIATION_CODES.entry,
-    LUNG_SURGERY_CODES.entry,
-    BREAST_CANCER_STAGES.entry,
-    BREAST_CANCER_BIOMARKERS.entry
-  ),
-  colon: buildCancerCodeJSON(
-    'colon',
-    COLON_CANCER_TYPE_CODES.entry,
-    [], // No cancer subtype codes provided for colon cancer
-    COLON_MEDICATION_CODES.entry,
-    COLON_RADIATION_CODES.entry,
-    COLON_SURGERY_CODES.entry,
-    BREAST_CANCER_STAGES.entry,
-    [] //No biomarker codes provided for colon cancer
-  ),
-  brain: buildCancerCodeJSON(
-    'brain',
-    BRAIN_CANCER_TYPE_CODES.entry,
-    BRAIN_CANCER_SUBTYPE_CODES.entry,
-    BRAIN_MEDICATION_CODES.entry,
-    BRAIN_RADIATION_CODES.entry,
-    BRAIN_SURGERY_CODES.entry,
-    BREAST_CANCER_STAGES.entry,
-    BRAIN_BIOMARKER_CODES.entry
-  ),
-  prostate: buildCancerCodeJSON(
-    'prostate',
-    PROSTATE_CANCER_TYPE_CODES.entry,
-    [], // No Cancer Subtype Codes provided
-    [], // No Medication Codes provided
-    [], // No radiation codes provided
-    [], //No surgery codes  provided
-    BREAST_CANCER_STAGES.entry,
-    [] //No biomarker codes provided
-  ),
-  breast: buildCancerCodeJSON(
-    'breast',
-    BREAST_CANCER_TYPE_CODES.entry,
-    [],
-    BREAST_CANCER_MEDICATIONS.entry,
-    [], // No radiation codes provided
-    [], //No Surgery Codes provided
-    BREAST_CANCER_STAGES.entry,
-    BREAST_CANCER_BIOMARKERS.entry
-  ),
-  mm: buildCancerCodeJSON(
-    'mm',
-    MULTIPLE_MYELOMA_CANCERTYPE_CODES.entry,
-    [], // No Medication Codes provided
-    MULTIPLE_MYELOMA_MEDICATION_CODES.entry,
-    [], // No radiation codes provided
-    [], //No Surgery Codes provided
-    BREAST_CANCER_STAGES.entry, //Use Breast Cancer Stages Codes
-    [] //No Biomarker Codes provided
-  ),
-}; */
-export const cancerTypeDetails: Record<string, CancerTypeDetails> = {
+
+export const cancerTypeDetails: Record<string, CancerTypeDetailType> = {
   lung: {
     category: 'lung',
     cancerCodes: LUNG_CANCER_TYPE_CODES.entry,

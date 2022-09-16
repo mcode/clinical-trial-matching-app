@@ -166,14 +166,14 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     patientBundle.entry.push({ resource: resource });
   }
 
-  const biomarkers = parseCodedValueArray(searchParams['biomarkers']);
+  const biomarkersVals = parseCodedValueArray(searchParams['biomarkers']);
   if (searchParams.biomarkers.length > 0) {
     const id = 'mcode-tumor-marker';
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
     const codingSystem = 'http://snomed.info/sct';
-    for (let i = 0; i < biomarkers.length; i++) {
+    for (const bioMarkers of biomarkersVals) {
       const resource = convertCodedValueTypeToObservation({
-        codedValue: biomarkers[i],
+        codedValue: bioMarkers,
         id,
         profile_value: profileValue,
         codingSystem,
@@ -187,9 +187,9 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     const id = 'mcode-cancer-related-medication-statement';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
     const codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
-    for (let i = 0; i < medications.length; i++) {
+    for (const medication of medications) {
       const resource: MedicationStatement = convertCodedValueToMedicationStatement({
-        codedValue: medications[i],
+        codedValue: medication,
         id,
         profile_value: profileValue,
         codingSystem,
@@ -198,14 +198,14 @@ function buildBundle(searchParams: SearchParameters): Bundle {
       patientBundle.entry.push({ resource: resource });
     }
   }
-  const surgery = parseCodedValueArray(searchParams['surgery']);
+  const surgeryVals = parseCodedValueArray(searchParams['surgery']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-surgical-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = 'http://snomed.info/sct';
-    for (let i = 0; i < surgery.length; i++) {
+    for (const surgery of surgeryVals) {
       const resource = convertCodedValueTypeToObservation({
-        codedValue: surgery[i],
+        codedValue: surgery,
         id,
         profile_value: profileValue,
         codingSystem,
@@ -214,14 +214,14 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     }
   }
 
-  const radiation = parseCodedValueArray(searchParams['radiation']);
+  const radiationVals = parseCodedValueArray(searchParams['radiation']);
   if (searchParams.surgery.length > 0) {
     const id = 'mcode-cancer-related-radiation-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
     const codingSystem = 'http://snomed.info/sct';
-    for (let i = 0; i < radiation.length; i++) {
+    for (const radiation of radiationVals) {
       const resource = convertCodedValueTypeToObservation({
-        codedValue: radiation[i],
+        codedValue: radiation,
         id,
         profile_value: profileValue,
         codingSystem,

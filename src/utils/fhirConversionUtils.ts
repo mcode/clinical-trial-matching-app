@@ -217,7 +217,7 @@ export const parseCodedValueArray = (code: string): CodedValueType[] => {
     const result: CodedValueType[] = JSON.parse(code);
     for (let i = 0; i < result.length; i++) {
       if (!isCodedValueType(result[i])) {
-        throw 'JSON parse error';
+        return undefined;
       }
     }
     return result;
