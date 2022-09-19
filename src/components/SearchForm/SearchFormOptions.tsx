@@ -5,8 +5,8 @@ import BRAIN_MEDICATION_CODES from '../../queries/mockData/brainMedicationCodes.
 import BREAST_CANCER_BIOMARKERS from '../../queries/mockData/breastCancerBiomarkerCodes.json';
 import BREAST_CANCER_MEDICATIONS from '../../queries/mockData/breastCancerMedicationCodes.json';
 import BREAST_CANCER_STAGES from '../../queries/mockData/breastCancerStageCodes.json';
-//import BreastCancerSurgeryCodes from '../../queries/mockData/breastCancerSurgeryCodes.json';
 import BREAST_CANCER_TYPE_CODES from '../../queries/mockData/breastCancerTypeCodes.json';
+import BREAST_CANCER_SURGERY_CODES from '../../queries/mockData/BreastSurgeryCodes.json';
 import COLON_CANCER_TYPE_CODES from '../../queries/mockData/colonCancerTypeCodes.json';
 import COLON_MEDICATION_CODES from '../../queries/mockData/colonMedicationCodes.json';
 import COLON_RADIATION_CODES from '../../queries/mockData/colonRadiationCodes.json';
@@ -83,7 +83,7 @@ export const cancerTypeDetails: Record<string, CancerTypeDetailType> = {
     biomarkers: BREAST_CANCER_BIOMARKERS.entry,
     medications: BREAST_CANCER_MEDICATIONS.entry,
     radiationCodes: [], // No radiation codes provided
-    surgeryCodes: [], //No Surgery Codes provided
+    surgeryCodes: BREAST_CANCER_SURGERY_CODES.entry, //No Surgery Codes provided
     stages: BREAST_CANCER_STAGES.entry,
   },
   mm: {
