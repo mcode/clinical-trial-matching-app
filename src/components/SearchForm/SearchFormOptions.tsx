@@ -6,7 +6,7 @@ import BREAST_CANCER_BIOMARKERS from '../../queries/mockData/breastCancerBiomark
 import BREAST_CANCER_MEDICATIONS from '../../queries/mockData/breastCancerMedicationCodes.json';
 import BREAST_CANCER_STAGES from '../../queries/mockData/breastCancerStageCodes.json';
 import BREAST_CANCER_TYPE_CODES from '../../queries/mockData/breastCancerTypeCodes.json';
-import BREAST_CANCER_SURGERY_CODES from '../../queries/mockData/BreastSurgeryCodes.json';
+import BREAST_CANCER_SURGERY_CODES from '../../queries/mockData/breastSurgeryCodes.json';
 import COLON_CANCER_TYPE_CODES from '../../queries/mockData/colonCancerTypeCodes.json';
 import COLON_MEDICATION_CODES from '../../queries/mockData/colonMedicationCodes.json';
 import COLON_RADIATION_CODES from '../../queries/mockData/colonRadiationCodes.json';
