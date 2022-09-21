@@ -73,28 +73,28 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
       if (cancer.entryType !== undefined) {
         const cancerSubType = cancerTypeDetails[cancer.entryType].cancerSubtype;
 
-        if (cancerSubType !== null || cancerSubType.length > 0) {
+        if (cancerSubType !== null) {
           setCancerSubTypes(cancerTypeDetails[cancer.entryType].cancerSubtype);
         }
         const surgeryCodes = cancerTypeDetails[cancer.entryType].surgeryCodes;
-        if (surgeryCodes !== null || surgeryCodes?.length > 0) {
+        if (surgeryCodes !== null) {
           setProcedures(cancerTypeDetails[cancer.entryType].surgeryCodes);
         }
         const medications = cancerTypeDetails[cancer.entryType].medications;
 
-        if (medications !== null || medications?.length > 0) {
+        if (medications !== null) {
           setMedications(medications);
 
           const stages = cancerTypeDetails[cancer.entryType].stages;
-          if (stages !== null || stages?.length > 0) {
+          if (stages !== null) {
             setStages(stages);
           }
           const radiationCodes = cancerTypeDetails[cancer.entryType].radiationCodes;
-          if (radiationCodes !== null || radiationCodes?.length > 0) {
+          if (radiationCodes !== null) {
             setRadiations(radiationCodes);
           }
           const biomarkers = cancerTypeDetails[cancer.entryType].biomarkers;
-          if (biomarkers !== null || biomarkers?.length > 0) {
+          if (biomarkers !== null) {
             setBiomarkers(biomarkers);
           }
         }
