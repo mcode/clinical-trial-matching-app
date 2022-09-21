@@ -106,40 +106,43 @@ export function convertStringToObservation({
   codingSystem: string;
   codingSystemCode: string;
 }): Observation {
-  // Create the Condition - done separate from the function call to ensure proper TypeScript checking
-  let code: CodeableConcept = null;
-  if (codingSystemCode) {
-    code = {
-      coding: [
-        {
-          system: codingSystem,
-          code: codingSystemCode,
-        },
-      ],
-    };
-  }
+  // Create the Condition - done 1separate from the function call to ensure proper TypeScript checking
   let retResource: Observation = null;
-  if (code) {
-    const resource: Observation = {
-      resourceType: 'Observation',
-      id: id,
-      meta: {
-        profile: [profile_value],
-      },
-      code,
-      valueString,
-    };
-    retResource = resource;
-  } else {
-    const resource: Observation = {
-      resourceType: 'Observation',
-      id: id,
-      meta: {
-        profile: [profile_value],
-      },
-      valueString,
-    };
-    retResource = resource;
+  if (valueString != null) {
+    let code: CodeableConcept = null;
+    if (codingSystemCode) {
+      code = {
+        coding: [
+          {
+            system: codingSystem,
+            code: codingSystemCode,
+          },
+        ],
+      };
+    }
+
+    if (code) {
+      const resource: Observation = {
+        resourceType: 'Observation',
+        id: id,
+        meta: {
+          profile: [profile_value],
+        },
+        code,
+        valueString,
+      };
+      retResource = resource;
+    } else {
+      const resource: Observation = {
+        resourceType: 'Observation',
+        id: id,
+        meta: {
+          profile: [profile_value],
+        },
+        valueString,
+      };
+      retResource = resource;
+    }
   }
   return retResource;
 }
