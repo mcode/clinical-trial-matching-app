@@ -71,33 +71,12 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const retrieveCancer = cancer => {
     if (cancer !== null) {
       if (cancer.entryType !== undefined) {
-        const cancerSubType = cancerTypeDetails[cancer.entryType].cancerSubtype;
-
-        if (cancerSubType !== null) {
-          setCancerSubTypes(cancerTypeDetails[cancer.entryType].cancerSubtype);
-        }
-        const surgeryCodes = cancerTypeDetails[cancer.entryType].surgeryCodes;
-        if (surgeryCodes !== null) {
-          setProcedures(cancerTypeDetails[cancer.entryType].surgeryCodes);
-        }
-        const medications = cancerTypeDetails[cancer.entryType].medications;
-
-        if (medications !== null) {
-          setMedications(medications);
-
-          const stages = cancerTypeDetails[cancer.entryType].stages;
-          if (stages !== null) {
-            setStages(stages);
-          }
-          const radiationCodes = cancerTypeDetails[cancer.entryType].radiationCodes;
-          if (radiationCodes !== null) {
-            setRadiations(radiationCodes);
-          }
-          const biomarkers = cancerTypeDetails[cancer.entryType].biomarkers;
-          if (biomarkers !== null) {
-            setBiomarkers(biomarkers);
-          }
-        }
+        setCancerSubTypes(cancerTypeDetails[cancer.entryType].cancerSubtype);
+        setProcedures(cancerTypeDetails[cancer.entryType].surgeryCodes);
+        setMedications(cancerTypeDetails[cancer.entryType].medications);
+        setStages(cancerTypeDetails[cancer.entryType].stages);
+        setRadiations(cancerTypeDetails[cancer.entryType].radiationCodes);
+        setBiomarkers(cancerTypeDetails[cancer.entryType].biomarkers);
       } else {
         setCancerSubTypes([]);
         setProcedures([]);
