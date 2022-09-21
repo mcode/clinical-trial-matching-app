@@ -71,54 +71,43 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const retrieveCancer = cancer => {
     if (cancer !== null) {
       if (cancer.entryType !== undefined) {
-        if (
-          cancerTypeDetails[cancer.entryType].cancerSubtype !== null ||
-          cancerTypeDetails[cancer.entryType].cancerSubtype?.length > 0
-        ) {
+        const cancerSubType = cancerTypeDetails[cancer.entryType].cancerSubtype;
+
+        if (cancerSubType !== null || cancerSubType.length > 0) {
           setCancerSubTypes(cancerTypeDetails[cancer.entryType].cancerSubtype);
         }
-        if (
-          cancerTypeDetails[cancer.entryType].surgeryCodes !== null ||
-          cancerTypeDetails[cancer.entryType].surgeryCodes?.length > 0
-        ) {
+        const surgeryCodes = cancerTypeDetails[cancer.entryType].surgeryCodes;
+        if (surgeryCodes !== null || surgeryCodes?.length > 0) {
           setProcedures(cancerTypeDetails[cancer.entryType].surgeryCodes);
         }
+        const medications = cancerTypeDetails[cancer.entryType].medications;
 
-        if (
-          cancerTypeDetails[cancer.entryType].medications !== null ||
-          cancerTypeDetails[cancer.entryType].medications?.length > 0
-        ) {
-          setMedications(cancerTypeDetails[cancer.entryType].medications);
+        if (medications !== null || medications?.length > 0) {
+          setMedications(medications);
+
+          const stages = cancerTypeDetails[cancer.entryType].stages;
+          if (stages !== null || stages?.length > 0) {
+            setStages(stages);
+          }
+          const radiationCodes = cancerTypeDetails[cancer.entryType].radiationCodes;
+          if (radiationCodes !== null || radiationCodes?.length > 0) {
+            setRadiations(radiationCodes);
+          }
+          const biomarkers = cancerTypeDetails[cancer.entryType].biomarkers;
+          if (biomarkers !== null || biomarkers?.length > 0) {
+            setBiomarkers(biomarkers);
+          }
         }
-        if (
-          cancerTypeDetails[cancer.entryType].stages !== null ||
-          cancerTypeDetails[cancer.entryType].stages?.length > 0
-        ) {
-          setStages(cancerTypeDetails['breast'].stages);
-        }
-        if (
-          cancerTypeDetails[cancer.entryType].radiationCodes !== null ||
-          cancerTypeDetails[cancer.entryType].radiationCodes?.length > 0
-        ) {
-          setRadiations(cancerTypeDetails[cancer.entryType].radiationCodes);
-        }
-        if (
-          cancerTypeDetails[cancer.entryType].biomarkers !== null ||
-          cancerTypeDetails[cancer.entryType].biomarkers?.length > 0
-        ) {
-          setBiomarkers(cancerTypeDetails[cancer.entryType].biomarkers);
-        }
+      } else {
+        setCancerSubTypes([]);
+        setProcedures([]);
+        setMedications([]);
+        setStages([]);
+        setRadiations([]);
+        setBiomarkers([]);
       }
-    } else {
-      setCancerSubTypes([]);
-      setProcedures([]);
-      setMedications([]);
-      setStages([]);
-      setRadiations([]);
-      setBiomarkers([]);
     }
   };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Box bgcolor="grey.200">
