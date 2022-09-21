@@ -103,6 +103,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   const ecogScore = searchParams['ecogScore'];
   if (ecogScore != null) {
+    // NOSONAR
     const id = 'mcode-ecog-performance-status';
     const profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
     const codingSystem = 'http://loinc.org';
@@ -118,23 +119,25 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   }
 
   const karnofskyScore = searchParams.karnofskyScore;
-  const id = 'mcode-karnofsky-performance-status';
-  const profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
-  const codingSystem = 'http://loinc.org';
-  const codingSystemCode = 'LL4986-7';
+  if (karnofskyScore) {
+    // NOSONAR
+    const id = 'mcode-karnofsky-performance-status';
+    const profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
+    const codingSystem = 'http://loinc.org';
+    const codingSystemCode = 'LL4986-7';
 
-  const resource: Observation = convertStringToObservation({
-    valueString: karnofskyScore,
-    id: 'mcode-karnofsky-performance-status',
-    profile_value: profileValue,
-    codingSystem,
-    codingSystemCode,
-  });
-  if (resource != null) {
+    const resource: Observation = convertStringToObservation({
+      valueString: karnofskyScore,
+      id,
+      profile_value: profileValue,
+      codingSystem,
+      codingSystemCode,
+    });
     patientBundle.entry.push({ resource: resource });
   }
 
   if (searchParams.stage.length > 0) {
+    // NOSONAR
     const id = 'mcode-cancer-stage-group';
     const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
     const codingSystem = 'http://snomed.info/sct';
@@ -151,6 +154,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   const metastasisParm = searchParams.metastasis;
 
   if (metastasisParm) {
+    // NOSONAR
     const id = 'tnm-clinical-distant-metastases-category-cM0';
     const profileValue = fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
     const codingSystem: string = null;
@@ -168,7 +172,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   const biomarkersVals = parseCodedValueArray(searchParams['biomarkers']);
   if (searchParams.biomarkers.length > 0) {
-    const id = 'mcode-tumor-marker';
+    // NOSONAR
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
     const codingSystem = 'http://snomed.info/sct';
     for (const bioMarkers of biomarkersVals) {
@@ -184,6 +188,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   const medications = parseCodedValueArray(searchParams['medications']);
   if (searchParams.medications.length > 0) {
+    // NOSONAR
     const id = 'mcode-cancer-related-medication-statement';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
     const codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
@@ -200,6 +205,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   }
   const surgeryVals = parseCodedValueArray(searchParams['surgery']);
   if (searchParams.surgery.length > 0) {
+    // NOSONAR
     const id = 'mcode-cancer-related-surgical-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
     const codingSystem = 'http://snomed.info/sct';
@@ -216,6 +222,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   const radiationVals = parseCodedValueArray(searchParams['radiation']);
   if (searchParams.surgery.length > 0) {
+    // NOSONAR
     const id = 'mcode-cancer-related-radiation-procedure';
     const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
     const codingSystem = 'http://snomed.info/sct';
