@@ -175,6 +175,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     // NOSONAR
     const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
     const codingSystem = 'http://snomed.info/sct';
+    const id = 'mcode-tumor-marker';
     for (const bioMarkers of biomarkersVals) {
       const resource = convertCodedValueTypeToObservation({
         codedValue: bioMarkers,
