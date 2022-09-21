@@ -118,19 +118,19 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   }
 
   const karnofskyScore = searchParams.karnofskyScore;
-  if (karnofskyScore) {
-    const id = 'mcode-karnofsky-performance-status';
-    const profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
-    const codingSystem = 'http://loinc.org';
-    const codingSystemCode = 'LL4986-7';
+  const id = 'mcode-karnofsky-performance-status';
+  const profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
+  const codingSystem = 'http://loinc.org';
+  const codingSystemCode = 'LL4986-7';
 
-    const resource: Observation = convertStringToObservation({
-      valueString: karnofskyScore,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
+  const resource: Observation = convertStringToObservation({
+    valueString: karnofskyScore,
+    id: 'mcode-karnofsky-performance-status',
+    profile_value: profileValue,
+    codingSystem,
+    codingSystemCode,
+  });
+  if (resource != null) {
     patientBundle.entry.push({ resource: resource });
   }
 
