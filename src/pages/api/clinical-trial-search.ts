@@ -135,7 +135,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-cancer-stage-group';
   profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
-  codingSystem = 'http://snomed.info/sct';
+
   addCodedValueToBundle({
     patientBundle,
     searchOptionValue,
@@ -177,7 +177,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-cancer-related-medication-statement';
   profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
-  codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
   addCodedValueToBundle({
     patientBundle,
     searchOptionValue,
@@ -324,15 +323,17 @@ function addCodedValueToBundle({
     if (codedValueArray.length > 0) {
       // NOSONAR
       for (const codedValue of codedValueArray) {
-        if (profile_value != fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
-          resource = convertCodedValueTypeToObservation({
+        if (profile_value == fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
+          codingSystem = 'http://snomed.info/sct';
+          resource = convertCodedValueToMedicationStatement({
             codedValue,
             id,
             profile_value,
             codingSystem,
           });
         } else {
-          resource = convertCodedValueToMedicationStatement({
+          codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
+          resource = convertCodedValueTypeToObservation({
             codedValue,
             id,
             profile_value,
