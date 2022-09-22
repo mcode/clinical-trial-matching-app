@@ -145,7 +145,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   });
 
   const metastasisParm = searchParams.metastasis;
-
   if (metastasisParm) {
     // NOSONAR
     id = 'tnm-clinical-distant-metastases-category-cM0';
@@ -154,7 +153,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     codingSystemCode = '';
     addStringValueToBundle({
       patientBundle,
-      searchOptionValues: searchOptionValue,
+      searchOptionValues: metastasisParm,
       id,
       profile_value: profileValue,
       codingSystem,
@@ -362,10 +361,9 @@ function addStringValueToBundle({
   codingSystemCode: string;
 }): void {
   if (Array.isArray(searchOptionValues)) {
-    let resource: Resource = null;
-    for (let i = 0; i < searchOptionValues.length; i++) {
-      const valueString = searchOptionValues[i];
-      resource = convertStringToObservation({
+    for (const searchOption of searchOptionValues) {
+      const valueString = searchOption;
+      const resource = convertStringToObservation({
         valueString,
         id,
         profile_value,
