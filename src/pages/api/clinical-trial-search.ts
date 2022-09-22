@@ -1,10 +1,7 @@
 import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
-import {
-  parseCodedValue as parseCodedValueType,
-  parseCodedValueArray as parseCodedValueArray,
-} from '@/utils/fhirConversionUtils';
+import { CodedValueType, parseCodedValue as parseCodedValueType } from '@/utils/fhirConversionUtils';
 import {
   addCancerHistologyMorphology,
   addCancerType,
@@ -13,11 +10,10 @@ import {
   convertStringToObservation,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
-import { MedicationStatement } from 'fhir/r4';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
 import * as fhirConstants from 'src/utils/fhirConstants';
-import { Bundle, Condition, Observation, Patient, Resource } from 'types/fhir-types';
+import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
 import { SearchParameters } from 'types/search-types';
 
 const {
@@ -91,6 +87,12 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
   // codes if they exist.
+  let id = '';
+  let profileValue = '';
+  let codingSystem = 'http://snomed.info/sct';
+  let codingSystemCode = '';
+  let searchOptionValue = '';
+
   const cancerType = parseCodedValueType(searchParams['cancerType']);
   let cancerRecord: Condition;
   if (cancerType) {
@@ -101,142 +103,115 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
   }
 
-  const ecogScore = searchParams['ecogScore'];
-  if (ecogScore != null) {
-    // NOSONAR
-    const id = 'mcode-ecog-performance-status';
-    const profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
-    const codingSystem = 'http://loinc.org';
-    const codingSystemCode = '89247-1';
-    const resource: Observation = convertStringToObservation({
-      valueString: ecogScore,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
-    patientBundle.entry.push({ resource: resource });
-  }
+  searchOptionValue = searchParams['ecogScore'];
 
-  const karnofskyScore = searchParams.karnofskyScore;
-  if (karnofskyScore) {
-    // NOSONAR
-    const id = 'mcode-karnofsky-performance-status';
-    const profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
-    const codingSystem = 'http://loinc.org';
-    const codingSystemCode = 'LL4986-7';
+  id = 'mcode-ecog-performance-status';
+  profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
+  codingSystem = 'http://loinc.org';
+  codingSystemCode = '89247-1';
+  addStringValueToBundle({
+    patientBundle,
+    searchOptionValues: searchOptionValue,
+    id,
+    profile_value: profileValue,
+    codingSystem,
+    codingSystemCode,
+  });
 
-    const resource: Observation = convertStringToObservation({
-      valueString: karnofskyScore,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
-    patientBundle.entry.push({ resource: resource });
-  }
+  searchOptionValue = searchParams['karnofskyScore'];
+  id = 'mcode-karnofsky-performance-status';
+  profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
+  codingSystem = 'http://loinc.org';
+  codingSystemCode = 'LL4986-7';
 
-  if (searchParams.stage.length > 0) {
-    // NOSONAR
-    const id = 'mcode-cancer-stage-group';
-    const profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
-    const codingSystem = 'http://snomed.info/sct';
-    const stageParm = parseCodedValueType(searchParams.stage);
-    const resource = convertCodedValueTypeToObservation({
-      codedValue: stageParm,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-    });
-    patientBundle.entry.push({ resource: resource });
-  }
+  addStringValueToBundle({
+    patientBundle,
+    searchOptionValues: searchOptionValue,
+    id,
+    profile_value: profileValue,
+    codingSystem,
+    codingSystemCode,
+  });
+
+  id = 'mcode-cancer-stage-group';
+  profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
+  codingSystem = 'http://snomed.info/sct';
+  addCodedValueToBundle({
+    patientBundle,
+    searchOptionValue,
+    id,
+    profile_value: profileValue,
+    codingSystem,
+  });
 
   const metastasisParm = searchParams.metastasis;
 
   if (metastasisParm) {
     // NOSONAR
-    const id = 'tnm-clinical-distant-metastases-category-cM0';
-    const profileValue = fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
-    const codingSystem: string = null;
-    const codingSystemCode: string = null;
-
-    const resource = convertStringToObservation({
-      valueString: metastasisParm,
+    id = 'tnm-clinical-distant-metastases-category-cM0';
+    profileValue = fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
+    codingSystem = '';
+    codingSystemCode = '';
+    addStringValueToBundle({
+      patientBundle,
+      searchOptionValues: searchOptionValue,
       id,
       profile_value: profileValue,
       codingSystem,
       codingSystemCode,
     });
-    patientBundle.entry.push({ resource: resource });
   }
 
-  const biomarkersVals = parseCodedValueArray(searchParams['biomarkers']);
-  if (searchParams.biomarkers.length > 0) {
-    // NOSONAR
-    const profileValue = fhirConstants.MCODE_TUMOR_MARKER;
-    const codingSystem = 'http://snomed.info/sct';
-    const id = 'mcode-tumor-marker';
-    for (const bioMarkers of biomarkersVals) {
-      const resource = convertCodedValueTypeToObservation({
-        codedValue: bioMarkers,
-        id,
-        profile_value: profileValue,
-        codingSystem,
-      });
-      patientBundle.entry.push({ resource: resource });
-    }
-  }
+  searchOptionValue = searchParams['biomarkers'];
+  profileValue = fhirConstants.MCODE_TUMOR_MARKER;
+  codingSystem = 'http://snomed.info/sct';
+  id = 'mcode-tumor-marker';
+  addCodedValueToBundle({
+    patientBundle,
+    searchOptionValue,
+    id,
+    profile_value: profileValue,
+    codingSystem,
+  });
 
-  const medications = parseCodedValueArray(searchParams['medications']);
-  if (searchParams.medications.length > 0) {
-    // NOSONAR
-    const id = 'mcode-cancer-related-medication-statement';
-    const profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
-    const codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
-    for (const medication of medications) {
-      const resource: MedicationStatement = convertCodedValueToMedicationStatement({
-        codedValue: medication,
-        id,
-        profile_value: profileValue,
-        codingSystem,
-      });
+  searchOptionValue = searchParams['medications'];
 
-      patientBundle.entry.push({ resource: resource });
-    }
-  }
-  const surgeryVals = parseCodedValueArray(searchParams['surgery']);
-  if (searchParams.surgery.length > 0) {
-    // NOSONAR
-    const id = 'mcode-cancer-related-surgical-procedure';
-    const profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
-    const codingSystem = 'http://snomed.info/sct';
-    for (const surgery of surgeryVals) {
-      const resource = convertCodedValueTypeToObservation({
-        codedValue: surgery,
-        id,
-        profile_value: profileValue,
-        codingSystem,
-      });
-      patientBundle.entry.push({ resource: resource });
-    }
-  }
+  id = 'mcode-cancer-related-medication-statement';
+  profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
+  codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
+  addCodedValueToBundle({
+    patientBundle,
+    searchOptionValue,
+    id,
+    profile_value: profileValue,
+    codingSystem,
+  });
 
-  const radiationVals = parseCodedValueArray(searchParams['radiation']);
-  if (searchParams.surgery.length > 0) {
-    // NOSONAR
-    const id = 'mcode-cancer-related-radiation-procedure';
-    const profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
-    const codingSystem = 'http://snomed.info/sct';
-    for (const radiation of radiationVals) {
-      const resource = convertCodedValueTypeToObservation({
-        codedValue: radiation,
-        id,
-        profile_value: profileValue,
-        codingSystem,
-      });
-      patientBundle.entry.push({ resource: resource });
-    }
-  }
+  searchOptionValue = searchParams['surgery'];
+
+  id = 'mcode-cancer-related-surgical-procedure';
+  profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
+  codingSystem = 'http://snomed.info/sct';
+  addCodedValueToBundle({
+    patientBundle,
+    searchOptionValue,
+    id,
+    profile_value: profileValue,
+    codingSystem,
+  });
+
+  searchOptionValue = searchParams['radiation'];
+
+  id = 'mcode-cancer-related-radiation-procedure';
+  profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
+  codingSystem = 'http://snomed.info/sct';
+  addCodedValueToBundle({
+    patientBundle,
+    searchOptionValue,
+    id,
+    profile_value: profileValue,
+    codingSystem,
+  });
 
   if (reactAppDebug) {
     console.log(JSON.stringify(patientBundle, null, 2));
@@ -244,7 +219,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   return patientBundle;
 }
-
 /**
  * Calls all selected wrappers and combines the results
  *
@@ -329,6 +303,89 @@ function handleError(response) {
     throw Error();
   }
   return response;
+}
+
+function addCodedValueToBundle({
+  patientBundle,
+  searchOptionValue,
+  id,
+  profile_value,
+  codingSystem,
+}: {
+  patientBundle: Bundle;
+  searchOptionValue: string;
+  id: string;
+  profile_value: string;
+  codingSystem: string;
+}): void {
+  if (searchOptionValue != '') {
+    const codedValueArray: CodedValueType[] = JSON.parse(searchOptionValue);
+
+    let resource: Resource = null;
+    if (codedValueArray.length > 0) {
+      // NOSONAR
+      for (const codedValue of codedValueArray) {
+        if (profile_value != fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
+          resource = convertCodedValueTypeToObservation({
+            codedValue,
+            id,
+            profile_value,
+            codingSystem,
+          });
+        } else {
+          resource = convertCodedValueToMedicationStatement({
+            codedValue,
+            id,
+            profile_value,
+            codingSystem,
+          });
+        }
+        patientBundle.entry.push({ resource: resource });
+      }
+    }
+  }
+}
+
+function addStringValueToBundle({
+  patientBundle,
+  searchOptionValues,
+  id,
+  profile_value,
+  codingSystem,
+  codingSystemCode,
+}: {
+  patientBundle: Bundle;
+  searchOptionValues: string | string[];
+  id: string;
+  profile_value: string;
+  codingSystem: string;
+  codingSystemCode: string;
+}): void {
+  if (Array.isArray(searchOptionValues)) {
+    let resource: Resource = null;
+    for (let i = 0; i < searchOptionValues.length; i++) {
+      let valueString = searchOptionValues[i];
+      resource = convertStringToObservation({
+        valueString,
+        id,
+        profile_value,
+        codingSystem,
+        codingSystemCode,
+      });
+      patientBundle.entry.push({ resource: resource });
+    }
+  } else {
+    if (searchOptionValues) {
+      const resource = convertStringToObservation({
+        valueString: searchOptionValues,
+        id,
+        profile_value,
+        codingSystem,
+        codingSystemCode,
+      });
+      patientBundle.entry.push({ resource: resource });
+    }
+  }
 }
 
 export default handler;
