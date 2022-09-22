@@ -364,7 +364,7 @@ function addStringValueToBundle({
   if (Array.isArray(searchOptionValues)) {
     let resource: Resource = null;
     for (let i = 0; i < searchOptionValues.length; i++) {
-      let valueString = searchOptionValues[i];
+      const valueString = searchOptionValues[i];
       resource = convertStringToObservation({
         valueString,
         id,
