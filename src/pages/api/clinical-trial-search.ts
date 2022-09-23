@@ -89,7 +89,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   // codes if they exist.
   let id = '';
   let profileValue = '';
-  let codingSystem = 'http://snomed.info/sct';
+  let codingSystem = '';
   let codingSystemCode = '';
   let searchOptionValue = '';
 
@@ -107,7 +107,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-ecog-performance-status';
   profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
-  codingSystem = 'http://loinc.org';
+  codingSystem = '';
   codingSystemCode = '89247-1';
   addStringValueToBundle({
     patientBundle,
@@ -163,7 +163,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   searchOptionValue = searchParams['biomarkers'];
   profileValue = fhirConstants.MCODE_TUMOR_MARKER;
-  codingSystem = 'http://snomed.info/sct';
+  codingSystem = '';
   id = 'mcode-tumor-marker';
   addCodedValueToBundle({
     patientBundle,
@@ -189,7 +189,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-cancer-related-surgical-procedure';
   profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
-  codingSystem = 'http://snomed.info/sct';
+  codingSystem = '';
   addCodedValueToBundle({
     patientBundle,
     searchOptionValue,
@@ -202,7 +202,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-cancer-related-radiation-procedure';
   profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
-  codingSystem = 'http://snomed.info/sct';
+  codingSystem = '';
   addCodedValueToBundle({
     patientBundle,
     searchOptionValue,
@@ -324,7 +324,7 @@ function addCodedValueToBundle({
       // NOSONAR
       for (const codedValue of codedValueArray) {
         if (profile_value == fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
-          codingSystem = 'http://snomed.info/sct';
+          codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
           resource = convertCodedValueToMedicationStatement({
             codedValue,
             id,
@@ -332,7 +332,7 @@ function addCodedValueToBundle({
             codingSystem,
           });
         } else {
-          codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
+          codingSystem = 'http://snomed.info/sct';
           resource = convertCodedValueTypeToObservation({
             codedValue,
             id,
