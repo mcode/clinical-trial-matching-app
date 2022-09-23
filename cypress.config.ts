@@ -6,7 +6,6 @@ export default defineConfig({
     setupNodeEvents(_on, _config) {
       // implement node event listeners here
     },
-    experimentalSessionAndOrigin: true,
     supportFile: false,
   },
   chromeWebSecurity: false,

@@ -16,34 +16,34 @@ const textIsEmpty = () => cy.get(`input[type="text"]`).should('be.empty');
 
 const numberIsEmpty = () => cy.get(`input[type="number"]`).should('be.empty');
 
+const {
+  patient,
+  user,
+  primaryCancerCondition,
+  metastasis,
+  ecogScore,
+  karnofskyScore,
+  biomarkers,
+  radiation,
+  surgery,
+  medications,
+} = searchServerSideProps.props;
+
+const selectedTravelDistance = '1';
+const selectedZipcode = '02215';
+const selectedCancerType = 'Sarcoma of breast (disorder)';
+const selectedCancerSubtype = 'Juvenile carcinoma of the breast (morphologic abnormality)';
+const selectedStage = 'II';
+const selectedKarnofskyScore = '20';
+const selectedMetastasis = 'metastasis-2';
+const selectedMedication = 'medication-1';
+
 beforeEach(() => {
   cy.viewport('macbook-16');
   cy.visit('/search', { failOnStatusCode: false });
 });
 
-describe('Tests the search page', () => {
-  const {
-    patient,
-    user,
-    primaryCancerCondition,
-    metastasis,
-    ecogScore,
-    karnofskyScore,
-    biomarkers,
-    radiation,
-    surgery,
-    medications,
-  } = searchServerSideProps.props;
-
-  const selectedTravelDistance = '1';
-  const selectedZipcode = '02215';
-  const selectedCancerType = 'Sarcoma of breast (disorder)';
-  const selectedCancerSubtype = 'Juvenile carcinoma of the breast (morphologic abnormality)';
-  const selectedStage = 'II';
-  const selectedKarnofskyScore = '20';
-  const selectedMetastasis = 'metastasis-2';
-  const selectedMedication = 'medication-1';
-
+describe('/search', () => {
   it('is populated with the mock matching services, user, and patient data', () => {
     cy.get('[data-testid="matchingServices"]').get('[name="matchingServices.service-1"]').should('not.be.checked');
     cy.get('[data-testid="matchingServices"]').get('[name="matchingServices.service-2"]').should('be.checked');
