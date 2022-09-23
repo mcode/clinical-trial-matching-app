@@ -224,13 +224,13 @@ export const parseCodedValueArray = (code: string | string[]): CodedValueType[] 
   try {
     const json: unknown = JSON.parse(code);
     if (Array.isArray(json)) {
-      const result = json as CodedValueType[];
-      for (let i = 0; i < result.length; i++) {
-        if (!isCodedValueType(result[i])) {
-          throw 'JSON parse error';
+      const codedValueArray = json as CodedValueType[];
+      for (const codedValue of codedValueArray) {
+        if (!isCodedValueType(codedValue)) {
+          return undefined;
         }
       }
-      return result;
+      return codedValueArray;
     }
     // Unable to parse
     return undefined;
