@@ -31,10 +31,10 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const ensureCodedValueType = (value?: string): CodedValueType => {
+const ensureCodedValueType = (value?: string | string[]): CodedValueType => {
   if (!value) return undefined;
   if (Array.isArray(value)) {
-    // For now, take the first value, if anys
+    // For now, take the first value, if any
     return value.length >= 1 ? parseCodedValue(value[0]) : undefined;
   } else {
     return parseCodedValue(value);
@@ -56,16 +56,16 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
     travelDistance: query.travelDistance.toString() || '',
     age: query.age.toString() || '',
     gender: query.gender.toString() || '',
-    cancerType: ensureCodedValueType(query.cancerType.toString()),
-    cancerSubtype: ensureCodedValueType(query.cancerSubtype.toString()),
-    metastasis: ensureArray(query.metastasis.toString()),
-    stage: ensureCodedValueType(query.stage.toString()),
-    ecogScore: query.ecogScore.toString() || null,
-    karnofskyScore: query.karnofskyScore.toString() || null,
-    biomarkers: parseCodedValueArray(query.biomarkers.toString()),
-    radiation: parseCodedValueArray(query.radiation.toString()),
-    surgery: parseCodedValueArray(query.surgery.toString()),
-    medications: parseCodedValueArray(query.medications.toString()),
+    cancerType: ensureCodedValueType(query.cancerType),
+    cancerSubtype: ensureCodedValueType(query.cancerSubtype),
+    metastasis: ensureArray(query.metastasis),
+    stage: ensureCodedValueType(query.stage),
+    ecogScore: query.ecogScore || null,
+    karnofskyScore: query.karnofskyScore || null,
+    biomarkers: parseCodedValueArray(query.biomarkers),
+    radiation: parseCodedValueArray(query.radiation),
+    surgery: parseCodedValueArray(query.surgery),
+    medications: parseCodedValueArray(query.medications),
   };
 
   const sortingOption = query.sortingOption as FilterFormValuesType['sortingOption'];
