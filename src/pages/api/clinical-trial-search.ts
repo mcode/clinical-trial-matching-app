@@ -107,7 +107,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-ecog-performance-status';
   profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
-  codingSystem = '';
   codingSystemCode = '89247-1';
   addStringValueToBundle({
     patientBundle,
@@ -149,8 +148,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
     // NOSONAR
     id = 'tnm-clinical-distant-metastases-category-cM0';
     profileValue = fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
-    codingSystem = '';
-    codingSystemCode = '';
+
     addStringValueToBundle({
       patientBundle,
       searchOptionValues: metastasisParm,
@@ -163,7 +161,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   searchOptionValue = searchParams['biomarkers'];
   profileValue = fhirConstants.MCODE_TUMOR_MARKER;
-  codingSystem = '';
   id = 'mcode-tumor-marker';
   addCodedValueToBundle({
     patientBundle,
@@ -189,7 +186,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-cancer-related-surgical-procedure';
   profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
-  codingSystem = '';
   addCodedValueToBundle({
     patientBundle,
     searchOptionValue,
@@ -202,7 +198,6 @@ function buildBundle(searchParams: SearchParameters): Bundle {
 
   id = 'mcode-cancer-related-radiation-procedure';
   profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
-  codingSystem = '';
   addCodedValueToBundle({
     patientBundle,
     searchOptionValue,
