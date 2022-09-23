@@ -35,7 +35,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
   const details = getDetails(entry);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
-  const closestFacilities = entry?.closestFacilities || [];
+  const closestFacilities = entry?.closestFacilities?.filter(({ distance }) => distance?.quantity !== undefined);
 
   return (
     <Accordion sx={{ marginBottom: 2 }} onChange={(_event, expanded) => setIsExpanded(expanded)}>
@@ -108,7 +108,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
             {entry.contacts.map((contact, index) => (
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
-            {closestFacilities.length !== 0 && (
+            {
               <Accordion disableGutters square sx={{ marginTop: 2 }} className="borderless">
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
@@ -120,12 +120,16 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
                   </Typography>
                 </AccordionSummary>
                 <AccordionDetails sx={{ boxShadow: 'inset 0px 1px 0px 0px rgb(0 0 0 / 20%)' }}>
-                  {closestFacilities.map((closestFacility, index) => (
-                    <StudyContact title={`Facility ${index + 1}`} contact={closestFacility} key={index} />
-                  ))}
+                  {closestFacilities.length !== 0 ? (
+                    closestFacilities.map((closestFacility, index) => (
+                      <StudyContact title={`Facility ${index + 1}`} contact={closestFacility} key={index} />
+                    ))
+                  ) : (
+                    <Typography>No closest facilities were found due to invalid zip code.</Typography>
+                  )}
                 </AccordionDetails>
               </Accordion>
-            )}
+            }
           </Stack>
         </Stack>
       </AccordionDetails>

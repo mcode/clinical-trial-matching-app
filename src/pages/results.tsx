@@ -6,7 +6,6 @@ import { clinicalTrialSearchQuery } from '@/queries';
 import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
-import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { getSavedStudies, savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
@@ -39,9 +38,9 @@ import {
   SearchParameters,
   SortingParameters,
 } from 'types/search-types';
-
+import * as testModeProps from '../../cypress/fixtures/resultsServerSideProps.json';
 const {
-  publicRuntimeConfig: { sendLocationData },
+  publicRuntimeConfig: { sendLocationData, inTestMode },
 } = getConfig();
 
 type ResultsPageProps = {
@@ -175,10 +174,11 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const toggleDrawer = () => setOpen(!open);
   const toggleMobileDrawer = () => setMobileOpen(!mobileOpen);
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const isExtraSmallScreen = useMediaQuery(theme.breakpoints.down('xs'));
   const drawerWidth = getDrawerWidth(isSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const filterOptions = useMemo(() => data?.filterOptions as FilterOptions, [data]);
+  const filterOptions = useMemo(() => data?.filterOptions, [data]);
   const [state, dispatch] = useReducer(
     savedStudiesReducer,
     (searchParams.savedStudies && new Set<string>(ensureArray(searchParams.savedStudies))) || uninitializedState
@@ -198,7 +198,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
       event.stopPropagation();
       dispatch({ type: 'toggleSave', value: entry });
     };
-  const handleClose = (event: SyntheticEvent<Element, Event>, reason?: SnackbarCloseReason) => {
+  const handleClose = (_event: SyntheticEvent<Element, Event>, reason?: SnackbarCloseReason) => {
     // Don't close if we're just clicking "off" of the element
     if (reason === 'clickaway') {
       return;
@@ -207,6 +207,36 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   };
 
   const scrollableParent: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
+
+  const getDrawer = () =>
+    isExtraSmallScreen ? (
+      <Drawer
+        onClose={toggleMobileDrawer}
+        ModalProps={{ keepMounted: true }} // for better open performance on mobile
+        sx={{
+          display: { xs: 'block', lg: 'none' },
+          width: drawerWidth,
+          '& .MuiDrawer-paper': { width: drawerWidth },
+        }}
+        variant="temporary"
+        open={mobileOpen}
+      >
+        <Sidebar patient={patient} disabled={isIdle || isLoading} savedStudies={state} filterOptions={filterOptions} />
+      </Drawer>
+    ) : (
+      <Drawer
+        sx={{
+          display: { xs: 'none', lg: 'block' },
+          width: drawerWidth,
+          '& .MuiDrawer-paper': { position: 'relative', width: drawerWidth },
+        }}
+        variant="persistent"
+        anchor="left"
+        open={open}
+      >
+        <Sidebar patient={patient} disabled={isIdle || isLoading} savedStudies={state} filterOptions={filterOptions} />
+      </Drawer>
+    );
 
   return (
     <>
@@ -218,42 +248,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
         <Header userName={user?.name} />
 
         <Stack alignItems="stretch" direction={{ xs: 'column', lg: 'row' }} flex="1 1 auto" sx={{ overflowY: 'auto' }}>
-          <Drawer
-            onClose={toggleMobileDrawer}
-            ModalProps={{ keepMounted: true }} // for better open performance on mobile
-            sx={{
-              display: { xs: 'block', lg: 'none' },
-              width: drawerWidth,
-              '& .MuiDrawer-paper': { width: drawerWidth },
-            }}
-            variant="temporary"
-            open={mobileOpen}
-          >
-            <Sidebar
-              patient={patient}
-              disabled={isIdle || isLoading}
-              savedStudies={state}
-              filterOptions={filterOptions}
-            />
-          </Drawer>
-
-          <Drawer
-            sx={{
-              display: { xs: 'none', lg: 'block' },
-              width: drawerWidth,
-              '& .MuiDrawer-paper': { position: 'relative', width: drawerWidth },
-            }}
-            variant="persistent"
-            anchor="left"
-            open={open}
-          >
-            <Sidebar
-              patient={patient}
-              disabled={isIdle || isLoading}
-              savedStudies={state}
-              filterOptions={filterOptions}
-            />
-          </Drawer>
+          {getDrawer()}
 
           <SlidingStack
             ref={scrollableParent}
@@ -309,11 +304,18 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 export default ResultsPage;
 
 export const getServerSideProps: GetServerSideProps = async context => {
+  if (inTestMode) {
+    const props = JSON.parse(JSON.stringify(testModeProps.props));
+    props.searchParams = context.query;
+    return { props };
+  }
+
   const { req, res, query } = context;
   const queryClient = new QueryClient();
 
   let fhirClient: Client;
   try {
+    // possibly stub this out in testing, for Cypress?
     fhirClient = await smart(req, res).ready();
   } catch (e) {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
