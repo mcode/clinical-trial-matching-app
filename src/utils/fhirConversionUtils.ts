@@ -212,7 +212,6 @@ export const parseCodedValue = (code: string): CodedValueType => {
     return undefined;
   }
 };
-
 export const parseCodedValueArray = (code: string | string[]): CodedValueType[] | undefined => {
   if (Array.isArray(code)) {
     // For now, if the code is a string array, only use the first value
