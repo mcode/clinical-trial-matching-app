@@ -222,7 +222,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "https://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "1156671",
               "display": "fulvestrant Injectable Product"
             }
@@ -250,7 +250,7 @@
         "medicationCodeableConcept": {
           "coding": [
             {
-              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "system": "https://www.nlm.nih.gov/research/umls/rxnorm",
               "code": "1946828",
               "display": "abemaciclib Oral Product"
             }
