@@ -120,7 +120,7 @@ function buildBundle(searchParams: SearchParameters): Bundle {
   searchOptionValue = searchParams['karnofskyScore'];
   id = 'mcode-karnofsky-performance-status';
   profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
-  codingSystem = 'http://loinc.org';
+  codingSystem = 'https://loinc.org';
   codingSystemCode = 'LL4986-7';
 
   addStringValueToBundle({
@@ -319,7 +319,7 @@ function addCodedValueToBundle({
       // NOSONAR
       for (const codedValue of codedValueArray) {
         if (profile_value == fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
-          codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
+          codingSystem = 'https://www.nlm.nih.gov/research/umls/rxnorm';
           resource = convertCodedValueToMedicationStatement({
             codedValue,
             id,
@@ -327,7 +327,7 @@ function addCodedValueToBundle({
             codingSystem,
           });
         } else {
-          codingSystem = 'http://snomed.info/sct';
+          codingSystem = 'https://snomed.info/sct';
           resource = convertCodedValueTypeToObservation({
             codedValue,
             id,
