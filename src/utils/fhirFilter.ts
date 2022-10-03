@@ -5,7 +5,13 @@
 import { Bundle, BundleEntry, CodeableConcept, Condition, Observation, Resource } from 'types/fhir-types';
 import { MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, MCODE_PRIMARY_CANCER_CONDITION, SNOMED_CODE_URI } from './fhirConstants';
 import { CodedValueType as CodedValueType, Patient } from './fhirConversionUtils';
-
+const search_patient: Patient = {
+  id: '0',
+  gender: 'other',
+  name: 'search_name',
+  age: '0',
+  zipcode: '00000',
+};
 export const addResource = (bundle: Bundle, resource: Resource): void => {
   const entry: BundleEntry = {
     resource: resource,
@@ -166,6 +172,7 @@ export function convertCodedValueToObervation({
     resourceType: 'Observation',
     id: id,
     status: 'completed',
+    subject: search_patient,
     // Observation: {
     coding: [
       {
@@ -178,7 +185,6 @@ export function convertCodedValueToObervation({
     meta: {
       profile: [profile_value],
     },
-    subject: undefined,
   };
 
   return resource;
@@ -199,13 +205,7 @@ export function convertCodedValueToMedicationStatement({
 
   const tmpCode: string | number = codedValue.code.toString();
   const tmpDisplay = codedValue.display;
-  const search_patient: Patient = {
-    id: '0',
-    gender: 'other',
-    name: 'search_name',
-    age: '0',
-    zipcode: '00000',
-  };
+
   const resource: MedicationStatement = {
     resourceType: 'MedicationStatement',
     id: id,
