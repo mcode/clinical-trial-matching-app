@@ -577,8 +577,6 @@ describe('convertCodedValueToObervation', () => {
     codingSystem,
   });
   it('Medication Statement Returned', () => {
-    console.log('expected MS=', JSON.stringify(expectedMedicalStatmentResource));
-    console.log('actual MS=', JSON.stringify(medicalStatementResource));
     expect(JSON.stringify(medicalStatementResource)).toEqual(JSON.stringify(expectedMedicalStatmentResource));
   });
 });

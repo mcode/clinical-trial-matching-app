@@ -1,3239 +1,1840 @@
 {
   "entry": [
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "entryType",
+      "code": "Code",
+      "display": "Name",
+      "codingSystem": "System"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918237",
+      "display": "Zejula",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918231",
+      "display": "niraparib",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918242",
+      "display": "Zejula 100 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918238",
+      "display": "niraparib 100 MG [Zejula]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918239",
+      "display": "niraparib Oral Capsule [Zejula]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918236",
+      "display": "niraparib 100 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918232",
+      "display": "niraparib 100 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918235",
+      "display": "niraparib Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918233",
+      "display": "niraparib Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918234",
+      "display": "niraparib Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918240",
+      "display": "Zejula Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1918241",
+      "display": "Zejula Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597588",
+      "display": "Lynparza",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597582",
+      "display": "olaparib",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597593",
+      "display": "Lynparza 50 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942485",
+      "display": "Lynparza 100 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942489",
+      "display": "Lynparza 150 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597589",
+      "display": "olaparib 50 MG [Lynparza]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942483",
+      "display": "olaparib 100 MG [Lynparza]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942488",
+      "display": "olaparib 150 MG [Lynparza]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597590",
+      "display": "olaparib Oral Capsule [Lynparza]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942484",
+      "display": "olaparib Oral Tablet [Lynparza]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942482",
+      "display": "olaparib 100 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942487",
+      "display": "olaparib 150 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597587",
+      "display": "olaparib 50 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597583",
+      "display": "olaparib 50 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942480",
+      "display": "olaparib 100 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942486",
+      "display": "olaparib 150 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597586",
+      "display": "olaparib Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1942481",
+      "display": "olaparib Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597584",
+      "display": "olaparib Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597585",
+      "display": "olaparib Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597591",
+      "display": "Lynparza Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1597592",
+      "display": "Lynparza Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862585",
+      "display": "Rubraca",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862579",
+      "display": "rucaparib",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862578",
+      "display": "rucaparib camsylate",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1921589",
+      "display": "Rubraca 250 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862590",
+      "display": "Rubraca 300 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862595",
+      "display": "Rubraca 200 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862586",
+      "display": "rucaparib 300 MG [Rubraca]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862594",
+      "display": "rucaparib 200 MG [Rubraca]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1921588",
+      "display": "rucaparib 250 MG [Rubraca]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862587",
+      "display": "rucaparib Oral Tablet [Rubraca]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1921587",
+      "display": "rucaparib 250 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862593",
+      "display": "rucaparib 200 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862584",
+      "display": "rucaparib 300 MG Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862580",
+      "display": "rucaparib 300 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862592",
+      "display": "rucaparib 200 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1921586",
+      "display": "rucaparib 250 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862583",
+      "display": "rucaparib Oral Tablet",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862581",
+      "display": "rucaparib Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862582",
+      "display": "rucaparib Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862588",
+      "display": "Rubraca Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1862589",
+      "display": "Rubraca Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099947",
+      "display": "Talzenna",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099704",
+      "display": "talazoparib",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099703",
+      "display": "talazoparib tosylate",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099956",
+      "display": "Talzenna 1 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099952",
+      "display": "Talzenna 0.25 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099948",
+      "display": "talazoparib 0.25 MG [Talzenna]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099955",
+      "display": "talazoparib 1 MG [Talzenna]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099949",
+      "display": "talazoparib Oral Capsule [Talzenna]",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099946",
+      "display": "talazoparib 0.25 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099954",
+      "display": "talazoparib 1 MG Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099942",
+      "display": "talazoparib 0.25 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099953",
+      "display": "talazoparib 1 MG",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099945",
+      "display": "talazoparib Oral Capsule",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099943",
+      "display": "talazoparib Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099944",
+      "display": "talazoparib Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099950",
+      "display": "Talzenna Oral Product",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2099951",
+      "display": "Talzenna Pill",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2360231",
+      "display": "sacituzumab",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2360232",
+      "display": "sacituzumab govitecan",
+      "codingSystem": "RxNorm "
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "101306",
+      "display": "Herceptin",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1371046",
+      "display": "KADCYLA",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174805",
+      "display": "Kanjinti",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179754",
+      "display": "Ogivri",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107054",
+      "display": "Herzuma",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119715",
+      "display": "Herceptin Hylecta",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382605",
+      "display": "Phesgo",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267577",
+      "display": "Enhertu",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289228",
+      "display": "Ontruzant",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280733",
+      "display": "Trazimera",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "316949",
+      "display": "Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "224905",
+      "display": "trastuzumab",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119713",
+      "display": "hyaluronidase / trastuzumab",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382603",
+      "display": "hyaluronidase / pertuzumab / trastuzumab",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1371041",
+      "display": "ado-trastuzumab emtansine",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174802",
+      "display": "trastuzumab-anns",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107051",
+      "display": "trastuzumab-pkrb",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2103478",
+      "display": "trastuzumab-dkst",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382599",
+      "display": "trastuzumab-zzxf",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267574",
+      "display": "fam-trastuzumab deruxtecan-nxki",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267582",
+      "display": "trastuzumab deruxtecan",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2375543",
+      "display": "trastuzumab-oysk",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289225",
+      "display": "trastuzumab-dttb",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280730",
+      "display": "trastuzumab-qyyp",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922512",
+      "display": "Herceptin 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179763",
+      "display": "Ogivri 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2169362",
+      "display": "Herzuma 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289232",
+      "display": "Ontruzant 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289237",
+      "display": "Ontruzant 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179758",
+      "display": "Ogivri 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382609",
+      "display": "Phesgo 1,200 MG / 600 MG / 30,000 UNT per 15 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174809",
+      "display": "Kanjinti 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267581",
+      "display": "Enhertu 100 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2383307",
+      "display": "Phesgo 600 MG / 600 MG / 20,000 UNT per 10 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280737",
+      "display": "Trazimera 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "806575",
+      "display": "Herceptin 22 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922518",
+      "display": "Herceptin 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119719",
+      "display": "Herceptin Hylecta 600 MG / 10,000 UNT per 5 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658087",
+      "display": "KADCYLA 100 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658091",
+      "display": "KADCYLA 160 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107058",
+      "display": "Herzuma 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2257300",
+      "display": "Kanjinti 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "806574",
+      "display": "trastuzumab 22 MG/ML [Herceptin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922510",
+      "display": "trastuzumab 150 MG [Herceptin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922517",
+      "display": "trastuzumab 21 MG/ML [Herceptin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658085",
+      "display": "ado-trastuzumab emtansine 100 MG [KADCYLA]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658090",
+      "display": "ado-trastuzumab emtansine 160 MG [KADCYLA]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2257298",
+      "display": "trastuzumab-anns 150 MG [Kanjinti]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174806",
+      "display": "trastuzumab-anns 21 MG/ML [Kanjinti]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179755",
+      "display": "trastuzumab-dkst 150 MG [Ogivri]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179761",
+      "display": "trastuzumab-dkst 21 MG/ML [Ogivri]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2169360",
+      "display": "trastuzumab-pkrb 150 MG [Herzuma]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107055",
+      "display": "trastuzumab-pkrb 21 MG/ML [Herzuma]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2375546",
+      "display": "hyaluronidase-oysk 2000 UNT/ML / trastuzumab-oysk 120 MG/ML [Herceptin Hylecta]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382606",
+      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML [Phesgo]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2383306",
+      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML [Phesgo]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267578",
+      "display": "fam-trastuzumab deruxtecan-nxki 100 MG [Enhertu]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289229",
+      "display": "trastuzumab-dttb 150 MG [Ontruzant]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289235",
+      "display": "trastuzumab-dttb 21 MG/ML [Ontruzant]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280734",
+      "display": "trastuzumab-qyyp 21 MG/ML [Trazimera]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2257299",
+      "display": "trastuzumab Injection [Kanjinti]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "540885",
+      "display": "trastuzumab Injectable Solution [Herceptin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658086",
+      "display": "trastuzumab Injection [KADCYLA]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922511",
+      "display": "trastuzumab Injection [Herceptin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174807",
+      "display": "trastuzumab Injectable Solution [Kanjinti]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179762",
+      "display": "trastuzumab Injectable Solution [Ogivri]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179756",
+      "display": "trastuzumab Injection [Ogivri]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107056",
+      "display": "trastuzumab Injectable Solution [Herzuma]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2169361",
+      "display": "trastuzumab Injection [Herzuma]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119717",
+      "display": "hyaluronidase / trastuzumab Injection [Herceptin Hylecta]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382607",
+      "display": "hyaluronidase / pertuzumab / trastuzumab Injection [Phesgo]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267579",
+      "display": "trastuzumab Injection [Enhertu]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289236",
+      "display": "trastuzumab Injectable Solution [Ontruzant]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289230",
+      "display": "trastuzumab Injection [Ontruzant]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280735",
+      "display": "trastuzumab Injectable Solution [Trazimera]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2257297",
+      "display": "trastuzumab-anns 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179753",
+      "display": "trastuzumab-dkst 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179760",
+      "display": "trastuzumab-dkst 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289234",
+      "display": "trastuzumab-dttb 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280732",
+      "display": "trastuzumab-qyyp 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267576",
+      "display": "fam-trastuzumab deruxtecan-nxki 100 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289227",
+      "display": "trastuzumab-dttb 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119714",
+      "display": "5 ML hyaluronidase-oysk 2000 UNT/ML / trastuzumab-oysk 120 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174804",
+      "display": "trastuzumab-anns 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382604",
+      "display": "15 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658089",
+      "display": "ado-trastuzumab emtansine 160 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2383305",
+      "display": "10 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658084",
+      "display": "ado-trastuzumab emtansine 100 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922509",
+      "display": "trastuzumab 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107053",
+      "display": "trastuzumab-pkrb 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2169359",
+      "display": "trastuzumab-pkrb 150 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "806573",
+      "display": "trastuzumab 22 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922516",
+      "display": "trastuzumab 21 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2257296",
+      "display": "trastuzumab-anns 150 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "806572",
+      "display": "trastuzumab 22 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658082",
+      "display": "ado-trastuzumab emtansine 100 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1658088",
+      "display": "ado-trastuzumab emtansine 160 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2169358",
+      "display": "trastuzumab-pkrb 150 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174803",
+      "display": "trastuzumab-anns 21 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179752",
+      "display": "trastuzumab-dkst 150 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179759",
+      "display": "trastuzumab-dkst 21 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922507",
+      "display": "trastuzumab 150 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922515",
+      "display": "trastuzumab 21 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107052",
+      "display": "trastuzumab-pkrb 21 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382600",
+      "display": "trastuzumab-zzxf 40 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382614",
+      "display": "trastuzumab-zzxf 60 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267575",
+      "display": "fam-trastuzumab deruxtecan-nxki 100 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2375544",
+      "display": "trastuzumab-oysk 120 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289226",
+      "display": "trastuzumab-dttb 150 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289233",
+      "display": "trastuzumab-dttb 21 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280731",
+      "display": "trastuzumab-qyyp 21 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "377216",
+      "display": "trastuzumab Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1922508",
+      "display": "trastuzumab Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119712",
+      "display": "hyaluronidase / trastuzumab Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382602",
+      "display": "hyaluronidase / pertuzumab / trastuzumab Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1162762",
+      "display": "trastuzumab Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119711",
+      "display": "hyaluronidase / trastuzumab Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382601",
+      "display": "hyaluronidase / pertuzumab / trastuzumab Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1371049",
+      "display": "KADCYLA Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1169113",
+      "display": "Herceptin Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2174808",
+      "display": "Kanjinti Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2179757",
+      "display": "Ogivri Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2107057",
+      "display": "Herzuma Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2267580",
+      "display": "Enhertu Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2289231",
+      "display": "Ontruzant Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2280736",
+      "display": "Trazimera Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2119718",
+      "display": "Herceptin Hylecta Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382608",
+      "display": "Phesgo Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298949",
+      "display": "Perjeta",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382605",
+      "display": "Phesgo",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298944",
+      "display": "pertuzumab",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382603",
+      "display": "hyaluronidase / pertuzumab / trastuzumab",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382597",
+      "display": "pertuzumab-zzxf",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2383307",
+      "display": "Phesgo 600 MG / 600 MG / 20,000 UNT per 10 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298953",
+      "display": "Perjeta 420 MG per 14 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382609",
+      "display": "Phesgo 1,200 MG / 600 MG / 30,000 UNT per 15 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298950",
+      "display": "pertuzumab 30 MG/ML [Perjeta]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382606",
+      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML [Phesgo]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2383306",
+      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML [Phesgo]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657574",
+      "display": "pertuzumab Injection [Perjeta]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382607",
+      "display": "hyaluronidase / pertuzumab / trastuzumab Injection [Phesgo]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382604",
+      "display": "15 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2383305",
+      "display": "10 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298948",
+      "display": "14 ML pertuzumab 30 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298945",
+      "display": "pertuzumab 30 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382598",
+      "display": "pertuzumab-zzxf 80 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382613",
+      "display": "pertuzumab-zzxf 60 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657572",
+      "display": "pertuzumab Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382602",
+      "display": "hyaluronidase / pertuzumab / trastuzumab Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298946",
+      "display": "pertuzumab Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382601",
+      "display": "hyaluronidase / pertuzumab / trastuzumab Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1298952",
+      "display": "Perjeta Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2382608",
+      "display": "Phesgo Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "226754",
+      "display": "Rituxan",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "121191",
+      "display": "riTUXimab",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657864",
+      "display": "Rituxan 100 MG per 10 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657868",
+      "display": "Rituxan 500 MG per 50 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "573051",
+      "display": "riTUXimab 10 MG/ML [Rituxan]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657863",
+      "display": "riTUXimab Injection [Rituxan]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657862",
+      "display": "10 ML riTUXimab 10 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657867",
+      "display": "50 ML riTUXimab 10 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "316648",
+      "display": "riTUXimab 10 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657861",
+      "display": "riTUXimab Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1157967",
+      "display": "riTUXimab Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1185345",
+      "display": "Rituxan Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1094837",
+      "display": "Yervoy",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1094833",
+      "display": "ipilimumab",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657013",
+      "display": "Yervoy 50 MG per 10 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657007",
+      "display": "Yervoy 200 MG per 40 ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1094838",
+      "display": "ipilimumab 5 MG/ML [Yervoy]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657006",
+      "display": "ipilimumab Injection [Yervoy]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657012",
+      "display": "10 ML ipilimumab 5 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657005",
+      "display": "40 ML ipilimumab 5 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1094834",
+      "display": "ipilimumab 5 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1657004",
+      "display": "ipilimumab Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1161327",
+      "display": "ipilimumab Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1186646",
+      "display": "Yervoy Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "203652",
+      "display": "Camptosar",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719773",
+      "display": "Onivyde",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "51499",
+      "display": "irinotecan",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "153329",
+      "display": "irinotecan hydrochloride",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719767",
+      "display": "irinotecan hydrochloride liposome",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719768",
+      "display": "irinotecan liposomal",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719777",
+      "display": "10 ML Onivyde 4.3 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726325",
+      "display": "5 ML Camptosar 20 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726321",
+      "display": "2 ML Camptosar 20 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726335",
+      "display": "15 ML Camptosar 20 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "904161",
+      "display": "irinotecan hydrochloride 20 MG/ML [Camptosar]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719774",
+      "display": "irinotecan hydrochloride liposome 4.3 MG/ML [Onivyde]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726320",
+      "display": "irinotecan Injection [Camptosar]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "2284502",
+      "display": "irinotecan Injection [Onivyde]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726319",
+      "display": "2 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726492",
+      "display": "25 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726333",
+      "display": "15 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719772",
+      "display": "10 ML irinotecan hydrochloride liposome 4.3 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726324",
+      "display": "5 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "904159",
+      "display": "irinotecan hydrochloride 20 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719769",
+      "display": "irinotecan hydrochloride liposome 4.3 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1726318",
+      "display": "irinotecan Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1161334",
+      "display": "irinotecan Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1719776",
+      "display": "Onivyde Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1172305",
+      "display": "Camptosar Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "203472",
+      "display": "Hycamtin",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "57308",
+      "display": "topotecan",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "266573",
+      "display": "topotecan hydrochloride",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "748738",
+      "display": "Hycamtin 0.25 MG Oral Capsule",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "637550",
+      "display": "Hycamtin 4 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "748740",
+      "display": "Hycamtin 1 MG Oral Capsule",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "748736",
+      "display": "topotecan 0.25 MG [Hycamtin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "748739",
+      "display": "topotecan 1 MG [Hycamtin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1799417",
+      "display": "topotecan 4 MG [Hycamtin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "748737",
+      "display": "topotecan Oral Capsule [Hycamtin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1799418",
+      "display": "topotecan Injection [Hycamtin]",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "747193",
+      "display": "topotecan 1 MG Oral Capsule",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "747195",
+      "display": "topotecan 0.25 MG Oral Capsule",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1799424",
+      "display": "4 ML topotecan 1 MG/ML Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1799416",
+      "display": "topotecan 4 MG Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "637549",
+      "display": "topotecan 1 MG/ML Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "342947",
+      "display": "topotecan 1 MG/ML",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "452837",
+      "display": "topotecan 1 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "747194",
+      "display": "topotecan 0.25 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1799414",
+      "display": "topotecan 4 MG",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "376889",
+      "display": "topotecan Injectable Solution",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "747192",
+      "display": "topotecan Oral Capsule",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1799415",
+      "display": "topotecan Injection",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1157655",
+      "display": "topotecan Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1157656",
+      "display": "topotecan Oral Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1157657",
+      "display": "topotecan Pill",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1172714",
+      "display": "Hycamtin Injectable Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1172715",
+      "display": "Hycamtin Oral Product",
+      "codingSystem": "RxNorm"
     },
     {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
-    },
-    {
-      "code": "1177703",
-      "display": "Rapamune Pill",
-      "entryType": "medication"
+      "entryType": "Medication",
+      "code": "1172716",
+      "display": "Hycamtin Pill",
+      "codingSystem": "RxNorm"
     }
   ]
 }
