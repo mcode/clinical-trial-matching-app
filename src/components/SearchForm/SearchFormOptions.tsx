@@ -38,63 +38,63 @@ export type CancerTypeDetailType = {
 export const cancerTypeDetails: Record<string, CancerTypeDetailType> = {
   lung: {
     category: 'lung',
-    cancerCodes: LUNG_CANCER_TYPE_CODES.entry,
-    cancerSubtype: LUNG_CANCER_SUBTYPE_CODES.entry,
-    biomarkers: BREAST_CANCER_BIOMARKERS.entry, //these are the same as the breast cancer Biomarkers
-    medications: LUNG_MEDICATION_CODES.entry,
-    radiationCodes: LUNG_MEDICATION_CODES.entry,
-    surgeryCodes: LUNG_SURGERY_CODES.entry,
-    stages: BREAST_CANCER_STAGES.entry,
+    cancerCodes: sortByProperty(LUNG_CANCER_TYPE_CODES.entry, 'display', 1),
+    cancerSubtype: sortByProperty(LUNG_CANCER_SUBTYPE_CODES.entry, 'display', 1),
+    biomarkers: sortByProperty(BREAST_CANCER_BIOMARKERS.entry, 'display', 1), //these are the same as the breast cancer Biomarkers
+    medications: sortByProperty(LUNG_MEDICATION_CODES.entry, 'display', 1),
+    radiationCodes: sortByProperty(LUNG_MEDICATION_CODES.entry, 'display', 1),
+    surgeryCodes: sortByProperty(LUNG_SURGERY_CODES.entry, 'display', 1),
+    stages: sortByProperty(BREAST_CANCER_STAGES.entry, 'display', 1),
   },
   colon: {
     category: 'colon',
-    cancerCodes: COLON_CANCER_TYPE_CODES.entry,
+    cancerCodes: sortByProperty(COLON_CANCER_TYPE_CODES.entry, 'display', 1),
     cancerSubtype: [], // No cancer subtype codes provided for colon cancer
-    biomarkers: COLON_MEDICATION_CODES.entry, //No biomarker codes provided for colon cancer
-    medications: COLON_RADIATION_CODES.entry,
-    radiationCodes: COLON_RADIATION_CODES.entry,
-    surgeryCodes: COLON_SURGERY_CODES.entry,
-    stages: BREAST_CANCER_STAGES.entry,
+    biomarkers: sortByProperty(COLON_MEDICATION_CODES.entry, 'display', 1), //No biomarker codes provided for colon cancer
+    medications: sortByProperty(COLON_RADIATION_CODES.entry, 'display', 1),
+    radiationCodes: sortByProperty(COLON_RADIATION_CODES.entry, 'display', 1),
+    surgeryCodes: sortByProperty(COLON_SURGERY_CODES.entry, 'display', 1),
+    stages: sortByProperty(BREAST_CANCER_STAGES.entry, 'display', 1),
   },
   brain: {
     category: 'brain',
-    cancerCodes: BRAIN_CANCER_TYPE_CODES.entry,
-    cancerSubtype: BRAIN_CANCER_SUBTYPE_CODES.entry, // No cancer subtype codes provided for colon cancer
-    biomarkers: BRAIN_BIOMARKER_CODES.entry, //No biomarker codes provided for colon cancer
-    medications: BRAIN_MEDICATION_CODES.entry,
-    radiationCodes: BRAIN_RADIATION_CODES.entry,
-    surgeryCodes: BRAIN_SURGERY_CODES.entry,
-    stages: BREAST_CANCER_STAGES.entry,
+    cancerCodes: sortByProperty(BRAIN_CANCER_TYPE_CODES.entry, 'display', 1),
+    cancerSubtype: sortByProperty(BRAIN_CANCER_SUBTYPE_CODES.entry, 'display', 1), // No cancer subtype codes provided for colon cancer
+    biomarkers: sortByProperty(BRAIN_BIOMARKER_CODES.entry, 'display', 1), //No biomarker codes provided for colon cancer
+    medications: sortByProperty(BRAIN_MEDICATION_CODES.entry, 'display', 1),
+    radiationCodes: sortByProperty(BRAIN_RADIATION_CODES.entry, 'display', 1),
+    surgeryCodes: sortByProperty(BRAIN_SURGERY_CODES.entry, 'display', 1),
+    stages: sortByProperty(BREAST_CANCER_STAGES.entry, 'display', 1),
   },
   prostate: {
     category: 'prostate',
-    cancerCodes: PROSTATE_CANCER_TYPE_CODES.entry,
+    cancerCodes: sortByProperty(PROSTATE_CANCER_TYPE_CODES.entry, 'display', 1),
     cancerSubtype: [], // No cancer subtype codes provided for colon cancer
-    biomarkers: BREAST_CANCER_STAGES.entry, //No biomarker codes provided for colon cancer
+    biomarkers: sortByProperty(BREAST_CANCER_STAGES.entry, 'display', 1), //No biomarker codes provided for colon cancer
     medications: [], // No Medication Codes provided
     radiationCodes: [], // No radiation codes provided
     surgeryCodes: [], //No Surgery Codes provided
-    stages: BREAST_CANCER_STAGES.entry,
+    stages: sortByProperty(BREAST_CANCER_STAGES.entry, 'display', 1),
   },
   breast: {
     category: 'breast',
-    cancerCodes: BREAST_CANCER_TYPE_CODES.entry,
+    cancerCodes: sortByProperty(BREAST_CANCER_TYPE_CODES.entry, 'display', 1),
     cancerSubtype: [], // No cancer subtype codes provided for colon cancer
-    biomarkers: BREAST_CANCER_BIOMARKERS.entry,
-    medications: BREAST_CANCER_MEDICATIONS.entry,
+    biomarkers: sortByProperty(BREAST_CANCER_BIOMARKERS.entry, 'display', 1),
+    medications: sortByProperty(BREAST_CANCER_MEDICATIONS.entry, 'display', 1),
     radiationCodes: [], // No radiation codes provided
-    surgeryCodes: BREAST_CANCER_SURGERY_CODES.entry, //No Surgery Codes provided
-    stages: BREAST_CANCER_STAGES.entry,
+    surgeryCodes: sortByProperty(BREAST_CANCER_SURGERY_CODES.entry, 'display', 1), //No Surgery Codes provided
+    stages: sortByProperty(BREAST_CANCER_STAGES.entry, 'display', 1),
   },
   mm: {
     category: 'mm',
-    cancerCodes: MULTIPLE_MYELOMA_CANCERTYPE_CODES.entry,
+    cancerCodes: sortByProperty(MULTIPLE_MYELOMA_CANCERTYPE_CODES.entry, 'display', 1),
     cancerSubtype: [], // No cancer subtype codes provided for colon cancer
-    biomarkers: BREAST_CANCER_BIOMARKERS.entry,
-    medications: MULTIPLE_MYELOMA_MEDICATION_CODES.entry,
+    biomarkers: sortByProperty(BREAST_CANCER_BIOMARKERS.entry, 'display', 1),
+    medications: sortByProperty(MULTIPLE_MYELOMA_MEDICATION_CODES.entry, 'display', 1),
     radiationCodes: [], // No radiation codes provided
     surgeryCodes: [], //No Surgery Codes provided
-    stages: BREAST_CANCER_STAGES.entry,
+    stages: sortByProperty(BREAST_CANCER_STAGES.entry, 'display', 1),
   },
 };
 export const cancerTypeOptions: CodedValueType[] = Object.values(cancerTypeDetails).reduce<CodedValueType[]>(
@@ -104,3 +104,23 @@ export const cancerTypeOptions: CodedValueType[] = Object.values(cancerTypeDetai
   },
   []
 );
+export function sortByProperty(objArray, prop, direction, ...args): CodedValueType[] {
+  if (arguments.length < 2) throw new Error('ARRAY, AND OBJECT PROPERTY MINIMUM ARGUMENTS, OPTIONAL DIRECTION');
+  if (!Array.isArray(objArray)) throw new Error('FIRST ARGUMENT NOT AN ARRAY');
+  const clone = objArray.slice(0);
+  const direct = args.length > 2 ? args[2] : 1; //Default to ascending
+  const propPath = prop.constructor === Array ? prop : prop.split('.');
+  clone.sort(function (a, b) {
+    for (const p in propPath) {
+      if (a[propPath[p]] && b[propPath[p]]) {
+        a = a[propPath[p]];
+        b = b[propPath[p]];
+      }
+    }
+    // convert numeric strings to integers
+    a = a.match(/^\d+$/) ? +a : a;
+    b = b.match(/^\d+$/) ? +b : b;
+    return a < b ? -1 * direct : a > b ? 1 * direct : 0;
+  });
+  return clone;
+}
