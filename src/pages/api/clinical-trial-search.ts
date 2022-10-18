@@ -1,6 +1,7 @@
 import { BundleEntry, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
+import * as fhirConstants from '@/utils/fhirConstants';
 import { CodedValueType, parseCodedValue as parseCodedValueType } from '@/utils/fhirConversionUtils';
 import {
   addCancerHistologyMorphology,
@@ -12,7 +13,6 @@ import {
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
-import * as fhirConstants from 'src/utils/fhirConstants';
 import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
 import { SearchParameters } from 'types/search-types';
 
