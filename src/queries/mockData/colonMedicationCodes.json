@@ -1,424 +1,1388 @@
 {
   "entry": [
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
-      "code": "capecitabine",
-      "display": "Same as breast"
-    },
-    {
-      "entryType": "Medication",
-      "code": "camptosar",
-      "display": "Same as \"irinotecan\" in breast"
-    },
-    {
-      "entryType": "Medication",
-      "code": "avastin",
-      "display": "Same as \"bevacizumab\" in breast"
-    },
-    {
-      "entryType": "Medication",
-      "code": "cetuximab",
-      "display": "Same as lung"
-    },
-    {
-      "entryType": "Medication",
-      "code": "panitumumab",
-      "display": "Same as lung"
-    },
-    {
-      "entryType": "Medication",
-      "code": "entrectinib",
-      "display": "Same as lung"
-    },
-    {
-      "entryType": "Medication",
-      "code": "larotrectinib",
-      "display": "Same as lung"
-    },
-    {
-      "entryType": "Medication",
-      "code": "nivolumab",
-      "display": "Same as breast"
-    },
-    {
-      "entryType": "Medication",
-      "code": "pembrolizumab",
-      "display": "Same as breast"
-    },
-    {
-      "entryType": "Medication",
-      "code": "ipilimumab",
-      "display": "Same as lung"
-    },
-    {
-      "entryType": "Medication",
+      "display": "oxaliplatin",
       "code": "32592",
-      "display": "oxaliplatin"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "20 ML oxaliplatin 5 MG/ML Injection",
       "code": "1736781",
-      "display": "20 ML oxaliplatin 5 MG/ML Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "oxaliplatin 50 MG Injection",
       "code": "1736784",
-      "display": "oxaliplatin 50 MG Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "10 ML oxaliplatin 5 MG/ML Injection",
       "code": "1736776",
-      "display": "10 ML oxaliplatin 5 MG/ML Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "40 ML oxaliplatin 5 MG/ML Injection",
       "code": "1797528",
-      "display": "40 ML oxaliplatin 5 MG/ML Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "oxaliplatin 100 MG Injection",
       "code": "1736786",
-      "display": "oxaliplatin 100 MG Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "oxaliplatin 5 MG/ML",
       "code": "358819",
-      "display": "oxaliplatin 5 MG/ML"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "oxaliplatin 50 MG",
       "code": "1736783",
-      "display": "oxaliplatin 50 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "oxaliplatin 100 MG",
       "code": "1736785",
-      "display": "oxaliplatin 100 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "oxaliplatin Injection",
       "code": "1736775",
-      "display": "oxaliplatin Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "eloxatin",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "oxaliplatin Injectable Product",
       "code": "1160121",
-      "display": "oxaliplatin Injectable Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Zaltrap",
       "code": "1304480",
-      "display": "Zaltrap"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "aflibercept",
       "code": "1232150",
-      "display": "aflibercept"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "ziv-aflibercept",
       "code": "1304475",
-      "display": "ziv-aflibercept"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "4 ML Zaltrap 25 MG/ML Injection",
       "code": "1723194",
-      "display": "4 ML Zaltrap 25 MG/ML Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "8 ML Zaltrap 25 MG/ML Injection",
       "code": "1723189",
-      "display": "8 ML Zaltrap 25 MG/ML Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "ziv-aflibercept 25 MG/ML [Zaltrap]",
       "code": "1304481",
-      "display": "ziv-aflibercept 25 MG/ML [Zaltrap]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "aflibercept Injection [Zaltrap]",
       "code": "1723188",
-      "display": "aflibercept Injection [Zaltrap]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "4 ML ziv-aflibercept 25 MG/ML Injection",
       "code": "1723193",
-      "display": "4 ML ziv-aflibercept 25 MG/ML Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "8 ML ziv-aflibercept 25 MG/ML Injection",
       "code": "1723187",
-      "display": "8 ML ziv-aflibercept 25 MG/ML Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "ziv-aflibercept 25 MG/ML",
       "code": "1304476",
-      "display": "ziv-aflibercept 25 MG/ML"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "aflibercept Injection",
       "code": "1723180",
-      "display": "aflibercept Injection"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "aflibercept Injectable Product",
       "code": "1232152",
-      "display": "aflibercept Injectable Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "zaltrap",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Zaltrap Injectable Product",
       "code": "1304483",
-      "display": "Zaltrap Injectable Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Braftovi",
       "code": "2049112",
-      "display": "Braftovi"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib",
       "code": "2049106",
-      "display": "encorafenib"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Braftovi 50 MG Oral Capsule",
       "code": "2049117",
-      "display": "Braftovi 50 MG Oral Capsule"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Braftovi 75 MG Oral Capsule",
       "code": "2049121",
-      "display": "Braftovi 75 MG Oral Capsule"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib 50 MG [Braftovi]",
       "code": "2049113",
-      "display": "encorafenib 50 MG [Braftovi]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib 75 MG [Braftovi]",
       "code": "2049120",
-      "display": "encorafenib 75 MG [Braftovi]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib Oral Capsule [Braftovi]",
       "code": "2049114",
-      "display": "encorafenib Oral Capsule [Braftovi]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib 75 MG Oral Capsule",
       "code": "2049119",
-      "display": "encorafenib 75 MG Oral Capsule"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib 50 MG Oral Capsule",
       "code": "2049111",
-      "display": "encorafenib 50 MG Oral Capsule"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib 50 MG",
       "code": "2049107",
-      "display": "encorafenib 50 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib 75 MG",
       "code": "2049118",
-      "display": "encorafenib 75 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib Oral Capsule",
       "code": "2049110",
-      "display": "encorafenib Oral Capsule"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib Oral Product",
       "code": "2049108",
-      "display": "encorafenib Oral Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "encorafenib Pill",
       "code": "2049109",
-      "display": "encorafenib Pill"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Braftovi Oral Product",
       "code": "2049115",
-      "display": "Braftovi Oral Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "encorafenib",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Braftovi Pill",
       "code": "2049116",
-      "display": "Braftovi Pill"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
-      "code": "leucovorin_5_fu",
-      "display": "Drug combo - not represented well in mCODE"
-    },
-    {
-      "entryType": "Medication",
+      "display": "Lonsurf",
       "code": "1670317",
-      "display": "Lonsurf"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "trifluridine",
       "code": "10803",
-      "display": "trifluridine"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil",
       "code": "1670304",
-      "display": "tipiracil"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil / trifluridine",
       "code": "1670310",
-      "display": "tipiracil / trifluridine"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Lonsurf (trifluridine 15 MG / tipiracil 6.14 MG) Oral Tablet",
       "code": "1670322",
-      "display": "Lonsurf (trifluridine 15 MG / tipiracil 6.14 MG) Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Lonsurf (trifluridine 20 MG / tipiracil 8.19 MG) Oral Tablet",
       "code": "1670324",
-      "display": "Lonsurf (trifluridine 20 MG / tipiracil 8.19 MG) Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil 6.14 MG / trifluridine 15 MG [Lonsurf]",
       "code": "1670318",
-      "display": "tipiracil 6.14 MG / trifluridine 15 MG [Lonsurf]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil 8.19 MG / trifluridine 20 MG [Lonsurf]",
       "code": "1670323",
-      "display": "tipiracil 8.19 MG / trifluridine 20 MG [Lonsurf]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil / trifluridine Oral Tablet [Lonsurf]",
       "code": "1670319",
-      "display": "tipiracil / trifluridine Oral Tablet [Lonsurf]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Lonsurf Oral Product",
       "code": "1670320",
-      "display": "Lonsurf Oral Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Lonsurf Pill",
       "code": "1670321",
-      "display": "Lonsurf Pill"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil 6.14 MG / trifluridine 15 MG Oral Tablet",
       "code": "1670311",
-      "display": "tipiracil 6.14 MG / trifluridine 15 MG Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil 8.19 MG / trifluridine 20 MG Oral Tablet",
       "code": "1670316",
-      "display": "tipiracil 8.19 MG / trifluridine 20 MG Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil 6.14 MG",
       "code": "1670305",
-      "display": "tipiracil 6.14 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "trifluridine 15 MG",
       "code": "1670306",
-      "display": "trifluridine 15 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil 8.19 MG",
       "code": "1670314",
-      "display": "tipiracil 8.19 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "trifluridine 20 MG",
       "code": "1670315",
-      "display": "trifluridine 20 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil / trifluridine Oral Tablet",
       "code": "1670309",
-      "display": "tipiracil / trifluridine Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil / trifluridine Oral Product",
       "code": "1670307",
-      "display": "tipiracil / trifluridine Oral Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "lonsurf",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "tipiracil / trifluridine Pill",
       "code": "1670308",
-      "display": "tipiracil / trifluridine Pill"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Stivarga",
       "code": "1312403",
-      "display": "Stivarga"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib",
       "code": "1312397",
-      "display": "regorafenib"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib monohydrate",
       "code": "1371319",
-      "display": "regorafenib monohydrate"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Stivarga 40 MG Oral Tablet",
       "code": "1312408",
-      "display": "Stivarga 40 MG Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib 40 MG [Stivarga]",
       "code": "1312404",
-      "display": "regorafenib 40 MG [Stivarga]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib Oral Tablet [Stivarga]",
       "code": "1312405",
-      "display": "regorafenib Oral Tablet [Stivarga]"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Stivarga Oral Product",
       "code": "1312406",
-      "display": "Stivarga Oral Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "Stivarga Pill",
       "code": "1312407",
-      "display": "Stivarga Pill"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib 40 MG Oral Tablet",
       "code": "1312402",
-      "display": "regorafenib 40 MG Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib 40 MG",
       "code": "1312398",
-      "display": "regorafenib 40 MG"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib Oral Tablet",
       "code": "1312401",
-      "display": "regorafenib Oral Tablet"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib Oral Product",
       "code": "1312399",
-      "display": "regorafenib Oral Product"
+      "codingSystem": "rxNorm"
     },
     {
+      "category": "stivarga",
+      "cancerType": "Colon",
       "entryType": "Medication",
+      "display": "regorafenib Pill",
       "code": "1312400",
-      "display": "regorafenib Pill"
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Colonoscopic snare polypectomy of colon",
+      "code": "1.0371E+13",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Panproctocolectomy",
+      "code": "858579005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic total colectomy and ileostomy",
+      "code": "787876003",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic total colectomy and loop ileostomy",
+      "code": "787875004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic total colectomy",
+      "code": "787874000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of entire colon and entire rectum",
+      "code": "787109009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic restorative proctocolectomy with ileal pouch anal anastomosis",
+      "code": "787108001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Combined endoscopic and laparoscopic excision of polyp of colon",
+      "code": "773129000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Endoscopic snare resection of lesion of colon using full thickness resection device",
+      "code": "773128008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Fiberoptic endoscopic excision of lesion of colonic mucous membrane",
+      "code": "771568007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial resection of colon with stoma",
+      "code": "738552004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Right colectomy with stoma",
+      "code": "738551006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic total colectomy with ileo-rectal anastomosis",
+      "code": "713165008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Subtotal excision of colon and rectum and creation of colonic pouch",
+      "code": "450462007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Subtotal excision of colon and creation of colonic pouch",
+      "code": "450461000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Colectomy and side to side anastomosis of ileum to colon",
+      "code": "448050005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Right hemicolectomy and ileostomy",
+      "code": "447946003",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Hand assisted laparoscopic extended right colectomy",
+      "code": "447166008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoidoscopy and excision of mucosa of sigmoid colon",
+      "code": "446747005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Colonoscopy and excision of mucosa of colon",
+      "code": "446521004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Incision of colon and excision of polyp",
+      "code": "446472006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Hand assisted laparoscopic extended left colectomy",
+      "code": "446228006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Hand assisted laparoscopic right colectomy",
+      "code": "446223002",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Hand assisted laparoscopic left colectomy",
+      "code": "446222007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Wedge resection of colon",
+      "code": "445884009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of part of colon and excision of terminal ileum with ileocolic anastomosis",
+      "code": "444165004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of part of colon with mobilisation of splenic flexure",
+      "code": "443909001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic excision of part of colon",
+      "code": "443480008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic fixation of prolapse of rectum with resection of sigmoid",
+      "code": "440033009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Subtotal excision of colon and rectum and creation of colonic pouch and anastomosis of colon to anus",
+      "code": "427997001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Endoscopic submucosal resection of lesion of sigmoid colon using rigid sigmoidoscope",
+      "code": "426699005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Fibreoptic endoscopic submucosal resection of lesion of colon",
+      "code": "425851003",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of diverticula of colon",
+      "code": "386197003",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Right colectomy",
+      "code": "359571009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoid colectomy with stoma",
+      "code": "315327002",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoid colectomy with anastomosis",
+      "code": "315326006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Left hemicolectomy with stoma",
+      "code": "315325005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Left hemicolectomy with anastomosis",
+      "code": "315324009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Transverse colectomy with anastomosis",
+      "code": "315322008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Right hemicolectomy and anastomosis of ileum to colon",
+      "code": "315321001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Colonoscopic polypectomy",
+      "code": "311774002",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Total colectomy, ileostomy and closure of rectal stump",
+      "code": "307669001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Total colectomy, ileostomy and rectal mucous fistula",
+      "code": "307667004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Total colectomy and ileostomy",
+      "code": "307666008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of colocutaneous fistula",
+      "code": "307662005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Subtotal colectomy with ileorectal anastomosis",
+      "code": "307659007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoid colectomy and colostomy",
+      "code": "307658004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Left hemicolectomy and colostomy",
+      "code": "307657009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Subtotal colectomy with ileosigmoid anastomosis",
+      "code": "307656000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Subtotal colectomy with caecorectal anastomosis",
+      "code": "307654002",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoid colectomy and ileostomy",
+      "code": "307648003",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Transverse colectomy and colostomy",
+      "code": "307645000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Transverse colectomy and ileostomy",
+      "code": "307644001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic transverse colectomy",
+      "code": "307586000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision jejunocolic fistula",
+      "code": "307507006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of colonic pouch",
+      "code": "304587000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Extended right hemicolectomy and ileostomy",
+      "code": "304583001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Snare resection of lesion of colon",
+      "code": "301699000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of excess colostomy mucosa",
+      "code": "287815004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Ileocolic resection",
+      "code": "276190007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Duhamel removal of colorectal septum",
+      "code": "275017002",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Colonic polypectomy",
+      "code": "274025005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Rectosigmoidectomy and rectopexy",
+      "code": "265412004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial excision of rectum and sigmoid colon for prolapse",
+      "code": "265411006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Extended left hemicolectomy",
+      "code": "235325001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Endoscopic snare resection of lesion of sigmoid colon using rigid sigmoidoscope",
+      "code": "174207007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Fiberoptic endoscopic snare resection of lesion of colon",
+      "code": "174171002",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoid colectomy and anastomosis of colon to rectum",
+      "code": "174101001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoid colectomy and end-to-end anastomosis of ileum to rectum",
+      "code": "174100000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Left hemicolectomy and end-to-end anastomosis of colon to colon",
+      "code": "174094003",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Left hemicolectomy and end to end anastomosis of colon to rectum",
+      "code": "174093009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Transverse colectomy and anastomosis of ileum to colon",
+      "code": "174087001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Transverse colectomy and end-to-end anastomosis",
+      "code": "174086005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Right hemicolectomy and side-to-side anastomosis of ileum to transverse colon",
+      "code": "174081000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Right hemicolectomy and end to end anastomosis of ileum to colon",
+      "code": "174080004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Extended right hemicolectomy and anastomosis of ileum to colon",
+      "code": "174073001",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Extended right hemicolectomy and end-to-end anastomosis",
+      "code": "174072006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Extended right hemicolectomy",
+      "code": "174071004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of colon and rectum",
+      "code": "174059005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial colectomy with coloproctostomy and colostomy",
+      "code": "89339008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Closure of enterostomy of large intestine with resection and anastomosis",
+      "code": "87602008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Excision of lesion of colon",
+      "code": "87279008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Resection of colon for interposition",
+      "code": "84952009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Sigmoid colectomy",
+      "code": "84604002",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial colectomy with coloproctostomy",
+      "code": "82900007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Left colectomy",
+      "code": "82619000",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Transsacral rectosigmoidectomy",
+      "code": "81092009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Total abdominal colectomy with rectal mucosectomy and ileoanal anastomosis",
+      "code": "80294005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Epiploectomy",
+      "code": "75404005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial colectomy with ileostomy and creation of mucofistula",
+      "code": "75312003",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Proctopexy combined with sigmoid resection by abdominal approach",
+      "code": "73996007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial colectomy with skin level colostomy",
+      "code": "73509004",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Rectosigmoidectomy",
+      "code": "54164009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Resection of splenic flexure of colon",
+      "code": "53003006",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic-assisted right colectomy",
+      "code": "50774009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Total abdominal colectomy with proctectomy and continent ileostomy",
+      "code": "44751009",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial colectomy with colostomy and creation of mucofistula",
+      "code": "44642007",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial colectomy with anastomosis",
+      "code": "44378008",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Partial resection of colon",
+      "code": "43075005",
+      "codingSystem": "rxNorm"
+    },
+    {
+      "category": "Colectomy",
+      "cancerType": "Colon",
+      "entryType": "Medication",
+      "display": "Laparoscopic-assisted left colectomy",
+      "code": "41330009",
+      "codingSystem": "rxNorm"
     }
   ]
 }

@@ -1,0 +1,5676 @@
+{
+  "entry": [
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Tresaderm",
+      "code": "1009389",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexium",
+      "code": "1049383",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Maxitrol",
+      "code": "134920",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexasone",
+      "code": "203704",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Maxidex",
+      "code": "203705",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexycu",
+      "code": "2045405",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dextenza",
+      "code": "2108016",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Poly-Dex",
+      "code": "219289",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Tobradex",
+      "code": "220330",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron",
+      "code": "227682",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Hemady",
+      "code": "2286256",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ciprodex",
+      "code": "404930",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ozurdex",
+      "code": "854178",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "TaperDex 12 Day Taper Pack",
+      "code": "1998481",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "TaperDex 6 Day Taper Pack",
+      "code": "1998482",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "HiDex 1.5 MG Tablet 6-day 21 Count Taper Pack",
+      "code": "2118829",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "TaperDex 1.5 MG Tablet 7-Day 27 Count Pack",
+      "code": "2118835",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dxevo 11 Day Taper Pack",
+      "code": "2121735",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Zcort 1.5 MG Tablet 7 Day 25 Count Pack",
+      "code": "2387356",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron 5-12 Pak",
+      "code": "795716",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DexPak 10 Day TaperPak",
+      "code": "797022",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DexPak TaperPak 13 Day Pack",
+      "code": "797023",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DexPak TaperPak 6 Day Pack",
+      "code": "847225",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{27 (dexamethasone 1.5 MG Oral Tablet) } Pack",
+      "code": "1869595",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{49 (dexamethasone 1.5 MG Oral Tablet) } Pack",
+      "code": "1943550",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{39 (dexamethasone 1.5 MG Oral Tablet) } Pack",
+      "code": "2121587",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{25 (dexamethasone 1.5 MG Oral Tablet) } Pack",
+      "code": "2387355",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{51 (dexamethasone 1.5 MG Oral Tablet) } Pack",
+      "code": "759481",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{12 (dexamethasone 0.75 MG Oral Tablet) } Pack",
+      "code": "759696",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{35 (dexamethasone 1.5 MG Oral Tablet) } Pack",
+      "code": "759697",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{21 (dexamethasone 1.5 MG Oral Tablet) } Pack",
+      "code": "846192",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone",
+      "code": "3264",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "astemizole / dexamethasone",
+      "code": "1007105",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "clioquinol / dexamethasone",
+      "code": "1007256",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / oxytetracycline",
+      "code": "1007423",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / hypromellose",
+      "code": "1007483",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / dobesilic acid / lidocaine",
+      "code": "1007628",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "clotrimazole / dexamethasone",
+      "code": "1007854",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "clemastine / dexamethasone",
+      "code": "1008217",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / phenylephrine",
+      "code": "1008930",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / sodium phosphate",
+      "code": "1009150",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / thiabendazole",
+      "code": "1009387",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / lidocaine",
+      "code": "214478",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin",
+      "code": "216524",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B",
+      "code": "216525",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ciprofloxacin / dexamethasone",
+      "code": "465397",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tramazoline",
+      "code": "687304",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / theophylline",
+      "code": "813683",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / indomethacin",
+      "code": "814504",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "chloramphenicol / dexamethasone",
+      "code": "815833",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / terfenadine",
+      "code": "818139",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carisoprodol / dexamethasone / ibuprofen",
+      "code": "820465",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyproheptadine / dexamethasone",
+      "code": "821542",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carisoprodol / dexamethasone / tenoxicam",
+      "code": "822000",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tobramycin",
+      "code": "883815",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone acetate",
+      "code": "22690",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone trimethyl acetate",
+      "code": "22694",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone phosphate",
+      "code": "235486",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone acetate anhydrous",
+      "code": "2378841",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone isonicotinate",
+      "code": "3265",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone sodium phosphate",
+      "code": "48933",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Tresaderm (dexamethasone 1 MG / neomycin 3.2 MG / thiabendazole 40 MG) per ML Topical Solution",
+      "code": "1009392",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Tobradex (dexamethasone 0.05 % / tobramycin 0.3 % ) Ophthalmic Suspension",
+      "code": "1011080",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexium 2 MG/ML Injectable Solution",
+      "code": "1049386",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron 0.5 MG Oral Tablet",
+      "code": "105392",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexasone 2 MG/ML Injectable Solution",
+      "code": "1087757",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexium 3 MG/ML Injectable Solution",
+      "code": "1087919",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "0.005 ML Dexycu 103.4 MG/ML Injection",
+      "code": "2045409",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Maxidex 0.1 % Ophthalmic Suspension",
+      "code": "205669",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron 4 MG Oral Tablet",
+      "code": "205712",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron 6 MG Oral Tablet",
+      "code": "205717",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Maxitrol (neomycin 3.5 MG / polymyxin B 10,000 UNT / dexamethasone 1 MG) per 1 ML Ophthalmic Suspension",
+      "code": "208591",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10,000 UNT) per ML Ophthalmic Suspension",
+      "code": "208593",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Maxitrol (neomycin 3.5 MG / polymyxin b 10,000 UNT / dexamethasone 1 MG) per GM Ophthalmic Ointment",
+      "code": "208601",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Poly-Dex (dexamethasone 0.1 % / neomycin 0.35 % / polymyxin B 10 UNT/MG) Ophthalmic Ointment",
+      "code": "208602",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "TobraDex (dexamethasone 0.1 % / tobramycin 0.3 % ) Ophthalmic Suspension",
+      "code": "208813",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Tobradex (tobramycin 0.3 % / dexamethasone 0.1 % ) Ophthalmic Ointment",
+      "code": "208821",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dextenza 0.4 MG Ophthalmic Insert",
+      "code": "2108020",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Hemady 20 MG Oral Tablet",
+      "code": "2286261",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron 0.75 MG Oral Tablet",
+      "code": "343040",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ciprodex (ciprofloxacin 0.3 % / dexamethasone 0.1 % ) Otic Suspension",
+      "code": "404630",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron 0.1 MG/ML Oral Solution",
+      "code": "755976",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ozurdex 0.7 MG Intravitreal Drug Implant",
+      "code": "854181",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML [Tresaderm]",
+      "code": "1009390",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML [Tobradex]",
+      "code": "1011079",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 2 MG/ML [Dexium]",
+      "code": "1049384",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 2 MG/ML [Dexasone]",
+      "code": "1087756",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 3 MG/ML [Dexium]",
+      "code": "1087918",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 103.4 MG/ML [Dexycu]",
+      "code": "2045406",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.4 MG [Dextenza]",
+      "code": "2108017",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 20 MG [Hemady]",
+      "code": "2286257",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML [Ciprodex]",
+      "code": "545158",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.5 MG [Decadron]",
+      "code": "564044",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML [Maxidex]",
+      "code": "566561",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.1 MG/ML [Decadron]",
+      "code": "566581",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 4 MG [Decadron]",
+      "code": "566603",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 6 MG [Decadron]",
+      "code": "566608",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Maxitrol]",
+      "code": "569262",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML [Poly-Dex]",
+      "code": "569264",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Maxitrol]",
+      "code": "569272",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG [Poly-Dex]",
+      "code": "569273",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML [Tobradex]",
+      "code": "569462",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG [Tobradex]",
+      "code": "569470",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.75 MG [Decadron]",
+      "code": "575233",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.7 MG [Ozurdex]",
+      "code": "854179",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / thiabendazole Topical Solution [Tresaderm]",
+      "code": "1009391",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Injectable Solution [Dexium]",
+      "code": "1049385",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Injection [Dexycu]",
+      "code": "2045407",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Drug Implant [Dextenza]",
+      "code": "2108018",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Oral Tablet [Hemady]",
+      "code": "2286258",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Injectable Solution [Dexasone]",
+      "code": "363482",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Poly-Dex]",
+      "code": "365818",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Ophthalmic Suspension [Maxidex]",
+      "code": "365842",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Poly-Dex]",
+      "code": "367266",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Oral Tablet [Decadron]",
+      "code": "369461",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ciprofloxacin / dexamethasone Otic Suspension [Ciprodex]",
+      "code": "405941",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Oral Solution [Decadron]",
+      "code": "757087",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Drug Implant [Ozurdex]",
+      "code": "854180",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment [Maxitrol]",
+      "code": "93249",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension [Maxitrol]",
+      "code": "93250",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tobramycin Ophthalmic Suspension [Tobradex]",
+      "code": "94334",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tobramycin Ophthalmic Ointment [Tobradex]",
+      "code": "94335",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron Oral Liquid Product",
+      "code": "1170296",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron Oral Product",
+      "code": "1170297",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Decadron Pill",
+      "code": "1170298",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ciprodex Otic Product",
+      "code": "1170903",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexasone Injectable Product",
+      "code": "1175250",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexium Injectable Product",
+      "code": "1175843",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ozurdex Drug Implant Product",
+      "code": "1177629",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Tobradex Ophthalmic Product",
+      "code": "1179099",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Tresaderm Topical Product",
+      "code": "1179675",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Maxidex Ophthalmic Product",
+      "code": "1181604",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Maxitrol Ophthalmic Product",
+      "code": "1182730",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Poly-Dex Ophthalmic Product",
+      "code": "1182982",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dexycu Injectable Product",
+      "code": "2045408",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Dextenza Drug Implant Product",
+      "code": "2108019",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Hemady Oral Product",
+      "code": "2286259",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Hemady Pill",
+      "code": "2286260",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.2 MG/ML / thiabendazole 40 MG/ML Topical Solution",
+      "code": "1009388",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone sodium phosphate 4 MG/ML Injectable Solution",
+      "code": "1049400",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone phosphate 4 MG/ML Injectable Solution",
+      "code": "1116927",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone sodium phosphate 0.4 MG/ML Injectable Solution",
+      "code": "1249712",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone acetate 8 MG/ML Injectable Suspension",
+      "code": "1374372",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "1 ML dexamethasone phosphate 10 MG/ML Injection",
+      "code": "1812079",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "1 ML dexamethasone phosphate 4 MG/ML Prefilled Syringe",
+      "code": "1812095",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "1 ML dexamethasone phosphate 4 MG/ML Injection",
+      "code": "1812194",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.25 MG Oral Tablet",
+      "code": "197576",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.5 MG Oral Tablet",
+      "code": "197577",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG Oral Tablet",
+      "code": "197579",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1.5 MG Oral Tablet",
+      "code": "197580",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 2 MG Oral Tablet",
+      "code": "197581",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 4 MG Oral Tablet",
+      "code": "197582",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 6 MG Oral Tablet",
+      "code": "197583",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "0.005 ML dexamethasone 103.4 MG/ML Injection",
+      "code": "2045404",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "1 ML dexamethasone phosphate 10 MG/ML Prefilled Syringe",
+      "code": "2099700",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.4 MG Drug Implant",
+      "code": "2108015",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 20 MG Oral Tablet",
+      "code": "2261802",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone phosphate 1 MG/ML Ophthalmic Solution",
+      "code": "226343",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / hypromellose 5 MG/ML Ophthalmic Solution",
+      "code": "227142",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.02 MG/ACTUAT / tramazoline 0.12 MG/ACTUAT Nasal Spray",
+      "code": "248175",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.001 MG/MG / neomycin 0.0035 MG/MG / polymyxin B 10 UNT/MG Ophthalmic Ointment",
+      "code": "309679",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / neomycin 3.5 MG/ML / polymyxin B 10000 UNT/ML Ophthalmic Suspension",
+      "code": "309680",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.001 MG/MG / tobramycin 0.003 MG/MG Ophthalmic Ointment",
+      "code": "309682",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension",
+      "code": "309683",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML Oral Solution",
+      "code": "309684",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.1 MG/ML Oral Solution",
+      "code": "309686",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML Ophthalmic Suspension",
+      "code": "309692",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone phosphate 10 MG/ML Injectable Solution",
+      "code": "309696",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.75 MG Oral Tablet",
+      "code": "343033",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML Topical Solution",
+      "code": "388755",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ciprofloxacin 3 MG/ML / dexamethasone 1 MG/ML Otic Suspension",
+      "code": "403908",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 2 MG/ML Injectable Solution",
+      "code": "435681",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.5 MG/ML / tobramycin 3 MG/ML Ophthalmic Suspension",
+      "code": "849115",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.7 MG Drug Implant",
+      "code": "854177",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 3 MG/ML Injectable Solution",
+      "code": "880649",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone sodium phosphate 4 MG/ML",
+      "code": "1049399",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone phosphate 4 MG/ML",
+      "code": "1116926",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone sodium phosphate 0.4 MG/ML",
+      "code": "1249711",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone acetate 8 MG/ML",
+      "code": "1374371",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone phosphate 10 MG/ML",
+      "code": "1812078",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 103.4 MG/ML",
+      "code": "2045403",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 20 MG",
+      "code": "2261801",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone phosphate 1 MG/ML",
+      "code": "2265538",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.1 MG/ML",
+      "code": "315773",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.25 MG",
+      "code": "315774",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.5 MG",
+      "code": "315775",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG",
+      "code": "315776",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1.5 MG",
+      "code": "315777",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 4 MG",
+      "code": "315778",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 6 MG",
+      "code": "315779",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 2 MG",
+      "code": "317346",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 1 MG/ML",
+      "code": "317629",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 3 MG/ML",
+      "code": "332981",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.4 MG",
+      "code": "332984",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.02 MG/ACTUAT",
+      "code": "335766",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.001 MG/MG",
+      "code": "339981",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.75 MG",
+      "code": "345816",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.5 MG/ML",
+      "code": "438889",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 2 MG/ML",
+      "code": "451789",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone 0.7 MG",
+      "code": "854175",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / thiabendazole Topical Solution",
+      "code": "1009386",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Injection",
+      "code": "1812073",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Prefilled Syringe",
+      "code": "1812094",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Injectable Suspension",
+      "code": "371721",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Ophthalmic Suspension",
+      "code": "371723",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Injectable Solution",
+      "code": "371725",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Oral Solution",
+      "code": "371728",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Oral Tablet",
+      "code": "371729",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tobramycin Ophthalmic Ointment",
+      "code": "374438",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Suspension",
+      "code": "374698",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Ointment",
+      "code": "374699",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Ophthalmic Solution",
+      "code": "377418",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / hypromellose Ophthalmic Solution",
+      "code": "377456",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tobramycin Ophthalmic Suspension",
+      "code": "378984",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Topical Solution",
+      "code": "393151",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tramazoline Nasal Spray",
+      "code": "393542",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ciprofloxacin / dexamethasone Otic Suspension",
+      "code": "405942",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Drug Implant",
+      "code": "854176",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ciprofloxacin / dexamethasone Otic Product",
+      "code": "1152113",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / polymyxin B Ophthalmic Product",
+      "code": "1154245",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin / thiabendazole Topical Product",
+      "code": "1154246",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin Ophthalmic Product",
+      "code": "1154247",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / neomycin Topical Product",
+      "code": "1154249",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tobramycin Ophthalmic Product",
+      "code": "1154524",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / hypromellose Ophthalmic Product",
+      "code": "1154525",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tramazoline Inhalant Product",
+      "code": "1154527",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone / tramazoline Nasal Product",
+      "code": "1154528",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Drug Implant Product",
+      "code": "1154529",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Injectable Product",
+      "code": "1154531",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Nasal Product",
+      "code": "1154532",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Ophthalmic Product",
+      "code": "1154533",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Oral Liquid Product",
+      "code": "1154534",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Oral Product",
+      "code": "1154535",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Otic Product",
+      "code": "1154536",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Pill",
+      "code": "1154537",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "dexamethasone Topical Product",
+      "code": "1154539",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Rayos",
+      "code": "1303126",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Deltasone",
+      "code": "227730",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Delayed Release Oral Tablet",
+      "code": "10312",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{48 (predniSONE 5 MG Oral Tablet) } Pack",
+      "code": "763179",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{21 (predniSONE 5 MG Oral Tablet) } Pack",
+      "code": "763181",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{48 (predniSONE 10 MG Oral Tablet) } Pack",
+      "code": "763183",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{21 (predniSONE 10 MG Oral Tablet) } Pack",
+      "code": "763185",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE",
+      "code": "8640",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "chloramphenicol / predniSONE",
+      "code": "1008942",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "piroxicam / predniSONE",
+      "code": "815961",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Rayos 1 MG Delayed Release Oral Tablet",
+      "code": "1303131",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Rayos 2 MG Delayed Release Oral Tablet",
+      "code": "1303134",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Rayos 5 MG Delayed Release Oral Tablet",
+      "code": "1303137",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Deltasone 20 MG Oral Tablet",
+      "code": "206997",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 1 MG [Rayos]",
+      "code": "1303127",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 2 MG [Rayos]",
+      "code": "1303133",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 5 MG [Rayos]",
+      "code": "1303136",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 20 MG [Deltasone]",
+      "code": "567793",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Delayed Release Oral Tablet [Rayos]",
+      "code": "1303128",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Oral Tablet [Deltasone]",
+      "code": "92354",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Deltasone Oral Product",
+      "code": "1172410",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Deltasone Pill",
+      "code": "1172411",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Rayos Oral Product",
+      "code": "1303129",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Rayos Pill",
+      "code": "1303130",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 1 MG Delayed Release Oral Tablet",
+      "code": "1303125",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 2 MG Delayed Release Oral Tablet",
+      "code": "1303132",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 5 MG Delayed Release Oral Tablet",
+      "code": "1303135",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 1 MG Oral Tablet",
+      "code": "198144",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 10 MG Oral Tablet",
+      "code": "198145",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 2.5 MG Oral Tablet",
+      "code": "198146",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 50 MG Oral Tablet",
+      "code": "198148",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 5 MG/ML Oral Solution",
+      "code": "205301",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 20 MG Oral Tablet",
+      "code": "312615",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 5 MG Oral Tablet",
+      "code": "312617",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 1 MG/ML Oral Solution",
+      "code": "315187",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 1 MG/ML",
+      "code": "316580",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 2.5 MG",
+      "code": "316581",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 20 MG",
+      "code": "316582",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 5 MG",
+      "code": "316584",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 5 MG/ML",
+      "code": "316585",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 50 MG",
+      "code": "316586",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 1 MG",
+      "code": "317475",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 10 MG",
+      "code": "317663",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE 2 MG",
+      "code": "335473",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Delayed Release Oral Tablet",
+      "code": "1303124",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Oral Solution",
+      "code": "373583",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Oral Tablet",
+      "code": "373585",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Oral Liquid Product",
+      "code": "1161704",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Oral Product",
+      "code": "1161705",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "Smoldering_mm",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "predniSONE Pill",
+      "code": "1161706",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Bendeka",
+      "code": "1726098",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Belrapzo",
+      "code": "2178262",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Treanda",
+      "code": "741098",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine",
+      "code": "134547",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride",
+      "code": "1114693",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Bendeka 25 MG/ML Injectable Solution",
+      "code": "1726102",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Treanda 100 MG Injection",
+      "code": "1805004",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Treanda 25 MG Injection",
+      "code": "1805009",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Belrapzo 25 MG/ML Injectable Solution",
+      "code": "2178266",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 25 MG/ML [Bendeka]",
+      "code": "1726099",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 100 MG [Treanda]",
+      "code": "1805002",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 25 MG [Treanda]",
+      "code": "1805008",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 25 MG/ML [Belrapzo]",
+      "code": "2178263",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine Injectable Solution [Bendeka]",
+      "code": "1726100",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine Injection [Treanda]",
+      "code": "1805003",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine Injectable Solution [Belrapzo]",
+      "code": "2178264",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Treanda Injectable Product",
+      "code": "1179668",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Bendeka Injectable Product",
+      "code": "1726101",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Belrapzo Injectable Product",
+      "code": "2178265",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 25 MG/ML Injectable Solution",
+      "code": "1726097",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 100 MG Injection",
+      "code": "1805001",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 25 MG Injection",
+      "code": "1805007",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 25 MG/ML",
+      "code": "1726096",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 100 MG",
+      "code": "1804999",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine hydrochloride 25 MG",
+      "code": "1805006",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine Injection",
+      "code": "1805000",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine Injectable Solution",
+      "code": "790322",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bendamustine",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bendamustine Injectable Product",
+      "code": "1160009",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide",
+      "code": "3002",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide / mannitol",
+      "code": "690313",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide anhydrous",
+      "code": "1545988",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide lyophilized",
+      "code": "221085",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 25 MG Oral Capsule",
+      "code": "1437968",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 50 MG Oral Capsule",
+      "code": "1437969",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 500 MG Injection",
+      "code": "1734917",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 1000 MG Injection",
+      "code": "1734919",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 2000 MG Injection",
+      "code": "1734921",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 25 MG Oral Tablet",
+      "code": "197549",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 50 MG Oral Tablet",
+      "code": "197550",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 200 MG/ML Injectable Solution",
+      "code": "2386859",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "5 ML cyclophosphamide 200 MG/ML Injection",
+      "code": "2568661",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "2.5 ML cyclophosphamide 200 MG/ML Injection",
+      "code": "2568663",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 500 MG",
+      "code": "1734915",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 1000 MG",
+      "code": "1734918",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 2000 MG",
+      "code": "1734920",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 200 MG/ML",
+      "code": "2386858",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 25 MG",
+      "code": "315746",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide 50 MG",
+      "code": "315747",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide Oral Capsule",
+      "code": "1437967",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide Injection",
+      "code": "1734916",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide Oral Tablet",
+      "code": "371664",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide Injectable Solution",
+      "code": "376666",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide Injectable Product",
+      "code": "1156181",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide Oral Product",
+      "code": "1156182",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "cyclophosphamide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "cyclophosphamide Pill",
+      "code": "1156183",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "LipoDox",
+      "code": "1274581",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Adriamycin",
+      "code": "42512",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Doxil",
+      "code": "80773",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin",
+      "code": "3639",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride",
+      "code": "142433",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin liposome",
+      "code": "214525",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride liposome",
+      "code": "466523",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Doxil 50 MG per 25 ML Injection",
+      "code": "1790128",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Doxil 20 MG per 10 ML Injection",
+      "code": "1790131",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "LipoDox 50 MG per 25 ML Injection",
+      "code": "1790177",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "LipoDox 20 MG per 10 ML Injection",
+      "code": "1790181",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "5 ML Adriamycin 2 MG/ML Injection",
+      "code": "1799305",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ADRIAMYCIN 50 MG per 25 ML Injection",
+      "code": "1799307",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ADRIAMYCIN 20 MG per 10 ML Injection",
+      "code": "1799308",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Adriamycin 2 MG/ML Injectable Solution",
+      "code": "1799310",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Adriamycin 50 MG Injection",
+      "code": "2001100",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Adriamycin 10 MG Injection",
+      "code": "2001102",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride liposome 2 MG/ML [Doxil]",
+      "code": "1191499",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride liposome 2 MG/ML [LipoDox]",
+      "code": "1247774",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 2 MG/ML [Adriamycin]",
+      "code": "1799302",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 50 MG [Adriamycin]",
+      "code": "2001099",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 10 MG [Adriamycin]",
+      "code": "2001101",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin Injection [Adriamycin]",
+      "code": "1799303",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin Injectable Solution [Adriamycin]",
+      "code": "1799309",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin Injection [LipoDox]",
+      "code": "2284504",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin Injection [Doxil]",
+      "code": "2284506",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Doxil Injectable Product",
+      "code": "1175913",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "LipoDox Injectable Product",
+      "code": "1247776",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Adriamycin Injectable Product",
+      "code": "1799304",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 2 MG/ML Injectable Solution",
+      "code": "1191138",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 50 MG Injection",
+      "code": "1790095",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "5 ML DOXOrubicin hydrochloride 2 MG/ML Injection",
+      "code": "1790097",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "10 ML DOXOrubicin hydrochloride 2 MG/ML Injection",
+      "code": "1790099",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "25 ML DOXOrubicin hydrochloride 2 MG/ML Injection",
+      "code": "1790100",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 10 MG Injection",
+      "code": "1790103",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "10 ML DOXOrubicin hydrochloride liposome 2 MG/ML Injection",
+      "code": "1790115",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "25 ML DOXOrubicin hydrochloride liposome 2 MG/ML Injection",
+      "code": "1790127",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 20 MG Injection",
+      "code": "1872062",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 2 MG/ML",
+      "code": "1191137",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride liposome 2 MG/ML",
+      "code": "1191495",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 50 MG",
+      "code": "1790093",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 10 MG",
+      "code": "1790102",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin hydrochloride 20 MG",
+      "code": "1872061",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin Injection",
+      "code": "1790094",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin Injectable Solution",
+      "code": "374376",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "doxorubicin",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DOXOrubicin Injectable Product",
+      "code": "1160774",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Alkeran",
+      "code": "151325",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Evomela",
+      "code": "1745086",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan",
+      "code": "6718",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan hydrochloride",
+      "code": "235857",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Alkeran 2 MG Oral Tablet",
+      "code": "105562",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Evomela 50 MG Injection",
+      "code": "1745090",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Alkeran 50 MG Injection",
+      "code": "876399",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan 50 MG [Alkeran]",
+      "code": "1740951",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan 50 MG [Evomela]",
+      "code": "1745087",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan 2 MG [Alkeran]",
+      "code": "564088",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Injection [Alkeran]",
+      "code": "1740952",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Injection [Evomela]",
+      "code": "1745088",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Oral Tablet [Alkeran]",
+      "code": "368873",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Alkeran Injectable Product",
+      "code": "1176189",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Alkeran Oral Product",
+      "code": "1176190",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Alkeran Pill",
+      "code": "1176191",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Evomela Injectable Product",
+      "code": "1745089",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan 2 MG Oral Tablet",
+      "code": "197919",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan 50 MG Injection",
+      "code": "311487",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan 50 MG",
+      "code": "1740948",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan 2 MG",
+      "code": "317646",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Injection",
+      "code": "1740949",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Oral Tablet",
+      "code": "372756",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Injectable Product",
+      "code": "1159787",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Oral Product",
+      "code": "1159788",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "melphalan",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "melphalan Pill",
+      "code": "1159789",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Farydak",
+      "code": "1603356",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat",
+      "code": "1603350",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat lactate",
+      "code": "1603349",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Farydak 10 MG Oral Capsule",
+      "code": "1603361",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Farydak 15 MG Oral Capsule",
+      "code": "1603365",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Farydak 20 MG Oral Capsule",
+      "code": "1603369",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 10 MG [Farydak]",
+      "code": "1603357",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 15 MG [Farydak]",
+      "code": "1603364",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 20 MG [Farydak]",
+      "code": "1603368",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat Oral Capsule [Farydak]",
+      "code": "1603358",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Farydak Oral Product",
+      "code": "1603359",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Farydak Pill",
+      "code": "1603360",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 10 MG Oral Capsule",
+      "code": "1603355",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 15 MG Oral Capsule",
+      "code": "1603363",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 20 MG Oral Capsule",
+      "code": "1603367",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 10 MG",
+      "code": "1603351",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 15 MG",
+      "code": "1603362",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat 20 MG",
+      "code": "1603366",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat Oral Capsule",
+      "code": "1603354",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat Oral Product",
+      "code": "1603352",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "panobinostat",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "panobinostat Pill",
+      "code": "1603353",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Velcade",
+      "code": "356733",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bortezomib",
+      "code": "358258",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Velcade 3.5 MG Injection",
+      "code": "402244",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bortezomib 3.5 MG [Velcade]",
+      "code": "1804996",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bortezomib Injection [Velcade]",
+      "code": "1804997",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Velcade Injectable Product",
+      "code": "1187756",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bortezomib 3.5 MG Injection",
+      "code": "402243",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bortezomib 3.5 MG",
+      "code": "1804993",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bortezomib Injection",
+      "code": "1804994",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "bortezomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "bortezomib Injectable Product",
+      "code": "1163075",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Kyprolis",
+      "code": "1302971",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib",
+      "code": "1302966",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Kyprolis 30 MG Injection",
+      "code": "1806937",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Kyprolis 60 MG Injection",
+      "code": "1806942",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Kyprolis 10 MG Injection",
+      "code": "2046644",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 30 MG [Kyprolis]",
+      "code": "1806935",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 60 MG [Kyprolis]",
+      "code": "1806941",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 10 MG [Kyprolis]",
+      "code": "2046643",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib Injection [Kyprolis]",
+      "code": "1806936",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Kyprolis Injectable Product",
+      "code": "1302974",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 30 MG Injection",
+      "code": "1806934",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 60 MG Injection",
+      "code": "1806940",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 10 MG Injection",
+      "code": "2046642",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 30 MG",
+      "code": "1806932",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 60 MG",
+      "code": "1806939",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib 10 MG",
+      "code": "2046641",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib Injection",
+      "code": "1806933",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "carfilzomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "carfilzomib Injectable Product",
+      "code": "1302968",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ninlaro",
+      "code": "1723758",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib",
+      "code": "1723735",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib citrate",
+      "code": "1723734",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ninlaro 2.3 MG Oral Capsule",
+      "code": "1723763",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ninlaro 3 MG Oral Capsule",
+      "code": "1723767",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ninlaro 4 MG Oral Capsule",
+      "code": "1723772",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 2.3 MG [Ninlaro]",
+      "code": "1723759",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 3 MG [Ninlaro]",
+      "code": "1723766",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 4 MG [Ninlaro]",
+      "code": "1723771",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib Oral Capsule [Ninlaro]",
+      "code": "1723760",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ninlaro Oral Product",
+      "code": "1723761",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Ninlaro Pill",
+      "code": "1723762",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 2.3 MG Oral Capsule",
+      "code": "1723757",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 3 MG Oral Capsule",
+      "code": "1723765",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 4 MG Oral Capsule",
+      "code": "1723770",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 2.3 MG",
+      "code": "1723753",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 3 MG",
+      "code": "1723764",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib 4 MG",
+      "code": "1723769",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib Oral Capsule",
+      "code": "1723756",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib Oral Product",
+      "code": "1723754",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "ixazomib",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "ixazomib Pill",
+      "code": "1723755",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Darzalex",
+      "code": "1721952",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Darzalex Faspro",
+      "code": "2375137",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab",
+      "code": "1721947",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab / hyaluronidase",
+      "code": "2372199",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab-fihj",
+      "code": "2375130",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "5 ML Darzalex 20 MG/ML Injection",
+      "code": "1721956",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "20 ML Darzalex 20 MG/ML Injection",
+      "code": "1726440",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "DARZALEX Faspro 1800 MG / 30,000 UNT per 15 mL Injection",
+      "code": "2375141",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab 20 MG/ML [Darzalex]",
+      "code": "1721953",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab-fihj 120 MG/ML / hyaluronidase-fihj 2000 UNT/ML [Darzalex Faspro]",
+      "code": "2375138",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab Injection [Darzalex]",
+      "code": "1721954",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab / hyaluronidase Injection [Darzalex Faspro]",
+      "code": "2375139",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Darzalex Injectable Product",
+      "code": "1721955",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Darzalex Faspro Injectable Product",
+      "code": "2375140",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "5 ML daratumumab 20 MG/ML Injection",
+      "code": "1721951",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "20 ML daratumumab 20 MG/ML Injection",
+      "code": "1726439",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "15 ML daratumumab-fihj 120 MG/ML / hyaluronidase-fihj 2000 UNT/ML Injection",
+      "code": "2375136",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab 20 MG/ML",
+      "code": "1721948",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab-fihj 120 MG/ML",
+      "code": "2375131",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab Injection",
+      "code": "1721950",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab / hyaluronidase Injection",
+      "code": "2375135",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab Injectable Product",
+      "code": "1721949",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "daratumumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "daratumumab / hyaluronidase Injectable Product",
+      "code": "2375134",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Empliciti",
+      "code": "1726111",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab",
+      "code": "1726104",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Empliciti 300 MG Injection",
+      "code": "1726115",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Empliciti 400 MG Injection",
+      "code": "1726119",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab 300 MG [Empliciti]",
+      "code": "1726112",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab 400 MG [Empliciti]",
+      "code": "1726118",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab Injection [Empliciti]",
+      "code": "1726113",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Empliciti Injectable Product",
+      "code": "1726114",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab 300 MG Injection",
+      "code": "1726110",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab 400 MG Injection",
+      "code": "1726117",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab 300 MG",
+      "code": "1726107",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab 400 MG",
+      "code": "1726116",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab Injection",
+      "code": "1726109",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "elotuzumab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "elotuzumab Injectable Product",
+      "code": "1726108",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Sarclisa",
+      "code": "2282024",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "isatuximab",
+      "code": "2282018",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "isatuximab-irfc",
+      "code": "2282019",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "5 ML Sarclisa 20 MG/ML Injection",
+      "code": "2282028",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "25 ML Sarclisa 20 MG/ML Injection",
+      "code": "2282032",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "isatuximab-irfc 20 MG/ML [Sarclisa]",
+      "code": "2282025",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "isatuximab Injection [Sarclisa]",
+      "code": "2282026",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Sarclisa Injectable Product",
+      "code": "2282027",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "5 ML isatuximab-irfc 20 MG/ML Injection",
+      "code": "2282023",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "25 ML isatuximab-irfc 20 MG/ML Injection",
+      "code": "2282031",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "isatuximab-irfc 20 MG/ML",
+      "code": "2282020",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "isatuximab Injection",
+      "code": "2282022",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "isatuximab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "isatuximab Injectable Product",
+      "code": "2282021",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid",
+      "code": "337535",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide",
+      "code": "342369",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid 2.5 MG Oral Capsule",
+      "code": "1242233",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid 20 MG Oral Capsule",
+      "code": "1429367",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid 10 MG Oral Capsule",
+      "code": "616114",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid 5 MG Oral Capsule",
+      "code": "616116",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid 15 MG Oral Capsule",
+      "code": "643714",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid 25 MG Oral Capsule",
+      "code": "643722",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 2.5 MG [Revlimid]",
+      "code": "1242232",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 20 MG [Revlimid]",
+      "code": "1429366",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 10 MG [Revlimid]",
+      "code": "616112",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 5 MG [Revlimid]",
+      "code": "616115",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 15 MG [Revlimid]",
+      "code": "643713",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 25 MG [Revlimid]",
+      "code": "643721",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide Oral Capsule [Revlimid]",
+      "code": "616113",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid Oral Product",
+      "code": "1182522",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Revlimid Pill",
+      "code": "1182529",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 2.5 MG Oral Capsule",
+      "code": "1242231",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 20 MG Oral Capsule",
+      "code": "1428947",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 10 MG Oral Capsule",
+      "code": "602910",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 5 MG Oral Capsule",
+      "code": "602912",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 15 MG Oral Capsule",
+      "code": "643712",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 25 MG Oral Capsule",
+      "code": "643720",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 2.5 MG",
+      "code": "1242230",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 20 MG",
+      "code": "1428946",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 10 MG",
+      "code": "602908",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 5 MG",
+      "code": "602911",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 15 MG",
+      "code": "643711",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide 25 MG",
+      "code": "643719",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide Oral Capsule",
+      "code": "602909",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide Oral Product",
+      "code": "1162569",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "lenalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "lenalidomide Pill",
+      "code": "1162570",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Thalomid",
+      "code": "220239",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide",
+      "code": "10432",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Thalomid 50 MG Oral Capsule",
+      "code": "213360",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Thalomid 100 MG Oral Capsule",
+      "code": "404449",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Thalomid 200 MG Oral Capsule",
+      "code": "404450",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Thalomid 150 MG Oral Capsule",
+      "code": "700418",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 50 MG [Thalomid]",
+      "code": "573254",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 100 MG [Thalomid]",
+      "code": "576406",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 200 MG [Thalomid]",
+      "code": "576407",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 150 MG [Thalomid]",
+      "code": "700417",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide Oral Capsule [Thalomid]",
+      "code": "366451",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Thalomid Oral Product",
+      "code": "1184929",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Thalomid Pill",
+      "code": "1184930",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 50 MG Oral Capsule",
+      "code": "200390",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 100 MG Oral Capsule",
+      "code": "360176",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 200 MG Oral Capsule",
+      "code": "360177",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 150 MG Oral Capsule",
+      "code": "700416",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 50 MG",
+      "code": "316784",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 100 MG",
+      "code": "360321",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 200 MG",
+      "code": "360322",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide 150 MG",
+      "code": "700415",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide Oral Capsule",
+      "code": "374072",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide Oral Product",
+      "code": "1164873",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "thalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "thalidomide Pill",
+      "code": "1164874",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Pomalyst",
+      "code": "1369719",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide",
+      "code": "1369713",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Pomalyst 2 MG Oral Capsule",
+      "code": "1369728",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Pomalyst 1 MG Oral Capsule",
+      "code": "1369724",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Pomalyst 4 MG Oral Capsule",
+      "code": "1369736",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Pomalyst 3 MG Oral Capsule",
+      "code": "1369732",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 1 MG [Pomalyst]",
+      "code": "1369720",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 2 MG [Pomalyst]",
+      "code": "1369727",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 3 MG [Pomalyst]",
+      "code": "1369731",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 4 MG [Pomalyst]",
+      "code": "1369735",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide Oral Capsule [Pomalyst]",
+      "code": "1369721",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 3 MG Oral Capsule",
+      "code": "1369730",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 1 MG Oral Capsule",
+      "code": "1369718",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 2 MG Oral Capsule",
+      "code": "1369726",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 4 MG Oral Capsule",
+      "code": "1369734",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 1 MG",
+      "code": "1369714",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 2 MG",
+      "code": "1369725",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 3 MG",
+      "code": "1369729",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide 4 MG",
+      "code": "1369733",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide Oral Capsule",
+      "code": "1369717",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide Oral Product",
+      "code": "1369715",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "pomalidomide Pill",
+      "code": "1369716",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Pomalyst Oral Product",
+      "code": "1369722",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "pomalidomide",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Pomalyst Pill",
+      "code": "1369723",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio",
+      "code": "2178397",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 60 MG Weekly Dose Carton Pack, 4 Blister Cards, 3 Tablets Each",
+      "code": "2178403",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 100 MG Weekly Dose Carton Pack, 4 Blister Cards, 2 Tablets Each",
+      "code": "2548742",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 40 MG Weekly Dose Carton Pack, 4 Blister Cards, 2 Tablets Each",
+      "code": "2382993",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 100 MG Weekly Dose Carton Pack, 4 Blister Cards, 5 Tablets Each",
+      "code": "2178409",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 60 MG Weekly Dose Carton Pack, 4 Blister Cards, 1 Tablet Each",
+      "code": "2548736",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 40 MG Weekly Dose Carton Pack, 4 Blister Cards, 1 Tablet Each",
+      "code": "2548769",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 80 MG Twice Weekly (160 MG total weekly) Dose Carton Pack, 4 Blister Cards, 8 Tablets Each",
+      "code": "2178407",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 40 MG Twice Weekly (80 MG total weekly) Dose Carton Pack, 4 Blister Cards, 4 Tablets Each",
+      "code": "2382991",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 60 MG Twice Weekly (120 MG total weekly) Dose Carton Pack, 4 Blister Cards, 6 Tablets Each",
+      "code": "2382990",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 40 MG Twice Weekly (80 MG total weekly) Dose Carton Pack, 4 Blister Cards, 2 Tablets Each",
+      "code": "2548767",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 80 MG Weekly Dose Carton Pack, 4 Blister Cards, 4 Tablets Each",
+      "code": "2178405",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 80 MG Weekly Dose Carton Pack, 4 Blister Cards, 2 Tablets Each",
+      "code": "2548766",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{8 (selinexor 40 MG Oral Tablet) } Pack",
+      "code": "2548763",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{24 (selinexor 20 MG Oral Tablet) } Pack",
+      "code": "2382989",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{12 (selinexor 20 MG Oral Tablet) } Pack",
+      "code": "2178396",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{8 (selinexor 50 MG Oral Tablet) } Pack",
+      "code": "2548739",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{20 (selinexor 20 MG Oral Tablet) } Pack",
+      "code": "2178408",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{32 (selinexor 20 MG Oral Tablet) } Pack",
+      "code": "2178406",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{8 (selinexor 20 MG Oral Tablet) } Pack",
+      "code": "2382992",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{4 (selinexor 40 MG Oral Tablet) } Pack",
+      "code": "2548768",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{16 (selinexor 20 MG Oral Tablet) } Pack",
+      "code": "2178404",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{4 (selinexor 60 MG Oral Tablet) } Pack",
+      "code": "2548733",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor",
+      "code": "2178390",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 20 MG Oral Tablet",
+      "code": "2178402",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 40 MG Oral Tablet",
+      "code": "2548765",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 50 MG Oral Tablet",
+      "code": "2548741",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio 60 MG Oral Tablet",
+      "code": "2548735",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 20 MG [Xpovio]",
+      "code": "2178398",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 60 MG [Xpovio]",
+      "code": "2548734",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 50 MG [Xpovio]",
+      "code": "2548740",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 40 MG [Xpovio]",
+      "code": "2548764",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor Oral Tablet [Xpovio]",
+      "code": "2178399",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 60 MG Oral Tablet",
+      "code": "2548732",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 40 MG Oral Tablet",
+      "code": "2548762",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 20 MG Oral Tablet",
+      "code": "2178395",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 50 MG Oral Tablet",
+      "code": "2548738",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 20 MG",
+      "code": "2178391",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 60 MG",
+      "code": "2548731",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 50 MG",
+      "code": "2548737",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor 40 MG",
+      "code": "2548761",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor Oral Tablet",
+      "code": "2178394",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor Oral Product",
+      "code": "2178392",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "selinexor Pill",
+      "code": "2178393",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio Oral Product",
+      "code": "2178400",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "selinexor",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Xpovio Pill",
+      "code": "2178401",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Abecma",
+      "code": "2536435",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel",
+      "code": "2536430",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Abecma 460000000 CELLS per 30 ML Injection",
+      "code": "2536439",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Abecma 460000000 CELLS per 100 ML Injection",
+      "code": "2536451",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Abecma 460000000 CELLS per 70 ML Injection",
+      "code": "2536445",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel 15333333 CELLS/ML [Abecma]",
+      "code": "2536436",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel 6571428 CELLS/ML [Abecma]",
+      "code": "2536444",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel 4600000 CELLS/ML [Abecma]",
+      "code": "2536450",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel Injection [Abecma]",
+      "code": "2536437",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "100 ML idecabtagene vicleucel 4600000 CELLS/ML Injection",
+      "code": "2536449",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "70 ML idecabtagene vicleucel 6571428 CELLS/ML Injection",
+      "code": "2536443",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "30 ML idecabtagene vicleucel 15333333 CELLS/ML Injection",
+      "code": "2536434",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel 15333333 CELLS/ML",
+      "code": "2536431",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel 6571428 CELLS/ML",
+      "code": "2536442",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel 4600000 CELLS/ML",
+      "code": "2536448",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel Injection",
+      "code": "2536433",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "idecabtagene vicleucel Injectable Product",
+      "code": "2536432",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "abecma",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Abecma Injectable Product",
+      "code": "2536438",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Venclexta",
+      "code": "1747562",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Venclexta Starting Pack",
+      "code": "1747580",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "{14 (venetoclax 10 MG Oral Tablet) / 21 (venetoclax 100 MG Oral Tablet) / 7 (venetoclax 50 MG Oral Tablet) } Pack",
+      "code": "1747575",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax",
+      "code": "1747556",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Venclexta 100 MG Oral Tablet",
+      "code": "1747567",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Venclexta 10 MG Oral Tablet",
+      "code": "1747577",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Venclexta 50 MG Oral Tablet",
+      "code": "1747579",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 100 MG [Venclexta]",
+      "code": "1747563",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 10 MG [Venclexta]",
+      "code": "1747576",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 50 MG [Venclexta]",
+      "code": "1747578",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax Oral Tablet [Venclexta]",
+      "code": "1747564",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Venclexta Oral Product",
+      "code": "1747565",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Venclexta Pill",
+      "code": "1747566",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 100 MG Oral Tablet",
+      "code": "1747561",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 10 MG Oral Tablet",
+      "code": "1747572",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 50 MG Oral Tablet",
+      "code": "1747574",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 100 MG",
+      "code": "1747557",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 10 MG",
+      "code": "1747571",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax 50 MG",
+      "code": "1747573",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax Oral Tablet",
+      "code": "1747560",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax Oral Product",
+      "code": "1747558",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "venetoclax",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "venetoclax Pill",
+      "code": "1747559",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Blincyto",
+      "code": "1597263",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "blinatumomab",
+      "code": "1597258",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Blincyto 35 MCG Injection",
+      "code": "1597267",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "blinatumomab 0.035 MG [Blincyto]",
+      "code": "1651252",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "blinatumomab Injection [Blincyto]",
+      "code": "1651253",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "Blincyto Injectable Product",
+      "code": "1597266",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "blinatumomab 0.035 MG Injection",
+      "code": "1597262",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "blinatumomab 0.035 MG",
+      "code": "1651249",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "blinatumomab Injection",
+      "code": "1651250",
+      "codingSystem": "rxNORM"
+    },
+    {
+      "category": "belantamab",
+      "cancerType": "mm",
+      "entryType": "Medication",
+      "display": "blinatumomab Injectable Product",
+      "code": "1597260",
+      "codingSystem": "rxNORM"
+    }
+  ]
+}

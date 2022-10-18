@@ -4,7 +4,14 @@ import SearchForm, { SearchFormProps } from '../SearchForm';
 
 const defaultValues = {
   age: '28',
-  cancerType: { entryType: 'Breast', display: 'Breast', code: '372137005' },
+  cancerType: {
+    category: '',
+    cancerType: 'breast',
+    entryType: 'Breast',
+    display: 'Breast',
+    code: '372137005',
+    codingSystem: 'SNOMED',
+  },
   travelDistance: '100',
   zipcode: '11111',
 };

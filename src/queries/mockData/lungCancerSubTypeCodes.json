@@ -1,319 +1,756 @@
 {
   "entry": [
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Adenocarcinoma of lung (disorder)",
       "code": "254626006",
-      "display": "Adenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "15956341000119105",
-      "display": "Adenocarcinoma of left lung (disorder)"
+      "display": "Adenocarcinoma of left lung (disorder)",
+      "code": "15956300000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "15956381000119100",
-      "display": "Adenocarcinoma of right lung (disorder)"
+      "display": "Adenocarcinoma of right lung (disorder)",
+      "code": "15956400000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary adenocarcinoma of lung (disorder)",
       "code": "707451005",
-      "display": "Primary adenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary mucinous adenocarcinoma of lung (disorder)",
       "code": "707452003",
-      "display": "Primary mucinous adenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary papillary adenocarcinoma of lung (disorder)",
       "code": "707411007",
-      "display": "Primary papillary adenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary clear cell adenocarcinoma of lung (disorder)",
       "code": "711414003",
-      "display": "Primary clear cell adenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Non-mucinous adenocarcinoma in situ of lung (disorder)",
       "code": "789695003",
-      "display": "Non-mucinous adenocarcinoma in situ of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1078881000119102",
-      "display": "Primary adenocarcinoma of lower lobe of left lung (disorder)"
+      "display": "Primary adenocarcinoma of lower lobe of left lung (disorder)",
+      "code": "1078880000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1078901000119100",
-      "display": "Primary adenocarcinoma of upper lobe of left lung (disorder)"
+      "display": "Primary adenocarcinoma of upper lobe of left lung (disorder)",
+      "code": "1078900000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1078931000119107",
-      "display": "Primary adenocarcinoma of lower lobe of right lung (disorder)"
+      "display": "Primary adenocarcinoma of lower lobe of right lung (disorder)",
+      "code": "1078930000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1078961000119104",
-      "display": "Primary adenocarcinoma of upper lobe of right lung (disorder)"
+      "display": "Primary adenocarcinoma of upper lobe of right lung (disorder)",
+      "code": "1078960000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1078951000119101",
-      "display": "Primary adenocarcinoma of middle lobe of right lung (disorder)"
+      "display": "Primary adenocarcinoma of middle lobe of right lung (disorder)",
+      "code": "1078950000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary mucinous cystadenocarcinoma of lung (disorder)",
       "code": "707595001",
-      "display": "Primary mucinous cystadenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary mucinous bronchiolo-alveolar carcinoma of lung (disorder)",
       "code": "707470000",
-      "display": "Primary mucinous bronchiolo-alveolar carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary non-mucinous bronchiolo-alveolar carcinoma of lung (disorder)",
       "code": "707469001",
-      "display": "Primary non-mucinous bronchiolo-alveolar carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary mixed mucinous and non-mucinous bronchiolo-alveolar carcinoma of lung (disorder)",
       "code": "707468009",
-      "display": "Primary mixed mucinous and non-mucinous bronchiolo-alveolar carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary salivary gland type carcinoma of lung (disorder)",
       "code": "707467004",
-      "display": "Primary salivary gland type carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary adenoid cystic carcinoma of lung (disorder)",
       "code": "707466008",
-      "display": "Primary adenoid cystic carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary mucoepidermoid carcinoma of lung (disorder)",
       "code": "707465007",
-      "display": "Primary mucoepidermoid carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary myoepithelial carcinoma of lung (disorder)",
       "code": "707464006",
-      "display": "Primary myoepithelial carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary solid carcinoma of lung (disorder)",
       "code": "707410008",
-      "display": "Primary solid carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary adenosquamous carcinoma of lung (disorder)",
       "code": "707405009",
-      "display": "Primary adenosquamous carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary mixed subtype adenocarcinoma of lung (disorder)",
       "code": "707404008",
-      "display": "Primary mixed subtype adenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary fetal adenocarcinoma of lung (disorder)",
       "code": "707403002",
-      "display": "Primary fetal adenocarcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Adenocarcinoma (morphologic abnormality)",
       "code": "1187332001",
-      "display": "Adenocarcinoma (morphologic abnormality)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "High grade adenocarcinoma (morphologic abnormality)",
+      "code": "1187331008",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Low grade adenocarcinoma (morphologic abnormality)",
+      "code": "1187330009",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Intermediate grade adenocarcinoma (morphologic abnormality)",
+      "code": "1187329004",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Cholangiocarcinoma (morphologic abnormality)",
+      "code": "70179006",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "adenocarcinoma",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Combined hepatocellular carcinoma and cholangiocarcinoma (morphologic abnormality)",
+      "code": "52178006",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of lung (disorder)",
       "code": "254634000",
-      "display": "Squamous cell carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "12240951000119107",
-      "display": "Squamous cell carcinoma of left lung (disorder)"
+      "display": "Squamous cell carcinoma of left lung (disorder)",
+      "code": "12241000000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "12240991000119102",
-      "display": "Squamous cell carcinoma of right lung (disorder)"
+      "display": "Squamous cell carcinoma of right lung (disorder)",
+      "code": "12241000000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary basaloid squamous cell carcinoma of lung (disorder)",
       "code": "707454002",
-      "display": "Primary basaloid squamous cell carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary papillary squamous cell carcinoma of lung (disorder)",
       "code": "707455001",
-      "display": "Primary papillary squamous cell carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary clear cell squamous cell carcinoma of lung (disorder)",
       "code": "707453008",
-      "display": "Primary clear cell squamous cell carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of lung, TNM stage 4 (disorder)",
       "code": "425376008",
-      "display": "Squamous cell carcinoma of lung, TNM stage 4 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of lung, TNM stage 3 (disorder)",
       "code": "425230006",
-      "display": "Squamous cell carcinoma of lung, TNM stage 3 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of lung, TNM stage 1 (disorder)",
       "code": "423295000",
-      "display": "Squamous cell carcinoma of lung, TNM stage 1 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of lung, TNM stage 2 (disorder)",
       "code": "423468007",
-      "display": "Squamous cell carcinoma of lung, TNM stage 2 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1082141000119108",
-      "display": "Primary squamous cell carcinoma of upper lobe of left lung (disorder)"
+      "display": "Primary squamous cell carcinoma of upper lobe of left lung (disorder)",
+      "code": "1082140000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1082111000119109",
-      "display": "Primary squamous cell carcinoma of lower lobe of left lung (disorder)"
+      "display": "Primary squamous cell carcinoma of lower lobe of left lung (disorder)",
+      "code": "1082110000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1082231000119109",
-      "display": "Primary squamous cell carcinoma of lower lobe of right lung (disorder)"
+      "display": "Primary squamous cell carcinoma of lower lobe of right lung (disorder)",
+      "code": "1082230000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1082271000119107",
-      "display": "Primary squamous cell carcinoma of upper lobe of right lung (disorder)"
+      "display": "Primary squamous cell carcinoma of upper lobe of right lung (disorder)",
+      "code": "1082270000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
-      "code": "1082251000119103",
-      "display": "Primary squamous cell carcinoma of middle lobe of right lung (disorder)"
+      "display": "Primary squamous cell carcinoma of middle lobe of right lung (disorder)",
+      "code": "1082250000000000",
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary small cell non-keratinizing squamous cell carcinoma of lung (disorder)",
       "code": "707408006",
-      "display": "Primary small cell non-keratinizing squamous cell carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of bronchus in right upper lobe (disorder)",
       "code": "313357008",
-      "display": "Squamous cell carcinoma of bronchus in right upper lobe (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of bronchus in right middle lobe (disorder)",
       "code": "313356004",
-      "display": "Squamous cell carcinoma of bronchus in right middle lobe (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of bronchus in right lower lobe (disorder)",
       "code": "313355000",
-      "display": "Squamous cell carcinoma of bronchus in right lower lobe (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of bronchus in left upper lobe (disorder)",
       "code": "313354001",
-      "display": "Squamous cell carcinoma of bronchus in left upper lobe (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma of bronchus in left lower lobe (disorder)",
       "code": "313353007",
-      "display": "Squamous cell carcinoma of bronchus in left lower lobe (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Malignant keratoacanthoma (morphologic abnormality)",
       "code": "1187092008",
-      "display": "Malignant keratoacanthoma (morphologic abnormality)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "scc",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma (morphologic abnormality)",
+      "code": "1162767002",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Human papillomavirus negative squamous cell carcinoma (morphologic abnormality)",
+      "code": "783213006",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Human papillomavirus positive squamous cell carcinoma (morphologic abnormality)",
+      "code": "783212001",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Pseudovascular squamous cell carcinoma (morphologic abnormality)",
+      "code": "733897002",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Undifferentiated nonkeratinizing squamous cell carcinoma (morphologic abnormality)",
+      "code": "449778005",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Grade III squamous intraepithelial neoplasia with microinvasive squamous cell carcinoma (morphologic abnormality)",
+      "code": "448406002",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Metaplastic squamous cell carcinoma (morphologic abnormality)",
+      "code": "399739006",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, nonkeratinizing, mixed differentiated and undifferentiated (morphologic abnormality)",
+      "code": "399694008",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, nonkeratinizing, differentiated (morphologic abnormality)",
+      "code": "399582005",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma in post-traumatic skin lesion (morphologic abnormality)",
+      "code": "399494004",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Warty (condylomatous) carcinoma (morphologic abnormality)",
+      "code": "399408005",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, clear cell type (morphologic abnormality)",
+      "code": "128635005",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Basaloid squamous cell carcinoma (morphologic abnormality)",
+      "code": "128634009",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma with horn formation (morphologic abnormality)",
+      "code": "128633003",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Verrucous carcinoma (morphologic abnormality)",
+      "code": "89906000",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Adenoid squamous cell carcinoma (morphologic abnormality)",
+      "code": "85956000",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, large cell, nonkeratinizing (morphologic abnormality)",
+      "code": "45490001",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Papillary squamous cell carcinoma (morphologic abnormality)",
+      "code": "39056008",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, small cell, nonkeratinizing (morphologic abnormality)",
+      "code": "35718007",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, keratinizing (morphologic abnormality)",
+      "code": "18048008",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, microinvasive (morphologic abnormality)",
+      "code": "12478003",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Squamous cell carcinoma, spindle cell (morphologic abnormality)",
+      "code": "10288008",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "scc",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Lymphoepithelial carcinoma (morphologic abnormality)",
+      "code": "7300000",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "large_cell",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Large cell carcinoma of lung (disorder)",
       "code": "254629004",
-      "display": "Large cell carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Large cell carcinoma of lung, TNM stage 1 (disorder)",
       "code": "424938000",
-      "display": "Large cell carcinoma of lung, TNM stage 1 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Large cell carcinoma of lung, TNM stage 2 (disorder)",
       "code": "423050000",
-      "display": "Large cell carcinoma of lung, TNM stage 2 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Large cell carcinoma of lung, TNM stage 3 (disorder)",
       "code": "424970000",
-      "display": "Large cell carcinoma of lung, TNM stage 3 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Large cell carcinoma of lung, TNM stage 4 (disorder)",
       "code": "423600008",
-      "display": "Large cell carcinoma of lung, TNM stage 4 (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary large cell carcinoma of upper lobe of left lung (disorder)",
       "code": "1080471000119100",
-      "display": "Primary large cell carcinoma of upper lobe of left lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary large cell carcinoma of lower lobe of left lung (disorder)",
       "code": "1080451000119100",
-      "display": "Primary large cell carcinoma of lower lobe of left lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary large cell carcinoma of upper lobe of right lung (disorder)",
       "code": "1080531000119100",
-      "display": "Primary large cell carcinoma of upper lobe of right lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary large cell carcinoma of lower lobe of right lung (disorder)",
       "code": "1080501000119100",
-      "display": "Primary large cell carcinoma of lower lobe of right lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Giant cell carcinoma of lung (disorder)",
       "code": "254631008",
-      "display": "Giant cell carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Large cell carcinoma (morphologic abnormality)",
       "code": "22687000",
-      "display": "Large cell carcinoma (morphologic abnormality)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Giant cell carcinoma (morphologic abnormality)",
+      "code": "42596004",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "large_cell_neuroendocrine",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Primary malignant neuroendocrine neoplasm of lung (disorder)",
       "code": "722528008",
-      "display": "Primary malignant neuroendocrine neoplasm of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell_neuroendocrine",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Large cell neuroendocrine carcinoma (morphologic abnormality)",
       "code": "128628002",
-      "display": "Large cell neuroendocrine carcinoma (morphologic abnormality)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "large_cell_neuroendocrine",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Combined large cell neuroendocrine carcinoma (morphologic abnormality)",
+      "code": "448546006",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "adenosquamous",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Primary adenosquamous carcinoma of lung (disorder)",
       "code": "707405009",
-      "display": "Primary adenosquamous carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
     },
     {
+      "category": "sarcomatoid",
+      "cancerType": "lung",
       "entryType": "CancerSubType",
+      "display": "Primary pseudosarcomatous carcinoma of lung (disorder)",
       "code": "707460002",
-      "display": "Primary pseudosarcomatous carcinoma of lung (disorder)"
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "sarcomatoid",
+      "cancerType": "lung",
+      "entryType": "CancerSubType",
+      "display": "Pseudosarcomatous carcinoma (morphologic abnormality)",
+      "code": "23109009",
+      "codingSystem": "SNOMED"
     }
   ]
 }

@@ -12,9 +12,12 @@ type FhirUserName = {
 };
 
 export type CodedValueType = {
+  category: string;
+  cancerType: string;
   entryType: string;
   code: string | number;
   display: string;
+  codingSystem: string;
 };
 
 export type Patient = {
@@ -277,9 +280,12 @@ const getCancerType = (condition: Condition): CodedValueType | null => {
 
     if (code) {
       return {
+        category: '',
         entryType: 'CancerSubType',
+        cancerType: '',
         code: code.code,
         display: code.display ?? code.code,
+        codingSystem: '',
       };
     }
   }
@@ -296,9 +302,12 @@ const getCancerSubtype = (condition: Condition): CodedValueType | null => {
       ) {
         const code = extension.valueCodeableConcept.coding[0];
         return {
+          category: '',
           entryType: 'CancerSubType',
+          cancerType: '',
           code: code.code,
           display: code.display ?? code.code,
+          codingSystem: '',
         };
       }
     }

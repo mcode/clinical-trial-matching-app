@@ -46,7 +46,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
  * @param searchParams
  * @returns
  */
-function buildBundle(searchParams: SearchParameters): Bundle {
+export function buildBundle(searchParams: SearchParameters): Bundle {
   const zipCode = sendLocationData ? searchParams['zipcode'] : defaultZipCode;
   const travelDistance = sendLocationData ? searchParams['travelDistance'] : undefined;
 

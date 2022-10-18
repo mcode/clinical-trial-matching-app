@@ -1,1840 +1,4020 @@
 {
   "entry": [
     {
-      "entryType": "entryType",
-      "code": "Code",
-      "display": "Name",
-      "codingSystem": "System"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918237",
-      "display": "Zejula",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918231",
-      "display": "niraparib",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918242",
-      "display": "Zejula 100 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918238",
-      "display": "niraparib 100 MG [Zejula]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918239",
-      "display": "niraparib Oral Capsule [Zejula]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918236",
-      "display": "niraparib 100 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918232",
-      "display": "niraparib 100 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918235",
-      "display": "niraparib Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918233",
-      "display": "niraparib Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918234",
-      "display": "niraparib Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918240",
-      "display": "Zejula Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1918241",
-      "display": "Zejula Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597588",
-      "display": "Lynparza",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597582",
-      "display": "olaparib",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597593",
-      "display": "Lynparza 50 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942485",
-      "display": "Lynparza 100 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942489",
-      "display": "Lynparza 150 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597589",
-      "display": "olaparib 50 MG [Lynparza]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942483",
-      "display": "olaparib 100 MG [Lynparza]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942488",
-      "display": "olaparib 150 MG [Lynparza]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597590",
-      "display": "olaparib Oral Capsule [Lynparza]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942484",
-      "display": "olaparib Oral Tablet [Lynparza]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942482",
-      "display": "olaparib 100 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942487",
-      "display": "olaparib 150 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597587",
-      "display": "olaparib 50 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597583",
-      "display": "olaparib 50 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942480",
-      "display": "olaparib 100 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942486",
-      "display": "olaparib 150 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597586",
-      "display": "olaparib Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1942481",
-      "display": "olaparib Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597584",
-      "display": "olaparib Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597585",
-      "display": "olaparib Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597591",
-      "display": "Lynparza Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1597592",
-      "display": "Lynparza Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862585",
-      "display": "Rubraca",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862579",
-      "display": "rucaparib",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862578",
-      "display": "rucaparib camsylate",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1921589",
-      "display": "Rubraca 250 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862590",
-      "display": "Rubraca 300 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862595",
-      "display": "Rubraca 200 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862586",
-      "display": "rucaparib 300 MG [Rubraca]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862594",
-      "display": "rucaparib 200 MG [Rubraca]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1921588",
-      "display": "rucaparib 250 MG [Rubraca]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862587",
-      "display": "rucaparib Oral Tablet [Rubraca]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1921587",
-      "display": "rucaparib 250 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862593",
-      "display": "rucaparib 200 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862584",
-      "display": "rucaparib 300 MG Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862580",
-      "display": "rucaparib 300 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862592",
-      "display": "rucaparib 200 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1921586",
-      "display": "rucaparib 250 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862583",
-      "display": "rucaparib Oral Tablet",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862581",
-      "display": "rucaparib Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862582",
-      "display": "rucaparib Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862588",
-      "display": "Rubraca Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "1862589",
-      "display": "Rubraca Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099947",
-      "display": "Talzenna",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099704",
-      "display": "talazoparib",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099703",
-      "display": "talazoparib tosylate",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099956",
-      "display": "Talzenna 1 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099952",
-      "display": "Talzenna 0.25 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099948",
-      "display": "talazoparib 0.25 MG [Talzenna]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099955",
-      "display": "talazoparib 1 MG [Talzenna]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099949",
-      "display": "talazoparib Oral Capsule [Talzenna]",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099946",
-      "display": "talazoparib 0.25 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099954",
-      "display": "talazoparib 1 MG Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099942",
-      "display": "talazoparib 0.25 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099953",
-      "display": "talazoparib 1 MG",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099945",
-      "display": "talazoparib Oral Capsule",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099943",
-      "display": "talazoparib Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099944",
-      "display": "talazoparib Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099950",
-      "display": "Talzenna Oral Product",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2099951",
-      "display": "Talzenna Pill",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2360231",
-      "display": "sacituzumab",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "2360232",
-      "display": "sacituzumab govitecan",
-      "codingSystem": "RxNorm "
-    },
-    {
-      "entryType": "Medication",
-      "code": "101306",
-      "display": "Herceptin",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1371046",
-      "display": "KADCYLA",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174805",
-      "display": "Kanjinti",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179754",
-      "display": "Ogivri",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107054",
-      "display": "Herzuma",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119715",
-      "display": "Herceptin Hylecta",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382605",
-      "display": "Phesgo",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267577",
-      "display": "Enhertu",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289228",
-      "display": "Ontruzant",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280733",
-      "display": "Trazimera",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "316949",
-      "display": "Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "224905",
-      "display": "trastuzumab",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119713",
-      "display": "hyaluronidase / trastuzumab",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382603",
-      "display": "hyaluronidase / pertuzumab / trastuzumab",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1371041",
-      "display": "ado-trastuzumab emtansine",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174802",
-      "display": "trastuzumab-anns",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107051",
-      "display": "trastuzumab-pkrb",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2103478",
-      "display": "trastuzumab-dkst",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382599",
-      "display": "trastuzumab-zzxf",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267574",
-      "display": "fam-trastuzumab deruxtecan-nxki",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267582",
-      "display": "trastuzumab deruxtecan",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2375543",
-      "display": "trastuzumab-oysk",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289225",
-      "display": "trastuzumab-dttb",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280730",
-      "display": "trastuzumab-qyyp",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922512",
-      "display": "Herceptin 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179763",
-      "display": "Ogivri 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2169362",
-      "display": "Herzuma 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289232",
-      "display": "Ontruzant 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289237",
-      "display": "Ontruzant 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179758",
-      "display": "Ogivri 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382609",
-      "display": "Phesgo 1,200 MG / 600 MG / 30,000 UNT per 15 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174809",
-      "display": "Kanjinti 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267581",
-      "display": "Enhertu 100 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2383307",
-      "display": "Phesgo 600 MG / 600 MG / 20,000 UNT per 10 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280737",
-      "display": "Trazimera 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "806575",
-      "display": "Herceptin 22 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922518",
-      "display": "Herceptin 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119719",
-      "display": "Herceptin Hylecta 600 MG / 10,000 UNT per 5 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658087",
-      "display": "KADCYLA 100 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658091",
-      "display": "KADCYLA 160 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107058",
-      "display": "Herzuma 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2257300",
-      "display": "Kanjinti 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "806574",
-      "display": "trastuzumab 22 MG/ML [Herceptin]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922510",
-      "display": "trastuzumab 150 MG [Herceptin]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922517",
-      "display": "trastuzumab 21 MG/ML [Herceptin]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658085",
-      "display": "ado-trastuzumab emtansine 100 MG [KADCYLA]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658090",
-      "display": "ado-trastuzumab emtansine 160 MG [KADCYLA]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2257298",
-      "display": "trastuzumab-anns 150 MG [Kanjinti]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174806",
-      "display": "trastuzumab-anns 21 MG/ML [Kanjinti]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179755",
-      "display": "trastuzumab-dkst 150 MG [Ogivri]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179761",
-      "display": "trastuzumab-dkst 21 MG/ML [Ogivri]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2169360",
-      "display": "trastuzumab-pkrb 150 MG [Herzuma]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107055",
-      "display": "trastuzumab-pkrb 21 MG/ML [Herzuma]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2375546",
-      "display": "hyaluronidase-oysk 2000 UNT/ML / trastuzumab-oysk 120 MG/ML [Herceptin Hylecta]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382606",
-      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML [Phesgo]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2383306",
-      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML [Phesgo]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267578",
-      "display": "fam-trastuzumab deruxtecan-nxki 100 MG [Enhertu]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289229",
-      "display": "trastuzumab-dttb 150 MG [Ontruzant]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289235",
-      "display": "trastuzumab-dttb 21 MG/ML [Ontruzant]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280734",
-      "display": "trastuzumab-qyyp 21 MG/ML [Trazimera]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2257299",
-      "display": "trastuzumab Injection [Kanjinti]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "540885",
-      "display": "trastuzumab Injectable Solution [Herceptin]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658086",
-      "display": "trastuzumab Injection [KADCYLA]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922511",
-      "display": "trastuzumab Injection [Herceptin]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174807",
-      "display": "trastuzumab Injectable Solution [Kanjinti]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179762",
-      "display": "trastuzumab Injectable Solution [Ogivri]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179756",
-      "display": "trastuzumab Injection [Ogivri]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107056",
-      "display": "trastuzumab Injectable Solution [Herzuma]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2169361",
-      "display": "trastuzumab Injection [Herzuma]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119717",
-      "display": "hyaluronidase / trastuzumab Injection [Herceptin Hylecta]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382607",
-      "display": "hyaluronidase / pertuzumab / trastuzumab Injection [Phesgo]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267579",
-      "display": "trastuzumab Injection [Enhertu]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289236",
-      "display": "trastuzumab Injectable Solution [Ontruzant]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289230",
-      "display": "trastuzumab Injection [Ontruzant]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280735",
-      "display": "trastuzumab Injectable Solution [Trazimera]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2257297",
-      "display": "trastuzumab-anns 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179753",
-      "display": "trastuzumab-dkst 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179760",
-      "display": "trastuzumab-dkst 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289234",
-      "display": "trastuzumab-dttb 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280732",
-      "display": "trastuzumab-qyyp 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267576",
-      "display": "fam-trastuzumab deruxtecan-nxki 100 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289227",
-      "display": "trastuzumab-dttb 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119714",
-      "display": "5 ML hyaluronidase-oysk 2000 UNT/ML / trastuzumab-oysk 120 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174804",
-      "display": "trastuzumab-anns 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382604",
-      "display": "15 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658089",
-      "display": "ado-trastuzumab emtansine 160 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2383305",
-      "display": "10 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658084",
-      "display": "ado-trastuzumab emtansine 100 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922509",
-      "display": "trastuzumab 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107053",
-      "display": "trastuzumab-pkrb 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2169359",
-      "display": "trastuzumab-pkrb 150 MG Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "806573",
-      "display": "trastuzumab 22 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922516",
-      "display": "trastuzumab 21 MG/ML Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2257296",
-      "display": "trastuzumab-anns 150 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "806572",
-      "display": "trastuzumab 22 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658082",
-      "display": "ado-trastuzumab emtansine 100 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1658088",
-      "display": "ado-trastuzumab emtansine 160 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2169358",
-      "display": "trastuzumab-pkrb 150 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174803",
-      "display": "trastuzumab-anns 21 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179752",
-      "display": "trastuzumab-dkst 150 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179759",
-      "display": "trastuzumab-dkst 21 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922507",
-      "display": "trastuzumab 150 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922515",
-      "display": "trastuzumab 21 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107052",
-      "display": "trastuzumab-pkrb 21 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382600",
-      "display": "trastuzumab-zzxf 40 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382614",
-      "display": "trastuzumab-zzxf 60 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267575",
-      "display": "fam-trastuzumab deruxtecan-nxki 100 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2375544",
-      "display": "trastuzumab-oysk 120 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289226",
-      "display": "trastuzumab-dttb 150 MG",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289233",
-      "display": "trastuzumab-dttb 21 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280731",
-      "display": "trastuzumab-qyyp 21 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "377216",
-      "display": "trastuzumab Injectable Solution",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1922508",
-      "display": "trastuzumab Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119712",
-      "display": "hyaluronidase / trastuzumab Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382602",
-      "display": "hyaluronidase / pertuzumab / trastuzumab Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1162762",
-      "display": "trastuzumab Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119711",
-      "display": "hyaluronidase / trastuzumab Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382601",
-      "display": "hyaluronidase / pertuzumab / trastuzumab Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1371049",
-      "display": "KADCYLA Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1169113",
-      "display": "Herceptin Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2174808",
-      "display": "Kanjinti Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2179757",
-      "display": "Ogivri Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2107057",
-      "display": "Herzuma Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2267580",
-      "display": "Enhertu Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2289231",
-      "display": "Ontruzant Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2280736",
-      "display": "Trazimera Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2119718",
-      "display": "Herceptin Hylecta Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382608",
-      "display": "Phesgo Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298949",
-      "display": "Perjeta",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382605",
-      "display": "Phesgo",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298944",
-      "display": "pertuzumab",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382603",
-      "display": "hyaluronidase / pertuzumab / trastuzumab",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382597",
-      "display": "pertuzumab-zzxf",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2383307",
-      "display": "Phesgo 600 MG / 600 MG / 20,000 UNT per 10 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298953",
-      "display": "Perjeta 420 MG per 14 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382609",
-      "display": "Phesgo 1,200 MG / 600 MG / 30,000 UNT per 15 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298950",
-      "display": "pertuzumab 30 MG/ML [Perjeta]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382606",
-      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML [Phesgo]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2383306",
-      "display": "hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML [Phesgo]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657574",
-      "display": "pertuzumab Injection [Perjeta]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382607",
-      "display": "hyaluronidase / pertuzumab / trastuzumab Injection [Phesgo]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382604",
-      "display": "15 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 80 MG/ML / trastuzumab-zzxf 40 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2383305",
-      "display": "10 ML hyaluronidase-zzxf 2000 UNT/ML / pertuzumab-zzxf 60 MG/ML / trastuzumab-zzxf 60 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298948",
-      "display": "14 ML pertuzumab 30 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298945",
-      "display": "pertuzumab 30 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382598",
-      "display": "pertuzumab-zzxf 80 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382613",
-      "display": "pertuzumab-zzxf 60 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657572",
-      "display": "pertuzumab Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382602",
-      "display": "hyaluronidase / pertuzumab / trastuzumab Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298946",
-      "display": "pertuzumab Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382601",
-      "display": "hyaluronidase / pertuzumab / trastuzumab Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1298952",
-      "display": "Perjeta Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "2382608",
-      "display": "Phesgo Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "226754",
-      "display": "Rituxan",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "121191",
-      "display": "riTUXimab",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657864",
-      "display": "Rituxan 100 MG per 10 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657868",
-      "display": "Rituxan 500 MG per 50 ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "573051",
-      "display": "riTUXimab 10 MG/ML [Rituxan]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657863",
-      "display": "riTUXimab Injection [Rituxan]",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657862",
-      "display": "10 ML riTUXimab 10 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657867",
-      "display": "50 ML riTUXimab 10 MG/ML Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "316648",
-      "display": "riTUXimab 10 MG/ML",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1657861",
-      "display": "riTUXimab Injection",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1157967",
-      "display": "riTUXimab Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1185345",
-      "display": "Rituxan Injectable Product",
-      "codingSystem": "RxNorm"
-    },
-    {
-      "entryType": "Medication",
-      "code": "1094837",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1094837,
       "display": "Yervoy",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1094833",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1649574,
+      "display": "Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1094833,
       "display": "ipilimumab",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1657013",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657013,
       "display": "Yervoy 50 MG per 10 ML Injection",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1657007",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657007,
       "display": "Yervoy 200 MG per 40 ML Injection",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1094838",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1094838,
       "display": "ipilimumab 5 MG/ML [Yervoy]",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1657006",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657006,
       "display": "ipilimumab Injection [Yervoy]",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1657012",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657012,
       "display": "10 ML ipilimumab 5 MG/ML Injection",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1657005",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657005,
       "display": "40 ML ipilimumab 5 MG/ML Injection",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1094834",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1094834,
       "display": "ipilimumab 5 MG/ML",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1657004",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657004,
       "display": "ipilimumab Injection",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1161327",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1161327,
       "display": "ipilimumab Injectable Product",
-      "codingSystem": "RxNorm"
+      "codingSystem": "RXNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1186646",
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1186646,
       "display": "Yervoy Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-CTLA-4",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1151126,
+      "display": "Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1162762,
+      "display": "trastuzumab Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2119711,
+      "display": "hyaluronidase / trastuzumab Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1371049,
+      "display": "KADCYLA Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1169113,
+      "display": "Herceptin Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2179757,
+      "display": "Ogivri Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2174808,
+      "display": "Kanjinti Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2107057,
+      "display": "Herzuma Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2119718,
+      "display": "Herceptin Hylecta Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2280736,
+      "display": "Trazimera Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2289231,
+      "display": "Ontruzant Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 2267580,
+      "display": "Enhertu Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298949,
+      "display": "Perjeta",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298944,
+      "display": "pertuzumab",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298953,
+      "display": "Perjeta 420 MG per 14 ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298950,
+      "display": "pertuzumab 30 MG/ML [Perjeta]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657574,
+      "display": "pertuzumab Injection [Perjeta]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298948,
+      "display": "14 ML pertuzumab 30 MG/ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298945,
+      "display": "pertuzumab 30 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1657572,
+      "display": "pertuzumab Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298946,
+      "display": "pertuzumab Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1298952,
+      "display": "Perjeta Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1371046,
+      "display": "KADCYLA",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1649574,
+      "display": "Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 224905,
+      "display": "trastuzumab",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1371041,
+      "display": "ado-trastuzumab emtansine",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1658087,
+      "display": "KADCYLA 100 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1658091,
+      "display": "KADCYLA 160 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1658085,
+      "display": "ado-trastuzumab emtansine 100 MG [KADCYLA]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1658090,
+      "display": "ado-trastuzumab emtansine 160 MG [KADCYLA]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1658086,
+      "display": "trastuzumab Injection [KADCYLA]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "biomarker",
+      "cancerType": "",
+      "code": 1658089,
+      "display": "ado-trastuzumab emtansine 160 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658084,
+      "display": "ado-trastuzumab emtansine 100 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658082,
+      "display": "ado-trastuzumab emtansine 100 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658088,
+      "display": "ado-trastuzumab emtansine 160 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922508,
+      "display": "trastuzumab Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1162762,
+      "display": "trastuzumab Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1371049,
+      "display": "KADCYLA Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1151126,
+      "display": "Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 659616,
+      "display": "Tykerb",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 480167,
+      "display": "lapatinib",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 481474,
+      "display": "lapatinib ditosylate",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 672152,
+      "display": "Tykerb 250 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 672150,
+      "display": "lapatinib 250 MG [Tykerb]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 672151,
+      "display": "lapatinib Oral Tablet [Tykerb]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 672149,
+      "display": "lapatinib 250 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 672147,
+      "display": "lapatinib 250 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 672148,
+      "display": "lapatinib Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1162549,
+      "display": "lapatinib Oral Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1162550,
+      "display": "lapatinib Pill",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1186914,
+      "display": "Tykerb Oral Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1186915,
+      "display": "Tykerb Pill",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940649,
+      "display": "Nerlynx",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "203652",
-      "display": "Camptosar",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940643,
+      "display": "neratinib",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719773",
-      "display": "Onivyde",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940642,
+      "display": "neratinib maleate",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "51499",
-      "display": "irinotecan",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940654,
+      "display": "Nerlynx 40 MG (as neratinib maleate 48.31 MG) Oral Tablet",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "153329",
-      "display": "irinotecan hydrochloride",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940650,
+      "display": "neratinib 40 MG [Nerlynx]",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719767",
-      "display": "irinotecan hydrochloride liposome",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940651,
+      "display": "neratinib Oral Tablet [Nerlynx]",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719768",
-      "display": "irinotecan liposomal",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940648,
+      "display": "neratinib 40 MG Oral Tablet",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719777",
-      "display": "10 ML Onivyde 4.3 MG/ML Injection",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940644,
+      "display": "neratinib 40 MG",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726325",
-      "display": "5 ML Camptosar 20 MG/ML Injection",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940647,
+      "display": "neratinib Oral Tablet",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726321",
-      "display": "2 ML Camptosar 20 MG/ML Injection",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940645,
+      "display": "neratinib Oral Product",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726335",
-      "display": "15 ML Camptosar 20 MG/ML Injection",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940646,
+      "display": "neratinib Pill",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "904161",
-      "display": "irinotecan hydrochloride 20 MG/ML [Camptosar]",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940652,
+      "display": "Nerlynx Oral Product",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719774",
-      "display": "irinotecan hydrochloride liposome 4.3 MG/ML [Onivyde]",
+      "category": "Treatment-anti-HER2",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1940653,
+      "display": "Nerlynx Pill",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726320",
-      "display": "irinotecan Injection [Camptosar]",
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 151495,
+      "display": "Casodex",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 83008,
+      "display": "bicalutamide",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 108828,
+      "display": "Casodex 50 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 564608,
+      "display": "bicalutamide 50 MG [Casodex]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 369055,
+      "display": "bicalutamide Oral Tablet [Casodex]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 199123,
+      "display": "bicalutamide 50 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 349406,
+      "display": "bicalutamide 150 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 315478,
+      "display": "bicalutamide 50 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 350633,
+      "display": "bicalutamide 150 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 371070,
+      "display": "bicalutamide Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1161189,
+      "display": "bicalutamide Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1161190,
+      "display": "bicalutamide Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1175807,
+      "display": "Casodex Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1175808,
+      "display": "Casodex Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307304,
+      "display": "Xtandi",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307298,
+      "display": "enzalutamide",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307309,
+      "display": "Xtandi 40 MG Oral Capsule",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307305,
+      "display": "enzalutamide 40 MG [Xtandi]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307306,
+      "display": "enzalutamide Oral Capsule [Xtandi]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307303,
+      "display": "enzalutamide 40 MG Oral Capsule",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307299,
+      "display": "enzalutamide 40 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307302,
+      "display": "enzalutamide Oral Capsule",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307300,
+      "display": "enzalutamide Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307301,
+      "display": "enzalutamide Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307307,
+      "display": "Xtandi Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1307308,
+      "display": "Xtandi Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999582,
+      "display": "Erleada",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999574,
+      "display": "apalutamide",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999587,
+      "display": "Erleada 60 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999583,
+      "display": "apalutamide 60 MG [Erleada]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999584,
+      "display": "apalutamide Oral Tablet [Erleada]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999581,
+      "display": "apalutamide 60 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999577,
+      "display": "apalutamide 60 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999580,
+      "display": "apalutamide Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999578,
+      "display": "apalutamide Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999579,
+      "display": "apalutamide Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999585,
+      "display": "Erleada Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1999586,
+      "display": "Erleada Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180331,
+      "display": "Nubeqa",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180325,
+      "display": "darolutamide",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180336,
+      "display": "Nubeqa 300 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180332,
+      "display": "darolutamide 300 MG [Nubeqa]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180333,
+      "display": "darolutamide Oral Tablet [Nubeqa]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180330,
+      "display": "darolutamide 300 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180326,
+      "display": "darolutamide 300 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180329,
+      "display": "darolutamide Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180327,
+      "display": "darolutamide Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180328,
+      "display": "darolutamide Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180334,
+      "display": "Nubeqa Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2180335,
+      "display": "Nubeqa Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 4508,
+      "display": "flutamide",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 199609,
+      "display": "flutamide 250 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 197726,
+      "display": "flutamide 125 MG Oral Capsule",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 315960,
+      "display": "flutamide 125 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 332500,
+      "display": "flutamide 250 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 372251,
+      "display": "flutamide Oral Capsule",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 372252,
+      "display": "flutamide Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1161458,
+      "display": "flutamide Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1161459,
+      "display": "flutamide Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 218741,
+      "display": "Nilandron",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 31805,
+      "display": "nilutamide",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 284551,
+      "display": "Nilandron 150 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 574979,
+      "display": "nilutamide 150 MG [Nilandron]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 367745,
+      "display": "nilutamide Oral Tablet [Nilandron]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 311982,
+      "display": "nilutamide 150 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 331558,
+      "display": "nilutamide 150 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 373082,
+      "display": "nilutamide Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1158946,
+      "display": "nilutamide Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1158947,
+      "display": "nilutamide Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1183905,
+      "display": "Nilandron Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-Androgen",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1183906,
+      "display": "Nilandron Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 545354,
+      "display": "Kepivance",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1649574,
+      "display": "Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 196319,
+      "display": "palifermin",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 545357,
+      "display": "Kepivance 6.25 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1738079,
+      "display": "palifermin 6.25 MG [Kepivance]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1737727,
+      "display": "palifermin Injection [Kepivance]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 486510,
+      "display": "palifermin 6.25 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1738077,
+      "display": "palifermin 6.25 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1737725,
+      "display": "palifermin Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1163534,
+      "display": "palifermin Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1170051,
+      "display": "Kepivance Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1151126,
+      "display": "Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123132,
+      "display": "Balversa",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123125,
+      "display": "erdafitinib",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123141,
+      "display": "Balversa 4 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123137,
+      "display": "Balversa 3 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123145,
+      "display": "Balversa 5 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123140,
+      "display": "erdafitinib 4 MG [Balversa]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123133,
+      "display": "erdafitinib 3 MG [Balversa]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123144,
+      "display": "erdafitinib 5 MG [Balversa]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123134,
+      "display": "erdafitinib Oral Tablet [Balversa]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123131,
+      "display": "erdafitinib 3 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123139,
+      "display": "erdafitinib 4 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123143,
+      "display": "erdafitinib 5 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123127,
+      "display": "erdafitinib 3 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123138,
+      "display": "erdafitinib 4 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123142,
+      "display": "erdafitinib 5 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123130,
+      "display": "erdafitinib Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123128,
+      "display": "erdafitinib Oral Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123129,
+      "display": "erdafitinib Pill",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123135,
+      "display": "Balversa Oral Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-anti-FGF",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2123136,
+      "display": "Balversa Pill",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946825,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "2284502",
-      "display": "irinotecan Injection [Onivyde]",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946840,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726319",
-      "display": "2 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946844,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726492",
-      "display": "25 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946848,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726333",
-      "display": "15 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946836,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719772",
-      "display": "10 ML irinotecan hydrochloride liposome 4.3 MG/ML Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946832,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726324",
-      "display": "5 ML irinotecan hydrochloride 20 MG/ML Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946839,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "904159",
-      "display": "irinotecan hydrochloride 20 MG/ML",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946843,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719769",
-      "display": "irinotecan hydrochloride liposome 4.3 MG/ML",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946847,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1726318",
-      "display": "irinotecan Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946833,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1161334",
-      "display": "irinotecan Injectable Product",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946830,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1719776",
-      "display": "Onivyde Injectable Product",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946842,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1172305",
-      "display": "Camptosar Injectable Product",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946838,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "203472",
-      "display": "Hycamtin",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946846,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "57308",
-      "display": "topotecan",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946826,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "266573",
-      "display": "topotecan hydrochloride",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946837,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "748738",
-      "display": "Hycamtin 0.25 MG Oral Capsule",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946841,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "637550",
-      "display": "Hycamtin 4 MG Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946845,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "748740",
-      "display": "Hycamtin 1 MG Oral Capsule",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946829,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "748736",
-      "display": "topotecan 0.25 MG [Hycamtin]",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946827,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "748739",
-      "display": "topotecan 1 MG [Hycamtin]",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946828,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1799417",
-      "display": "topotecan 4 MG [Hycamtin]",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946834,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "748737",
-      "display": "topotecan Oral Capsule [Hycamtin]",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1946835,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1799418",
-      "display": "topotecan Injection [Hycamtin]",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601381,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "747193",
-      "display": "topotecan 1 MG Oral Capsule",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601374,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "747195",
-      "display": "topotecan 0.25 MG Oral Capsule",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601390,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1799424",
-      "display": "4 ML topotecan 1 MG/ML Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601386,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1799416",
-      "display": "topotecan 4 MG Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601394,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "637549",
-      "display": "topotecan 1 MG/ML Injectable Solution",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284108,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "342947",
-      "display": "topotecan 1 MG/ML",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284106,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "452837",
-      "display": "topotecan 1 MG",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284104,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "747194",
-      "display": "topotecan 0.25 MG",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601382,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1799414",
-      "display": "topotecan 4 MG",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601389,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "376889",
-      "display": "topotecan Injectable Solution",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601393,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "747192",
-      "display": "topotecan Oral Capsule",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601383,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1799415",
-      "display": "topotecan Injection",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284103,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1157655",
-      "display": "topotecan Injectable Product",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284102,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1157656",
-      "display": "topotecan Oral Product",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601392,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1157657",
-      "display": "topotecan Pill",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601380,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1172714",
-      "display": "Hycamtin Injectable Product",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284107,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1172715",
-      "display": "Hycamtin Oral Product",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284105,
+      "display": "",
       "codingSystem": "RxNorm"
     },
     {
-      "entryType": "Medication",
-      "code": "1172716",
-      "display": "Hycamtin Pill",
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601388,
+      "display": "",
       "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601376,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601387,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601391,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601379,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2284101,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601377,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601378,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601384,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-CDK4 6 Inhibtor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1601385,
+      "display": "",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 101306,
+      "display": "Herceptin",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1371046,
+      "display": "KADCYLA",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174805,
+      "display": "Kanjinti",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179754,
+      "display": "Ogivri",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107054,
+      "display": "Herzuma",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119715,
+      "display": "Herceptin Hylecta",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267577,
+      "display": "Enhertu",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289228,
+      "display": "Ontruzant",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280733,
+      "display": "Trazimera",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 224905,
+      "display": "trastuzumab",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119713,
+      "display": "hyaluronidase / trastuzumab",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1371041,
+      "display": "ado-trastuzumab emtansine",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174802,
+      "display": "trastuzumab-anns",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107051,
+      "display": "trastuzumab-pkrb",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2103478,
+      "display": "trastuzumab-dkst",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267574,
+      "display": "fam-trastuzumab deruxtecan-nxki",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267582,
+      "display": "trastuzumab deruxtecan",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289225,
+      "display": "trastuzumab-dttb",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280730,
+      "display": "trastuzumab-qyyp",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922512,
+      "display": "Herceptin 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2169362,
+      "display": "Herzuma 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179763,
+      "display": "Ogivri 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289232,
+      "display": "Ontruzant 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289237,
+      "display": "Ontruzant 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179758,
+      "display": "Ogivri 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174809,
+      "display": "Kanjinti 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267581,
+      "display": "Enhertu 100 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280737,
+      "display": "Trazimera 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 806575,
+      "display": "Herceptin 22 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922518,
+      "display": "Herceptin 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119719,
+      "display": "Herceptin Hylecta 600 MG / 10,000 UNT per 5 ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658087,
+      "display": "KADCYLA 100 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658091,
+      "display": "KADCYLA 160 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107058,
+      "display": "Herzuma 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2257300,
+      "display": "Kanjinti 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2257298,
+      "display": "trastuzumab-anns 150 MG [Kanjinti]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 806574,
+      "display": "trastuzumab 22 MG/ML [Herceptin]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658085,
+      "display": "ado-trastuzumab emtansine 100 MG [KADCYLA]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658090,
+      "display": "ado-trastuzumab emtansine 160 MG [KADCYLA]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174806,
+      "display": "trastuzumab-anns 21 MG/ML [Kanjinti]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2169360,
+      "display": "trastuzumab-pkrb 150 MG [Herzuma]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179761,
+      "display": "trastuzumab-dkst 21 MG/ML [Ogivri]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179755,
+      "display": "trastuzumab-dkst 150 MG [Ogivri]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2122496,
+      "display": "hyaluronidase-oysk 2000 UNT/ML / trastuzumab 120 MG/ML [Herceptin Hylecta]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922517,
+      "display": "trastuzumab 21 MG/ML [Herceptin]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922510,
+      "display": "trastuzumab 150 MG [Herceptin]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107055,
+      "display": "trastuzumab-pkrb 21 MG/ML [Herzuma]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267578,
+      "display": "fam-trastuzumab deruxtecan-nxki 100 MG [Enhertu]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289229,
+      "display": "trastuzumab-dttb 150 MG [Ontruzant]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289235,
+      "display": "trastuzumab-dttb 21 MG/ML [Ontruzant]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280734,
+      "display": "trastuzumab-qyyp 21 MG/ML [Trazimera]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2257299,
+      "display": "trastuzumab Injection [Kanjinti]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 540885,
+      "display": "trastuzumab Injectable Solution [Herceptin]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658086,
+      "display": "trastuzumab Injection [KADCYLA]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174807,
+      "display": "trastuzumab Injectable Solution [Kanjinti]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2169361,
+      "display": "trastuzumab Injection [Herzuma]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179762,
+      "display": "trastuzumab Injectable Solution [Ogivri]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179756,
+      "display": "trastuzumab Injection [Ogivri]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922511,
+      "display": "trastuzumab Injection [Herceptin]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107056,
+      "display": "trastuzumab Injectable Solution [Herzuma]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119717,
+      "display": "hyaluronidase / trastuzumab Injection [Herceptin Hylecta]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267579,
+      "display": "trastuzumab Injection [Enhertu]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289236,
+      "display": "trastuzumab Injectable Solution [Ontruzant]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289230,
+      "display": "trastuzumab Injection [Ontruzant]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280735,
+      "display": "trastuzumab Injectable Solution [Trazimera]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2257297,
+      "display": "trastuzumab-anns 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179753,
+      "display": "trastuzumab-dkst 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179760,
+      "display": "trastuzumab-dkst 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289234,
+      "display": "trastuzumab-dttb 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280732,
+      "display": "trastuzumab-qyyp 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267576,
+      "display": "fam-trastuzumab deruxtecan-nxki 100 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289227,
+      "display": "trastuzumab-dttb 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119714,
+      "display": "5 ML hyaluronidase-oysk 2000 UNT/ML / trastuzumab 120 MG/ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174804,
+      "display": "trastuzumab-anns 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658089,
+      "display": "ado-trastuzumab emtansine 160 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658084,
+      "display": "ado-trastuzumab emtansine 100 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922509,
+      "display": "trastuzumab 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107053,
+      "display": "trastuzumab-pkrb 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2169359,
+      "display": "trastuzumab-pkrb 150 MG Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 806573,
+      "display": "trastuzumab 22 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922516,
+      "display": "trastuzumab 21 MG/ML Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2257296,
+      "display": "trastuzumab-anns 150 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 806572,
+      "display": "trastuzumab 22 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658082,
+      "display": "ado-trastuzumab emtansine 100 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658088,
+      "display": "ado-trastuzumab emtansine 160 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2169358,
+      "display": "trastuzumab-pkrb 150 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174803,
+      "display": "trastuzumab-anns 21 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179752,
+      "display": "trastuzumab-dkst 150 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179759,
+      "display": "trastuzumab-dkst 21 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922507,
+      "display": "trastuzumab 150 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922515,
+      "display": "trastuzumab 21 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107052,
+      "display": "trastuzumab-pkrb 21 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119710,
+      "display": "trastuzumab 120 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267575,
+      "display": "fam-trastuzumab deruxtecan-nxki 100 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289226,
+      "display": "trastuzumab-dttb 150 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289233,
+      "display": "trastuzumab-dttb 21 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280731,
+      "display": "trastuzumab-qyyp 21 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 377216,
+      "display": "trastuzumab Injectable Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922508,
+      "display": "trastuzumab Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119712,
+      "display": "hyaluronidase / trastuzumab Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1162762,
+      "display": "trastuzumab Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119711,
+      "display": "hyaluronidase / trastuzumab Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1371049,
+      "display": "KADCYLA Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1169113,
+      "display": "Herceptin Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2179757,
+      "display": "Ogivri Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2174808,
+      "display": "Kanjinti Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2107057,
+      "display": "Herzuma Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2119718,
+      "display": "Herceptin Hylecta Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2280736,
+      "display": "Trazimera Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2289231,
+      "display": "Ontruzant Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Trastuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2267580,
+      "display": "Enhertu Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298949,
+      "display": "Perjeta",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298944,
+      "display": "pertuzumab",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298953,
+      "display": "Perjeta 420 MG per 14 ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298950,
+      "display": "pertuzumab 30 MG/ML [Perjeta]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1657574,
+      "display": "pertuzumab Injection [Perjeta]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298948,
+      "display": "14 ML pertuzumab 30 MG/ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298945,
+      "display": "pertuzumab 30 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1657572,
+      "display": "pertuzumab Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298946,
+      "display": "pertuzumab Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-Pertuzumab",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1298952,
+      "display": "Perjeta Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1371046,
+      "display": "KADCYLA",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 224905,
+      "display": "trastuzumab",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1371041,
+      "display": "ado-trastuzumab emtansine",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658087,
+      "display": "KADCYLA 100 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658091,
+      "display": "KADCYLA 160 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658085,
+      "display": "ado-trastuzumab emtansine 100 MG [KADCYLA]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658090,
+      "display": "ado-trastuzumab emtansine 160 MG [KADCYLA]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658086,
+      "display": "trastuzumab Injection [KADCYLA]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658089,
+      "display": "ado-trastuzumab emtansine 160 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658084,
+      "display": "ado-trastuzumab emtansine 100 MG Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658082,
+      "display": "ado-trastuzumab emtansine 100 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1658088,
+      "display": "ado-trastuzumab emtansine 160 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1922508,
+      "display": "trastuzumab Injection",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1162762,
+      "display": "trastuzumab Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-T-DM1",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1371049,
+      "display": "KADCYLA Injectable Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430453,
+      "display": "Gilotrif 30 MG Oral Tablet",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430457,
+      "display": "Gilotrif 40 MG Oral Tablet",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430449,
+      "display": "Gilotrif 20 MG Oral Tablet",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430452,
+      "display": "afatinib 30 MG [Gilotrif]",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430447,
+      "display": "afatinib 20 MG [Gilotrif]",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430456,
+      "display": "afatinib 40 MG [Gilotrif]",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430448,
+      "display": "afatinib Oral Tablet [Gilotrif]",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430451,
+      "display": "afatinib 30 MG Oral Tablet",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430446,
+      "display": "afatinib 20 MG Oral Tablet",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430455,
+      "display": "afatinib 40 MG Oral Tablet",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430442,
+      "display": "afatinib 20 MG",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430450,
+      "display": "afatinib 30 MG",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430454,
+      "display": "afatinib 40 MG",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430445,
+      "display": "afatinib Oral Tablet",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430443,
+      "display": "afatinib Oral Product",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430444,
+      "display": "afatinib Pill",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430271,
+      "display": "Gilotrif Oral Product",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Tyrosine Kinase Inhib",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1430272,
+      "display": "Gilotrif Pill",
+      "codingSystem": "RxNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 284781,
+      "display": "Mifeprex",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245263,
+      "display": "Korlym",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 6964,
+      "display": "mifepristone",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 284478,
+      "display": "Mifeprex 200 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245268,
+      "display": "Korlym 300 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 574911,
+      "display": "mifepristone 200 MG [Mifeprex]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245264,
+      "display": "mifepristone 300 MG [Korlym]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 368157,
+      "display": "mifepristone Oral Tablet [Mifeprex]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245265,
+      "display": "mifepristone Oral Tablet [Korlym]",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245262,
+      "display": "mifepristone 300 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 311704,
+      "display": "mifepristone 200 MG Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 330381,
+      "display": "mifepristone 200 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245261,
+      "display": "mifepristone 300 MG",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 374644,
+      "display": "mifepristone Oral Tablet",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1164723,
+      "display": "mifepristone Oral Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1164724,
+      "display": "mifepristone Pill",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1178688,
+      "display": "Mifeprex Oral Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1178689,
+      "display": "Mifeprex Pill",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245266,
+      "display": "Korlym Oral Product",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-Mifepristone",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1245267,
+      "display": "Korlym Pill",
+      "codingSystem": "RXNorm"
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845509,
+      "display": "Afinitor",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977428,
+      "display": "Zortress",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 141704,
+      "display": "everolimus",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 998191,
+      "display": "Afinitor 2.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1310144,
+      "display": "Afinitor Disperz 3 MG Tablet for Oral Suspension",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977440,
+      "display": "Zortress 0.75 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1310147,
+      "display": "Afinitor Disperz 5 MG Tablet for Oral Suspension",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2056897,
+      "display": "Zortress 1 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1310138,
+      "display": "Afinitor Disperz 2 MG Tablet for Oral Suspension",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1119402,
+      "display": "Afinitor 7.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845518,
+      "display": "Afinitor 5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845512,
+      "display": "Afinitor 10 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977436,
+      "display": "Zortress 0.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977431,
+      "display": "Zortress 0.25 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2056896,
+      "display": "everolimus 1 MG [Zortress]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1119401,
+      "display": "everolimus 7.5 MG [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845510,
+      "display": "everolimus 10 MG [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845517,
+      "display": "everolimus 5 MG [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 998190,
+      "display": "everolimus 2.5 MG [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977435,
+      "display": "everolimus 0.5 MG [Zortress]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977439,
+      "display": "everolimus 0.75 MG [Zortress]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977429,
+      "display": "everolimus 0.25 MG [Zortress]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1869515,
+      "display": "everolimus 2 MG [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1869520,
+      "display": "everolimus 3 MG [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845511,
+      "display": "everolimus Oral Tablet [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977430,
+      "display": "everolimus Oral Tablet [Zortress]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1869516,
+      "display": "everolimus Tablet for Oral Suspension [Afinitor]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1308430,
+      "display": "everolimus 3 MG Tablet for Oral Suspension",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2056895,
+      "display": "everolimus 1 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845515,
+      "display": "everolimus 5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977427,
+      "display": "everolimus 0.25 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977438,
+      "display": "everolimus 0.75 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845507,
+      "display": "everolimus 10 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1119400,
+      "display": "everolimus 7.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1308428,
+      "display": "everolimus 2 MG Tablet for Oral Suspension",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977434,
+      "display": "everolimus 0.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 998189,
+      "display": "everolimus 2.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1308432,
+      "display": "everolimus 5 MG Tablet for Oral Suspension",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 2056894,
+      "display": "everolimus 1 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1119399,
+      "display": "everolimus 7.5 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845505,
+      "display": "everolimus 10 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845514,
+      "display": "everolimus 5 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977426,
+      "display": "everolimus 0.25 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977433,
+      "display": "everolimus 0.5 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 977437,
+      "display": "everolimus 0.75 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 998188,
+      "display": "everolimus 2.5 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1869512,
+      "display": "everolimus 2 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1869518,
+      "display": "everolimus 3 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 845506,
+      "display": "everolimus Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1869513,
+      "display": "everolimus Tablet for Oral Suspension",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1163786,
+      "display": "everolimus Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1163787,
+      "display": "everolimus Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1308426,
+      "display": "everolimus Oral Liquid Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1172066,
+      "display": "Afinitor Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1172067,
+      "display": "Afinitor Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1186316,
+      "display": "Zortress Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1186317,
+      "display": "Zortress Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1310137,
+      "display": "Afinitor Oral Liquid Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 723805,
+      "display": "Torisel",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 657797,
+      "display": "temsirolimus",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 725108,
+      "display": "Torisel 25 MG/ML per 1.2 ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 725106,
+      "display": "temsirolimus 25 MG/ML [Torisel]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1724306,
+      "display": "temsirolimus Injection [Torisel]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 722289,
+      "display": "1.2 ML temsirolimus 25 MG/ML Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 722287,
+      "display": "temsirolimus 25 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1724304,
+      "display": "temsirolimus Injection",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1161488,
+      "display": "temsirolimus Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1178590,
+      "display": "Torisel Injectable Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 258355,
+      "display": "Rapamune",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 35302,
+      "display": "sirolimus",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 351989,
+      "display": "Rapamune 1 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 351901,
+      "display": "Rapamune 1 MG/ML Oral Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 404432,
+      "display": "Rapamune 2 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 905160,
+      "display": "Rapamune 0.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 575733,
+      "display": "sirolimus 1 MG [Rapamune]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 575659,
+      "display": "sirolimus 1 MG/ML [Rapamune]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 576390,
+      "display": "sirolimus 2 MG [Rapamune]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 905159,
+      "display": "sirolimus 0.5 MG [Rapamune]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 364904,
+      "display": "sirolimus Oral Solution [Rapamune]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 368672,
+      "display": "sirolimus Oral Tablet [Rapamune]",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 360110,
+      "display": "sirolimus 2 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 905158,
+      "display": "sirolimus 0.5 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 314230,
+      "display": "sirolimus 1 MG/ML Oral Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 349208,
+      "display": "sirolimus 1 MG Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 333296,
+      "display": "sirolimus 1 MG/ML",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 350512,
+      "display": "sirolimus 1 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 360318,
+      "display": "sirolimus 2 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 905157,
+      "display": "sirolimus 0.5 MG",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 375278,
+      "display": "sirolimus Oral Solution",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 378277,
+      "display": "sirolimus Oral Tablet",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1158757,
+      "display": "sirolimus Oral Liquid Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1158758,
+      "display": "sirolimus Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1158759,
+      "display": "sirolimus Pill",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1177701,
+      "display": "Rapamune Oral Liquid Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1177702,
+      "display": "Rapamune Oral Product",
+      "codingSystem": "RXNorm "
+    },
+    {
+      "category": "Treatment-mTOR Inhibitor",
+      "entryType": "",
+      "cancerType": "",
+      "code": 1177703,
+      "display": "Rapamune Pill",
+      "codingSystem": "RXNorm"
     }
   ]
 }
