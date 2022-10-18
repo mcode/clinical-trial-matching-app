@@ -1,10 +1,6 @@
-import { Bundle, Patient } from 'types/fhir-types';
+import { Bundle } from 'types/fhir-types';
 import { SearchParameters } from 'types/search-types';
 import { buildBundle } from '../clinical-trial-search';
-const patient: Patient = {
-  resourceType: 'Patient',
-  id: 'search_patient',
-};
 const cancerType = {
   entryType: 'Primary malignant neoplasm of lung (disorder)',
   display: 'Primary malignant neoplasm of lung (disorder)',

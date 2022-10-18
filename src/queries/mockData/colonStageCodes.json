@@ -1,44 +1,532 @@
 {
   "entry": [
     {
-      "entryType": "Stage",
-      "code": "0",
-      "display": "Same as breast"
-    },
-    {
-      "entryType": "Stage",
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
       "code": "1",
-      "display": "Same as breast"
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
     },
     {
-      "entryType": "Stage",
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "I",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "1C",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "c1A",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "c1",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "1P",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "1a",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "2a",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "0",
+      "display": "Stage 0",
+      "codingSystem": "AJCC"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "0C",
+      "display": "Stage 0",
+      "codingSystem": "AJCC"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "0P",
+      "display": "Stage 0",
+      "codingSystem": "AJCC"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261645004",
+      "display": "Stage 0is (qualifier value)",
+      "codingSystem": ""
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261644000",
+      "display": "Stage 0a (qualifier value)",
+      "codingSystem": ""
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261613009",
+      "display": "Stage 0 (qualifier value)",
+      "codingSystem": ""
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IA",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IB",
+      "display": "Stage 1 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "313143001",
+      "display": "Stage 1S (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "313114009",
+      "display": "Stage 1B1 (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "313112008",
+      "display": "Stage 1B2 (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261641008",
+      "display": "Stage 1m (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261636000",
+      "display": "Stage 1C (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261635001",
+      "display": "Stage 1B (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261634002",
+      "display": "Stage 1A (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261633008",
+      "display": "Stage 1A2 (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261632003",
+      "display": "Stage 1A1 (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "258215001",
+      "display": "Stage 1 (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
       "code": "2",
-      "display": "Same as breast"
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
     },
     {
-      "entryType": "Stage",
-      "code": "3.1",
-      "display": "Same as breast"
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "II",
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
     },
     {
-      "entryType": "Stage",
-      "code": "3.2",
-      "display": "Same as breast"
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "2C",
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
     },
     {
-      "entryType": "Stage",
-      "code": "3.3",
-      "display": "Same as breast"
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "2P",
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
     },
     {
-      "entryType": "Stage",
-      "code": "3.4",
-      "display": "Same as breast"
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "2a",
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
     },
     {
-      "entryType": "Stage",
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "2b",
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IIA",
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IIB",
+      "display": "Stage 2",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "Stage 2C (qualifier value)",
+      "display": "261637009",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "Stage 2B (qualifier value)",
+      "display": "261615002",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "Stage 2A (qualifier value)",
+      "display": "261614003",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "Stage 2 (qualifier value)",
+      "display": "258219007",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "3",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "III",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "3C",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "3P",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "3a",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "3b",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "3c",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "c3",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "c3c",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IIIA",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IIIB",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IIIC",
+      "display": "Stage 3 ",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261640009",
+      "display": "Stage 3C (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261639007",
+      "display": "Stage 3B (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261638004",
+      "display": "Stage 3A (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "258224005",
+      "display": "Stage 3 (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
       "code": "4",
-      "display": "Same as breast"
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "IV",
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "4C",
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "4P",
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "4a",
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "4b",
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "4c",
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "4d",
+      "display": "Stage 4",
+      "codingSystem": "AJCC "
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "313046007",
+      "display": "Stage 4C (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261643006",
+      "display": "Stage 4B (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261642001",
+      "display": "Stage 4A (qualifier value)",
+      "codingSystem": "SNOMED"
+    },
+    {
+      "category": "",
+      "entryType": "stage",
+      "cancerType": "",
+      "code": "261616001",
+      "display": "Stage 4S (qualifier value)",
+      "codingSystem": "SNOMED"
     }
   ]
 }
