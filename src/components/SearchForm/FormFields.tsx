@@ -85,7 +85,6 @@ export const CancerTypeAutocomplete = ({
   retrieveCancer: (value: string) => void;
 }): ReactElement => {
   const newOptions = cancerTypeOptions;
-
   return (
     <Autocomplete
       {...field}

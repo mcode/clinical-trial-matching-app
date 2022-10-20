@@ -1,5 +1,6 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
+import { CodedValueType } from '@/utils/fhirConversionUtils';
 import { Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
@@ -68,10 +69,14 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   const [procedures, setProcedures] = useState([]);
   const [radiations, setRadiations] = useState([]);
 
-  const retrieveCancer = cancer => {
+  const retrieveCancer = (cancer: CodedValueType) => {
     if (cancer !== null) {
       if (cancer.entryType !== undefined) {
-        setCancerSubTypes(cancerTypeDetails[cancer.entryType].cancerSubtype);
+        if (cancerTypeDetails[cancer.entryType].cancerSubtype.length != undefined) {
+          if (cancerTypeDetails[cancer.entryType].cancerSubtype.length > 0) {
+            setCancerSubTypes(cancerTypeDetails[cancer.entryType].cancerSubtype);
+          }
+        }
         setProcedures(cancerTypeDetails[cancer.entryType].surgeryCodes);
         setMedications(cancerTypeDetails[cancer.entryType].medications);
         setStages(cancerTypeDetails[cancer.entryType].stages);

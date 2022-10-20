@@ -541,9 +541,10 @@ const expectedObservationResource = {
   },
   coding: [
     {
+      entryType: 'lung',
       system: 'http://snomed.info/sct',
-      code: '343721370305',
-      display: 'HER2 panel - tissue by fish',
+      code: '85310-1',
+      display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
     },
   ],
   meta: {
@@ -562,6 +563,7 @@ describe('convertCodedValueToObervation', () => {
     profile_value,
     codingSystem,
   });
+
   it('Observation Resource Returned', () => {
     expect(observationResource).toEqual(expectedObservationResource);
   });
