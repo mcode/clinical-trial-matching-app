@@ -29,15 +29,10 @@ import PROSTATE_CANCER_TYPE_CODES from '../../queries/mockData/prostateCancerTyp
 
 export type CancerTypeDetailType = {
   category: string;
-  cancerCodes: CodedValueType[];
-  cancerSubtype: CodedValueType[];
-  biomarkers: CodedValueType[];
-  surgeryCodes: CodedValueType[];
-  medications: CodedValueType[];
-  stages: CodedValueType[];
-  radiationCodes: CodedValueType[];
-};
-
+} & Record<
+  'cancerCodes' | 'cancerSubtype' | 'biomarkers' | 'surgeryCodes' | 'medications' | 'stages' | 'radiationCodes',
+  CodedValueType[]
+>;
 export const cancerTypeDetails: Record<string, CancerTypeDetailType> = {
   lung: {
     category: 'lung',

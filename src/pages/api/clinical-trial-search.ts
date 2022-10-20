@@ -143,15 +143,15 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     codingSystem,
   });
 
-  const metastasisParm = searchParams.metastasis;
-  if (metastasisParm) {
+  const metastasisPararameter = searchParams.metastasis;
+  if (metastasisPararameter) {
     // NOSONAR
     id = 'tnm-clinical-distant-metastases-category-cM0';
     profileValue = fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
 
     addStringValueToBundle({
       patientBundle,
-      searchOptionValues: metastasisParm,
+      searchOptionValues: metastasisPararameter,
       id,
       profile_value: profileValue,
       codingSystem,

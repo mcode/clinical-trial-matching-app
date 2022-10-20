@@ -61,6 +61,8 @@ describe('convertFhirPrimaryCancerCondition', () => {
   it('gets the primary cancer condition from a FHIR Bundle', () => {
     expect(convertFhirPrimaryCancerCondition(fhirPrimaryCancerConditionBundle)).toEqual({
       cancerType: {
+        category: '',
+        cancerType: '',
         code: '408643008',
         display: 'Infiltrating duct carcinoma of breast (disorder)',
         entryType: 'CancerSubType',
@@ -69,7 +71,13 @@ describe('convertFhirPrimaryCancerCondition', () => {
       stage: 'IV',
     });
     expect(convertFhirPrimaryCancerCondition(fhirPrimaryCancerConditionBundle2)).toEqual({
-      cancerType: { code: '254837009', display: 'Malignant neoplasm of breast (disorder)', entryType: 'CancerSubType' },
+      cancerType: {
+        category: '',
+        cancerType: '',
+        code: '254837009',
+        display: 'Malignant neoplasm of breast (disorder)',
+        entryType: 'CancerSubType',
+      },
       cancerSubtype: null,
       stage: 'IIA',
     });

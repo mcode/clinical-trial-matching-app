@@ -82,11 +82,9 @@ export const CancerTypeAutocomplete = ({
   retrieveCancer,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  retrieveCancer: Function;
+  retrieveCancer: (value: string) => void;
 }): ReactElement => {
   const newOptions = cancerTypeOptions;
-
   return (
     <Autocomplete
       {...field}
