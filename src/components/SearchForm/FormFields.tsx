@@ -82,14 +82,25 @@ export const CancerTypeAutocomplete = ({
   retrieveCancer,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
-  retrieveCancer: (value: string) => void;
+  retrieveCancer: (
+    value: NonNullable<
+      | string
+      | {
+          category: string;
+          cancerType: string;
+          entryType: string;
+          code: string | number;
+          display: string;
+          codingSystem: string;
+        }
+    >
+  ) => void;
 }): ReactElement => {
   const newOptions = cancerTypeOptions;
   return (
     <Autocomplete
       {...field}
       data-testid="cancerType"
-      //loading={isLoading}
       onChange={(event, newValue) => {
         field.onChange(newValue);
         retrieveCancer(newValue);
