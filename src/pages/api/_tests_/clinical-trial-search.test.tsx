@@ -23,19 +23,25 @@ export const searchParameters: SearchParameters = {
   metastasis: ['metastasis-1'],
   ecogScore: '0',
   karnofskyScore: '80',
-  biomarkers: JSON.stringify({
-    entryType: 'lung',
-    display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
-    code: '85310-1',
-  }),
+  biomarkers: JSON.stringify([
+    {
+      entryType: 'lung',
+      display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
+      code: '85310-1',
+    },
+  ]),
   stage: JSON.stringify({ entryType: 'lung', display: 'Stage 1', code: '3430305' }),
-  medications: JSON.stringify({ entryType: 'lung', display: '10 ML ramucirumab 10 MG/ML Injection', code: '1657775' }),
-  radiation: JSON.stringify({ entryType: 'lung', display: '2.4 ML Imfinzi 50 MG/ML Injection', code: '343330305' }),
-  surgery: JSON.stringify({
-    entryType: 'lung',
-    display: 'Excision of middle lobe of right lung (procedure)',
-    code: '1919512',
-  }),
+  medications: JSON.stringify([
+    { entryType: 'lung', display: '10 ML ramucirumab 10 MG/ML Injection', code: '1657775' },
+  ]),
+  radiation: JSON.stringify([{ entryType: 'lung', display: '2.4 ML Imfinzi 50 MG/ML Injection', code: '343330305' }]),
+  surgery: JSON.stringify([
+    {
+      entryType: 'lung',
+      display: 'Excision of middle lobe of right lung (procedure)',
+      code: '1919512',
+    },
+  ]),
 };
 
 const expectedBundle: Bundle = {
@@ -48,8 +54,12 @@ const expectedBundle: Bundle = {
         id: '0',
         parameter: [
           {
-            name: 'zipcode',
+            name: 'zipCode',
             valueString: '75001',
+          },
+          {
+            name: 'travelRadius',
+            valueString: '100',
           },
         ],
       },
@@ -59,7 +69,8 @@ const expectedBundle: Bundle = {
         resourceType: 'Patient',
         id: 'search_patient',
         gender: 'female',
-        birthDate: '2019',
+        // Age is 28, test sets time to 2022, 2022-28 = 1994
+        birthDate: '1994',
       },
     },
     {
@@ -73,7 +84,7 @@ const expectedBundle: Bundle = {
             {
               system: 'http://snomed.info/sct',
               code: '254632001',
-              display: ' Small cell carcinoma of lung (disorder)',
+              display: 'Primary malignant neoplasm of lung (disorder)',
             },
           ],
         },
@@ -207,7 +218,7 @@ const expectedBundle: Bundle = {
         coding: [
           {
             system: 'https://snomed.info/sct',
-            code: '736974006',
+            code: '1919512',
             display: 'Excision of middle lobe of right lung (procedure)',
           },
         ],
@@ -231,7 +242,7 @@ const expectedBundle: Bundle = {
         coding: [
           {
             system: 'https://snomed.info/sct',
-            code: '1919512',
+            code: '343330305',
             display: '2.4 ML Imfinzi 50 MG/ML Injection',
           },
         ],
@@ -244,8 +255,10 @@ const expectedBundle: Bundle = {
 };
 
 describe('buildBundle', () => {
+  // Need to mock the current time to ensure the age is generated properly
+  jest.useFakeTimers().setSystemTime(Date.UTC(2022, 0, 1, 12, 0, 0));
   const patientBundle = buildBundle(searchParameters);
-  it("Sort JSON Array by 'display' property", () => {
+  it('builds the expected bundle', () => {
     expect(patientBundle).toEqual(expectedBundle);
   });
 });

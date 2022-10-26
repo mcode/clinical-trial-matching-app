@@ -1,6 +1,7 @@
 import { StudyDetailProps } from '@/components/Results/types';
 import { searchParameters } from '@/pages/api/_tests_/clinical-trial-search.test';
 import mockSearchResults from '@/__mocks__/resultDetails.json';
+import { Observation } from 'types/fhir-types';
 import * as fhirConstants from '../fhirConstants';
 import { CodedValueType } from '../fhirConversionUtils';
 import { convertCodedValueToMedicationStatement, convertCodedValueToObervation } from '../fhirFilter';
@@ -528,7 +529,7 @@ const expectedMedicalStatmentResource = {
     profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement'],
   },
 };
-const expectedObservationResource = {
+const expectedObservationResource: Observation = {
   resourceType: 'Observation',
   id: 'mcode-tumor-marker',
   status: 'completed',
@@ -541,7 +542,6 @@ const expectedObservationResource = {
   },
   coding: [
     {
-      entryType: 'lung',
       system: 'http://snomed.info/sct',
       code: '85310-1',
       display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
@@ -556,7 +556,7 @@ describe('convertCodedValueToObervation', () => {
   let id = 'mcode-tumor-marker';
   let profile_value = fhirConstants.MCODE_TUMOR_MARKER;
   let codingSystem = 'http://snomed.info/sct';
-  let codedValue: CodedValueType = JSON.parse(searchParameters.biomarkers);
+  let codedValue: CodedValueType = JSON.parse(searchParameters.biomarkers)[0];
   const observationResource = convertCodedValueToObervation({
     codedValue,
     id,
@@ -571,7 +571,7 @@ describe('convertCodedValueToObervation', () => {
   id = 'mcode-cancer-related-medication-statement';
   profile_value = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
   codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
-  codedValue = JSON.parse(searchParameters.medications);
+  codedValue = JSON.parse(searchParameters.medications)[0];
 
   const medicalStatementResource = convertCodedValueToMedicationStatement({
     codedValue,
