@@ -2,6 +2,7 @@
  * This module is used to filter FHIR records.
  */
 
+import { MedicationStatement } from 'fhir/r4';
 import { Bundle, BundleEntry, CodeableConcept, Condition, Observation, Resource } from 'types/fhir-types';
 import { MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR, MCODE_PRIMARY_CANCER_CONDITION, SNOMED_CODE_URI } from './fhirConstants';
 import { CodedValueType as CodedValueType, Patient } from './fhirConversionUtils';
