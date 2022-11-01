@@ -148,5 +148,11 @@ export const getFilterOptions = (results: StudyDetailProps[], parameters: Filter
       initialized.phase.count += 1;
     }
   }
+
+  // Filter the options by name
+  for (const filter in filterOptions) {
+    filterOptions[filter] = filterOptions[filter].sort((a, b) => a.name.localeCompare(b.name));
+  }
+
   return filterOptions;
 };
