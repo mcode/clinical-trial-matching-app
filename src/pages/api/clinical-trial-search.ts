@@ -11,9 +11,9 @@ import {
   convertStringToObservation,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
+import type { Bundle, Condition, FhirResource, Parameters, Patient, Reference } from 'fhir/r4';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
-import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
 import { SearchParameters } from 'types/search-types';
 
 const {
@@ -52,7 +52,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
 
   !sendLocationData && console.log(`Using default zip code ${defaultZipCode} and travel distance ${travelDistance}`);
 
-  const trialParams: Resource = {
+  const trialParams: Parameters = {
     resourceType: 'Parameters',
     id: '0',
     parameter: [
@@ -82,7 +82,13 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
   const patientBundle: Bundle = {
     resourceType: 'Bundle',
     type: 'collection',
-    entry: [{ resource: trialParams }, { resource: patient }],
+    entry: [{ resource: trialParams }, { resource: patient, fullUrl: 'urn:uuid:1' }],
+  };
+
+  // Create a reference for the patient, which will be used to refer to it later
+  const patientReference: Reference = {
+    reference: 'urn:uuid:1',
+    type: 'Patient',
   };
 
   // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
@@ -96,11 +102,11 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
   const cancerType = parseCodedValueType(searchParams['cancerType']);
   let cancerRecord: Condition;
   if (cancerType) {
-    cancerRecord = addCancerType(patientBundle, cancerType);
+    cancerRecord = addCancerType(patientBundle, patientReference, cancerType);
   }
   const cancerSubtype = parseCodedValueType(searchParams['cancerSubtype']);
   if (cancerSubtype) {
-    addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
+    addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, patientReference, cancerSubtype);
   }
 
   searchOptionValue = searchParams['ecogScore'];
@@ -115,6 +121,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     profile_value: profileValue,
     codingSystem,
     codingSystemCode,
+    subject: patientReference,
   });
 
   searchOptionValue = searchParams['karnofskyScore'];
@@ -130,6 +137,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     profile_value: profileValue,
     codingSystem,
     codingSystemCode,
+    subject: patientReference,
   });
 
   id = 'mcode-cancer-stage-group';
@@ -141,6 +149,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     id,
     profile_value: profileValue,
     codingSystem,
+    subject: patientReference,
   });
 
   const metastasisPararameter = searchParams.metastasis;
@@ -156,6 +165,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
       profile_value: profileValue,
       codingSystem,
       codingSystemCode,
+      subject: patientReference,
     });
   }
 
@@ -168,6 +178,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     id,
     profile_value: profileValue,
     codingSystem,
+    subject: patientReference,
   });
 
   searchOptionValue = searchParams['medications'];
@@ -180,6 +191,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     id,
     profile_value: profileValue,
     codingSystem,
+    subject: patientReference,
   });
 
   searchOptionValue = searchParams['surgery'];
@@ -192,6 +204,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     id,
     profile_value: profileValue,
     codingSystem,
+    subject: patientReference,
   });
 
   searchOptionValue = searchParams['radiation'];
@@ -204,6 +217,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     id,
     profile_value: profileValue,
     codingSystem,
+    subject: patientReference,
   });
 
   if (reactAppDebug) {
@@ -304,17 +318,19 @@ function addCodedValueToBundle({
   id,
   profile_value,
   codingSystem,
+  subject,
 }: {
   patientBundle: Bundle;
   searchOptionValue: string;
   id: string;
   profile_value: string;
   codingSystem: string;
+  subject: Reference;
 }): void {
   if (searchOptionValue != '') {
     const codedValueArray: CodedValueType[] = JSON.parse(searchOptionValue);
 
-    let resource: Resource = null;
+    let resource: FhirResource;
     if (codedValueArray.length > 0) {
       // NOSONAR
       for (const codedValue of codedValueArray) {
@@ -325,6 +341,7 @@ function addCodedValueToBundle({
             id,
             profile_value,
             codingSystem,
+            subject,
           });
         } else {
           codingSystem = 'https://snomed.info/sct';
@@ -333,6 +350,7 @@ function addCodedValueToBundle({
             id,
             profile_value,
             codingSystem,
+            subject,
           });
         }
         patientBundle.entry.push({ resource: resource });
@@ -348,6 +366,7 @@ function addStringValueToBundle({
   profile_value,
   codingSystem,
   codingSystemCode,
+  subject,
 }: {
   patientBundle: Bundle;
   searchOptionValues: string | string[];
@@ -355,16 +374,17 @@ function addStringValueToBundle({
   profile_value: string;
   codingSystem: string;
   codingSystemCode: string;
+  subject?: Reference;
 }): void {
   if (Array.isArray(searchOptionValues)) {
     for (const searchOption of searchOptionValues) {
-      const valueString = searchOption;
       const resource = convertStringToObservation({
-        valueString,
+        valueString: searchOption,
         id,
         profile_value,
         codingSystem,
         codingSystemCode,
+        subject,
       });
       patientBundle.entry.push({ resource: resource });
     }
@@ -376,6 +396,7 @@ function addStringValueToBundle({
         profile_value,
         codingSystem,
         codingSystemCode,
+        subject,
       });
       patientBundle.entry.push({ resource: resource });
     }

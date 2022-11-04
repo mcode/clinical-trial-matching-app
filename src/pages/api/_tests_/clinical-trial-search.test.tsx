@@ -1,4 +1,4 @@
-import { Bundle } from 'types/fhir-types';
+import type { Bundle } from 'fhir/r4';
 import { SearchParameters } from 'types/search-types';
 import { buildBundle } from '../clinical-trial-search';
 const cancerType = {
@@ -72,12 +72,17 @@ const expectedBundle: Bundle = {
         // Age is 28, test sets time to 2022, 2022-28 = 1994
         birthDate: '1994',
       },
+      fullUrl: 'urn:uuid:1',
     },
     {
       resource: {
         resourceType: 'Condition',
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition'],
+        },
+        subject: {
+          reference: 'urn:uuid:1',
+          type: 'Patient',
         },
         code: {
           coding: [
@@ -92,8 +97,13 @@ const expectedBundle: Bundle = {
           {
             url: 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior',
             valueCodeableConcept: {
-              code: '423050000',
-              display: 'Large cell carcinoma of lung, TNM stage 2 (disorder)',
+              coding: [
+                {
+                  code: '423050000',
+                  display: 'Large cell carcinoma of lung, TNM stage 2 (disorder)',
+                },
+              ],
+              text: 'Large cell carcinoma of lung, TNM stage 2 (disorder)',
             },
           },
         ],
@@ -105,6 +115,11 @@ const expectedBundle: Bundle = {
         id: 'mcode-ecog-performance-status',
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-ecog-performance-status'],
+        },
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:1',
+          type: 'Patient',
         },
         code: {
           coding: [
@@ -124,6 +139,11 @@ const expectedBundle: Bundle = {
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-karnofsky-performance-status'],
         },
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:1',
+          type: 'Patient',
+        },
         code: {
           coding: [
             {
@@ -142,6 +162,11 @@ const expectedBundle: Bundle = {
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/tnm-clinical-distant-metastases-category-cM0'],
         },
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:1',
+          type: 'Patient',
+        },
         code: {
           coding: [
             {
@@ -157,21 +182,20 @@ const expectedBundle: Bundle = {
       resource: {
         resourceType: 'Observation',
         id: 'mcode-tumor-marker',
-        status: 'completed',
+        status: 'final',
         subject: {
-          id: '0',
-          gender: 'other',
-          name: 'search_name',
-          age: '0',
-          zipcode: '00000',
+          reference: 'urn:uuid:1',
+          type: 'Patient',
         },
-        coding: [
-          {
-            system: 'https://snomed.info/sct',
-            code: '85310-1',
-            display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
-          },
-        ],
+        code: {
+          coding: [
+            {
+              system: 'https://snomed.info/sct',
+              code: '85310-1',
+              display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
+            },
+          ],
+        },
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker'],
         },
@@ -182,11 +206,8 @@ const expectedBundle: Bundle = {
         resourceType: 'MedicationStatement',
         id: 'mcode-cancer-related-medication-statement',
         subject: {
-          id: '0',
-          gender: 'other',
-          name: 'search_name',
-          age: '0',
-          zipcode: '00000',
+          reference: 'urn:uuid:1',
+          type: 'Patient',
         },
         status: 'completed',
         medicationCodeableConcept: {
@@ -207,21 +228,20 @@ const expectedBundle: Bundle = {
       resource: {
         resourceType: 'Observation',
         id: 'mcode-cancer-related-surgical-procedure',
-        status: 'completed',
+        status: 'final',
         subject: {
-          id: '0',
-          gender: 'other',
-          name: 'search_name',
-          age: '0',
-          zipcode: '00000',
+          reference: 'urn:uuid:1',
+          type: 'Patient',
         },
-        coding: [
-          {
-            system: 'https://snomed.info/sct',
-            code: '1919512',
-            display: 'Excision of middle lobe of right lung (procedure)',
-          },
-        ],
+        code: {
+          coding: [
+            {
+              system: 'https://snomed.info/sct',
+              code: '1919512',
+              display: 'Excision of middle lobe of right lung (procedure)',
+            },
+          ],
+        },
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-surgical-procedure'],
         },
@@ -231,21 +251,20 @@ const expectedBundle: Bundle = {
       resource: {
         resourceType: 'Observation',
         id: 'mcode-cancer-related-radiation-procedure',
-        status: 'completed',
+        status: 'final',
         subject: {
-          id: '0',
-          gender: 'other',
-          name: 'search_name',
-          age: '0',
-          zipcode: '00000',
+          reference: 'urn:uuid:1',
+          type: 'Patient',
         },
-        coding: [
-          {
-            system: 'https://snomed.info/sct',
-            code: '343330305',
-            display: '2.4 ML Imfinzi 50 MG/ML Injection',
-          },
-        ],
+        code: {
+          coding: [
+            {
+              system: 'https://snomed.info/sct',
+              code: '343330305',
+              display: '2.4 ML Imfinzi 50 MG/ML Injection',
+            },
+          ],
+        },
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure'],
         },
