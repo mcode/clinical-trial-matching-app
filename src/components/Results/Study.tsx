@@ -32,6 +32,7 @@ type StudyProps = {
 
 const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isFacilitiesExpanded, setFacilitiesIsExpanded] = useState(false);
   const details = getDetails(entry);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
@@ -50,7 +51,16 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
         }}
       >
         <Stack direction={{ xs: 'column', lg: 'row' }}>
-          <Stack flexGrow={1} p={2} sx={{ backgroundColor: 'common.white', maxHeight: '500px', overflowY: 'scroll' }}>
+          <Stack
+            flexGrow={1}
+            p={2}
+            sx={{
+              backgroundColor: 'common.white',
+              maxHeight: isFacilitiesExpanded ? '800px' : '500px',
+              overflowY: 'scroll',
+              transition: 'max-height 0.25s ease-in-out',
+            }}
+          >
             <TableContainer>
               <Table size={isExtraLargeScreen ? 'medium' : 'small'} stickyHeader={!isExtraLargeScreen}>
                 <TableBody>
@@ -109,7 +119,15 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
               <StudyContact title="Contact" contact={contact} key={index} />
             ))}
             {closestFacilities.length !== 0 && (
-              <Accordion disableGutters square sx={{ marginTop: 2 }} className="borderless">
+              <Accordion
+                disableGutters
+                square
+                sx={{ marginTop: 2 }}
+                className="borderless"
+                onChange={(_event, expanded) => {
+                  setFacilitiesIsExpanded(expanded);
+                }}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls={`study-${entry.trialId}-content`}

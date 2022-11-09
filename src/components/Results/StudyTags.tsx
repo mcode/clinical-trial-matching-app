@@ -65,11 +65,13 @@ const StudyTags = ({ isExpanded, tags, scrollableParent }: StudyTagsProps): Reac
               {({ TransitionProps }) => (
                 <Fade {...TransitionProps} timeout={350}>
                   <Paper
+                    variant="outlined"
                     sx={{
                       p: 2,
                       display: 'flex',
                       flexDirection: 'row',
                       flexWrap: 'wrap',
+                      maxWidth: scrollableParent.current.clientWidth * 0.85 + 'px',
                       bgcolor: isExpanded ? 'common.gray' : 'common.grayLighter',
                     }}
                   >
