@@ -189,13 +189,15 @@ export interface Meta extends Element {
   profile?: string[];
 }
 
-export interface Condition extends Resource {
+export interface Condition extends Resource, Element {
   resourceType: 'Condition';
 }
+
 export interface MedicationStatement extends Resource {
   resourceType: 'MedicationStatement';
-  medicationCodeableConcept: Coding[];
+  medicationCodeableConcept: CodeableConcept;
 }
+
 export interface Observation extends Resource {
   resourceType: 'Observation';
 }

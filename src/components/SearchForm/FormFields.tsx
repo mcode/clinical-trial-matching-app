@@ -1,29 +1,32 @@
-import { CodedValueType } from '@/utils/fhirConversionUtils';
+import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
 import { ReactElement } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
-import { cancerTypeOptions } from './SearchFormOptions';
+import { groupByCategories } from './FormFieldsOptions';
 import { SearchFormValuesType } from './types';
+
 const AutocompleteMulti = <T extends 'metastasis' | 'biomarkers' | 'radiation' | 'surgery' | 'medications'>({
   field,
   label,
   options,
+  getOptionLabel,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, T>;
   label: string;
-  options: (string | { display: string })[];
+  options: CodedValueType[];
+  getOptionLabel?: (option: CodedValueType) => string;
 }): ReactElement => (
   <Autocomplete
     {...field}
-    disabled={options === undefined || options === null || options?.length === 0 ? true : false}
     data-testid={label}
     freeSolo
     multiple
-    onChange={(event, newValue) => {
+    onChange={(_, newValue: CodedValueType[]) => {
       field.onChange(newValue);
     }}
     options={options}
-    getOptionLabel={option => (typeof option === 'string' ? option : option?.display)}
+    getOptionLabel={getOptionLabel ?? (option => option.display)}
+    groupBy={groupByCategories}
     renderInput={params => (
       <TextField
         variant="filled"
@@ -79,126 +82,168 @@ export const AgeTextField = ({
 
 export const CancerTypeAutocomplete = ({
   field,
+  cancerTypes,
   retrieveCancer,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerType'>;
-  retrieveCancer: (
-    value: NonNullable<
-      | string
-      | {
-          category: string;
-          cancerType: string;
-          entryType: string;
-          code: string | number;
-          display: string;
-          codingSystem: string;
-        }
-    >
-  ) => void;
+  cancerTypes: CodedValueType[];
+  retrieveCancer: (value: CodedValueType) => void;
 }): ReactElement => {
-  const newOptions = cancerTypeOptions;
   return (
     <Autocomplete
       {...field}
       data-testid="cancerType"
-      onChange={(event, newValue) => {
+      onChange={(_, newValue: CodedValueType) => {
         field.onChange(newValue);
         retrieveCancer(newValue);
       }}
-      options={newOptions}
-      getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
-      renderInput={params => <TextField variant="filled" label="Cancer Type" placeholder="" {...params} />}
-      isOptionEqualToValue={(option, value) => option.code === value.code}
+      options={cancerTypes}
+      getOptionLabel={option => option.display}
+      renderInput={params => (
+        <TextField
+          variant="filled"
+          label="Cancer Type"
+          placeholder=""
+          required
+          error={field.value === null}
+          {...params}
+        />
+      )}
+      isOptionEqualToValue={areCodedValueTypesEqual}
+      groupBy={groupByCategories}
     />
   );
 };
 
 export const CancerSubtypeAutocomplete = ({
   field,
-  cancerSubTypes,
+  cancerSubtypes,
+  subtypeIsValid,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'cancerSubtype'>;
-  cancerSubTypes: CodedValueType[];
+  cancerSubtypes: CodedValueType[];
+  subtypeIsValid: () => boolean;
 }): ReactElement => {
   return (
     <Autocomplete
       {...field}
       data-testid="cancerSubtype"
-      disabled={cancerSubTypes === null ? true : false}
-      onChange={(_event, value) => field.onChange(value)}
-      options={cancerSubTypes}
-      getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
-      renderInput={params => <TextField variant="filled" label="Cancer Subtype" placeholder="" {...params} />}
-      isOptionEqualToValue={(option, value) => option.code === value.code}
+      onChange={(_, value) => field.onChange(value)}
+      options={cancerSubtypes}
+      getOptionLabel={option => option.display}
+      renderInput={params => (
+        <TextField
+          variant="filled"
+          label="Cancer Subtype"
+          placeholder=""
+          error={!subtypeIsValid()}
+          helperText={!subtypeIsValid() ? 'Invalid cancer subtype.' : undefined}
+          {...params}
+        />
+      )}
+      isOptionEqualToValue={areCodedValueTypesEqual}
+      groupBy={groupByCategories}
     />
   );
 };
 
 export const CancerStageAutocomplete = ({
   field,
-  cancerStages,
+  stages,
+  stageIsValid,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'stage'>;
-  cancerStages: CodedValueType[];
+  stages: CodedValueType[];
+  stageIsValid: () => boolean;
 }): ReactElement => {
   return (
     <Autocomplete
       {...field}
       data-testid="stage"
-      disabled={cancerStages === null ? true : false}
-      onChange={(_event, value) => field.onChange(value)}
-      options={cancerStages}
-      getOptionLabel={option => String(option?.display ?? option?.code ?? '')}
-      renderInput={params => <TextField variant="filled" label="Stage" placeholder="" {...params} />}
-      isOptionEqualToValue={(option, value) => option.code === value.code}
+      onChange={(_, value) => field.onChange(value)}
+      options={stages}
+      getOptionLabel={option => option.display}
+      renderInput={params => (
+        <TextField
+          variant="filled"
+          label="Stage"
+          placeholder=""
+          error={!stageIsValid()}
+          helperText={!stageIsValid() ? 'Invalid stage.' : undefined}
+          {...params}
+        />
+      )}
+      isOptionEqualToValue={areCodedValueTypesEqual}
+      groupBy={groupByCategories}
     />
   );
 };
 
 export const ECOGScoreAutocomplete = ({
   field,
+  ecogScores,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'ecogScore'>;
+  ecogScores: Score[];
 }): ReactElement => (
   <Autocomplete
     {...field}
     data-testid="ecogScore"
-    onChange={(_event, value) => field.onChange(value)}
-    options={['0', '1', '2', '3', '4', '5']}
+    onChange={(_, value) => field.onChange(value)}
+    options={ecogScores}
+    getOptionLabel={option => option.valueInteger.toString()}
     renderInput={params => <TextField variant="filled" label="ECOG Score" placeholder="" {...params} />}
+    isOptionEqualToValue={areScoresEqual}
   />
 );
 
 export const KarnofskyScoreAutocomplete = ({
   field,
+  karnofskyScores,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'karnofskyScore'>;
+  karnofskyScores: Score[];
 }): ReactElement => (
   <Autocomplete
     {...field}
     data-testid="karnofskyScore"
-    onChange={(_event, value) => field.onChange(value)}
-    options={['0', '10', '20', '30', '40', '50', '60', '70', '80', '90', '100']}
+    onChange={(_, value) => field.onChange(value)}
+    options={karnofskyScores}
+    getOptionLabel={option => option.valueInteger.toString()}
     renderInput={params => <TextField variant="filled" label="Karnofsky Score" placeholder="" {...params} />}
+    isOptionEqualToValue={areScoresEqual}
   />
 );
 
 export const MetastasisAutocomplete = ({
   field,
+  metastases,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'metastasis'>;
-}): ReactElement => (
-  <AutocompleteMulti field={field} label="metastasis" options={['metastasis-1', 'metastasis-2', 'metastasis-3']} />
-);
+  metastases: CodedValueType[];
+}): ReactElement => <AutocompleteMulti field={field} label="metastasis" options={metastases} />;
 
 export const BiomarkersAutocomplete = ({
   field,
-  cancerBiomarkers,
+  biomarkers,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'biomarkers'>;
-  cancerBiomarkers: CodedValueType[];
+  biomarkers: CodedValueType[];
 }): ReactElement => {
-  return <AutocompleteMulti field={field} label="biomarkers" options={cancerBiomarkers} />;
+  return (
+    <AutocompleteMulti
+      field={field}
+      label="biomarkers"
+      options={biomarkers}
+      getOptionLabel={(option: Biomarker) => {
+        const { display, qualifier } = { ...option };
+        const positive = qualifier?.code === '10828004' && '+';
+        const negative = qualifier?.code === '260385009' && '-';
+        const sign = positive || negative;
+        return `${display}${sign && ' ' + sign}`;
+      }}
+    />
+  );
 };
 
 export const RadiationAutocomplete = ({
@@ -206,23 +251,30 @@ export const RadiationAutocomplete = ({
   radiations,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'radiation'>;
-  radiations;
+  radiations: CodedValueType[];
 }): ReactElement => {
   return <AutocompleteMulti field={field} label="radiation" options={radiations} />;
 };
 
 export const SurgeryAutocomplete = ({
   field,
-  cancerSurgery,
+  surgeries,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'surgery'>;
-  cancerSurgery: CodedValueType[];
-}): ReactElement => <AutocompleteMulti field={field} label="surgery" options={cancerSurgery} />;
+  surgeries: CodedValueType[];
+}): ReactElement => <AutocompleteMulti field={field} label="surgery" options={surgeries} />;
 
 export const MedicationsAutocomplete = ({
   field,
-  cancerMedication,
+  medications,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'medications'>;
-  cancerMedication;
-}): ReactElement => <AutocompleteMulti field={field} label="medications" options={cancerMedication} />;
+  medications: CodedValueType[];
+}): ReactElement => <AutocompleteMulti field={field} label="medications" options={medications} />;
+
+export const areCodedValueTypesEqual = (first: CodedValueType, second: CodedValueType): boolean =>
+  first?.code === second?.code && first?.system === second?.system;
+
+const areScoresEqual = (first: Score, second: Score): boolean =>
+  first.interpretation.code === second.interpretation.code &&
+  first.interpretation.system === second.interpretation.system;

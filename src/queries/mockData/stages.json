@@ -1,0 +1,210 @@
+[
+  {
+    "code": "261613009",
+    "category": ["0"],
+    "display": "Stage 0",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "colon", "lung"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261644000",
+    "category": ["0"],
+    "display": "Stage 0a",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261645004",
+    "category": ["0"],
+    "display": "Stage 0is",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "258215001",
+    "category": ["1"],
+    "display": "Stage 1 (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "colon", "lung"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261632003",
+    "category": ["1"],
+    "display": "Stage 1A1 (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261633008",
+    "category": ["1"],
+    "display": "Stage 1A2 (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261634002",
+    "category": ["1"],
+    "display": "Stage 1A (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261635001",
+    "category": ["1"],
+    "display": "Stage 1B (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261636000",
+    "category": ["1"],
+    "display": "Stage 1C (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261641008",
+    "category": ["1"],
+    "display": "Stage 1m (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "313112008",
+    "category": ["1"],
+    "display": "Stage 1B2 (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "313114009",
+    "category": ["1"],
+    "display": "Stage 1B1 (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "313143001",
+    "category": ["1"],
+    "display": "Stage 1S (qualifier value)",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "258219007",
+    "category": ["2"],
+    "display": "Stage 2",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "colon", "lung"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261614003",
+    "category": ["2"],
+    "display": "Stage 2A",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "prostate"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261615002",
+    "category": ["2"],
+    "display": "Stage 2B",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "prostate"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261637009",
+    "category": ["2"],
+    "display": "Stage 2C",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "258224005",
+    "category": ["3"],
+    "display": "Stage 3",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261638004",
+    "category": ["3"],
+    "display": "Stage 3A",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "colon", "lung"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261639007",
+    "category": ["3"],
+    "display": "Stage 3B",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "colon", "lung"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261640009",
+    "category": ["3"],
+    "display": "Stage 3C",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "colon", "lung"],
+    "entryType": "stage"
+  },
+  {
+    "code": "258228008",
+    "category": ["4"],
+    "display": "Stage 4",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "colon", "lung"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261616001",
+    "category": ["4"],
+    "display": "Stage 4S",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261642001",
+    "category": ["4"],
+    "display": "Stage 4A",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "prostate"],
+    "entryType": "stage"
+  },
+  {
+    "code": "261643006",
+    "category": ["4"],
+    "display": "Stage 4B",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast", "prostate"],
+    "entryType": "stage"
+  },
+  {
+    "code": "313046007",
+    "category": ["4"],
+    "display": "Stage 4C",
+    "system": "http://snomed.info/sct",
+    "cancerType": ["breast"],
+    "entryType": "stage"
+  }
+]

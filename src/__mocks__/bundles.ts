@@ -24,7 +24,7 @@ export const fhirKarnofskyPerformanceStatusBundle: fhirclient.FHIR.Bundle = {
         subject: {
           reference: 'Patient/patient-123',
         },
-        valueInteger: 1,
+        valueInteger: 100,
         interpretation: [
           {
             coding: [

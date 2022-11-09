@@ -1,0 +1,101 @@
+[
+  {
+    "interpretation": {
+      "display": "Dead",
+      "code": "LA9627-6",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 0,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Moribund; fatal processes progressing rapidly",
+      "code": "LA29184-1",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 10,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Very sick; hospitalization necessary; active supportive treatment necessary",
+      "code": "LA29183-3",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 20,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Severely disabled; hospitalization is indicated, although death not imminent",
+      "code": "LA29182-5",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 30,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Disabled; requires special care and assistance",
+      "code": "LA29181-7",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 40,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Requires considerable assistance and frequent medical care",
+      "code": "LA29180-9",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 50,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Requires occasional assistance but is able to care for most needs",
+      "code": "LA29179-1",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 60,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Cares for self; unable to carry on normal activity or do active work",
+      "code": "LA29178-3",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 70,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Normal activity with effort; some signs or symptoms of disease",
+      "code": "LA29177-5",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 80,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Able to carry on normal activity; minor signs or symptoms of disease",
+      "code": "LA29176-7",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 90,
+    "entryType": "karnofskyScore"
+  },
+  {
+    "interpretation": {
+      "display": "Normal; no complaints; no evidence of disease",
+      "code": "LA29175-9",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 100,
+    "entryType": "karnofskyScore"
+  }
+]

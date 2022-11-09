@@ -1,8 +1,25 @@
-import { CodeableConcept, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
+import { SearchFormValuesType } from '@/components/SearchForm';
+import biomarkerQualifiers from '@/queries/mockData/biomarkerQualifiers.json';
+import biomarkers from '@/queries/mockData/biomarkers.json';
+import cancerSubtypes from '@/queries/mockData/cancerSubtypes.json';
+import cancerTypes from '@/queries/mockData/cancerTypes.json';
+import ecogScores from '@/queries/mockData/ecogScores.json';
+import karnofskyScores from '@/queries/mockData/karnofskyScores.json';
+import medication from '@/queries/mockData/medications.json';
+import metastases from '@/queries/mockData/metastases.json';
+import radiation from '@/queries/mockData/radiations.json';
+import stages from '@/queries/mockData/stages.json';
+import surgery from '@/queries/mockData/surgeries.json';
+import { Coding, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
-const MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR =
-  'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior';
-const SNOMED_CODE_URI = 'http://snomed.info/sct';
+import {
+  ICD_10_CODE_URI,
+  LOINC_CODE_URI,
+  MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
+  RXNORM_CODE_URI,
+  SNOMED_CODE_URI,
+} from './fhirConstants';
+
 type FhirUser = fhirclient.FHIR.Patient | fhirclient.FHIR.Practitioner | fhirclient.FHIR.RelatedPerson;
 type FhirUserName = {
   prefix: string;
@@ -11,13 +28,42 @@ type FhirUserName = {
   suffix?: string[];
 };
 
-export type CodedValueType = {
-  category: string;
-  cancerType: string;
-  entryType: string;
-  code: string | number;
-  display: string;
-  codingSystem: string;
+export enum CancerType {
+  BREAST = 'breast',
+  BRAIN = 'brain',
+  LUNG = 'lung',
+  COLON = 'colon',
+  PROSTATE = 'prostate',
+  MULTIPLE_MYELOMA = 'multipleMyeloma',
+}
+
+export type Field = keyof Pick<
+  SearchFormValuesType,
+  | 'cancerType'
+  | 'cancerSubtype'
+  | 'metastasis'
+  | 'stage'
+  | 'ecogScore'
+  | 'karnofskyScore'
+  | 'biomarkers'
+  | 'radiation'
+  | 'surgery'
+  | 'medications'
+>;
+
+export type CodedValueType = Required<Pick<Coding, 'code' | 'display' | 'system'>> & {
+  system: typeof SNOMED_CODE_URI | typeof LOINC_CODE_URI | typeof RXNORM_CODE_URI | typeof ICD_10_CODE_URI;
+  entryType: Field;
+  cancerType: CancerType[];
+  category: string[];
+};
+
+export type Biomarker = CodedValueType & { qualifier: Coding };
+
+export type Score = {
+  entryType: Field;
+  interpretation: Required<Pick<Coding, 'code' | 'display' | 'system'>>;
+  valueInteger: number;
 };
 
 export type Patient = {
@@ -31,7 +77,7 @@ export type Patient = {
 export type PrimaryCancerCondition = {
   cancerType: CodedValueType | null;
   cancerSubtype: CodedValueType | null;
-  stage: string;
+  stage: CodedValueType | null;
 };
 
 export type User = {
@@ -40,45 +86,22 @@ export type User = {
   record?: FhirUser; // for debugging
 };
 
-export const convertFhirKarnofskyPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): string => {
-  const loincToKarnofskyMap = {
-    'LA29175-9': '100',
-    'LA29176-7': '90',
-    'LA29177-5': '80',
-    'LA29178-3': '70',
-    'LA29179-1': '60',
-    'LA29180-9': '50',
-    'LA29181-7': '40',
-    'LA29182-5': '30',
-    'LA29183-3': '20',
-    'LA29184-1': '10',
-    'LA9627-6': '0',
-  };
-
+export const convertFhirKarnofskyPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): Score | null => {
   const observation = bundle.entry?.[0]?.resource as Observation;
-  const code = observation?.interpretation?.[0]?.coding?.[0]?.code;
-  return loincToKarnofskyMap[code] ?? null;
+  const coding = observation?.interpretation?.[0]?.coding?.[0];
+  return (karnofskyScores as Score[]).find(equalScore(coding)) || null;
 };
 
-export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): string => {
-  const loincToEcogMap = {
-    'LA9622-7': '0',
-    'LA9623-5': '1',
-    'LA9624-3': '2',
-    'LA9625-0': '3',
-    'LA9626-8': '4',
-    'LA9627-6': '5',
-  };
-
+export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): Score | null => {
   const observation = bundle.entry?.[0]?.resource as Observation;
-  const code = observation?.interpretation?.[0]?.coding?.[0]?.code;
-  return loincToEcogMap[code] ?? null;
+  const coding = observation?.interpretation?.[0]?.coding?.[0];
+  return (ecogScores as Score[]).find(equalScore(coding)) || null;
 };
 
-export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): string[] => {
+export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const medicationStatements = bundle.entry?.map(entry => entry.resource as MedicationStatement) || [];
-  const medications: string[][] = medicationStatements.map(getDisplays);
-  return getUniques(medications.flat());
+  const medications: CodedValueType[] = medicationStatements.map(getDisplays(medication as CodedValueType[])).flat();
+  return getUniques(medications);
 };
 
 export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patient => ({
@@ -99,28 +122,30 @@ export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle
   };
 };
 
-export const convertFhirRadiationProcedures = (bundle: fhirclient.FHIR.Bundle): string[] => {
+export const convertFhirRadiationProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const radiationProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const radiations: string[][] = radiationProcedures.map(getDisplays);
-  return getUniques(radiations.flat());
+  const radiations: CodedValueType[] = radiationProcedures.map(getDisplays(radiation as CodedValueType[])).flat();
+  return getUniques(radiations);
 };
 
-export const convertFhirSecondaryCancerConditions = (bundle: fhirclient.FHIR.Bundle): string[] => {
+export const convertFhirSecondaryCancerConditions = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const secondaryCancerConditions = bundle?.entry?.map(entry => entry.resource as Condition) || [];
-  const conditions: string[][] = secondaryCancerConditions.map(getDisplays);
-  return getUniques(conditions.flat());
+  const conditions: CodedValueType[] = secondaryCancerConditions
+    .map(getDisplays(metastases as CodedValueType[]))
+    .flat();
+  return getUniques(conditions);
 };
 
-export const convertFhirSurgeryProcedures = (bundle: fhirclient.FHIR.Bundle): string[] => {
+export const convertFhirSurgeryProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const surgeryProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const surgeries: string[][] = surgeryProcedures.map(getDisplays);
-  return getUniques(surgeries.flat());
+  const surgeries: CodedValueType[] = surgeryProcedures.map(getDisplays(surgery as CodedValueType[])).flat();
+  return getUniques(surgeries);
 };
 
-export const convertFhirTumorMarkers = (bundle: fhirclient.FHIR.Bundle): string[] => {
+export const convertFhirTumorMarkers = (bundle: fhirclient.FHIR.Bundle): Biomarker[] => {
   const fhirTumorMarkers = bundle?.entry?.map(entry => entry.resource as Observation) || [];
-  const biomarkers: string[][] = fhirTumorMarkers.map(convertTumorMarkersToBiomarkers);
-  return getUniques(biomarkers.flat());
+  const biomarkers: Biomarker[] = fhirTumorMarkers.map(convertTumorMarkersToBiomarkers).flat();
+  return getUniques(biomarkers);
 };
 
 export const convertFhirUser = (fhirUser: FhirUser): User => ({
@@ -129,33 +154,16 @@ export const convertFhirUser = (fhirUser: FhirUser): User => ({
   record: fhirUser,
 });
 
-const convertTumorMarkersToBiomarkers = (tumorMarker: Observation): string[] => {
-  const loincToDisplayMap = {
-    '40556-3': 'ER Ag Tiss Ql ImStn',
-    '40557-1': 'PR Ag Tiss Ql ImStn',
-    '18474-7': 'Her2 Ag Tiss Ql ImStn',
-    '62862-8': 'MSI Tiss Ql ImStn',
-    '48676-1': 'Her2 Tiss-Imp',
-    '85319-2': 'Her2 Br ca spec Ql ImStn',
-    '85318-4': 'ERBB2 gene Dp Br ca spec Ql FISH',
-    '16112-5': 'ER Tiss-Imp',
-    '85337-4': 'ER Ag Br ca spec Ql ImStn',
-    '16113-3': 'PR Tiss-Imp',
-    '85339-0': 'PR Ag Br ca spec Ql ImStn',
-  };
-
-  const snomedToDisplayMap = {
-    '10828004': '+', // positive
-    '260385009': '-', // negative
-    '82334004': '?', // indeterminate
-  };
-
+const convertTumorMarkersToBiomarkers = (tumorMarker: Observation): Biomarker[] => {
   const markerCodings = tumorMarker.code?.coding;
   const statusCoding = tumorMarker.valueCodeableConcept?.coding;
-  const statusCode = statusCoding?.[0]?.code;
-  const markers = markerCodings.map(coding => loincToDisplayMap[coding.code] ?? coding.display);
-  const status = snomedToDisplayMap[statusCode] ?? statusCoding?.[0]?.display;
-  return status ? markers.map(marker => `${marker} ${status}`) : [];
+  const markers = markerCodings
+    .map(coding => biomarkers.find(equalCodedValueType(coding)) as CodedValueType)
+    .filter(e => !!e);
+  const status = statusCoding
+    .map(coding => biomarkerQualifiers.find(equalCodedValueType(coding)) as Coding)
+    .filter(e => !!e);
+  return markers.map(marker => status.map(qualifier => ({ ...marker, qualifier } as Biomarker))).flat();
 };
 
 // ----- HELPERS ----- //
@@ -177,16 +185,27 @@ const getUserName = (fhirUserName: FhirUserName): string => {
   return `${prefix || ''}${fullName}${suffix || ''}`;
 };
 
-const getUniques = (array: string[]) => [...new Set(array)];
-
-const getDisplays = (resource: { medicationCodeableConcept?: CodeableConcept; code?: CodeableConcept }): string[] => {
-  if (resource?.code) {
-    return resource?.code?.coding?.map(coding => coding.display);
-  } else if (resource?.medicationCodeableConcept) {
-    return resource?.medicationCodeableConcept?.coding?.map(coding => coding.display);
-  }
-  return [];
+const getUniques = <T extends CodedValueType | Biomarker>(array: T[]): T[] => {
+  return array.filter(
+    (first: T, index: number) =>
+      array.findIndex((second: T) => {
+        const isBiomarker = 'qualifier' in first && 'qualifier' in second;
+        return first.code === second.code && ((isBiomarker && first.qualifier === second.qualifier) ?? true);
+      }) === index
+  );
 };
+
+const getDisplays =
+  (original: CodedValueType[]) =>
+  (resource: Procedure | Condition | MedicationStatement): CodedValueType[] => {
+    let codings = [] as Coding[];
+    if ((resource.resourceType === 'Procedure' || resource.resourceType === 'Condition') && resource.code) {
+      codings = resource.code?.coding;
+    } else if (resource.resourceType === 'MedicationStatement' && resource.medicationCodeableConcept) {
+      codings = resource.medicationCodeableConcept?.coding;
+    }
+    return codings.map(coding => original.find(equalCodedValueType(coding))).filter(e => !!e);
+  };
 
 /***
  * Type guard for the CodedValueType
@@ -242,54 +261,22 @@ export const parseCodedValueArray = (code: string | string[]): CodedValueType[] 
     return undefined;
   }
 };
-const getStage = (condition: Condition): string => {
-  const snomedToStageMap = {
-    '261613009': '0',
-    '258215001': 'I',
-    '258219007': 'II',
-    '261614003': 'IIA',
-    '258224005': 'III',
-    '258228008': 'IV',
-    '261617005': 'V',
-  };
-
-  const cancerStagingToStageMap = {
-    c2A: 'IIA',
-    c2: 'II',
-    '4': 'IV',
-  };
-
+const getStage = (condition: Condition): CodedValueType | null => {
   // patient could have >1 stages
-  const stages = condition?.stage
-    ?.map(stage =>
-      stage.summary?.coding?.map(
-        coding => snomedToStageMap[coding.code] || cancerStagingToStageMap[coding.code] || coding.display
-      )
-    )
-    .flat();
+  const stage = condition?.stage
+    ?.map(stage => stage.summary?.coding?.map(coding => (stages as CodedValueType[]).find(equalCodedValueType(coding))))
+    .flat()
+    .filter(e => !!e)?.[0];
 
   // get the first found stage for now
-  return stages?.length ? stages[0] : null;
+  return stage || null;
 };
 
 const getCancerType = (condition: Condition): CodedValueType | null => {
   if (Array.isArray(condition?.code?.coding)) {
-    // Prefer SNOMED over anything else, else take the first code with a display
-    let code = condition.code.coding.find(({ system }) => system === SNOMED_CODE_URI);
-    if (!code) code = condition.code.coding.find(({ display }) => Boolean(display));
-
-    if (code) {
-      return {
-        category: '',
-        entryType: 'CancerSubType',
-        cancerType: '',
-        code: code.code,
-        display: code.display ?? code.code,
-        codingSystem: '',
-      };
-    }
+    const coding = condition.code.coding.find(({ system }) => system === SNOMED_CODE_URI);
+    return (cancerTypes as CodedValueType[]).find(equalCodedValueType(coding));
   }
-
   return null;
 };
 
@@ -300,18 +287,24 @@ const getCancerSubtype = (condition: Condition): CodedValueType | null => {
         extension.url === MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR &&
         extension.valueCodeableConcept?.coding?.[0]?.system === SNOMED_CODE_URI
       ) {
-        const code = extension.valueCodeableConcept.coding[0];
-        return {
-          category: '',
-          entryType: 'CancerSubType',
-          cancerType: '',
-          code: code.code,
-          display: code.display ?? code.code,
-          codingSystem: '',
-        };
+        const coding = extension.valueCodeableConcept.coding[0];
+        const found = (cancerSubtypes as CodedValueType[]).find(equalCodedValueType(coding));
+        if (!!found) {
+          return found;
+        }
       }
     }
   }
 
   return null;
 };
+
+const equalCodedValueType =
+  (selected: Coding) =>
+  (target: CodedValueType): boolean =>
+    selected?.code === target.code && selected?.system === target.system;
+
+const equalScore =
+  (selected: Coding) =>
+  (target: Score): boolean =>
+    target.interpretation.code === selected?.code && target.interpretation.system === selected?.system;

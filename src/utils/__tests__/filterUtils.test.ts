@@ -4,7 +4,7 @@ import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { Observation } from 'types/fhir-types';
 import * as fhirConstants from '../fhirConstants';
 import { CodedValueType } from '../fhirConversionUtils';
-import { convertCodedValueToMedicationStatement, convertCodedValueToObervation } from '../fhirFilter';
+import { convertCodedValueToObervation, getCancerRelatedMedicationStatement } from '../fhirFilter';
 import { getFilteredResults, getFilterOptions, getSortedResults } from '../filterUtils';
 
 const results = mockSearchResults.results as StudyDetailProps[];
@@ -554,7 +554,7 @@ const expectedObservationResource: Observation = {
 
 describe('convertCodedValueToObervation', () => {
   let id = 'mcode-tumor-marker';
-  let profile_value = fhirConstants.MCODE_TUMOR_MARKER;
+  let profile_value = fhirConstants.MCODE_TUMOR_MARKER_TEST;
   let codingSystem = 'http://snomed.info/sct';
   let codedValue: CodedValueType = JSON.parse(searchParameters.biomarkers)[0];
   const observationResource = convertCodedValueToObervation({
@@ -573,10 +573,10 @@ describe('convertCodedValueToObervation', () => {
   codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
   codedValue = JSON.parse(searchParameters.medications)[0];
 
-  const medicalStatementResource = convertCodedValueToMedicationStatement({
-    codedValue,
+  const medicalStatementResource = getCancerRelatedMedicationStatement({
+    medication: codedValue,
     id,
-    profile_value,
+    profileValue: profile_value,
     codingSystem,
   });
   it('Medication Statement Returned', () => {

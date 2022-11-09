@@ -3,7 +3,7 @@ import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
 import { DEFAULT_PAGE } from '@/queries/clinicalTrialPaginationQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { CodedValueType, parseCodedValue, parseCodedValueArray, Patient } from '@/utils/fhirConversionUtils';
+import { Patient } from '@/utils/fhirConversionUtils';
 import { FilterAlt as FilterIcon, Search as SearchIcon } from '@mui/icons-material';
 import { useRouter } from 'next/router';
 import { ReactElement, SyntheticEvent, useState } from 'react';
@@ -31,16 +31,6 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const ensureCodedValueType = (value?: string | string[]): CodedValueType => {
-  if (!value) return undefined;
-  if (Array.isArray(value)) {
-    // For now, take the first value, if any
-    return value.length >= 1 ? parseCodedValue(value[0]) : undefined;
-  } else {
-    return parseCodedValue(value);
-  }
-};
-
 const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProps): ReactElement => {
   const { query } = useRouter();
   const [expanded, setExpanded] = useState<SidebarExpand>(SidebarExpand.Filter);
@@ -52,20 +42,20 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
   const matchingServices = ensureArray(query.matchingServices);
   const defaultSearchValues = {
     matchingServices: Object.fromEntries(matchingServices.map(key => [key, true])),
-    zipcode: query.zipcode.toString() || '',
-    travelDistance: query.travelDistance.toString() || '',
-    age: query.age.toString() || '',
-    gender: query.gender.toString() || '',
-    cancerType: ensureCodedValueType(query.cancerType),
-    cancerSubtype: ensureCodedValueType(query.cancerSubtype),
-    metastasis: ensureArray(query.metastasis),
-    stage: ensureCodedValueType(query.stage),
-    ecogScore: query.ecogScore.toString() || null,
-    karnofskyScore: query.karnofskyScore.toString() || null,
-    biomarkers: parseCodedValueArray(query.biomarkers),
-    radiation: parseCodedValueArray(query.radiation),
-    surgery: parseCodedValueArray(query.surgery),
-    medications: parseCodedValueArray(query.medications),
+    zipcode: (query.zipcode as string) || '',
+    travelDistance: (query.travelDistance as string) || '',
+    age: (query.age as string) || '',
+    gender: (query.gender as string) || '',
+    cancerType: query.cancerType ? JSON.parse(query.cancerType as string) : null,
+    cancerSubtype: query.cancerSubtype ? JSON.parse(query.cancerSubtype as string) : null,
+    metastasis: query.metastasis ? JSON.parse(query.metastasis as string) : null,
+    stage: query.stage ? JSON.parse(query.stage as string) : null,
+    ecogScore: query.ecogScore ? JSON.parse(query.ecogScore as string) : null,
+    karnofskyScore: query.karnofskyScore ? JSON.parse(query.karnofskyScore as string) : null,
+    biomarkers: query.biomarkers ? JSON.parse(query.biomarkers as string) : null,
+    radiation: query.radiation ? JSON.parse(query.radiation as string) : null,
+    surgery: query.surgery ? JSON.parse(query.surgery as string) : null,
+    medications: query.medications ? JSON.parse(query.medications as string) : null,
   };
 
   const sortingOption = query.sortingOption as FilterFormValuesType['sortingOption'];

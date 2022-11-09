@@ -1,19 +1,24 @@
-import { BundleEntry, StudyDetailProps } from '@/components/Results';
+import { StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
-import * as fhirConstants from '@/utils/fhirConstants';
-import { CodedValueType, parseCodedValue as parseCodedValueType } from '@/utils/fhirConversionUtils';
+import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import {
-  addCancerHistologyMorphology,
-  addCancerType,
-  convertCodedValueToMedicationStatement as convertCodedValueToMedicationStatement,
-  convertCodedValueToObervation as convertCodedValueTypeToObservation,
-  convertStringToObservation,
+  getCancerRelatedMedicationStatement,
+  getCancerRelatedRadiationProcedure,
+  getCancerRelatedSurgicalProcedure,
+  getClinicalStageGroup,
+  getEcogPerformanceStatus,
+  getKarnofskyPerformanceStatus,
+  getPrimaryCancerCondition,
+  getSecondaryCancerCondition,
+  getTumorMarker,
+  resourceToEntry,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
+import { nanoid } from 'nanoid';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
-import { Bundle, Condition, Patient, Resource } from 'types/fhir-types';
+import { Bundle, BundleEntry, Patient, Resource } from 'types/fhir-types';
 import { SearchParameters } from 'types/search-types';
 
 const {
@@ -62,10 +67,8 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
   };
 
   // Create our stub patient
-  const patient: Patient = {
-    resourceType: 'Patient',
-    id: 'search_patient',
-  };
+  const patient: Patient = { resourceType: 'Patient', id: nanoid() };
+
   // Add whatever we can
   if (isAdministrativeGender(searchParams.gender)) {
     patient.gender = searchParams.gender;
@@ -85,126 +88,8 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     entry: [{ resource: trialParams }, { resource: patient }],
   };
 
-  // Now that we have the complete bundle, we can mutate if necessary from the search parameters. Restore the named
-  // codes if they exist.
-  let id = '';
-  let profileValue = '';
-  let codingSystem = '';
-  let codingSystemCode = '';
-  let searchOptionValue = '';
-
-  const cancerType = parseCodedValueType(searchParams['cancerType']);
-  let cancerRecord: Condition;
-  if (cancerType) {
-    cancerRecord = addCancerType(patientBundle, cancerType);
-  }
-  const cancerSubtype = parseCodedValueType(searchParams['cancerSubtype']);
-  if (cancerSubtype) {
-    addCancerHistologyMorphology(cancerRecord ? cancerRecord : patientBundle, cancerSubtype);
-  }
-
-  searchOptionValue = searchParams['ecogScore'];
-
-  id = 'mcode-ecog-performance-status';
-  profileValue = fhirConstants.MCODE_ECOG_PERFORMANCE_STATUS;
-  codingSystemCode = '89247-1';
-  addStringValueToBundle({
-    patientBundle,
-    searchOptionValues: searchOptionValue,
-    id,
-    profile_value: profileValue,
-    codingSystem,
-    codingSystemCode,
-  });
-
-  searchOptionValue = searchParams['karnofskyScore'];
-  id = 'mcode-karnofsky-performance-status';
-  profileValue = fhirConstants.MCODE_KARNOFSKY_PERFORMANCE_STATUS;
-  codingSystem = 'https://loinc.org';
-  codingSystemCode = 'LL4986-7';
-
-  addStringValueToBundle({
-    patientBundle,
-    searchOptionValues: searchOptionValue,
-    id,
-    profile_value: profileValue,
-    codingSystem,
-    codingSystemCode,
-  });
-
-  id = 'mcode-cancer-stage-group';
-  profileValue = fhirConstants.MCODE_CANCER_STAGE_GROUP;
-
-  addCodedValueToBundle({
-    patientBundle,
-    searchOptionValue,
-    id,
-    profile_value: profileValue,
-    codingSystem,
-  });
-
-  const metastasisPararameter = searchParams.metastasis;
-  if (metastasisPararameter) {
-    // NOSONAR
-    id = 'tnm-clinical-distant-metastases-category-cM0';
-    profileValue = fhirConstants.MCODE_CLINICAL_DISTANT_METASTASIS;
-
-    addStringValueToBundle({
-      patientBundle,
-      searchOptionValues: metastasisPararameter,
-      id,
-      profile_value: profileValue,
-      codingSystem,
-      codingSystemCode,
-    });
-  }
-
-  searchOptionValue = searchParams['biomarkers'];
-  profileValue = fhirConstants.MCODE_TUMOR_MARKER;
-  id = 'mcode-tumor-marker';
-  addCodedValueToBundle({
-    patientBundle,
-    searchOptionValue,
-    id,
-    profile_value: profileValue,
-    codingSystem,
-  });
-
-  searchOptionValue = searchParams['medications'];
-
-  id = 'mcode-cancer-related-medication-statement';
-  profileValue = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
-  addCodedValueToBundle({
-    patientBundle,
-    searchOptionValue,
-    id,
-    profile_value: profileValue,
-    codingSystem,
-  });
-
-  searchOptionValue = searchParams['surgery'];
-
-  id = 'mcode-cancer-related-surgical-procedure';
-  profileValue = fhirConstants.MCODE_CANCER_RELATED_SURGICAL_PROCEDURE;
-  addCodedValueToBundle({
-    patientBundle,
-    searchOptionValue,
-    id,
-    profile_value: profileValue,
-    codingSystem,
-  });
-
-  searchOptionValue = searchParams['radiation'];
-
-  id = 'mcode-cancer-related-radiation-procedure';
-  profileValue = fhirConstants.MCODE_CANCER_RELATED_RADIATION_PROCEDURE;
-  addCodedValueToBundle({
-    patientBundle,
-    searchOptionValue,
-    id,
-    profile_value: profileValue,
-    codingSystem,
-  });
+  const entries = getOPDEValues(searchParams, patient.id);
+  patientBundle.entry = [...patientBundle.entry, ...entries];
 
   if (reactAppDebug) {
     console.log(JSON.stringify(patientBundle, null, 2));
@@ -212,6 +97,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
 
   return patientBundle;
 }
+
 /**
  * Calls all selected wrappers and combines the results
  *
@@ -298,88 +184,57 @@ function handleError(response) {
   return response;
 }
 
-function addCodedValueToBundle({
-  patientBundle,
-  searchOptionValue,
-  id,
-  profile_value,
-  codingSystem,
-}: {
-  patientBundle: Bundle;
-  searchOptionValue: string;
-  id: string;
-  profile_value: string;
-  codingSystem: string;
-}): void {
-  if (searchOptionValue != '') {
-    const codedValueArray: CodedValueType[] = JSON.parse(searchOptionValue);
+const getParsedParameters = (
+  parameters: SearchParameters
+): Partial<
+  Record<keyof Pick<SearchParameters, 'cancerType' | 'cancerSubtype' | 'stage'>, CodedValueType> &
+    Record<keyof Pick<SearchParameters, 'metastasis' | 'surgery' | 'medications' | 'radiation'>, CodedValueType[]> &
+    Record<keyof Pick<SearchParameters, 'biomarkers'>, Biomarker[]> &
+    Record<keyof Pick<SearchParameters, 'ecogScore' | 'karnofskyScore'>, Score>
+> => {
+  return {
+    ...(!!parameters.cancerType ? { cancerType: JSON.parse(parameters.cancerType) } : {}),
+    ...(!!parameters.cancerSubtype ? { cancerSubtype: JSON.parse(parameters.cancerSubtype) } : {}),
+    ...(!!parameters.metastasis ? { metastasis: JSON.parse(parameters.metastasis) } : {}),
+    ...(!!parameters.stage ? { stage: JSON.parse(parameters.stage) } : {}),
+    ...(!!parameters.ecogScore ? { ecogScore: JSON.parse(parameters.ecogScore) } : {}),
+    ...(!!parameters.karnofskyScore ? { karnofskyScore: JSON.parse(parameters.karnofskyScore) } : {}),
+    ...(!!parameters.biomarkers ? { biomarkers: JSON.parse(parameters.biomarkers) } : {}),
+    ...(!!parameters.surgery ? { surgery: JSON.parse(parameters.surgery) } : {}),
+    ...(!!parameters.medications ? { medications: JSON.parse(parameters.medications) } : {}),
+    ...(!!parameters.radiation ? { radiation: JSON.parse(parameters.radiation) } : {}),
+  };
+};
 
-    let resource: Resource = null;
-    if (codedValueArray.length > 0) {
-      // NOSONAR
-      for (const codedValue of codedValueArray) {
-        if (profile_value == fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT) {
-          codingSystem = 'https://www.nlm.nih.gov/research/umls/rxnorm';
-          resource = convertCodedValueToMedicationStatement({
-            codedValue,
-            id,
-            profile_value,
-            codingSystem,
-          });
-        } else {
-          codingSystem = 'https://snomed.info/sct';
-          resource = convertCodedValueTypeToObservation({
-            codedValue,
-            id,
-            profile_value,
-            codingSystem,
-          });
-        }
-        patientBundle.entry.push({ resource: resource });
-      }
-    }
-  }
-}
+const getOPDEValues = (parameters: SearchParameters, patientId: string): BundleEntry[] => {
+  const {
+    cancerType,
+    cancerSubtype,
+    metastasis: metastases,
+    stage,
+    ecogScore,
+    karnofskyScore,
+    biomarkers,
+    surgery: surgeries,
+    medications,
+    radiation: radiations,
+  } = getParsedParameters(parameters);
 
-function addStringValueToBundle({
-  patientBundle,
-  searchOptionValues,
-  id,
-  profile_value,
-  codingSystem,
-  codingSystemCode,
-}: {
-  patientBundle: Bundle;
-  searchOptionValues: string | string[];
-  id: string;
-  profile_value: string;
-  codingSystem: string;
-  codingSystemCode: string;
-}): void {
-  if (Array.isArray(searchOptionValues)) {
-    for (const searchOption of searchOptionValues) {
-      const valueString = searchOption;
-      const resource = convertStringToObservation({
-        valueString,
-        id,
-        profile_value,
-        codingSystem,
-        codingSystemCode,
-      });
-      patientBundle.entry.push({ resource: resource });
-    }
-  } else {
-    if (searchOptionValues) {
-      const resource = convertStringToObservation({
-        valueString: searchOptionValues,
-        id,
-        profile_value,
-        codingSystem,
-        codingSystemCode,
-      });
-      patientBundle.entry.push({ resource: resource });
-    }
-  }
-}
+  const entries = [
+    getPrimaryCancerCondition({ cancerType, cancerSubtype, patientId }),
+    getEcogPerformanceStatus({ ecogScore, patientId }),
+    getKarnofskyPerformanceStatus({ karnofskyScore, patientId }),
+    getClinicalStageGroup({ stage, patientId }),
+    ...biomarkers.map(biomarker => getTumorMarker({ biomarker, patientId })),
+    ...medications.map(medication => getCancerRelatedMedicationStatement({ medication, patientId })),
+    ...metastases.map(cancerType => getSecondaryCancerCondition({ cancerType, patientId })),
+    ...radiations.map(radiation => getCancerRelatedRadiationProcedure({ radiation, patientId })),
+    ...surgeries.map(surgery => getCancerRelatedSurgicalProcedure({ surgery, patientId })),
+  ]
+    .filter(resource => !!resource)
+    .map(resourceToEntry);
+
+  return entries;
+};
 
 export default handler;
