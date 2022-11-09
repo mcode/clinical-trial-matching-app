@@ -100,7 +100,9 @@ export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle)
 
 export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const medicationStatements = bundle.entry?.map(entry => entry.resource as MedicationStatement) || [];
-  const medications: CodedValueType[] = medicationStatements.map(getDisplays(medication as CodedValueType[])).flat();
+  const medications: CodedValueType[] = medicationStatements
+    .map(getCodedValueTypes(medication as CodedValueType[]))
+    .flat();
   return getUniques(medications);
 };
 
@@ -124,21 +126,23 @@ export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle
 
 export const convertFhirRadiationProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const radiationProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const radiations: CodedValueType[] = radiationProcedures.map(getDisplays(radiation as CodedValueType[])).flat();
+  const radiations: CodedValueType[] = radiationProcedures
+    .map(getCodedValueTypes(radiation as CodedValueType[]))
+    .flat();
   return getUniques(radiations);
 };
 
 export const convertFhirSecondaryCancerConditions = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const secondaryCancerConditions = bundle?.entry?.map(entry => entry.resource as Condition) || [];
   const conditions: CodedValueType[] = secondaryCancerConditions
-    .map(getDisplays(metastases as CodedValueType[]))
+    .map(getCodedValueTypes(metastases as CodedValueType[]))
     .flat();
   return getUniques(conditions);
 };
 
 export const convertFhirSurgeryProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const surgeryProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const surgeries: CodedValueType[] = surgeryProcedures.map(getDisplays(surgery as CodedValueType[])).flat();
+  const surgeries: CodedValueType[] = surgeryProcedures.map(getCodedValueTypes(surgery as CodedValueType[])).flat();
   return getUniques(surgeries);
 };
 
@@ -190,12 +194,12 @@ const getUniques = <T extends CodedValueType | Biomarker>(array: T[]): T[] => {
     (first: T, index: number) =>
       array.findIndex((second: T) => {
         const isBiomarker = 'qualifier' in first && 'qualifier' in second;
-        return first.code === second.code && ((isBiomarker && first.qualifier === second.qualifier) ?? true);
+        return first.code === second.code && (isBiomarker ? first.qualifier === second.qualifier : true);
       }) === index
   );
 };
 
-const getDisplays =
+const getCodedValueTypes =
   (original: CodedValueType[]) =>
   (resource: Procedure | Condition | MedicationStatement): CodedValueType[] => {
     let codings = [] as Coding[];
