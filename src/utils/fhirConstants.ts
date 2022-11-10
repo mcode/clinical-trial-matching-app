@@ -82,6 +82,13 @@ export const MCODE_CANCER_RELATED_RADIATION_PROCEDURE =
 export const MCODE_TUMOR_MARKER = MCODE_STRUCTURE_DEFINITION + 'mcode-tumor-marker';
 
 /**
+ * Cancer Patient URL.
+ * Note: this URL does not resolve.
+ * Should the trailing string be 'mcode-tumor-marker-test' in the future?
+ */
+export const MCODE_CANCER_PATIENT = MCODE_STRUCTURE_DEFINITION + 'mcode-cancer-patient';
+
+/**
  * US Core Observation Category URL.
  */
 export const US_CORE_OBSERVATION_CATEGORY_URI = 'http://hl7.org/fhir/us/core/CodeSystem/us-core-observation-category';

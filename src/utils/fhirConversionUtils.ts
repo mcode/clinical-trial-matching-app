@@ -158,9 +158,11 @@ export const convertFhirUser = (fhirUser: FhirUser): User => ({
   record: fhirUser,
 });
 
+// ----- HELPERS ----- //
+
 const convertTumorMarkersToBiomarkers = (tumorMarker: Observation): Biomarker[] => {
-  const markerCodings = tumorMarker.code?.coding;
-  const statusCoding = tumorMarker.valueCodeableConcept?.coding;
+  const markerCodings = tumorMarker.code?.coding || [];
+  const statusCoding = tumorMarker.valueCodeableConcept?.coding || [];
   const markers = markerCodings
     .map(coding => biomarkers.find(equalCodedValueType(coding)) as CodedValueType)
     .filter(e => !!e);
@@ -169,8 +171,6 @@ const convertTumorMarkersToBiomarkers = (tumorMarker: Observation): Biomarker[] 
     .filter(e => !!e);
   return markers.map(marker => status.map(qualifier => ({ ...marker, qualifier } as Biomarker))).flat();
 };
-
-// ----- HELPERS ----- //
 
 const getAge = (dateString: Date): string => {
   const now = Date.now();
@@ -211,60 +211,6 @@ const getCodedValueTypes =
     return codings.map(coding => original.find(equalCodedValueType(coding))).filter(e => !!e);
   };
 
-/***
- * Type guard for the CodedValueType
- */
-export const isCodedValueType = (o: unknown): o is CodedValueType => {
-  if (typeof o === 'object' && o !== null) {
-    const code = o as CodedValueType;
-    return typeof code.display === 'string' && (typeof code.code === 'string' || typeof code.code === 'number');
-  } else {
-    return false;
-  }
-};
-
-/**
- * Parses a string that contains a JSON description of a named SNOMED code to a CodedValueType object.
- * @param code the code to convert
- * @returns the parsed code
- */
-export const parseCodedValue = (code: string): CodedValueType => {
-  try {
-    const result: CodedValueType = JSON.parse(code);
-    // Make sure this is valid
-    return isCodedValueType(result) ? result : undefined;
-  } catch (ex) {
-    // JSON parse error, return undefined
-    return undefined;
-  }
-};
-export const parseCodedValueArray = (code: string | string[]): CodedValueType[] | undefined => {
-  if (Array.isArray(code)) {
-    // For now, if the code is a string array, only use the first value
-    if (code.length < 1) {
-      return undefined;
-    } else {
-      code = code[0];
-    }
-  }
-  try {
-    const json: unknown = JSON.parse(code);
-    if (Array.isArray(json)) {
-      const codedValueArray = json as CodedValueType[];
-      for (const codedValue of codedValueArray) {
-        if (!isCodedValueType(codedValue)) {
-          return undefined;
-        }
-      }
-      return codedValueArray;
-    }
-    // Unable to parse
-    return undefined;
-  } catch (ex) {
-    // JSON parse error, return undefined
-    return undefined;
-  }
-};
 const getStage = (condition: Condition): CodedValueType | null => {
   // patient could have >1 stages
   const stage = condition?.stage
