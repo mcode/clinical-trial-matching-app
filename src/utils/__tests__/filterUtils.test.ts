@@ -1,10 +1,5 @@
 import { StudyDetailProps } from '@/components/Results/types';
-import { searchParameters } from '@/pages/api/_tests_/clinical-trial-search.test';
 import mockSearchResults from '@/__mocks__/resultDetails.json';
-import { Observation } from 'types/fhir-types';
-import * as fhirConstants from '../fhirConstants';
-import { CodedValueType } from '../fhirConversionUtils';
-import { convertCodedValueToObervation, getCancerRelatedMedicationStatement } from '../fhirFilter';
 import { getFilteredResults, getFilterOptions, getSortedResults } from '../filterUtils';
 
 const results = mockSearchResults.results as StudyDetailProps[];
@@ -502,84 +497,5 @@ describe('getFilterOptions', () => {
       ]),
       studyType: expect.arrayContaining([{ name: 'Interventional', count: 0 }]),
     });
-  });
-});
-
-const expectedMedicalStatmentResource = {
-  resourceType: 'MedicationStatement',
-  id: 'mcode-cancer-related-medication-statement',
-  subject: {
-    id: '0',
-    gender: 'other',
-    name: 'search_name',
-    age: '0',
-    zipcode: '00000',
-  },
-  status: 'completed',
-  medicationCodeableConcept: {
-    coding: [
-      {
-        system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
-        code: '1657775',
-        display: '10 ML ramucirumab 10 MG/ML Injection',
-      },
-    ],
-  },
-  meta: {
-    profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement'],
-  },
-};
-const expectedObservationResource: Observation = {
-  resourceType: 'Observation',
-  id: 'mcode-tumor-marker',
-  status: 'completed',
-  subject: {
-    age: '0',
-    gender: 'other',
-    id: '0',
-    name: 'search_name',
-    zipcode: '00000',
-  },
-  coding: [
-    {
-      system: 'http://snomed.info/sct',
-      code: '85310-1',
-      display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
-    },
-  ],
-  meta: {
-    profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker'],
-  },
-};
-
-describe('convertCodedValueToObervation', () => {
-  let id = 'mcode-tumor-marker';
-  let profile_value = fhirConstants.MCODE_TUMOR_MARKER_TEST;
-  let codingSystem = 'http://snomed.info/sct';
-  let codedValue: CodedValueType = JSON.parse(searchParameters.biomarkers)[0];
-  const observationResource = convertCodedValueToObervation({
-    codedValue,
-    id,
-    profile_value,
-    codingSystem,
-  });
-
-  it('Observation Resource Returned', () => {
-    expect(observationResource).toEqual(expectedObservationResource);
-  });
-
-  id = 'mcode-cancer-related-medication-statement';
-  profile_value = fhirConstants.MCODE_CANCER_RELATED_MEDICATION_STATEMENT;
-  codingSystem = 'http://www.nlm.nih.gov/research/umls/rxnorm';
-  codedValue = JSON.parse(searchParameters.medications)[0];
-
-  const medicalStatementResource = getCancerRelatedMedicationStatement({
-    medication: codedValue,
-    id,
-    profileValue: profile_value,
-    codingSystem,
-  });
-  it('Medication Statement Returned', () => {
-    expect(JSON.stringify(medicalStatementResource)).toEqual(JSON.stringify(expectedMedicalStatmentResource));
   });
 });

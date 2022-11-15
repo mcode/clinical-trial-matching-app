@@ -1,4 +1,4 @@
-import { CodedValueType, Score } from '@/utils/fhirConversionUtils';
+import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 
 export type SearchFormValuesType = {
   matchingServices: { [key: string]: boolean };
@@ -17,3 +17,13 @@ export type SearchFormValuesType = {
   surgery: CodedValueType[];
   medications: CodedValueType[];
 };
+
+export type State = Record<
+  keyof Pick<
+    SearchFormValuesType,
+    'cancerSubtype' | 'cancerType' | 'medications' | 'metastasis' | 'radiation' | 'stage' | 'surgery'
+  >,
+  CodedValueType[]
+> &
+  Record<keyof Pick<SearchFormValuesType, 'ecogScore' | 'karnofskyScore'>, Score[]> &
+  Record<keyof Pick<SearchFormValuesType, 'biomarkers'>, Biomarker[]>;

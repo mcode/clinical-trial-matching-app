@@ -24,9 +24,9 @@ import {
   TravelDistanceTextField,
   ZipcodeTextField,
 } from './FormFields';
-import { getNewState, State, uninitializedState } from './FormFieldsOptions';
+import { getNewState, uninitializedState } from './FormFieldsOptions';
 import MatchingServices from './MatchingServices';
-import { SearchFormValuesType } from './types';
+import { SearchFormValuesType, State } from './types';
 
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;

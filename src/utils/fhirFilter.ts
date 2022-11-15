@@ -3,7 +3,6 @@
  */
 
 import { Condition, Extension, MedicationStatement, Observation, Procedure, Reference } from 'fhir/r4';
-import { nanoid } from 'nanoid';
 import { BundleEntry, Resource } from 'types/fhir-types';
 import {
   clinicalTest,
@@ -34,18 +33,16 @@ const getSubject = (patientId: string): Reference | null =>
 
 export const getPrimaryCancerCondition = ({
   cancerType,
-  cancerSubtype,
+  histologyMorphology,
   patientId,
 }: {
   cancerType: CodedValueType;
-  cancerSubtype?: CodedValueType;
+  histologyMorphology?: Extension;
   patientId: string;
 }): Condition | null => {
   const { code, display, system } = { ...cancerType };
 
-  if (code !== undefined && display !== undefined && system !== undefined) {
-    const histologyMorphology: Extension | null = getHistologyMorphologyBehavior(cancerSubtype);
-
+  if (!!code && !!display && !!system) {
     return {
       resourceType: 'Condition',
       meta: { profile: [MCODE_PRIMARY_CANCER_CONDITION] },
@@ -67,7 +64,7 @@ export const getPrimaryCancerCondition = ({
 // Permanent mCODE IG link: http://hl7.org/fhir/us/mcode/STU1/StructureDefinition-mcode-histology-morphology-behavior.html
 export const getHistologyMorphologyBehavior = (cancerSubtype: CodedValueType): Extension | null => {
   const { code, display, system } = { ...cancerSubtype };
-  if (code !== undefined && display !== undefined && system !== undefined) {
+  if (!!code && !!display && !!system) {
     return {
       url: MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
       valueCodeableConcept: { coding: [{ code, display, system }] },
@@ -79,23 +76,19 @@ export const getHistologyMorphologyBehavior = (cancerSubtype: CodedValueType): E
 // Permanent mCODE IG link: http://hl7.org/fhir/us/mcode/STU1/StructureDefinition-mcode-secondary-cancer-condition.html
 export const getSecondaryCancerCondition = ({
   cancerType,
-  cancerSubtype,
   patientId,
 }: {
   cancerType: CodedValueType;
-  cancerSubtype?: CodedValueType;
   patientId: string;
 }): Condition | null => {
-  const histologyMorphology: Extension | null = getHistologyMorphologyBehavior(cancerSubtype);
   const { code, display, system } = { ...cancerType };
 
-  if (code !== undefined && display !== undefined && system !== undefined) {
+  if (!!code && !!display && !!system) {
     return {
       resourceType: 'Condition',
       meta: { profile: [MCODE_SECONDARY_CANCER_CONDITION] },
       subject: getSubject(patientId),
       code: { coding: [{ system, code, display }] },
-      ...(histologyMorphology ? { extension: [histologyMorphology] } : {}),
       category: [{ coding: [{ system: SNOMED_CODE_URI, code: '64572001' }] }],
     };
   }
@@ -111,13 +104,13 @@ export const getEcogPerformanceStatus = ({
   patientId: string;
 }): Observation | null => {
   const { interpretation, valueInteger } = { ...ecogScore };
-  if (interpretation) {
+  const { code, display, system } = { ...interpretation };
+  if (!!code && !!display && !!system) {
     return {
       resourceType: 'Observation',
-      id: nanoid(),
       status: 'final',
       subject: getSubject(patientId),
-      interpretation: [{ coding: [interpretation] }],
+      interpretation: [{ coding: [{ system, code, display }] }],
       meta: { profile: [MCODE_ECOG_PERFORMANCE_STATUS] },
       code: { coding: [{ system: LOINC_CODE_URI, code: '89247-1' }] },
       ...(valueInteger ? { valueInteger } : { dataAbsentReason }),
@@ -135,13 +128,13 @@ export const getKarnofskyPerformanceStatus = ({
   patientId: string;
 }): Observation | null => {
   const { interpretation, valueInteger } = { ...karnofskyScore };
-  if (interpretation) {
+  const { code, display, system } = { ...interpretation };
+  if (!!code && !!display && !!system) {
     return {
       resourceType: 'Observation',
-      id: nanoid(),
       status: 'final',
       subject: getSubject(patientId),
-      interpretation: [{ coding: [interpretation] }],
+      interpretation: [{ coding: [{ system, code, display }] }],
       meta: { profile: [MCODE_KARNOFSKY_PERFORMANCE_STATUS] },
       code: { coding: [{ system: LOINC_CODE_URI, code: '89243-0' }] },
       ...(valueInteger ? { valueInteger } : { dataAbsentReason }),
@@ -164,10 +157,9 @@ export const getClinicalStageGroup = ({
   patientId: string;
 }): Observation | null => {
   const { code, system, display } = { ...stage };
-  if (code && system && display) {
+  if (!!code && !!system && !!display) {
     return {
       resourceType: 'Observation',
-      id: nanoid(),
       status: 'final',
       subject: getSubject(patientId),
       meta: { profile: [MCODE_CLINICAL_STAGE_GROUP] },
@@ -187,13 +179,12 @@ export const getTumorMarker = ({
   patientId: string;
 }): Observation | null => {
   const { code, display, system, qualifier } = { ...biomarker };
-  if (code !== undefined && display !== undefined && system !== undefined && qualifier !== undefined) {
+  if (!!code && !!display && !!system && !!qualifier) {
     return {
       resourceType: 'Observation',
-      id: nanoid(),
       status: 'final',
       subject: getSubject(patientId),
-      ...(qualifier.code !== undefined && qualifier.system !== undefined
+      ...(!!qualifier.code && !!qualifier.system
         ? {
             valueCodeableConcept: {
               coding: [{ code: qualifier.code, display: qualifier.display, system: qualifier.system }],
@@ -217,10 +208,9 @@ export function getCancerRelatedMedicationStatement({
   patientId: string;
 }): MedicationStatement | null {
   const { code, display, system } = { ...medication };
-  if (code !== undefined && display !== undefined && system !== undefined) {
+  if (!!code && !!display && !!system) {
     return {
       resourceType: 'MedicationStatement',
-      id: nanoid(),
       subject: getSubject(patientId),
       status: 'completed',
       medicationCodeableConcept: { coding: [{ system, code, display }] },
@@ -241,10 +231,9 @@ export function getCancerRelatedSurgicalProcedure({
   patientId: string;
 }): Procedure | null {
   const { code, display, system } = { ...surgery };
-  if (code !== undefined && display !== undefined && system !== undefined) {
+  if (!!code && !!display && !!system) {
     return {
       resourceType: 'Procedure',
-      id: nanoid(),
       subject: getSubject(patientId),
       status: 'completed',
       code: { coding: [{ system, code, display }] },
@@ -265,10 +254,9 @@ export function getCancerRelatedRadiationProcedure({
   patientId: string;
 }): Procedure | null {
   const { code, display, system } = { ...radiation };
-  if (code !== undefined && display !== undefined && system !== undefined) {
+  if (!!code && !!display && !!system) {
     return {
       resourceType: 'Procedure',
-      id: nanoid(),
       subject: getSubject(patientId),
       status: 'completed',
       code: { coding: [{ system, code, display }] },

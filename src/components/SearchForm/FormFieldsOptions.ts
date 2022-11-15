@@ -12,17 +12,7 @@ import stages from '@/queries/mockData/stages.json';
 import surgeries from '@/queries/mockData/surgeries.json';
 import { Biomarker, CancerType, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import { Coding } from 'fhir/r4';
-import { SearchFormValuesType } from './types';
-
-export type State = Record<
-  keyof Pick<
-    SearchFormValuesType,
-    'cancerSubtype' | 'cancerType' | 'medications' | 'metastasis' | 'radiation' | 'stage' | 'surgery'
-  >,
-  CodedValueType[]
-> &
-  Record<keyof Pick<SearchFormValuesType, 'ecogScore' | 'karnofskyScore'>, Score[]> &
-  Record<keyof Pick<SearchFormValuesType, 'biomarkers'>, Biomarker[]>;
+import { State } from './types';
 
 type Restriction = Pick<CodedValueType, 'cancerType' | 'category'> &
   Record<'restriction', Partial<Record<keyof State, Pick<CodedValueType, 'code' | 'system'>[]>>>;

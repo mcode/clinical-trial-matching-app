@@ -1,4 +1,4 @@
-import { StudyDetailProps } from '@/components/Results';
+import { BundleEntry as BundleEntryWithStudy, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
 import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
@@ -8,6 +8,7 @@ import {
   getCancerRelatedSurgicalProcedure,
   getClinicalStageGroup,
   getEcogPerformanceStatus,
+  getHistologyMorphologyBehavior,
   getKarnofskyPerformanceStatus,
   getPrimaryCancerCondition,
   getSecondaryCancerCondition,
@@ -127,7 +128,7 @@ async function callWrappers(matchingServices: string[], query: Bundle, patientZi
     .forEach(searchset => {
       // Add the count to the total
       // Transform each of the studies in the bundle
-      searchset?.response?.entry.forEach((entry: BundleEntry) => {
+      searchset?.response?.entry.forEach((entry: BundleEntryWithStudy) => {
         const otherTrialId = entry.resource.identifier?.[0]?.value;
         const foundDuplicateTrial = uniqueTrialIds.has(otherTrialId);
         if (!foundDuplicateTrial) {
@@ -219,9 +220,9 @@ const getOPDEValues = (parameters: SearchParameters, patientId: string): BundleE
     medications,
     radiation: radiations,
   } = getParsedParameters(parameters);
-
+  const histologyMorphology = getHistologyMorphologyBehavior(cancerSubtype);
   const entries = [
-    getPrimaryCancerCondition({ cancerType, cancerSubtype, patientId }),
+    getPrimaryCancerCondition({ cancerType, histologyMorphology, patientId }),
     getEcogPerformanceStatus({ ecogScore, patientId }),
     getKarnofskyPerformanceStatus({ karnofskyScore, patientId }),
     getClinicalStageGroup({ stage, patientId }),

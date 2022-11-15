@@ -29,6 +29,7 @@ import {
   Score,
   User,
 } from '@/utils/fhirConversionUtils';
+import { fhirMedicationStatementBundle, fhirTumorMarkerBundle } from '@/__mocks__/bundles';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
@@ -77,6 +78,12 @@ const SearchPage = ({
     surgery,
     medications,
   };
+
+  // for debugging purposes
+  if (true) {
+    convertFhirMedicationStatements(fhirMedicationStatementBundle);
+    convertFhirTumorMarkers(fhirTumorMarkerBundle);
+  }
 
   return (
     <>
