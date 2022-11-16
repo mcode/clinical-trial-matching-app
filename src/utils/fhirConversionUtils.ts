@@ -1,15 +1,15 @@
 import { SearchFormValuesType } from '@/components/SearchForm';
-import biomarkerQualifiers from '@/queries/mockData/biomarkerQualifiers.json';
-import biomarkers from '@/queries/mockData/biomarkers.json';
-import cancerSubtypes from '@/queries/mockData/cancerSubtypes.json';
-import cancerTypes from '@/queries/mockData/cancerTypes.json';
-import ecogScores from '@/queries/mockData/ecogScores.json';
-import karnofskyScores from '@/queries/mockData/karnofskyScores.json';
-import medication from '@/queries/mockData/medications.json';
-import metastases from '@/queries/mockData/metastases.json';
-import radiation from '@/queries/mockData/radiations.json';
-import stages from '@/queries/mockData/stages.json';
-import surgery from '@/queries/mockData/surgeries.json';
+import biomarkerQualifiers from '@/assets/optimizedPatientDataElements/biomarkerQualifiers.json';
+import biomarkers from '@/assets/optimizedPatientDataElements/biomarkers.json';
+import cancerSubtypes from '@/assets/optimizedPatientDataElements/cancerSubtypes.json';
+import cancerTypes from '@/assets/optimizedPatientDataElements/cancerTypes.json';
+import ecogScores from '@/assets/optimizedPatientDataElements/ecogScores.json';
+import karnofskyScores from '@/assets/optimizedPatientDataElements/karnofskyScores.json';
+import medication from '@/assets/optimizedPatientDataElements/medications.json';
+import metastases from '@/assets/optimizedPatientDataElements/metastases.json';
+import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
+import stages from '@/assets/optimizedPatientDataElements/stages.json';
+import surgery from '@/assets/optimizedPatientDataElements/surgeries.json';
 import { Coding, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 import {

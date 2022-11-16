@@ -1,15 +1,15 @@
-import biomarkerQualifiers from '@/queries/mockData/biomarkerQualifiers.json';
-import biomarkers from '@/queries/mockData/biomarkers.json';
-import cancerSubtypes from '@/queries/mockData/cancerSubtypes.json';
-import cancerTypes from '@/queries/mockData/cancerTypes.json';
-import ecogScores from '@/queries/mockData/ecogScores.json';
-import karnofskyScores from '@/queries/mockData/karnofskyScores.json';
-import medications from '@/queries/mockData/medications.json';
-import metastases from '@/queries/mockData/metastases.json';
-import radiation from '@/queries/mockData/radiations.json';
-import restrictions from '@/queries/mockData/restrictions.json';
-import stages from '@/queries/mockData/stages.json';
-import surgeries from '@/queries/mockData/surgeries.json';
+import biomarkerQualifiers from '@/assets/optimizedPatientDataElements/biomarkerQualifiers.json';
+import biomarkers from '@/assets/optimizedPatientDataElements/biomarkers.json';
+import cancerSubtypes from '@/assets/optimizedPatientDataElements/cancerSubtypes.json';
+import cancerTypes from '@/assets/optimizedPatientDataElements/cancerTypes.json';
+import ecogScores from '@/assets/optimizedPatientDataElements/ecogScores.json';
+import karnofskyScores from '@/assets/optimizedPatientDataElements/karnofskyScores.json';
+import medications from '@/assets/optimizedPatientDataElements/medications.json';
+import metastases from '@/assets/optimizedPatientDataElements/metastases.json';
+import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
+import restrictions from '@/assets/optimizedPatientDataElements/restrictions.json';
+import stages from '@/assets/optimizedPatientDataElements/stages.json';
+import surgeries from '@/assets/optimizedPatientDataElements/surgeries.json';
 import { Biomarker, CancerType, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import { Coding } from 'fhir/r4';
 import { State } from './types';
@@ -23,10 +23,10 @@ const getCancerSpecificCodes = (cancerType: CodedValueType, codes: CodedValueTyp
 const applyRestriction = (restricted: Partial<CodedValueType>[], original: CodedValueType[]): CodedValueType[] =>
   original.filter(c => restricted.some(({ code, system }) => code === c.code && system === c.system));
 
-export const groupByCategories = (option: CodedValueType): string => option.category.join(' | ');
+export const getJoinedCategories = (option: CodedValueType): string => option.category.join(' | ');
 
 const byAscendingJoinedCategory = (first: CodedValueType, second: CodedValueType): number =>
-  groupByCategories(first).localeCompare(groupByCategories(second));
+  getJoinedCategories(first).localeCompare(getJoinedCategories(second));
 
 const byAscendingScore = (first: Score, second: Score): number => first.valueInteger - second.valueInteger;
 

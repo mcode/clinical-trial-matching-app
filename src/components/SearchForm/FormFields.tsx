@@ -2,7 +2,7 @@ import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import { Autocomplete, Checkbox, TextField } from '@mui/material';
 import { ReactElement } from 'react';
 import { ControllerRenderProps } from 'react-hook-form';
-import { groupByCategories } from './FormFieldsOptions';
+import { getJoinedCategories } from './FormFieldsOptions';
 import { SearchFormValuesType } from './types';
 
 const AutocompleteMulti = <T extends 'metastasis' | 'biomarkers' | 'radiation' | 'surgery' | 'medications'>({
@@ -25,8 +25,8 @@ const AutocompleteMulti = <T extends 'metastasis' | 'biomarkers' | 'radiation' |
       field.onChange(newValue);
     }}
     options={options}
-    getOptionLabel={getOptionLabel ?? (option => option.display)}
-    groupBy={groupByCategories}
+    getOptionLabel={getOptionLabel ?? ((option: CodedValueType) => option.display)}
+    groupBy={getJoinedCategories}
     renderInput={params => (
       <TextField
         variant="filled"
@@ -98,7 +98,7 @@ export const CancerTypeAutocomplete = ({
         retrieveCancer(newValue);
       }}
       options={cancerTypes}
-      getOptionLabel={option => option.display}
+      getOptionLabel={(option: CodedValueType) => option.display}
       renderInput={params => (
         <TextField
           variant="filled"
@@ -110,7 +110,7 @@ export const CancerTypeAutocomplete = ({
         />
       )}
       isOptionEqualToValue={areCodedValueTypesEqual}
-      groupBy={groupByCategories}
+      groupBy={getJoinedCategories}
     />
   );
 };
@@ -130,7 +130,7 @@ export const CancerSubtypeAutocomplete = ({
       data-testid="cancerSubtype"
       onChange={(_, value) => field.onChange(value)}
       options={cancerSubtypes}
-      getOptionLabel={option => option.display}
+      getOptionLabel={(option: CodedValueType) => option.display}
       renderInput={params => (
         <TextField
           variant="filled"
@@ -142,7 +142,7 @@ export const CancerSubtypeAutocomplete = ({
         />
       )}
       isOptionEqualToValue={areCodedValueTypesEqual}
-      groupBy={groupByCategories}
+      groupBy={getJoinedCategories}
     />
   );
 };
@@ -162,7 +162,7 @@ export const CancerStageAutocomplete = ({
       data-testid="stage"
       onChange={(_, value) => field.onChange(value)}
       options={stages}
-      getOptionLabel={option => option.display}
+      getOptionLabel={(option: CodedValueType) => option.display}
       renderInput={params => (
         <TextField
           variant="filled"
@@ -174,7 +174,7 @@ export const CancerStageAutocomplete = ({
         />
       )}
       isOptionEqualToValue={areCodedValueTypesEqual}
-      groupBy={groupByCategories}
+      groupBy={getJoinedCategories}
     />
   );
 };
@@ -191,7 +191,7 @@ export const ECOGScoreAutocomplete = ({
     data-testid="ecogScore"
     onChange={(_, value) => field.onChange(value)}
     options={ecogScores}
-    getOptionLabel={option => option.valueInteger.toString()}
+    getOptionLabel={(option: Score) => option.valueInteger.toString()}
     renderInput={params => <TextField variant="filled" label="ECOG Score" placeholder="" {...params} />}
     isOptionEqualToValue={areScoresEqual}
   />
@@ -209,7 +209,7 @@ export const KarnofskyScoreAutocomplete = ({
     data-testid="karnofskyScore"
     onChange={(_, value) => field.onChange(value)}
     options={karnofskyScores}
-    getOptionLabel={option => option.valueInteger.toString()}
+    getOptionLabel={(option: Score) => option.valueInteger.toString()}
     renderInput={params => <TextField variant="filled" label="Karnofsky Score" placeholder="" {...params} />}
     isOptionEqualToValue={areScoresEqual}
   />

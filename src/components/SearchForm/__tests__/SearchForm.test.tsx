@@ -66,4 +66,7 @@ describe('<SearchForm />', () => {
     expect(screen.getByTestId('cancerType')).toContainHTML(CancerType.BREAST);
     expect(screen.getByTestId('cancerType')).toContainHTML('Primary malignant neoplasm of breast');
   });
+
+  // TODO: This component may require additional testing given how the state changes
+  // based on the selected cancer type.
 });
