@@ -1,7 +1,7 @@
 import { StudyDetailProps } from '@/components/Results/types';
 import { searchParameters } from '@/pages/api/_tests_/clinical-trial-search.test';
 import mockSearchResults from '@/__mocks__/resultDetails.json';
-import { Observation } from 'types/fhir-types';
+import type { MedicationStatement, Observation } from 'fhir/r4';
 import * as fhirConstants from '../fhirConstants';
 import { CodedValueType } from '../fhirConversionUtils';
 import { convertCodedValueToMedicationStatement, convertCodedValueToObervation } from '../fhirFilter';
@@ -505,15 +505,12 @@ describe('getFilterOptions', () => {
   });
 });
 
-const expectedMedicalStatmentResource = {
+const expectedMedicationStatementResource: MedicationStatement = {
   resourceType: 'MedicationStatement',
   id: 'mcode-cancer-related-medication-statement',
   subject: {
-    id: '0',
-    gender: 'other',
-    name: 'search_name',
-    age: '0',
-    zipcode: '00000',
+    reference: 'urn:uuid:1',
+    type: 'Patient',
   },
   status: 'completed',
   medicationCodeableConcept: {
@@ -532,21 +529,20 @@ const expectedMedicalStatmentResource = {
 const expectedObservationResource: Observation = {
   resourceType: 'Observation',
   id: 'mcode-tumor-marker',
-  status: 'completed',
+  status: 'final',
   subject: {
-    age: '0',
-    gender: 'other',
-    id: '0',
-    name: 'search_name',
-    zipcode: '00000',
+    reference: 'urn:uuid:1',
+    type: 'Patient',
   },
-  coding: [
-    {
-      system: 'http://snomed.info/sct',
-      code: '85310-1',
-      display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
-    },
-  ],
+  code: {
+    coding: [
+      {
+        system: 'http://snomed.info/sct',
+        code: '85310-1',
+        display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
+      },
+    ],
+  },
   meta: {
     profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker'],
   },
@@ -562,6 +558,7 @@ describe('convertCodedValueToObervation', () => {
     id,
     profile_value,
     codingSystem,
+    subject: { reference: 'urn:uuid:1', type: 'Patient' },
   });
 
   it('Observation Resource Returned', () => {
@@ -578,8 +575,9 @@ describe('convertCodedValueToObervation', () => {
     id,
     profile_value,
     codingSystem,
+    subject: { reference: 'urn:uuid:1', type: 'Patient' },
   });
   it('Medication Statement Returned', () => {
-    expect(JSON.stringify(medicalStatementResource)).toEqual(JSON.stringify(expectedMedicalStatmentResource));
+    expect(JSON.stringify(medicalStatementResource)).toEqual(JSON.stringify(expectedMedicationStatementResource));
   });
 });
