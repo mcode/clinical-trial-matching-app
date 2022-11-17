@@ -2,8 +2,16 @@
  * This module is used to filter FHIR records.
  */
 
-import { Condition, Extension, MedicationStatement, Observation, Procedure, Reference } from 'fhir/r4';
-import { BundleEntry, Resource } from 'types/fhir-types';
+import {
+  BundleEntry,
+  Condition,
+  Extension,
+  FhirResource,
+  MedicationStatement,
+  Observation,
+  Procedure,
+  Reference,
+} from 'fhir/r4';
 import {
   clinicalTest,
   dataAbsentReason,
@@ -24,7 +32,7 @@ import {
 } from './fhirConstants';
 import { Biomarker, CodedValueType as CodedValueType, Score } from './fhirConversionUtils';
 
-export const resourceToEntry = (resource: Resource): BundleEntry => ({
+export const resourceToEntry = (resource: FhirResource): BundleEntry => ({
   resource,
 });
 
@@ -144,8 +152,8 @@ export const getKarnofskyPerformanceStatus = ({
   return null;
 };
 
-/* 
-  Permanent mCODE IG links: 
+/*
+  Permanent mCODE IG links:
   http://hl7.org/fhir/us/mcode/STU1/StructureDefinition-mcode-tnm-clinical-stage-group.html
   http://hl7.org/fhir/us/mcode/STU1/StructureDefinition-mcode-tnm-pathological-stage-group.html
 */

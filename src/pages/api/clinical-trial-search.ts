@@ -16,10 +16,10 @@ import {
   resourceToEntry,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
+import type { Bundle, BundleEntry, Parameters, Patient, Reference } from 'fhir/r4';
 import { nanoid } from 'nanoid';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
-import { Bundle, BundleEntry, Patient, Resource } from 'types/fhir-types';
 import { SearchParameters } from 'types/search-types';
 
 const {
@@ -58,7 +58,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
 
   !sendLocationData && console.log(`Using default zip code ${defaultZipCode} and travel distance ${travelDistance}`);
 
-  const trialParams: Resource = {
+  const trialParams: Parameters = {
     resourceType: 'Parameters',
     id: '0',
     parameter: [
@@ -86,7 +86,13 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
   const patientBundle: Bundle = {
     resourceType: 'Bundle',
     type: 'collection',
-    entry: [{ resource: trialParams }, { resource: patient }],
+    entry: [{ resource: trialParams }, { resource: patient, fullUrl: 'urn:uuid:1' }],
+  };
+
+  // Create a reference for the patient, which will be used to refer to it later
+  const patientReference: Reference = {
+    reference: 'urn:uuid:1',
+    type: 'Patient',
   };
 
   const entries = getOPDEValues(searchParams, patient.id);
