@@ -15,8 +15,8 @@ const renderTag =
         key={index}
         label={tag}
         sx={{
-          backgroundColor: isExpanded ? 'common.white' : 'common.grayLight',
-          color: isExpanded ? 'common.gray' : 'common.grayLighter',
+          backgroundColor: isExpanded ? 'common.grayLight' : 'common.white',
+          color: isExpanded ? 'common.white' : 'common.grayLight',
           fontWeight: '600',
           marginRight: 1,
           marginTop: 0.5,
@@ -36,7 +36,8 @@ const StudyTags = ({ isExpanded, tags, scrollableParent }: StudyTagsProps): Reac
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const handleClick = (event: MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+    // Set anchor of the popper to be in the middle of the accordian
+    setAnchorEl(event.currentTarget.parentElement.parentElement.parentElement);
     setOpen(previousOpen => !previousOpen);
     // We don't want to expand/collapse the accordion when triggering the popper.
     event.stopPropagation();
