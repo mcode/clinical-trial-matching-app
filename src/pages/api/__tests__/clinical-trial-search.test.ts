@@ -5,11 +5,13 @@ const cancerType = {
   entryType: 'Primary malignant neoplasm of lung (disorder)',
   display: 'Primary malignant neoplasm of lung (disorder)',
   code: '254632001',
+  system: 'http://snomed.info/sct',
 };
 const cancerSubType = {
   entryType: 'Adenocarcinoma of lung (disorder)',
   display: 'Large cell carcinoma of lung, TNM stage 2 (disorder)',
   code: '423050000',
+  system: 'http://snomed.info/sct',
 };
 
 export const searchParameters: SearchParameters = {
@@ -21,25 +23,58 @@ export const searchParameters: SearchParameters = {
   cancerType: JSON.stringify(cancerType),
   cancerSubtype: JSON.stringify(cancerSubType),
   metastasis: '["metastasis-1"]',
-  ecogScore: '0',
-  karnofskyScore: '80',
+  ecogScore: JSON.stringify({
+    interpretation: {
+      code: 'LA9622-7',
+      display: 'Fully active, able to carry on all pre-disease performance without restriction',
+      system: 'http://loinc.org',
+    },
+    valueInteger: 0,
+  }),
+  karnofskyScore: JSON.stringify({
+    interpretation: {
+      display: 'Normal activity with effort; some signs or symptoms of disease',
+      code: 'LA29177-5',
+      system: 'http://loinc.org',
+    },
+    valueInteger: 80,
+  }),
   biomarkers: JSON.stringify([
     {
       entryType: 'lung',
       display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
       code: '85310-1',
+      system: 'http://snomed.info/sct',
+      qualifier: { system: 'http://snomed.info/sct', code: '10828004', display: 'Positive (qualifier value)' },
     },
   ]),
-  stage: JSON.stringify({ entryType: 'lung', display: 'Stage 1', code: '3430305' }),
+  stage: JSON.stringify({
+    code: '258215001',
+    display: 'Stage 1 (qualifier value)',
+    system: 'http://snomed.info/sct',
+  }),
   medications: JSON.stringify([
-    { entryType: 'lung', display: '10 ML ramucirumab 10 MG/ML Injection', code: '1657775' },
+    {
+      entryType: 'lung',
+      display: '10 ML ramucirumab 10 MG/ML Injection',
+      code: '1657775',
+      system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+    },
   ]),
-  radiation: JSON.stringify([{ entryType: 'lung', display: '2.4 ML Imfinzi 50 MG/ML Injection', code: '343330305' }]),
+  radiation: JSON.stringify([
+    {
+      entryType: 'lung',
+      display: '2.4 ML Imfinzi 50 MG/ML Injection',
+      code: '343330305',
+      system: 'http://snomed.info/sct',
+    },
+  ]),
   surgery: JSON.stringify([
     {
       entryType: 'lung',
       display: 'Excision of middle lobe of right lung (procedure)',
       code: '1919512',
+      system: 'http://snomed.info/sct',
     },
   ]),
 };
@@ -67,13 +102,14 @@ const expectedBundle: Bundle = {
     {
       resource: {
         resourceType: 'Patient',
-        id: 'search_patient',
+        id: 'test_id',
         gender: 'female',
         // Age is 28, test sets time to 2022, 2022-28 = 1994
         birthDate: '1994',
       },
-      fullUrl: 'urn:uuid:1',
+      fullUrl: 'urn:uuid:test_id',
     },
+    // Result from getPrimaryCancerCondition
     {
       resource: {
         resourceType: 'Condition',
@@ -81,7 +117,7 @@ const expectedBundle: Bundle = {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition'],
         },
         subject: {
-          reference: 'urn:uuid:1',
+          reference: 'urn:uuid:test_id',
           type: 'Patient',
         },
         code: {
@@ -93,6 +129,7 @@ const expectedBundle: Bundle = {
             },
           ],
         },
+        // Result from getHistologyMorphologyBehavior
         extension: [
           {
             url: 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-histology-morphology-behavior',
@@ -101,119 +138,217 @@ const expectedBundle: Bundle = {
                 {
                   code: '423050000',
                   display: 'Large cell carcinoma of lung, TNM stage 2 (disorder)',
+                  system: 'http://snomed.info/sct',
                 },
               ],
-              text: 'Large cell carcinoma of lung, TNM stage 2 (disorder)',
+              //text: 'Large cell carcinoma of lung, TNM stage 2 (disorder)',
             },
+          },
+        ],
+        category: [
+          {
+            coding: [
+              {
+                system: 'http://snomed.info/sct',
+                code: '64572001',
+              },
+            ],
           },
         ],
       },
     },
+    // Result from getEcogPerformanceStatus
     {
       resource: {
         resourceType: 'Observation',
-        id: 'mcode-ecog-performance-status',
-        meta: {
-          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-ecog-performance-status'],
-        },
         status: 'final',
         subject: {
-          reference: 'urn:uuid:1',
+          reference: 'urn:uuid:test_id',
           type: 'Patient',
+        },
+        interpretation: [
+          {
+            coding: [
+              {
+                system: 'http://loinc.org',
+                code: 'LA9622-7',
+                display: 'Fully active, able to carry on all pre-disease performance without restriction',
+              },
+            ],
+          },
+        ],
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-ecog-performance-status'],
         },
         code: {
           coding: [
             {
-              system: '',
+              system: 'http://loinc.org',
               code: '89247-1',
             },
           ],
         },
-        valueString: '0',
+        category: [
+          {
+            coding: [
+              {
+                code: 'clinical-test',
+                system: 'http://hl7.org/fhir/us/core/CodeSystem/us-core-observation-category',
+              },
+            ],
+          },
+          {
+            coding: [
+              {
+                code: 'survey',
+                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+              },
+            ],
+          },
+        ],
+        valueInteger: 0,
       },
     },
+    // Result from getKarnofskyPerformanceStatus
     {
       resource: {
         resourceType: 'Observation',
-        id: 'mcode-karnofsky-performance-status',
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
+        },
+        interpretation: [
+          {
+            coding: [
+              {
+                system: 'http://loinc.org',
+                code: 'LA29177-5',
+                display: 'Normal activity with effort; some signs or symptoms of disease',
+              },
+            ],
+          },
+        ],
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-karnofsky-performance-status'],
         },
-        status: 'final',
-        subject: {
-          reference: 'urn:uuid:1',
-          type: 'Patient',
-        },
         code: {
           coding: [
             {
-              system: 'https://loinc.org',
-              code: 'LL4986-7',
+              system: 'http://loinc.org',
+              code: '89243-0',
             },
           ],
         },
-        valueString: '80',
+        category: [
+          {
+            coding: [
+              {
+                code: 'clinical-test',
+                system: 'http://hl7.org/fhir/us/core/CodeSystem/us-core-observation-category',
+              },
+            ],
+          },
+          {
+            coding: [
+              {
+                code: 'survey',
+                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+              },
+            ],
+          },
+        ],
+        valueInteger: 80,
       },
     },
+    // Result from getClinicalStageGroup
     {
       resource: {
         resourceType: 'Observation',
-        id: 'tnm-clinical-distant-metastases-category-cM0',
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
+        },
         meta: {
-          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/tnm-clinical-distant-metastases-category-cM0'],
-        },
-        status: 'final',
-        subject: {
-          reference: 'urn:uuid:1',
-          type: 'Patient',
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-clinical-stage-group'],
         },
         code: {
           coding: [
             {
-              system: 'https://loinc.org',
-              code: 'LL4986-7',
+              code: '21908-9',
+              system: 'http://snomed.info/sct',
             },
           ],
         },
-        valueString: 'metastasis-1',
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '258215001',
+              system: 'http://snomed.info/sct',
+              display: 'Stage 1 (qualifier value)',
+            },
+          ],
+        },
       },
     },
+    // Result from getTumorMarker (biomarker)
     {
       resource: {
         resourceType: 'Observation',
-        id: 'mcode-tumor-marker',
         status: 'final',
         subject: {
-          reference: 'urn:uuid:1',
+          reference: 'urn:uuid:test_id',
           type: 'Patient',
         },
-        code: {
+        valueCodeableConcept: {
           coding: [
             {
-              system: 'https://snomed.info/sct',
-              code: '85310-1',
-              display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
+              code: '10828004',
+              display: 'Positive (qualifier value)',
+              system: 'http://snomed.info/sct',
             },
           ],
         },
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker'],
         },
+        code: {
+          coding: [
+            {
+              code: '85310-1',
+              display: 'Estrogen receptor fluorescence intensity [Type] in Breast cancer specimen by Immune stain',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+        category: [
+          {
+            coding: [
+              {
+                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+                code: 'laboratory',
+              },
+            ],
+          },
+        ],
       },
     },
+    // Result from getCancerRelatedMedicationStatement
     {
       resource: {
         resourceType: 'MedicationStatement',
-        id: 'mcode-cancer-related-medication-statement',
         subject: {
-          reference: 'urn:uuid:1',
+          reference: 'urn:uuid:test_id',
           type: 'Patient',
         },
         status: 'completed',
+        // This time comes from the mocked time below
+        effectiveDateTime: '2022-01-01T12:00:00.000Z',
         medicationCodeableConcept: {
           coding: [
             {
-              system: 'https://www.nlm.nih.gov/research/umls/rxnorm',
+              system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
               code: '1657775',
               display: '10 ML ramucirumab 10 MG/ML Injection',
             },
@@ -224,42 +359,20 @@ const expectedBundle: Bundle = {
         },
       },
     },
+    // TODO: metastases (result from getSecondaryCancerCondition)
+    // Result from getCancerRelatedRadiationProcedure
     {
       resource: {
-        resourceType: 'Observation',
-        id: 'mcode-cancer-related-surgical-procedure',
-        status: 'final',
+        resourceType: 'Procedure',
         subject: {
-          reference: 'urn:uuid:1',
+          reference: 'urn:uuid:test_id',
           type: 'Patient',
         },
+        status: 'completed',
         code: {
           coding: [
             {
-              system: 'https://snomed.info/sct',
-              code: '1919512',
-              display: 'Excision of middle lobe of right lung (procedure)',
-            },
-          ],
-        },
-        meta: {
-          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-surgical-procedure'],
-        },
-      },
-    },
-    {
-      resource: {
-        resourceType: 'Observation',
-        id: 'mcode-cancer-related-radiation-procedure',
-        status: 'final',
-        subject: {
-          reference: 'urn:uuid:1',
-          type: 'Patient',
-        },
-        code: {
-          coding: [
-            {
-              system: 'https://snomed.info/sct',
+              system: 'http://snomed.info/sct',
               code: '343330305',
               display: '2.4 ML Imfinzi 50 MG/ML Injection',
             },
@@ -268,6 +381,31 @@ const expectedBundle: Bundle = {
         meta: {
           profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure'],
         },
+        performedDateTime: '2022-01-01T12:00:00.000Z',
+      },
+    },
+    // Result from getCancerRelatedSurgicalProcedure
+    {
+      resource: {
+        resourceType: 'Procedure',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
+        },
+        status: 'completed',
+        code: {
+          coding: [
+            {
+              system: 'http://snomed.info/sct',
+              code: '1919512',
+              display: 'Excision of middle lobe of right lung (procedure)',
+            },
+          ],
+        },
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-surgical-procedure'],
+        },
+        performedDateTime: '2022-01-01T12:00:00.000Z',
       },
     },
   ],
@@ -276,7 +414,7 @@ const expectedBundle: Bundle = {
 describe('buildBundle', () => {
   // Need to mock the current time to ensure the age is generated properly
   jest.useFakeTimers().setSystemTime(Date.UTC(2022, 0, 1, 12, 0, 0));
-  const patientBundle = buildBundle(searchParameters);
+  const patientBundle = buildBundle(searchParameters, 'test_id');
   it('builds the expected bundle', () => {
     expect(patientBundle).toEqual(expectedBundle);
   });

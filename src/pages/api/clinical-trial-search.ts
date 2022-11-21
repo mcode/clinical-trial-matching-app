@@ -16,7 +16,7 @@ import {
   resourceToEntry,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
-import type { Bundle, BundleEntry, Parameters, Patient, Reference } from 'fhir/r4';
+import type { Bundle, BundleEntry, Parameters, Patient } from 'fhir/r4';
 import { nanoid } from 'nanoid';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
@@ -49,10 +49,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
 /**
  * Builds bundle with search parameter and entries
  *
- * @param searchParams
+ * @param searchParams search parameters
+ * @param id optional ID to override the generated ID (mainly for tests)
  * @returns
  */
-export function buildBundle(searchParams: SearchParameters): Bundle {
+export function buildBundle(searchParams: SearchParameters, id?: string): Bundle {
   const zipCode = sendLocationData ? searchParams['zipcode'] : defaultZipCode;
   const travelDistance = sendLocationData ? searchParams['travelDistance'] : undefined;
 
@@ -67,8 +68,12 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
     ],
   };
 
+  if (!id) {
+    id = nanoid();
+  }
+
   // Create our stub patient
-  const patient: Patient = { resourceType: 'Patient', id: nanoid() };
+  const patient: Patient = { resourceType: 'Patient', id: id };
 
   // Add whatever we can
   if (isAdministrativeGender(searchParams.gender)) {
@@ -86,13 +91,7 @@ export function buildBundle(searchParams: SearchParameters): Bundle {
   const patientBundle: Bundle = {
     resourceType: 'Bundle',
     type: 'collection',
-    entry: [{ resource: trialParams }, { resource: patient, fullUrl: 'urn:uuid:1' }],
-  };
-
-  // Create a reference for the patient, which will be used to refer to it later
-  const patientReference: Reference = {
-    reference: 'urn:uuid:1',
-    type: 'Patient',
+    entry: [{ resource: trialParams }, { resource: patient, fullUrl: 'urn:uuid:' + id }],
   };
 
   const entries = getOPDEValues(searchParams, patient.id);

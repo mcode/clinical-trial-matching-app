@@ -139,7 +139,9 @@ const partiallyEmptyScore: Omit<Score, 'entryType'> = {
 
 describe('resourceToEntry', () => {
   it('produces a BundleEntry from a Resource', () => {
-    expect(resourceToEntry({})).toEqual({ resource: {} });
+    expect(resourceToEntry({ resourceType: 'Observation', status: 'final', code: {} })).toEqual({
+      resource: { resourceType: 'Observation', status: 'final', code: {} },
+    });
   });
 });
 

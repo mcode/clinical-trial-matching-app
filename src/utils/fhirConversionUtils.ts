@@ -1,4 +1,3 @@
-import { SearchFormValuesType } from '@/components/SearchForm';
 import biomarkerQualifiers from '@/assets/optimizedPatientDataElements/biomarkerQualifiers.json';
 import biomarkers from '@/assets/optimizedPatientDataElements/biomarkers.json';
 import cancerSubtypes from '@/assets/optimizedPatientDataElements/cancerSubtypes.json';
@@ -10,6 +9,7 @@ import metastases from '@/assets/optimizedPatientDataElements/metastases.json';
 import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
 import stages from '@/assets/optimizedPatientDataElements/stages.json';
 import surgery from '@/assets/optimizedPatientDataElements/surgeries.json';
+import { SearchFormValuesType } from '@/components/SearchForm';
 import { Coding, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 import {

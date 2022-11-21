@@ -113,6 +113,7 @@ export const getEcogPerformanceStatus = ({
 }): Observation | null => {
   const { interpretation, valueInteger } = { ...ecogScore };
   const { code, display, system } = { ...interpretation };
+  process.stdout.write(`valueInteger: ${typeof valueInteger} ${valueInteger}\n`);
   if (!!code && !!display && !!system) {
     return {
       resourceType: 'Observation',
@@ -121,7 +122,7 @@ export const getEcogPerformanceStatus = ({
       interpretation: [{ coding: [{ system, code, display }] }],
       meta: { profile: [MCODE_ECOG_PERFORMANCE_STATUS] },
       code: { coding: [{ system: LOINC_CODE_URI, code: '89247-1' }] },
-      ...(valueInteger ? { valueInteger } : { dataAbsentReason }),
+      ...(typeof valueInteger === 'number' ? { valueInteger } : { dataAbsentReason }),
       category: [clinicalTest, requiredCategory],
     };
   }
@@ -145,7 +146,7 @@ export const getKarnofskyPerformanceStatus = ({
       interpretation: [{ coding: [{ system, code, display }] }],
       meta: { profile: [MCODE_KARNOFSKY_PERFORMANCE_STATUS] },
       code: { coding: [{ system: LOINC_CODE_URI, code: '89243-0' }] },
-      ...(valueInteger ? { valueInteger } : { dataAbsentReason }),
+      ...(typeof valueInteger === 'number' ? { valueInteger } : { dataAbsentReason }),
       category: [clinicalTest, requiredCategory],
     };
   }
