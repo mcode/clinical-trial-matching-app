@@ -113,7 +113,6 @@ export const getEcogPerformanceStatus = ({
 }): Observation | null => {
   const { interpretation, valueInteger } = { ...ecogScore };
   const { code, display, system } = { ...interpretation };
-  process.stdout.write(`valueInteger: ${typeof valueInteger} ${valueInteger}\n`);
   if (!!code && !!display && !!system) {
     return {
       resourceType: 'Observation',
