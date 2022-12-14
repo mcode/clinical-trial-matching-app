@@ -1,16 +1,19 @@
+import { SNOMED_CODE_URI } from '@/utils/fhirConstants';
+import { CancerType } from '@/utils/fhirConversionUtils';
 import { render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import SearchForm, { SearchFormProps } from '../SearchForm';
+import { SearchFormValuesType } from '../types';
 
-const defaultValues = {
+const defaultValues: Partial<SearchFormValuesType> = {
   age: '28',
   cancerType: {
-    category: '',
-    cancerType: 'breast',
-    entryType: 'Breast',
-    display: 'Breast',
+    category: ['Breast'],
+    cancerType: [CancerType.BREAST],
+    entryType: 'cancerType',
+    display: 'Primary malignant neoplasm of breast',
     code: '372137005',
-    codingSystem: 'SNOMED',
+    system: SNOMED_CODE_URI,
   },
   travelDistance: '100',
   zipcode: '11111',
@@ -60,6 +63,10 @@ describe('<SearchForm />', () => {
     expect(screen.getByTestId('zipcode')).toContainHTML('11111');
     expect(screen.getByTestId('travelDistance')).toContainHTML('100');
     expect(screen.getByTestId('age')).toContainHTML('28');
-    expect(screen.getByTestId('cancerType')).toContainHTML('Breast');
+    expect(screen.getByTestId('cancerType')).toContainHTML(CancerType.BREAST);
+    expect(screen.getByTestId('cancerType')).toContainHTML('Primary malignant neoplasm of breast');
   });
+
+  // TODO: This component may require additional testing given how the state changes
+  // based on the selected cancer type.
 });

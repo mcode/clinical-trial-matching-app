@@ -1,0 +1,56 @@
+[
+  {
+    "interpretation": {
+      "code": "LA9622-7",
+      "display": "Fully active, able to carry on all pre-disease performance without restriction",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 0,
+    "entryType": "ecogScore"
+  },
+  {
+    "interpretation": {
+      "code": "LA9623-5",
+      "display": "Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 1,
+    "entryType": "ecogScore"
+  },
+  {
+    "interpretation": {
+      "code": "LA9624-3",
+      "display": "Ambulatory and capable of all selfcare but unable to carry out any work activities. Up and about more than 50% of waking hours",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 2,
+    "entryType": "ecogScore"
+  },
+  {
+    "interpretation": {
+      "code": "LA9625-0",
+      "display": "Capable of only limited selfcare, confined to bed or chair more than 50% of waking hours",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 3,
+    "entryType": "ecogScore"
+  },
+  {
+    "interpretation": {
+      "code": "LA9626-8",
+      "display": "Completely disabled. Cannot carry on any selfcare. Totally confined to bed or chair",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 4,
+    "entryType": "ecogScore"
+  },
+  {
+    "interpretation": {
+      "code": "LA9627-6",
+      "display": "Dead",
+      "system": "http://loinc.org"
+    },
+    "valueInteger": 5,
+    "entryType": "ecogScore"
+  }
+]
