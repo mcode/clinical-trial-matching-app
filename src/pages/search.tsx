@@ -1,8 +1,19 @@
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
-import { MCODE_STRUCTURE_DEFINITION } from '@/utils/fhirConstants';
 import {
+  MCODE_CANCER_RELATED_MEDICATION_STATEMENT,
+  MCODE_CANCER_RELATED_RADIATION_PROCEDURE,
+  MCODE_CANCER_RELATED_SURGICAL_PROCEDURE,
+  MCODE_ECOG_PERFORMANCE_STATUS,
+  MCODE_KARNOFSKY_PERFORMANCE_STATUS,
+  MCODE_PRIMARY_CANCER_CONDITION,
+  MCODE_SECONDARY_CANCER_CONDITION,
+  MCODE_TUMOR_MARKER,
+} from '@/utils/fhirConstants';
+import {
+  Biomarker,
+  CodedValueType,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
   convertFhirMedicationStatements,
@@ -15,8 +26,10 @@ import {
   convertFhirUser,
   Patient,
   PrimaryCancerCondition,
+  Score,
   User,
 } from '@/utils/fhirConversionUtils';
+import { fhirMedicationStatementBundle, fhirTumorMarkerBundle } from '@/__mocks__/bundles';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
@@ -28,13 +41,13 @@ type SearchPageProps = {
   patient: Patient;
   user: User;
   primaryCancerCondition: PrimaryCancerCondition;
-  metastasis: string[];
-  ecogScore: string;
-  karnofskyScore: string;
-  biomarkers: string[];
-  radiation: string[];
-  surgery: string[];
-  medications: string[];
+  metastasis: CodedValueType[];
+  ecogScore: Score;
+  karnofskyScore: Score;
+  biomarkers: Biomarker[];
+  radiation: CodedValueType[];
+  surgery: CodedValueType[];
+  medications: CodedValueType[];
 };
 
 const SearchPage = ({
@@ -65,6 +78,12 @@ const SearchPage = ({
     surgery,
     medications,
   };
+
+  // for debugging purposes
+  if (true) {
+    convertFhirMedicationStatements(fhirMedicationStatementBundle);
+    convertFhirTumorMarkers(fhirTumorMarkerBundle);
+  }
 
   return (
     <>
@@ -111,14 +130,14 @@ export const getServerSideProps: GetServerSideProps = async context => {
   ] = await Promise.all([
     fhirClient.patient.read(),
     fhirClient.user.read(),
-    getCondition('mcode-primary-cancer-condition'),
-    getCondition('mcode-secondary-cancer-condition'),
-    getObservation('mcode-ecog-performance-status'),
-    getObservation('mcode-karnofsky-performance-status'),
-    getObservation('mcode-tumor-marker'),
-    getProcedure('mcode-cancer-related-radiation-procedure'),
-    getProcedure('mcode-cancer-related-surgical-procedure'),
-    getMedicationStatement('mcode-cancer-related-medication-statement'),
+    getCondition(MCODE_PRIMARY_CANCER_CONDITION),
+    getCondition(MCODE_SECONDARY_CANCER_CONDITION),
+    getObservation(MCODE_ECOG_PERFORMANCE_STATUS),
+    getObservation(MCODE_KARNOFSKY_PERFORMANCE_STATUS),
+    getObservation(MCODE_TUMOR_MARKER),
+    getProcedure(MCODE_CANCER_RELATED_RADIATION_PROCEDURE),
+    getProcedure(MCODE_CANCER_RELATED_SURGICAL_PROCEDURE),
+    getMedicationStatement(MCODE_CANCER_RELATED_MEDICATION_STATEMENT),
   ]);
 
   return {
@@ -142,6 +161,6 @@ const bundleMaker = (fhirClient: Client) => {
   return (resourceType: string) =>
     (url: string): Promise<fhirclient.FHIR.Bundle> =>
       fhirClient.request<fhirclient.FHIR.Bundle>(
-        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(MCODE_STRUCTURE_DEFINITION + url)}`
+        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(url)}`
       );
 };

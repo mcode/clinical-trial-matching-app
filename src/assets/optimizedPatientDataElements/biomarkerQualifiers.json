@@ -1,0 +1,12 @@
+[
+  {
+    "code": "10828004",
+    "display": "Positive (qualifier value)",
+    "system": "http://snomed.info/sct"
+  },
+  {
+    "code": "260385009",
+    "display": "Negative (qualifier value)",
+    "system": "http://snomed.info/sct"
+  }
+]

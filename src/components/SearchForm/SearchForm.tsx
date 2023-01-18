@@ -1,14 +1,16 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
+import { CodedValueType } from '@/utils/fhirConversionUtils';
 import { Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import type { ReactElement } from 'react';
+import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SearchParameters } from 'types/search-types';
 import {
   AgeTextField,
+  areCodedValueTypesEqual,
   BiomarkersAutocomplete,
   CancerStageAutocomplete,
   CancerSubtypeAutocomplete,
@@ -22,8 +24,9 @@ import {
   TravelDistanceTextField,
   ZipcodeTextField,
 } from './FormFields';
+import { getNewState, uninitializedState } from './FormFieldsOptions';
 import MatchingServices from './MatchingServices';
-import { SearchFormValuesType } from './types';
+import { SearchFormValuesType, State } from './types';
 
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
@@ -36,16 +39,26 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   // Boolean check is because JSON.stringify(null) === "null" and should be omitted
   cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
+  metastasis: data.metastasis ? JSON.stringify(data.metastasis) : undefined,
+  biomarkers: data.biomarkers ? JSON.stringify(data.biomarkers) : undefined,
+  stage: data.stage ? JSON.stringify(data.stage) : undefined,
+  medications: data.medications ? JSON.stringify(data.medications) : undefined,
+  surgery: data.surgery ? JSON.stringify(data.surgery) : undefined,
+  radiation: data.radiation ? JSON.stringify(data.radiation) : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
+  karnofskyScore: data.karnofskyScore ? JSON.stringify(data.karnofskyScore) : undefined,
+  ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });
 
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const { handleSubmit, control } = useForm<SearchFormValuesType>({ defaultValues });
-  const onSubmit = (data: SearchFormValuesType) =>
-    router.push({
+  const { handleSubmit, control, getValues } = useForm<SearchFormValuesType>({ defaultValues });
+  const [state, setState] = useState<State>(getNewState(defaultValues.cancerType));
+
+  const onSubmit = (data: SearchFormValuesType) => {
+    return router.push({
       pathname: '/results',
       query: {
         ...formDataToSearchQuery(data),
@@ -54,6 +67,30 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         pageSize: DEFAULT_PAGE_SIZE,
       },
     });
+  };
+
+  const retrieveCancer = (cancerType: CodedValueType): void => {
+    if (!!cancerType?.entryType) {
+      setState(getNewState(cancerType));
+    } else {
+      setState({ ...uninitializedState, cancerType: state.cancerType });
+    }
+  };
+
+  const validateCancerSubtype = (): boolean => {
+    return (
+      !getValues('cancerSubtype') ||
+      (!!getValues('cancerSubtype') &&
+        state.cancerSubtype.some(subtype => areCodedValueTypesEqual(subtype, getValues('cancerSubtype'))))
+    );
+  };
+
+  const validateStage = (): boolean => {
+    return (
+      !getValues('stage') ||
+      (!!getValues('stage') && state.stage.some(subtype => areCodedValueTypesEqual(subtype, getValues('stage'))))
+    );
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -111,28 +148,50 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="cancerType"
-              defaultValue={defaultValues.cancerType}
+              defaultValue={null}
               control={control}
               rules={{ required: true }}
-              render={CancerTypeAutocomplete}
+              render={({ field }) => (
+                <CancerTypeAutocomplete field={field} cancerTypes={state.cancerType} retrieveCancer={retrieveCancer} />
+              )}
             />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
               name="cancerSubtype"
-              defaultValue={defaultValues.cancerSubtype}
+              defaultValue={null}
               control={control}
-              render={CancerSubtypeAutocomplete}
+              rules={{ validate: validateCancerSubtype }}
+              render={({ field }) => (
+                <CancerSubtypeAutocomplete
+                  field={field}
+                  cancerSubtypes={state.cancerSubtype}
+                  subtypeIsValid={validateCancerSubtype}
+                />
+              )}
             />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
-            <Controller name="stage" defaultValue={null} control={control} render={CancerStageAutocomplete} />
+            <Controller
+              name="stage"
+              defaultValue={null}
+              control={control}
+              rules={{ validate: validateStage }}
+              render={({ field }) => (
+                <CancerStageAutocomplete field={field} stages={state.stage} stageIsValid={validateStage} />
+              )}
+            />
           </Grid>
 
           <Grid item xs={8} xl={fullWidth ? 8 : 2}>
-            <Controller name="ecogScore" defaultValue={null} control={control} render={ECOGScoreAutocomplete} />
+            <Controller
+              name="ecogScore"
+              defaultValue={null}
+              control={control}
+              render={({ field }) => <ECOGScoreAutocomplete field={field} ecogScores={state.ecogScore} />}
+            />
           </Grid>
 
           <Grid item xs={8} xl={fullWidth ? 8 : 2}>
@@ -140,28 +199,55 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
               name="karnofskyScore"
               defaultValue={null}
               control={control}
-              render={KarnofskyScoreAutocomplete}
+              render={({ field }) => (
+                <KarnofskyScoreAutocomplete field={field} karnofskyScores={state.karnofskyScore} />
+              )}
             />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="metastasis" defaultValue={[]} control={control} render={MetastasisAutocomplete} />
+            <Controller
+              name="metastasis"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <MetastasisAutocomplete field={field} metastases={state.metastasis} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="biomarkers" defaultValue={[]} control={control} render={BiomarkersAutocomplete} />
+            <Controller
+              name="biomarkers"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <BiomarkersAutocomplete field={field} biomarkers={state.biomarkers} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="radiation" defaultValue={[]} control={control} render={RadiationAutocomplete} />
+            <Controller
+              name="radiation"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <RadiationAutocomplete field={field} radiations={state.radiation} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="surgery" defaultValue={[]} control={control} render={SurgeryAutocomplete} />
+            <Controller
+              name="surgery"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <SurgeryAutocomplete field={field} surgeries={state.surgery} />}
+            />
           </Grid>
 
           <Grid item xs={8}>
-            <Controller name="medications" defaultValue={[]} control={control} render={MedicationsAutocomplete} />
+            <Controller
+              name="medications"
+              defaultValue={[]}
+              control={control}
+              render={({ field }) => <MedicationsAutocomplete field={field} medications={state.medications} />}
+            />
           </Grid>
 
           <Grid item xs={8}>

@@ -1,3 +1,18 @@
+import {
+  LOINC_CODE_URI,
+  MCODE_CANCER_PATIENT,
+  MCODE_CANCER_RELATED_MEDICATION_STATEMENT,
+  MCODE_CANCER_RELATED_RADIATION_PROCEDURE,
+  MCODE_CANCER_RELATED_SURGICAL_PROCEDURE,
+  MCODE_ECOG_PERFORMANCE_STATUS,
+  MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
+  MCODE_KARNOFSKY_PERFORMANCE_STATUS,
+  MCODE_PRIMARY_CANCER_CONDITION,
+  MCODE_SECONDARY_CANCER_CONDITION,
+  MCODE_TUMOR_MARKER,
+  RXNORM_CODE_URI,
+  SNOMED_CODE_URI,
+} from '@/utils/fhirConstants';
 import { fhirclient } from 'fhirclient/lib/types';
 
 const NO_SUCH_URL = '';
@@ -12,11 +27,12 @@ export const fhirKarnofskyPerformanceStatusBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: { profile: [MCODE_KARNOFSKY_PERFORMANCE_STATUS] },
         status: 'final',
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '89243-0',
             },
           ],
@@ -24,12 +40,12 @@ export const fhirKarnofskyPerformanceStatusBundle: fhirclient.FHIR.Bundle = {
         subject: {
           reference: 'Patient/patient-123',
         },
-        valueInteger: 1,
+        valueInteger: 100,
         interpretation: [
           {
             coding: [
               {
-                system: 'http://loinc.org',
+                system: LOINC_CODE_URI,
                 code: 'LA29175-9',
                 display: 'Normal; no complaints; no evidence of disease',
               },
@@ -50,11 +66,12 @@ export const fhirEcogPerformanceStatusBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_ECOG_PERFORMANCE_STATUS }],
         status: 'final',
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '89247-1',
             },
           ],
@@ -67,7 +84,7 @@ export const fhirEcogPerformanceStatusBundle: fhirclient.FHIR.Bundle = {
           {
             coding: [
               {
-                system: 'http://loinc.org',
+                system: LOINC_CODE_URI,
                 code: 'LA9623-5',
                 display:
                   'Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work',
@@ -89,11 +106,26 @@ export const fhirPrimaryCancerConditionBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Condition',
+        extension: [
+          { url: MCODE_PRIMARY_CANCER_CONDITION },
+          {
+            url: MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
+            valueCodeableConcept: {
+              coding: [
+                {
+                  system: SNOMED_CODE_URI,
+                  code: '128700001',
+                  display: 'Infiltrating duct mixed with other types of carcinoma (morphologic abnormality)',
+                },
+              ],
+            },
+          },
+        ],
         category: [
           {
             coding: [
               {
-                system: 'http://snomed.info/sct',
+                system: SNOMED_CODE_URI,
                 code: '64572001',
               },
             ],
@@ -102,7 +134,7 @@ export const fhirPrimaryCancerConditionBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '408643008',
               display: 'Infiltrating duct carcinoma of breast (disorder)',
             },
@@ -112,7 +144,7 @@ export const fhirPrimaryCancerConditionBundle: fhirclient.FHIR.Bundle = {
           {
             coding: [
               {
-                system: 'http://snomed.info/sct',
+                system: SNOMED_CODE_URI,
                 code: '76752008',
                 display: 'Breast structure (body structure)',
               },
@@ -149,8 +181,9 @@ export const fhirPrimaryCancerConditionBundle2: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Condition',
+        extension: [{ url: MCODE_PRIMARY_CANCER_CONDITION }],
         category: [
-          { coding: [{ system: 'http://snomed.info/sct', code: '64572001', display: 'Disease (disorder)' }] },
+          { coding: [{ system: SNOMED_CODE_URI, code: '64572001', display: 'Disease (disorder)' }] },
           {
             coding: [
               {
@@ -162,9 +195,7 @@ export const fhirPrimaryCancerConditionBundle2: fhirclient.FHIR.Bundle = {
           },
         ],
         code: {
-          coding: [
-            { system: 'http://snomed.info/sct', code: '254837009', display: 'Malignant neoplasm of breast (disorder)' },
-          ],
+          coding: [{ system: SNOMED_CODE_URI, code: '254837009', display: 'Malignant neoplasm of breast (disorder)' }],
           text: 'Malignant neoplasm of breast (disorder)',
         },
         subject: { reference: 'Patient/patient-123' },
@@ -172,29 +203,25 @@ export const fhirPrimaryCancerConditionBundle2: fhirclient.FHIR.Bundle = {
           {
             summary: {
               coding: [
-                { system: 'http://snomed.info/sct', code: '261614003', display: 'Stage 2A (qualifier value)' },
+                { system: SNOMED_CODE_URI, code: '261614003', display: 'Stage 2A (qualifier value)' },
                 { system: 'http://cancerstaging.org', code: 'c2A' },
               ],
               text: 'Stage 2A (qualifier value)',
             },
             type: {
-              coding: [
-                { system: 'http://snomed.info/sct', code: '260998006', display: 'Clinical staging (qualifier value)' },
-              ],
+              coding: [{ system: SNOMED_CODE_URI, code: '260998006', display: 'Clinical staging (qualifier value)' }],
             },
           },
           {
             summary: {
               coding: [
-                { system: 'http://snomed.info/sct', code: '258219007', display: 'Stage 2 (qualifier value)' },
+                { system: SNOMED_CODE_URI, code: '258219007', display: 'Stage 2 (qualifier value)' },
                 { system: 'http://cancerstaging.org', code: 'c2' },
               ],
               text: 'Stage 2 (qualifier value)',
             },
             type: {
-              coding: [
-                { system: 'http://snomed.info/sct', code: '260998006', display: 'Clinical staging (qualifier value)' },
-              ],
+              coding: [{ system: SNOMED_CODE_URI, code: '260998006', display: 'Clinical staging (qualifier value)' }],
             },
           },
         ],
@@ -212,12 +239,12 @@ export const fhirSecondaryCancerConditionBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Condition',
-        extension: [{ url: 'http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-primary-cancer-condition' }],
+        extension: [{ url: MCODE_SECONDARY_CANCER_CONDITION }],
         category: [
           {
             coding: [
               {
-                system: 'http://snomed.info/sct',
+                system: SNOMED_CODE_URI,
                 code: '64572001',
               },
             ],
@@ -226,7 +253,7 @@ export const fhirSecondaryCancerConditionBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '94222008',
               display: 'Secondary malignant neoplasm of bone (disorder)',
             },
@@ -249,13 +276,14 @@ export const fhirMedicationStatementBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'MedicationStatement',
+        extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
         status: 'completed',
         medicationCodeableConcept: {
           coding: [
             {
-              system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+              system: RXNORM_CODE_URI,
               code: '1163443',
-              display: 'leuprolide Injetable Product',
+              display: 'leuprolide Injectable Product',
             },
           ],
         },
@@ -269,11 +297,12 @@ export const fhirMedicationStatementBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'MedicationStatement',
+        extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
         status: 'completed',
         medicationCodeableConcept: {
           coding: [
             {
-              system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+              system: RXNORM_CODE_URI,
               code: '1156671',
               display: 'fulvestrant Injectable Product',
             },
@@ -288,11 +317,12 @@ export const fhirMedicationStatementBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'MedicationStatement',
+        extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
         status: 'active',
         medicationCodeableConcept: {
           coding: [
             {
-              system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+              system: RXNORM_CODE_URI,
               code: '1946828',
               display: 'abemaciclib Oral Product',
             },
@@ -307,11 +337,12 @@ export const fhirMedicationStatementBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'MedicationStatement',
+        extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
         status: 'active',
         medicationCodeableConcept: {
           coding: [
             {
-              system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+              system: RXNORM_CODE_URI,
               code: '1156671',
               display: 'fulvestrant Injectable Product',
             },
@@ -326,11 +357,12 @@ export const fhirMedicationStatementBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'MedicationStatement',
+        extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
         status: 'active',
         medicationCodeableConcept: {
           coding: [
             {
-              system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+              system: RXNORM_CODE_URI,
               code: '1873980',
               display: 'ribociclib Oral Product',
             },
@@ -353,11 +385,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -372,16 +405,16 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
-              code: '448385000',
-              display: 'Megavoltage radiation therapy using photons (procedure)',
+              system: SNOMED_CODE_URI,
+              code: '879916008',
+              display: 'Radiofrequency ablation (procedure)',
             },
           ],
-          text: 'Teleradiotherapy procedure (procedure)',
         },
         subject: { reference: 'Patient/patient-123' },
         performedPeriod: { start: '1993-08-05T03:44:51-04:00', end: '1993-08-05T04:16:51-04:00' },
@@ -391,11 +424,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -410,11 +444,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -429,11 +464,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -448,11 +484,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -467,11 +504,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -486,11 +524,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -505,16 +544,16 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
-              code: '448385000',
-              display: 'Megavoltage radiation therapy using photons (procedure)',
+              system: SNOMED_CODE_URI,
+              code: '399315003',
+              display: 'Radionuclide therapy (procedure)',
             },
           ],
-          text: 'Teleradiotherapy procedure (procedure)',
         },
         subject: { reference: 'Patient/patient-123' },
         performedPeriod: { start: '1993-08-14T00:44:51-04:00', end: '1993-08-14T01:23:51-04:00' },
@@ -524,11 +563,12 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_RADIATION_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '448385000',
               display: 'Megavoltage radiation therapy using photons (procedure)',
             },
@@ -545,6 +585,7 @@ export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
 
 export const fhirPatient: fhirclient.FHIR.Patient = {
   resourceType: 'Patient',
+  extension: [{ url: MCODE_CANCER_PATIENT }],
   id: 'patient-123',
   identifier: [
     {
@@ -571,6 +612,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -585,7 +627,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '40556-3',
               display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
             },
@@ -597,7 +639,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         valueCodeableConcept: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '10828004',
               display: 'Positive (qualifier value)',
             },
@@ -609,6 +651,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -623,7 +666,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '40556-3',
               display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
             },
@@ -635,7 +678,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         valueCodeableConcept: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '10828004',
               display: 'Positive (qualifier value)',
             },
@@ -647,6 +690,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -661,7 +705,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '40557-1',
               display: 'Progesterone receptor Ag [Presence] in Tissue by Immune stain',
             },
@@ -673,7 +717,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         valueCodeableConcept: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '10828004',
               display: 'Positive (qualifier value)',
             },
@@ -685,6 +729,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -699,7 +744,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '18474-7',
               display: 'HER2 Ag [Presence] in Tissue by Immune stain',
             },
@@ -711,7 +756,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         valueCodeableConcept: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '260385009',
               display: 'Negative (qualifier value)',
             },
@@ -723,6 +768,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -737,7 +783,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '62862-8',
               display: 'Microsatellite instability [Presence] in Tissue by Immune stain',
             },
@@ -749,7 +795,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         valueCodeableConcept: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '10828004',
               display: 'Positive (qualifier value)',
             },
@@ -761,6 +807,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -775,9 +822,9 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         ],
         code: {
           coding: [
-            { system: 'http://loinc.org', code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
+            { system: LOINC_CODE_URI, code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '85319-2',
               display: 'HER2 [Presence] in Breast cancer specimen by Immune stain',
             },
@@ -786,7 +833,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         },
         subject: { reference: 'Patient/patient-123' },
         valueCodeableConcept: {
-          coding: [{ system: 'http://snomed.info/sct', code: '260385009', display: 'Negative (qualifier value)' }],
+          coding: [{ system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' }],
           text: 'Negative (qualifier value)',
         },
       },
@@ -795,6 +842,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -809,9 +857,9 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         ],
         code: {
           coding: [
-            { system: 'http://loinc.org', code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
+            { system: LOINC_CODE_URI, code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '85318-4',
               display: 'HER2 [Presence] in Breast cancer specimen by FISH',
             },
@@ -819,7 +867,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
           text: 'HER2 Receptor',
         },
         valueCodeableConcept: {
-          coding: [{ system: 'http://snomed.info/sct', code: '260385009', display: 'Negative (qualifier value)' }],
+          coding: [{ system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' }],
           text: 'Negative (qualifier value)',
         },
       },
@@ -828,6 +876,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -842,9 +891,9 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         ],
         code: {
           coding: [
-            { system: 'http://loinc.org', code: '16112-5', display: 'Estrogen receptor [Interpretation] in Tissue' },
+            { system: LOINC_CODE_URI, code: '16112-5', display: 'Estrogen receptor [Interpretation] in Tissue' },
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '85337-4',
               display: 'Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain',
             },
@@ -852,7 +901,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
           text: 'Estrogen Receptor',
         },
         valueCodeableConcept: {
-          coding: [{ system: 'http://snomed.info/sct', code: '10828004', display: 'Positive (qualifier value)' }],
+          coding: [{ system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' }],
           text: 'Positive (qualifier value)',
         },
       },
@@ -861,6 +910,7 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Observation',
+        extension: [{ url: MCODE_TUMOR_MARKER }],
         status: 'final',
         category: [
           {
@@ -876,22 +926,19 @@ export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
         code: {
           coding: [
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '16113-3',
               display: 'Progesterone receptor [Interpretation] in Tissue',
             },
             {
-              system: 'http://loinc.org',
+              system: LOINC_CODE_URI,
               code: '85339-0',
               display: 'Progesterone receptor Ag [Presence] in Breast cancer specimen by Immune stain',
             },
           ],
           text: 'Progesterone Receptor',
         },
-        valueCodeableConcept: {
-          coding: [{ system: 'http://snomed.info/sct', code: '10828004', display: 'Positive (qualifier value)' }],
-          text: 'Positive (qualifier value)',
-        },
+        dataAbsentReason: { coding: [{ code: 'unknown', display: 'Unknown' }] },
       },
     },
   ],
@@ -906,11 +953,12 @@ export const fhirSurgeryProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_SURGICAL_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
-            { system: 'http://snomed.info/sct', code: '64368001', display: 'Partial mastectomy (procedure)' },
-            { system: 'http://snomed.info/sct', code: '392021009', display: 'Lumpectomy of breast (procedure)' },
+            { system: SNOMED_CODE_URI, code: '64368001', display: 'Partial mastectomy (procedure)' },
+            { system: SNOMED_CODE_URI, code: '392021009', display: 'Lumpectomy of breast (procedure)' },
           ],
           text: 'Lumpectomy of breast (procedure)',
         },
@@ -922,11 +970,12 @@ export const fhirSurgeryProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_SURGICAL_PROCEDURE }],
         status: 'completed',
         code: {
           coding: [
             {
-              system: 'http://snomed.info/sct',
+              system: SNOMED_CODE_URI,
               code: '234262008',
               display: 'Excision of axillary lymph node (procedure)',
             },
@@ -941,11 +990,10 @@ export const fhirSurgeryProcedureBundle: fhirclient.FHIR.Bundle = {
       fullUrl: NO_SUCH_URL,
       resource: {
         resourceType: 'Procedure',
+        extension: [{ url: MCODE_CANCER_RELATED_SURGICAL_PROCEDURE }],
         status: 'completed',
         code: {
-          coding: [
-            { system: 'http://snomed.info/sct', code: '69031006', display: 'Excision of breast tissue (procedure)' },
-          ],
+          coding: [{ system: SNOMED_CODE_URI, code: '69031006', display: 'Excision of breast tissue (procedure)' }],
           text: 'Excision of breast tissue (procedure)',
         },
         subject: { reference: 'Patient/patient-123' },
