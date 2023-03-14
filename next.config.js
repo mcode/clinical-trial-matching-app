@@ -4,9 +4,10 @@ module.exports = {
   reactStrictMode: true,
   publicRuntimeConfig: {
     fhirClientId: process.env.FHIR_CLIENT_ID,
+    fhirRedirectUri: process.env.FHIR_REDIRECT_URI,
     defaultZipCode: process.env.DEFAULT_ZIP_CODE,
-    sendLocationData: eval(process.env.SEND_LOCATION_DATA),
-    reactAppDebug: eval(process.env.REACT_APP_DEBUG),
+    sendLocationData: JSON.parse(process.env.SEND_LOCATION_DATA),
+    reactAppDebug: JSON.parse(process.env.REACT_APP_DEBUG),
     services: [
       {
         name: 'ancora',
