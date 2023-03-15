@@ -1,27 +1,12 @@
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
-import SearchForm from '@/components/SearchForm';
-import {
-  MCODE_CANCER_RELATED_MEDICATION_STATEMENT,
-  MCODE_CANCER_RELATED_RADIATION_PROCEDURE,
-  MCODE_CANCER_RELATED_SURGICAL_PROCEDURE,
-  MCODE_ECOG_PERFORMANCE_STATUS,
-  MCODE_KARNOFSKY_PERFORMANCE_STATUS,
-  MCODE_PRIMARY_CANCER_CONDITION,
-  MCODE_SECONDARY_CANCER_CONDITION,
-  MCODE_TUMOR_MARKER,
-} from '@/utils/fhirConstants';
 import {
   Biomarker,
   CodedValueType,
-  convertFhirEcogPerformanceStatus,
-  convertFhirKarnofskyPerformanceStatus,
   convertFhirMedicationStatements,
   convertFhirPatient,
   convertFhirPrimaryCancerCondition,
-  convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
-  convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
   convertFhirUser,
   Patient,
@@ -65,9 +50,9 @@ const SearchPage = ({
   const defaultValues = {
     age: patient.age || '',
     gender: patient.gender || 'unknown',
-    cancerType: primaryCancerCondition.cancerType,
-    cancerSubtype: primaryCancerCondition.cancerSubtype,
-    stage: primaryCancerCondition.stage,
+    cancerType: null, //primaryCancerCondition.cancerType,
+    cancerSubtype: null, //primaryCancerCondition.cancerSubtype,
+    stage: null, //primaryCancerCondition.stage,
     travelDistance: '100',
     zipcode: patient.zipcode || '',
     metastasis,
@@ -93,7 +78,7 @@ const SearchPage = ({
 
       <Header userName={user?.name} />
       <PatientCard patient={patient} />
-      <SearchForm defaultValues={defaultValues} />
+      {/* <SearchForm defaultValues={defaultValues} /> */}
     </>
   );
 };
@@ -115,45 +100,111 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const getObservation = getResource('Observation');
   const getProcedure = getResource('Procedure');
   const getMedicationStatement = getResource('MedicationStatement');
+  const fhirPatient = await fhirClient.patient.read();
+  const fhirUser = await fhirClient.user.read();
+  const conditions = await getAllConditions(fhirClient);
+  const procedures = await getAllProcedures(fhirClient);
+  // const encounters = await getAllEncounters(fhirClient);
+  const observations = await getAllObservations(fhirClient);
+  const meds = await getAllMedicationRequests(fhirClient);
+  //const fhirEcogPerformanceStatus  = await getMostRecentPerformacneValue(fhirClient,encounters,"EPIC#31000083940");
+  //const fhirKarnofskyPerformanceStatus = await getMostRecentPerformacneValue(fhirClient,encounters,"EPIC#1500");
+  // const
+
+  console.log('Conditions', conditions);
+  console.log('Procedures ', procedures);
+  console.log('Medications', meds);
 
   const [
-    fhirPatient,
-    fhirUser,
-    fhirPrimaryCancerCondition,
-    fhirSecondaryCancerCondition,
-    fhirEcogPerformanceStatus,
-    fhirKarnofskyPerformanceStatus,
-    fhirTumorMarkers,
-    fhirRadiationProcedures,
-    fhirSurgeryProcedures,
-    fhirMedicationStatements,
+    // fhirPrimaryCancerCondition,
+    // fhirSecondaryCancerCondition,
+    // fhirEcogPerformanceStatus,
+    // fhirKarnofskyPerformanceStatus,
+    // fhirTumorMarkers,
+    // fhirRadiationProcedures,
+    // fhirSurgeryProcedures,
+    // fhirMedicationStatements,
   ] = await Promise.all([
-    fhirClient.patient.read(),
-    fhirClient.user.read(),
-    getCondition(MCODE_PRIMARY_CANCER_CONDITION),
-    getCondition(MCODE_SECONDARY_CANCER_CONDITION),
-    getObservation(MCODE_ECOG_PERFORMANCE_STATUS),
-    getObservation(MCODE_KARNOFSKY_PERFORMANCE_STATUS),
-    getObservation(MCODE_TUMOR_MARKER),
-    getProcedure(MCODE_CANCER_RELATED_RADIATION_PROCEDURE),
-    getProcedure(MCODE_CANCER_RELATED_SURGICAL_PROCEDURE),
-    getMedicationStatement(MCODE_CANCER_RELATED_MEDICATION_STATEMENT),
+    // getCondition(MCODE_PRIMARY_CANCER_CONDITION),
+    // getCondition(MCODE_SECONDARY_CANCER_CONDITION),
+    // getObservation(MCODE_ECOG_PERFORMANCE_STATUS),
+    // getObservation(MCODE_KARNOFSKY_PERFORMANCE_STATUS),
+    // getObservation(MCODE_TUMOR_MARKER),
+    // getProcedure(MCODE_CANCER_RELATED_RADIATION_PROCEDURE),
+    // getProcedure(MCODE_CANCER_RELATED_SURGICAL_PROCEDURE),
+    // getMedicationStatement(MCODE_CANCER_RELATED_MEDICATION_STATEMENT),
   ]);
+  const metastasis = convertFhirSecondaryCancerConditions(conditions);
+  const primaryCancerCondition = convertFhirPrimaryCancerCondition(conditions);
+
+  const medications = convertFhirMedicationStatements(meds);
+
+  console.log('Primary ', primaryCancerCondition);
+  console.log('Secondary  ', metastasis);
+  console.log('Medications  ', medications);
 
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
-      primaryCancerCondition: convertFhirPrimaryCancerCondition(fhirPrimaryCancerCondition),
-      metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
-      ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
-      karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
-      biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
-      radiation: convertFhirRadiationProcedures(fhirRadiationProcedures),
-      surgery: convertFhirSurgeryProcedures(fhirSurgeryProcedures),
-      medications: convertFhirMedicationStatements(fhirMedicationStatements),
+      // primaryCancerCondition: convertFhirPrimaryCancerCondition(fhirPrimaryCancerCondition),
+      // metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
+      // ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
+      // karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
+      // biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
+      // radiation: convertFhirRadiationProcedures(fhirRadiationProcedures),
+      // surgery: convertFhirSurgeryProcedures(fhirSurgeryProcedures),
+      // medications: convertFhirMedicationStatements(fhirMedicationStatements),
     },
   };
+};
+
+// get conditions
+// filter primary cancers
+// metastisies
+// get Observations
+// get procedures
+// get medications
+// get encounters
+// get sde observations
+// filter ecog
+// filter karnofsky
+
+const getAllProcedures = (fhirClient: Client) => {
+  return fhirClient.request<fhirclient.FHIR.Bundle>(`Procedure?patient=${fhirClient.getPatientId()}`);
+};
+
+const getAllConditions = (fhirClient: Client) => {
+  return fhirClient.request<fhirclient.FHIR.Bundle>(`Condition?patient=${fhirClient.getPatientId()}`);
+};
+
+const getAllObservations = (fhirClient: Client) => {
+  return fhirClient.request<fhirclient.FHIR.Bundle>(
+    `Observation?patient=${fhirClient.getPatientId()}&category=laboratory`
+  );
+};
+
+const getAllMedicationRequests = (fhirClient: Client) => {
+  return fhirClient.request<fhirclient.FHIR.Bundle>(`MedicationRequest?patient=${fhirClient.getPatientId()}`);
+};
+
+const getAllEncounters = (fhirClient: Client) => {
+  return fhirClient.request<fhirclient.FHIR.Bundle>(`Encounter?patient=${fhirClient.getPatientId()}`);
+};
+
+const getMostRecentPerformacneValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
+  let returnBundle = null;
+  const ecog = encounters.entry.find(async encounter => {
+    let observations = await fhirClient.request<fhirclient.FHIR.Bundle>(
+      `Observation?patient=${fhirClient.getPatientId()}&category=smartdata&focus=${encounter.id}&code=${code}`
+    );
+    if (observations.entry.length > 0 && observations.entry[0].resource.resourceType == 'Observation') {
+      returnBundle = observations;
+      return observations.entry[0].resource;
+    }
+    return false;
+  });
+  return returnBundle;
 };
 
 const bundleMaker = (fhirClient: Client) => {
