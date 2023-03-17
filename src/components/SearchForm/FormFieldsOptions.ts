@@ -18,7 +18,7 @@ type Restriction = Pick<CodedValueType, 'cancerType' | 'category'> &
   Record<'restriction', Partial<Record<keyof State, Pick<CodedValueType, 'code' | 'system'>[]>>>;
 
 const getCancerSpecificCodes = (cancerType: CodedValueType, codes: CodedValueType[]): CodedValueType[] =>
-  codes.filter(c => c.cancerType.includes(cancerType.cancerType[0]));
+  cancerType == null ? [] : codes.filter(c => c.cancerType.includes(cancerType.cancerType[0]));
 
 const applyRestriction = (restricted: Partial<CodedValueType>[], original: CodedValueType[]): CodedValueType[] =>
   original.filter(c => restricted.some(({ code, system }) => code === c.code && system === c.system));
@@ -46,6 +46,9 @@ const createRestrictedAndUnrestrictedValues = (first: CodedValueType): CodedValu
 };
 
 const getRestriction = (selectedCancerType: CodedValueType): Restriction | undefined => {
+  if (selectedCancerType == null) {
+    return undefined;
+  }
   return (restrictions as Restriction[]).find((entry: Restriction) => {
     const matchesOnOverallCancerType = entry.cancerType.some((entryType: CancerType) =>
       selectedCancerType.cancerType.includes(entryType)
@@ -59,11 +62,11 @@ const getRestriction = (selectedCancerType: CodedValueType): Restriction | undef
 };
 
 export const getNewState = (selectedCancerType: CodedValueType): State => {
-  /* Until we get more information on stage values for all of the cancer types, let's allow 
-  all stages for now, unless the stage affects certain wrapper mappings. We know multiple 
-  myeloma is a liquid cancer and won't use the solid tumor stage 1-4 values, but we're going 
-  off the current mCODE profile for stage values. Also, let's not restrict the medications, 
-  biomarkers, medications, surgeries, and radiations since it's possible the patient may have 
+  /* Until we get more information on stage values for all of the cancer types, let's allow
+  all stages for now, unless the stage affects certain wrapper mappings. We know multiple
+  myeloma is a liquid cancer and won't use the solid tumor stage 1-4 values, but we're going
+  off the current mCODE profile for stage values. Also, let's not restrict the medications,
+  biomarkers, medications, surgeries, and radiations since it's possible the patient may have
   had prior treatments for a different condition. */
   const unrestricted = {
     biomarkers: biomarkers
