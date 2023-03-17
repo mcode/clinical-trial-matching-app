@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
+import SearchForm from '@/components/SearchForm';
 import {
   Biomarker,
   CodedValueType,
@@ -78,7 +79,7 @@ const SearchPage = ({
 
       <Header userName={user?.name} />
       <PatientCard patient={patient} />
-      {/* <SearchForm defaultValues={defaultValues} /> */}
+      <SearchForm defaultValues={defaultValues} />
     </>
   );
 };
