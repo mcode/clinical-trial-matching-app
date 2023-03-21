@@ -6,10 +6,12 @@ import {
   CodedValueType,
   convertFhirMedicationStatements,
   convertFhirPatient,
-  convertFhirPrimaryCancerCondition,
+  convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
+  convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
   convertFhirUser,
+  extractPrimaryCancerCondition,
   Patient,
   PrimaryCancerCondition,
   Score,
@@ -51,9 +53,9 @@ const SearchPage = ({
   const defaultValues = {
     age: patient.age || '',
     gender: patient.gender || 'unknown',
-    cancerType: null, //primaryCancerCondition.cancerType,
-    cancerSubtype: null, //primaryCancerCondition.cancerSubtype,
-    stage: null, //primaryCancerCondition.stage,
+    cancerType: primaryCancerCondition ? primaryCancerCondition.cancerType : null,
+    cancerSubtype: primaryCancerCondition ? primaryCancerCondition.cancerSubtype : null,
+    stage: primaryCancerCondition ? primaryCancerCondition.stage : null,
     travelDistance: '100',
     zipcode: patient.zipcode || '',
     metastasis,
@@ -100,7 +102,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const getCondition = getResource('Condition');
   const getObservation = getResource('Observation');
   const getProcedure = getResource('Procedure');
-  const getMedicationStatement = getResource('MedicationStatement');
   const fhirPatient = await fhirClient.patient.read();
   const fhirUser = await fhirClient.user.read();
   const conditions = await getAllConditions(fhirClient);
@@ -112,9 +113,19 @@ export const getServerSideProps: GetServerSideProps = async context => {
   //const fhirKarnofskyPerformanceStatus = await getMostRecentPerformacneValue(fhirClient,encounters,"EPIC#1500");
   // const
 
-  console.log('Conditions', conditions);
-  console.log('Procedures ', procedures);
-  console.log('Medications', meds);
+  console.log(`  === LOADED DATA ===
+-- Conditions --
+${JSON.stringify(conditions, null, 2)}
+
+-- Procedures --
+${JSON.stringify(procedures, null, 2)}
+
+-- Medications --
+${JSON.stringify(meds, null, 2)}
+
+-- Observations --
+${JSON.stringify(observations, null, 2)}
+`);
 
   const [
     // fhirPrimaryCancerCondition,
@@ -136,26 +147,26 @@ export const getServerSideProps: GetServerSideProps = async context => {
     // getMedicationStatement(MCODE_CANCER_RELATED_MEDICATION_STATEMENT),
   ]);
   const metastasis = convertFhirSecondaryCancerConditions(conditions);
-  const primaryCancerCondition = convertFhirPrimaryCancerCondition(conditions);
+  const primaryCancerCondition = extractPrimaryCancerCondition(conditions);
 
   const medications = convertFhirMedicationStatements(meds);
 
   console.log('Primary ', primaryCancerCondition);
-  console.log('Secondary  ', metastasis);
-  console.log('Medications  ', medications);
+  console.log('Secondary ', metastasis);
+  console.log('Medications ', medications);
 
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
-      // primaryCancerCondition: convertFhirPrimaryCancerCondition(fhirPrimaryCancerCondition),
+      primaryCancerCondition: primaryCancerCondition,
       // metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
       // ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
       // karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
       // biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
-      // radiation: convertFhirRadiationProcedures(fhirRadiationProcedures),
-      // surgery: convertFhirSurgeryProcedures(fhirSurgeryProcedures),
-      // medications: convertFhirMedicationStatements(fhirMedicationStatements),
+      radiation: convertFhirRadiationProcedures(procedures),
+      surgery: convertFhirSurgeryProcedures(procedures),
+      medications: medications,
     },
   };
 };
@@ -189,11 +200,15 @@ const getAllMedicationRequests = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`MedicationRequest?patient=${fhirClient.getPatientId()}`);
 };
 
+const getAllMedicationStatements = (fhirClient: Client) => {
+  return fhirClient.request<fhirclient.FHIR.Bundle>(`MedicationStatement?patient=${fhirClient.getPatientId()}`);
+};
+
 const getAllEncounters = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`Encounter?patient=${fhirClient.getPatientId()}`);
 };
 
-const getMostRecentPerformacneValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
+const getMostRecentPerformanceValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
   let returnBundle = null;
   const ecog = encounters.entry.find(async encounter => {
     let observations = await fhirClient.request<fhirclient.FHIR.Bundle>(
