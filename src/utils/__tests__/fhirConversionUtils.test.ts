@@ -2,7 +2,6 @@ import {
   fhirEcogPerformanceStatusBundle,
   fhirEmptyBundle,
   fhirKarnofskyPerformanceStatusBundle,
-  fhirMedicationStatementBundle,
   fhirPatient,
   fhirPrimaryCancerConditionBundle,
   fhirPrimaryCancerConditionBundle2,
@@ -12,12 +11,11 @@ import {
   fhirTumorMarkerBundle,
 } from '@/__mocks__/bundles';
 import mockPatient from '@/__mocks__/patient';
-import { LOINC_CODE_URI, RXNORM_CODE_URI, SNOMED_CODE_URI } from '../fhirConstants';
+import { LOINC_CODE_URI, SNOMED_CODE_URI } from '../fhirConstants';
 import {
   CancerType,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
-  convertFhirMedicationStatements,
   convertFhirPatient,
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
@@ -59,6 +57,8 @@ describe('convertFhirEcogPerformanceStatus', () => {
 
 describe('convertFhirMedicationStatements', () => {
   it('gets the medication statements from a FHIR bundle', () => {
+    fail('this test needs to be reimplemented');
+    /*
     expect(convertFhirMedicationStatements(fhirMedicationStatementBundle)).toEqual([
       {
         cancerType: [CancerType.PROSTATE],
@@ -94,6 +94,7 @@ describe('convertFhirMedicationStatements', () => {
       },
     ]);
     expect(convertFhirMedicationStatements(fhirEmptyBundle)).toEqual([]);
+    */
   });
 });
 
