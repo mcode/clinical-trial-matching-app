@@ -227,19 +227,29 @@ const getAllEncounters = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`Encounter?patient=${fhirClient.getPatientId()}`);
 };
 
-const getMostRecentPerformanceValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
-  let returnBundle = null;
-  const ecog = encounters.entry.find(async encounter => {
+// This assumes that all of the encounters are in order by date.
+const getMostRecentPerformacneValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
+  console.log('encounters length ', encounters.entry.length);
+  for (let i = 0; i < encounters.entry.length; i++) {
+    let encounter = encounters.entry[i];
     let observations = await fhirClient.request<fhirclient.FHIR.Bundle>(
-      `Observation?patient=${fhirClient.getPatientId()}&category=smartdata&focus=${encounter.id}&code=${code}`
+      `Observation?patient=${fhirClient.getPatientId()}&category=smartdata&focus=${encounter.resource.id}`
     );
-    if (observations.entry.length > 0 && observations.entry[0].resource.resourceType == 'Observation') {
-      returnBundle = observations;
-      return observations.entry[0].resource;
+    console.log(`Encounter SDES ${encounter.resource.id} ${observations.entry.length}`);
+    let found = observations.entry.find(entry => {
+      if (
+        entry.resource.resourceType === 'Observation' &&
+        entry.resource.code?.coding.find(c => {
+          return c.code == code;
+        })
+      ) {
+        return entry.resource;
+      }
+    });
+    if (found) {
+      return found;
     }
-    return false;
-  });
-  return returnBundle;
+  }
 };
 
 const bundleMaker = (fhirClient: Client) => {
