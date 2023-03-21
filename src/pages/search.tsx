@@ -4,20 +4,19 @@ import SearchForm from '@/components/SearchForm';
 import {
   Biomarker,
   CodedValueType,
-  convertFhirMedicationStatements,
   convertFhirPatient,
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
-  convertFhirTumorMarkers,
   convertFhirUser,
+  extractMedicationCodes,
   extractPrimaryCancerCondition,
   Patient,
   PrimaryCancerCondition,
   Score,
   User,
 } from '@/utils/fhirConversionUtils';
-import { fhirMedicationStatementBundle, fhirTumorMarkerBundle } from '@/__mocks__/bundles';
+import { Medication, MedicationRequest } from 'fhir/r4';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
@@ -67,12 +66,6 @@ const SearchPage = ({
     medications,
   };
 
-  // for debugging purposes
-  if (true) {
-    convertFhirMedicationStatements(fhirMedicationStatementBundle);
-    convertFhirTumorMarkers(fhirTumorMarkerBundle);
-  }
-
   return (
     <>
       <Head>
@@ -108,12 +101,12 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const procedures = await getAllProcedures(fhirClient);
   // const encounters = await getAllEncounters(fhirClient);
   const observations = await getAllObservations(fhirClient);
-  const meds = await getAllMedicationRequests(fhirClient);
+  const meds = await getAllMedications(fhirClient);
   //const fhirEcogPerformanceStatus  = await getMostRecentPerformacneValue(fhirClient,encounters,"EPIC#31000083940");
   //const fhirKarnofskyPerformanceStatus = await getMostRecentPerformacneValue(fhirClient,encounters,"EPIC#1500");
   // const
 
-  console.log(`  === LOADED DATA ===
+  /*console.log(`  === LOADED DATA ===
 -- Conditions --
 ${JSON.stringify(conditions, null, 2)}
 
@@ -125,7 +118,7 @@ ${JSON.stringify(meds, null, 2)}
 
 -- Observations --
 ${JSON.stringify(observations, null, 2)}
-`);
+`);*/
 
   const [
     // fhirPrimaryCancerCondition,
@@ -149,7 +142,7 @@ ${JSON.stringify(observations, null, 2)}
   const metastasis = convertFhirSecondaryCancerConditions(conditions);
   const primaryCancerCondition = extractPrimaryCancerCondition(conditions);
 
-  const medications = convertFhirMedicationStatements(meds);
+  const medications = extractMedicationCodes(meds);
 
   console.log('Primary ', primaryCancerCondition);
   console.log('Secondary ', metastasis);
@@ -200,8 +193,34 @@ const getAllMedicationRequests = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`MedicationRequest?patient=${fhirClient.getPatientId()}`);
 };
 
-const getAllMedicationStatements = (fhirClient: Client) => {
-  return fhirClient.request<fhirclient.FHIR.Bundle>(`MedicationStatement?patient=${fhirClient.getPatientId()}`);
+/**
+ * Retrieves all known medications.
+ * @param fhirClient the client to retrieve medications from
+ */
+const getAllMedications = async (fhirClient: Client): Promise<Medication[]> => {
+  const medications: Promise<Medication>[] = [];
+  const medicationRequestBundle = await getAllMedicationRequests(fhirClient);
+  if (medicationRequestBundle.entry) {
+    for (const entry of medicationRequestBundle.entry) {
+      if (entry.resource && entry.resource.resourceType === 'MedicationRequest') {
+        const medRequest = entry.resource as MedicationRequest;
+        // See if this requires the medication be loaded separately
+        if (medRequest.medicationReference && medRequest.medicationReference.reference) {
+          // It does, so add the request
+          medications.push(fhirClient.request<Medication>(medRequest.medicationReference.reference));
+        } else if (medRequest.medicationCodeableConcept) {
+          // Has the medication embedded
+          medications.push(
+            Promise.resolve({
+              resourceType: 'Medication',
+              code: medRequest.medicationCodeableConcept,
+            })
+          );
+        }
+      }
+    }
+  }
+  return Promise.all(medications);
 };
 
 const getAllEncounters = (fhirClient: Client) => {

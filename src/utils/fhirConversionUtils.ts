@@ -10,7 +10,7 @@ import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
 import stages from '@/assets/optimizedPatientDataElements/stages.json';
 import surgery from '@/assets/optimizedPatientDataElements/surgeries.json';
 import { SearchFormValuesType } from '@/components/SearchForm';
-import { Coding, Condition, FhirResource, Observation, Procedure } from 'fhir/r4';
+import { Coding, Condition, FhirResource, Medication, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 import {
   ICD_10_CODE_URI,
@@ -98,15 +98,14 @@ export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle)
   return (ecogScores as Score[]).find(equalScore(coding)) || null;
 };
 
-export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  if (bundle.entry === undefined || bundle.entry.length < 1) return [];
+export const extractMedicationCodes = (medications: Medication[]): CodedValueType[] => {
   const extractCodes = extractKnownCodes(medication as CodedValueType[]);
-  const medications: CodedValueType[] = bundle.entry
-    .map(entry => {
-      return extractCodes(entry.resource as FhirResource);
+  const medicationCodes: CodedValueType[] = medications
+    .map(med => {
+      return extractCodes(med);
     })
     .flat();
-  return getUniques(medications);
+  return getUniques(medicationCodes);
 };
 
 export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patient => ({
@@ -226,7 +225,12 @@ const extractKnownCodes =
   (knownCodes: CodedValueType[]) =>
   (resource: FhirResource): CodedValueType[] => {
     let codings: Coding[];
-    if ((resource.resourceType === 'Procedure' || resource.resourceType === 'Condition') && resource.code) {
+    if (
+      (resource.resourceType === 'Procedure' ||
+        resource.resourceType === 'Condition' ||
+        resource.resourceType === 'Medication') &&
+      resource.code
+    ) {
       codings = resource.code?.coding;
     } else if (
       (resource.resourceType === 'MedicationRequest' || resource.resourceType === 'MedicationStatement') &&
