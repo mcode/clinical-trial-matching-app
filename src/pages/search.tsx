@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
+import { convertEcogScore, convertKarnofskyScore } from '@/utils/epicEHRConverters';
 import {
   Biomarker,
   CodedValueType,
@@ -16,7 +17,7 @@ import {
   Score,
   User,
 } from '@/utils/fhirConversionUtils';
-import { Medication, MedicationRequest } from 'fhir/r4';
+import { Medication, MedicationRequest, Observation } from 'fhir/r4';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
@@ -91,19 +92,18 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
   }
 
-  const getResource = bundleMaker(fhirClient);
-  const getCondition = getResource('Condition');
-  const getObservation = getResource('Observation');
-  const getProcedure = getResource('Procedure');
   const fhirPatient = await fhirClient.patient.read();
   const fhirUser = await fhirClient.user.read();
+
   const conditions = await getAllConditions(fhirClient);
   const procedures = await getAllProcedures(fhirClient);
-  // const encounters = await getAllEncounters(fhirClient);
-  const observations = await getAllObservations(fhirClient);
+  const encounters = await getAllEncounters(fhirClient);
+  // const observations = await getAllObservations(fhirClient);
   const meds = await getAllMedications(fhirClient);
-  //const fhirEcogPerformanceStatus  = await getMostRecentPerformacneValue(fhirClient,encounters,"EPIC#31000083940");
-  //const fhirKarnofskyPerformanceStatus = await getMostRecentPerformacneValue(fhirClient,encounters,"EPIC#1500");
+
+  const fhirEcogPerformanceStatus = await getMostRecentPerformanceValue(fhirClient, encounters, 'EPIC#31000083940');
+  const fhirKarnofskyPerformanceStatus = await getMostRecentPerformanceValue(fhirClient, encounters, 'EPIC#1500');
+
   // const
 
   /*console.log(`  === LOADED DATA ===
@@ -120,25 +120,6 @@ ${JSON.stringify(meds, null, 2)}
 ${JSON.stringify(observations, null, 2)}
 `);*/
 
-  const [
-    // fhirPrimaryCancerCondition,
-    // fhirSecondaryCancerCondition,
-    // fhirEcogPerformanceStatus,
-    // fhirKarnofskyPerformanceStatus,
-    // fhirTumorMarkers,
-    // fhirRadiationProcedures,
-    // fhirSurgeryProcedures,
-    // fhirMedicationStatements,
-  ] = await Promise.all([
-    // getCondition(MCODE_PRIMARY_CANCER_CONDITION),
-    // getCondition(MCODE_SECONDARY_CANCER_CONDITION),
-    // getObservation(MCODE_ECOG_PERFORMANCE_STATUS),
-    // getObservation(MCODE_KARNOFSKY_PERFORMANCE_STATUS),
-    // getObservation(MCODE_TUMOR_MARKER),
-    // getProcedure(MCODE_CANCER_RELATED_RADIATION_PROCEDURE),
-    // getProcedure(MCODE_CANCER_RELATED_SURGICAL_PROCEDURE),
-    // getMedicationStatement(MCODE_CANCER_RELATED_MEDICATION_STATEMENT),
-  ]);
   const metastasis = convertFhirSecondaryCancerConditions(conditions);
   const primaryCancerCondition = extractPrimaryCancerCondition(conditions);
 
@@ -154,8 +135,9 @@ ${JSON.stringify(observations, null, 2)}
       user: convertFhirUser(fhirUser),
       primaryCancerCondition: primaryCancerCondition,
       // metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
-      // ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
-      // karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
+      // Conversion is "safe" as convertEcogScore will reject bad values
+      ecogScore: convertEcogScore(fhirEcogPerformanceStatus as Observation),
+      karnofskyScore: convertKarnofskyScore(fhirKarnofskyPerformanceStatus as Observation),
       // biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
       radiation: convertFhirRadiationProcedures(procedures),
       surgery: convertFhirSurgeryProcedures(procedures),
@@ -174,6 +156,19 @@ ${JSON.stringify(observations, null, 2)}
 // get sde observations
 // filter ecog
 // filter karnofsky
+
+const searchRecords = (fhirClient: Client, recordType: string, query?: Record<string, string>) => {
+  let urlEncodedQuery = '';
+  if (typeof query === 'object') {
+    for (const key in query) {
+      // Always add &, this is always appended to an existing query
+      urlEncodedQuery += `&${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`;
+    }
+  }
+  return fhirClient.request<fhirclient.FHIR.Bundle>(
+    `${recordType}?patient=${fhirClient.getPatientId()}${urlEncodedQuery}`
+  );
+};
 
 const getAllProcedures = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`Procedure?patient=${fhirClient.getPatientId()}`);
@@ -228,35 +223,63 @@ const getAllEncounters = (fhirClient: Client) => {
 };
 
 // This assumes that all of the encounters are in order by date.
-const getMostRecentPerformacneValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
+const getMostRecentPerformanceValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
   console.log('encounters length ', encounters.entry.length);
   for (let i = 0; i < encounters.entry.length; i++) {
-    let encounter = encounters.entry[i];
-    let observations = await fhirClient.request<fhirclient.FHIR.Bundle>(
+    const encounter = encounters.entry[i];
+    const observations = await fhirClient.request<fhirclient.FHIR.Bundle>(
       `Observation?patient=${fhirClient.getPatientId()}&category=smartdata&focus=${encounter.resource.id}`
     );
     console.log(`Encounter SDES ${encounter.resource.id} ${observations.entry.length}`);
-    let found = observations.entry.find(entry => {
-      if (
-        entry.resource.resourceType === 'Observation' &&
-        entry.resource.code?.coding.find(c => {
-          return c.code == code;
-        })
-      ) {
-        return entry.resource;
-      }
-    });
+    const found = observations.entry.find(
+      entry => entry.resource.resourceType === 'Observation' && entry.resource.code?.coding.some(c => c.code === code)
+    );
     if (found) {
-      return found;
+      return found.resource;
     }
   }
+  return undefined;
 };
 
-const bundleMaker = (fhirClient: Client) => {
-  const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
-  return (resourceType: string) =>
-    (url: string): Promise<fhirclient.FHIR.Bundle> =>
-      fhirClient.request<fhirclient.FHIR.Bundle>(
-        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(url)}`
-      );
+// Debug function for dumping patient data
+const debugDumpRecords = async (fhirClient: Client) => {
+  const recordTypes = {
+    Condition: {
+      category: ['encounter-diagnosis', 'genomics', 'health-concer', 'infection', 'medical-history'],
+    },
+    Encounter: true,
+    Observation: {
+      category: ['core-characteristics', 'genomics', 'laboratory', 'smartdata'],
+    },
+    Procedure: {
+      category: ['103693007', '387713003'],
+    },
+  };
+
+  // Ensure that the patient is available
+  await fhirClient.patient.read();
+  for (const resourceType in recordTypes) {
+    const query = recordTypes[resourceType];
+    // for now, just do each parameter individually
+    if (query === true) {
+      // no specific parameters
+      console.log(`---- ${resourceType} ----`);
+      console.log(JSON.stringify(await searchRecords(fhirClient, resourceType), null, 2));
+    } else {
+      console.log(`---- ${resourceType} ----`);
+      for (const key in query) {
+        const values = query[key];
+        if (Array.isArray(values)) {
+          for (const value of values) {
+            console.log(`  -- ${key}=${value} --`);
+            console.log(JSON.stringify(await searchRecords(fhirClient, resourceType, { [key]: value }), null, 2));
+          }
+        } else if (typeof values === 'string') {
+          // just run this single value
+          console.log(`  -- ${key}=${values} --`);
+          console.log(JSON.stringify(await searchRecords(fhirClient, resourceType, { [key]: values }), null, 2));
+        }
+      }
+    }
+  }
 };
