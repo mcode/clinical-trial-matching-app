@@ -70,13 +70,18 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   };
 
   const onDownload = (data: SearchFormValuesType) => {
-    console.log('onldownload');
-    return router.push({
-      pathname: '/api/search-csv',
-      query: {
-        ...formDataToSearchQuery(data),
-      },
-    });
+    // For this, just use window.location to trigger a download
+    const params = new URLSearchParams();
+    const query = formDataToSearchQuery(data);
+    for (const key in query) {
+      const value = query[key];
+      if (Array.isArray(value)) {
+        value.forEach(v => params.append(key, v));
+      } else {
+        params.set(key, value);
+      }
+    }
+    window.location.assign(`/api/search-csv?${params}`);
   };
 
   const retrieveCancer = (cancerType: CodedValueType): void => {
