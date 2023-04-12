@@ -13,6 +13,17 @@ const createRecord = (params: { [key: string]: string | string[] }, name: string
 };
 
 const generateOPDERecord = (records: CsvRecord[], json: Record<string, unknown>, name: string): void => {
+  console.log(`loading ${JSON.stringify(json, null, 2)}`);
+  if (typeof json['interpretation'] === 'object') {
+    const value = json['valueInteger'];
+    const code = json['interpretation']['code'];
+    const system = json['interpretation']['system'];
+    if (typeof value === 'number' && typeof code === 'string' && typeof system === 'string') {
+      // Valid value, append the record
+      records.push([name, value.toString(), code, system]);
+    }
+    return;
+  }
   // With the value, try and generate the CSV record
   const display = json['display'] ?? '';
   const code = json['code'];
@@ -38,16 +49,7 @@ const generateOPDERecordsFromJson = (records: CsvRecord[], jsonString: string, n
       }
       return;
     }
-    // With the value, try and generate the CSV record
-    const display = json['display'] ?? '';
-    const code = json['code'];
-    const system = json['system'];
-    if (typeof display === 'string' && typeof code === 'string' && typeof system === 'string') {
-      // Valid value, append the record
-      records.push([name, display, code, system]);
-    } else {
-      // Invalid, just ignore
-    }
+    generateOPDERecord(records, json, name);
   } catch (ex) {
     // In this case, just abort, eating the invalid data
   }
