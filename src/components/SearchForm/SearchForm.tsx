@@ -1,5 +1,6 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
+import generateSearchCSVString from '@/utils/exportSearch';
 import { CodedValueType } from '@/utils/fhirConversionUtils';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
@@ -70,18 +71,14 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   };
 
   const onDownload = (data: SearchFormValuesType) => {
-    // For this, just use window.location to trigger a download
-    const params = new URLSearchParams();
-    const query = formDataToSearchQuery(data);
-    for (const key in query) {
-      const value = query[key];
-      if (Array.isArray(value)) {
-        value.forEach(v => params.append(key, v));
-      } else {
-        params.set(key, value);
-      }
-    }
-    window.location.assign(`/api/search-csv?${params}`);
+    const csv = generateSearchCSVString(data);
+    // Create a hidden download link to download the CSV
+    const link = document.createElement('a');
+    link.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`);
+    link.setAttribute('download', 'search-parameters.csv');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   const retrieveCancer = (cancerType: CodedValueType): void => {
