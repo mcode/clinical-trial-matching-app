@@ -1,7 +1,7 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { CodedValueType } from '@/utils/fhirConversionUtils';
-import { Search as SearchIcon } from '@mui/icons-material';
+import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -65,6 +65,16 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
         sortingOption: 'matchLikelihood',
         page: DEFAULT_PAGE,
         pageSize: DEFAULT_PAGE_SIZE,
+      },
+    });
+  };
+
+  const onDownload = (data: SearchFormValuesType) => {
+    console.log('onldownload');
+    return router.push({
+      pathname: '/api/search-csv',
+      query: {
+        ...formDataToSearchQuery(data),
       },
     });
   };
@@ -263,6 +273,21 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
               variant="contained"
             >
               <SearchIcon sx={{ paddingRight: '5px' }} /> Search
+            </Button>
+          </Grid>
+          <Grid item xs={8}>
+            <Button
+              onClick={handleSubmit(onDownload)}
+              sx={{
+                float: 'right',
+                fontSize: '1.3em',
+                fontWeight: '500',
+                minWidth: '200px',
+                width: fullWidth || isSmallScreen ? '100%' : '25%',
+              }}
+              variant="contained"
+            >
+              <DownloadIcon /> Download CSV
             </Button>
           </Grid>
         </Grid>
