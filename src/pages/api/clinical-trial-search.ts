@@ -23,7 +23,7 @@ import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, reactAppDebug, services },
+  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, services },
 } = getConfig();
 
 /**
@@ -55,7 +55,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
  */
 export function buildBundle(searchParams: SearchParameters, id?: string): Bundle {
   const zipCode = sendLocationData ? searchParams['zipcode'] : defaultZipCode;
-  const travelDistance = sendLocationData ? searchParams['travelDistance'] : undefined;
+  const travelDistance = sendLocationData ? searchParams['travelDistance'] : defaultTravelDistance;
 
   !sendLocationData && console.log(`Using default zip code ${defaultZipCode} and travel distance ${travelDistance}`);
 
