@@ -83,7 +83,7 @@ export function buildBundle(searchParams: SearchParameters, id?: string): Bundle
     const age = Number(searchParams.age);
     if (!isNaN(age)) {
       // For the age, calculate a year based on today's date and just store that. Just a year is a valid FHIR date.
-      patient.birthDate = (new Date().getUTCFullYear() - age).toString();
+      patient.birthDate = (new Date().getUTCFullYear() - Math.min(age, 90)).toString();
     }
   }
 
