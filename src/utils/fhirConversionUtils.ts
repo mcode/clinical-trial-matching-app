@@ -122,43 +122,34 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
  * @param bundle the bundle to find a known cancer condition in
  * @returns a primary cancer condition
  */
-export const extractPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition | null => {
-  if (Array.isArray(bundle.entry)) {
-    // Go through each entry and see if we find data
-    for (const entry of bundle.entry) {
-      const condition = entry?.resource;
-      if (condition && condition.resourceType === 'Condition') {
-        const cancerType = getCancerType(condition as Condition);
-        if (cancerType) {
-          // For now, just return the first entry found
-          return {
-            cancerType: cancerType,
-            cancerSubtype: getCancerSubtype(condition as Condition),
-            stage: getStage(condition as Condition),
-          };
-        }
-      }
+export const extractPrimaryCancerCondition = (conditions: Condition[]): PrimaryCancerCondition | null => {
+  for (const condition of conditions) {
+    const cancerType = getCancerType(condition as Condition);
+    if (cancerType) {
+      // For now, just return the first entry found
+      return {
+        cancerType: cancerType,
+        cancerSubtype: getCancerSubtype(condition as Condition),
+        stage: getStage(condition as Condition),
+      };
     }
   }
   return null;
 };
 
-export const convertFhirRadiationProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const radiationProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
+export const convertFhirRadiationProcedures = (radiationProcedures: Procedure[]): CodedValueType[] => {
   const radiations: CodedValueType[] = radiationProcedures.map(extractKnownCodes(radiation as CodedValueType[])).flat();
   return getUniques(radiations);
 };
 
-export const convertFhirSecondaryCancerConditions = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const secondaryCancerConditions = bundle?.entry?.map(entry => entry.resource as Condition) || [];
+export const convertFhirSecondaryCancerConditions = (secondaryCancerConditions: Condition[]): CodedValueType[] => {
   const conditions: CodedValueType[] = secondaryCancerConditions
     .map(extractKnownCodes(metastases as CodedValueType[]))
     .flat();
   return getUniques(conditions);
 };
 
-export const convertFhirSurgeryProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const surgeryProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
+export const convertFhirSurgeryProcedures = (surgeryProcedures: Procedure[]): CodedValueType[] => {
   const surgeries: CodedValueType[] = surgeryProcedures.map(extractKnownCodes(surgery as CodedValueType[])).flat();
   return getUniques(surgeries);
 };
