@@ -2,10 +2,13 @@
 
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/download/) (LTS edition, currently 16.x)
+- [Node.js](https://nodejs.org/en/download/) (LTS edition, currently 18.x)
 - [Yarn](https://yarnpkg.com/en/docs/install) (1.22 or above)
 - At least one of the following matching services:
+  - [Ancora.ai](https://github.com/mcode/clinical-trial-matching-service-ancora.ai)
   - [BreastCancerTrials](https://github.com/mcode/clinical-trial-matching-service-breastcancertrials.org)
+  - [Carebox](https://github.com/mcode/clinical-trial-matching-service-carebox)
+  - [LUNGevity](https://github.com/mcode/clinical-trial-matching-service-lungevity)
   - [TrialScope](https://github.com/mcode/clinical-trial-matching-service-trialscope)
   - [TrialJectory](https://github.com/mcode/clinical-trial-matching-service-trialjectory)
 
