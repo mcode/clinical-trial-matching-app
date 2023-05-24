@@ -1,11 +1,11 @@
 import { SearchFormValuesType } from '@/components/SearchForm/types';
-import { stringify as csvStringify } from 'csv-stringify/browser/esm/sync';
+import { stringify as csvStringify } from 'csv-stringify/sync';
 import { Biomarker, CodedValueType, Score } from './fhirConversionUtils';
 
 type SearchCSVRecord = [string, string, '' | number, string, string, string, string];
 type ParameterName = keyof SearchFormValuesType;
 
-const appendRecord = (records: SearchCSVRecord[], name: ParameterName, value?: string): void => {
+const appendRecord = (records: SearchCSVRecord[], name: ParameterName | 'id', value?: string): void => {
   if (typeof value === 'string') records.push([name, value, '', '', '', '', '']);
 };
 
@@ -51,9 +51,10 @@ const appendBiomarkers = (records: SearchCSVRecord[], name: ParameterName, value
   }
 };
 
-export const generateSearchCSVRecords = (searchParameters: SearchFormValuesType): SearchCSVRecord[] => {
+export const generateSearchCSVRecords = (searchParameters: SearchFormValuesType, userId: string): SearchCSVRecord[] => {
   const records: SearchCSVRecord[] = [];
   // All of these only append if the values exist
+  appendRecord(records, 'id', userId);
   appendRecord(records, 'zipcode', searchParameters.zipcode);
   appendRecord(records, 'travelDistance', searchParameters.travelDistance);
   appendRecord(records, 'gender', searchParameters.gender);
@@ -71,11 +72,11 @@ export const generateSearchCSVRecords = (searchParameters: SearchFormValuesType)
   return records;
 };
 
-export const generateSearchCSVString = (searchParameters: SearchFormValuesType): string => {
+export const generateSearchCSVString = (searchParameters: SearchFormValuesType, userId: string): string => {
   return (
     csvStringify([
       ['OPDE Category', 'Value (text)', 'Value (integer)', 'Code', 'System', 'Qualifier Code', 'Qualifier System'],
-    ]) + csvStringify(generateSearchCSVRecords(searchParameters))
+    ]) + csvStringify(generateSearchCSVRecords(searchParameters, userId))
   );
 };
 

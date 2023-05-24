@@ -2,13 +2,15 @@ import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import generateSearchCSVString from '@/utils/exportSearch';
 import { CodedValueType } from '@/utils/fhirConversionUtils';
+import { generateId } from '@/utils/generateId';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useContext, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SearchParameters } from 'types/search-types';
+import { UserIdContext } from '../UserIdContext';
 import {
   AgeTextField,
   areCodedValueTypesEqual,
@@ -32,6 +34,7 @@ import { SearchFormValuesType, State } from './types';
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
+  setUserId: (string) => void;
 };
 
 export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
@@ -51,12 +54,13 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });
 
-const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
+const SearchForm = ({ defaultValues, fullWidth, setUserId }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const { handleSubmit, control, getValues } = useForm<SearchFormValuesType>({ defaultValues });
+  const { handleSubmit, control, getValues, register, setValue } = useForm<SearchFormValuesType>({ defaultValues });
   const [state, setState] = useState<State>(getNewState(defaultValues.cancerType));
+  const userId = useContext(UserIdContext);
 
   const onSubmit = (data: SearchFormValuesType) => {
     return router.push({
@@ -71,7 +75,12 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   };
 
   const onDownload = (data: SearchFormValuesType) => {
-    const csv = generateSearchCSVString(data);
+    const newUserId = generateId();
+    const csv = generateSearchCSVString(data, newUserId);
+    if (setUserId) {
+      setValue('userid', newUserId);
+      setUserId(newUserId);
+    }
     // Create a hidden download link to download the CSV
     const link = document.createElement('a');
     link.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`);
@@ -106,6 +115,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <input type="hidden" name="userid" value={userId} {...register('userid', { value: userId })} />
       <Box bgcolor="grey.200">
         {!(fullWidth || isSmallScreen) && (
           <Box p={{ xs: 0, md: 2 }}>

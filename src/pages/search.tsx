@@ -1,6 +1,7 @@
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
+import { UserIdContext } from '@/components/UserIdContext';
 import { convertEcogScore, convertKarnofskyScore } from '@/utils/epicEHRConverters';
 import {
   Biomarker,
@@ -23,7 +24,7 @@ import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import { GetServerSideProps } from 'next';
 import Head from 'next/head';
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useState } from 'react';
 
 type SearchPageProps = {
   patient: Patient;
@@ -66,6 +67,7 @@ const SearchPage = ({
     surgery,
     medications,
   };
+  const [userId, setUserId] = useState<string | null>(null);
 
   return (
     <>
@@ -75,7 +77,9 @@ const SearchPage = ({
 
       <Header userName={user?.name} />
       <PatientCard patient={patient} />
-      <SearchForm defaultValues={defaultValues} />
+      <UserIdContext.Provider value={userId}>
+        <SearchForm defaultValues={defaultValues} setUserId={setUserId} />
+      </UserIdContext.Provider>
     </>
   );
 };
@@ -85,6 +89,35 @@ export default SearchPage;
 export const getServerSideProps: GetServerSideProps = async context => {
   const { req, res } = context;
 
+  // See if this has been told to ignore the FHIR client
+  // This is mostly for testing that the system is otherwise up and running
+  if (context.query['fhirless'] !== undefined) {
+    // In this case, the search form is "fhirless" and we return a default set of properties
+    return {
+      props: {
+        patient: {
+          id: 'example',
+          name: 'Test Launch',
+          // Gender can't currently be user-set
+          gender: 'male',
+          // Age can't currently be user-set
+          age: 35,
+          zipcode: null,
+        },
+        user: {
+          id: 'example',
+          name: 'example',
+          record: null,
+        },
+        primaryCancerCondition: null,
+        ecogScore: null,
+        karnofskyScore: null,
+        radiation: [],
+        surgery: [],
+        medications: [],
+      },
+    };
+  }
   let fhirClient: Client;
   try {
     fhirClient = await smart(req, res).ready();

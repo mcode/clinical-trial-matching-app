@@ -18,6 +18,7 @@ type SidebarProps = {
   disabled: boolean;
   savedStudies: SavedStudiesState;
   filterOptions: FilterOptions;
+  setUserId: (string) => void;
 };
 
 enum SidebarExpand {
@@ -31,7 +32,7 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProps): ReactElement => {
+const Sidebar = ({ patient, disabled, savedStudies, filterOptions, setUserId }: SidebarProps): ReactElement => {
   const { query } = useRouter();
   const [expanded, setExpanded] = useState<SidebarExpand>(SidebarExpand.Filter);
 
@@ -41,6 +42,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
 
   const matchingServices = ensureArray(query.matchingServices);
   const defaultSearchValues = {
+    userid: null,
     matchingServices: Object.fromEntries(matchingServices.map(key => [key, true])),
     zipcode: (query.zipcode as string) || '',
     travelDistance: (query.travelDistance as string) || '',
@@ -100,7 +102,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProp
         expanded={expanded === SidebarExpand.Search}
         onChange={handleChange(SidebarExpand.Search)}
       >
-        <SearchForm fullWidth defaultValues={defaultSearchValues} />
+        <SearchForm fullWidth defaultValues={defaultSearchValues} setUserId={setUserId} />
       </SidebarAccordion>
 
       <SidebarAccordion
