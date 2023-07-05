@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+const fs = require('node:fs/promises');
+const path = require('node:path');
+
 // Script to test that wrappers are running.
 
 const testBundle = {
@@ -215,8 +218,7 @@ const testBundle = {
 const testBundleString = JSON.stringify(testBundle, null, 2);
 
 // Defaults
-// TODO: Pull the scripts to test out of wrappers.json
-let wrappers = ['ancora.ai', 'breastcancertrials.org', 'carebox', 'lungevity'];
+let wrappers = [];
 let protocol = 'http';
 let hostname = 'localhost';
 
@@ -230,14 +232,16 @@ let hostname = 'localhost';
 
 for (let idx = 2; idx < process.argv.length; idx++) {
   const arg = process.argv[idx];
-  if (arg == '--protocol' || arg == '--hostname') {
+  if (arg == '--protocol' || arg == '--hostname' || arg == '--wrappers') {
     idx++;
     if (idx < process.argv.length) {
       const value = process.argv[idx];
       if (arg == '--protocol') {
         protocol = value;
-      } else {
+      } else if (arg == '--hostname') {
         hostname = value;
+      } else if (arg == '--wrappers') {
+        wrappers.push(...value.split(/\s*,\s*/));
       }
     }
   }
@@ -374,6 +378,17 @@ function testFailed(ex) {
 }
 
 async function runTests() {
+  if (wrappers.length === 0) {
+    console.log('Loading available wrappers from wrappers.json...');
+    try {
+      const wrapperConfig = JSON.parse(await fs.readFile(path.join(__dirname, 'wrappers.json')));
+      wrappers = Object.keys(wrapperConfig);
+    } catch (ex) {
+      console.error('Unable to load wrappers.json:');
+      console.error(ex);
+      return;
+    }
+  }
   console.log(`Running tests against ${protocol}://${hostname}/...`);
   console.log('-- Testing Frontend app --');
   try {
@@ -412,8 +427,18 @@ async function runTests() {
           },
           testBundleString
         );
-        testPassed();
-        console.log(`  Received: ${result}`);
+        try {
+          result = JSON.parse(result);
+          if (result.resourceType === 'Bundle' && typeof result.total === 'number') {
+            testPassed();
+            console.log(`  Received ${result.total} results`);
+          } else {
+            testPassed('Unexpected response from wrapper: not a FHIR bundle.');
+            console.log('Server responsed with: %j', result);
+          }
+        } catch (ex) {
+          testPassed(`Failed to parse result: ${ex.toString()}`);
+        }
       } catch (ex) {
         testFailed(ex);
         console.log(
