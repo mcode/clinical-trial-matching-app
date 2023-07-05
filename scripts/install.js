@@ -563,7 +563,8 @@ class CTMSInstaller {
       // Once here, use the configuration
       this.wrappers = [];
       for (const k in wrapperConfig) {
-        this.wrappers.push(new CTMSWrapper(k, wrapperConfig['branch'], wrapperConfig['env']));
+        const config = wrapperConfig[k];
+        this.wrappers.push(new CTMSWrapper(k, config['branch'], config['env']));
       }
     } catch (ex) {
       this.error('Unable to load wrapper configuration: %s', ex);
