@@ -131,7 +131,7 @@ async function isFileOutOfDate(baseFile, generatedFile) {
   }
   // ENOENT in this case is an error so let that be thrown
   const baseStat = await fs.stat(baseFile);
-  // Return whether the node modules modification time is earlier than the package.json modification time
+  // Return whether the generated file modification time is before the base file modification time.
   return generatedStat.mtime < baseStat.mtime;
 }
 
@@ -206,28 +206,30 @@ class CTMSWebApp {
       if (installer.skipGitPull) {
         return;
       }
+
       installer.startSubtask(`Updating ${this.name}...`);
-      if ((await exec('git', ['pull'], { cwd: installPath, throwOnError: false })) != 0) {
-        // Failing this probably means the remaining steps will fail but
-        // just flag it as a warning and continue
-        installer.warning(`Error updating ${this.name} via Git, may be out of date`);
-      } else {
-        try {
-          const currentBranch = await exec('git', ['rev-parse', '--abbrev-ref', 'HEAD'], {
-            cwd: installPath,
-            capture: true,
-          });
-          if (currentBranch != this.branch) {
-            installer.startSubtask(`Checking out ${this.branch}...`);
-            try {
-              await exec('git', ['checkout', this.branch], { cwd: installPath });
-            } catch (ex) {
-              installer.warning(`Failed to switch branch to ${this.branch}.`);
-            }
+      // First, do a fetch, because it's possible this may be specifying a new remote branch
+      if ((await exec('git', ['fetch'], { cwd: installPath, throwOnError: false })) != 0) {
+        installer.warning('Failed to fetch remote git data.');
+      }
+      // Make sure this is on the right branch before trying to pull
+      try {
+        const currentBranch = await exec('git', ['rev-parse', '--abbrev-ref', 'HEAD'], {
+          cwd: installPath,
+          capture: true,
+        });
+        if (currentBranch != this.branch) {
+          installer.startSubtask(`Checking out ${this.branch}...`);
+          if ((await exec('git', ['checkout', this.branch], { cwd: installPath, throwOnError: false })) != 0) {
+            installer.warning(`Failed to switch branch to ${this.branch}.`);
           }
-        } catch (ex) {
-          installer.warning('Error finding current branch, may be on incorrect branch');
         }
+      } catch (ex) {
+        installer.warning('Error finding current branch, may be on incorrect branch');
+      }
+      // Since this has already been fetched, now merge any changes
+      if ((await exec('git', ['merge'], { cwd: installPath, throwOnError: false })) != 0) {
+        installer.warning(`Error updating ${this.name} via Git, may be out of date`);
       }
     } else {
       installer.startSubtask(`Cloning branch ${this.branch} for ${this.name}...`);
