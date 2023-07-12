@@ -28,6 +28,7 @@ const EXTRA_CAS = 'ca.pem';
  * a couple of "special" options:
  *   - `capture`: `true` to capture stdout and return that instead of
  *      the exit code
+ *   - `pipeToChild`: if set, write its contents to the stdin in the child
  *   - `throwOnError`: defaults to `true`, throw if the exit code isn't 0
  */
 function exec(command, args, options) {
@@ -62,10 +63,32 @@ function exec(command, args, options) {
         rejected = true;
         reject(error);
       });
+      if (options.pipeToChild) {
+        child.stdin.write(options.pipeToChild, error => {
+          if (error) {
+            if (!rejected) {
+              rejected = true;
+              reject(rejected);
+            }
+          } else {
+            // Tell the child process we sent everything
+            child.stdin.end();
+          }
+        });
+      }
     } catch (ex) {
       reject(ex);
     }
   });
+}
+
+/**
+ * Helper function to run PowerShell script for various parts that need to use
+ * PowerShell commandlets to configure IIS.
+ * @param {string} powerShellScript
+ */
+function runPowerShell(powerShellScript) {
+  return exec('powershell', ['-Command', '-'], { pipeToChild: powerShellScript });
 }
 
 async function exists(path, type) {
@@ -182,6 +205,13 @@ function escapeXML(str) {
   );
 }
 
+function escapePowerShell(str) {
+  return str.replaceAll('^', '^^').replaceAll('"', '""');
+}
+
+const NPM_COMMAND = process.platform === 'win32' ? 'npm.cmd' : 'npm';
+const YARN_COMMAND = process.platform === 'win32' ? 'yarn.cmd' : 'yarn';
+
 /**
  * Web app configuration
  */
@@ -247,7 +277,7 @@ class CTMSWebApp {
   }
 
   async runInstallDependencyCommand(installer) {
-    await exec('npm', ['ci'], { cwd: installer.joinPath(this.path) });
+    await exec(NPM_COMMAND, ['ci'], { cwd: installer.joinPath(this.path) });
   }
 
   async installDependencies(installer) {
@@ -259,7 +289,7 @@ class CTMSWebApp {
   }
 
   async runBuildCommand(installer) {
-    await exec('npm', ['run', 'build'], { cwd: installer.joinPath(this.path) });
+    await exec(NPM_COMMAND, ['run', 'build'], { cwd: installer.joinPath(this.path) });
   }
 
   async build(installer) {
@@ -383,6 +413,16 @@ ${Object.entries(this.getAppSettings(installer)).map(
     if (installer.targetServer === 'IIS') {
       installer.startSubtask('Writing web.config file...');
       await writeFileIfNotExists(installer.joinPath(this.path, 'web.config'), this.generateIISConfig(installer));
+      installer.startSubtask('Creating website within IIS...');
+      await runPowerShell(`
+      $siteName = "${escapePowerShell(installer.websiteName)}"
+      $appName = "${escapePowerShell(this.name)}"
+      $webapp = Get-WebApplication -Site $siteName -Name $appName
+      if (-Not $webapp) {
+          $physical_path = Resolve-Path "${escapePowerShell(installer.joinPath(this.path))}"
+          $webapp = New-WebApplication -Site $siteName -Name $appName -PhysicalPath $physical_path
+      }
+      `);
     }
   }
 }
@@ -433,7 +473,7 @@ class CTMSApp extends CTMSWebApp {
   }
 
   async runInstallDependencyCommand(installer) {
-    await exec('yarn', ['install'], { cwd: installer.joinPath(this.path) });
+    await exec(YARN_COMMAND, ['install'], { cwd: installer.joinPath(this.path) });
   }
 
   async runBuildCommand(installer) {
@@ -441,7 +481,7 @@ class CTMSApp extends CTMSWebApp {
     // Clone the environment (simple and easy way to do that)
     const env = JSON.parse(JSON.stringify(process.env));
     env['NODE_OPTIONS'] = '--openssl-legacy-provider';
-    await exec('yarn', ['build'], { cwd: installer.joinPath(this.path), env: env });
+    await exec(YARN_COMMAND, ['build'], { cwd: installer.joinPath(this.path), env: env });
   }
 
   getAppSettings(installer) {
@@ -489,6 +529,10 @@ class CTMSInstaller {
    * Target server. Currently either 'nginx' or 'IIS'
    */
   targetServer = 'nginx';
+  /**
+   * Server name. Currently solely used as the ID for the website for IIS.
+   */
+  websiteName = 'CTMS';
   // TTY color sequences
   _errorStyle = '\x1b[91;40m';
   _warningStyle = '\x1b[93;40m';
@@ -649,19 +693,22 @@ ${frontendConfig}
 
   async configureIIS() {
     this.startActivity('Configuring IIS...');
-    //         $default_website = Get-Website -Name "Default Web Site"
-    //         if ($default_website) {
-    //             $this.StartSubtask("Removing the default web site...")
-    //             Remove-Website "Default Web Site"
-    //         }
-    //         $website = Get-Website -Name "CTMS"
-    //         if (-Not $website) {
-    //             $this.StartSubtask("Creating CTMS website...")
-    //             $website = New-Website -Name "CTMS" -Port 80 -PhysicalPath "$($this.InstallPath)\clinical-trial-matching-app"
-    //         } else {
-    //             $this.StartSubtask("Stopping running CTMS website...")
-    //             Stop-Website "CTMS"
-    //         }
+    this.startSubtask('Removing default website if it exists...');
+    await runPowerShell(`$default_website = Get-Website -Name "Default Web Site"
+    if ($default_website) {
+      Remove-Website "Default Web Site"
+    }
+  `);
+    this.startSubtask(`Creating ${this.websiteName} website within IIS...`);
+    await runPowerShell(`$website = Get-Website -Name "${escapePowerShell(this.websiteName)}"
+      if (-Not $website) {
+        New-Website -Name "${escapePowerShell(
+          this.websiteName
+        )}" -Port 80 -PhysicalPath "$($this.InstallPath)\clinical-trial-matching-app"
+      } else {
+        Stop-Website "${escapePowerShell(this.websiteName)}"
+      }
+    `);
   }
 
   async configureWrappers() {
@@ -681,18 +728,6 @@ ${frontendConfig}
     await this.frontend.configure(this);
   }
 
-  //     [void]RestartIIS() {
-  //         # IIS needs to be restarted to pull in PATH changes from the Node.js install
-  //         $this.StartActivity("Restarting IIS and starting website...", "Restarting IIS...")
-  //         & IISReset /RESTART | Out-Host
-  //         if ($LastExitCode -ne 0) {
-  //             throw "Unable to restart IIS."
-  //         }
-  //         $this.StartSubtask("Starting CTMS website...")
-  //         Start-Website "CTMS"
-  //         $this.Done("Website started.")
-  //     }
-
   async makeInstallPath() {
     await fs.mkdir(this.installPath, { recursive: true });
   }
@@ -705,6 +740,11 @@ ${frontendConfig}
    *  Runs through the entire install process.
    */
   async install() {
+    if (this.targetServer != 'nginx' && this.targetServer != 'IIS') {
+      throw new Error(
+        `Cannot target server ${this.targetServer}: not a supported server. (Supported servers are "nginx" and "IIS".)`
+      );
+    }
     await this.loadInstallerConfig();
     await this.makeInstallPath();
     await this.checkExtraCerts();
@@ -715,7 +755,6 @@ ${frontendConfig}
       await this.configureWrappers();
       await this.configureFrontend();
     }
-    //             $this.RestartIIS()
     // If here, everything succeeded
     console.log(this._resetStyle);
     console.log('Install Complete');
@@ -743,6 +782,7 @@ const argumentsWithValues = {
   '--install-dir': INSTALL_PATH,
   '--extra-ca-certs': EXTRA_CAS,
   '--wrappers': null,
+  '--target-server': process.platform === 'win32' ? 'IIS' : 'nginx',
 };
 
 const argumentFlags = {
@@ -778,6 +818,7 @@ installer.noNetwork = argumentFlags['--no-network'];
 installer.skipGitPull = argumentFlags['--no-git-pull'];
 installer.skipBuild = argumentFlags['--no-build'];
 installer.skipWebappConfigure = argumentFlags['--no-webapp-configure'];
+installer.targetServer = argumentsWithValues['--target-server'];
 
 installer
   .install()

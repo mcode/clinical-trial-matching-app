@@ -6,7 +6,7 @@ param (
     # Name of a CA file to automatically use (path is relative to where the
     # script is run or the script file itself if not found there)
     [string]$ExtraCAs = "CA.cer",
-    # Name of wrappers to install
+    # Name of wrappers to install. If set to just "default" will install default wrappers.
     [string[]]$Wrappers = @("ancora.ai", "breastcancertrials.org", "carebox", "lungevity", "trialjectory"),
     # If $true, skip all install steps (and assume software is available)
     [switch]$NoInstall = $false,
@@ -17,273 +17,6 @@ param (
     # If $true, don't attempt to configure the web apps
     [switch]$NoConfigureWebapps = $false
 )
-
-# Actual app config object
-class CTMSWebApp {
-    [string]$Name
-    [string]$Path
-    [string]$Branch
-    [string]$GitURL
-
-    CTMSWebApp([string]$Name, [string]$Path, [string]$Branch, [string]$GitURL) {
-        $this.Name = $Name
-        $this.Path = $Path
-        $this.Branch = $Branch
-        if ($this.Branch -eq "") {
-            # For now, default to master, a future version might try and figure
-            # out what the "real" default branch is
-            $this.Branch = "master"
-        }
-        $this.GitURL = $GitURL
-    }
-
-    # Clones this into whatever the root branch is. If it appears to be checked
-    # out, runs git pull instead.
-    [void]CloneBranch([CTMSInstaller]$Installer) {
-        if (Test-Path -Path "$($this.Path)\.git") {
-            if ($Installer.SkipGitPull) {
-                return
-            }
-            $Installer.StartSubtask("Updating $($this.Name)...")
-            Push-Location $this.Path
-            git pull
-            if ($LastExitCode -ne 0) {
-                # Failing this probably means the remaining steps will fail but
-                # just flag it as a warning and continue
-                Write-Warning "Error updating $($this.Name) via Git, may be out of date"
-            } else {
-                $current_branch = git rev-parse --abbrev-ref HEAD
-                if ($current_branch -ne $this.Branch) {
-                    $Installer.StartSubtask("Checking out $($this.Branch)...")
-                    git checkout $this.Branch
-                    if ($LastExitCode -ne 0) {
-                        Write-Warning "Failed to switch branch to $($this.Branch)."
-                    }
-                }
-            }
-            Pop-Location
-        } else {
-            $Installer.StartSubtask("Cloning branch $($this.Branch) for $($this.Name)...")
-            git clone $this.GitURL -b $this.Branch
-            if ($LastExitCode -ne 0) {
-                throw "Failed to check out $($this.GitURL) for $($this.Name)"
-            }
-        }
-    }
-
-    [boolean]NeedsDependenciesUpdated() {
-        # Checks to see if any dependencies need to be updated
-        if (-Not (Test-Path "$($this.Path)\node_modules" -PathType "container")) {
-            return $true
-        }
-        $node_modules = Get-Item "$($this.Path)\node_modules"
-        return ($node_modules.LastWriteTime -lt (Get-Item "$($this.Path)\package.json").LastWriteTime) -Or ($node_modules.LastWriteTime -lt (Get-Item "$($this.Path)\package-lock.json").LastWriteTime)
-    }
-
-    [void]RunInstallDependencyCommand() {
-        & npm ci | Out-Host
-    }
-
-    [void]InstallDependencies([CTMSInstaller]$Installer) {
-        if (-Not $this.NeedsDependenciesUpdated()) {
-            # If dependencies appear to be up to date, report that and do nothing
-            $Installer.Info("Dependenices for $($this.Name) appear to be up to date.")
-            return
-        }
-        Push-Location $this.Path
-        try {
-            $Installer.StartSubtask("Installing dependencies for $($this.Name)...")
-            # For now this will always regenerate everything, the assumption being this
-            # script will only ever be run to install or update things anyway
-            $this.RunInstallDependencyCommand()
-            if ($LastExitCode -ne 0) {
-                Throw "Unable to install dependencies for $($this.Name)."
-            }
-        } finally {
-            Pop-Location
-        }
-    }
-
-    [void]RunBuildCommand() {
-        & npm run build | Out-Host
-    }
-
-    [void]Build([CTMSInstaller]$Installer) {
-        Push-Location $this.Path
-        try {
-            $Installer.StartSubtask("Building $($this.Name)...")
-            $this.RunBuildCommand()
-            If ($LastExitCode -ne 0) {
-                Throw "An error occurred while building the wrapper for $($this.Name)!"
-            }
-        } finally {
-            Pop-Location
-        }
-    }
-
-    # Runs through every part of the install process
-    [void]Install([CTMSInstaller]$Installer) {
-        $Installer.StartActivity("Install $($this.Name)...")
-        if (-Not $Installer.SkipInstall) {
-            $this.CloneBranch($Installer)
-            $this.InstallDependencies($Installer)
-        }
-        if (-Not $Installer.SkipBuild) {
-            $this.Build($Installer)
-        }
-    }
-
-    [Hashtable]GetAppSettings([CTMSInstaller]$Installer) {
-        $settings = @{
-            "IISNODE_BASE_URI" = "/$($this.Name)"
-        }
-        if ($Installer.HasExtraCerts) {
-            $settings["NODE_EXTRA_CA_CERTS"] = $Installer.CACertsPEM
-        }
-        return $settings
-    }
-
-    [string]GetIndexScript([CTMSInstaller]$Installer) {
-        return "start.js"
-    }
-
-    [string]GenerateWebConfig([CTMSInstaller]$Installer) {
-        $app_settings = $this.GetAppSettings($Installer).GetEnumerator() | ForEach-Object { "    <add key=""$([System.Net.WebUtility]::HtmlEncode($_.Name))"" value=""$([System.Net.WebUtility]::HtmlEncode($_.Value))"" />" }
-        $index_script = $this.GetIndexScript($Installer)
-        return @"
-<configuration>
-  <appSettings>
-    <clear />
-$($app_settings -join "`r`n")
-  </appSettings>
-  <system.webServer>
-    <handlers>
-      <add name="$($this.Name)-iisnode" path="$index_script" verb="*" modules="iisnode" />
-    </handlers>
-    <rewrite>
-      <rules>
-        <clear />
-        <rule name="$($this.Name)-rewrite">
-          <match url="/*" />
-          <action type="Rewrite" url="$index_script" />
-        </rule>
-      </rules>
-    </rewrite>
-  </system.webServer>
-</configuration>
-"@
-    }
-
-    [void]Configure([string]$Site, [CTMSInstaller]$Installer) {
-        # See if we already exist
-        $webapp = Get-WebApplication -Site $Site -Name $this.Name
-        if (-Not $webapp) {
-            $Installer.StartSubtask("Generating IIS web application...")
-            $physical_path = Resolve-Path $this.Path
-            $webapp = New-WebApplication -Site $Site -Name $this.Name -PhysicalPath $physical_path
-        }
-        if (-Not (Test-Path -Path "$($this.Path)\web.config")) {
-            $Installer.StartSubtask("Writing web.config file...")
-            $this.GenerateWebConfig($Installer) | Out-File -FilePath "$($this.Path)\web.config"
-        }
-    }
-}
-
-# Extends the base webapp with wrapper-specific details
-class CTMSWrapper : CTMSWebApp {
-    [System.Collections.Hashtable]$LocalEnv
-
-    CTMSWrapper([string]$Name) :
-    base($Name,
-        "clinical-trial-matching-service-$Name",
-        "",
-        "https://github.com/mcode/clinical-trial-matching-service-$Name.git"
-    ) {
-        $this.LocalEnv = @{}
-    }
-    CTMSWrapper([string]$Name, [string]$Branch) :
-    base($Name,
-        "clinical-trial-matching-service-$Name",
-        $Branch,
-        "https://github.com/mcode/clinical-trial-matching-service-$Name.git"
-    ) {
-        $this.LocalEnv = @{}
-    }
-    CTMSWrapper([string]$Name, [string]$Branch, [System.Collections.Hashtable]$LocalEnv) :
-    base($Name,
-        "clinical-trial-matching-service-$Name",
-        $Branch,
-        "https://github.com/mcode/clinical-trial-matching-service-$Name.git"
-    ) {
-        $this.LocalEnv = $LocalEnv
-    }
-
-    [void]Configure([string]$Site, [CTMSInstaller]$Installer) {
-        # Let the base inmplementation deal with the generic stuff
-        ([CTMSWebApp]$this).Configure($Site, $Installer)
-        if ($this.LocalEnv.Count -gt 0) {
-            $Installer.StartSubtask("Writing .env.local file...")
-            # Write out values to .env.local
-            $lines = $this.LocalEnv.GetEnumerator() | ForEach-Object { "{0}=""{1}""" -f $_.Name, $_.Value }
-            # Out-File will output as Unicode with BOM, but we want plain UTF-8,
-            # so directly invoke System.IO.File to save as plain BOM-less UTF-8.
-            [IO.File]::WriteAllLines("$($Installer.InstallPath)\$($this.Path)\.env.local", $lines)
-        }
-    }
-}
-
-# The CTMS app. Currently an entire special case.
-class CTMSApp : CTMSWebApp {
-    CTMSApp() : base("clinical-trial-matching-app", "clinical-trial-matching-app", "epic", "https://github.com/mcode/clinical-trial-matching-app.git") {}
-
-    [boolean]NeedsDependenciesUpdated() {
-        # Checks to see if any dependencies need to be updated
-        if (-Not (Test-Path "$($this.Path)\node_modules" -PathType "container")) {
-            return $true
-        }
-        $node_modules = Get-Item "$($this.Path)\node_modules"
-        return ($node_modules.LastWriteTime -lt (Get-Item "$($this.Path)\package.json").LastWriteTime) -Or ($node_modules.LastWriteTime -lt (Get-Item "$($this.Path)\yarn.lock").LastWriteTime)
-    }
-
-    [void]RunInstallDependencyCommand() {
-        & yarn install | Out-Host
-    }
-
-    [void]RunBuildCommand() {
-        # Next.js will ALWAYS use md4 for some hashes regardless of what we tell it to do
-        $Env:NODE_OPTIONS = "--openssl-legacy-provider"
-        & yarn build | Out-Host
-    }
-
-    [Hashtable]GetAppSettings([CTMSInstaller]$Installer) {
-        $secret = node -e "console.log(require('crypto').randomBytes(33).toString('base64'))"
-        $settings = @{
-            "SESSION_SECRET_KEY" = $secret
-            "NODE_ENV" = "production"
-        }
-        if ($Installer.HasExtraCerts) {
-            $settings["NODE_EXTRA_CA_CERTS"] = $Installer.CACertsPEM
-        }
-        return $settings
-    }
-
-    [string]GetIndexScript([CTMSInstaller]$Installer) {
-        return "server.js"
-    }
-}
-
-$WrapperConfig = @{
-    "ancora.ai" = [CTMSWrapper]::New("ancora.ai", "", @{
-        ANCORA_AI_API_KEY="<ancora.ai key>"
-    })
-    "breastcancertrials.org" = [CTMSWrapper]::New("breastcancertrials.org", "remove-unused-dependencies")
-    "carebox" = [CTMSWrapper]::New("carebox", "remove-copy", @{
-        MATCHING_SERVICE_AUTH_CLIENT_ID="<client id>"
-        MATCHING_SERVICE_AUTH_CLIENT_SECRET="<client secret>"
-    })
-    "lungevity" = [CTMSWrapper]::New("lungevity", "update-dependencies")
-    "trialjectory" = [CTMSWrapper]::New("trialjectory", "update-depenencies")
-}
 
 class CTMSPreReq {
     [System.Uri]$Uri
@@ -387,12 +120,8 @@ class CTMSInstaller {
     [boolean]$SkipWebappConfigure
     [string]$CurrentActivity
     [string]$CurrentStatus
-    [CTMSWrapper[]]$Wrappers
-    [CTMSApp]$Frontend
-    [System.Collections.Generic.List[CTMSWrapper]]$InstalledWrappers
-    [System.Collections.Generic.List[CTMSWrapper]]$FailedWrappers
 
-    CTMSInstaller([string]$InstallPath, [string]$CACerts, [CTMSWrapper[]]$Wrappers) {
+    CTMSInstaller([string]$InstallPath, [string]$CACerts) {
         $this.InstallPath = $InstallPath
         $this.InstallersPath = "$InstallPath\installers"
         if ($CACerts.Length -gt 4) {
@@ -406,10 +135,6 @@ class CTMSInstaller {
         $this.SkipBuild = $false
         $this.SkipWebappConfigure = $false
         $this.CurrentActivity = "Installing CTMS"
-        $this.Wrappers = $Wrappers
-        $this.Frontend = [CTMSApp]::new()
-        $this.InstalledWrappers = [System.Collections.Generic.List[CTMSWrapper]]::new()
-        $this.FailedWrappers = [System.Collections.Generic.List[CTMSWrapper]]::new()
     }
 
     [void]StartActivity([string]$Activity) {
@@ -537,7 +262,7 @@ EnableFSMonitor=Disabled
             $node_version = ""
         }
 
-        [CTMSPreReq]::New("https://nodejs.org/dist/v18.16.0/node-v18.16.0-x64.msi", "Node.js", "v18.16.0", $node_version).Install($this)
+        [CTMSPreReq]::New("https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi", "Node.js", "v18.16.1", $node_version).Install($this)
         # These installs will have updated PATH but we won't have the new
         # version, so copy that over
         Rebuild-Path
@@ -574,56 +299,51 @@ EnableFSMonitor=Disabled
         [CTMSPreReq]::New("https://download.microsoft.com/download/1/2/8/128E2E22-C1B9-44A4-BE2A-5859ED1D4592/rewrite_amd64_en-US.msi", "URL Rewrite", "2.1").Install($this)
     }
 
-    [void]InstallWrappers() {
-        ForEach ($Wrapper in $this.Wrappers) {
-            $this.StartActivity("Installing $($Wrapper.Name)...")
-            try {
-                $Wrapper.Install($this)
-                [void]$this.InstalledWrappers.Add($Wrapper)
-            } catch {
-                Write-Error "Unable to install $($Wrapper.Name): $_"
-                [void]$this.FailedWrappers.Add($Wrapper)
+    [void]CopyInstallJS() {
+        $this.StartActivity("Copying install script to destination...")
+        # Copy the scripts to the install directory
+        if (-Not (Test-Path -Path "$($this.InstallPath)\wrappers.json" -PathType "Leaf")) {
+            # Copy wrapper configuration over
+            Copy-Item -Path "$PSScriptRoot\wrappers.json" -Destination "$($this.InstallPath)\wrappers.json"
+        }
+        if (-Not (Test-Path -Path "$($this.InstallPath)\wrappers.local.json" -PathType "Leaf")) {
+            if (Test-Path -Path "$PSScriptRoot\wrappers.local.json" -PathType "Leaf") {
+                # Copy local wrapper configuration over
+                Copy-Item -Path "$PSScriptRoot\wrappers.local.json" -Destination "$($this.InstallPath)\wrappers.local.json"
             }
         }
-    }
-
-    [void]InstallFrontend() {
-        $this.Frontend.Install($this)
-    }
-
-    [void]ConfigureIIS() {
-        $this.StartActivity("Configuring IIS...")
-
-        $default_website = Get-Website -Name "Default Web Site"
-        if ($default_website) {
-            $this.StartSubtask("Removing the default web site...")
-            Remove-Website "Default Web Site"
-        }
-        $website = Get-Website -Name "CTMS"
-        if (-Not $website) {
-            $this.StartSubtask("Creating CTMS website...")
-            $website = New-Website -Name "CTMS" -Port 80 -PhysicalPath "$($this.InstallPath)\clinical-trial-matching-app"
-        } else {
-            $this.StartSubtask("Stopping running CTMS website...")
-            Stop-Website "CTMS"
-        }
-    }
-
-    [void]ConfigureWrappers() {
-        $this.StartActivity("Configuring wrappers...")
-        ForEach ($Wrapper in $this.InstalledWrappers) {
-            try {
-                $this.StartSubtask("Configuring wrapper $($Wrapper.Name)...")
-                $wrapper.Configure("CTMS", $this)
-            } catch {
-                Write-Error "Unable to configure $($Wrapper.Name): $_"
+        # There is no good way to check if we're trying to copy over itself
+        # and no way to determine if the error was that it copied to itself
+        # (other than hoping the description text never changes) so instead
+        # try and figure out if the destination already exists
+        $source = Get-Item "$PSScriptRoot\install.js"
+        $install_js_path = "$($this.InstallPath)\install.js"
+        if (Test-Path -Path $install_js_path -PathType "Leaf") {
+            # Could potentially be the same file.
+            $dest = Get-Item -Path $install_js_path
+            if ($source.PSParentPath -eq $dest.PSParentPath) {
+                # Is the same item, return
+                return
             }
         }
+        # Copy it
+        Copy-Item -Path "$PSScriptRoot\install.js" -Destination $install_js_path
     }
 
-    [void]ConfigureFrontend() {
-        $this.StartActivity("Configuring frontend...")
-        $this.Frontend.Configure("CTMS", $this)
+    [void]InvokeJSInstallScript() {
+        # Copy the scripts to the install directory
+        $this.CopyInstallJS()
+        # Hide the progress bar for the duration of the Node.js process
+        Write-Progress -Activity "done" -Status "done" -Completed
+        # Force color output in the install script
+        $Env:FORCE_COLOR = 1
+        $args = @("$($this.InstallPath)\install.js", "--install-dir", $this.InstallPath, "--target-server", "IIS")
+        if ($this.HasExtraCerts) {
+          $args += "--extra-ca-certs"
+          $args += $this.CACertsPEM
+        }
+        # And run it
+        Start-Process -FilePath "node.exe" -ArgumentList $args -Wait -NoNewWindow | Out-Host
     }
 
     [void]RestartIIS() {
@@ -659,40 +379,10 @@ EnableFSMonitor=Disabled
                 $this.InstallIISNode()
                 $this.InstallURLRewrite()
             }
-            $this.InstallWrappers()
-            $this.InstallFrontend()
-            $this.ConfigureIIS()
-            if (-Not $this.SkipWebappConfigure) {
-                $this.ConfigureWrappers()
-                $this.ConfigureFrontend()
-            }
+            $this.InvokeJSInstallScript()
+            # Restart IIS to pull in changes
             $this.RestartIIS()
             # If here, everything succeeded
-            Write-Host ""
-            Write-Host "Install Complete"
-            Write-Host "================"
-            If ($this.InstalledWrappers.Count -gt 0) {
-                Write-Host ""
-                Write-Host "Successfully" -Foreground "green" -NoNewLine
-                Write-Host " installed the following wrappers:"
-                ForEach ($wrapper in $this.InstalledWrappers) {
-                    Write-Host "  - $($wrapper.Name)"
-                }
-            }
-            If ($this.FailedWrappers.Count -gt 0) {
-                Write-Host ""
-                Write-Host "The following wrappers " -NoNewLine
-                Write-Host "FAILED" -NoNewLine -Foreground "red"
-                Write-Host " to install:"
-                Foreach ($wrapper in $this.FailedWrappers) {
-                    Write-Host "  - " -NoNewLine
-                    Write-Host $wrapper.Name -Foreground "red"
-                }
-            }
-            Write-Host ""
-            Write-Host "Clinical Trial Matching Service was " -NoNewLine
-            Write-Host "successfully" -NoNewLine -Foreground "green"
-            Write-Host " installed."
         } finally {
             # And return to wherever the script was originally run from
             Pop-Location
@@ -700,30 +390,17 @@ EnableFSMonitor=Disabled
     }
 }
 
-$wrappers_to_install = ForEach ($name in $Wrappers) {
-    $wrapper = $WrapperConfig[$name]
-    if (-Not $wrapper) {
-        throw "Invalid wrapper $name - no configuration for wrapper of that name"
-    }
-    $wrapper
-}
-
 Write-Host "Running CTMS Installer..."
 
 $ca_file = ""
-try {
-    $ca_file = (Get-Item -Path $ca_file).ToString()
-} catch {
-    # If that failed, it's fine, try it relative to ourself
-    try {
-        $ca_file = (Get-Item -Path "$PSScriptRoot\$ExtraCAs").ToString()
-    } catch {
-        # Again, this is fine, it'll just be ignored
-    }
+if (Test-Path -Path $ExtraCAs -PathType "Leaf") {
+  $ca_file = $ExtraCAs
+} elseif (Test-Path -Path "$PSScriptRoot\$ExtraCAs" -PathType "Leaf") {
+  $ca_file = "$PSScriptRoot\$ExtraCAs"
 }
 
 try {
-    $installer = [CTMSInstaller]::New($InstallPath, $ca_file, $wrappers_to_install)
+    $installer = [CTMSInstaller]::New($InstallPath, $ca_file)
     $installer.SkipInstall = $NoInstall
     $installer.SkipGitPull = $NoGitPull
     $installer.SkipBuild = $NoBuild

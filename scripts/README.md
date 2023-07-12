@@ -24,4 +24,12 @@ You may create a `wrappers.local.json` file to fill in the missing API keys. It 
 }
 ```
 
-Under Windows, the `install.ps1` script runs through installing all necessary software. **Note:** At present, this doesn't use the configuration within the `wrappers.json` file. It is intended that eventually the `install.ps1` script will invoke the `install.js` script to complete the install process, but right now, it is the original script and therefore still needs to be updated to invoke the `install.js` script which does use a local configuration file.
+Under Windows, the `install.ps1` script runs through installing all necessary software. You'll need to copy the `install.ps1`, `install.js`, and `wrappers.json` configuration files onto Windows. A `wrappers.local.json` file may also be included with the necessary API keys.
+
+The install script may need to be marked as being allowed to execute locally, via:
+
+```powershell
+Unblock-File install.ps1
+```
+
+Once that's done, it should be possible to run the entire thing.
