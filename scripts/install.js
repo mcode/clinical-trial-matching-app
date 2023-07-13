@@ -598,7 +598,19 @@ class CTMSInstaller {
         );
         // Merge in the local wrapper config
         for (const k in localWrapperConfig) {
-          wrapperConfig[k] = localWrapperConfig[k];
+          const localConfig = localWrapperConfig[k];
+          // May need to merge
+          if (k in wrapperConfig && typeof localConfig === 'object' && localConfig !== null) {
+            const globalConfig = wrapperConfig[k];
+            // Copy over any value in the local config, entirely overwriting the global values
+            for (const localKey in localConfig) {
+              globalConfig[localKey] = localConfig[localKey];
+            }
+          } else {
+            // Otherwise, just copy into the overall config directly
+            // (for things like a wrapper that's only in the local config, or instances where it's overridden)
+            wrapperConfig[k] = localConfig;
+          }
         }
       } catch (ex) {
         if (ex.code !== 'ENOENT') {
@@ -610,7 +622,16 @@ class CTMSInstaller {
       this.wrappers = [];
       for (const k in wrapperConfig) {
         const config = wrapperConfig[k];
-        this.wrappers.push(new CTMSWrapper(k, config['branch'], config['env']));
+        if (config) {
+          // If the config is an object, add it
+          if (typeof config === 'object') {
+            this.wrappers.push(new CTMSWrapper(k, config['branch'], config['env']));
+          } else {
+            // Any falsy value is allowed, meaning "ignore this wrapper", with the idea it was set via wrappers.local.json
+            // But this is an invalid truthy value
+            this.warning(`Invalid configure ${config} for ${k}: ignored!`);
+          }
+        }
       }
     } catch (ex) {
       this.error('Unable to load wrapper configuration: %s', ex);

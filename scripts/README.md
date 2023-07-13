@@ -4,6 +4,14 @@ This directory contains various scripts designed to automate the install process
 
 Currently suppported platforms are Windows 10 Server and [Ubuntu Server](https://ubuntu.com/download/server) 22.04. Other Windows platforms with IIS _may_ work. Other Linux platforms would likely work as well, but the `install.sh` script only targets Ubuntu 22.04 at present.
 
+Once installed, the software is set up within either IIS (on Windows) or nginx (on Linux) to run within a single server. On IIS, it uses iisnode to run the Node.js-based webapps within the IIS server. On nginx, it uses Passenger to run the Node.js-based webapps within the server. In both cases, the final URL layout for the server is the same:
+
+| URL          | Description                                                                                       |
+| ------------ | ------------------------------------------------------------------------------------------------- |
+| `/`          | Root user-based web app                                                                           |
+| `/launch`    | The SMART on FHIR launch URL                                                                      |
+| `/<wrapper>` | Each individual wrapper is placed under a directory with the name as specified in `wrappers.json` |
+
 Wrapper configuration is contained within the `wrapper.json` file. This file contains a list of all wrappers and the branches that should be used, as well as additional configuration required in their `.env.local` file, for example, API keys. These API keys are not in the version checked in, instead, a file called `wrappers.local.json` should be created to supply values. Any value in the `wrappers.local.json` file takes precedent over the `wrappers.json` file.
 
 A minimal `wrappers.json` file would be something like the following:
@@ -108,3 +116,25 @@ These options control the Linux installer:
 | `--no-git-pull`           | Skip attempting to pull latest code from GitHub                                                                                                                                                                                                     |
 | `--no-build`              | Skip the build step for the webapps                                                                                                                                                                                                                 |
 | `--no-webapp-configure`   | Skip attempting to configure the various web appsvarious web apps                                                                                                                                                                                   |
+
+## Files in this direcotory
+
+| Name            | Description                                                                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `install.js`    | The cross-OS Node.js installer. Handles the install process for downloading and building the web apps within the Node.js environment.                             |
+| `install.ps1`   | Windows PowerShell installer. Handles installing required software on Windows Server and then passing the remaining install to `install.js`.                      |
+| `install.sh`    | UNIX bash script installer. Handles installing required software and building the basic directory structure before passing the remaining install to `install.js`. |
+| `README.md`     | This file.                                                                                                                                                        |
+| `test.js`       | Test script. Sends a test request to the main web app as well as                                                                                                  |
+| `wrappers.json` | Configuration file for the individual wrappers. See below.                                                                                                        |
+
+## wrappers.json Configuration
+
+`wrappers.json` is a simple JSON file. The base value is an object, where each key gives the name a wrapper will be installed to. This name is also used to determine the GitHub URL of the wrapper, which currently must be `https://github.com/mcode/clinical-trial-matching-service-<name>.git`. (This will likely be updated to allow a specific URL to be used to override the default.)
+
+The value for each key may either be `false` or `null` to skip that wrapper (when overriding from `wrappers.local.json`), or an object with the following keys:
+
+| Key      | Description                                                                                                                                                                                                                                  |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `branch` | String indicating the Git branch to use                                                                                                                                                                                                      |
+| `env`    | A `Record<string, string>` containing environment variable names and their values. Setting this entirely overrides the values within the global wrapper, so setting it to an empty object means no keys are used in the final configuration. |

@@ -388,6 +388,7 @@ async function runTests() {
       console.error(ex);
       return;
     }
+    // FIXME: Merge in any extra wrappers in wrappers.local.json
   }
   console.log(`Running tests against ${protocol}://${hostname}/...`);
   console.log('-- Testing Frontend app --');
