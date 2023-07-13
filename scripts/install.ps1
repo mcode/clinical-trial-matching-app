@@ -342,6 +342,15 @@ EnableFSMonitor=Disabled
           $args += "--extra-ca-certs"
           $args += $this.CACertsPEM
         }
+        if ($this.SkipGitPull) {
+          $args += "--no-git-pull"
+        }
+        if ($this.SkipBuild) {
+          $args += "--no-build"
+        }
+        if ($this.SkipWebappConfigure) {
+          $args += "--no-webapp-configure"
+        }
         # And run it
         Start-Process -FilePath "node.exe" -ArgumentList $args -Wait -NoNewWindow | Out-Host
     }

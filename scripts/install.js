@@ -787,7 +787,6 @@ const argumentsWithValues = {
 
 const argumentFlags = {
   '--no-network': false,
-  '--nginx-config': false,
   '--no-git-pull': false,
   '--no-build': false,
   '--no-webapp-configure': false,

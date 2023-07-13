@@ -28,22 +28,37 @@ REMAINING_ARGS=()
 
 # Parse command line options if possible
 while [[ $# -gt 0 ]]; do
-    case $1 in
-        --extra-ca-certs)
-            EXTRA_CA_CERTS_FILE="$2"
-            shift
-            shift
-            ;;
-        --no-extra-certs)
-            EXTRA_CA_CERTS_FILE=""
-            shift
-            ;;
-        *)
-            # Save
-            REMAINING_ARGS+=("$1")
-            shift
-            ;;
-    esac
+  case $1 in
+    --install-dir)
+      CTMS_DIR="$2"
+      shift
+      shift
+      ;;
+    --username)
+      CTMS_USER="$2"
+      shift
+      shift
+      ;;
+    --group)
+      CTMS_GROUP="$2"
+      shift
+      shift
+      ;;
+    --extra-ca-certs)
+      EXTRA_CA_CERTS_FILE="$2"
+      shift
+      shift
+      ;;
+    --no-extra-certs)
+      EXTRA_CA_CERTS_FILE=""
+      shift
+      ;;
+    *)
+      # Save
+      REMAINING_ARGS+=("$1")
+      shift
+      ;;
+  esac
 done
 
 # Restore existing arguments to pass to the JS script
