@@ -1,0 +1,20 @@
+{
+  "ancora.ai": {
+    "env": {
+      "ANCORA_AI_API_KEY": "<set to the Ancora.ai API key>"
+    }
+  },
+  "breastcancertrials.org": {},
+  "carebox": {
+    "env": {
+      "MATCHING_SERVICE_AUTH_CLIENT_ID": "<client ID>",
+      "MATCHING_SERVICE_AUTH_CLIENT_SECRET": "<secret>"
+    }
+  },
+  "lungevity": {
+    "branch": "update-dependencies"
+  },
+  "trialjectory": {
+    "branch": "new-cancer-types"
+  }
+}
