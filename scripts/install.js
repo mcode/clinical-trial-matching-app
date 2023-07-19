@@ -795,8 +795,8 @@ ${frontendConfig}
       }
     }
     console.log('');
-    console.log(`Front end is installed in: ${this.joinPath(this.frontend.path)}`);
-    console.log('Check next.config.js to ensure that it is configured for the expected wrappers.');
+    console.log(`Front end app is installed in: ${this.joinPath(this.frontend.path)}`);
+    console.log('Check next.config.js to ensure that the front end app is configured for the expected wrappers.');
   }
 }
 
