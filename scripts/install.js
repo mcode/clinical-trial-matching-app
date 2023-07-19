@@ -794,6 +794,9 @@ ${frontendConfig}
         console.log(`  - ${this._errorStyle}${wrapper.name}${this._resetStyle}`);
       }
     }
+    console.log('');
+    console.log(`Front end is installed in: ${this.joinPath(this.frontend.path)}`);
+    console.log('Check next.config.js to ensure that it is configured for the expected wrappers.');
   }
 }
 
