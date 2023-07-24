@@ -44,8 +44,6 @@ export const getDetails = (studyProps: StudyDetailProps): StudyDetail[] => {
 
 const getTrialId = (study: ResearchStudy) => study.identifier?.[0]?.value;
 
-const getSource = () => 'Unknown'; // TODO
-
 const getDescription = (study: ResearchStudy) => study.description?.trim();
 
 const getEligibility = (study: ResearchStudy) => study.enrollment?.[0]?.display.trim();
