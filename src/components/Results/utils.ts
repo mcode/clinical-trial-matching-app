@@ -200,7 +200,7 @@ const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacil
     .slice(0, numOfFacilities);
 };
 
-export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyDetailProps => {
+export const getStudyDetailProps = (entry: BundleEntry, zipcode: string, serviceName: string): StudyDetailProps => {
   const { resource, search } = entry;
   // Grab the locations so we only have to do this once
   const locations = getLocations(resource);
@@ -208,7 +208,7 @@ export const getStudyDetailProps = (entry: BundleEntry, zipcode: string): StudyD
   return {
     conditions: getConditions(resource),
     trialId: getTrialId(resource),
-    source: getSource(),
+    source: serviceName,
     description: getDescription(resource),
     eligibility: getEligibility(resource),
     keywords: getKeywords(resource),
