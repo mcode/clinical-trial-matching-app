@@ -125,8 +125,7 @@ async function callWrappers(matchingServices: string[], query: Bundle, patientZi
   const errors = wrapperResults.filter(result => result.status == 500);
 
   // Combine the responses that were successful
-  const combined: StudyDetailProps[] = [];
-  const uniqueTrialIds = new Set<string>();
+  const uniqueTrials: { [key: string]: StudyDetailProps } = {};
 
   wrapperResults
     .filter(result => result.status == 200)
@@ -135,15 +134,17 @@ async function callWrappers(matchingServices: string[], query: Bundle, patientZi
       // Transform each of the studies in the bundle
       searchset?.response?.entry.forEach((entry: BundleEntryWithStudy) => {
         const otherTrialId = entry.resource.identifier?.[0]?.value;
-        const foundDuplicateTrial = uniqueTrialIds.has(otherTrialId);
-        if (!foundDuplicateTrial) {
-          uniqueTrialIds.add(otherTrialId);
-          combined.push(getStudyDetailProps(entry, patientZipCode));
+        const isUniqueTrial = uniqueTrials[otherTrialId] === undefined;
+        // Don't want to return NCT05885880 so just filter it out
+        if (isUniqueTrial && otherTrialId != 'NCT05885880') {
+          uniqueTrials[otherTrialId] = getStudyDetailProps(entry, patientZipCode, searchset['serviceName']);
+        } else {
+          uniqueTrials[otherTrialId].source += ', ' + searchset['serviceName'];
         }
       });
     });
 
-  return { results: combined, errors };
+  return { results: Object.values(uniqueTrials), errors };
 }
 
 /**
@@ -166,7 +167,7 @@ async function callWrapper(url: string, query: string, serviceName: string) {
     .then(handleError)
     .then(response => response.json())
     .then(data => {
-      return { status: 200, response: data };
+      return { status: 200, response: data, serviceName };
     })
     .catch(error => {
       return {
