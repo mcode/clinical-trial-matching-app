@@ -11,9 +11,9 @@ import type { AppProps } from 'next/app';
 import { ReactElement, useCallback, useEffect, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { Hydrate } from 'react-query/hydration';
+import { DehydratedState, Hydrate } from 'react-query/hydration';
 
-const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
+const App = ({ Component, pageProps, router }: AppProps<{ dehydratedState: DehydratedState }>): ReactElement => {
   const [loading, setLoading] = useState(false);
   const handleStart = useCallback(() => setLoading(true), []);
   const handleStop = useCallback(() => setLoading(false), []);
