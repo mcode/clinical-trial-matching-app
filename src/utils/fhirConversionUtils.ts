@@ -284,7 +284,29 @@ const equalCodedValueType =
   (target: CodedValueType): boolean =>
     selected?.code === target.code && selected?.system === target.system;
 
+export const isEqualCodedValueType = (originalValue: CodedValueType, newValue: CodedValueType): boolean => {
+  return (
+    equalStringArrays(originalValue.cancerType, newValue.cancerType) &&
+    equalStringArrays(originalValue.category, newValue.category) &&
+    originalValue.code == newValue.code &&
+    originalValue.display == newValue.display &&
+    originalValue.entryType == newValue.entryType &&
+    originalValue.system == newValue.system
+  );
+};
+const equalStringArrays = (array1: string[], array2: string[]) => {
+  return array1.sort().join(',') === array2.sort().join(',');
+};
+
 const equalScore =
   (selected: Coding) =>
   (target: Score): boolean =>
     target.interpretation.code === selected?.code && target.interpretation.system === selected?.system;
+
+export const isEqualScore = (originalValue: Score, newValue: Score): boolean => {
+  return (
+    originalValue.entryType == newValue.entryType &&
+    originalValue.interpretation.code == newValue.interpretation.code &&
+    originalValue.valueInteger == newValue.valueInteger
+  );
+};

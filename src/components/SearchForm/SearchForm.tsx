@@ -1,7 +1,7 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import generateSearchCSVString from '@/utils/exportSearch';
-import { CodedValueType } from '@/utils/fhirConversionUtils';
+import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
 import { generateId } from '@/utils/generateId';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
@@ -74,9 +74,40 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId }: SearchFormProps): R
     });
   };
 
+  // Compare what's in the form with what was set as the default values
+  // Normally could user contollers isDirty, but doesn't work for array values...
+  const compareDefaultValues = (data: SearchFormValuesType) => {
+    const manuallyAdjusted = {};
+    Object.entries(data).forEach(([key, value]) => {
+      // If the value is an array, we need to check to see if any of the present values were there before
+      if (Array.isArray(value)) {
+        // Since values are set via autocomplete, and unique, it's pretty safe to reduce values to combination
+        const defaults = defaultValues[key].map(item => [key, ...Object.keys(value)].join('').trim());
+        value.forEach(item => {
+          const newKey = [key, ...Object.keys(item)].join('');
+          manuallyAdjusted[newKey] = defaults.includes(newKey);
+        });
+      } else if (typeof value == 'string') {
+        manuallyAdjusted[key] = data[key] == defaultValues[key];
+      } else if (key == 'ecogScore' || key == 'karnofskyScore') {
+        const defaultValue = defaultValues[key] as CodedScore;
+        const setValue = data[key] as CodedScore;
+        manuallyAdjusted[key] = isEqualScore(defaultValue, setValue);
+      } else {
+        const defaultValue = defaultValues[key] as CodedValueType;
+        const setValue = data[key] as CodedValueType;
+        manuallyAdjusted[key] = isEqualCodedValueType(defaultValue, setValue);
+      }
+    });
+
+    return manuallyAdjusted;
+  };
+
   const onDownload = (data: SearchFormValuesType) => {
     const newUserId = generateId();
-    const csv = generateSearchCSVString(data, newUserId);
+    const manuallyAdjusted = compareDefaultValues(data);
+
+    const csv = generateSearchCSVString(data, newUserId, manuallyAdjusted);
     if (setUserId) {
       setValue('userid', newUserId);
       setUserId(newUserId);
