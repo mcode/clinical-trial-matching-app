@@ -36,7 +36,7 @@
     "express-session": "^1.17.2",
     "fhirclient": "^2.4.0",
     "geolib": "^3.3.3",
-    "next": "^11.1.2",
+    "next": "12",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.24.2",

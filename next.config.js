@@ -24,7 +24,6 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
 });
 
 module.exports = {
-  watch: true, // Enable watch mode
   poweredByHeader: false,
   reactStrictMode: true,
   publicRuntimeConfig: {
