@@ -28,7 +28,7 @@ const appendCodedValueType = (
   value?: CodedValueType,
   manuallyAdjusted: boolean = false
 ): void => {
-  if (value) records.push(createCodedValueTypeRecord(name, value));
+  if (value) records.push(createCodedValueTypeRecord(name, value, manuallyAdjusted));
 };
 
 const appendCodedValueTypes = (
@@ -39,7 +39,7 @@ const appendCodedValueTypes = (
 ): void => {
   records.push(
     ...values.map(value => {
-      const individuallyAdjusted = manuallyAdjusted[[name, ...Object.keys(value)].join('')];
+      const individuallyAdjusted = manuallyAdjusted[[name, ...Object.values(value)].join('')];
       return createCodedValueTypeRecord(name, value, individuallyAdjusted);
     })
   );
@@ -81,7 +81,7 @@ const appendBiomarkers = (
         value.system,
         (value as Biomarker).qualifier?.code ?? '',
         (value as Biomarker).qualifier?.system ?? '',
-        manuallyAdjusted[[name, ...Object.keys(value)].join('')],
+        manuallyAdjusted[[name, ...Object.values(value)].join('')],
       ]);
     }
   }
@@ -100,9 +100,9 @@ export const generateSearchCSVRecords = (
   appendRecord(records, 'gender', searchParameters.gender, manuallyAdjusted?.gender);
   appendRecord(records, 'age', searchParameters.age, manuallyAdjusted?.age);
   appendCodedValueType(records, 'cancerType', searchParameters.cancerType, manuallyAdjusted?.cancerType);
-  appendCodedValueType(records, 'cancerSubtype', searchParameters.cancerSubtype);
+  appendCodedValueType(records, 'cancerSubtype', searchParameters.cancerSubtype, manuallyAdjusted?.cancerSubtype);
   appendCodedValueTypes(records, 'metastasis', searchParameters.metastasis, manuallyAdjusted);
-  appendCodedValueType(records, 'stage', searchParameters.stage);
+  appendCodedValueType(records, 'stage', searchParameters.stage, manuallyAdjusted?.stage);
   appendScore(records, 'ecogScore', searchParameters.ecogScore, manuallyAdjusted?.ecogScore);
   appendScore(records, 'karnofskyScore', searchParameters.karnofskyScore, manuallyAdjusted?.karnofskyScore);
   appendBiomarkers(records, 'biomarkers', searchParameters.biomarkers, manuallyAdjusted);
