@@ -1,6 +1,6 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
-import generateSearchCSVString from '@/utils/exportSearch';
+import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
 import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
 import { generateId } from '@/utils/generateId';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
@@ -76,7 +76,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId }: SearchFormProps): R
 
   // Compare what's in the form with what was set as the default values
   // Normally could user contollers isDirty, but doesn't work for array values...
-  const compareDefaultValues = (data: SearchFormValuesType) => {
+  const compareDefaultValues = (data: SearchFormValuesType): SearchFormManuallyAdjustedType => {
     const manuallyAdjusted = {};
     Object.entries(data).forEach(([key, value]) => {
       if (value == null || value == undefined) {

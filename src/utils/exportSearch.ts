@@ -9,7 +9,7 @@ const appendRecord = (
   records: SearchCSVRecord[],
   name: ParameterName | 'id',
   value?: string,
-  manuallyAdjusted: boolean = false
+  manuallyAdjusted = false
 ): void => {
   if (typeof value === 'string') records.push([name, value, '', '', '', '', '', manuallyAdjusted]);
 };
@@ -17,7 +17,7 @@ const appendRecord = (
 const createCodedValueTypeRecord = (
   name: ParameterName,
   value: CodedValueType,
-  manuallyAdjusted: boolean = false
+  manuallyAdjusted = false
 ): SearchCSVRecord => {
   return [name, value.display, '', value.code, value.system, '', '', manuallyAdjusted];
 };
@@ -26,7 +26,7 @@ const appendCodedValueType = (
   records: SearchCSVRecord[],
   name: ParameterName,
   value?: CodedValueType,
-  manuallyAdjusted: boolean = false
+  manuallyAdjusted = false
 ): void => {
   if (value) records.push(createCodedValueTypeRecord(name, value, manuallyAdjusted));
 };
@@ -45,12 +45,7 @@ const appendCodedValueTypes = (
   );
 };
 
-const appendScore = (
-  records: SearchCSVRecord[],
-  name: ParameterName,
-  value: Score,
-  manuallyAdjusted: boolean = false
-): void => {
+const appendScore = (records: SearchCSVRecord[], name: ParameterName, value: Score, manuallyAdjusted = false): void => {
   if (value)
     records.push([
       name,
@@ -87,10 +82,14 @@ const appendBiomarkers = (
   }
 };
 
+export type SearchFormManuallyAdjustedType = {
+  [P in keyof Omit<SearchFormValuesType, 'matchingServices'>]?: boolean;
+};
+
 export const generateSearchCSVRecords = (
   searchParameters: SearchFormValuesType,
   userId: string,
-  manuallyAdjusted
+  manuallyAdjusted: SearchFormManuallyAdjustedType
 ): SearchCSVRecord[] => {
   const records: SearchCSVRecord[] = [];
   // All of these only append if the values exist
@@ -115,7 +114,7 @@ export const generateSearchCSVRecords = (
 export const generateSearchCSVString = (
   searchParameters: SearchFormValuesType,
   userId: string,
-  manuallyAdjusted
+  manuallyAdjusted: SearchFormManuallyAdjustedType
 ): string => {
   return (
     csvStringify([
