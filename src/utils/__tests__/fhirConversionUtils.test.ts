@@ -2,6 +2,7 @@ import {
   fhirEcogPerformanceStatusBundle,
   fhirEmptyBundle,
   fhirKarnofskyPerformanceStatusBundle,
+  fhirMedications,
   fhirPatient,
   fhirPrimaryCancerConditionBundle,
   fhirPrimaryCancerConditionBundle2,
@@ -11,7 +12,7 @@ import {
   fhirTumorMarkerBundle,
 } from '@/__mocks__/bundles';
 import mockPatient from '@/__mocks__/patient';
-import { LOINC_CODE_URI, SNOMED_CODE_URI } from '../fhirConstants';
+import { LOINC_CODE_URI, RXNORM_CODE_URI, SNOMED_CODE_URI } from '../fhirConstants';
 import {
   CancerType,
   convertFhirEcogPerformanceStatus,
@@ -21,6 +22,7 @@ import {
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
+  extractMedicationCodes,
   extractPrimaryCancerCondition,
 } from '../fhirConversionUtils';
 
@@ -55,11 +57,9 @@ describe('convertFhirEcogPerformanceStatus', () => {
   });
 });
 
-describe('convertFhirMedicationStatements', () => {
-  it('gets the medication statements from a FHIR bundle', () => {
-    fail('this test needs to be reimplemented');
-    /*
-    expect(convertFhirMedicationStatements(fhirMedicationStatementBundle)).toEqual([
+describe('extractMedicationCodes', () => {
+  it('gets the medication codes from a set of medications', () => {
+    expect(extractMedicationCodes(fhirMedications)).toEqual([
       {
         cancerType: [CancerType.PROSTATE],
         category: ['leuprolide'],
@@ -93,8 +93,7 @@ describe('convertFhirMedicationStatements', () => {
         system: RXNORM_CODE_URI,
       },
     ]);
-    expect(convertFhirMedicationStatements(fhirEmptyBundle)).toEqual([]);
-    */
+    expect(extractMedicationCodes([])).toEqual([]);
   });
 });
 
@@ -145,11 +144,7 @@ describe('convertFhirPrimaryCancerCondition', () => {
         entryType: 'stage',
       },
     });
-    expect(extractPrimaryCancerCondition(fhirEmptyBundle)).toEqual({
-      cancerType: null,
-      cancerSubtype: null,
-      stage: null,
-    });
+    expect(extractPrimaryCancerCondition(fhirEmptyBundle)).toBeNull();
   });
 });
 

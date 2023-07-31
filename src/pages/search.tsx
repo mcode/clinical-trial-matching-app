@@ -190,31 +190,12 @@ ${JSON.stringify(observations, null, 2)}
 // filter ecog
 // filter karnofsky
 
-const searchRecords = (fhirClient: Client, recordType: string, query?: Record<string, string>) => {
-  let urlEncodedQuery = '';
-  if (typeof query === 'object') {
-    for (const key in query) {
-      // Always add &, this is always appended to an existing query
-      urlEncodedQuery += `&${encodeURIComponent(key)}=${encodeURIComponent(query[key])}`;
-    }
-  }
-  return fhirClient.request<fhirclient.FHIR.Bundle>(
-    `${recordType}?patient=${fhirClient.getPatientId()}${urlEncodedQuery}`
-  );
-};
-
 const getAllProcedures = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`Procedure?patient=${fhirClient.getPatientId()}`);
 };
 
 const getAllConditions = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`Condition?patient=${fhirClient.getPatientId()}`);
-};
-
-const getAllObservations = (fhirClient: Client) => {
-  return fhirClient.request<fhirclient.FHIR.Bundle>(
-    `Observation?patient=${fhirClient.getPatientId()}&category=laboratory`
-  );
 };
 
 const getAllMedicationRequests = (fhirClient: Client) => {
@@ -273,47 +254,4 @@ const getMostRecentPerformanceValue = async (fhirClient: Client, encounters: fhi
     }
   }
   return undefined;
-};
-
-// Debug function for dumping patient data
-const debugDumpRecords = async (fhirClient: Client) => {
-  const recordTypes = {
-    Condition: {
-      category: ['encounter-diagnosis', 'genomics', 'health-concer', 'infection', 'medical-history'],
-    },
-    Encounter: true,
-    Observation: {
-      category: ['core-characteristics', 'genomics', 'laboratory', 'smartdata'],
-    },
-    Procedure: {
-      category: ['103693007', '387713003'],
-    },
-  };
-
-  // Ensure that the patient is available
-  await fhirClient.patient.read();
-  for (const resourceType in recordTypes) {
-    const query = recordTypes[resourceType];
-    // for now, just do each parameter individually
-    if (query === true) {
-      // no specific parameters
-      console.log(`---- ${resourceType} ----`);
-      console.log(JSON.stringify(await searchRecords(fhirClient, resourceType), null, 2));
-    } else {
-      console.log(`---- ${resourceType} ----`);
-      for (const key in query) {
-        const values = query[key];
-        if (Array.isArray(values)) {
-          for (const value of values) {
-            console.log(`  -- ${key}=${value} --`);
-            console.log(JSON.stringify(await searchRecords(fhirClient, resourceType, { [key]: value }), null, 2));
-          }
-        } else if (typeof values === 'string') {
-          // just run this single value
-          console.log(`  -- ${key}=${values} --`);
-          console.log(JSON.stringify(await searchRecords(fhirClient, resourceType, { [key]: values }), null, 2));
-        }
-      }
-    }
-  }
 };
