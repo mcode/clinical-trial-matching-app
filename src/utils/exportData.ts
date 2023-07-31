@@ -31,6 +31,7 @@ const getMainRow = (studyProps: StudyDetailProps, userId: string): Record<string
   convertToSpreadsheetRow(
     [
       { header: MainRowKeys.trialId, body: studyProps.trialId },
+      { header: MainRowKeys.source, body: studyProps.source },
       { header: MainRowKeys.likelihood, body: studyProps.likelihood?.text || '' },
       { header: MainRowKeys.title, body: studyProps.title || '' },
       { header: MainRowKeys.status, body: studyProps.status?.label || '' },
