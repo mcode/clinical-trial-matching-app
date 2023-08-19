@@ -27,7 +27,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     const url = await smart(req, res).authorize({
       clientId: publicRuntimeConfig.fhirClientId,
       noRedirect: true,
-      redirectUri: '/authorize',
+      redirectUri: publicRuntimeConfig.fhirRedirectUri,
       scope: 'launch/patient openid fhirUser patient/*.read',
     });
 

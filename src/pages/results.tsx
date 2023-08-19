@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
 import Sidebar from '@/components/Sidebar';
 import { ensureArray } from '@/components/Sidebar/Sidebar';
+import { UserIdContext } from '@/components/UserIdContext';
 import { clinicalTrialSearchQuery } from '@/queries';
 import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
@@ -48,6 +49,7 @@ type ResultsPageProps = {
   patient: Patient;
   user: User;
   searchParams: FullSearchParameters;
+  userId: string;
 };
 
 const openTransition = (theme: Theme) =>
@@ -130,7 +132,7 @@ const getFilterParams = getParameters<FilterParameters & SortingParameters>([
 
 const getPaginationParams = getParameters<PaginationParameters>(['page', 'pageSize']);
 
-const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
+const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
 
   const { data: searchData } = useQuery(
@@ -171,6 +173,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(true);
+  const [userId, setUserId] = useState<string | null>(initialUserId);
   const theme = useTheme();
   const toggleDrawer = () => setOpen(!open);
   const toggleMobileDrawer = () => setMobileOpen(!mobileOpen);
@@ -188,7 +191,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
   const handleExportStudies = (): void => {
     const savedStudies = getSavedStudies(data.results, state);
-    const spreadsheetData: Record<string, string>[] = unpackStudies(savedStudies);
+    const spreadsheetData: Record<string, string>[] = unpackStudies(savedStudies, userId);
     exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
   };
   const handleSaveStudy =
@@ -229,12 +232,15 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
             variant="temporary"
             open={mobileOpen}
           >
-            <Sidebar
-              patient={patient}
-              disabled={isIdle || isLoading}
-              savedStudies={state}
-              filterOptions={filterOptions}
-            />
+            <UserIdContext.Provider value={userId}>
+              <Sidebar
+                patient={patient}
+                disabled={isIdle || isLoading}
+                savedStudies={state}
+                filterOptions={filterOptions}
+                setUserId={setUserId}
+              />
+            </UserIdContext.Provider>
           </Drawer>
 
           <Drawer
@@ -252,6 +258,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
               disabled={isIdle || isLoading}
               savedStudies={state}
               filterOptions={filterOptions}
+              setUserId={setUserId}
             />
           </Drawer>
 
@@ -311,6 +318,7 @@ export default ResultsPage;
 export const getServerSideProps: GetServerSideProps = async context => {
   const { req, res, query } = context;
   const queryClient = new QueryClient();
+  const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
 
   let fhirClient: Client;
   try {
@@ -327,6 +335,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       user: convertFhirUser(fhirUser),
       searchParams: query,
       dehydratedState: dehydrate(queryClient),
+      userId: userId,
     },
   };
 };

@@ -10,7 +10,7 @@ import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
 import stages from '@/assets/optimizedPatientDataElements/stages.json';
 import surgery from '@/assets/optimizedPatientDataElements/surgeries.json';
 import { SearchFormValuesType } from '@/components/SearchForm';
-import { Coding, Condition, MedicationStatement, Observation, Procedure } from 'fhir/r4';
+import { Coding, Condition, FhirResource, Medication, MedicationStatement, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 import {
   ICD_10_CODE_URI,
@@ -99,11 +99,22 @@ export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle)
 };
 
 export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const medicationStatements = bundle.entry?.map(entry => entry.resource as MedicationStatement) || [];
+  const medicationStatements =
+    bundle.entry?.map<MedicationStatement>(entry => entry.resource as MedicationStatement) || [];
   const medications: CodedValueType[] = medicationStatements
-    .map(getCodedValueTypes(medication as CodedValueType[]))
+    .map(extractKnownCodes(medication as CodedValueType[]))
     .flat();
   return getUniques(medications);
+};
+
+export const extractMedicationCodes = (medications: Medication[]): CodedValueType[] => {
+  const extractCodes = extractKnownCodes(medication as CodedValueType[]);
+  const medicationCodes: CodedValueType[] = medications
+    .map(med => {
+      return extractCodes(med);
+    })
+    .flat();
+  return getUniques(medicationCodes);
 };
 
 export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patient => ({
@@ -115,34 +126,49 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
     fhirPatient.address?.length > 0 && fhirPatient.address[0].postalCode ? fhirPatient.address[0].postalCode : null,
 });
 
-export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition => {
-  const condition = bundle?.entry?.[0]?.resource as Condition;
-  return {
-    cancerType: getCancerType(condition),
-    cancerSubtype: getCancerSubtype(condition),
-    stage: getStage(condition),
-  };
+/**
+ * Attempts to locate cancer information within a patient bundle.
+ * @param bundle the bundle to find a known cancer condition in
+ * @returns a primary cancer condition
+ */
+export const extractPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition | null => {
+  if (Array.isArray(bundle.entry)) {
+    // Go through each entry and see if we find data
+    for (const entry of bundle.entry) {
+      const condition = entry?.resource;
+      if (condition && condition.resourceType === 'Condition') {
+        const cancerType = getCancerType(condition as Condition);
+        if (cancerType) {
+          // For now, just return the first entry found
+          return {
+            cancerType: cancerType,
+            cancerSubtype: getCancerSubtype(condition as Condition),
+            stage: getStage(condition as Condition),
+          };
+        }
+      }
+    }
+  }
+  return null;
 };
 
 export const convertFhirRadiationProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const radiationProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const radiations: CodedValueType[] = radiationProcedures
-    .map(getCodedValueTypes(radiation as CodedValueType[]))
-    .flat();
+  const radiations: CodedValueType[] = radiationProcedures.map(extractKnownCodes(radiation as CodedValueType[])).flat();
   return getUniques(radiations);
 };
 
 export const convertFhirSecondaryCancerConditions = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const secondaryCancerConditions = bundle?.entry?.map(entry => entry.resource as Condition) || [];
   const conditions: CodedValueType[] = secondaryCancerConditions
-    .map(getCodedValueTypes(metastases as CodedValueType[]))
+    .map(extractKnownCodes(metastases as CodedValueType[]))
     .flat();
   return getUniques(conditions);
 };
 
 export const convertFhirSurgeryProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const surgeryProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const surgeries: CodedValueType[] = surgeryProcedures.map(getCodedValueTypes(surgery as CodedValueType[])).flat();
+  const surgeries: CodedValueType[] = surgeryProcedures.map(extractKnownCodes(surgery as CodedValueType[])).flat();
   return getUniques(surgeries);
 };
 
@@ -199,16 +225,29 @@ const getUniques = <T extends CodedValueType | Biomarker>(array: T[]): T[] => {
   );
 };
 
-const getCodedValueTypes =
-  (original: CodedValueType[]) =>
-  (resource: Procedure | Condition | MedicationStatement): CodedValueType[] => {
-    let codings = [] as Coding[];
-    if ((resource.resourceType === 'Procedure' || resource.resourceType === 'Condition') && resource.code) {
+/**
+ * Returns a function that extracts codes from the given list of known codes.
+ * @param knownCodes an array of known CodedValueTypes
+ * @returns an array of matching known codes from the given array
+ */
+const extractKnownCodes =
+  (knownCodes: CodedValueType[]) =>
+  (resource: FhirResource): CodedValueType[] => {
+    let codings: Coding[];
+    if (
+      (resource.resourceType === 'Procedure' ||
+        resource.resourceType === 'Condition' ||
+        resource.resourceType === 'Medication') &&
+      resource.code
+    ) {
       codings = resource.code?.coding;
-    } else if (resource.resourceType === 'MedicationStatement' && resource.medicationCodeableConcept) {
+    } else if (
+      (resource.resourceType === 'MedicationRequest' || resource.resourceType === 'MedicationStatement') &&
+      resource.medicationCodeableConcept
+    ) {
       codings = resource.medicationCodeableConcept?.coding;
     }
-    return codings.map(coding => original.find(equalCodedValueType(coding))).filter(e => !!e);
+    return codings ? codings.map(coding => knownCodes.find(equalCodedValueType(coding))).filter(e => !!e) : [];
   };
 
 const getStage = (condition: Condition): CodedValueType | null => {
@@ -254,7 +293,29 @@ const equalCodedValueType =
   (target: CodedValueType): boolean =>
     selected?.code === target.code && selected?.system === target.system;
 
+export const isEqualCodedValueType = (originalValue: CodedValueType, newValue: CodedValueType): boolean => {
+  return (
+    equalStringArrays(originalValue?.cancerType, newValue?.cancerType) &&
+    equalStringArrays(originalValue?.category, newValue?.category) &&
+    originalValue?.code == newValue?.code &&
+    originalValue?.display == newValue?.display &&
+    originalValue?.entryType == newValue?.entryType &&
+    originalValue?.system == newValue?.system
+  );
+};
+const equalStringArrays = (array1: string[], array2: string[]) => {
+  return (array1 || []).sort().join(',') == (array2 || []).sort().join(',');
+};
+
 const equalScore =
   (selected: Coding) =>
   (target: Score): boolean =>
     target.interpretation.code === selected?.code && target.interpretation.system === selected?.system;
+
+export const isEqualScore = (originalValue: Score, newValue: Score): boolean => {
+  return (
+    originalValue?.entryType == newValue?.entryType &&
+    originalValue?.interpretation.code == newValue?.interpretation?.code &&
+    originalValue?.valueInteger == newValue?.valueInteger
+  );
+};

@@ -2,7 +2,7 @@ import {
   fhirEcogPerformanceStatusBundle,
   fhirEmptyBundle,
   fhirKarnofskyPerformanceStatusBundle,
-  fhirMedicationStatementBundle,
+  fhirMedications,
   fhirPatient,
   fhirPrimaryCancerConditionBundle,
   fhirPrimaryCancerConditionBundle2,
@@ -17,13 +17,13 @@ import {
   CancerType,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
-  convertFhirMedicationStatements,
   convertFhirPatient,
-  convertFhirPrimaryCancerCondition,
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
+  extractMedicationCodes,
+  extractPrimaryCancerCondition,
 } from '../fhirConversionUtils';
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
@@ -57,9 +57,9 @@ describe('convertFhirEcogPerformanceStatus', () => {
   });
 });
 
-describe('convertFhirMedicationStatements', () => {
-  it('gets the medication statements from a FHIR bundle', () => {
-    expect(convertFhirMedicationStatements(fhirMedicationStatementBundle)).toEqual([
+describe('extractMedicationCodes', () => {
+  it('gets the medication codes from a set of medications', () => {
+    expect(extractMedicationCodes(fhirMedications)).toEqual([
       {
         cancerType: [CancerType.PROSTATE],
         category: ['leuprolide'],
@@ -93,7 +93,7 @@ describe('convertFhirMedicationStatements', () => {
         system: RXNORM_CODE_URI,
       },
     ]);
-    expect(convertFhirMedicationStatements(fhirEmptyBundle)).toEqual([]);
+    expect(extractMedicationCodes([])).toEqual([]);
   });
 });
 
@@ -106,7 +106,7 @@ describe('convertFhirPatient', () => {
 
 describe('convertFhirPrimaryCancerCondition', () => {
   it('gets the primary cancer condition from a FHIR Bundle', () => {
-    expect(convertFhirPrimaryCancerCondition(fhirPrimaryCancerConditionBundle)).toEqual({
+    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditionBundle)).toEqual({
       cancerType: {
         category: ['Breast', 'Invasive Breast', 'Invasive Carcinoma', 'Invasive Ductal Carcinoma'],
         cancerType: [CancerType.BREAST],
@@ -125,7 +125,7 @@ describe('convertFhirPrimaryCancerCondition', () => {
       },
       stage: null,
     });
-    expect(convertFhirPrimaryCancerCondition(fhirPrimaryCancerConditionBundle2)).toEqual({
+    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditionBundle2)).toEqual({
       cancerType: {
         entryType: 'cancerType',
         cancerType: [CancerType.BREAST],
@@ -144,11 +144,7 @@ describe('convertFhirPrimaryCancerCondition', () => {
         entryType: 'stage',
       },
     });
-    expect(convertFhirPrimaryCancerCondition(fhirEmptyBundle)).toEqual({
-      cancerType: null,
-      cancerSubtype: null,
-      stage: null,
-    });
+    expect(extractPrimaryCancerCondition(fhirEmptyBundle)).toBeNull();
   });
 });
 

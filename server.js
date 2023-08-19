@@ -3,7 +3,19 @@ const { default: getConfig } = require('next/config');
 const express = require('express');
 const session = require('express-session');
 
-const port = parseInt(process.env.PORT, 10) || 3200;
+function getPort() {
+  const port = process.env.PORT;
+  if (port) {
+    if (/^\d+/.test(port)) {
+      return parseInt(port, 10);
+    } else {
+      return port;
+    }
+  }
+  return 3200;
+}
+
+const port = getPort();
 const dev = process.env.NODE_ENV !== 'production';
 const app = nextjs({ dev });
 const handle = app.getRequestHandler();

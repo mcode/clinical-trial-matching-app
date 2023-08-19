@@ -23,7 +23,7 @@ import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, reactAppDebug, services },
+  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, services },
 } = getConfig();
 
 /**
@@ -55,7 +55,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
  */
 export function buildBundle(searchParams: SearchParameters, id?: string): Bundle {
   const zipCode = sendLocationData ? searchParams['zipcode'] : defaultZipCode;
-  const travelDistance = sendLocationData ? searchParams['travelDistance'] : undefined;
+  const travelDistance = sendLocationData ? searchParams['travelDistance'] : defaultTravelDistance;
 
   !sendLocationData && console.log(`Using default zip code ${defaultZipCode} and travel distance ${travelDistance}`);
 
@@ -83,7 +83,7 @@ export function buildBundle(searchParams: SearchParameters, id?: string): Bundle
     const age = Number(searchParams.age);
     if (!isNaN(age)) {
       // For the age, calculate a year based on today's date and just store that. Just a year is a valid FHIR date.
-      patient.birthDate = (new Date().getUTCFullYear() - age).toString();
+      patient.birthDate = (new Date().getUTCFullYear() - Math.min(age, 90)).toString();
     }
   }
 
