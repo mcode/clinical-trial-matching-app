@@ -52,13 +52,13 @@ const SearchPage = ({
   medications,
 }: SearchPageProps): ReactElement => {
   const defaultValues = {
-    age: patient.age || '',
-    gender: patient.gender || 'unknown',
+    age: patient?.age || '',
+    gender: patient?.gender || 'unknown',
     cancerType: primaryCancerCondition ? primaryCancerCondition.cancerType : null,
     cancerSubtype: primaryCancerCondition ? primaryCancerCondition.cancerSubtype : null,
     stage: primaryCancerCondition ? primaryCancerCondition.stage : null,
     travelDistance: '100',
-    zipcode: patient.zipcode || '',
+    zipcode: patient?.zipcode || '',
     metastasis,
     ecogScore,
     karnofskyScore,
