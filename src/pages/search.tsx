@@ -10,13 +10,11 @@ import {
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
-  convertFhirUser,
   extractMedicationCodes,
   extractPrimaryCancerCondition,
   Patient,
   PrimaryCancerCondition,
   Score,
-  User,
 } from '@/utils/fhirConversionUtils';
 import { Medication, MedicationRequest, Observation } from 'fhir/r4';
 import smart from 'fhirclient';
@@ -28,7 +26,6 @@ import React, { ReactElement, useState } from 'react';
 
 type SearchPageProps = {
   patient: Patient;
-  user: User;
   primaryCancerCondition: PrimaryCancerCondition;
   metastasis: CodedValueType[];
   ecogScore: Score;
@@ -41,7 +38,6 @@ type SearchPageProps = {
 
 const SearchPage = ({
   patient,
-  user,
   primaryCancerCondition,
   metastasis,
   ecogScore,
@@ -75,7 +71,7 @@ const SearchPage = ({
         <title>Search | Clinical Trial Finder</title>
       </Head>
 
-      <Header userName={user?.name} />
+      <Header />
       <PatientCard patient={patient} />
       <UserIdContext.Provider value={userId}>
         <SearchForm defaultValues={defaultValues} setUserId={setUserId} />
@@ -126,7 +122,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   const fhirPatient = await fhirClient.patient.read();
-  const fhirUser = await fhirClient.user.read();
 
   const conditions = await getAllConditions(fhirClient);
   const procedures = await getAllProcedures(fhirClient);
@@ -165,7 +160,6 @@ ${JSON.stringify(observations, null, 2)}
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
-      user: convertFhirUser(fhirUser),
       primaryCancerCondition: primaryCancerCondition,
       // metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
       // Conversion is "safe" as convertEcogScore will reject bad values
