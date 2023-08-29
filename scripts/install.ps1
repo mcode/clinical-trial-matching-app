@@ -228,7 +228,7 @@ class CTMSInstaller {
         } catch {
             $git_version = ""
         }
-        [CTMSPreReq]::New("https://github.com/git-for-windows/git/releases/download/v2.40.1.windows.1/Git-2.40.1-64-bit.exe", "Git", "git version 2.40.1.windows.1", $git_version, @"
+        [CTMSPreReq]::New("https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe", "Git", "git version 2.42.0.windows.1", $git_version, @"
 [Setup]
 Lang=default
 Dir=$([System.Environment]::GetFolderPath("ProgramFiles"))\Git
@@ -262,7 +262,7 @@ EnableFSMonitor=Disabled
             $node_version = ""
         }
 
-        [CTMSPreReq]::New("https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi", "Node.js", "v18.16.1", $node_version).Install($this)
+        [CTMSPreReq]::New("https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi", "Node.js", "v18.17.1", $node_version).Install($this)
         # These installs will have updated PATH but we won't have the new
         # version, so copy that over
         Rebuild-Path
