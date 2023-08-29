@@ -9,7 +9,7 @@ import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
-import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
+import { convertFhirPatient, Patient } from '@/utils/fhirConversionUtils';
 import { getSavedStudies, savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
 import styled from '@emotion/styled';
 import {
@@ -47,7 +47,6 @@ const {
 
 type ResultsPageProps = {
   patient: Patient;
-  user: User;
   searchParams: FullSearchParameters;
   userId: string;
 };
@@ -132,12 +131,12 @@ const getFilterParams = getParameters<FilterParameters & SortingParameters>([
 
 const getPaginationParams = getParameters<PaginationParameters>(['page', 'pageSize']);
 
-const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: ResultsPageProps): ReactElement => {
+const ResultsPage = ({ patient, searchParams, userId: initialUserId }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
 
   const { data: searchData } = useQuery(
     ['clinical-trials', getSearchParams(searchParams), patient],
-    () => clinicalTrialSearchQuery(patient, user, searchParams),
+    () => clinicalTrialSearchQuery(patient, searchParams),
     {
       enabled: typeof window !== 'undefined',
       refetchOnMount: false,
@@ -218,7 +217,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
       </Head>
 
       <Stack minHeight="100vh" maxHeight="100vh" sx={{ overflowY: 'auto' }}>
-        <Header userName={user?.name} />
+        <Header />
 
         <Stack alignItems="stretch" direction={{ xs: 'column', lg: 'row' }} flex="1 1 auto" sx={{ overflowY: 'auto' }}>
           <Drawer
@@ -327,12 +326,11 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
   }
 
-  const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
+  const [fhirPatient] = await Promise.all([fhirClient.patient.read()]);
 
   return {
     props: {
       patient: convertFhirPatient(fhirPatient),
-      user: convertFhirUser(fhirUser),
       searchParams: query,
       dehydratedState: dehydrate(queryClient),
       userId: userId,
