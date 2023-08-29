@@ -288,13 +288,19 @@ class CTMSWebApp {
     }
   }
 
+  async runCleanCommand(installer) {
+    await exec(NPM_COMMAND, ['run', 'clean'], { cwd: installer.joinPath(this.path) });
+  }
+
   async runBuildCommand(installer) {
     await exec(NPM_COMMAND, ['run', 'build'], { cwd: installer.joinPath(this.path) });
   }
 
   async build(installer) {
     installer.startSubtask(`Building ${this.name}...`);
-    return this.runBuildCommand(installer);
+    // Clean scripts do not exist/are UNIX-specific in most things, so for now...
+    //await this.runCleanCommand(installer);
+    await this.runBuildCommand(installer);
   }
 
   /**
@@ -387,18 +393,20 @@ ${this.getExtraNginxSettings(installer)}
 <configuration>
   <appSettings>
     <clear />
-${Object.entries(this.getAppSettings(installer)).map(
-  ([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`
-)}
+${Object.entries(this.getAppSettings(installer))
+  .map(([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`)
+  .join('')}
   </appSettings>
   <system.webServer>
     <handlers>
-      <add name="$($this.Name)-iisnode" path="$index_script" verb="*" modules="iisnode" />
+      <add name="${escapeXML(this.name)}-iisnode" path="${escapeXML(
+      this.getIndexScript(installer)
+    )}" verb="*" modules="iisnode" />
     </handlers>
     <rewrite>
       <rules>
         <clear />
-        <rule name="$($this.Name)-rewrite">
+        <rule name="${escapeXML(this.name)}-rewrite">
           <match url="/*" />
           <action type="Rewrite" url="${escapeXML(this.getIndexScript(installer))}" />
         </rule>
@@ -474,6 +482,10 @@ class CTMSApp extends CTMSWebApp {
 
   async runInstallDependencyCommand(installer) {
     await exec(YARN_COMMAND, ['install'], { cwd: installer.joinPath(this.path) });
+  }
+
+  async runCleanCommand(installer) {
+    await exec(YARN_COMMAND, ['clean'], { cwd: installer.joinPath(this.path) });
   }
 
   async runBuildCommand(installer) {
@@ -828,6 +840,8 @@ for (let idx = 2; idx < process.argv.length; idx++) {
     } else {
       console.error(`${arg} requires an argument, none given.`);
     }
+  } else if (arg in argumentFlags) {
+    argumentFlags[arg] = true;
   }
 }
 
