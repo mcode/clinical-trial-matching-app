@@ -11,7 +11,7 @@ const util = require('util');
 /**
  * Default installation path
  */
-const INSTALL_PATH = '/opt/ctms';
+const INSTALL_PATH = process.platform == 'win32' ? 'C:\\CTMS' : '/opt/ctms';
 /**
  * Default extra CA file.
  */
@@ -525,6 +525,8 @@ class CTMSInstaller {
   skipGitPull = false;
   skipBuild = false;
   skipWebappConfigure = false;
+  dryRun = false;
+  verbose = false;
   /**
    * Target server. Currently either 'nginx' or 'IIS'
    */
@@ -543,7 +545,9 @@ class CTMSInstaller {
   constructor(installPath, extraCAs, wrappers) {
     this.installPath = installPath;
     this.extraCAs = extraCAs;
-    this.wrapperNames = wrappers;
+    // If wrappers is undefined/null or just whitespace, ignore, otherwise, split on commas
+    // Empty list is also treated as "all"
+    this.wrapperNames = !wrappers || /^\s*$/.test(wrappers) ? [] : wrappers.split(/\s*,\s*/);
     this.frontend = new CTMSApp();
     this.installedWrappers = [];
     this.failedWrappers = [];
@@ -570,7 +574,11 @@ class CTMSInstaller {
   }
 
   startActivity(activity) {
-    console.log(activity);
+    if (this.dryRun) {
+      console.log(`Dry run: ${activity}`);
+    } else {
+      console.log(activity);
+    }
   }
 
   /**
@@ -620,7 +628,10 @@ class CTMSInstaller {
       }
       // Once here, use the configuration
       this.wrappers = [];
+      const wrapperNames = this.wrapperNames.length > 0 ? new Set(this.wrapperNames) : null;
       for (const k in wrapperConfig) {
+        // Ignore any wrapper names not listed in the wrappers to use
+        if (wrapperNames != null && !wrapperNames.has(k)) continue;
         const config = wrapperConfig[k];
         if (config) {
           // If the config is an object, add it
@@ -654,19 +665,28 @@ class CTMSInstaller {
   async installWrappers() {
     for (const wrapper of this.wrappers) {
       this.startActivity(`Installing ${wrapper.name}...`);
-      try {
-        await wrapper.install(this);
+      if (this.dryRun) {
+        // For a dry run, treat this as a success
         this.installedWrappers.push(wrapper);
-      } catch (ex) {
-        this.error(`Unable to install ${wrapper.name}: ${ex}`);
-        this.error(ex);
-        this.failedWrappers.push(wrapper);
+      } else {
+        try {
+          await wrapper.install(this);
+          this.installedWrappers.push(wrapper);
+        } catch (ex) {
+          this.error(`Unable to install ${wrapper.name}: ${ex}`);
+          this.error(ex);
+          this.failedWrappers.push(wrapper);
+        }
       }
     }
   }
 
   async installFrontend() {
-    await this.frontend.install(this);
+    if (this.dryRun) {
+      console.log('Dry run: install frontend');
+    } else {
+      await this.frontend.install(this);
+    }
   }
 
   async configureWebServer() {
@@ -683,6 +703,10 @@ class CTMSInstaller {
   }
 
   async configureNginx() {
+    if (this.dryRun) {
+      console.log('Dry run: configure nginx');
+      return;
+    }
     // The entire NGINX file needs to be written out as one large configuration file,
     // so generate it first
     const wrapperConfig = [];
@@ -713,6 +737,10 @@ ${frontendConfig}
   }
 
   async configureIIS() {
+    if (this.dryRun) {
+      console.log('Dry run: configure IIS');
+      return;
+    }
     this.startActivity('Configuring IIS...');
     this.startSubtask('Removing default website if it exists...');
     await runPowerShell(`$default_website = Get-Website -Name "Default Web Site"
@@ -737,7 +765,9 @@ ${frontendConfig}
     for (const wrapper of this.installedWrappers) {
       try {
         this.startSubtask(`Configuring wrapper ${wrapper.name}...`);
-        await wrapper.configure(this);
+        if (!this.dryRun) {
+          await wrapper.configure(this);
+        }
       } catch (ex) {
         this.error(`Unable to configure ${wrapper.name}: ${ex}`);
       }
@@ -746,11 +776,17 @@ ${frontendConfig}
 
   async configureFrontend() {
     this.startActivity('Configuring frontend...');
-    await this.frontend.configure(this);
+    if (!this.dryRun) {
+      await this.frontend.configure(this);
+    }
   }
 
   async makeInstallPath() {
-    await fs.mkdir(this.installPath, { recursive: true });
+    if (this.dryRun) {
+      console.log(`Dry run: create install path ${this.installPath}`);
+    } else {
+      await fs.mkdir(this.installPath, { recursive: true });
+    }
   }
 
   joinPath(...childPath) {
@@ -765,6 +801,9 @@ ${frontendConfig}
       throw new Error(
         `Cannot target server ${this.targetServer}: not a supported server. (Supported servers are "nginx" and "IIS".)`
       );
+    }
+    if (this.verbose) {
+      console.log(`Installing into "${this.installPath}" for server ${this.targetServer}`);
     }
     await this.loadInstallerConfig();
     await this.makeInstallPath();
@@ -800,8 +839,6 @@ ${frontendConfig}
   }
 }
 
-const wrappersToInstall = [];
-
 const argumentsWithValues = {
   '--install-dir': INSTALL_PATH,
   '--extra-ca-certs': EXTRA_CAS,
@@ -814,6 +851,9 @@ const argumentFlags = {
   '--no-git-pull': false,
   '--no-build': false,
   '--no-webapp-configure': false,
+  '--dry-run': false,
+  '--verbose': false,
+  '-v': false,
 };
 
 // Parse command line arguments. This is intentionally somewhat simplistic
@@ -828,6 +868,8 @@ for (let idx = 2; idx < process.argv.length; idx++) {
     } else {
       console.error(`${arg} requires an argument, none given.`);
     }
+  } else if (arg in argumentFlags) {
+    argumentFlags[arg] = true;
   }
 }
 
@@ -842,6 +884,8 @@ installer.skipGitPull = argumentFlags['--no-git-pull'];
 installer.skipBuild = argumentFlags['--no-build'];
 installer.skipWebappConfigure = argumentFlags['--no-webapp-configure'];
 installer.targetServer = argumentsWithValues['--target-server'];
+installer.dryRun = argumentFlags['--dry-run'];
+installer.verbose = argumentFlags['--verbose'] || argumentFlags['-v'];
 
 installer
   .install()
