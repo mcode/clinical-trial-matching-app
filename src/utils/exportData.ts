@@ -2,6 +2,7 @@ import { getContact } from '@/components/Results/utils';
 import FileSaver from 'file-saver';
 import XLSX from 'xlsx';
 import { ContactProps, StudyDetail, StudyDetailProps } from '../components/Results/types';
+import _ from 'lodash';
 
 const SiteRowKeys = {
   facility: 'Facility',
@@ -76,6 +77,8 @@ const convertToSpreadsheetRow = (details: StudyDetail[]): Record<string, string>
 };
 
 export const exportSpreadsheetData = (data: Record<string, string>[], fileName: string): void => {
+  console.log(data);
+  console.log(exportCsvStringData(data));
   const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
   const fileExtension = '.xlsx';
   const worksheet = XLSX.utils.json_to_sheet(data);
@@ -83,4 +86,29 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
   const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
   const blob = new Blob([excelBuffer], { type: fileType });
   FileSaver.saveAs(blob, fileName + fileExtension);
+};
+
+export const exportCsvStringData = (data: Record<string, string>[]): string => {
+  // Add the headers
+  let csvString = '';
+
+  for (let key in MainRowKeys) {
+    csvString += MainRowKeys[key] + ',';
+  }
+  csvString = _.trim(csvString, ',');
+
+  data.forEach(entry => {
+    // Filter out data if there's no trialId. This is basically for those mainly empty rows to hold facility data
+    if (!entry[MainRowKeys['trialId']]) {
+      return;
+    }
+
+    let row = '\n';
+    for (let key in MainRowKeys) {
+      row += entry[MainRowKeys[key]] + ',';
+    }
+    csvString += _.trimEnd(row, ',');
+  });
+
+  return csvString;
 };

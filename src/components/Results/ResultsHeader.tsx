@@ -5,6 +5,7 @@ import {
 } from '@mui/icons-material';
 import { Button, IconButton, Stack } from '@mui/material';
 import { memo, ReactElement } from 'react';
+import ExportModal from './ExportModal';
 
 export type ResultsHeaderProps = {
   isOpen: boolean;
@@ -13,6 +14,7 @@ export type ResultsHeaderProps = {
   hasSavedStudies: boolean;
   handleClearSavedStudies: () => void;
   handleExportStudies: () => void;
+  handleExportCsvStudies: () => string;
   showExport: boolean;
 };
 
@@ -23,6 +25,7 @@ const ResultsHeader = ({
   hasSavedStudies,
   handleClearSavedStudies,
   handleExportStudies,
+  handleExportCsvStudies,
   showExport,
 }: ResultsHeaderProps): ReactElement => {
   return (
@@ -58,11 +61,13 @@ const ResultsHeader = ({
           </Button>
         )}
 
-        {showExport && (
+        {/* {showExport && (
           <Button sx={{ mr: 2 }} onClick={handleExportStudies}>
             {hasSavedStudies ? 'Export Saved' : 'Export All'}
           </Button>
-        )}
+        )} */}
+
+        {showExport && <ExportModal {...{ handleExportCsvStudies }}></ExportModal>}
       </Stack>
     </Stack>
   );

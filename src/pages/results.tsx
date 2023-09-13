@@ -7,7 +7,7 @@ import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
+import { exportSpreadsheetData, exportCsvStringData, unpackStudies } from '@/utils/exportData';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { getSavedStudies, savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
 import styled from '@emotion/styled';
@@ -191,6 +191,13 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     const spreadsheetData: Record<string, string>[] = unpackStudies(savedStudies);
     exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
   };
+
+  const handleExportCsvStudies = (): string => {
+    const savedStudies = getSavedStudies(data.results, state);
+    const spreadsheetData: Record<string, string>[] = unpackStudies(savedStudies);
+    return exportCsvStringData(spreadsheetData);
+  };
+
   const handleSaveStudy =
     (entry: StudyDetailProps): SaveStudyHandler =>
     event => {
@@ -265,7 +272,14 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
           >
             <ResultsHeader
               isOpen={open}
-              {...{ toggleMobileDrawer, hasSavedStudies, handleClearSavedStudies, handleExportStudies, toggleDrawer }}
+              {...{
+                toggleMobileDrawer,
+                hasSavedStudies,
+                handleClearSavedStudies,
+                handleExportStudies,
+                handleExportCsvStudies,
+                toggleDrawer,
+              }}
               showExport={!isIdle && !isLoading}
             />
             <MainContent
