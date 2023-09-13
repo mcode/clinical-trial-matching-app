@@ -21,7 +21,7 @@ export const MainRowKeys = {
   conditions: 'Conditions',
   type: 'Study Type',
   description: 'Description',
-  eligibility: 'Eligibility',
+  // eligibility: 'Eligibility',
   sponsor: 'Sponsor',
   contactName: 'Overall Contact',
   contactPhone: 'Overall Contact Phone',
@@ -40,7 +40,7 @@ const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
     { header: MainRowKeys.conditions, body: JSON.stringify(studyProps?.conditions) || '' },
     { header: MainRowKeys.type, body: studyProps.type?.label || studyProps.type?.name || '' },
     { header: MainRowKeys.description, body: studyProps.description || '' },
-    { header: MainRowKeys.eligibility, body: studyProps.eligibility || '' },
+    // { header: MainRowKeys.eligibility, body: studyProps.eligibility || '' },
     { header: MainRowKeys.sponsor, body: studyProps.sponsor?.name || '' },
     { header: MainRowKeys.contactName, body: studyProps.contacts?.[0]?.name || '' },
     { header: MainRowKeys.contactPhone, body: studyProps.contacts?.[0]?.phone || '' },
@@ -93,9 +93,9 @@ export const exportCsvStringData = (data: Record<string, string>[]): string => {
   let csvString = '';
 
   for (let key in MainRowKeys) {
-    csvString += MainRowKeys[key] + ',';
+    csvString += '"' + MainRowKeys[key] + '"' + '~';
   }
-  csvString = _.trim(csvString, ',');
+  csvString = _.trim(csvString, '~');
 
   data.forEach(entry => {
     // Filter out data if there's no trialId. This is basically for those mainly empty rows to hold facility data
@@ -105,9 +105,9 @@ export const exportCsvStringData = (data: Record<string, string>[]): string => {
 
     let row = '\n';
     for (let key in MainRowKeys) {
-      row += entry[MainRowKeys[key]] + ',';
+      row += '"' + entry[MainRowKeys[key]].replace('\n', '\r') + '"' + '~';
     }
-    csvString += _.trimEnd(row, ',');
+    csvString += _.trimEnd(row, '~');
   });
 
   return csvString;
