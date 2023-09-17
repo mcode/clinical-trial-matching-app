@@ -1,5 +1,5 @@
 import { Button, Modal, Box, TextField, IconButton, Alert, Tooltip, Stack } from '@mui/material';
-import { ReactElement, useState } from 'react';
+import { ReactElement, Fragment, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 
@@ -16,15 +16,21 @@ const style = {
 
 export type ExportModalProps = {
   handleContentGeneration: () => string;
-  label: string;
+  label?: string;
+  replaceButton?: (onClick) => ReactElement;
 };
 
-const ExportModal = ({ handleContentGeneration, label }: ExportModalProps): ReactElement => {
+const ExportModal = ({ handleContentGeneration, label, replaceButton }: ExportModalProps): ReactElement => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const content = handleContentGeneration();
-  const handleOpen = () => setOpen(true);
+  let content = handleContentGeneration();
+
+  const handleOpen = () => {
+    content = handleContentGeneration();
+    setOpen(true);
+  };
+
   const handleClose = () => {
     setOpen(false);
     setCopied(false);
@@ -35,10 +41,14 @@ const ExportModal = ({ handleContentGeneration, label }: ExportModalProps): Reac
   };
 
   return (
-    <div>
-      <Button sx={{ mr: 2 }} onClick={handleOpen}>
-        {label}
-      </Button>
+    <Fragment>
+      {replaceButton ? (
+        replaceButton(handleOpen)
+      ) : (
+        <Button sx={{ mr: 2 }} onClick={handleOpen}>
+          {label}
+        </Button>
+      )}
       <Modal
         open={open}
         onClose={handleClose}
@@ -67,7 +77,7 @@ const ExportModal = ({ handleContentGeneration, label }: ExportModalProps): Reac
 
             <TextField
               id="outlined-multiline-flexible"
-              label="content"
+              label="Content"
               multiline
               sx={{ width: '100%', mt: '5' }}
               maxRows={20}
@@ -79,7 +89,7 @@ const ExportModal = ({ handleContentGeneration, label }: ExportModalProps): Reac
           </Stack>
         </Box>
       </Modal>
-    </div>
+    </Fragment>
   );
 };
 
