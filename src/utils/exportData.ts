@@ -21,7 +21,7 @@ export const MainRowKeys = {
   conditions: 'Conditions',
   type: 'Study Type',
   description: 'Description',
-  // eligibility: 'Eligibility',
+  eligibility: 'Eligibility',
   sponsor: 'Sponsor',
   contactName: 'Overall Contact',
   contactPhone: 'Overall Contact Phone',
@@ -40,7 +40,7 @@ const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
     { header: MainRowKeys.conditions, body: JSON.stringify(studyProps?.conditions) || '' },
     { header: MainRowKeys.type, body: studyProps.type?.label || studyProps.type?.name || '' },
     { header: MainRowKeys.description, body: studyProps.description || '' },
-    // { header: MainRowKeys.eligibility, body: studyProps.eligibility || '' },
+    { header: MainRowKeys.eligibility, body: studyProps.eligibility || '' },
     { header: MainRowKeys.sponsor, body: studyProps.sponsor?.name || '' },
     { header: MainRowKeys.contactName, body: studyProps.contacts?.[0]?.name || '' },
     { header: MainRowKeys.contactPhone, body: studyProps.contacts?.[0]?.phone || '' },
@@ -60,9 +60,12 @@ export const unpackStudies = (entries: StudyDetailProps[]): Record<string, strin
 
   for (const entry of entries) {
     const mainRow = getMainRow(entry);
-    const siteRows = entry.locations?.map(getContact).map(getSiteRow);
-    const studyRow = [mainRow, ...(siteRows || [])];
-    data = [...data, ...studyRow];
+    data = [...data, mainRow];
+
+    /** TODO: To remove location multi-lined oddities, leave this out for now. */
+    // const siteRows = entry.locations?.map(getContact).map(getSiteRow);
+    // const studyRow = [mainRow, ...(siteRows || [])];
+    // data = [...data, ...studyRow];
   }
 
   return data;
@@ -89,10 +92,17 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
 };
 
 export const exportCsvStringData = (data: Record<string, string>[]): string => {
+  // List of excluded keys
+  const exclusion: string[] = ['eligibility'];
+
   // Add the headers
   let csvString = '';
 
   for (let key in MainRowKeys) {
+    if (exclusion.includes(key)) {
+      continue;
+    }
+
     csvString += '"' + MainRowKeys[key] + '"' + '~';
   }
   csvString = _.trim(csvString, '~');
@@ -105,6 +115,10 @@ export const exportCsvStringData = (data: Record<string, string>[]): string => {
 
     let row = '\n';
     for (let key in MainRowKeys) {
+      if (exclusion.includes(key)) {
+        continue;
+      }
+
       row += '"' + entry[MainRowKeys[key]].replace('\n', '\r') + '"' + '~';
     }
     csvString += _.trimEnd(row, '~');

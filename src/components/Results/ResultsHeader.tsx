@@ -61,13 +61,15 @@ const ResultsHeader = ({
           </Button>
         )}
 
-        {/* {showExport && (
+        {showExport && (
           <Button sx={{ mr: 2 }} onClick={handleExportStudies}>
             {hasSavedStudies ? 'Export Saved' : 'Export All'}
           </Button>
-        )} */}
+        )}
 
-        {showExport && <ExportModal {...{ handleExportCsvStudies }}></ExportModal>}
+        {showExport && (
+          <ExportModal {...{ handleContentGeneration: handleExportCsvStudies, label: 'Generate CSV' }}></ExportModal>
+        )}
       </Stack>
     </Stack>
   );
