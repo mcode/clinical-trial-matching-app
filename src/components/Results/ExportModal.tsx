@@ -1,7 +1,7 @@
-import { Button, Modal, Box, TextField, IconButton, Alert, Tooltip, Stack } from '@mui/material';
-import { ReactElement, Fragment, useState } from 'react';
 import CloseIcon from '@mui/icons-material/Close';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { Alert, Box, Button, IconButton, Modal, Stack, TextField, Tooltip } from '@mui/material';
+import { Fragment, ReactElement, useState } from 'react';
 
 const style = {
   position: 'absolute',

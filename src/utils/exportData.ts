@@ -1,9 +1,9 @@
 // NOTE: Uncomment this out for facilities information
 //import { getContact } from '@/components/Results/utils';
 import FileSaver from 'file-saver';
+import _ from 'lodash';
 import XLSX from 'xlsx';
 import { StudyDetail, StudyDetailProps } from '../components/Results/types';
-import _ from 'lodash';
 
 // NOTE: Uncomment this out for facilities information
 // const SiteRowKeys = {

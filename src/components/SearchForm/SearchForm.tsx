@@ -6,9 +6,10 @@ import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-mater
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ReactElement, useRef, useState } from 'react';
+import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SearchParameters } from 'types/search-types';
+import ExportModal from '../Results/ExportModal';
 import {
   AgeTextField,
   areCodedValueTypesEqual,
@@ -28,7 +29,6 @@ import {
 import { getNewState, uninitializedState } from './FormFieldsOptions';
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType, State } from './types';
-import ExportModal from '../Results/ExportModal';
 
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
@@ -55,7 +55,6 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
 const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
-  const formData = useRef();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control, getValues } = useForm<SearchFormValuesType>({ defaultValues });
   const [state, setState] = useState<State>(getNewState(defaultValues.cancerType));
@@ -175,7 +174,7 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} ref={formData}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <Box bgcolor="grey.200">
         {!(fullWidth || isSmallScreen) && (
           <Box p={{ xs: 0, md: 2 }}>

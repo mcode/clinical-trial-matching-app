@@ -7,9 +7,9 @@ import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { exportSpreadsheetData, exportCsvStringData, unpackStudies } from '@/utils/exportData';
+import { exportCsvStringData, exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
 import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
-import { getSavedStudies, savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
+import { savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
 import styled from '@emotion/styled';
 import {
   Alert,
