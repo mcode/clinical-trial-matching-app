@@ -189,13 +189,13 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 
   /** TODO: Saved studies only works on current page. For now do all filteredData instead. */
   const handleExportStudies = (): void => {
-    const savedStudies = getSavedStudies(data.results, state);
+    // const savedStudies = getSavedStudies(data.results, state);
     const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results);
     exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
   };
 
   const handleExportCsvStudies = (): string => {
-    const savedStudies = getSavedStudies(data.results, state);
+    // const savedStudies = getSavedStudies(data.results, state);
     const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results);
 
     return exportCsvStringData(spreadsheetData);

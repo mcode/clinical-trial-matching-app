@@ -1,14 +1,16 @@
-import { getContact } from '@/components/Results/utils';
+// NOTE: Uncomment this out for facilities information
+//import { getContact } from '@/components/Results/utils';
 import FileSaver from 'file-saver';
 import XLSX from 'xlsx';
-import { ContactProps, StudyDetail, StudyDetailProps } from '../components/Results/types';
+import { StudyDetail, StudyDetailProps } from '../components/Results/types';
 import _ from 'lodash';
 
-const SiteRowKeys = {
-  facility: 'Facility',
-  phone: 'Phone',
-  email: 'Email',
-};
+// NOTE: Uncomment this out for facilities information
+// const SiteRowKeys = {
+//   facility: 'Facility',
+//   phone: 'Phone',
+//   email: 'Email',
+// };
 
 export const MainRowKeys = {
   trialId: 'Trial Id',
@@ -47,12 +49,13 @@ const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
     { header: MainRowKeys.contactEmail, body: studyProps.contacts?.[0]?.email || '' },
   ]);
 
-const getSiteRow = (contact: ContactProps): Record<string, string> =>
-  convertToSpreadsheetRow([
-    { header: SiteRowKeys.facility, body: contact['name'] },
-    ...(contact?.phone ? [{ header: SiteRowKeys.phone, body: contact['phone'] }] : []),
-    ...(contact?.email ? [{ header: SiteRowKeys.email, body: contact['email'] }] : []),
-  ]);
+// NOTE: Uncomment this out to get facilities information
+// const getSiteRow = (contact: ContactProps): Record<string, string> =>
+//   convertToSpreadsheetRow([
+//     { header: SiteRowKeys.facility, body: contact['name'] },
+//     ...(contact?.phone ? [{ header: SiteRowKeys.phone, body: contact['phone'] }] : []),
+//     ...(contact?.email ? [{ header: SiteRowKeys.email, body: contact['email'] }] : []),
+//   ]);
 
 export const unpackStudies = (entries: StudyDetailProps[]): Record<string, string>[] => {
   const matchCount: StudyDetail[] = [{ header: 'Match Count', body: entries.length.toString() }];
@@ -98,7 +101,7 @@ export const exportCsvStringData = (data: Record<string, string>[]): string => {
   // Add the headers
   let csvString = '';
 
-  for (let key in MainRowKeys) {
+  for (const key in MainRowKeys) {
     if (exclusion.includes(key)) {
       continue;
     }
@@ -114,7 +117,7 @@ export const exportCsvStringData = (data: Record<string, string>[]): string => {
     }
 
     let row = '\n';
-    for (let key in MainRowKeys) {
+    for (const key in MainRowKeys) {
       if (exclusion.includes(key)) {
         continue;
       }
