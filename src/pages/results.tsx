@@ -8,9 +8,9 @@ import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
-import { convertFhirPatient, Patient } from '@/utils/fhirConversionUtils';
-import { getSavedStudies, savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
+import { exportCsvStringData, exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
+import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
+import { savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
 import styled from '@emotion/styled';
 import {
   Alert,
@@ -47,6 +47,7 @@ const {
 
 type ResultsPageProps = {
   patient: Patient;
+  user: User;
   searchParams: FullSearchParameters;
   userId: string;
 };
@@ -188,11 +189,21 @@ const ResultsPage = ({ patient, searchParams, userId: initialUserId }: ResultsPa
 
   const hasSavedStudies = state.size !== 0;
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
+
+  /** TODO: Saved studies only works on current page. For now do all filteredData instead. */
   const handleExportStudies = (): void => {
-    const savedStudies = getSavedStudies(data.results, state);
-    const spreadsheetData: Record<string, string>[] = unpackStudies(savedStudies, userId);
+    // const savedStudies = getSavedStudies(data.results, state);
+    const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results);
     exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
   };
+
+  const handleExportCsvStudies = (): string => {
+    // const savedStudies = getSavedStudies(data.results, state);
+    const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results);
+
+    return exportCsvStringData(spreadsheetData);
+  };
+
   const handleSaveStudy =
     (entry: StudyDetailProps): SaveStudyHandler =>
     event => {
@@ -271,7 +282,14 @@ const ResultsPage = ({ patient, searchParams, userId: initialUserId }: ResultsPa
           >
             <ResultsHeader
               isOpen={open}
-              {...{ toggleMobileDrawer, hasSavedStudies, handleClearSavedStudies, handleExportStudies, toggleDrawer }}
+              {...{
+                toggleMobileDrawer,
+                hasSavedStudies,
+                handleClearSavedStudies,
+                handleExportStudies,
+                handleExportCsvStudies,
+                toggleDrawer,
+              }}
               showExport={!isIdle && !isLoading}
             />
             <MainContent
