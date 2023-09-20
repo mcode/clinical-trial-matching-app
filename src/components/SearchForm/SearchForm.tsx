@@ -63,14 +63,19 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId }: SearchFormProps): R
   const userId = useContext(UserIdContext);
 
   const onSubmit = (data: SearchFormValuesType) => {
+    const query = {
+      ...formDataToSearchQuery(data),
+      sortingOption: 'matchLikelihood',
+      page: DEFAULT_PAGE,
+      pageSize: DEFAULT_PAGE_SIZE,
+    };
+    // Check if the fhirless flag was set on the URL. If it was, pass it on.
+    if (/[?&]fhirless/.test(location.search)) {
+      query['fhirless'] = '1';
+    }
     return router.push({
       pathname: '/results',
-      query: {
-        ...formDataToSearchQuery(data),
-        sortingOption: 'matchLikelihood',
-        page: DEFAULT_PAGE,
-        pageSize: DEFAULT_PAGE_SIZE,
-      },
+      query: query,
     });
   };
 

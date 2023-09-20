@@ -319,6 +319,26 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const queryClient = new QueryClient();
   const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
 
+  if (query['fhirless'] !== undefined) {
+    // In this case, the results are "fhirless" and we return a default set of properties
+    return {
+      props: {
+        patient: {
+          id: 'example',
+          name: 'Test Launch',
+          // Gender can't currently be user-set
+          gender: 'male',
+          // Age can't currently be user-set
+          age: 35,
+          zipcode: null,
+        },
+        searchParams: query,
+        dehydratedState: dehydrate(queryClient),
+        userId: userId,
+      },
+    };
+  }
+
   let fhirClient: Client;
   try {
     fhirClient = await smart(req, res).ready();
