@@ -2,6 +2,8 @@
 // way to say "transpile everything."
 const withTM = require('next-transpile-modules')([
   '@emotion/react',
+  '@emotion/serialize',
+  '@emotion/styled',
   '@mui/base',
   '@mui/material',
   '@mui/private-theming',

@@ -1,6 +1,3 @@
-// organize-imports-ignore
-import 'react-app-polyfill/ie11';
-import 'react-app-polyfill/stable';
 import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
