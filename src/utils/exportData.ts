@@ -94,7 +94,7 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
 
 export const exportCsvStringData = (data: Record<string, string>[]): string => {
   // List of excluded keys
-  const exclusion: string[] = ['eligibility'];
+  const exclusion: string[] = ['conditions', 'description', 'eligibility'];
 
   // Add the headers
   let csvString = '';
