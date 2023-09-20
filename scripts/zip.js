@@ -6,6 +6,8 @@ let installPath = process.platform == 'win32' ? 'C:\\CTMS' : '/opt/ctms';
 let wrappers = ['ancora.ai', 'breastcancertrials.org', 'carebox', 'lungevity', 'trialjectory'];
 let destination = 'ctms.zip';
 let verbose = false;
+let skipNodeModules = false;
+let skipInstallers = false;
 
 const fs = require('fs');
 const fsp = require('fs/promises');
@@ -24,6 +26,9 @@ class CTMSWebApp {
     return files
       .filter(file => {
         if (!file.isFile()) {
+          return false;
+        }
+        if (skipNodeModules && /\bnode_modules[\\\/]/.test(file.path)) {
           return false;
         }
         return !this.isExcluded(file);
@@ -157,18 +162,40 @@ class Zipper {
   }
 }
 
-async function main() {
+async function main(args) {
+  const argFlags = {
+    '--exclude-node-modules': false,
+    '--exclude-installers': false,
+    '--exclude-wrappers': false,
+  };
+  for (let idx = 0; idx < args.length; idx++) {
+    const arg = args[idx];
+    if (arg in argFlags) {
+      argFlags[arg] = true;
+    } else if (args[idx] == '--wrappers') {
+      if (idx + 1 < args.length) {
+        wrappers = args[++idx].split(/\s*,\s*/);
+        if (wrappers.length == 1 && wrappers[0] == '') {
+          wrappers = [];
+        }
+      }
+    }
+  }
+  skipNodeModules = argFlags['--exclude-node-modules'];
+  skipInstallers = argFlags['--exclude-installers'];
   console.log(`Creating ZIP file ${destination}...`);
   const zip = new Zipper(installPath, destination);
   zip.verbose = verbose;
   try {
     await zip.add(appConfig);
-    for (const wrapperName of wrappers) {
-      const wrapper = wrapperConfig[wrapperName];
-      if (!wrapper) {
-        throw new Error(`Unknown wrapper ${wrapperName}`);
+    if (!argFlags['--exclude-wrappers']) {
+      for (const wrapperName of wrappers) {
+        const wrapper = wrapperConfig[wrapperName];
+        if (!wrapper) {
+          throw new Error(`Unknown wrapper ${wrapperName}`);
+        }
+        await zip.add(wrapper);
       }
-      await zip.add(wrapper);
     }
     console.log('  Adding install script data...');
     const installScripts = ['install.ps1', 'install.js', 'test.js', 'wrappers.json'];
@@ -185,22 +212,24 @@ async function main() {
     for (const installScript of installScripts) {
       await zip.addFile(path.join(installPath, installScript));
     }
-    console.log('  Adding installers...');
-    const installers = [
-      'Git-2.42.0-64-bit.exe',
-      'node-v18.17.1-x64.msi',
-      'iisnode-core-v0.2.26-x64.msi',
-      'rewrite_amd64_en-US.msi',
-    ];
-    for (const installer of installers) {
-      await zip.addFile(path.join(installPath, 'installers', installer));
+    if (!skipInstallers) {
+      console.log('  Adding installers...');
+      const installers = [
+        'Git-2.42.0-64-bit.exe',
+        'node-v18.17.1-x64.msi',
+        'iisnode-core-v0.2.26-x64.msi',
+        'rewrite_amd64_en-US.msi',
+      ];
+      for (const installer of installers) {
+        await zip.addFile(path.join(installPath, 'installers', installer));
+      }
     }
   } finally {
     zip.close();
   }
 }
 
-main()
+main(process.argv.slice(2))
   .then(() => {
     console.log('Complete.');
   })

@@ -411,10 +411,14 @@ ${Object.entries(this.getAppSettings(installer))
           <action type="Rewrite" url="${escapeXML(this.getIndexScript(installer))}" />
         </rule>
       </rules>
-    </rewrite>
+    </rewrite>${this.getExtraIISWebServerConfig(installer)}
   </system.webServer>
 </configuration>
 `;
+  }
+
+  getExtraIISWebServerConfig(installer) {
+    return '';
   }
 
   async configure(installer) {
@@ -521,6 +525,15 @@ class CTMSApp extends CTMSWebApp {
 
   getExtraNginxSettings(installer) {
     return `    root ${escapeNginxConfig(installer.joinPath(this.path, 'public'))};`;
+  }
+
+  getExtraIISWebServerConfig(_installer) {
+    return `
+    <security>
+      <requestFiltering>
+        <requestLimits maxQueryString="1024000" maxUrl="2048000"/>
+      </requestFiltering>
+    </security>`;
   }
 }
 
@@ -811,8 +824,6 @@ ${frontendConfig}
     console.log('Check next.config.js to ensure that the front end app is configured for the expected wrappers.');
   }
 }
-
-const wrappersToInstall = [];
 
 const argumentsWithValues = {
   '--install-dir': INSTALL_PATH,
