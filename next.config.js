@@ -1,4 +1,17 @@
-module.exports = {
+// Transpile modules so that they support IE11. There does not appear to be a
+// way to say "transpile everything."
+const withTM = require('next-transpile-modules')([
+  '@emotion/react',
+  '@mui/base',
+  '@mui/material',
+  '@mui/private-theming',
+  '@mui/styled-engine',
+  '@mui/system',
+  '@mui/utils',
+  'csv-stringify',
+  'react-hook-form',
+]);
+module.exports = withTM({
   watch: true, // Enable watch mode
   poweredByHeader: false,
   reactStrictMode: true,
@@ -45,7 +58,10 @@ module.exports = {
       test: /\.svg$/,
       use: [{ loader: '@svgr/webpack', options: { icon: true } }],
     });
+    // Disable minification (useful for debugging IE11).
+    // Left commented out because it greatly bloats the script size.
+    // config.optimization.minimize = false;
 
     return config;
   },
-};
+});

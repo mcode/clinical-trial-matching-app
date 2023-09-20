@@ -1,8 +1,25 @@
 # clinical-trial-matching-app
 
+## IE11 Support
+
+IE11 support is provided mostly via transpiling. Currently the version of Next.js does not work in IE11 when in development mode - the hot reload code used to allow the app to be updated while running fails to function. So, production mode must be used instead, meaning the following is necessary to create a version that works on IE11:
+
+```sh
+yarn build
+NODE_ENV=production yarn start
+```
+
+Note that the above are UNIX commands. On Windows, the environment variable would have to be set separately, looking something more like:
+
+```powershell
+yarn build
+$Env:NODE_ENV="production"
+yarn start
+```
+
 ## Requirements
 
-- [Node.js](https://nodejs.org/en/download/) (LTS edition, currently 16.x)
+- [Node.js](https://nodejs.org/en/download/) (LTS edition, currently 18.x)
 - [Yarn](https://yarnpkg.com/en/docs/install) (1.22 or above)
 - At least one of the following matching services:
   - [BreastCancerTrials](https://github.com/mcode/clinical-trial-matching-service-breastcancertrials.org)
