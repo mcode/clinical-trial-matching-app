@@ -23,11 +23,10 @@ export type ExportModalProps = {
 const ExportModal = ({ handleContentGeneration, label, replaceButton }: ExportModalProps): ReactElement => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-
-  let content = handleContentGeneration();
+  const [content, setContent] = useState('');
 
   const handleOpen = () => {
-    content = handleContentGeneration();
+    setContent(handleContentGeneration());
     setOpen(true);
   };
 
