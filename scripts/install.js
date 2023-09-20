@@ -479,7 +479,7 @@ class CTMSApp extends CTMSWebApp {
     super(
       'clinical-trial-matching-app',
       'clinical-trial-matching-app',
-      'epic',
+      'epic-csv-copy',
       'https://github.com/mcode/clinical-trial-matching-app.git'
     );
   }
