@@ -11,7 +11,7 @@ const util = require('util');
 /**
  * Default installation path
  */
-const INSTALL_PATH = process.platform == 'win32' ? 'C:\\CTMS' : '/opt/ctms';
+const INSTALL_PATH = '/opt/ctms';
 /**
  * Default extra CA file.
  */
@@ -288,13 +288,19 @@ class CTMSWebApp {
     }
   }
 
+  async runCleanCommand(installer) {
+    await exec(NPM_COMMAND, ['run', 'clean'], { cwd: installer.joinPath(this.path) });
+  }
+
   async runBuildCommand(installer) {
     await exec(NPM_COMMAND, ['run', 'build'], { cwd: installer.joinPath(this.path) });
   }
 
   async build(installer) {
     installer.startSubtask(`Building ${this.name}...`);
-    return this.runBuildCommand(installer);
+    // Clean scripts do not exist/are UNIX-specific in most things, so for now...
+    //await this.runCleanCommand(installer);
+    await this.runBuildCommand(installer);
   }
 
   /**
@@ -387,26 +393,32 @@ ${this.getExtraNginxSettings(installer)}
 <configuration>
   <appSettings>
     <clear />
-${Object.entries(this.getAppSettings(installer)).map(
-  ([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`
-)}
+${Object.entries(this.getAppSettings(installer))
+  .map(([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`)
+  .join('')}
   </appSettings>
   <system.webServer>
     <handlers>
-      <add name="$($this.Name)-iisnode" path="$index_script" verb="*" modules="iisnode" />
+      <add name="${escapeXML(this.name)}-iisnode" path="${escapeXML(
+      this.getIndexScript(installer)
+    )}" verb="*" modules="iisnode" />
     </handlers>
     <rewrite>
       <rules>
         <clear />
-        <rule name="$($this.Name)-rewrite">
+        <rule name="${escapeXML(this.name)}-rewrite">
           <match url="/*" />
           <action type="Rewrite" url="${escapeXML(this.getIndexScript(installer))}" />
         </rule>
       </rules>
-    </rewrite>
+    </rewrite>${this.getExtraIISWebServerConfig(installer)}
   </system.webServer>
 </configuration>
 `;
+  }
+
+  getExtraIISWebServerConfig(installer) {
+    return '';
   }
 
   async configure(installer) {
@@ -476,6 +488,10 @@ class CTMSApp extends CTMSWebApp {
     await exec(YARN_COMMAND, ['install'], { cwd: installer.joinPath(this.path) });
   }
 
+  async runCleanCommand(installer) {
+    await exec(YARN_COMMAND, ['clean'], { cwd: installer.joinPath(this.path) });
+  }
+
   async runBuildCommand(installer) {
     // Next.js will ALWAYS use md4 for some hashes regardless of what we tell it to do
     // Clone the environment (simple and easy way to do that)
@@ -510,6 +526,15 @@ class CTMSApp extends CTMSWebApp {
   getExtraNginxSettings(installer) {
     return `    root ${escapeNginxConfig(installer.joinPath(this.path, 'public'))};`;
   }
+
+  getExtraIISWebServerConfig(_installer) {
+    return `
+    <security>
+      <requestFiltering>
+        <requestLimits maxQueryString="1024000" maxUrl="2048000"/>
+      </requestFiltering>
+    </security>`;
+  }
 }
 
 /**
@@ -525,8 +550,6 @@ class CTMSInstaller {
   skipGitPull = false;
   skipBuild = false;
   skipWebappConfigure = false;
-  dryRun = false;
-  verbose = false;
   /**
    * Target server. Currently either 'nginx' or 'IIS'
    */
@@ -545,9 +568,7 @@ class CTMSInstaller {
   constructor(installPath, extraCAs, wrappers) {
     this.installPath = installPath;
     this.extraCAs = extraCAs;
-    // If wrappers is undefined/null or just whitespace, ignore, otherwise, split on commas
-    // Empty list is also treated as "all"
-    this.wrapperNames = !wrappers || /^\s*$/.test(wrappers) ? [] : wrappers.split(/\s*,\s*/);
+    this.wrapperNames = wrappers;
     this.frontend = new CTMSApp();
     this.installedWrappers = [];
     this.failedWrappers = [];
@@ -574,11 +595,7 @@ class CTMSInstaller {
   }
 
   startActivity(activity) {
-    if (this.dryRun) {
-      console.log(`Dry run: ${activity}`);
-    } else {
-      console.log(activity);
-    }
+    console.log(activity);
   }
 
   /**
@@ -628,10 +645,7 @@ class CTMSInstaller {
       }
       // Once here, use the configuration
       this.wrappers = [];
-      const wrapperNames = this.wrapperNames.length > 0 ? new Set(this.wrapperNames) : null;
       for (const k in wrapperConfig) {
-        // Ignore any wrapper names not listed in the wrappers to use
-        if (wrapperNames != null && !wrapperNames.has(k)) continue;
         const config = wrapperConfig[k];
         if (config) {
           // If the config is an object, add it
@@ -665,28 +679,19 @@ class CTMSInstaller {
   async installWrappers() {
     for (const wrapper of this.wrappers) {
       this.startActivity(`Installing ${wrapper.name}...`);
-      if (this.dryRun) {
-        // For a dry run, treat this as a success
+      try {
+        await wrapper.install(this);
         this.installedWrappers.push(wrapper);
-      } else {
-        try {
-          await wrapper.install(this);
-          this.installedWrappers.push(wrapper);
-        } catch (ex) {
-          this.error(`Unable to install ${wrapper.name}: ${ex}`);
-          this.error(ex);
-          this.failedWrappers.push(wrapper);
-        }
+      } catch (ex) {
+        this.error(`Unable to install ${wrapper.name}: ${ex}`);
+        this.error(ex);
+        this.failedWrappers.push(wrapper);
       }
     }
   }
 
   async installFrontend() {
-    if (this.dryRun) {
-      console.log('Dry run: install frontend');
-    } else {
-      await this.frontend.install(this);
-    }
+    await this.frontend.install(this);
   }
 
   async configureWebServer() {
@@ -703,10 +708,6 @@ class CTMSInstaller {
   }
 
   async configureNginx() {
-    if (this.dryRun) {
-      console.log('Dry run: configure nginx');
-      return;
-    }
     // The entire NGINX file needs to be written out as one large configuration file,
     // so generate it first
     const wrapperConfig = [];
@@ -737,10 +738,6 @@ ${frontendConfig}
   }
 
   async configureIIS() {
-    if (this.dryRun) {
-      console.log('Dry run: configure IIS');
-      return;
-    }
     this.startActivity('Configuring IIS...');
     this.startSubtask('Removing default website if it exists...');
     await runPowerShell(`$default_website = Get-Website -Name "Default Web Site"
@@ -765,9 +762,7 @@ ${frontendConfig}
     for (const wrapper of this.installedWrappers) {
       try {
         this.startSubtask(`Configuring wrapper ${wrapper.name}...`);
-        if (!this.dryRun) {
-          await wrapper.configure(this);
-        }
+        await wrapper.configure(this);
       } catch (ex) {
         this.error(`Unable to configure ${wrapper.name}: ${ex}`);
       }
@@ -776,17 +771,11 @@ ${frontendConfig}
 
   async configureFrontend() {
     this.startActivity('Configuring frontend...');
-    if (!this.dryRun) {
-      await this.frontend.configure(this);
-    }
+    await this.frontend.configure(this);
   }
 
   async makeInstallPath() {
-    if (this.dryRun) {
-      console.log(`Dry run: create install path ${this.installPath}`);
-    } else {
-      await fs.mkdir(this.installPath, { recursive: true });
-    }
+    await fs.mkdir(this.installPath, { recursive: true });
   }
 
   joinPath(...childPath) {
@@ -801,9 +790,6 @@ ${frontendConfig}
       throw new Error(
         `Cannot target server ${this.targetServer}: not a supported server. (Supported servers are "nginx" and "IIS".)`
       );
-    }
-    if (this.verbose) {
-      console.log(`Installing into "${this.installPath}" for server ${this.targetServer}`);
     }
     await this.loadInstallerConfig();
     await this.makeInstallPath();
@@ -851,9 +837,6 @@ const argumentFlags = {
   '--no-git-pull': false,
   '--no-build': false,
   '--no-webapp-configure': false,
-  '--dry-run': false,
-  '--verbose': false,
-  '-v': false,
 };
 
 // Parse command line arguments. This is intentionally somewhat simplistic
@@ -884,8 +867,6 @@ installer.skipGitPull = argumentFlags['--no-git-pull'];
 installer.skipBuild = argumentFlags['--no-build'];
 installer.skipWebappConfigure = argumentFlags['--no-webapp-configure'];
 installer.targetServer = argumentsWithValues['--target-server'];
-installer.dryRun = argumentFlags['--dry-run'];
-installer.verbose = argumentFlags['--verbose'] || argumentFlags['-v'];
 
 installer
   .install()
