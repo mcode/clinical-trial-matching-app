@@ -1,3 +1,6 @@
+// organize-imports-ignore
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import emotionCache from '@/emotionCache';
 import theme from '@/styles/theme';
 import { CacheProvider } from '@emotion/react';

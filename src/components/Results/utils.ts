@@ -82,7 +82,8 @@ const getSponsor = (study: ResearchStudy): ContactProps => {
 const getStatus = (study: ResearchStudy): StatusProps => {
   const label = study.status
     ?.replace(/-/g, ' ')
-    .replace(/\w+\b(?<!\b(to|and))/g, word => word[0].toUpperCase() + word.slice(1));
+    // Don't capitalize to/and (was originally done via a lookbehind but IE11 doesn't support that)
+    .replace(/\w+/g, word => (word == 'to' || word == 'and' ? word : word[0].toUpperCase() + word.slice(1)));
 
   switch (study.status) {
     case 'active':
