@@ -1,3 +1,23 @@
+const enabledMatchingServices = process.env.MATCHING_SERVICES;
+if (!enabledMatchingServices || /^\s*$/.test(enabledMatchingServices)) {
+  console.error(
+    'Warning: no matching services present in environment, no matching services will be present in the UI!'
+  );
+}
+
+const defaultMatchingServices = new Set((process.env.MATCHING_SERVICES_DEFAULT_ENABLED ?? '').split(/\s*,\s*/));
+
+const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service => {
+  const serviceEnvName = service.toUpperCase();
+  return {
+    name: service,
+    label: process.env[`MATCHING_SERVICE_${serviceEnvName}_LABEL`] ?? service,
+    url: process.env[`MATCHING_SERVICE_${serviceEnvName}_URL`] ?? `http://localhost/${service}`,
+    searchRoute: '/getClinicalTrial',
+    defaultValue: defaultMatchingServices.has(service),
+  };
+});
+
 module.exports = {
   watch: true, // Enable watch mode
   poweredByHeader: false,
@@ -9,33 +29,7 @@ module.exports = {
     defaultTravelDistance: process.env.DEFAULT_TRAVEL_DISTANCE,
     sendLocationData: JSON.parse(process.env.SEND_LOCATION_DATA ?? 'false'),
     reactAppDebug: JSON.parse(process.env.REACT_APP_DEBUG ?? 'false'),
-    services: [
-      {
-        name: 'ancora',
-        label: 'Ancora.ai',
-        url: 'http://localhost',
-        searchRoute: '/ancora.ai/getClinicalTrial',
-      },
-      {
-        name: 'breastCancerTrials',
-        label: 'BreastCancerTrials.org',
-        url: 'http://localhost',
-        searchRoute: '/breastcancertrials.org/getClinicalTrial',
-        defaultValue: true,
-      },
-      {
-        name: 'lungevity',
-        label: 'LUNGevity',
-        url: 'http://localhost',
-        searchRoute: '/lungevity/getClinicalTrial',
-      },
-      {
-        name: 'carebox',
-        label: 'Carebox',
-        url: 'http://localhost',
-        searchRoute: '/carebox/getClinicalTrial',
-      },
-    ],
+    services: matchingServices,
   },
   serverRuntimeConfig: {
     sessionSecretKey: process.env.SESSION_SECRET_KEY,
