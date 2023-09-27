@@ -11,10 +11,6 @@
       "MATCHING_SERVICE_AUTH_CLIENT_SECRET": "<secret>"
     }
   },
-  "lungevity": {
-    "branch": "update-dependencies"
-  },
-  "trialjectory": {
-    "branch": "new-cancer-types"
-  }
+  "lungevity": {},
+  "trialjectory": {}
 }
