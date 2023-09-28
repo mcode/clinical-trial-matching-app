@@ -4198,5 +4198,613 @@
     "display": "Primary small cell carcinoma of middle lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "702467006",
+    "display": "Malignant neoplasm of augmented bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "425231005",
+    "display": "Carcinoma of urinary bladder, superficial (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "425066001",
+    "display": "Carcinoma of urinary bladder, invasive (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "399326009",
+    "display": "Malignant tumor of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369482001",
+    "display": "Malignant tumor involving bladder by separate metastasis from vagina (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369481008",
+    "display": "Malignant tumor involving bladder by separate metastasis from uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369480009",
+    "display": "Malignant tumor involving bladder by separate metastasis from uterine cervix (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369479006",
+    "display": "Malignant tumor involving bladder by separate metastasis from prostate (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369478003",
+    "display": "Malignant tumor involving bladder by separate metastasis from ovary (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369477008",
+    "display": "Malignant tumor involving bladder by separate metastasis from fallopian tube (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369476004",
+    "display": "Malignant tumor involving bladder by separate metastasis from endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369475000",
+    "display": "Malignant tumor involving bladder by direct extension from vagina (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369474001",
+    "display": "Malignant tumor involving bladder by direct extension from uterus (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369473007",
+    "display": "Malignant tumor involving bladder by direct extension from uterine cervix (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369472002",
+    "display": "Malignant tumor involving bladder by direct extension from prostate (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369471009",
+    "display": "Malignant tumor involving bladder by direct extension from ovary (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369470005",
+    "display": "Malignant tumor involving bladder by direct extension from fallopian tube (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "369469009",
+    "display": "Malignant tumor involving bladder by direct extension from endometrium (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "359785002",
+    "display": "Metastatic malignant neoplasm to dome of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "359782004",
+    "display": "Metastatic malignant neoplasm to apex of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "314968009",
+    "display": "Local recurrence of malignant tumor of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "285640005",
+    "display": "Metastasis to bladder of unknown primary (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "278046008",
+    "display": "Sarcoma of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "278024000",
+    "display": "Rhabdomyosarcoma of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "255111004",
+    "display": "Squamous cell carcinoma of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188247000",
+    "display": "Malignant neoplasm of overlapping sites of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188245008",
+    "display": "Malignant tumor of ureteric orifice (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188244007",
+    "display": "Malignant tumor of bladder neck (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188243001",
+    "display": "Malignant neoplasm of posterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188242006",
+    "display": "Malignant neoplasm of anterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188241004",
+    "display": "Malignant neoplasm of lateral wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188240003",
+    "display": "Malignant tumor of vault of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "188239000",
+    "display": "Malignant tumor of trigone of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94662003",
+    "display": "Secondary malignant neoplasm of urinary bladder neck (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94660006",
+    "display": "Secondary malignant neoplasm of ureteric orifice of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94647000",
+    "display": "Secondary malignant neoplasm of trigone of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94512001",
+    "display": "Secondary malignant neoplasm of rectovesical septum (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94500000",
+    "display": "Secondary malignant neoplasm of posterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94374009",
+    "display": "Secondary malignant neoplasm of lateral wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94186002",
+    "display": "Secondary malignant neoplasm of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94171008",
+    "display": "Secondary malignant neoplasm of anterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689851000119102",
+    "display": "Primary transitional cell carcinoma of ureteral orifice (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689831000119108",
+    "display": "Primary transitional cell carcinoma of trigone of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689821000119105",
+    "display": "Primary transitional cell carcinoma of posterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689801000119101",
+    "display": "Primary transitional cell carcinoma of lateral wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689791000119102",
+    "display": "Primary transitional cell carcinoma of dome of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689781000119100",
+    "display": "Primary transitional cell carcinoma of neck of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689771000119103",
+    "display": "Primary transitional cell carcinoma of anterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689441000119102",
+    "display": "Primary squamous cell carcinoma of ureteral orifice (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "689231000119107",
+    "display": "Primary squamous cell carcinoma of posterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "688941000119102",
+    "display": "Primary squamous cell carcinoma of lateral wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "688801000119109",
+    "display": "Primary squamous cell carcinoma of dome of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "688731000119109",
+    "display": "Primary squamous cell carcinoma of neck of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "688691000119102",
+    "display": "Primary squamous cell carcinoma of anterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "682041000119100",
+    "display": "Primary adenocarcinoma of ureteral orifice (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "681991000119104",
+    "display": "Primary adenocarcinoma of trigone of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "681921000119101",
+    "display": "Primary adenocarcinoma of posterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "681661000119100",
+    "display": "Primary adenocarcinoma of dome of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "681611000119103",
+    "display": "Primary adenocarcinoma of neck of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "681591000119108",
+    "display": "Primary adenocarcinoma of anterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "1208461001",
+    "display": "Plasmacytoid urothelial carcinoma of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "1208460000",
+    "display": "Sarcomatoid urothelial carcinoma of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "718604008",
+    "display": "Small cell neuroendocrine carcinoma of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "449803009",
+    "display": "Primary malignant neoplasm of dome of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "371969003",
+    "display": "Primary malignant neoplasm of apex of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "255110003",
+    "display": "Adenocarcinoma of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "255109008",
+    "display": "Transitional cell carcinoma of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "255108000",
+    "display": "Carcinoma of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94124002",
+    "display": "Primary malignant neoplasm of urinary bladder neck (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94122003",
+    "display": "Primary malignant neoplasm of ureteric orifice of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "94109006",
+    "display": "Primary malignant neoplasm of trigone of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "93983000",
+    "display": "Primary malignant neoplasm of rectovesical septum (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "93972009",
+    "display": "Primary malignant neoplasm of posterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "93863000",
+    "display": "Primary malignant neoplasm of lateral wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "93689003",
+    "display": "Primary malignant neoplasm of bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
+  },
+  {
+    "entryType": "cancerType",
+    "cancerType": ["bladder"],
+    "code": "93675008",
+    "display": "Primary malignant neoplasm of anterior wall of urinary bladder (disorder)",
+    "system": "http://snomed.info/sct",
+    "category": ["Bladder"]
   }
 ]
