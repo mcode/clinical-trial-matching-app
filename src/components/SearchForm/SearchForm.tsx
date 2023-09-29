@@ -31,6 +31,7 @@ import { SearchFormValuesType, State } from './types';
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
+  disableLocation?: boolean;
 };
 
 export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
@@ -50,7 +51,7 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });
 
-const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
+const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -136,12 +137,17 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
               defaultValue=""
               control={control}
               rules={{ required: true }}
-              render={ZipcodeTextField}
+              render={({ field }) => <ZipcodeTextField field={field} disabled={disableLocation} />}
             />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
-            <Controller name="travelDistance" defaultValue="" control={control} render={TravelDistanceTextField} />
+            <Controller
+              name="travelDistance"
+              defaultValue=""
+              control={control}
+              render={({ field }) => <TravelDistanceTextField field={field} disabled={disableLocation} />}
+            />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>

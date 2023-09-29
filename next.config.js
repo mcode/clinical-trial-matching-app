@@ -27,6 +27,9 @@ module.exports = {
     defaultZipCode: process.env.DEFAULT_ZIP_CODE,
     sendLocationData: JSON.parse(process.env.SEND_LOCATION_DATA ?? 'false'),
     reactAppDebug: JSON.parse(process.env.REACT_APP_DEBUG ?? 'false'),
+    disableSearchLocation: JSON.parse(process.env.DISABLE_SEARCH_LOCATION ?? 'false'),
+    defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
+    defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
     services: matchingServices,
   },
   serverRuntimeConfig: {
