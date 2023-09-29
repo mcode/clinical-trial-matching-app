@@ -52,8 +52,10 @@ export const MatchingServiceCheckbox = ({
 
 export const ZipcodeTextField = ({
   field,
+  disabled,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'zipcode'>;
+  disabled?: boolean;
 }): ReactElement => (
   <TextField
     data-testid="zipcode"
@@ -61,6 +63,7 @@ export const ZipcodeTextField = ({
     fullWidth
     label="Zip Code"
     required
+    disabled={disabled}
     variant="filled"
     {...field}
   />
@@ -68,10 +71,19 @@ export const ZipcodeTextField = ({
 
 export const TravelDistanceTextField = ({
   field,
+  disabled,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'travelDistance'>;
+  disabled?: boolean;
 }): ReactElement => (
-  <TextField data-testid="travelDistance" fullWidth label="Travel Distance (miles)" variant="filled" {...field} />
+  <TextField
+    data-testid="travelDistance"
+    fullWidth
+    label="Travel Distance (miles)"
+    variant="filled"
+    disabled={disabled}
+    {...field}
+  />
 );
 
 export const AgeTextField = ({

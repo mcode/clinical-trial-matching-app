@@ -21,6 +21,7 @@ import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import { GetServerSideProps } from 'next';
+import getConfig from 'next/config';
 import Head from 'next/head';
 import React, { ReactElement, useState } from 'react';
 
@@ -35,6 +36,10 @@ type SearchPageProps = {
   surgery: CodedValueType[];
   medications: CodedValueType[];
 };
+
+const {
+  publicRuntimeConfig: { disableSearchLocation, defaultSearchZipCode, defaultSearchTravelDistance },
+} = getConfig();
 
 const SearchPage = ({
   patient,
@@ -53,8 +58,8 @@ const SearchPage = ({
     cancerType: primaryCancerCondition ? primaryCancerCondition.cancerType : null,
     cancerSubtype: primaryCancerCondition ? primaryCancerCondition.cancerSubtype : null,
     stage: primaryCancerCondition ? primaryCancerCondition.stage : null,
-    travelDistance: '100',
-    zipcode: patient?.zipcode || '',
+    travelDistance: defaultSearchTravelDistance || '100',
+    zipcode: disableSearchLocation ? defaultSearchZipCode : patient.zipcode || (defaultSearchZipCode ?? ''),
     metastasis,
     ecogScore,
     karnofskyScore,
@@ -74,7 +79,7 @@ const SearchPage = ({
       <Header />
       <PatientCard patient={patient} />
       <UserIdContext.Provider value={userId}>
-        <SearchForm defaultValues={defaultValues} setUserId={setUserId} />
+        <SearchForm defaultValues={defaultValues} setUserId={setUserId} disableLocation={disableSearchLocation} />
       </UserIdContext.Provider>
     </>
   );
