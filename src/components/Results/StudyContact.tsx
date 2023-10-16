@@ -14,7 +14,8 @@ const StudyContact = ({ contact, title }: StudyContactProps): ReactElement => (
       {title}
     </Box>
 
-    {contact.name && (
+    {/* Display the contact only if it's different from the title */}
+    {contact.name && contact.name != title && (
       <Box fontWeight="600" ml={2}>
         {contact.name}
       </Box>

@@ -62,5 +62,13 @@
     "display": "Secondary malignant neoplasm of main bronchus",
     "system": "http://snomed.info/sct",
     "category": ["main bronchus"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94225005",
+    "display": "Secondary malignant neoplasm of brain",
+    "system": "http://snomed.info/sct",
+    "category": ["brain"]
   }
 ]

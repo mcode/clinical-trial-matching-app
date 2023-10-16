@@ -172,16 +172,39 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
   return getCoordinatesForLocations(locations)
-    .map(({ name, telecom, position }) => {
+    .map<ContactProps>(({ name, telecom, position }) => {
       const positionCoordinates = getLocationCoordinates({ position } as Location);
-      const quantity = getDistanceBetweenPoints(origin, positionCoordinates);
+      const distance = getDistanceBetweenPoints(origin, positionCoordinates);
+      let phone: string | undefined;
+      // Find a phone number to use
+      if (telecom) {
+        const bestTelecom = telecom.reduce((previous, current) => {
+          // Use phone numbers if possible
+          if (previous.system === 'phone' && current.system !== 'phone') {
+            return previous;
+          }
+          // Use work numbers if possible
+          if (previous.use === 'work' && current.use !== 'work') {
+            return previous;
+          }
+          if (previous.value && !current.value) {
+            return previous;
+          }
+          // Otherwise, the current is probably better
+          return current;
+        });
+        if (bestTelecom.system === 'phone' && bestTelecom.value) {
+          phone = bestTelecom.value;
+        }
+      }
 
       return {
-        contact: { name, telecom },
-        ...(origin && quantity
+        name: name,
+        phone: phone,
+        ...(origin && distance
           ? {
               distance: {
-                quantity,
+                quantity: distance,
                 units: 'miles',
               },
             }

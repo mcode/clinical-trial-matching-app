@@ -7,7 +7,7 @@ param (
     # script is run or the script file itself if not found there)
     [string]$ExtraCAs = "CA.cer",
     # Name of wrappers to install. If set to just "default" will install default wrappers.
-    [string[]]$Wrappers = @("ancora.ai", "breastcancertrials.org", "carebox", "lungevity", "trialjectory"),
+    [string[]]$Wrappers = @("default"),
     # If $true, skip all install steps (and assume software is available)
     [switch]$NoInstall = $false,
     # If $true, don't attempt to update files
@@ -113,6 +113,7 @@ class CTMSInstaller {
     [string]$InstallersPath
     [string]$CACerts
     [string]$CACertsPEM
+    [string[]]$WrapperNames
     [boolean]$HasExtraCerts
     [boolean]$SkipInstall
     [boolean]$SkipGitPull
@@ -134,6 +135,7 @@ class CTMSInstaller {
         $this.SkipGitPull = $false
         $this.SkipBuild = $false
         $this.SkipWebappConfigure = $false
+        $this.WrapperNames = @("default")
         $this.CurrentActivity = "Installing CTMS"
     }
 
@@ -228,7 +230,7 @@ class CTMSInstaller {
         } catch {
             $git_version = ""
         }
-        [CTMSPreReq]::New("https://github.com/git-for-windows/git/releases/download/v2.40.1.windows.1/Git-2.40.1-64-bit.exe", "Git", "git version 2.40.1.windows.1", $git_version, @"
+        [CTMSPreReq]::New("https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe", "Git", "git version 2.42.0.windows.1", $git_version, @"
 [Setup]
 Lang=default
 Dir=$([System.Environment]::GetFolderPath("ProgramFiles"))\Git
@@ -262,7 +264,7 @@ EnableFSMonitor=Disabled
             $node_version = ""
         }
 
-        [CTMSPreReq]::New("https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi", "Node.js", "v18.16.1", $node_version).Install($this)
+        [CTMSPreReq]::New("https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi", "Node.js", "v18.17.1", $node_version).Install($this)
         # These installs will have updated PATH but we won't have the new
         # version, so copy that over
         Rebuild-Path
@@ -351,6 +353,10 @@ EnableFSMonitor=Disabled
         if ($this.SkipWebappConfigure) {
           $args += "--no-webapp-configure"
         }
+        if (($this.WrapperNames.Length -ne 1) -Or ($this.WrapperNames[0] -ne "default")) {
+          $args += "--wrappers"
+          $args += """$($this.WrapperNames)"""
+        }
         # And run it
         Start-Process -FilePath "node.exe" -ArgumentList $args -Wait -NoNewWindow | Out-Host
     }
@@ -414,6 +420,7 @@ try {
     $installer.SkipGitPull = $NoGitPull
     $installer.SkipBuild = $NoBuild
     $installer.SkipWebappConfigure = $NoConfigureWebapps
+    $installer.WrapperNames = $Wrappers
     $installer.Install()
 } catch {
     Write-Error "The CTMS system failed to install: $_"

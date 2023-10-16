@@ -13,7 +13,6 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
   const cancerTypes = process.env[`MATCHING_SERVICE_${serviceEnvName}_CANCER_TYPES`]
     .split(/\s*,\s*/)
     .filter(cancer => allowedCancerTypes.includes(cancer));
-
   return {
     name: service,
     label: process.env[`MATCHING_SERVICE_${serviceEnvName}_LABEL`] ?? service,
@@ -34,6 +33,9 @@ module.exports = {
     defaultTravelDistance: process.env.DEFAULT_TRAVEL_DISTANCE,
     sendLocationData: JSON.parse(process.env.SEND_LOCATION_DATA ?? 'false'),
     reactAppDebug: JSON.parse(process.env.REACT_APP_DEBUG ?? 'false'),
+    disableSearchLocation: JSON.parse(process.env.DISABLE_SEARCH_LOCATION ?? 'false'),
+    defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
+    defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
     services: matchingServices,
   },
   serverRuntimeConfig: {

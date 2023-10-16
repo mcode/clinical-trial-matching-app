@@ -139,7 +139,11 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
                 </AccordionSummary>
                 <AccordionDetails sx={{ boxShadow: 'inset 0px 1px 0px 0px rgb(0 0 0 / 20%)' }}>
                   {closestFacilities.map((closestFacility, index) => (
-                    <StudyContact title={`Facility ${index + 1}`} contact={closestFacility} key={index} />
+                    <StudyContact
+                      title={closestFacility.name ?? `Facility ${index + 1}`}
+                      contact={closestFacility}
+                      key={index}
+                    />
                   ))}
                 </AccordionDetails>
               </Accordion>
