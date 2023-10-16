@@ -1,7 +1,9 @@
 // NOTE: Uncomment this out for facilities information
 //import { getContact } from '@/components/Results/utils';
+import { stringify as csvStringify } from 'csv-stringify/sync';
 import FileSaver from 'file-saver';
-import _ from 'lodash';
+import { FullSearchParameters } from 'types/search-types';
+import { v4 as uuidv4 } from 'uuid';
 import XLSX from 'xlsx';
 import { StudyDetail, StudyDetailProps } from '../components/Results/types';
 
@@ -29,6 +31,34 @@ export const MainRowKeys = {
   contactPhone: 'Overall Contact Phone',
   contactEmail: 'Overall Contact Email',
 };
+
+// Translates redcaps
+export const RedCapHeaders = [
+  'record_id',
+  'trial_id',
+  'source',
+  'match_likelihood',
+  'title',
+  'overall_status',
+  'period',
+  'trial_phase',
+  'conditions',
+  'study_type',
+  'description',
+  'eligibility',
+  'sponsor',
+  'contact',
+  'contact_phone',
+  'contact_email',
+  'age',
+  'ps_scale',
+  'ecog',
+  'kps',
+  'cancer_diagnosis',
+  'histology___1',
+  'biomarkers',
+  'stage',
+];
 
 const getMainRow = (studyProps: StudyDetailProps): Record<string, string> =>
   convertToSpreadsheetRow([
@@ -83,8 +113,6 @@ const convertToSpreadsheetRow = (details: StudyDetail[]): Record<string, string>
 };
 
 export const exportSpreadsheetData = (data: Record<string, string>[], fileName: string): void => {
-  console.log(data);
-  console.log(exportCsvStringData(data));
   const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
   const fileExtension = '.xlsx';
   const worksheet = XLSX.utils.json_to_sheet(data);
@@ -94,38 +122,58 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
   FileSaver.saveAs(blob, fileName + fileExtension);
 };
 
-export const exportCsvStringData = (data: Record<string, string>[]): string => {
-  // List of excluded keys
-  const exclusion: string[] = ['conditions', 'description', 'eligibility'];
-
-  // Add the headers
-  let csvString = '';
-
-  for (const key in MainRowKeys) {
-    if (exclusion.includes(key)) {
-      continue;
-    }
-
-    csvString += '"' + MainRowKeys[key] + '"' + '~';
-  }
-  csvString = _.trim(csvString, '~');
-
-  data.forEach(entry => {
-    // Filter out data if there's no trialId. This is basically for those mainly empty rows to hold facility data
-    if (!entry[MainRowKeys['trialId']]) {
-      return;
-    }
-
-    let row = '\n';
-    for (const key in MainRowKeys) {
-      if (exclusion.includes(key)) {
-        continue;
-      }
-
-      row += '"' + entry[MainRowKeys[key]].replace('\n', '\r') + '"' + '~';
-    }
-    csvString += _.trimEnd(row, '~');
+export const exportCsvStringData = (patientSearch: FullSearchParameters, data: StudyDetailProps[]): string => {
+  const patientElements = convertPatientInfoToRedCapRow(patientSearch);
+  const entries = data.map(entry => {
+    const trialElements = convertResultsToRedCapRow(entry);
+    return { ...trialElements, ...patientElements };
   });
+  return csvStringify([RedCapHeaders]) + csvStringify(entries);
+};
 
-  return csvString;
+const convertResultsToRedCapRow = (data: StudyDetailProps) => {
+  return {
+    record_id: uuidv4(),
+    trial_id: data.trialId,
+    source: data.source,
+    match_likelihood: data.likelihood?.text || '',
+    title: data.title || '',
+    overall_status: data.status?.label || '',
+    period: data.period || '',
+    trial_phase: data.phase || '',
+    conditions: JSON.stringify(data?.conditions) || '',
+    study_type: data.type?.label || data.type?.name || '',
+    description: data.description || '',
+    eligibility: data.eligibility || '',
+    sponsor: data.sponsor?.name || '',
+    contact: data.contacts?.[0]?.name || '',
+    contact_phone: data.contacts?.[0]?.phone || '',
+    contact_email: data.contacts?.[0]?.email || '',
+  };
+};
+
+// The same
+const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
+  const ecogScore = patientSearch.ecogScore ? JSON.parse(patientSearch.ecogScore)?.valueInteger : '';
+  const karnofskyScore = patientSearch.karnofskyScore ? JSON.parse(patientSearch.karnofskyScore)?.valueInteger : '';
+  const cancerType: string = patientSearch.cancerType ? JSON.parse(patientSearch.cancerType)?.cancerType[0] : '';
+  // const cancerSubtype: string = patientSearch.cancerSubtype ? JSON.parse(patientSearch.cancerSubtype)?.category[0] : '';
+  // const metastasis:string = patientSearch.metastasis ? JSON.parse(patientSearch.metastasis)?.category[0] : '';
+  const stage: string = patientSearch.stage ? JSON.parse(patientSearch.stage)?.category[0] : '';
+  const biomarkers: string = patientSearch.biomarkers
+    ? JSON.parse(patientSearch.biomarkers)
+        .map(biomarker => biomarker.display)
+        .join(', ')
+    : '';
+
+  return {
+    age: patientSearch.age || '',
+    ps_scale: karnofskyScore ? 1 : ecogScore || ecogScore === 0 ? 2 : '',
+    ecog: ecogScore,
+    kps: karnofskyScore,
+    cancer_diagnosis: cancerType,
+    histology___1: '',
+    biomarkers: biomarkers,
+    stage: stage,
+  };
 };

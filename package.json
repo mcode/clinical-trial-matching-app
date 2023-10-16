@@ -45,6 +45,7 @@
     "react-hook-form": "^7.24.2",
     "react-query": "^3.23.2",
     "us-zips": "^2021.11.4",
+    "uuid": "^9.0.1",
     "xlsx": "^0.17.4"
   },
   "devDependencies": {

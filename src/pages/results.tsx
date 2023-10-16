@@ -196,9 +196,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 
   const handleExportCsvStudies = (): string => {
     // const savedStudies = getSavedStudies(data.results, state);
-    const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results);
-
-    return exportCsvStringData(spreadsheetData);
+    return exportCsvStringData(searchParams, filteredData.results);
   };
 
   const handleSaveStudy =
