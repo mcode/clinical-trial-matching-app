@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import { ReactElement, useContext, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SearchParameters } from 'types/search-types';
+import ExportModal from '../Results/ExportModal';
 import { UserIdContext } from '../UserIdContext';
 import {
   AgeTextField,
@@ -137,6 +138,34 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const generateExportButton = (onClick): ReactElement => {
+    return (
+      <Grid item xs={8}>
+        <Button
+          onClick={onClick}
+          sx={{
+            float: 'right',
+            fontSize: '1.3em',
+            fontWeight: '500',
+            minWidth: '200px',
+            width: fullWidth || isSmallScreen ? '100%' : '25%',
+          }}
+          variant="contained"
+        >
+          <DownloadIcon /> Generate CSV
+        </Button>
+      </Grid>
+    );
+  };
+
+  const generateExportCsv = (): string => {
+    const data = getValues();
+    const manuallyAdjusted = compareDefaultValues(data);
+    const csv = generateSearchCSVString(data, '', manuallyAdjusted);
+
+    return csv;
   };
 
   const retrieveCancer = (cancerType: CodedValueType): void => {
@@ -341,6 +370,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               <SearchIcon sx={{ paddingRight: '5px' }} /> Search
             </Button>
           </Grid>
+
           <Grid item xs={8}>
             <Button
               onClick={handleSubmit(onDownload)}
@@ -356,6 +386,8 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               <DownloadIcon /> Download CSV
             </Button>
           </Grid>
+
+          <ExportModal {...{ handleContentGeneration: generateExportCsv, replaceButton: generateExportButton }} />
         </Grid>
       </Box>
     </form>
