@@ -216,7 +216,7 @@ async function main(args) {
       console.log('  Adding installers...');
       const installers = [
         'Git-2.42.0-64-bit.exe',
-        'node-v18.17.1-x64.msi',
+        'node-v18.18.2-x64.msi',
         'iisnode-core-v0.2.26-x64.msi',
         'rewrite_amd64_en-US.msi',
       ];

@@ -264,7 +264,7 @@ EnableFSMonitor=Disabled
             $node_version = ""
         }
 
-        [CTMSPreReq]::New("https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi", "Node.js", "v18.17.1", $node_version).Install($this)
+        [CTMSPreReq]::New("https://nodejs.org/dist/v18.17.1/node-v18.18.2-x64.msi", "Node.js", "v18.18.2", $node_version).Install($this)
         # These installs will have updated PATH but we won't have the new
         # version, so copy that over
         Rebuild-Path
