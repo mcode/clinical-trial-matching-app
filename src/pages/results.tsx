@@ -193,15 +193,13 @@ const ResultsPage = ({ patient, searchParams, userId: initialUserId }: ResultsPa
   /** TODO: Saved studies only works on current page. For now do all filteredData instead. */
   const handleExportStudies = (): void => {
     // const savedStudies = getSavedStudies(data.results, state);
-    const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results);
+    const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results, userId);
     exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
   };
 
   const handleExportCsvStudies = (): string => {
     // const savedStudies = getSavedStudies(data.results, state);
-    const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results);
-
-    return exportCsvStringData(spreadsheetData);
+    return exportCsvStringData(searchParams, filteredData.results);
   };
 
   const handleSaveStudy =

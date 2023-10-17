@@ -143,6 +143,15 @@ export const extractPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): P
   return null;
 };
 
+export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition => {
+  const condition = bundle?.entry?.[0]?.resource as Condition;
+  return {
+    cancerType: getCancerType(condition),
+    cancerSubtype: getCancerSubtype(condition),
+    stage: getStage(condition),
+  };
+};
+
 export const convertFhirRadiationProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
   const radiationProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
   const radiations: CodedValueType[] = radiationProcedures.map(extractKnownCodes(radiation as CodedValueType[])).flat();
