@@ -23,7 +23,7 @@ import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, reactAppDebug, services },
+  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, services },
 } = getConfig();
 
 /**
@@ -34,6 +34,7 @@ const {
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const { searchParams } = JSON.parse(req.body);
+  const mainCancerType: string = JSON.parse(searchParams.cancerType).cancerType[0];
 
   const patientBundle: Bundle = buildBundle(searchParams);
 
@@ -42,7 +43,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       ? searchParams.matchingServices
       : [searchParams.matchingServices];
 
-  const results = await callWrappers(chosenServices, patientBundle, searchParams['zipcode']);
+  const results = await callWrappers(chosenServices, mainCancerType, patientBundle, searchParams['zipcode']);
   res.status(200).json(results);
 };
 
@@ -55,7 +56,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
  */
 export function buildBundle(searchParams: SearchParameters, id?: string): Bundle {
   const zipCode = sendLocationData ? searchParams['zipcode'] : defaultZipCode;
-  const travelDistance = sendLocationData ? searchParams['travelDistance'] : undefined;
+  const travelDistance = sendLocationData ? searchParams['travelDistance'] : defaultTravelDistance;
 
   !sendLocationData && console.log(`Using default zip code ${defaultZipCode} and travel distance ${travelDistance}`);
 
@@ -112,11 +113,13 @@ export function buildBundle(searchParams: SearchParameters, id?: string): Bundle
  * @param patientZipCode Patient's zip code which may not have been sent to matching services
  * @returns Responses from called wrappers
  */
-async function callWrappers(matchingServices: string[], query: Bundle, patientZipCode: string) {
+async function callWrappers(matchingServices: string[], mainCancerType: string, query: Bundle, patientZipCode: string) {
   const wrapperResults = await Promise.all(
     matchingServices.map(async name => {
-      const { url, searchRoute, label } = services.find((service: Service) => service.name === name);
-      const results = await callWrapper(url + searchRoute, JSON.stringify(query, null, 2), label);
+      const { url, searchRoute, label, cancerTypes } = services.find((service: Service) => service.name === name);
+      const results = cancerTypes.includes(mainCancerType)
+        ? await callWrapper(url + searchRoute, JSON.stringify(query, null, 2), label)
+        : { status: 200, response: { resourceType: 'Bundle', type: 'searchset', total: 0, entry: [] }, label };
       return results;
     })
   );

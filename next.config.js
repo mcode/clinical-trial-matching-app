@@ -1,3 +1,4 @@
+const allowedCancerTypes = ['bladder', 'brain', 'breast', 'colon', 'lung', 'multipleMyeloma', 'prostate'];
 const enabledMatchingServices = process.env.MATCHING_SERVICES;
 if (!enabledMatchingServices || /^\s*$/.test(enabledMatchingServices)) {
   console.error(
@@ -9,12 +10,16 @@ const defaultMatchingServices = new Set((process.env.MATCHING_SERVICES_DEFAULT_E
 
 const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service => {
   const serviceEnvName = service.toUpperCase();
+  const cancerTypes = process.env[`MATCHING_SERVICE_${serviceEnvName}_CANCER_TYPES`]
+    .split(/\s*,\s*/)
+    .filter(cancer => allowedCancerTypes.includes(cancer));
   return {
     name: service,
     label: process.env[`MATCHING_SERVICE_${serviceEnvName}_LABEL`] ?? service,
     url: process.env[`MATCHING_SERVICE_${serviceEnvName}_URL`] ?? `http://localhost/${service}`,
     searchRoute: '/getClinicalTrial',
     defaultValue: defaultMatchingServices.has(service),
+    cancerTypes: cancerTypes,
   };
 });
 
@@ -25,6 +30,7 @@ module.exports = {
   publicRuntimeConfig: {
     fhirClientId: process.env.FHIR_CLIENT_ID,
     defaultZipCode: process.env.DEFAULT_ZIP_CODE,
+    defaultTravelDistance: process.env.DEFAULT_TRAVEL_DISTANCE,
     sendLocationData: JSON.parse(process.env.SEND_LOCATION_DATA ?? 'false'),
     reactAppDebug: JSON.parse(process.env.REACT_APP_DEBUG ?? 'false'),
     disableSearchLocation: JSON.parse(process.env.DISABLE_SEARCH_LOCATION ?? 'false'),
