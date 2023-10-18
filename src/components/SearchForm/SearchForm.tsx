@@ -2,7 +2,7 @@ import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
 import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
-import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
+import { Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -113,18 +113,19 @@ const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormPro
     return manuallyAdjusted;
   };
 
-  const onDownload = (data: SearchFormValuesType) => {
-    const manuallyAdjusted = compareDefaultValues(data);
-    const csv = generateSearchCSVString(data, '', manuallyAdjusted);
+  // Removing the download capability for now as it does not work in embedded Epic
+  // const onDownload = (data: SearchFormValuesType) => {
+  //   const manuallyAdjusted = compareDefaultValues(data);
+  //   const csv = generateSearchCSVString(data, '', manuallyAdjusted);
 
-    // Create a hidden download link to download the CSV
-    const link = document.createElement('a');
-    link.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`);
-    link.setAttribute('download', 'search-parameters.csv');
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  //   // Create a hidden download link to download the CSV
+  //   const link = document.createElement('a');
+  //   link.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`);
+  //   link.setAttribute('download', 'search-parameters.csv');
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   const generateExportButton = (onClick): ReactElement => {
     return (
@@ -356,7 +357,8 @@ const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormPro
             </Button>
           </Grid>
 
-          <Grid item xs={8}>
+          {/* Removing the download button for now as it does not work in embedded Epic */}
+          {/* <Grid item xs={8}>
             <Button
               onClick={handleSubmit(onDownload)}
               sx={{
@@ -370,7 +372,7 @@ const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormPro
             >
               <DownloadIcon /> Download CSV
             </Button>
-          </Grid>
+          </Grid> */}
 
           <ExportModal {...{ handleContentGeneration: generateExportCsv, replaceButton: generateExportButton }} />
         </Grid>
