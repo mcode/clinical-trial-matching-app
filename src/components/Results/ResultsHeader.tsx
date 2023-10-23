@@ -61,11 +61,12 @@ const ResultsHeader = ({
           </Button>
         )}
 
-        {showExport && (
+        {/* Removing the download capability for now as it does not work in embedded Epic */}
+        {/* {showExport && (
           <Button sx={{ mr: 2 }} onClick={handleExportStudies}>
             {hasSavedStudies ? 'Export Saved' : 'Export All'}
           </Button>
-        )}
+        )} */}
 
         {showExport && (
           <ExportModal {...{ handleContentGeneration: handleExportCsvStudies, label: 'Generate CSV' }}></ExportModal>
