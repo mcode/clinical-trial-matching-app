@@ -750,7 +750,7 @@ ${frontendConfig}
       if (-Not $website) {
         New-Website -Name "${escapePowerShell(
           this.websiteName
-        )}" -Port 80 -PhysicalPath "$($this.InstallPath)\clinical-trial-matching-app"
+        )}" -Port 80 -PhysicalPath "${escapePowerShell(this.installPath)}\\clinical-trial-matching-app"
       } else {
         Stop-Website "${escapePowerShell(this.websiteName)}"
       }
