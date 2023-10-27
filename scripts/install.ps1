@@ -18,6 +18,22 @@ param (
     [switch]$NoConfigureWebapps = $false
 )
 
+# Config for various prereqs, moved here to make updating them easier
+# (these values will get overridden later, they're only for making populating the config easier)
+$GIT_VERSION = "2.42.0.windows.2"
+$NODE_VERSION = "18.18.2"
+
+$PREREQ_CONFIG = @{
+  "git" = @{
+    "version" = "git version $GIT_VERSION";
+    "git_url" = "https://github.com/git-for-windows/git/releases/download/v$GIT_VERSION/Git-$GIT_VERSION-64-bit.exe"
+  };
+  "node" = @{
+    "version" = "v$NODE_VERSION";
+    "url" = "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-x64.msi"
+  }
+}
+
 class CTMSPreReq {
     [System.Uri]$Uri
     [string]$Name
@@ -230,7 +246,7 @@ class CTMSInstaller {
         } catch {
             $git_version = ""
         }
-        [CTMSPreReq]::New("https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe", "Git", "git version 2.42.0.windows.1", $git_version, @"
+        [CTMSPreReq]::New($global:PREREQ_CONFIG["git"]["url"], "Git", $global:PREREQ_CONFIG["git"]["version"], $git_version, @"
 [Setup]
 Lang=default
 Dir=$([System.Environment]::GetFolderPath("ProgramFiles"))\Git
@@ -264,7 +280,7 @@ EnableFSMonitor=Disabled
             $node_version = ""
         }
 
-        [CTMSPreReq]::New("https://nodejs.org/dist/v18.17.1/node-v18.18.2-x64.msi", "Node.js", "v18.18.2", $node_version).Install($this)
+        [CTMSPreReq]::New($global:PREREQ_CONFIG["node"]["url"], "Node.js", $global:PREREQ_CONFIG["node"]["version"], $node_version).Install($this)
         # These installs will have updated PATH but we won't have the new
         # version, so copy that over
         Rebuild-Path
