@@ -9,6 +9,16 @@ let verbose = false;
 let skipNodeModules = false;
 let skipInstallers = false;
 
+// Installers (placed here to make updating the versions easier, eventually
+// version info should probably be localized in one place but it's currently
+// used by the PowerShell script)
+const INSTALLER_FILES = [
+  'Git-2.42.0.2-64-bit.exe',
+  'node-v18.18.2-x64.msi',
+  'iisnode-core-v0.2.26-x64.msi',
+  'rewrite_amd64_en-US.msi',
+];
+
 const fs = require('fs');
 const fsp = require('fs/promises');
 const path = require('path');
@@ -214,13 +224,7 @@ async function main(args) {
     }
     if (!skipInstallers) {
       console.log('  Adding installers...');
-      const installers = [
-        'Git-2.42.0-64-bit.exe',
-        'node-v18.17.1-x64.msi',
-        'iisnode-core-v0.2.26-x64.msi',
-        'rewrite_amd64_en-US.msi',
-      ];
-      for (const installer of installers) {
+      for (const installer of INSTALLER_FILES) {
         await zip.addFile(path.join(installPath, 'installers', installer));
       }
     }
