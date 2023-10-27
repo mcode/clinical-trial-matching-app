@@ -23,10 +23,10 @@ param (
 $GIT_VERSION = "2.42.0.windows.2"
 $NODE_VERSION = "18.18.2"
 
-$PREREQ_CONFIG = @{
+$global:PREREQ_CONFIG = @{
   "git" = @{
     "version" = "git version $GIT_VERSION";
-    "git_url" = "https://github.com/git-for-windows/git/releases/download/v$GIT_VERSION/Git-$GIT_VERSION-64-bit.exe"
+    "url" = "https://github.com/git-for-windows/git/releases/download/v$GIT_VERSION/Git-$($GIT_VERSION -replace '.windows', '')-64-bit.exe"
   };
   "node" = @{
     "version" = "v$NODE_VERSION";
