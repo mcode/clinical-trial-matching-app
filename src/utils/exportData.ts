@@ -35,6 +35,9 @@ export const MainRowKeys = {
 // Translates redcaps
 export const RedCapHeaders = [
   'record_id',
+  'redcap_event_name',
+  'redcap_repeat_instrument',
+  'redcap_repeat_instance',
   'trial_id',
   'source',
   'match_likelihood',
@@ -124,16 +127,19 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
 
 export const exportCsvStringData = (patientSearch: FullSearchParameters, data: StudyDetailProps[]): string => {
   const patientElements = convertPatientInfoToRedCapRow(patientSearch);
-  const entries = data.map(entry => {
-    const trialElements = convertResultsToRedCapRow(entry);
+  const entries = data.map((entry, index) => {
+    const trialElements = convertResultsToRedCapRow(entry, index);
     return { ...trialElements, ...patientElements };
   });
   return csvStringify([RedCapHeaders]) + csvStringify(entries);
 };
 
-const convertResultsToRedCapRow = (data: StudyDetailProps) => {
+const convertResultsToRedCapRow = (data: StudyDetailProps, index: number) => {
   return {
     record_id: uuidv4(),
+    redcap_event_name: 'match_arm_1',
+    redcap_repeat_instrument: 'trial_matches_intervention_arm_1',
+    redcap_repeat_instance: index,
     trial_id: data.trialId,
     source: data.source,
     match_likelihood: data.likelihood?.text || '',
