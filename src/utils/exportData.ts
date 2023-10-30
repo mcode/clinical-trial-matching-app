@@ -127,19 +127,19 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
 
 export const exportCsvStringData = (patientSearch: FullSearchParameters, data: StudyDetailProps[]): string => {
   const patientElements = convertPatientInfoToRedCapRow(patientSearch);
-  const entries = data.map((entry, index) => {
-    const trialElements = convertResultsToRedCapRow(entry, index);
-    return { ...trialElements, ...patientElements };
+  const record_id = uuidv4();
+  const entries = data.map(entry => {
+    const trialElements = convertResultsToRedCapRow(entry);
+    return { record_id, ...trialElements };
   });
-  return csvStringify([RedCapHeaders]) + csvStringify(entries);
+  return csvStringify([RedCapHeaders]) + csvStringify([{ record_id, ...patientElements }]) + csvStringify(entries);
 };
 
-const convertResultsToRedCapRow = (data: StudyDetailProps, index: number) => {
+const convertResultsToRedCapRow = (data: StudyDetailProps) => {
   return {
-    record_id: uuidv4(),
     redcap_event_name: 'match_arm_1',
     redcap_repeat_instrument: 'trial_matches_intervention_arm_1',
-    redcap_repeat_instance: index,
+    redcap_repeat_instance: 'new',
     trial_id: data.trialId,
     source: data.source,
     match_likelihood: data.likelihood?.text || '',
@@ -155,6 +155,14 @@ const convertResultsToRedCapRow = (data: StudyDetailProps, index: number) => {
     contact: data.contacts?.[0]?.name || '',
     contact_phone: data.contacts?.[0]?.phone || '',
     contact_email: data.contacts?.[0]?.email || '',
+    age: '',
+    ps_scale: '',
+    ecog: '',
+    kps: '',
+    cancer_diagnosis: '',
+    histology___1: '',
+    biomarkers: '',
+    stage: '',
   };
 };
 
@@ -173,6 +181,24 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
     : '';
 
   return {
+    redcap_event_name: 'match_arm_1',
+    redcap_repeat_instrument: '',
+    redcap_repeat_instance: '',
+    trial_id: '',
+    source: '',
+    match_likelihood: '',
+    title: '',
+    overall_status: '',
+    period: '',
+    trial_phase: '',
+    conditions: '',
+    study_type: '',
+    description: '',
+    eligibility: '',
+    sponsor: '',
+    contact: '',
+    contact_phone: '',
+    contact_email: '',
     age: patientSearch.age || '',
     ps_scale: karnofskyScore ? 1 : ecogScore || ecogScore === 0 ? 2 : '',
     ecog: ecogScore,
