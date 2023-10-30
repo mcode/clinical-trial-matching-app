@@ -290,21 +290,6 @@ EnableFSMonitor=Disabled
         } catch {
             throw "NPM does not appear to be installed. It should have been installed along with Node.js."
         }
-
-        # Yarn can be automatically installed
-        try {
-            $yarn_version = yarn --version
-        } catch {
-            # This is OK, try to install it
-            $this.Info("Yarn does not appear to be installed, installing it...")
-            $this.StartActivity("Installing Yarn...", "Running NPM install...")
-            npm install -g yarn
-            if ($LastExitCode -ne 0) {
-                throw "Yarn does not appear to be installed, and was not able to be automatically installed."
-            }
-            # And rebuild the path to get Yarn onto it
-            Rebuild-Path
-        }
     }
 
     [void]InstallIISNode() {
