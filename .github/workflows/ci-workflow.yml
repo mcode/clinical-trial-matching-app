@@ -14,8 +14,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: yarn install
-      - run: yarn lint
+      - run: npm install
+      - run: npm run lint
         env:
           CI: true
   test:
@@ -28,8 +28,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16.x'
-      - run: yarn install
-      - run: yarn test:ci --ci --maxWorkers=2 --coverage
+      - run: npm install
+      - run: npm run test:ci --ci --maxWorkers=2 --coverage
         env:
           CI: true
       - name: Scan with SonarCloud

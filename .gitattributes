@@ -1,6 +1,6 @@
 # See https://git-scm.com/docs/gitattributes for more about git attribute files.
 
-yarn.lock linguist-generated
+package-lock.json linguist-generated
 
 * text=auto
 * eol=lf
