@@ -1,5 +1,6 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
+import { extractCodes } from '@/utils/encodeODPE';
 import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
 import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
@@ -42,12 +43,12 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   // Boolean check is because JSON.stringify(null) === "null" and should be omitted
   cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
-  metastasis: data.metastasis ? JSON.stringify(data.metastasis) : undefined,
-  biomarkers: data.biomarkers ? JSON.stringify(data.biomarkers) : undefined,
+  metastasis: data.metastasis ? JSON.stringify(extractCodes(data.metastasis)) : undefined,
+  biomarkers: data.biomarkers ? JSON.stringify(extractCodes(data.biomarkers)) : undefined,
   stage: data.stage ? JSON.stringify(data.stage) : undefined,
-  medications: data.medications ? JSON.stringify(data.medications) : undefined,
-  surgery: data.surgery ? JSON.stringify(data.surgery) : undefined,
-  radiation: data.radiation ? JSON.stringify(data.radiation) : undefined,
+  medications: data.medications ? JSON.stringify(extractCodes(data.medications)) : undefined,
+  surgery: data.surgery ? JSON.stringify(extractCodes(data.surgery)) : undefined,
+  radiation: data.radiation ? JSON.stringify(extractCodes(data.radiation)) : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
   karnofskyScore: data.karnofskyScore ? JSON.stringify(data.karnofskyScore) : undefined,
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,

@@ -5,7 +5,7 @@ import { DEFAULT_PAGE } from '@/queries/clinicalTrialPaginationQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import { Patient } from '@/utils/fhirConversionUtils';
 import { FilterAlt as FilterIcon, Search as SearchIcon } from '@mui/icons-material';
-import { useRouter } from 'next/router';
+import { ParsedUrlQuery } from 'querystring';
 import { ReactElement, SyntheticEvent, useState } from 'react';
 import { FullSearchParameters } from 'types/search-types';
 import { formDataToFilterQuery } from '../FilterForm/FilterForm';
@@ -18,6 +18,7 @@ type SidebarProps = {
   disabled: boolean;
   savedStudies: SavedStudiesState;
   filterOptions: FilterOptions;
+  query: ParsedUrlQuery;
 };
 
 enum SidebarExpand {
@@ -31,8 +32,7 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const Sidebar = ({ patient, disabled, savedStudies, filterOptions }: SidebarProps): ReactElement => {
-  const { query } = useRouter();
+const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query }: SidebarProps): ReactElement => {
   const [expanded, setExpanded] = useState<SidebarExpand>(SidebarExpand.Filter);
 
   const handleChange = (panel: SidebarExpand) => (_event: SyntheticEvent, isExpanded: boolean) => {
