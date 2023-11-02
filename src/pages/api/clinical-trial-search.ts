@@ -156,9 +156,10 @@ async function callWrappers(matchingServices: string[], mainCancerType: string, 
 
       // Only interested in Active and Interventional trials
       const isActiveAndInterventional = (entry: StudyDetailProps): boolean => {
-        return true;
-        // return (entry.status?.label?.toLowerCase() == 'active' || entry.status?.name?.toLowerCase() == 'active')
-        //        && (entry.type?.label?.toLowerCase() == 'interventional' || entry.type?.name?.toLowerCase() == 'interventional');
+        return (
+          (entry.status?.label?.toLowerCase() == 'active' || entry.status?.name?.toLowerCase() == 'active') &&
+          (entry.type?.label?.toLowerCase() == 'interventional' || entry.type?.name?.toLowerCase() == 'interventional')
+        );
       };
 
       // Don't want to return NCT05885880 so just filter it out
@@ -194,8 +195,7 @@ async function callWrappers(matchingServices: string[], mainCancerType: string, 
   // Go through the highest recurring trials first
   const results: StudyDetailProps[] = trialCounts.map((trialId: [string, string[]]) => {
     const services = trialId[1];
-    // For some reason, Ancora is terrible so pick anything but Ancora if possible
-    const preferredService = services.length > 1 ? services.find(service => service != 'Ancora.ai') : services[0];
+    const preferredService = services[0];
     const studyResult = distanceFilteredResults[preferredService].find(study => study.trialId == trialId[0]);
 
     // Change the sources to be all of the services that you saw this occurence for
