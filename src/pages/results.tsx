@@ -7,8 +7,15 @@ import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
+import {
+  convertCodesToBiomarkers,
+  convertCodesToMedications,
+  convertCodesToMetastases,
+  convertCodesToRadiations,
+  convertCodesToSurgeries,
+} from '@/utils/encodeODPE';
 import { exportCsvStringData, exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
-import { convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
+import { CodedValueType, convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
 import styled from '@emotion/styled';
 import {
@@ -29,6 +36,7 @@ import type Client from 'fhirclient/lib/Client';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
+import { ParsedUrlQuery } from 'querystring';
 import { MutableRefObject, ReactElement, SyntheticEvent, useMemo, useReducer, useRef, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
@@ -242,6 +250,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
               disabled={isIdle || isLoading}
               savedStudies={state}
               filterOptions={filterOptions}
+              query={searchParams}
             />
           </Drawer>
 
@@ -260,6 +269,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
               disabled={isIdle || isLoading}
               savedStudies={state}
               filterOptions={filterOptions}
+              query={searchParams}
             />
           </Drawer>
 
@@ -323,6 +333,24 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 
 export default ResultsPage;
 
+const rehydrateCodes = (
+  query: ParsedUrlQuery,
+  key: string,
+  converter: (values: string[]) => CodedValueType[]
+): void => {
+  const codeJson = query[key];
+  if (typeof codeJson === 'string') {
+    try {
+      const codes = JSON.parse(codeJson);
+      if (Array.isArray(codes)) {
+        query[key] = JSON.stringify(converter(codes));
+      }
+    } catch (ex) {
+      console.log('Cannot recreate values for %s: %o', key, ex);
+    }
+  }
+};
+
 export const getServerSideProps: GetServerSideProps = async context => {
   const { req, res, query } = context;
   const queryClient = new QueryClient();
@@ -335,6 +363,13 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
+
+  // "Rehydrate" codes
+  rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
+  rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
+  rehydrateCodes(query, 'medications', convertCodesToMedications);
+  rehydrateCodes(query, 'radiations', convertCodesToRadiations);
+  rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
 
   return {
     props: {
