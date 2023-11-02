@@ -13,7 +13,7 @@ export type ResultsHeaderProps = {
   toggleMobileDrawer: () => void;
   hasSavedStudies: boolean;
   handleClearSavedStudies: () => void;
-  handleExportStudies: () => void;
+  //handleExportStudies: () => void;
   handleExportCsvStudies: () => string;
   showExport: boolean;
 };
@@ -24,7 +24,7 @@ const ResultsHeader = ({
   toggleMobileDrawer,
   hasSavedStudies,
   handleClearSavedStudies,
-  handleExportStudies,
+  //handleExportStudies,
   handleExportCsvStudies,
   showExport,
 }: ResultsHeaderProps): ReactElement => {

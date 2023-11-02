@@ -1,10 +1,10 @@
 // NOTE: Uncomment this out for facilities information
 //import { getContact } from '@/components/Results/utils';
 import { stringify as csvStringify } from 'csv-stringify/sync';
-import FileSaver from 'file-saver';
+//import FileSaver from 'file-saver';
 import { FullSearchParameters } from 'types/search-types';
 import { v4 as uuidv4 } from 'uuid';
-import XLSX from 'xlsx';
+//import XLSX from 'xlsx';
 import { StudyDetail, StudyDetailProps } from '../components/Results/types';
 
 // NOTE: Uncomment this out for facilities information
@@ -115,7 +115,7 @@ const convertToSpreadsheetRow = (details: StudyDetail[]): Record<string, string>
   return newDatum;
 };
 
-export const exportSpreadsheetData = (data: Record<string, string>[], fileName: string): void => {
+/*export const exportSpreadsheetData = (data: Record<string, string>[], fileName: string): void => {
   const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
   const fileExtension = '.xlsx';
   const worksheet = XLSX.utils.json_to_sheet(data);
@@ -123,7 +123,7 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
   const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
   const blob = new Blob([excelBuffer], { type: fileType });
   FileSaver.saveAs(blob, fileName + fileExtension);
-};
+};*/
 
 export const exportCsvStringData = (patientSearch: FullSearchParameters, data: StudyDetailProps[]): string => {
   const patientElements = convertPatientInfoToRedCapRow(patientSearch);
