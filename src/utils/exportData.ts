@@ -35,6 +35,9 @@ export const MainRowKeys = {
 // Translates redcaps
 export const RedCapHeaders = [
   'record_id',
+  'redcap_event_name',
+  'redcap_repeat_instrument',
+  'redcap_repeat_instance',
   'trial_id',
   'source',
   'match_likelihood',
@@ -127,16 +130,19 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
 
 export const exportCsvStringData = (patientSearch: FullSearchParameters, data: StudyDetailProps[]): string => {
   const patientElements = convertPatientInfoToRedCapRow(patientSearch);
+  const record_id = uuidv4();
   const entries = data.map(entry => {
     const trialElements = convertResultsToRedCapRow(entry);
-    return { ...trialElements, ...patientElements };
+    return { record_id, ...trialElements };
   });
-  return csvStringify([RedCapHeaders]) + csvStringify(entries);
+  return csvStringify([RedCapHeaders]) + csvStringify([{ record_id, ...patientElements }]) + csvStringify(entries);
 };
 
 const convertResultsToRedCapRow = (data: StudyDetailProps) => {
   return {
-    record_id: uuidv4(),
+    redcap_event_name: 'match_arm_1',
+    redcap_repeat_instrument: 'trial_matches_intervention_arm_1',
+    redcap_repeat_instance: 'new',
     trial_id: data.trialId,
     source: data.source,
     match_likelihood: data.likelihood?.text || '',
@@ -152,6 +158,14 @@ const convertResultsToRedCapRow = (data: StudyDetailProps) => {
     contact: data.contacts?.[0]?.name || '',
     contact_phone: data.contacts?.[0]?.phone || '',
     contact_email: data.contacts?.[0]?.email || '',
+    age: '',
+    ps_scale: '',
+    ecog: '',
+    kps: '',
+    cancer_diagnosis: '',
+    histology___1: '',
+    biomarkers: '',
+    stage: '',
   };
 };
 
@@ -163,13 +177,36 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
   // const cancerSubtype: string = patientSearch.cancerSubtype ? JSON.parse(patientSearch.cancerSubtype)?.category[0] : '';
   // const metastasis:string = patientSearch.metastasis ? JSON.parse(patientSearch.metastasis)?.category[0] : '';
   const stage: string = patientSearch.stage ? JSON.parse(patientSearch.stage)?.category[0] : '';
+  console.log('Biomarkers', patientSearch.biomarkers);
   const biomarkers: string = patientSearch.biomarkers
     ? JSON.parse(patientSearch.biomarkers)
-        .map(biomarker => biomarker.display)
+        .map(biomarker => {
+          const qualifier =
+            biomarker.qualifier?.code == '10828004' ? '+' : biomarker.qualifier?.code === '260385009' ? '-' : '';
+          return biomarker.display + qualifier;
+        })
         .join(', ')
     : '';
 
   return {
+    redcap_event_name: 'match_arm_1',
+    redcap_repeat_instrument: '',
+    redcap_repeat_instance: '',
+    trial_id: '',
+    source: '',
+    match_likelihood: '',
+    title: '',
+    overall_status: '',
+    period: '',
+    trial_phase: '',
+    conditions: '',
+    study_type: '',
+    description: '',
+    eligibility: '',
+    sponsor: '',
+    contact: '',
+    contact_phone: '',
+    contact_email: '',
     age: patientSearch.age || '',
     ps_scale: karnofskyScore ? 1 : ecogScore || ecogScore === 0 ? 2 : '',
     ecog: ecogScore,
