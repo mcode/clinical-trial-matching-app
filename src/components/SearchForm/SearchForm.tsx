@@ -1,13 +1,16 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
-import { CodedValueType } from '@/utils/fhirConversionUtils';
-import { Search as SearchIcon } from '@mui/icons-material';
+import { extractCodes } from '@/utils/encodeODPE';
+import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
+import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
+import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ReactElement, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SearchParameters } from 'types/search-types';
+import ExportModal from '../Results/ExportModal';
 import {
   AgeTextField,
   areCodedValueTypesEqual,
@@ -31,6 +34,7 @@ import { SearchFormValuesType, State } from './types';
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
+  disableLocation?: boolean;
 };
 
 export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
@@ -39,18 +43,18 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   // Boolean check is because JSON.stringify(null) === "null" and should be omitted
   cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
-  metastasis: data.metastasis ? JSON.stringify(data.metastasis) : undefined,
-  biomarkers: data.biomarkers ? JSON.stringify(data.biomarkers) : undefined,
+  metastasis: data.metastasis ? JSON.stringify(extractCodes(data.metastasis)) : undefined,
+  biomarkers: data.biomarkers ? JSON.stringify(extractCodes(data.biomarkers)) : undefined,
   stage: data.stage ? JSON.stringify(data.stage) : undefined,
-  medications: data.medications ? JSON.stringify(data.medications) : undefined,
-  surgery: data.surgery ? JSON.stringify(data.surgery) : undefined,
-  radiation: data.radiation ? JSON.stringify(data.radiation) : undefined,
+  medications: data.medications ? JSON.stringify(extractCodes(data.medications)) : undefined,
+  surgery: data.surgery ? JSON.stringify(extractCodes(data.surgery)) : undefined,
+  radiation: data.radiation ? JSON.stringify(extractCodes(data.radiation)) : undefined,
   matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
   karnofskyScore: data.karnofskyScore ? JSON.stringify(data.karnofskyScore) : undefined,
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });
 
-const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement => {
+const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
@@ -63,10 +67,93 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
       query: {
         ...formDataToSearchQuery(data),
         sortingOption: 'matchLikelihood',
+        // Set default filters (they'll be ignored if no trials match, most likely)
+        recruitmentStatus: 'active',
+        studyType: 'Interventional',
         page: DEFAULT_PAGE,
         pageSize: DEFAULT_PAGE_SIZE,
       },
     });
+  };
+
+  // Compare what's in the form with what was set as the default values
+  // Normally could user contollers isDirty, but doesn't work for array values...
+  const compareDefaultValues = (data: SearchFormValuesType): SearchFormManuallyAdjustedType => {
+    const manuallyAdjusted = {};
+    Object.entries(data).forEach(([key, value]) => {
+      if (value == null || value == undefined) {
+        return;
+      }
+      // If the value is an array, we need to check to see if any of the present values were there before
+      if (Array.isArray(value)) {
+        if (value.length == 0) {
+          return;
+        }
+        // Since values are set via autocomplete, and unique, it's pretty safe to reduce values to combination
+        const defaults = defaultValues[key]?.map(item => [key, ...Object.values(item)].join('')) || [];
+
+        console.log('Defaults', defaults);
+
+        value.forEach(item => {
+          const newKey = [key, ...Object.values(item)].join('');
+          manuallyAdjusted[newKey] = !defaults.includes(newKey);
+        });
+      } else if (typeof value == 'string') {
+        manuallyAdjusted[key] = data[key] != defaultValues[key];
+      } else if (key == 'ecogScore' || key == 'karnofskyScore') {
+        const defaultValue = defaultValues[key] as CodedScore;
+        const setValue = data[key] as CodedScore;
+        manuallyAdjusted[key] = !isEqualScore(defaultValue, setValue);
+      } else {
+        const defaultValue = defaultValues[key] as CodedValueType;
+        const setValue = data[key] as CodedValueType;
+        manuallyAdjusted[key] = !isEqualCodedValueType(defaultValue, setValue);
+      }
+    });
+
+    return manuallyAdjusted;
+  };
+
+  // Removing the download capability for now as it does not work in embedded Epic
+  // const onDownload = (data: SearchFormValuesType) => {
+  //   const manuallyAdjusted = compareDefaultValues(data);
+  //   const csv = generateSearchCSVString(data, '', manuallyAdjusted);
+
+  //   // Create a hidden download link to download the CSV
+  //   const link = document.createElement('a');
+  //   link.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`);
+  //   link.setAttribute('download', 'search-parameters.csv');
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
+
+  const generateExportButton = (onClick): ReactElement => {
+    return (
+      <Grid item xs={8}>
+        <Button
+          onClick={onClick}
+          sx={{
+            float: 'right',
+            fontSize: '1.3em',
+            fontWeight: '500',
+            minWidth: '200px',
+            width: fullWidth || isSmallScreen ? '100%' : '25%',
+          }}
+          variant="contained"
+        >
+          <DownloadIcon /> Generate CSV
+        </Button>
+      </Grid>
+    );
+  };
+
+  const generateExportCsv = (): string => {
+    const data = getValues();
+    const manuallyAdjusted = compareDefaultValues(data);
+    const csv = generateSearchCSVString(data, '', manuallyAdjusted);
+
+    return csv;
   };
 
   const retrieveCancer = (cancerType: CodedValueType): void => {
@@ -133,12 +220,17 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
               defaultValue=""
               control={control}
               rules={{ required: true }}
-              render={ZipcodeTextField}
+              render={({ field }) => <ZipcodeTextField field={field} disabled={disableLocation} />}
             />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
-            <Controller name="travelDistance" defaultValue="" control={control} render={TravelDistanceTextField} />
+            <Controller
+              name="travelDistance"
+              defaultValue=""
+              control={control}
+              render={({ field }) => <TravelDistanceTextField field={field} disabled={disableLocation} />}
+            />
           </Grid>
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
@@ -265,6 +357,25 @@ const SearchForm = ({ defaultValues, fullWidth }: SearchFormProps): ReactElement
               <SearchIcon sx={{ paddingRight: '5px' }} /> Search
             </Button>
           </Grid>
+
+          {/* Removing the download button for now as it does not work in embedded Epic */}
+          {/* <Grid item xs={8}>
+            <Button
+              onClick={handleSubmit(onDownload)}
+              sx={{
+                float: 'right',
+                fontSize: '1.3em',
+                fontWeight: '500',
+                minWidth: '200px',
+                width: fullWidth || isSmallScreen ? '100%' : '25%',
+              }}
+              variant="contained"
+            >
+              <DownloadIcon /> Download CSV
+            </Button>
+          </Grid> */}
+
+          <ExportModal {...{ handleContentGeneration: generateExportCsv, replaceButton: generateExportButton }} />
         </Grid>
       </Box>
     </form>

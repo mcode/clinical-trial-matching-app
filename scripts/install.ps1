@@ -7,7 +7,7 @@ param (
     # script is run or the script file itself if not found there)
     [string]$ExtraCAs = "CA.cer",
     # Name of wrappers to install. If set to just "default" will install default wrappers.
-    [string[]]$Wrappers = @("ancora.ai", "breastcancertrials.org", "carebox", "lungevity", "trialjectory"),
+    [string[]]$Wrappers = @("default"),
     # If $true, skip all install steps (and assume software is available)
     [switch]$NoInstall = $false,
     # If $true, don't attempt to update files
@@ -17,6 +17,22 @@ param (
     # If $true, don't attempt to configure the web apps
     [switch]$NoConfigureWebapps = $false
 )
+
+# Config for various prereqs, moved here to make updating them easier
+# (these values will get overridden later, they're only for making populating the config easier)
+$GIT_VERSION = "2.42.0.windows.2"
+$NODE_VERSION = "18.18.2"
+
+$global:PREREQ_CONFIG = @{
+  "git" = @{
+    "version" = "git version $GIT_VERSION";
+    "url" = "https://github.com/git-for-windows/git/releases/download/v$GIT_VERSION/Git-$($GIT_VERSION -replace '.windows', '')-64-bit.exe"
+  };
+  "node" = @{
+    "version" = "v$NODE_VERSION";
+    "url" = "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-x64.msi"
+  }
+}
 
 class CTMSPreReq {
     [System.Uri]$Uri
@@ -113,6 +129,7 @@ class CTMSInstaller {
     [string]$InstallersPath
     [string]$CACerts
     [string]$CACertsPEM
+    [string[]]$WrapperNames
     [boolean]$HasExtraCerts
     [boolean]$SkipInstall
     [boolean]$SkipGitPull
@@ -134,6 +151,7 @@ class CTMSInstaller {
         $this.SkipGitPull = $false
         $this.SkipBuild = $false
         $this.SkipWebappConfigure = $false
+        $this.WrapperNames = @("default")
         $this.CurrentActivity = "Installing CTMS"
     }
 
@@ -228,7 +246,7 @@ class CTMSInstaller {
         } catch {
             $git_version = ""
         }
-        [CTMSPreReq]::New("https://github.com/git-for-windows/git/releases/download/v2.40.1.windows.1/Git-2.40.1-64-bit.exe", "Git", "git version 2.40.1.windows.1", $git_version, @"
+        [CTMSPreReq]::New($global:PREREQ_CONFIG["git"]["url"], "Git", $global:PREREQ_CONFIG["git"]["version"], $git_version, @"
 [Setup]
 Lang=default
 Dir=$([System.Environment]::GetFolderPath("ProgramFiles"))\Git
@@ -262,7 +280,7 @@ EnableFSMonitor=Disabled
             $node_version = ""
         }
 
-        [CTMSPreReq]::New("https://nodejs.org/dist/v18.16.1/node-v18.16.1-x64.msi", "Node.js", "v18.16.1", $node_version).Install($this)
+        [CTMSPreReq]::New($global:PREREQ_CONFIG["node"]["url"], "Node.js", $global:PREREQ_CONFIG["node"]["version"], $node_version).Install($this)
         # These installs will have updated PATH but we won't have the new
         # version, so copy that over
         Rebuild-Path
@@ -271,21 +289,6 @@ EnableFSMonitor=Disabled
             $npm_version = npm --version
         } catch {
             throw "NPM does not appear to be installed. It should have been installed along with Node.js."
-        }
-
-        # Yarn can be automatically installed
-        try {
-            $yarn_version = yarn --version
-        } catch {
-            # This is OK, try to install it
-            $this.Info("Yarn does not appear to be installed, installing it...")
-            $this.StartActivity("Installing Yarn...", "Running NPM install...")
-            npm install -g yarn
-            if ($LastExitCode -ne 0) {
-                throw "Yarn does not appear to be installed, and was not able to be automatically installed."
-            }
-            # And rebuild the path to get Yarn onto it
-            Rebuild-Path
         }
     }
 
@@ -351,6 +354,10 @@ EnableFSMonitor=Disabled
         if ($this.SkipWebappConfigure) {
           $args += "--no-webapp-configure"
         }
+        if (($this.WrapperNames.Length -ne 1) -Or ($this.WrapperNames[0] -ne "default")) {
+          $args += "--wrappers"
+          $args += """$($this.WrapperNames)"""
+        }
         # And run it
         Start-Process -FilePath "node.exe" -ArgumentList $args -Wait -NoNewWindow | Out-Host
     }
@@ -414,6 +421,7 @@ try {
     $installer.SkipGitPull = $NoGitPull
     $installer.SkipBuild = $NoBuild
     $installer.SkipWebappConfigure = $NoConfigureWebapps
+    $installer.WrapperNames = $Wrappers
     $installer.Install()
 } catch {
     Write-Error "The CTMS system failed to install: $_"

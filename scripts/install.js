@@ -210,7 +210,6 @@ function escapePowerShell(str) {
 }
 
 const NPM_COMMAND = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-const YARN_COMMAND = process.platform === 'win32' ? 'yarn.cmd' : 'yarn';
 
 /**
  * Web app configuration
@@ -288,13 +287,19 @@ class CTMSWebApp {
     }
   }
 
+  async runCleanCommand(installer) {
+    await exec(NPM_COMMAND, ['run', 'clean'], { cwd: installer.joinPath(this.path) });
+  }
+
   async runBuildCommand(installer) {
     await exec(NPM_COMMAND, ['run', 'build'], { cwd: installer.joinPath(this.path) });
   }
 
   async build(installer) {
     installer.startSubtask(`Building ${this.name}...`);
-    return this.runBuildCommand(installer);
+    // Clean scripts do not exist/are UNIX-specific in most things, so for now...
+    //await this.runCleanCommand(installer);
+    await this.runBuildCommand(installer);
   }
 
   /**
@@ -387,26 +392,32 @@ ${this.getExtraNginxSettings(installer)}
 <configuration>
   <appSettings>
     <clear />
-${Object.entries(this.getAppSettings(installer)).map(
-  ([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`
-)}
+${Object.entries(this.getAppSettings(installer))
+  .map(([k, v]) => `    <add key="${escapeXML(k)}" value="${escapeXML(v)}"/>\n`)
+  .join('')}
   </appSettings>
   <system.webServer>
     <handlers>
-      <add name="$($this.Name)-iisnode" path="$index_script" verb="*" modules="iisnode" />
+      <add name="${escapeXML(this.name)}-iisnode" path="${escapeXML(
+      this.getIndexScript(installer)
+    )}" verb="*" modules="iisnode" />
     </handlers>
     <rewrite>
       <rules>
         <clear />
-        <rule name="$($this.Name)-rewrite">
+        <rule name="${escapeXML(this.name)}-rewrite">
           <match url="/*" />
           <action type="Rewrite" url="${escapeXML(this.getIndexScript(installer))}" />
         </rule>
       </rules>
-    </rewrite>
+    </rewrite>${this.getExtraIISWebServerConfig(installer)}
   </system.webServer>
 </configuration>
 `;
+  }
+
+  getExtraIISWebServerConfig(installer) {
+    return '';
   }
 
   async configure(installer) {
@@ -472,16 +483,12 @@ class CTMSApp extends CTMSWebApp {
     );
   }
 
-  async runInstallDependencyCommand(installer) {
-    await exec(YARN_COMMAND, ['install'], { cwd: installer.joinPath(this.path) });
-  }
-
   async runBuildCommand(installer) {
     // Next.js will ALWAYS use md4 for some hashes regardless of what we tell it to do
     // Clone the environment (simple and easy way to do that)
     const env = JSON.parse(JSON.stringify(process.env));
     env['NODE_OPTIONS'] = '--openssl-legacy-provider';
-    await exec(YARN_COMMAND, ['build'], { cwd: installer.joinPath(this.path), env: env });
+    await exec(NPM_COMMAND, ['run', 'build'], { cwd: installer.joinPath(this.path), env: env });
   }
 
   getAppSettings(installer) {
@@ -509,6 +516,15 @@ class CTMSApp extends CTMSWebApp {
 
   getExtraNginxSettings(installer) {
     return `    root ${escapeNginxConfig(installer.joinPath(this.path, 'public'))};`;
+  }
+
+  getExtraIISWebServerConfig(_installer) {
+    return `
+    <security>
+      <requestFiltering>
+        <requestLimits maxQueryString="1024000" maxUrl="2048000"/>
+      </requestFiltering>
+    </security>`;
   }
 }
 
@@ -723,9 +739,9 @@ ${frontendConfig}
     this.startSubtask(`Creating ${this.websiteName} website within IIS...`);
     await runPowerShell(`$website = Get-Website -Name "${escapePowerShell(this.websiteName)}"
       if (-Not $website) {
-        New-Website -Name "${escapePowerShell(
-          this.websiteName
-        )}" -Port 80 -PhysicalPath "$($this.InstallPath)\clinical-trial-matching-app"
+        New-Website -Name "${escapePowerShell(this.websiteName)}" -Port 80 -PhysicalPath "${escapePowerShell(
+      this.installPath
+    )}\\clinical-trial-matching-app"
       } else {
         Stop-Website "${escapePowerShell(this.websiteName)}"
       }
@@ -800,8 +816,6 @@ ${frontendConfig}
   }
 }
 
-const wrappersToInstall = [];
-
 const argumentsWithValues = {
   '--install-dir': INSTALL_PATH,
   '--extra-ca-certs': EXTRA_CAS,
@@ -828,6 +842,8 @@ for (let idx = 2; idx < process.argv.length; idx++) {
     } else {
       console.error(`${arg} requires an argument, none given.`);
     }
+  } else if (arg in argumentFlags) {
+    argumentFlags[arg] = true;
   }
 }
 
