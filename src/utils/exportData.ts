@@ -174,9 +174,14 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
   // const cancerSubtype: string = patientSearch.cancerSubtype ? JSON.parse(patientSearch.cancerSubtype)?.category[0] : '';
   // const metastasis:string = patientSearch.metastasis ? JSON.parse(patientSearch.metastasis)?.category[0] : '';
   const stage: string = patientSearch.stage ? JSON.parse(patientSearch.stage)?.category[0] : '';
+  console.log('Biomarkers', patientSearch.biomarkers);
   const biomarkers: string = patientSearch.biomarkers
     ? JSON.parse(patientSearch.biomarkers)
-        .map(biomarker => biomarker.display)
+        .map(biomarker => {
+          const qualifier =
+            biomarker.qualifier?.code == '10828004' ? '+' : biomarker.qualifier?.code === '260385009' ? '-' : '';
+          return biomarker.display + qualifier;
+        })
         .join(', ')
     : '';
 
