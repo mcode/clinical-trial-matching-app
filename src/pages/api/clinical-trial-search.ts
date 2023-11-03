@@ -43,7 +43,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       ? searchParams.matchingServices
       : [searchParams.matchingServices];
 
-  const results = await callWrappers(chosenServices, mainCancerType, patientBundle, searchParams['zipcode'], searchParams['travelDistance']);
+  const results = await callWrappers(
+    chosenServices,
+    mainCancerType,
+    patientBundle,
+    searchParams['zipcode'],
+    searchParams['travelDistance']
+  );
   res.status(200).json(results);
 };
 
@@ -113,7 +119,13 @@ export function buildBundle(searchParams: SearchParameters, id?: string): Bundle
  * @param patientZipCode Patient's zip code which may not have been sent to matching services
  * @returns Responses from called wrappers
  */
-async function callWrappers(matchingServices: string[], mainCancerType: string, query: Bundle, patientZipCode: string, travelDistance: string) {
+async function callWrappers(
+  matchingServices: string[],
+  mainCancerType: string,
+  query: Bundle,
+  patientZipCode: string,
+  travelDistance: string
+) {
   const wrapperResults = await Promise.all(
     matchingServices.map(async name => {
       const { url, searchRoute, label, cancerTypes } = services.find((service: Service) => service.name === name);
@@ -169,10 +181,11 @@ async function callWrappers(matchingServices: string[], mainCancerType: string, 
         isActiveAndInterventional(studyDetails) &&
         studyDetails.trialId != 'NCT05885880'
       ) {
-        subset.push(studyDetails);
         if (occurrences[studyDetails.trialId] === undefined) {
+          subset.push(studyDetails);
           occurrences[studyDetails.trialId] = [searchset['serviceName']];
-        } else {
+        } else if (!occurrences[studyDetails.trialId].includes(searchset['serviceName'])) {
+          subset.push(studyDetails);
           occurrences[studyDetails.trialId].push(searchset['serviceName']);
         }
       }
