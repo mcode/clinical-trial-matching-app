@@ -68,8 +68,8 @@ const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormPro
         ...formDataToSearchQuery(data),
         sortingOption: 'matchLikelihood',
         // Set default filters (they'll be ignored if no trials match, most likely)
-        recruitmentStatus: 'active',
-        studyType: 'Interventional',
+        // recruitmentStatus: 'active',
+        // studyType: 'Interventional',
         page: DEFAULT_PAGE,
         pageSize: DEFAULT_PAGE_SIZE,
       },

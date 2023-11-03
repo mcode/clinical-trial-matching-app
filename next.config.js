@@ -36,6 +36,7 @@ module.exports = {
     disableSearchLocation: JSON.parse(process.env.DISABLE_SEARCH_LOCATION ?? 'false'),
     defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
     defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
+    resultsMax: process.env.RESULTS_MAX,
     services: matchingServices,
   },
   serverRuntimeConfig: {
