@@ -2,7 +2,7 @@ import { ParsedUrlQuery } from 'querystring';
 import { ResultsResponse } from './clinicalTrialSearchQuery';
 
 export const DEFAULT_PAGE = '1';
-export const DEFAULT_PAGE_SIZE = '10';
+export const DEFAULT_PAGE_SIZE = '15';
 
 const clinicalTrialPaginationQuery = async (
   response: ResultsResponse,
