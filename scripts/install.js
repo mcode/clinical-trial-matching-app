@@ -210,7 +210,6 @@ function escapePowerShell(str) {
 }
 
 const NPM_COMMAND = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-const YARN_COMMAND = process.platform === 'win32' ? 'yarn.cmd' : 'yarn';
 
 /**
  * Web app configuration
@@ -484,20 +483,12 @@ class CTMSApp extends CTMSWebApp {
     );
   }
 
-  async runInstallDependencyCommand(installer) {
-    await exec(YARN_COMMAND, ['install'], { cwd: installer.joinPath(this.path) });
-  }
-
-  async runCleanCommand(installer) {
-    await exec(YARN_COMMAND, ['clean'], { cwd: installer.joinPath(this.path) });
-  }
-
   async runBuildCommand(installer) {
     // Next.js will ALWAYS use md4 for some hashes regardless of what we tell it to do
     // Clone the environment (simple and easy way to do that)
     const env = JSON.parse(JSON.stringify(process.env));
     env['NODE_OPTIONS'] = '--openssl-legacy-provider';
-    await exec(YARN_COMMAND, ['build'], { cwd: installer.joinPath(this.path), env: env });
+    await exec(NPM_COMMAND, ['run', 'build'], { cwd: installer.joinPath(this.path), env: env });
   }
 
   getAppSettings(installer) {
@@ -748,9 +739,9 @@ ${frontendConfig}
     this.startSubtask(`Creating ${this.websiteName} website within IIS...`);
     await runPowerShell(`$website = Get-Website -Name "${escapePowerShell(this.websiteName)}"
       if (-Not $website) {
-        New-Website -Name "${escapePowerShell(
-          this.websiteName
-        )}" -Port 80 -PhysicalPath "$($this.InstallPath)\clinical-trial-matching-app"
+        New-Website -Name "${escapePowerShell(this.websiteName)}" -Port 80 -PhysicalPath "${escapePowerShell(
+      this.installPath
+    )}\\clinical-trial-matching-app"
       } else {
         Stop-Website "${escapePowerShell(this.websiteName)}"
       }

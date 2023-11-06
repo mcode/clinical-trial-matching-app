@@ -98,7 +98,7 @@ if [ ! -z "$EXTRA_CA_CERTS_FILE" ] && [ -f "$EXTRA_CA_CERTS_FILE" ]; then
             # This will convert the input file to a PEM format CRT file
             DEST_NAME=`basename "${EXTRA_CA_CERTS_FILE%.*}"`.crt
             if openssl x509 -in "$EXTRA_CA_CERTS_FILE" -out - | sudo tee "/usr/local/share/ca-certificates/$DEST_NAME" > /dev/null; then
-                # Update to point EXTRA_CA_CERTS_FILE to this location (for passing to yarn's config)
+                # Update to point EXTRA_CA_CERTS_FILE to this location
                 EXTRA_CA_CERTS_FILE="/usr/local/share/ca-certificates/$DEST_NAME"
                 if ! sudo update-ca-certificates; then
                     echo "Unable to update CA certificates. Remaining steps may fail!" >&2
@@ -221,7 +221,7 @@ fi
 
 if ! id -u "$CTMS_USER" > /dev/null 2>&1; then
     echo "Creating CTMS user \"$CTMS_USER\", this may require a password for root permssion."
-    # This user account needs a home directory to store npm/yarn stuff
+    # This user account needs a home directory to store npm stuff
     if ! sudo useradd --comment "CTMS User" --user-group --create-home "$CTMS_USER"; then
         echo "Failed to create CTMS user \"$CTMS_USER\"." >&2
         exit 1
@@ -230,11 +230,6 @@ fi
 echo "Creating install directory. Password may be required for root permissions..."
 sudo mkdir -p "$CTMS_DIR"
 sudo chown "$CTMS_USER:$CTMS_USER" "$CTMS_DIR"
-
-if ! yarn --version > /dev/null ; then
-    echo "Installing yarn into Node..."
-    sudo npm -g install yarn
-fi
 
 echo "Moving to Node.js-based install script..."
 SCRIPT_DIR=`dirname "$0"`

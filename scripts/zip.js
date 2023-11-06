@@ -7,7 +7,16 @@ let wrappers = ['ancora.ai', 'breastcancertrials.org', 'carebox', 'lungevity', '
 let destination = 'ctms.zip';
 let verbose = false;
 let skipNodeModules = false;
-let skipInstallers = false;
+
+// Installers (placed here to make updating the versions easier, eventually
+// version info should probably be localized in one place but it's currently
+// used by the PowerShell script)
+const INSTALLER_FILES = [
+  'Git-2.42.0.2-64-bit.exe',
+  'node-v18.18.2-x64.msi',
+  'iisnode-core-v0.2.26-x64.msi',
+  'rewrite_amd64_en-US.msi',
+];
 
 const fs = require('fs');
 const fsp = require('fs/promises');
@@ -103,6 +112,18 @@ class Zipper {
     this.zipOutputStream = new ZipArchiveOutputStream({ zlib: { level: 9 } });
     this.zipOutputStream.pipe(fs.createWriteStream(destination));
     this.verbose = true;
+    this._closePromise = new Promise((resolve, reject) => {
+      this._closeResolve = resolve;
+    });
+    const _resolveClose = () => {
+      if (this._closePromise && this._closeResolve) {
+        this._closeResolve();
+      }
+      this._closePromise = null;
+      this._closeResolve = null;
+    };
+    this.zipOutputStream.on('close', _resolveClose);
+    this.zipOutputStream.on('end', _resolveClose);
   }
 
   async add(webApp) {
@@ -159,13 +180,16 @@ class Zipper {
 
   close() {
     this.zipOutputStream.finish();
+    return this._closePromise ?? Promise.resolve();
   }
 }
 
 async function main(args) {
   const argFlags = {
     '--exclude-node-modules': false,
+    '--exclude-front-end': false,
     '--exclude-installers': false,
+    '--exclude-install-scripts': false,
     '--exclude-wrappers': false,
   };
   for (let idx = 0; idx < args.length; idx++) {
@@ -182,21 +206,22 @@ async function main(args) {
     }
   }
   skipNodeModules = argFlags['--exclude-node-modules'];
-  skipInstallers = argFlags['--exclude-installers'];
   console.log(`Creating ZIP file ${destination}...`);
   const zip = new Zipper(installPath, destination);
   zip.verbose = verbose;
-  try {
+  if (!argFlags['--exclude-front-end']) {
     await zip.add(appConfig);
-    if (!argFlags['--exclude-wrappers']) {
-      for (const wrapperName of wrappers) {
-        const wrapper = wrapperConfig[wrapperName];
-        if (!wrapper) {
-          throw new Error(`Unknown wrapper ${wrapperName}`);
-        }
-        await zip.add(wrapper);
+  }
+  if (!argFlags['--exclude-wrappers']) {
+    for (const wrapperName of wrappers) {
+      const wrapper = wrapperConfig[wrapperName];
+      if (!wrapper) {
+        throw new Error(`Unknown wrapper ${wrapperName}`);
       }
+      await zip.add(wrapper);
     }
+  }
+  if (!argFlags['--exclude-install-scripts']) {
     console.log('  Adding install script data...');
     const installScripts = ['install.ps1', 'install.js', 'test.js', 'wrappers.json'];
     try {
@@ -212,21 +237,15 @@ async function main(args) {
     for (const installScript of installScripts) {
       await zip.addFile(path.join(installPath, installScript));
     }
-    if (!skipInstallers) {
-      console.log('  Adding installers...');
-      const installers = [
-        'Git-2.42.0-64-bit.exe',
-        'node-v18.17.1-x64.msi',
-        'iisnode-core-v0.2.26-x64.msi',
-        'rewrite_amd64_en-US.msi',
-      ];
-      for (const installer of installers) {
-        await zip.addFile(path.join(installPath, 'installers', installer));
-      }
-    }
-  } finally {
-    zip.close();
   }
+  if (!argFlags['--exclude-installers']) {
+    console.log('  Adding installers...');
+    for (const installer of INSTALLER_FILES) {
+      await zip.addFile(path.join(installPath, 'installers', installer));
+    }
+  }
+  console.log('Finalizing ZIP file...');
+  await zip.close();
 }
 
 main(process.argv.slice(2))

@@ -18,6 +18,22 @@ param (
     [switch]$NoConfigureWebapps = $false
 )
 
+# Config for various prereqs, moved here to make updating them easier
+# (these values will get overridden later, they're only for making populating the config easier)
+$GIT_VERSION = "2.42.0.windows.2"
+$NODE_VERSION = "18.18.2"
+
+$global:PREREQ_CONFIG = @{
+  "git" = @{
+    "version" = "git version $GIT_VERSION";
+    "url" = "https://github.com/git-for-windows/git/releases/download/v$GIT_VERSION/Git-$($GIT_VERSION -replace '.windows', '')-64-bit.exe"
+  };
+  "node" = @{
+    "version" = "v$NODE_VERSION";
+    "url" = "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-x64.msi"
+  }
+}
+
 class CTMSPreReq {
     [System.Uri]$Uri
     [string]$Name
@@ -230,7 +246,7 @@ class CTMSInstaller {
         } catch {
             $git_version = ""
         }
-        [CTMSPreReq]::New("https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.1/Git-2.42.0-64-bit.exe", "Git", "git version 2.42.0.windows.1", $git_version, @"
+        [CTMSPreReq]::New($global:PREREQ_CONFIG["git"]["url"], "Git", $global:PREREQ_CONFIG["git"]["version"], $git_version, @"
 [Setup]
 Lang=default
 Dir=$([System.Environment]::GetFolderPath("ProgramFiles"))\Git
@@ -264,7 +280,7 @@ EnableFSMonitor=Disabled
             $node_version = ""
         }
 
-        [CTMSPreReq]::New("https://nodejs.org/dist/v18.17.1/node-v18.17.1-x64.msi", "Node.js", "v18.17.1", $node_version).Install($this)
+        [CTMSPreReq]::New($global:PREREQ_CONFIG["node"]["url"], "Node.js", $global:PREREQ_CONFIG["node"]["version"], $node_version).Install($this)
         # These installs will have updated PATH but we won't have the new
         # version, so copy that over
         Rebuild-Path
@@ -273,21 +289,6 @@ EnableFSMonitor=Disabled
             $npm_version = npm --version
         } catch {
             throw "NPM does not appear to be installed. It should have been installed along with Node.js."
-        }
-
-        # Yarn can be automatically installed
-        try {
-            $yarn_version = yarn --version
-        } catch {
-            # This is OK, try to install it
-            $this.Info("Yarn does not appear to be installed, installing it...")
-            $this.StartActivity("Installing Yarn...", "Running NPM install...")
-            npm install -g yarn
-            if ($LastExitCode -ne 0) {
-                throw "Yarn does not appear to be installed, and was not able to be automatically installed."
-            }
-            # And rebuild the path to get Yarn onto it
-            Rebuild-Path
         }
     }
 

@@ -23,7 +23,7 @@ import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, services },
+  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, resultsMax, services },
 } = getConfig();
 
 /**
@@ -34,6 +34,7 @@ const {
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
   const { searchParams } = JSON.parse(req.body);
+  const mainCancerType: string = JSON.parse(searchParams.cancerType).cancerType[0];
 
   const patientBundle: Bundle = buildBundle(searchParams);
 
@@ -42,7 +43,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
       ? searchParams.matchingServices
       : [searchParams.matchingServices];
 
-  const results = await callWrappers(chosenServices, patientBundle, searchParams['zipcode']);
+  const results = await callWrappers(
+    chosenServices,
+    mainCancerType,
+    patientBundle,
+    searchParams['zipcode'],
+    searchParams['travelDistance']
+  );
   res.status(200).json(results);
 };
 
@@ -112,11 +119,19 @@ export function buildBundle(searchParams: SearchParameters, id?: string): Bundle
  * @param patientZipCode Patient's zip code which may not have been sent to matching services
  * @returns Responses from called wrappers
  */
-async function callWrappers(matchingServices: string[], query: Bundle, patientZipCode: string) {
+async function callWrappers(
+  matchingServices: string[],
+  mainCancerType: string,
+  query: Bundle,
+  patientZipCode: string,
+  travelDistance: string
+) {
   const wrapperResults = await Promise.all(
     matchingServices.map(async name => {
-      const { url, searchRoute, label } = services.find((service: Service) => service.name === name);
-      const results = await callWrapper(url + searchRoute, JSON.stringify(query, null, 2), label);
+      const { url, searchRoute, label, cancerTypes } = services.find((service: Service) => service.name === name);
+      const results = cancerTypes.includes(mainCancerType)
+        ? await callWrapper(url + searchRoute, JSON.stringify(query, null, 2), label)
+        : { status: 200, response: { resourceType: 'Bundle', type: 'searchset', total: 0, entry: [] }, label };
       return results;
     })
   );
@@ -124,27 +139,109 @@ async function callWrappers(matchingServices: string[], query: Bundle, patientZi
   // Separate out responses that were unsuccessful
   const errors = wrapperResults.filter(result => result.status == 500);
 
-  // Combine the responses that were successful
-  const uniqueTrials: { [key: string]: StudyDetailProps } = {};
+  // Process the responses that were succcessful
+  const occurrences: { [key: string]: string[] } = {};
+  const successfuResults = wrapperResults.filter(result => result.status == 200);
+  const distanceFilteredResults = {};
 
-  wrapperResults
-    .filter(result => result.status == 200)
-    .forEach(searchset => {
-      // Add the count to the total
-      // Transform each of the studies in the bundle
-      searchset?.response?.entry.forEach((entry: BundleEntryWithStudy) => {
-        const otherTrialId = entry.resource.identifier?.[0]?.value;
-        const isUniqueTrial = uniqueTrials[otherTrialId] === undefined;
-        // Don't want to return NCT05885880 so just filter it out
-        if (isUniqueTrial && otherTrialId != 'NCT05885880') {
-          uniqueTrials[otherTrialId] = getStudyDetailProps(entry, patientZipCode, searchset['serviceName']);
-        } else {
-          uniqueTrials[otherTrialId].source += ', ' + searchset['serviceName'];
+  successfuResults.forEach(searchset => {
+    const subset = [];
+    searchset?.response?.entry.forEach((entry: BundleEntryWithStudy) => {
+      const studyDetails: StudyDetailProps = getStudyDetailProps(entry, patientZipCode, searchset['serviceName']);
+
+      // Function to determine if the results are within range
+      const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
+        return (
+          sendLocationData ||
+          (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance as string)
+        );
+      };
+
+      // Special filter to check if valid under Ancora
+      const isValidAncora = (entry: StudyDetailProps): boolean => {
+        return !(
+          entry.source == 'Ancora' &&
+          ((mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
+            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3))
+        );
+      };
+
+      // Only interested in Active and Interventional trials
+      const isActiveAndInterventional = (entry: StudyDetailProps): boolean => {
+        return (
+          (entry.status?.label?.toLowerCase() == 'active' || entry.status?.name?.toLowerCase() == 'active') &&
+          (entry.type?.label?.toLowerCase() == 'interventional' || entry.type?.name?.toLowerCase() == 'interventional')
+        );
+      };
+
+      // Don't want to return NCT05885880 so just filter it out
+      if (
+        isStudyWithinRange(studyDetails) &&
+        isValidAncora(studyDetails) &&
+        isActiveAndInterventional(studyDetails) &&
+        studyDetails.trialId != 'NCT05885880'
+      ) {
+        if (occurrences[studyDetails.trialId] === undefined) {
+          subset.push(studyDetails);
+          occurrences[studyDetails.trialId] = [searchset['serviceName']];
+        } else if (!occurrences[studyDetails.trialId].includes(searchset['serviceName'])) {
+          subset.push(studyDetails);
+          occurrences[studyDetails.trialId].push(searchset['serviceName']);
         }
-      });
+      }
     });
 
-  return { results: Object.values(uniqueTrials), errors };
+    distanceFilteredResults[searchset['serviceName']] = subset;
+  });
+
+  const sortByOccurence = (a: string[], b: string[]) => {
+    return b[1].length - a[1].length;
+  };
+
+  // Cut this off at the max results anyways
+  const trialCounts = Object.keys(occurrences)
+    .map(key => [key, occurrences[key]])
+    .sort(sortByOccurence)
+    .filter(count => count[1].length > 1)
+    .slice(0, resultsMax);
+
+  // Go through the highest recurring trials first
+  const results: StudyDetailProps[] = trialCounts.map((trialId: [string, string[]]) => {
+    const services = trialId[1];
+    const preferredService = services[0];
+    const studyResult = distanceFilteredResults[preferredService].find(study => study.trialId == trialId[0]);
+
+    // Change the sources to be all of the services that you saw this occurence for
+    studyResult.source = services.join(', ');
+
+    // Remove this trial as an option of trials from the distanceFilteredResults
+    services.forEach(service => {
+      const removalIndex = distanceFilteredResults[service].indexOf(item => item.trialId == trialId[0]);
+      delete distanceFilteredResults[service][removalIndex];
+    });
+
+    return studyResult;
+  });
+
+  // Then if we haven't hit the max, keep adding round robin style from those that are left.
+  // Keep track of number of consecutive failures.
+  const validMatchingServices = Object.keys(distanceFilteredResults);
+  let numOfFailures = 0;
+  for (let i = results.length; i < resultsMax; i++) {
+    // If we've hit the number of matchingServices in consecutive failures then we just don't have enough results to hit resultsMax.
+    if (numOfFailures == validMatchingServices.length) break;
+    const currentService = validMatchingServices[i % validMatchingServices.length];
+    const study: StudyDetailProps = distanceFilteredResults[currentService].pop();
+
+    if (study == undefined || study == null) {
+      numOfFailures++;
+    } else {
+      numOfFailures = 0;
+      results.push(study);
+    }
+  }
+
+  return { results, errors };
 }
 
 /**
@@ -156,6 +253,7 @@ async function callWrappers(matchingServices: string[], query: Bundle, patientZi
  * @returns Response from wrapper
  */
 async function callWrapper(url: string, query: string, serviceName: string) {
+  console.log('Grabbing Responses from: ', serviceName);
   return fetch(url, {
     cache: 'no-store',
     method: 'post',
