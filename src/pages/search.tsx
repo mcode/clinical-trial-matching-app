@@ -2,29 +2,12 @@ import Header from '@/components/Header';
 import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
 import { UserIdContext } from '@/components/UserIdContext';
-import {
-  MCODE_CANCER_RELATED_MEDICATION_STATEMENT,
-  MCODE_CANCER_RELATED_RADIATION_PROCEDURE,
-  MCODE_CANCER_RELATED_SURGICAL_PROCEDURE,
-  MCODE_ECOG_PERFORMANCE_STATUS,
-  MCODE_KARNOFSKY_PERFORMANCE_STATUS,
-  MCODE_PRIMARY_CANCER_CONDITION,
-  MCODE_SECONDARY_CANCER_CONDITION,
-  MCODE_TUMOR_MARKER,
-} from '@/utils/fhirConstants';
+import { fetchPatientData } from '@/utils/fetchPatientData';
 import {
   Biomarker,
   CodedValueType,
-  convertFhirEcogPerformanceStatus,
-  convertFhirKarnofskyPerformanceStatus,
   convertFhirMedicationStatements,
-  convertFhirPatient,
-  convertFhirRadiationProcedures,
-  convertFhirSecondaryCancerConditions,
-  convertFhirSurgeryProcedures,
   convertFhirTumorMarkers,
-  convertFhirUser,
-  extractPrimaryCancerCondition,
   Patient,
   PrimaryCancerCondition,
   Score,
@@ -33,7 +16,6 @@ import {
 import { fhirMedicationStatementBundle, fhirTumorMarkerBundle } from '@/__mocks__/bundles';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
-import { fhirclient } from 'fhirclient/lib/types';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
@@ -53,7 +35,7 @@ type SearchPageProps = {
 };
 
 const {
-  publicRuntimeConfig: { disableSearchLocation, defaultSearchZipCode, defaultSearchTravelDistance },
+  publicRuntimeConfig: { disableSearchLocation, defaultSearchZipCode, defaultSearchTravelDistance, fhirQueryFlavor },
 } = getConfig();
 
 const SearchPage = ({
@@ -148,57 +130,10 @@ export const getServerSideProps: GetServerSideProps = async context => {
     return { props: {}, redirect: { destination: '/launch', permanent: false } };
   }
 
-  const getResource = bundleMaker(fhirClient);
-  const getCondition = getResource('Condition');
-  const getObservation = getResource('Observation');
-  const getProcedure = getResource('Procedure');
-  const getMedicationStatement = getResource('MedicationStatement');
+  console.log('Fetching patient data using %s FHIR flavor', fhirQueryFlavor);
 
-  const [
-    fhirPatient,
-    fhirUser,
-    fhirPrimaryCancerCondition,
-    fhirSecondaryCancerCondition,
-    fhirEcogPerformanceStatus,
-    fhirKarnofskyPerformanceStatus,
-    fhirTumorMarkers,
-    fhirRadiationProcedures,
-    fhirSurgeryProcedures,
-    fhirMedicationStatements,
-  ] = await Promise.all([
-    fhirClient.patient.read(),
-    fhirClient.user.read(),
-    getCondition(MCODE_PRIMARY_CANCER_CONDITION),
-    getCondition(MCODE_SECONDARY_CANCER_CONDITION),
-    getObservation(MCODE_ECOG_PERFORMANCE_STATUS),
-    getObservation(MCODE_KARNOFSKY_PERFORMANCE_STATUS),
-    getObservation(MCODE_TUMOR_MARKER),
-    getProcedure(MCODE_CANCER_RELATED_RADIATION_PROCEDURE),
-    getProcedure(MCODE_CANCER_RELATED_SURGICAL_PROCEDURE),
-    getMedicationStatement(MCODE_CANCER_RELATED_MEDICATION_STATEMENT),
-  ]);
-
+  // Now that we have that, we can load the patient data
   return {
-    props: {
-      patient: convertFhirPatient(fhirPatient),
-      user: convertFhirUser(fhirUser),
-      primaryCancerCondition: extractPrimaryCancerCondition(fhirPrimaryCancerCondition),
-      metastasis: convertFhirSecondaryCancerConditions(fhirSecondaryCancerCondition),
-      ecogScore: convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatus),
-      karnofskyScore: convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatus),
-      biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
-      radiation: convertFhirRadiationProcedures(fhirRadiationProcedures),
-      surgery: convertFhirSurgeryProcedures(fhirSurgeryProcedures),
-      medications: convertFhirMedicationStatements(fhirMedicationStatements),
-    },
+    props: await fetchPatientData(fhirClient, fhirQueryFlavor),
   };
-};
-
-const bundleMaker = (fhirClient: Client) => {
-  const urlPatientId = encodeURIComponent(fhirClient.getPatientId());
-  return (resourceType: string) =>
-    (url: string): Promise<fhirclient.FHIR.Bundle> =>
-      fhirClient.request<fhirclient.FHIR.Bundle>(
-        `${resourceType}?patient=${urlPatientId}&_profile=${encodeURIComponent(url)}`
-      );
 };

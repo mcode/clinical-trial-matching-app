@@ -5,6 +5,7 @@
 import ecogScores from '@/assets/optimizedPatientDataElements/ecogScores.json';
 import karnofskyScores from '@/assets/optimizedPatientDataElements/karnofskyScores.json';
 import { Observation } from 'fhir/r4';
+import { Score } from './fhirConversionUtils';
 
 export const extractEcogScore = (observation: Observation): string | null => {
   // Extract the ECOG score if possible
@@ -20,14 +21,14 @@ export const extractEcogScore = (observation: Observation): string | null => {
   return null;
 };
 
-export const convertEcogScore = (observation: Observation | undefined): typeof ecogScores[number] | null => {
+export const convertEcogScore = (observation: Observation | undefined): Score | null => {
   if (typeof observation !== 'object') {
     return null;
   }
   const score = Number(extractEcogScore(observation));
   for (const ecogScore of ecogScores) {
     if (ecogScore.valueInteger == score) {
-      return ecogScore;
+      return ecogScore as Score;
     }
   }
   return null;
@@ -36,7 +37,7 @@ export const convertEcogScore = (observation: Observation | undefined): typeof e
 // This appears to be stored in the same way the ECOG score is, so just alias it for now
 export const extractKarnofskyScore = extractEcogScore;
 
-export const convertKarnofskyScore = (observation: Observation | undefined): typeof ecogScores[number] | null => {
+export const convertKarnofskyScore = (observation: Observation | undefined): Score | null => {
   if (typeof observation !== 'object') {
     return null;
   }
@@ -45,7 +46,7 @@ export const convertKarnofskyScore = (observation: Observation | undefined): typ
   const score = parseInt(extractKarnofskyScore(observation));
   for (const karnofskyScore of karnofskyScores) {
     if (karnofskyScore.valueInteger == score) {
-      return karnofskyScore;
+      return karnofskyScore as Score;
     }
   }
   return null;
