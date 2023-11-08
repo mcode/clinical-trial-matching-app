@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       clientId: publicRuntimeConfig.fhirClientId,
       noRedirect: true,
       redirectUri: publicRuntimeConfig.fhirRedirectUri,
-      scope: 'launch/patient openid fhirUser patient/*.read',
+      scope: publicRuntimeConfig.fhirScope,
     });
 
     return {

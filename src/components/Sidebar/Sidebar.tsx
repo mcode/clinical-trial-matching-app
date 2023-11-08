@@ -33,7 +33,7 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const Sidebar = ({ patient, disabled, savedStudies, filterOptions, setUserId, query }: SidebarProps): ReactElement => {
+const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUserId }: SidebarProps): ReactElement => {
   const [expanded, setExpanded] = useState<SidebarExpand>(SidebarExpand.Filter);
 
   const handleChange = (panel: SidebarExpand) => (_event: SyntheticEvent, isExpanded: boolean) => {

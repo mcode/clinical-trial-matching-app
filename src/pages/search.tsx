@@ -23,7 +23,7 @@ import React, { ReactElement, useState } from 'react';
 
 type SearchPageProps = {
   patient: Patient;
-  user: User;
+  user?: User;
   primaryCancerCondition: PrimaryCancerCondition;
   metastasis: CodedValueType[];
   ecogScore: Score;
@@ -51,11 +51,11 @@ const SearchPage = ({
   medications,
 }: SearchPageProps): ReactElement => {
   const defaultValues = {
-    age: patient.age || '',
-    gender: patient.gender || 'unknown',
-    cancerType: primaryCancerCondition.cancerType,
-    cancerSubtype: primaryCancerCondition.cancerSubtype,
-    stage: primaryCancerCondition.stage,
+    age: patient?.age || '',
+    gender: patient?.gender || 'unknown',
+    cancerType: primaryCancerCondition?.cancerType ?? null,
+    cancerSubtype: primaryCancerCondition?.cancerSubtype ?? null,
+    stage: primaryCancerCondition?.stage ?? null,
     travelDistance: defaultSearchTravelDistance || '100',
     zipcode: disableSearchLocation ? defaultSearchZipCode : patient.zipcode || (defaultSearchZipCode ?? ''),
     metastasis,
@@ -83,7 +83,7 @@ const SearchPage = ({
       <Header userName={user?.name} />
       <PatientCard patient={patient} />
       <UserIdContext.Provider value={userId}>
-        <SearchForm defaultValues={defaultValues} disableLocation={disableSearchLocation} setUserId={setUserId} />
+        <SearchForm defaultValues={defaultValues} setUserId={setUserId} disableLocation={disableSearchLocation} />
       </UserIdContext.Provider>
     </>
   );
