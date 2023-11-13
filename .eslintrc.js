@@ -63,4 +63,5 @@ module.exports = {
       },
     },
   ],
+  ignorePatterns: [ 'scripts/*' ],
 };
