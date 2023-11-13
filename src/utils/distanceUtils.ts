@@ -46,26 +46,20 @@ export const getLocations = (study: ResearchStudy): Location[] => {
 };
 
 export const getCoordinatesForLocations = (locations: Location[]): Location[] => {
-  const united_states = new RegExp(/(United States|United States of America|USA|US)/, 'i');
-  const us_zip = new RegExp(/^\d{5}$/);
   const locationsWithCoordinates: Location[] = [];
 
   for (const location of locations) {
     const { position, address } = { ...location };
     const { longitude, latitude } = { ...position };
-    const { postalCode, country } = { ...address };
+    const { postalCode } = { ...address };
     if (longitude && latitude) {
       locationsWithCoordinates.push(location);
-    } else if (postalCode && country) {
-      const isCountryUS = united_states.test(country);
-      const isZipcodeFromUS = us_zip.test(postalCode);
-      if (isCountryUS && isZipcodeFromUS) {
-        const coordinates = getZipcodeCoordinates(postalCode);
-        if (coordinates) {
-          const longitude = getLongitude(coordinates);
-          const latitude = getLatitude(coordinates);
-          locationsWithCoordinates.push({ ...location, position: { latitude, longitude } });
-        }
+    } else if (postalCode) {
+      const coordinates = getZipcodeCoordinates(postalCode);
+      if (coordinates) {
+        const longitude = getLongitude(coordinates);
+        const latitude = getLatitude(coordinates);
+        locationsWithCoordinates.push({ ...location, position: { latitude, longitude } });
       }
     }
   }

@@ -7,10 +7,11 @@ import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-mater
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useContext, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { SearchParameters } from 'types/search-types';
 import ExportModal from '../Results/ExportModal';
+import { UserIdContext } from '../UserIdContext';
 import {
   AgeTextField,
   areCodedValueTypesEqual,
@@ -34,6 +35,7 @@ import { SearchFormValuesType, State } from './types';
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
   fullWidth?: boolean;
+  setUserId: (string) => void;
   disableLocation?: boolean;
 };
 
@@ -54,25 +56,31 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });
 
-const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormProps): ReactElement => {
+const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-  const { handleSubmit, control, getValues } = useForm<SearchFormValuesType>({ defaultValues });
+  const { handleSubmit, control, getValues, register, setValue } = useForm<SearchFormValuesType>({ defaultValues });
   const [state, setState] = useState<State>(getNewState(defaultValues.cancerType));
+  const userId = useContext(UserIdContext);
 
   const onSubmit = (data: SearchFormValuesType) => {
+    const query = {
+      ...formDataToSearchQuery(data),
+      sortingOption: 'matchLikelihood',
+      // Set default filters (they'll be ignored if no trials match, most likely)
+      // recruitmentStatus: 'active',
+      // studyType: 'Interventional',
+      page: DEFAULT_PAGE,
+      pageSize: DEFAULT_PAGE_SIZE,
+    };
+    // Check if the fhirless flag was set on the URL. If it was, pass it on.
+    if (/[?&]fhirless/.test(location.search)) {
+      query['fhirless'] = '1';
+    }
     return router.push({
       pathname: '/results',
-      query: {
-        ...formDataToSearchQuery(data),
-        sortingOption: 'matchLikelihood',
-        // Set default filters (they'll be ignored if no trials match, most likely)
-        recruitmentStatus: 'active',
-        studyType: 'Interventional',
-        page: DEFAULT_PAGE,
-        pageSize: DEFAULT_PAGE_SIZE,
-      },
+      query: query,
     });
   };
 
@@ -116,9 +124,14 @@ const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormPro
 
   // Removing the download capability for now as it does not work in embedded Epic
   // const onDownload = (data: SearchFormValuesType) => {
+  //   const newUserId = generateId();
   //   const manuallyAdjusted = compareDefaultValues(data);
-  //   const csv = generateSearchCSVString(data, '', manuallyAdjusted);
 
+  //   const csv = generateSearchCSVString(data, newUserId, manuallyAdjusted);
+  //   if (setUserId) {
+  //     setValue('userid', newUserId);
+  //     setUserId(newUserId);
+  //   }
   //   // Create a hidden download link to download the CSV
   //   const link = document.createElement('a');
   //   link.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`);
@@ -181,6 +194,7 @@ const SearchForm = ({ defaultValues, fullWidth, disableLocation }: SearchFormPro
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <input type="hidden" name="userid" value={userId} {...register('userid', { value: userId })} />
       <Box bgcolor="grey.200">
         {!(fullWidth || isSmallScreen) && (
           <Box p={{ xs: 0, md: 2 }}>

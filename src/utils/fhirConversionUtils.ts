@@ -109,9 +109,10 @@ export const extractMedicationCodes = (medications: Medication[]): CodedValueTyp
 };
 
 export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const medicationStatements = bundle.entry?.map(entry => entry.resource as MedicationStatement) || [];
+  const medicationStatements =
+    bundle.entry?.map<MedicationStatement>(entry => entry.resource as MedicationStatement) || [];
   const medications: CodedValueType[] = medicationStatements
-    .map(getCodedValueTypes(medication as CodedValueType[]))
+    .map(extractKnownCodes(medication as CodedValueType[]))
     .flat();
   return getUniques(medications);
 };
@@ -256,18 +257,6 @@ const extractKnownCodes =
       codings = resource.medicationCodeableConcept?.coding;
     }
     return codings ? codings.map(coding => knownCodes.find(equalCodedValueType(coding))).filter(e => !!e) : [];
-  };
-
-const getCodedValueTypes =
-  (original: CodedValueType[]) =>
-  (resource: Procedure | Condition | MedicationStatement): CodedValueType[] => {
-    let codings = [] as Coding[];
-    if ((resource.resourceType === 'Procedure' || resource.resourceType === 'Condition') && resource.code) {
-      codings = resource.code?.coding;
-    } else if (resource.resourceType === 'MedicationStatement' && resource.medicationCodeableConcept) {
-      codings = resource.medicationCodeableConcept?.coding;
-    }
-    return codings.map(coding => original.find(equalCodedValueType(coding))).filter(e => !!e);
   };
 
 const getStage = (condition: Condition): CodedValueType | null => {

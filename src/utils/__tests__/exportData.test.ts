@@ -3,21 +3,26 @@ import { exportSpreadsheetData, unpackStudies } from '../exportData';
 
 describe('unpackStudies', () => {
   it('works on an empty array', () => {
-    expect(unpackStudies([])).toEqual(expect.arrayContaining([expect.objectContaining({ 'Match Count': '0' })]));
+    expect(unpackStudies([], 'userid')).toEqual(
+      expect.arrayContaining([expect.objectContaining({ 'Match Count': '0' })])
+    );
   });
 
   it('works on an almost empty ResearchStudy', () => {
     expect(
-      unpackStudies([
-        {
-          trialId: 'NCT02684032',
-          likelihood: {
-            text: 'Unknown likelihood',
-            color: 'common.grayLight',
-            score: undefined,
+      unpackStudies(
+        [
+          {
+            trialId: 'NCT02684032',
+            likelihood: {
+              text: 'Unknown likelihood',
+              color: 'common.grayLight',
+              score: undefined,
+            },
           },
-        },
-      ])
+        ],
+        'userid'
+      )
     ).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ 'Match Count': '1' }),
@@ -43,70 +48,73 @@ describe('unpackStudies', () => {
 
   it('exports sites', () => {
     expect(
-      unpackStudies([
-        {
-          trialId: 'EXAMPLE',
-          title: 'Example Research Study',
-          description: 'A test research study object for testing this feature.',
-          status: { name: 'active', label: 'Active', color: 'common.red' },
-          phase: 'Active',
-          conditions: ['condition-1', 'condition-2'],
-          source: 'Unknown',
-          eligibility: 'Example Criteria',
-          keywords: ['keyword'],
-          likelihood: {
-            text: 'Possible match',
-            color: 'common.yellow',
-            score: 0.5,
-          },
-          period: 'Jan 2, 2021 - Mar 4, 2021',
-          sponsor: {
-            name: 'Example Sponsor Organization',
-          },
-          contacts: [
-            {
-              name: 'Example Contact',
-              phone: '781-555-0100',
-              email: 'email@example.com',
+      unpackStudies(
+        [
+          {
+            trialId: 'EXAMPLE',
+            title: 'Example Research Study',
+            description: 'A test research study object for testing this feature.',
+            status: { name: 'active', label: 'Active', color: 'common.red' },
+            phase: 'Active',
+            conditions: ['condition-1', 'condition-2'],
+            source: 'Unknown',
+            eligibility: 'Example Criteria',
+            keywords: ['keyword'],
+            likelihood: {
+              text: 'Possible match',
+              color: 'common.yellow',
+              score: 0.5,
             },
-          ],
-          type: { name: 'Example Type' },
-          closestFacilities: [
-            {
-              distance: {
-                quantity: 2.0,
-                units: 'miles',
+            period: 'Jan 2, 2021 - Mar 4, 2021',
+            sponsor: {
+              name: 'Example Sponsor Organization',
+            },
+            contacts: [
+              {
+                name: 'Example Contact',
+                phone: '781-555-0100',
+                email: 'email@example.com',
               },
-            },
-          ],
-          locations: [
-            {
-              resourceType: 'Location',
-              id: 'location-0',
-              name: 'First Location',
-              telecom: [
-                {
-                  system: 'phone',
-                  value: '123456789',
-                  use: 'work',
+            ],
+            type: { name: 'Example Type' },
+            closestFacilities: [
+              {
+                distance: {
+                  quantity: 2.0,
+                  units: 'miles',
                 },
-              ],
-            },
-            {
-              resourceType: 'Location',
-              id: 'location-1',
-              name: 'Second Location',
-              telecom: [
-                {
-                  system: 'email',
-                  value: 'email@example.com',
-                  use: 'work',
-                },
-              ],
-            },
-          ],
-        },
-      ])
+              },
+            ],
+            locations: [
+              {
+                resourceType: 'Location',
+                id: 'location-0',
+                name: 'First Location',
+                telecom: [
+                  {
+                    system: 'phone',
+                    value: '123456789',
+                    use: 'work',
+                  },
+                ],
+              },
+              {
+                resourceType: 'Location',
+                id: 'location-1',
+                name: 'Second Location',
+                telecom: [
+                  {
+                    system: 'email',
+                    value: 'email@example.com',
+                    use: 'work',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+        'userid'
+      )
     ).toEqual(
       expect.arrayContaining([
         expect.objectContaining({ 'Match Count': '1' }),
