@@ -10,10 +10,10 @@ import {
 import { Medication, MedicationRequest, Observation } from 'fhir/r4';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
-import type { PatientData, ProgressMonitor } from '../fetchPatientData';
+import { PatientData, ProgressMonitor, subProgressMonitor } from '../fetchPatientData';
 
 export const fetchPatientData = async (fhirClient: Client, progress: ProgressMonitor): Promise<PatientData> => {
-  progress('Fetching patient data', 0, 5);
+  progress('Fetching patient data', 0, 25);
   const fhirPatient = await fhirClient.patient.read();
 
   progress('Fetching conditions', 1);
@@ -27,8 +27,18 @@ export const fetchPatientData = async (fhirClient: Client, progress: ProgressMon
   const meds = await getAllMedications(fhirClient);
 
   progress('Fetching ECOG/Karnofsky scores', 1);
-  const fhirEcogPerformanceStatus = await getMostRecentPerformanceValue(fhirClient, encounters, 'EPIC#31000083940');
-  const fhirKarnofskyPerformanceStatus = await getMostRecentPerformanceValue(fhirClient, encounters, 'EPIC#1500');
+  const fhirEcogPerformanceStatus = await getMostRecentPerformanceValue(
+    fhirClient,
+    encounters,
+    'EPIC#31000083940',
+    subProgressMonitor(progress, 10)
+  );
+  const fhirKarnofskyPerformanceStatus = await getMostRecentPerformanceValue(
+    fhirClient,
+    encounters,
+    'EPIC#1500',
+    subProgressMonitor(progress, 10)
+  );
 
   // const
 
@@ -130,12 +140,19 @@ const getAllEncounters = (fhirClient: Client) => {
 };
 
 // This assumes that all of the encounters are in order by date.
-const getMostRecentPerformanceValue = async (fhirClient: Client, encounters: fhirclient.FHIR.Bundle, code: string) => {
+const getMostRecentPerformanceValue = async (
+  fhirClient: Client,
+  encounters: fhirclient.FHIR.Bundle,
+  code: string,
+  progress: ProgressMonitor
+) => {
+  progress(0, 0, encounters.entry.length);
   for (let i = 0; i < encounters.entry.length; i++) {
     const encounter = encounters.entry[i];
     const observations = await fhirClient.request<fhirclient.FHIR.Bundle>(
       `Observation?patient=${fhirClient.getPatientId()}&category=smartdata&focus=${encounter.resource.id}`
     );
+    progress(1);
     if (Array.isArray(observations.entry)) {
       console.log(`Encounter SDES ${encounter.resource.id} ${observations.entry.length}`);
       const found = observations.entry.find(
