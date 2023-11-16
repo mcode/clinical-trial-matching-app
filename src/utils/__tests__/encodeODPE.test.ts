@@ -1,4 +1,5 @@
 import { extractBiomarkerCodes, extractCodes, convertCodesToBiomarkers } from '../encodeODPE';
+import { CancerType } from '../fhirConversionUtils';
 
 describe('extractCodes()', () => {
   it('handles an empty array', () => {
@@ -9,7 +10,7 @@ describe('extractCodes()', () => {
       extractCodes([
         {
           entryType: 'metastasis',
-          cancerType: ['brain', 'breast', 'colon', 'lung', 'multipleMyeloma', 'prostate'],
+          cancerType: ['brain', 'breast', 'colon', 'lung', 'multipleMyeloma', 'prostate'] as CancerType[],
           code: '94381002',
           display: 'Secondary malignant neoplasm of liver',
           system: 'http://snomed.info/sct',
@@ -29,7 +30,7 @@ describe('extractBiomakerCodes()', () => {
       extractBiomarkerCodes([
         {
           entryType: 'biomarkers',
-          cancerType: ['colon'],
+          cancerType: ['colon'] as CancerType[],
           code: '31150-6',
           display: 'ERBB2 gene duplication [Presence] in Tissue by FISH',
           system: 'http://loinc.org',

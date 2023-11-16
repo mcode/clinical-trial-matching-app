@@ -194,7 +194,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="hidden" name="userid" value={userId} {...register('userid', { value: userId })} />
+      <input type="hidden" name="userid" value={userId} {...register<'userid'>('userid', { value: userId })} />
       <Box bgcolor="grey.200">
         {!(fullWidth || isSmallScreen) && (
           <Box p={{ xs: 0, md: 2 }}>
