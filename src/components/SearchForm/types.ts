@@ -13,7 +13,7 @@ export type SearchFormValuesType = {
   stage: CodedValueType;
   ecogScore: Score;
   karnofskyScore: Score;
-  biomarkers: CodedValueType[];
+  biomarkers: Biomarker[];
   radiation: CodedValueType[];
   surgery: CodedValueType[];
   medications: CodedValueType[];
