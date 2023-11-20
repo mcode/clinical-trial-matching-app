@@ -1,4 +1,3 @@
-import { convertEcogScore, convertKarnofskyScore } from '@/utils/epicEHRConverters';
 import {
   convertFhirPatient,
   convertFhirRadiationProcedures,
@@ -7,25 +6,31 @@ import {
   extractMedicationCodes,
   extractPrimaryCancerCondition,
 } from '@/utils/fhirConversionUtils';
-import { Medication, MedicationRequest, Observation } from 'fhir/r4';
+import { Medication, MedicationRequest } from 'fhir/r4';
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
-import { PatientData, ProgressMonitor, subProgressMonitor } from '../fetchPatientData';
+import { PatientData, ProgressMonitor } from '../fetchPatientData';
 
 export const fetchPatientData = async (fhirClient: Client, progress: ProgressMonitor): Promise<PatientData> => {
-  progress('Fetching patient data', 0, 25);
+  progress('Fetching patient data', 0, 3);
   const fhirPatient = await fhirClient.patient.read();
 
   progress('Fetching conditions', 1);
   const conditions = await getAllConditions(fhirClient);
   progress('Fetching proceedures', 1);
   const procedures = await getAllProcedures(fhirClient);
+  /*
+  Encounters are only used for ECOG/Karnofsky scores
   progress('Fetching encounters', 1);
   const encounters = await getAllEncounters(fhirClient);
+  */
   // const observations = await getAllObservations(fhirClient);
   progress('Fetching medications', 1);
   const meds = await getAllMedications(fhirClient);
 
+  /*
+  The ECOG/Karnofsky score fetching is extremely slow and likely needs to be
+  redone anyway
   progress('Fetching ECOG/Karnofsky scores', 1);
   const fhirEcogPerformanceStatus = await getMostRecentPerformanceValue(
     fhirClient,
@@ -39,6 +44,7 @@ export const fetchPatientData = async (fhirClient: Client, progress: ProgressMon
     'EPIC#1500',
     subProgressMonitor(progress, 10)
   );
+  */
 
   // const
 
@@ -70,8 +76,8 @@ ${JSON.stringify(observations, null, 2)}
     primaryCancerCondition: primaryCancerCondition,
     metastasis: metastasis,
     // Conversion is "safe" as convertEcogScore will reject bad values
-    ecogScore: convertEcogScore(fhirEcogPerformanceStatus as Observation),
-    karnofskyScore: convertKarnofskyScore(fhirKarnofskyPerformanceStatus as Observation),
+    ecogScore: null, // convertEcogScore(fhirEcogPerformanceStatus as Observation),
+    karnofskyScore: null, // convertKarnofskyScore(fhirKarnofskyPerformanceStatus as Observation),
     // biomarkers: convertFhirTumorMarkers(fhirTumorMarkers),
     biomarkers: [],
     radiation: convertFhirRadiationProcedures(procedures),
@@ -135,11 +141,15 @@ const getAllMedications = async (fhirClient: Client): Promise<Medication[]> => {
   return Promise.all(medications);
 };
 
+/*
 const getAllEncounters = (fhirClient: Client) => {
   return fhirClient.request<fhirclient.FHIR.Bundle>(`Encounter?patient=${fhirClient.getPatientId()}`);
 };
+*/
 
 // This assumes that all of the encounters are in order by date.
+/*
+This will likely need to be rewritten in the future
 const getMostRecentPerformanceValue = async (
   fhirClient: Client,
   encounters: fhirclient.FHIR.Bundle,
@@ -165,3 +175,4 @@ const getMostRecentPerformanceValue = async (
   }
   return undefined;
 };
+*/
