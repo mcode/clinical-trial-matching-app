@@ -5,7 +5,7 @@
     "code": "21625-9",
     "display": "ATM gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["atm"]
+    "category": ["ATM"]
   },
   {
     "entryType": "biomarkers",
@@ -13,7 +13,7 @@
     "code": "21624-2",
     "display": "ATM gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["atm"]
+    "category": ["ATM"]
   },
   {
     "entryType": "biomarkers",
@@ -21,7 +21,7 @@
     "code": "53841-3",
     "display": "ATRX gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["atrx"]
+    "category": ["ATRX"]
   },
   {
     "entryType": "biomarkers",
@@ -29,7 +29,7 @@
     "code": "93690-6",
     "display": "BRAF gene V600 mutations [Identifier] in Plasma cell-free DNA by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -37,7 +37,7 @@
     "code": "97025-1",
     "display": "BRAF gene V600 mutations [Identifier] in Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -45,7 +45,7 @@
     "code": "58415-1",
     "display": "BRAF gene p.Val600Glu [Presence] in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -53,7 +53,7 @@
     "code": "85101-4",
     "display": "BRAF gene p.Val600Glu [Presence] in Bone marrow by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -61,7 +61,7 @@
     "code": "89861-9",
     "display": "BRAF gene p.Val600Lys [Presence] in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -69,7 +69,7 @@
     "code": "85299-6",
     "display": "BRAF V600E mutant protein [Presence] in Cancer specimen by Immune stain",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -77,7 +77,7 @@
     "code": "83061-2",
     "display": "BRAF gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -85,7 +85,7 @@
     "code": "53844-7",
     "display": "BRAF gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -93,7 +93,7 @@
     "code": "58483-9",
     "display": "BRAF gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -101,7 +101,7 @@
     "code": "85511-4",
     "display": "BRAF gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -109,7 +109,7 @@
     "code": "81705-6",
     "display": "BRAF protein [Presence] in Cancer specimen by Immune stain",
     "system": "http://loinc.org",
-    "category": ["braf"]
+    "category": ["BRAF"]
   },
   {
     "entryType": "biomarkers",
@@ -117,7 +117,7 @@
     "code": "42778-1",
     "display": "BRCA1 Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["brca1"]
+    "category": ["BRCA1"]
   },
   {
     "entryType": "biomarkers",
@@ -125,7 +125,7 @@
     "code": "21637-4",
     "display": "BRCA1 gene.c.185 del AG [presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca1"]
+    "category": ["BRCA1"]
   },
   {
     "entryType": "biomarkers",
@@ -133,7 +133,7 @@
     "code": "21638-2",
     "display": "BRCA1 gene c.5382insC [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca1"]
+    "category": ["BRCA1"]
   },
   {
     "entryType": "biomarkers",
@@ -141,7 +141,7 @@
     "code": "21636-6",
     "display": "BRCA1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["brca1"]
+    "category": ["BRCA1"]
   },
   {
     "entryType": "biomarkers",
@@ -149,7 +149,7 @@
     "code": "21639-0",
     "display": "BRCA1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["brca1"]
+    "category": ["BRCA1"]
   },
   {
     "entryType": "biomarkers",
@@ -157,7 +157,7 @@
     "code": "79207-7",
     "display": "BRCA1 gene mutation analysis limited to known familial mutations in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca1"]
+    "category": ["BRCA1"]
   },
   {
     "entryType": "biomarkers",
@@ -165,7 +165,7 @@
     "code": "50995-0",
     "display": "BRCA1+BRCA2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca1", "brca2"]
+    "category": ["BRCA1", "BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -173,7 +173,7 @@
     "code": "59041-4",
     "display": "BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["brca1", "brca2"]
+    "category": ["BRCA1", "BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -181,7 +181,7 @@
     "code": "94191-4",
     "display": "BRCA1+BRCA2 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca1", "brca2"]
+    "category": ["BRCA1", "BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -189,7 +189,7 @@
     "code": "42779-9",
     "display": "BRCA2 Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["brca2"]
+    "category": ["BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -197,7 +197,7 @@
     "code": "21640-8",
     "display": "BRCA2 gene c.6174delT [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca2"]
+    "category": ["BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -205,7 +205,7 @@
     "code": "38531-0",
     "display": "BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["brca2"]
+    "category": ["BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -213,7 +213,7 @@
     "code": "38530-2",
     "display": "BRCA2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["brca2"]
+    "category": ["BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -221,7 +221,7 @@
     "code": "79208-5",
     "display": "BRCA2 gene mutation analysis limited to known familial mutations in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca2"]
+    "category": ["BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -229,7 +229,7 @@
     "code": "100761-6",
     "display": "PALB2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["brca2"]
+    "category": ["BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -237,7 +237,7 @@
     "code": "96974-1",
     "display": "PALB2 gene deletion and duplication mutation analysis [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["brca2"]
+    "category": ["BRCA2"]
   },
   {
     "entryType": "biomarkers",
@@ -245,7 +245,7 @@
     "code": "81845-0",
     "display": "PALB2 gene full mutation analysis in Blood or Tissue by Sequencing",
     "system": "http://loinc.org",
-    "category": ["brca2", "palb2"]
+    "category": ["BRCA2", "PALB2"]
   },
   {
     "entryType": "biomarkers",
@@ -253,7 +253,7 @@
     "code": "90926-7",
     "display": "MET gene amplification in Blood or Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -261,7 +261,7 @@
     "code": "92906-7",
     "display": "MET gene copy number/nucleus in Blood or Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -269,7 +269,7 @@
     "code": "92907-5",
     "display": "MET gene copy number/Chromosome 7 copy number in Blood or Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -277,7 +277,7 @@
     "code": "100026-4",
     "display": "MET gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -285,7 +285,7 @@
     "code": "82264-3",
     "display": "MET by measured RMR panel",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -293,7 +293,7 @@
     "code": "82268-4",
     "display": "MET by population RMR panel",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -301,7 +301,7 @@
     "code": "82273-4",
     "display": "MET by predicted RMR panel",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -309,7 +309,7 @@
     "code": "82260-1",
     "display": "MET by standard RMR panel",
     "system": "http://loinc.org",
-    "category": ["c_met"]
+    "category": ["C_MET"]
   },
   {
     "entryType": "biomarkers",
@@ -317,7 +317,7 @@
     "code": "94240-9",
     "display": "CDH1 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["cdh1"]
+    "category": ["CDH1"]
   },
   {
     "entryType": "biomarkers",
@@ -325,7 +325,7 @@
     "code": "21653-1",
     "display": "CDH1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["cdh1"]
+    "category": ["CDH1"]
   },
   {
     "entryType": "biomarkers",
@@ -333,7 +333,7 @@
     "code": "21652-3",
     "display": "CDH1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["cdh1"]
+    "category": ["CDH1"]
   },
   {
     "entryType": "biomarkers",
@@ -341,7 +341,7 @@
     "code": "29540-2",
     "display": "E-cadherin [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["cdh1"]
+    "category": ["CDH1"]
   },
   {
     "entryType": "biomarkers",
@@ -349,7 +349,7 @@
     "code": "89038-4",
     "display": "CHEK2 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["chek2"]
+    "category": ["CHEK2"]
   },
   {
     "entryType": "biomarkers",
@@ -357,7 +357,7 @@
     "code": "72518-4",
     "display": "CHEK2 gene c.470C>T and 1100delC [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["chek2"]
+    "category": ["CHEK2"]
   },
   {
     "entryType": "biomarkers",
@@ -365,7 +365,7 @@
     "code": "55770-2",
     "display": "EGFR gene exon 20 insertion [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -373,7 +373,7 @@
     "code": "55768-6",
     "display": "EGFR gene c.2303G>T [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -381,7 +381,7 @@
     "code": "85383-8",
     "display": "EGFR gene c.2369C>T actual/normal in Plasma cell-free DNA by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -389,7 +389,7 @@
     "code": "55766-0",
     "display": "EGFR gene c.2573T>G [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -397,7 +397,7 @@
     "code": "55767-8",
     "display": "EGFR gene c.2582T>A [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -405,7 +405,7 @@
     "code": "55769-4",
     "display": "EGFR gene c.2369C>T [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -413,7 +413,7 @@
     "code": "55764-5",
     "display": "EGFR gene exon 19 deletion [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -421,7 +421,7 @@
     "code": "55765-2",
     "display": "EGFR gene c.2156G>C+2155G>A+2155G>T [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -429,7 +429,7 @@
     "code": "21665-5",
     "display": "EGFR gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -437,7 +437,7 @@
     "code": "21666-3",
     "display": "EGFR gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -445,7 +445,7 @@
     "code": "42782-3",
     "display": "Epidermal growth factor receptor.phosphorylated Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -453,7 +453,7 @@
     "code": "13659-8",
     "display": "Epidermal growth factor receptor [Mass/mass] in Tissue",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -461,7 +461,7 @@
     "code": "14050-9",
     "display": "Epidermal growth factor receptor [Moles/mass] in Tissue",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -469,7 +469,7 @@
     "code": "45066-8",
     "display": "Creatinine and Glomerular filtration rate.predicted panel - Serum, Plasma or Blood LHC-Forms",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -477,7 +477,7 @@
     "code": "39004-7",
     "display": "Epidermal growth factor receptor Ag [Presence] in Tissue",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -485,7 +485,7 @@
     "code": "32581-1",
     "display": "Epidermal growth factor receptor Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["egfr"]
+    "category": ["EGFR"]
   },
   {
     "entryType": "biomarkers",
@@ -533,7 +533,7 @@
     "code": "96893-3",
     "display": "ERBB2 gene duplication in Tumor by FISH",
     "system": "http://loinc.org",
-    "category": ["erbb2_her2"]
+    "category": ["ERBB2_HER2"]
   },
   {
     "entryType": "biomarkers",
@@ -541,7 +541,7 @@
     "code": "74885-5",
     "display": "ERBB2 gene (HER2) duplication associated observations panel - Tissue by FISH LHC-Forms",
     "system": "http://loinc.org",
-    "category": ["erbb2_her2", "HER2"]
+    "category": ["ERBB2_HER2", "HER2"]
   },
   {
     "entryType": "biomarkers",
@@ -549,7 +549,7 @@
     "code": "31150-6",
     "display": "ERBB2 gene duplication [Presence] in Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["erbb2_her2", "HER2"]
+    "category": ["ERBB2_HER2", "HER2"]
   },
   {
     "entryType": "biomarkers",
@@ -557,7 +557,7 @@
     "code": "74860-8",
     "display": "ERBB2 gene copy number/nucleus in Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["erbb2_her2", "HER2"]
+    "category": ["ERBB2_HER2", "HER2"]
   },
   {
     "entryType": "biomarkers",
@@ -565,7 +565,7 @@
     "code": "85318-4",
     "display": "ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH",
     "system": "http://loinc.org",
-    "category": ["erbb2_her2", "HER2"]
+    "category": ["ERBB2_HER2", "HER2"]
   },
   {
     "entryType": "biomarkers",
@@ -573,7 +573,7 @@
     "code": "49683-6",
     "display": "ERBB2 gene copy number/Chromosome 17 copy number in Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["erbb2_her2", "HER2"]
+    "category": ["ERBB2_HER2", "HER2"]
   },
   {
     "entryType": "biomarkers",
@@ -581,7 +581,7 @@
     "code": "42783-1",
     "display": "ERBB2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["erbb2_her2"]
+    "category": ["ERBB2_HER2"]
   },
   {
     "entryType": "biomarkers",
@@ -589,7 +589,7 @@
     "code": "78916-4",
     "display": "FGFR1 gene rearrangements [Interpretation] in Blood or Tissue by FISH Narrative",
     "system": "http://loinc.org",
-    "category": ["fgfr1"]
+    "category": ["FGFR1"]
   },
   {
     "entryType": "biomarkers",
@@ -597,7 +597,7 @@
     "code": "78915-6",
     "display": "FGFR1 gene rearrangements [Presence] in Blood or Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["fgfr1"]
+    "category": ["FGFR1"]
   },
   {
     "entryType": "biomarkers",
@@ -605,7 +605,7 @@
     "code": "42785-6",
     "display": "FGFR1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["fgfr1"]
+    "category": ["FGFR1"]
   },
   {
     "entryType": "biomarkers",
@@ -613,7 +613,7 @@
     "code": "78917-2",
     "display": "Cells.FGFR1 gene rearrangements/Cells counted in Blood or Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["fgfr1"]
+    "category": ["FGFR1"]
   },
   {
     "entryType": "biomarkers",
@@ -621,7 +621,7 @@
     "code": "95784-5",
     "display": "FGFR2 gene rearrangements in Tissue by FISH",
     "system": "http://loinc.org",
-    "category": ["fgfr2"]
+    "category": ["FGFR2"]
   },
   {
     "entryType": "biomarkers",
@@ -629,7 +629,7 @@
     "code": "38412-3",
     "display": "FGFR2 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["fgfr2"]
+    "category": ["FGFR2"]
   },
   {
     "entryType": "biomarkers",
@@ -637,7 +637,7 @@
     "code": "21674-7",
     "display": "FGFR2 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["fgfr2"]
+    "category": ["FGFR2"]
   },
   {
     "entryType": "biomarkers",
@@ -645,7 +645,7 @@
     "code": "21675-4",
     "display": "FGFR2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["fgfr2"]
+    "category": ["FGFR2"]
   },
   {
     "entryType": "biomarkers",
@@ -653,7 +653,7 @@
     "code": "48972-4",
     "display": "FGFR2 gene+FGFR3 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["fgfr2"]
+    "category": ["FGFR2"]
   },
   {
     "entryType": "biomarkers",
@@ -661,7 +661,7 @@
     "code": "21678-8",
     "display": "FGFR3 gene p.Gly380Arg [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -669,7 +669,7 @@
     "code": "21679-6",
     "display": "FGFR3 gene p.Lys650Glu [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -677,7 +677,7 @@
     "code": "82137-1",
     "display": "FGFR3 gene p.Gly380Arg targeted mutation analysis in Amniotic fluid or Chorionic villus sample by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -685,7 +685,7 @@
     "code": "21677-0",
     "display": "FGFR3 gene p.Gly375Cys [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -693,7 +693,7 @@
     "code": "22074-9",
     "display": "FGFR3 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -701,7 +701,7 @@
     "code": "38413-1",
     "display": "FGFR3 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -709,7 +709,7 @@
     "code": "21676-2",
     "display": "FGFR3 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -717,7 +717,7 @@
     "code": "75391-3",
     "display": "FGFR3 gene targeted mutation analysis in Amniotic fluid or Chorionic villus sample by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["fgfr3"]
+    "category": ["FGFR3"]
   },
   {
     "entryType": "biomarkers",
@@ -789,7 +789,7 @@
     "code": "42786-4",
     "display": "HER3 Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["her3"]
+    "category": ["HER3"]
   },
   {
     "entryType": "biomarkers",
@@ -797,7 +797,7 @@
     "code": "95772-0",
     "display": "IDH1 and IDH2 genes targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["idh1"]
+    "category": ["IDH1"]
   },
   {
     "entryType": "biomarkers",
@@ -805,7 +805,7 @@
     "code": "100022-3",
     "display": "IDH1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["idh1"]
+    "category": ["IDH1"]
   },
   {
     "entryType": "biomarkers",
@@ -813,7 +813,7 @@
     "code": "81420-2",
     "display": "KRAS and NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["kras", "nras"]
+    "category": ["KRAS", "NRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -821,7 +821,7 @@
     "code": "83059-6",
     "display": "KRAS gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
-    "category": ["kras"]
+    "category": ["KRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -829,7 +829,7 @@
     "code": "21703-4",
     "display": "KRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["kras"]
+    "category": ["KRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -837,7 +837,7 @@
     "code": "75974-6",
     "display": "KRAS gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["kras"]
+    "category": ["KRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -845,7 +845,7 @@
     "code": "21702-6",
     "display": "KRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["kras"]
+    "category": ["KRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -853,7 +853,7 @@
     "code": "53620-1",
     "display": "KRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["kras"]
+    "category": ["KRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -861,7 +861,7 @@
     "code": "85509-8",
     "display": "KRAS gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["kras"]
+    "category": ["KRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -869,7 +869,7 @@
     "code": "82535-6",
     "display": "KRAS gene full mutation analysis in Blood or Tissue by Sequencing",
     "system": "http://loinc.org",
-    "category": ["kras"]
+    "category": ["KRAS"]
   },
   {
     "cancerType": ["colon"],
@@ -877,7 +877,7 @@
     "code": "81708-0",
     "display": "Microsatellite markers exhibiting instability/Microsatellite instability markers assessed in Cancer specimen",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -885,7 +885,7 @@
     "code": "81711-4",
     "display": "Microsatellite instability marker panel - Cancer specimen�LHC-Forms",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -893,7 +893,7 @@
     "code": "81696-7",
     "display": "Microsatellite instability markers assessed [#] in Cancer specimen",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -901,7 +901,7 @@
     "code": "81697-5",
     "display": "Microsatellite instability marker BAT25 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -909,7 +909,7 @@
     "code": "81698-3",
     "display": "Microsatellite instability marker BAT26 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -917,7 +917,7 @@
     "code": "81704-9",
     "display": "Microsatellite instability marker D17S250 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -925,7 +925,7 @@
     "code": "81702-3",
     "display": "Microsatellite instability marker D2S123 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -933,7 +933,7 @@
     "code": "81703-1",
     "display": "Microsatellite instability marker D5S346 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -941,7 +941,7 @@
     "code": "81701-5",
     "display": "Microsatellite instability marker MONO27 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -949,7 +949,7 @@
     "code": "81699-1",
     "display": "Microsatellite instability marker NR21 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -957,7 +957,7 @@
     "code": "81700-7",
     "display": "Microsatellite instability marker NR24 in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -965,7 +965,7 @@
     "code": "81709-8",
     "display": "Microsatellite markers exhibiting instability [#] in Cancer specimen",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -973,7 +973,7 @@
     "code": "43368-0",
     "display": "Microsatellite instability [Identifier] in Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -981,7 +981,7 @@
     "code": "81695-9",
     "display": "Microsatellite instability [Interpretation] in Cancer specimen Qualitative",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "cancerType": ["colon"],
@@ -989,7 +989,7 @@
     "code": "62862-8",
     "display": "Microsatellite instability [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["msi"]
+    "category": ["MSI"]
   },
   {
     "entryType": "biomarkers",
@@ -997,7 +997,7 @@
     "code": "82515-8",
     "display": "NBN gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["nbn"]
+    "category": ["NBN"]
   },
   {
     "entryType": "biomarkers",
@@ -1005,7 +1005,7 @@
     "code": "21718-2",
     "display": "NF1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["nf1"]
+    "category": ["NF1"]
   },
   {
     "entryType": "biomarkers",
@@ -1013,7 +1013,7 @@
     "code": "45331-6",
     "display": "NF1 gene mutations found [Identifier] in Amniotic fluid by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["nf1"]
+    "category": ["NF1"]
   },
   {
     "entryType": "biomarkers",
@@ -1021,7 +1021,7 @@
     "code": "21717-4",
     "display": "NF1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["nf1"]
+    "category": ["NF1"]
   },
   {
     "entryType": "biomarkers",
@@ -1029,7 +1029,7 @@
     "code": "83060-4",
     "display": "NRAS gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
-    "category": ["nras"]
+    "category": ["NRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -1037,7 +1037,7 @@
     "code": "85510-6",
     "display": "NRAS gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["nras"]
+    "category": ["NRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -1045,7 +1045,7 @@
     "code": "21720-8",
     "display": "NRAS gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["nras"]
+    "category": ["NRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -1053,7 +1053,7 @@
     "code": "21719-0",
     "display": "NRAS gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["nras"]
+    "category": ["NRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -1061,7 +1061,7 @@
     "code": "53621-9",
     "display": "NRAS gene mutations found [Identifier] in Bone marrow by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["nras"]
+    "category": ["NRAS"]
   },
   {
     "entryType": "biomarkers",
@@ -1069,7 +1069,7 @@
     "code": "93813-4",
     "display": "NTRK1, NTRK2 and NTRK3 gene rearrangements in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["ntrk_fusion"]
+    "category": ["NTRK_FUSION"]
   },
   {
     "entryType": "biomarkers",
@@ -1077,7 +1077,7 @@
     "code": "83053-9",
     "display": "Cells.programmed cell death ligand 1/100 viable tumor cells in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1085,7 +1085,7 @@
     "code": "96268-8",
     "display": "Monocytes.PD-L1/100 Monocytes in Blood by Flow cytometry (FC)",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1093,7 +1093,7 @@
     "code": "85147-7",
     "display": "PD-L1 by clone 22C3 in Tissue by Immune stain Report",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1101,7 +1101,7 @@
     "code": "83054-7",
     "display": "PD-L1 by clone 22C3 [Interpretation] in Tissue by Immune stain Narrative",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1109,7 +1109,7 @@
     "code": "83052-1",
     "display": "PD-L1 by clone 22C3 [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1117,7 +1117,7 @@
     "code": "85148-5",
     "display": "PD-L1 by clone 28-8 in Tissue by Immune stain Report",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1125,7 +1125,7 @@
     "code": "83056-2",
     "display": "PD-L1 by clone 28-8 [Interpretation] in Tissue by Immune stain Narrative",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1133,7 +1133,7 @@
     "code": "83055-4",
     "display": "PD-L1 by clone 28-8 [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1141,7 +1141,7 @@
     "code": "85149-3",
     "display": "PD-L1 by clone SP142 in Tissue by Immune stain Report",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1149,7 +1149,7 @@
     "code": "83057-0",
     "display": "PD-L1 by clone SP142 [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["pdl1"]
+    "category": ["PDL1"]
   },
   {
     "entryType": "biomarkers",
@@ -1157,7 +1157,7 @@
     "code": "14229-9",
     "display": "P53 protein Ag [Presence] in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1165,7 +1165,7 @@
     "code": "31149-8",
     "display": "P53 protein Ag/100 cells in Tissue by Immune stain",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1173,7 +1173,7 @@
     "code": "12876-9",
     "display": "HIV 1 p53 Ab [Presence] in Serum by Immunoblot",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1181,7 +1181,7 @@
     "code": "11080-9",
     "display": "HIV 2 p53 Ab [Presence] in Serum by Immunoblot",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1189,7 +1189,7 @@
     "code": "94217-7",
     "display": "TP53 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1197,7 +1197,7 @@
     "code": "21739-8",
     "display": "TP53 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1205,7 +1205,7 @@
     "code": "14223-2",
     "display": "HTLV I p53 Ab [Presence] in Serum",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1213,7 +1213,7 @@
     "code": "43295-5",
     "display": "HTLV I+II p53 Ab [Presence] in Serum",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1221,7 +1221,7 @@
     "code": "14026-9",
     "display": "HTLV I+II p53 Ab [Presence] in Serum by Immunoblot",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1229,7 +1229,7 @@
     "code": "89006-1",
     "display": "p53 Ab [Units/volume] in Serum or Plasma by Immunoassay",
     "system": "http://loinc.org",
-    "category": ["p53"]
+    "category": ["P53"]
   },
   {
     "entryType": "biomarkers",
@@ -1237,7 +1237,7 @@
     "code": "77170-9",
     "display": "PDGFRA gene p.Asp842Val [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["pdfgra"]
+    "category": ["PDFGRA"]
   },
   {
     "entryType": "biomarkers",
@@ -1245,7 +1245,7 @@
     "code": "55092-1",
     "display": "PDGFRA gene rearrangements [Presence] in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["pdfgra"]
+    "category": ["PDFGRA"]
   },
   {
     "entryType": "biomarkers",
@@ -1253,7 +1253,7 @@
     "code": "71357-8",
     "display": "PDGFRA gene exon 18 targeted mutation analysis in Blood or Tissue by Sequencing",
     "system": "http://loinc.org",
-    "category": ["pdfgra"]
+    "category": ["PDFGRA"]
   },
   {
     "entryType": "biomarkers",
@@ -1261,7 +1261,7 @@
     "code": "63419-6",
     "display": "PIK3CA gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["pik3ca", "pi3k"]
+    "category": ["PIK3CA", "PI3K"]
   },
   {
     "entryType": "biomarkers",
@@ -1269,7 +1269,7 @@
     "code": "60033-8",
     "display": "PIK3CA gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["pik3ca", "pi3k"]
+    "category": ["PIK3CA", "PI3K"]
   },
   {
     "entryType": "biomarkers",
@@ -1277,7 +1277,7 @@
     "code": "83062-0",
     "display": "PIK3CA gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
-    "category": ["pik3ca", "pi3k"]
+    "category": ["PIK3CA", "PI3K"]
   },
   {
     "entryType": "biomarkers",
@@ -1285,7 +1285,7 @@
     "code": "60034-6",
     "display": "PIK3CA gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["pik3ca", "pi3k"]
+    "category": ["PIK3CA", "PI3K"]
   },
   {
     "entryType": "biomarkers",
@@ -1293,7 +1293,7 @@
     "code": "85507-2",
     "display": "PIK3CA gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["pik3ca", "pi3k"]
+    "category": ["PIK3CA", "PI3K"]
   },
   {
     "entryType": "biomarkers",
@@ -1349,7 +1349,7 @@
     "code": "81706-4",
     "display": "Phosphatase and tensin homolog (PTEN) protein [Presence] in Cancer specimen by Immune stain",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1357,7 +1357,7 @@
     "code": "81710-6",
     "display": "PTEN gene [Presence] in Cancer specimen by FISH",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1365,7 +1365,7 @@
     "code": "83063-8",
     "display": "PTEN gene [VCF] in Cancer specimen by Sequencing",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1373,7 +1373,7 @@
     "code": "94223-5",
     "display": "PTEN gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1381,7 +1381,7 @@
     "code": "47969-1",
     "display": "PTEN gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1389,7 +1389,7 @@
     "code": "85506-4",
     "display": "PTEN gene mutations found [Identifier] in Colorectal cancer specimen by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1397,7 +1397,7 @@
     "code": "95284-6",
     "display": "PINK1 gene deletion in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1405,7 +1405,7 @@
     "code": "47968-3",
     "display": "PINK1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["pten"]
+    "category": ["PTEN"]
   },
   {
     "entryType": "biomarkers",
@@ -1413,7 +1413,7 @@
     "code": "42795-5",
     "display": "Retinoblastoma protein [Presence] in Tissue by Immune Stain",
     "system": "http://loinc.org",
-    "category": ["rb"]
+    "category": ["RB"]
   },
   {
     "entryType": "biomarkers",
@@ -1421,7 +1421,7 @@
     "code": "21732-3",
     "display": "RB1 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["rb"]
+    "category": ["RB"]
   },
   {
     "entryType": "biomarkers",
@@ -1429,7 +1429,7 @@
     "code": "47416-3",
     "display": "RB1 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["rb"]
+    "category": ["RB"]
   },
   {
     "entryType": "biomarkers",
@@ -1437,7 +1437,7 @@
     "code": "21731-5",
     "display": "RB1 gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "system": "http://loinc.org",
-    "category": ["rb"]
+    "category": ["RB"]
   },
   {
     "cancerType": ["colon"],
@@ -1445,7 +1445,7 @@
     "display": "RET gene rearrangements in Blood or Tissue by FISH",
     "code": "90927-5",
     "system": "http://loinc.org",
-    "category": ["ret"]
+    "category": ["RET"]
   },
   {
     "cancerType": ["colon"],
@@ -1453,7 +1453,7 @@
     "display": "RET gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal",
     "code": "21734-9",
     "system": "http://loinc.org",
-    "category": ["ret"]
+    "category": ["RET"]
   },
   {
     "cancerType": ["colon"],
@@ -1461,7 +1461,7 @@
     "display": "RET gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "code": "40693-4",
     "system": "http://loinc.org",
-    "category": ["ret"]
+    "category": ["RET"]
   },
   {
     "cancerType": ["colon"],
@@ -1469,7 +1469,7 @@
     "display": "RET gene mutations found [Identifier] in Blood or Tissue by Molecular genetics method Nominal",
     "code": "21733-1",
     "system": "http://loinc.org",
-    "category": ["ret"]
+    "category": ["RET"]
   },
   {
     "cancerType": ["colon"],
@@ -1477,7 +1477,7 @@
     "display": "RET gene full mutation analysis in Blood or Tissue by Sequencing",
     "code": "94224-3",
     "system": "http://loinc.org",
-    "category": ["ret"]
+    "category": ["RET"]
   },
   {
     "entryType": "biomarkers",
@@ -1485,7 +1485,7 @@
     "code": "94216-9",
     "display": "STK11 gene deletion+duplication and full mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["stk11"]
+    "category": ["STK11"]
   },
   {
     "entryType": "biomarkers",
@@ -1493,7 +1493,7 @@
     "code": "53795-1",
     "display": "STK11 gene targeted mutation analysis in Blood or Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["stk11"]
+    "category": ["STK11"]
   },
   {
     "entryType": "biomarkers",
@@ -1501,6 +1501,6 @@
     "code": "95778-7",
     "display": "TERT gene promotor region targeted mutation analysis in Tissue by Molecular genetics method",
     "system": "http://loinc.org",
-    "category": ["tert"]
+    "category": ["TERT"]
   }
 ]
