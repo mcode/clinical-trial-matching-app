@@ -1,6 +1,6 @@
 import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
-import { extractCodes } from '@/utils/encodeODPE';
+import { extractBiomarkerCodes, extractCodes } from '@/utils/encodeODPE';
 import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
 import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
@@ -46,7 +46,7 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
   metastasis: data.metastasis ? JSON.stringify(extractCodes(data.metastasis)) : undefined,
-  biomarkers: data.biomarkers ? JSON.stringify(extractCodes(data.biomarkers)) : undefined,
+  biomarkers: data.biomarkers ? JSON.stringify(extractBiomarkerCodes(data.biomarkers)) : undefined,
   stage: data.stage ? JSON.stringify(data.stage) : undefined,
   medications: data.medications ? JSON.stringify(extractCodes(data.medications)) : undefined,
   surgery: data.surgery ? JSON.stringify(extractCodes(data.surgery)) : undefined,
@@ -194,7 +194,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="hidden" name="userid" value={userId} {...register('userid', { value: userId })} />
+      <input type="hidden" name="userid" value={userId} {...register<'userid'>('userid', { value: userId })} />
       <Box bgcolor="grey.200">
         {!(fullWidth || isSmallScreen) && (
           <Box p={{ xs: 0, md: 2 }}>

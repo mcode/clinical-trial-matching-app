@@ -122,6 +122,10 @@ const getSearchParams = getParameters<SearchParameters>([
   'stage',
   'ecogScore',
   'karnofskyScore',
+  'biomarkers',
+  'medications',
+  'radiation',
+  'surgery',
   // If we're not sending location data, we get all trials back
   ...(sendLocationData ? ['zipcode' as keyof SearchParameters, 'travelDistance' as keyof SearchParameters] : []),
 ]);
