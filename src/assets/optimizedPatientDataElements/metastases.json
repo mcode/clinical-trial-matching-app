@@ -5,7 +5,7 @@
     "code": "94222008",
     "display": "Secondary malignant neoplasm of bone",
     "system": "http://snomed.info/sct",
-    "category": ["bone"]
+    "category": ["Bone"]
   },
   {
     "entryType": "metastasis",
@@ -13,7 +13,7 @@
     "code": "94381002",
     "display": "Secondary malignant neoplasm of liver",
     "system": "http://snomed.info/sct",
-    "category": ["liver"]
+    "category": ["Liver"]
   },
   {
     "entryType": "metastasis",
@@ -21,7 +21,7 @@
     "code": "94253005",
     "display": "Secondary malignant neoplasm of chest wall",
     "system": "http://snomed.info/sct",
-    "category": ["chest wall"]
+    "category": ["Chest wall"]
   },
   {
     "entryType": "metastasis",
@@ -29,7 +29,7 @@
     "code": "94391008",
     "display": "Secondary malignant neoplasm of lung",
     "system": "http://snomed.info/sct",
-    "category": ["lung"]
+    "category": ["Lung"]
   },
   {
     "entryType": "metastasis",
@@ -37,7 +37,7 @@
     "code": "94392001",
     "display": "Secondary malignant neoplasm of lymph node",
     "system": "http://snomed.info/sct",
-    "category": ["lymph node"]
+    "category": ["Lymph node"]
   },
   {
     "entryType": "metastasis",
@@ -45,7 +45,7 @@
     "code": "94606003",
     "display": "Secondary malignant neoplasm of stomach",
     "system": "http://snomed.info/sct",
-    "category": ["stomach"]
+    "category": ["Stomach"]
   },
   {
     "entryType": "metastasis",
@@ -53,7 +53,7 @@
     "code": "94579000",
     "display": "Secondary malignant neoplasm of skin",
     "system": "http://snomed.info/sct",
-    "category": ["skin"]
+    "category": ["Skin"]
   },
   {
     "entryType": "metastasis",
@@ -61,7 +61,7 @@
     "code": "94399005",
     "display": "Secondary malignant neoplasm of main bronchus",
     "system": "http://snomed.info/sct",
-    "category": ["main bronchus"]
+    "category": ["Main bronchus"]
   },
   {
     "entryType": "metastasis",
@@ -69,6 +69,6 @@
     "code": "94225005",
     "display": "Secondary malignant neoplasm of brain",
     "system": "http://snomed.info/sct",
-    "category": ["brain"]
+    "category": ["Brain"]
   }
 ]
