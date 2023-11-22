@@ -34,7 +34,7 @@ describe('extractBiomakerCodes()', () => {
           code: '31150-6',
           display: 'ERBB2 gene duplication [Presence] in Tissue by FISH',
           system: 'http://loinc.org',
-          category: ['erbb2_her2', 'HER2'],
+          category: ['ERBB2_HER2', 'HER2'],
           qualifier: {
             code: '260385009',
             display: 'Negative (qualifier value)',
@@ -55,7 +55,7 @@ describe('convertCodesToBiomarkers()', () => {
         code: '31150-6',
         display: 'ERBB2 gene duplication [Presence] in Tissue by FISH',
         system: 'http://loinc.org',
-        category: ['erbb2_her2', 'HER2'],
+        category: ['ERBB2_HER2', 'HER2'],
         qualifier: {
           code: '260385009',
           display: 'Negative (qualifier value)',
