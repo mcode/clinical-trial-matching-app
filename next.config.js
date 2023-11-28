@@ -29,6 +29,9 @@ module.exports = {
   reactStrictMode: true,
   publicRuntimeConfig: {
     fhirClientId: process.env.FHIR_CLIENT_ID,
+    fhirRedirectUri: process.env.FHIR_REDIRECT_URI,
+    fhirScope: process.env.FHIR_SCOPE,
+    fhirQueryFlavor: process.env.SMART_FHIR_FLAVOR ?? 'sandbox',
     defaultZipCode: process.env.DEFAULT_ZIP_CODE,
     defaultTravelDistance: process.env.DEFAULT_TRAVEL_DISTANCE,
     sendLocationData: JSON.parse(process.env.SEND_LOCATION_DATA ?? 'false'),

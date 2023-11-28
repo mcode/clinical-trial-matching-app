@@ -1,6 +1,6 @@
 import { Stack } from '@mui/material';
 import { fireEvent, render, screen } from '@testing-library/react';
-import { MutableRefObject, useRef } from 'react';
+import { useRef } from 'react';
 import StudyTags, { StudyTagsProps } from '../StudyTags';
 
 afterEach(() => {
@@ -14,7 +14,7 @@ describe('<StudyTags />', () => {
 
   // Don't re-implement React's codebase
   const Parent = ({ tags, ...props }: Partial<StudyTagsProps>) => {
-    const ref: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
+    const ref = useRef<HTMLDivElement>(null);
     return (
       <Stack ref={ref} data-testid="parent" style={{ overflowY: 'auto' }}>
         <StudyTags isExpanded={isExpanded} tags={tags} scrollableParent={ref} {...props} />

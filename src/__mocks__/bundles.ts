@@ -13,6 +13,7 @@ import {
   RXNORM_CODE_URI,
   SNOMED_CODE_URI,
 } from '@/utils/fhirConstants';
+import { Medication } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 
 const NO_SUCH_URL = '';
@@ -376,6 +377,79 @@ export const fhirMedicationStatementBundle: fhirclient.FHIR.Bundle = {
   ],
   link: [],
 };
+
+export const fhirMedications: Medication[] = [
+  {
+    resourceType: 'Medication',
+    extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
+    status: 'active',
+    code: {
+      coding: [
+        {
+          system: RXNORM_CODE_URI,
+          code: '1163443',
+          display: 'leuprolide Injectable Product',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Medication',
+    extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
+    status: 'active',
+    code: {
+      coding: [
+        {
+          system: RXNORM_CODE_URI,
+          code: '1156671',
+          display: 'fulvestrant Injectable Product',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Medication',
+    extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
+    status: 'active',
+    code: {
+      coding: [
+        {
+          system: RXNORM_CODE_URI,
+          code: '1946828',
+          display: 'abemaciclib Oral Product',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Medication',
+    extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
+    status: 'active',
+    code: {
+      coding: [
+        {
+          system: RXNORM_CODE_URI,
+          code: '1156671',
+          display: 'fulvestrant Injectable Product',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Medication',
+    extension: [{ url: MCODE_CANCER_RELATED_MEDICATION_STATEMENT }],
+    status: 'active',
+    code: {
+      coding: [
+        {
+          system: RXNORM_CODE_URI,
+          code: '1873980',
+          display: 'ribociclib Oral Product',
+        },
+      ],
+    },
+  },
+];
 
 export const fhirRadiationProcedureBundle: fhirclient.FHIR.Bundle = {
   resourceType: 'Bundle',

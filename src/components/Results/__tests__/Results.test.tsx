@@ -6,7 +6,7 @@ import { Stack } from '@mui/material';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { RouterContext } from 'next/dist/shared/lib/router-context';
-import { MutableRefObject, useRef } from 'react';
+import { useRef } from 'react';
 import Results, { ResultsProps } from '../Results';
 import { StudyDetailProps } from '../types';
 
@@ -33,7 +33,7 @@ describe('<Results />', () => {
 
   // Don't re-implement React's codebase
   const Parent = ({ state, ...props }: Partial<ResultsProps>) => {
-    const ref: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
+    const ref = useRef<HTMLDivElement>(null);
     return (
       <Stack ref={ref} data-testid="parent" style={{ overflowY: 'auto' }}>
         <Results

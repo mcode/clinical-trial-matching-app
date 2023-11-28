@@ -18,6 +18,7 @@ type SidebarProps = {
   disabled: boolean;
   savedStudies: SavedStudiesState;
   filterOptions: FilterOptions;
+  setUserId: (string) => void;
   query: ParsedUrlQuery;
 };
 
@@ -32,7 +33,7 @@ export const ensureArray = (value?: string | string[]): string[] => {
   return Array.isArray(value) ? value : [value];
 };
 
-const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query }: SidebarProps): ReactElement => {
+const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUserId }: SidebarProps): ReactElement => {
   const [expanded, setExpanded] = useState<SidebarExpand>(SidebarExpand.Filter);
 
   const handleChange = (panel: SidebarExpand) => (_event: SyntheticEvent, isExpanded: boolean) => {
@@ -41,6 +42,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query }: Side
 
   const matchingServices = ensureArray(query.matchingServices);
   const defaultSearchValues = {
+    userid: null,
     matchingServices: Object.fromEntries(matchingServices.map(key => [key, true])),
     zipcode: (query.zipcode as string) || '',
     travelDistance: (query.travelDistance as string) || '',
@@ -100,7 +102,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query }: Side
         expanded={expanded === SidebarExpand.Search}
         onChange={handleChange(SidebarExpand.Search)}
       >
-        <SearchForm fullWidth defaultValues={defaultSearchValues} />
+        <SearchForm fullWidth defaultValues={defaultSearchValues} setUserId={setUserId} />
       </SidebarAccordion>
 
       <SidebarAccordion

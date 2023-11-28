@@ -1,6 +1,7 @@
 import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 
 export type SearchFormValuesType = {
+  userid: string | null;
   matchingServices: { [key: string]: boolean };
   zipcode: string;
   travelDistance: string;
@@ -12,7 +13,7 @@ export type SearchFormValuesType = {
   stage: CodedValueType;
   ecogScore: Score;
   karnofskyScore: Score;
-  biomarkers: CodedValueType[];
+  biomarkers: Biomarker[];
   radiation: CodedValueType[];
   surgery: CodedValueType[];
   medications: CodedValueType[];
