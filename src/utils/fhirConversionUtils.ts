@@ -312,8 +312,40 @@ export const isEqualCodedValueType = (originalValue: CodedValueType, newValue: C
     originalValue?.system == newValue?.system
   );
 };
-const equalStringArrays = (array1: string[], array2: string[]) => {
-  return (array1 || []).sort().join(',') == (array2 || []).sort().join(',');
+
+const equalStringArrays = (arrayLeft: string[], arrayRight: string[]) => {
+  // Fail fast: different lengths? Not equal!
+  if (arrayLeft.length !== arrayRight.length) {
+    return false;
+  }
+  // This is interested in if the contents of both arrays are the same,
+  // regardless of order.
+  const mapLeft = arrayValueCountsMap(arrayLeft),
+    mapRight = arrayValueCountsMap(arrayRight);
+  const left = Array.from(mapLeft.entries()),
+    right = Array.from(mapRight.entries());
+  if (left.length != right.length) {
+    return false;
+  }
+  for (let idx = 0; idx < left.length; idx++) {
+    if (left[idx][0] != right[idx][0] && left[idx][1] != right[idx][1]) {
+      return false;
+    }
+  }
+  // Gone through all of these? True
+  return true;
+};
+
+const arrayValueCountsMap = <T>(array: T[]): Map<T, number> => {
+  const map = new Map<T, number>();
+  for (const value of array) {
+    if (map.has(value)) {
+      map.set(value, map.get(value) + 1);
+    } else {
+      map.set(value, 1);
+    }
+  }
+  return map;
 };
 
 const equalScore =

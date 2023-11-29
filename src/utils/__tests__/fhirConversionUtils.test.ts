@@ -24,6 +24,7 @@ import {
   convertFhirTumorMarkers,
   extractMedicationCodes,
   extractPrimaryCancerCondition,
+  isEqualCodedValueType,
 } from '../fhirConversionUtils';
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
@@ -313,5 +314,77 @@ describe('convertFhirTumorMarkers', () => {
       },
     ]);
     expect(convertFhirTumorMarkers(fhirEmptyBundle)).toEqual([]);
+  });
+});
+
+describe('isEqualCodedValueType()', () => {
+  it('returns true if two values are equal', () => {
+    expect(
+      // Same codes but with the categories flipped
+      isEqualCodedValueType(
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BREAST],
+          category: ['category1', 'category2'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        },
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BREAST],
+          category: ['category1', 'category2'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        }
+      )
+    ).toBe(true);
+  });
+  it('returns false if values are not equal', () => {
+    expect(
+      // Same codes but with the categories flipped
+      isEqualCodedValueType(
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BREAST],
+          category: ['category1', 'category2'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        },
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BREAST, CancerType.COLON],
+          category: ['category1', 'category2', 'category3'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        }
+      )
+    ).toBe(false);
+  });
+  it('checkes if two values are equal even if values are out of order', () => {
+    expect(
+      // Same codes but with the categories flipped
+      isEqualCodedValueType(
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BREAST],
+          category: ['category1', 'category2'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        },
+        {
+          cancerType: [CancerType.BREAST, CancerType.BRAIN],
+          category: ['category2', 'category1'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        }
+      )
+    ).toBe(true);
   });
 });
