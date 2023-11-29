@@ -15,7 +15,7 @@ import {
   convertCodesToRadiations,
   convertCodesToSurgeries,
 } from '@/utils/encodeODPE';
-import { exportCsvStringData, exportSpreadsheetData, unpackStudies } from '@/utils/exportData';
+import { exportCsvStringData } from '@/utils/exportData';
 import { CodedValueType, convertFhirPatient, convertFhirUser, Patient, User } from '@/utils/fhirConversionUtils';
 import { savedStudiesReducer, uninitializedState } from '@/utils/resultsStateUtils';
 import styled from '@emotion/styled';
@@ -203,12 +203,6 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
   const handleClearSavedStudies = () => dispatch({ type: 'setInitialState' });
 
   /** TODO: Saved studies only works on current page. For now do all filteredData instead. */
-  const handleExportStudies = (): void => {
-    // const savedStudies = getSavedStudies(data.results, state);
-    const spreadsheetData: Record<string, string>[] = unpackStudies(filteredData.results, userId);
-    exportSpreadsheetData(spreadsheetData, 'clinicalTrials');
-  };
-
   const handleExportCsvStudies = (): string => {
     // const savedStudies = getSavedStudies(data.results, state);
     return exportCsvStringData(searchParams, filteredData.results);
@@ -298,7 +292,6 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
                 toggleMobileDrawer,
                 hasSavedStudies,
                 handleClearSavedStudies,
-                handleExportStudies,
                 handleExportCsvStudies,
                 toggleDrawer,
               }}

@@ -19,7 +19,6 @@ describe('<ResultsHeader />', () => {
       toggleMobileDrawer={toggleMobileDrawer}
       hasSavedStudies={false}
       handleClearSavedStudies={handleClearSavedStudies}
-      handleExportStudies={handleExportStudies}
       handleExportCsvStudies={handleExportStudies}
       showExport={showExport}
       {...props}
@@ -32,7 +31,6 @@ describe('<ResultsHeader />', () => {
       toggleMobileDrawer={toggleMobileDrawer}
       hasSavedStudies={true}
       handleClearSavedStudies={handleClearSavedStudies}
-      handleExportStudies={handleExportStudies}
       handleExportCsvStudies={handleExportStudies}
       showExport={showExport}
       {...props}
@@ -40,20 +38,8 @@ describe('<ResultsHeader />', () => {
   );
   it('renders button for exporting all studies when no studies are selected', () => {
     render(<ComponentWithoutSelectedStudies />);
-    // const exportButton = screen.getByRole('button', { name: /^export all$/i });
-    // expect(exportButton).toBeInTheDocument();
-    // userEvent.click(exportButton);
-    // expect(handleExportStudies).toHaveBeenCalledTimes(1);
   });
   it('renders buttons for clearing and exporting selected studies', () => {
     render(<ComponentWithSelectedStudies />);
-    // const clearButton = screen.getByRole('button', { name: /clear saved trials/i });
-    // expect(clearButton).toBeInTheDocument();
-    // userEvent.click(clearButton);
-    // expect(handleClearSavedStudies).toHaveBeenCalledTimes(1);
-    // const exportButton = screen.getByRole('button', { name: /export saved/i });
-    // expect(exportButton).toBeInTheDocument();
-    // userEvent.click(exportButton);
-    // expect(handleExportStudies).toHaveBeenCalledTimes(1);
   });
 });

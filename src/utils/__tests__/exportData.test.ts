@@ -1,5 +1,4 @@
-import FileSaver from 'file-saver';
-import { exportSpreadsheetData, unpackStudies } from '../exportData';
+import { unpackStudies } from '../exportData';
 
 describe('unpackStudies', () => {
   it('works on an empty array', () => {
@@ -144,39 +143,5 @@ describe('unpackStudies', () => {
         // }),
       ])
     );
-  });
-});
-
-describe('exportSpreadsheetData', () => {
-  it('should export data', () => {
-    const saverSpy = jest.spyOn(FileSaver, 'saveAs').mockImplementationOnce(jest.fn());
-
-    exportSpreadsheetData(
-      [
-        { 'Match Count': '1' },
-        {
-          'Trial Id': 'EXAMPLE',
-          Description: 'A test research study object for testing this feature.',
-          Eligibility: 'Example Criteria',
-          'Match Likelihood': 'Unknown likelihood',
-          Title: 'Example Research Study',
-          'Overall Status': 'active',
-          Phase: 'Active',
-          Sponsor: 'Example Sponsor Organization',
-          'Overall Contact': 'Example Contact',
-          'Overall Contact Phone': '781-555-0100',
-          'Overall Contact Email': 'email@example.com',
-        },
-        { Facility: 'First Location', Phone: '123456789' },
-        { Facility: 'Second Location', Email: 'email@example.com' },
-      ],
-      'sampleTrial'
-    );
-
-    expect(saverSpy).toHaveBeenCalledTimes(1);
-    const calledWith = saverSpy.mock.calls[0];
-
-    expect(calledWith[0] instanceof Blob).toBe(true);
-    expect(calledWith[1]).toEqual('sampleTrial.xlsx');
   });
 });
