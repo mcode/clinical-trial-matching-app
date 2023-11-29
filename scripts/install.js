@@ -9,13 +9,17 @@ const util = require('util');
 // This is the main install script for everything.
 
 /**
- * Default installation path
+ * Default installation path.
  */
 const INSTALL_PATH = '/opt/ctms';
 /**
  * Default extra CA file.
  */
 const EXTRA_CAS = 'ca.pem';
+/**
+ * The branch of the web app (this package) to use.
+ */
+const CTM_APP_BRANCH = 'master';
 
 // Installer code below
 
@@ -478,7 +482,7 @@ class CTMSApp extends CTMSWebApp {
     super(
       'clinical-trial-matching-app',
       'clinical-trial-matching-app',
-      'backport-epic-to-develop',
+      CTM_APP_BRANCH,
       'https://github.com/mcode/clinical-trial-matching-app.git'
     );
   }
