@@ -19,7 +19,7 @@ describe('<ResultsHeader />', () => {
       toggleMobileDrawer={toggleMobileDrawer}
       hasSavedStudies={false}
       handleClearSavedStudies={handleClearSavedStudies}
-      handleExportStudies={handleExportStudies}
+      //handleExportStudies={handleExportStudies}
       handleExportCsvStudies={handleExportStudies}
       showExport={showExport}
       {...props}
@@ -32,7 +32,7 @@ describe('<ResultsHeader />', () => {
       toggleMobileDrawer={toggleMobileDrawer}
       hasSavedStudies={true}
       handleClearSavedStudies={handleClearSavedStudies}
-      handleExportStudies={handleExportStudies}
+      //handleExportStudies={handleExportStudies}
       handleExportCsvStudies={handleExportStudies}
       showExport={showExport}
       {...props}
