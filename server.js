@@ -3,7 +3,19 @@ const { default: getConfig } = require('next/config');
 const express = require('express');
 const session = require('express-session');
 
-const port = parseInt(process.env.PORT, 10) || 3200;
+function getPort() {
+  const port = process.env.PORT;
+  if (port) {
+    if (/^\d+/.test(port)) {
+      return parseInt(port, 10);
+    } else {
+      return port;
+    }
+  }
+  return 3200;
+}
+
+const port = getPort();
 const dev = process.env.NODE_ENV !== 'production';
 const app = nextjs({ dev });
 const handle = app.getRequestHandler();
@@ -15,13 +27,20 @@ app
 
     const server = express();
 
-    server.use(
-      session({
-        secret: serverRuntimeConfig.sessionSecretKey,
-        resave: false,
-        saveUninitialized: false,
-      })
-    );
+    const sessionOptions = {
+      secret: serverRuntimeConfig.sessionSecretKey,
+      resave: false,
+      saveUninitialized: false,
+    };
+
+    if (!dev) {
+      console.log('Running in production mode, using connect-sqlite3 for session store');
+      const SQLiteStore = require('connect-sqlite3')(session);
+      sessionOptions.store = new SQLiteStore({
+        db: 'sessions.db',
+      });
+    }
+    server.use(session(sessionOptions));
 
     server.all('*', function nextMiddleware(req, res) {
       return handle(req, res);

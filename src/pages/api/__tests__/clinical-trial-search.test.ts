@@ -1,4 +1,4 @@
-import type { Bundle } from 'fhir/r4';
+import type { Bundle, Patient } from 'fhir/r4';
 import { SearchParameters } from 'types/search-types';
 import { buildBundle } from '../clinical-trial-search';
 const cancerType = {
@@ -414,8 +414,31 @@ const expectedBundle: Bundle = {
 describe('buildBundle', () => {
   // Need to mock the current time to ensure the age is generated properly
   jest.useFakeTimers().setSystemTime(Date.UTC(2022, 0, 1, 12, 0, 0));
-  const patientBundle = buildBundle(searchParameters, 'test_id');
   it('builds the expected bundle', () => {
+    const patientBundle = buildBundle(searchParameters, 'test_id');
     expect(patientBundle).toEqual(expectedBundle);
+  });
+
+  it('caps age at 90', () => {
+    const patientBundle = buildBundle({
+      age: '92',
+      matchingServices: [],
+      zipcode: '',
+      travelDistance: '',
+      gender: '',
+      cancerType: 'null',
+      cancerSubtype: 'null',
+      metastasis: '[]',
+      stage: '',
+      ecogScore: '',
+      karnofskyScore: '',
+      biomarkers: '[]',
+      surgery: '[]',
+      medications: '[]',
+      radiation: '[]',
+    });
+    const patient = patientBundle.entry.find(resource => resource.resource?.resourceType == 'Patient');
+    expect(patient).toBeDefined();
+    expect((patient.resource as Patient).birthDate).toEqual('1932');
   });
 });

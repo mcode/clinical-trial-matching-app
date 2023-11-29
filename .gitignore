@@ -29,3 +29,10 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+
+# session DB for production
+sessions.db
+
+# IIS node local files
+/iisnode
+/web.config

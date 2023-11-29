@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import { Results, ResultsHeader, SaveStudyHandler, StudyDetailProps } from '@/components/Results';
 import Sidebar from '@/components/Sidebar';
 import { ensureArray } from '@/components/Sidebar/Sidebar';
+import { UserIdContext } from '@/components/UserIdContext';
 import { clinicalTrialSearchQuery } from '@/queries';
 import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
@@ -37,7 +38,7 @@ import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import { MutableRefObject, ReactElement, SyntheticEvent, useMemo, useReducer, useRef, useState } from 'react';
+import { ReactElement, SyntheticEvent, useMemo, useReducer, useRef, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import {
@@ -56,6 +57,7 @@ type ResultsPageProps = {
   patient: Patient;
   user: User;
   searchParams: FullSearchParameters;
+  userId: string;
 };
 
 const openTransition = (theme: Theme) =>
@@ -120,6 +122,10 @@ const getSearchParams = getParameters<SearchParameters>([
   'stage',
   'ecogScore',
   'karnofskyScore',
+  'biomarkers',
+  'medications',
+  'radiation',
+  'surgery',
   // If we're not sending location data, we get all trials back
   ...(sendLocationData ? ['zipcode' as keyof SearchParameters, 'travelDistance' as keyof SearchParameters] : []),
 ]);
@@ -138,7 +144,7 @@ const getFilterParams = getParameters<FilterParameters & SortingParameters>([
 
 const getPaginationParams = getParameters<PaginationParameters>(['page', 'pageSize']);
 
-const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactElement => {
+const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: ResultsPageProps): ReactElement => {
   const [open, setOpen] = useState(true);
 
   const { data: searchData } = useQuery(
@@ -179,6 +185,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [alertOpen, setAlertOpen] = useState(true);
+  const [userId, setUserId] = useState<string | null>(initialUserId);
   const theme = useTheme();
   const toggleDrawer = () => setOpen(!open);
   const toggleMobileDrawer = () => setMobileOpen(!mobileOpen);
@@ -222,7 +229,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
     setAlertOpen(false);
   };
 
-  const scrollableParent: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
+  const scrollableParent = useRef<HTMLDivElement>(null);
 
   return (
     <>
@@ -245,13 +252,16 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
             variant="temporary"
             open={mobileOpen}
           >
-            <Sidebar
-              patient={patient}
-              disabled={isIdle || isLoading}
-              savedStudies={state}
-              filterOptions={filterOptions}
-              query={searchParams}
-            />
+            <UserIdContext.Provider value={userId}>
+              <Sidebar
+                patient={patient}
+                disabled={isIdle || isLoading}
+                savedStudies={state}
+                filterOptions={filterOptions}
+                setUserId={setUserId}
+                query={searchParams}
+              />
+            </UserIdContext.Provider>
           </Drawer>
 
           <Drawer
@@ -269,6 +279,7 @@ const ResultsPage = ({ patient, user, searchParams }: ResultsPageProps): ReactEl
               disabled={isIdle || isLoading}
               savedStudies={state}
               filterOptions={filterOptions}
+              setUserId={setUserId}
               query={searchParams}
             />
           </Drawer>
@@ -354,6 +365,27 @@ const rehydrateCodes = (
 export const getServerSideProps: GetServerSideProps = async context => {
   const { req, res, query } = context;
   const queryClient = new QueryClient();
+  const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
+
+  if (query['fhirless'] !== undefined) {
+    // In this case, the results are "fhirless" and we return a default set of properties
+    return {
+      props: {
+        patient: {
+          id: 'example',
+          name: 'Test Launch',
+          // Gender can't currently be user-set
+          gender: 'male',
+          // Age can't currently be user-set
+          age: 35,
+          zipcode: null,
+        },
+        searchParams: query,
+        dehydratedState: dehydrate(queryClient),
+        userId: userId,
+      },
+    };
+  }
 
   let fhirClient: Client;
   try {
@@ -377,6 +409,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
       user: convertFhirUser(fhirUser),
       searchParams: query,
       dehydratedState: dehydrate(queryClient),
+      userId: userId,
     },
   };
 };

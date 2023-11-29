@@ -32,7 +32,13 @@ const createQueryClient = () =>
 describe('<SearchForm />', () => {
   const Component = (props: Partial<SearchFormProps>) => (
     <QueryClientProvider client={createQueryClient()}>
-      <SearchForm defaultValues={defaultValues} {...props} />
+      <SearchForm
+        defaultValues={defaultValues}
+        setUserId={() => {
+          // No-op
+        }}
+        {...props}
+      />
     </QueryClientProvider>
   );
 

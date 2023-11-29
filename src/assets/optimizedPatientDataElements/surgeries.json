@@ -45,7 +45,7 @@
     "code": "44642007",
     "display": "Partial colectomy with colostomy and creation of mucofistula",
     "system": "http://snomed.info/sct",
-    "category": ["Colectomy", "colostomy"]
+    "category": ["Colectomy", "Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -85,7 +85,7 @@
     "code": "73509004",
     "display": "Partial colectomy with skin level colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["Colectomy", "colostomy"]
+    "category": ["Colectomy", "Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -181,7 +181,7 @@
     "code": "89339008",
     "display": "Partial colectomy with coloproctostomy and colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["Colectomy", "colostomy"]
+    "category": ["Colectomy", "Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -405,7 +405,7 @@
     "code": "307645000",
     "display": "Transverse colectomy and colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["Colectomy", "colostomy"]
+    "category": ["Colectomy", "Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -437,7 +437,7 @@
     "code": "307657009",
     "display": "Left hemicolectomy and colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["Colectomy", "colostomy"]
+    "category": ["Colectomy", "Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -821,7 +821,7 @@
     "code": "4044002",
     "display": "Permanent colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -829,7 +829,7 @@
     "code": "9905009",
     "display": "Loop colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -837,7 +837,7 @@
     "code": "11626008",
     "display": "Miles operation, complete proctectomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -845,7 +845,7 @@
     "code": "16564004",
     "display": "Hartmann operation, rectal resection",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -853,7 +853,7 @@
     "code": "17671008",
     "display": "Laparoscopic-assisted anterior resection of rectum with colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -861,7 +861,7 @@
     "code": "24221008",
     "display": "Repair of rectovesical fistula with colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -869,7 +869,7 @@
     "code": "25196007",
     "display": "Proctectomy by abdominoperineal resection with colostomy, two stages",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -877,7 +877,7 @@
     "code": "35535008",
     "display": "Transverse colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -885,7 +885,7 @@
     "code": "37828009",
     "display": "Suture of small intestine with colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -893,7 +893,7 @@
     "code": "46295004",
     "display": "Proctectomy by abdominoperineal resection with colostomy, one stage",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -901,7 +901,7 @@
     "code": "49924002",
     "display": "Perineal colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -909,7 +909,7 @@
     "code": "51977003",
     "display": "Repair of rectourethral fistula with colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -917,7 +917,7 @@
     "code": "54629001",
     "display": "Permanent magnetic colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -925,7 +925,7 @@
     "code": "62069000",
     "display": "Delayed opening colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -933,7 +933,7 @@
     "code": "89642006",
     "display": "Anterior resection of rectum with colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -941,7 +941,7 @@
     "code": "261766001",
     "display": "Construction of divided colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -949,7 +949,7 @@
     "code": "299681007",
     "display": "Construction of transverse loop colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -957,7 +957,7 @@
     "code": "299682000",
     "display": "Construction of sigmoid loop colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -965,7 +965,7 @@
     "code": "386651004",
     "display": "Cystocolostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -973,7 +973,7 @@
     "code": "386828002",
     "display": "Creation of defunctioning colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -981,7 +981,7 @@
     "code": "386829005",
     "display": "Temporary colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -989,7 +989,7 @@
     "code": "387606008",
     "display": "Construction of end colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -997,7 +997,7 @@
     "code": "387607004",
     "display": "Construction of diverting colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -1005,7 +1005,7 @@
     "code": "398740003",
     "display": "Colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -1013,7 +1013,7 @@
     "code": "447982008",
     "display": "Low anterior resection of rectum with colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -1021,7 +1021,7 @@
     "code": "448653006",
     "display": "Anterior resection of rectum and total mesorectal excision with colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -1029,7 +1029,7 @@
     "code": "1186912002",
     "display": "Laparoscopic low anterior resection of rectum with construction of colostomy",
     "system": "http://snomed.info/sct",
-    "category": ["colostomy"]
+    "category": ["Colostomy"]
   },
   {
     "entryType": "surgery",
@@ -1037,7 +1037,7 @@
     "code": "119000",
     "display": "Thoracoscopic partial lobectomy of lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1045,7 +1045,7 @@
     "code": "75935006",
     "display": "Thoracoscopic lobectomy of lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1053,7 +1053,7 @@
     "code": "84840003",
     "display": "Total lobectomy of lung with concomitant decortication (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1061,7 +1061,7 @@
     "code": "125571002",
     "display": "Lobectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1069,7 +1069,7 @@
     "code": "173171007",
     "display": "Lobectomy of lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1077,7 +1077,7 @@
     "code": "232641004",
     "display": "Lobectomy of lung with excision of part of adjacent lobe (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1085,7 +1085,7 @@
     "code": "359615001",
     "display": "Partial lobectomy of lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1093,7 +1093,7 @@
     "code": "359623004",
     "display": "Total lobectomy of lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1101,7 +1101,7 @@
     "code": "726425007",
     "display": "Lobectomy of lower lobe of right lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1109,7 +1109,7 @@
     "code": "726426008",
     "display": "Lobectomy of lower lobe of left lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1117,7 +1117,7 @@
     "code": "726427004",
     "display": "Lobectomy of upper lobe of left lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1125,7 +1125,7 @@
     "code": "726428009",
     "display": "Lobectomy of upper lobe of right lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1133,7 +1133,7 @@
     "code": "736974006",
     "display": "Excision of middle lobe of right lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1141,7 +1141,7 @@
     "code": "739139005",
     "display": "Excision of middle and lower lobe of right lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1149,7 +1149,7 @@
     "code": "739141006",
     "display": "Excision of middle and upper lobe of right lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["lobectomy"]
+    "category": ["Lobectomy"]
   },
   {
     "entryType": "surgery",
@@ -1957,7 +1957,7 @@
     "code": "25321000",
     "display": "Thoracoscopic pneumonectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -1965,7 +1965,7 @@
     "code": "43232006",
     "display": "Extrapleural pneumonectomy with empyemectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -1973,7 +1973,7 @@
     "code": "49795001",
     "display": "Total pneumonectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -1981,7 +1981,7 @@
     "code": "91596000",
     "display": "Complete excision of lung with mediastinal dissection (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -1989,7 +1989,7 @@
     "code": "232642006",
     "display": "Extrapericardial pneumonectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -1997,7 +1997,7 @@
     "code": "232643001",
     "display": "Intrapericardial pneumonectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -2005,7 +2005,7 @@
     "code": "232644007",
     "display": "Extrapleural pneumonectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -2013,7 +2013,7 @@
     "code": "232646009",
     "display": "Completion pneumonectomy (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -2021,7 +2021,7 @@
     "code": "232647000",
     "display": "Pneumonectomy with tracheobronchoplasty (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy", "sleeve_resection"]
+    "category": ["Pneumonectomy", "Sleeve Resection"]
   },
   {
     "entryType": "surgery",
@@ -2029,7 +2029,7 @@
     "code": "735015005",
     "display": "Complete excision of left lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -2037,7 +2037,7 @@
     "code": "735016006",
     "display": "Complete excision of right lung (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["pneumonectomy"]
+    "category": ["Pneumonectomy"]
   },
   {
     "entryType": "surgery",
@@ -2381,7 +2381,7 @@
     "code": "116165008",
     "display": "Bronchial sleeve resection with pulmonary resection (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["sleeve_resection"]
+    "category": ["Sleeve Resection"]
   },
   {
     "entryType": "surgery",
@@ -2389,7 +2389,7 @@
     "code": "447975009",
     "display": "Sleeve resection of bronchus and anastomosis (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["sleeve_resection"]
+    "category": ["Sleeve Resection"]
   },
   {
     "entryType": "surgery",

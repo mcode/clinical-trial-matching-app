@@ -478,7 +478,7 @@ class CTMSApp extends CTMSWebApp {
     super(
       'clinical-trial-matching-app',
       'clinical-trial-matching-app',
-      'epic',
+      'backport-epic-to-develop',
       'https://github.com/mcode/clinical-trial-matching-app.git'
     );
   }
@@ -812,7 +812,9 @@ ${frontendConfig}
     }
     console.log('');
     console.log(`Front end app is installed in: ${this.joinPath(this.frontend.path)}`);
-    console.log('Check next.config.js to ensure that the front end app is configured for the expected wrappers.');
+    console.log(
+      'Check the .env and .env.local files to ensure that the front end app is configured for the expected wrappers.'
+    );
   }
 }
 

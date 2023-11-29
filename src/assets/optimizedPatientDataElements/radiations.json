@@ -309,7 +309,7 @@
     "code": "709588001",
     "display": "Radiofrequency ablation using fluoroscopic guidance (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["Ablation", "rfa"]
+    "category": ["Ablation", "RFA"]
   },
   {
     "entryType": "radiation",
@@ -365,7 +365,7 @@
     "code": "879916008",
     "display": "Radiofrequency ablation (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["Ablation", "rfa"]
+    "category": ["Ablation", "RFA"]
   },
   {
     "entryType": "radiation",
@@ -477,6 +477,6 @@
     "code": "433058002",
     "display": "Radiofrequency ablation using ultrasound guidance (procedure)",
     "system": "http://snomed.info/sct",
-    "category": ["rfa"]
+    "category": ["RFA"]
   }
 ]

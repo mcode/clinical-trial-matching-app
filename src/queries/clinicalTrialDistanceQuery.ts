@@ -1,4 +1,3 @@
-import { StudyDetailProps } from '@/components/Results';
 import getConfig from 'next/config';
 import { ParsedUrlQuery } from 'querystring';
 import { ResultsResponse } from './clinicalTrialSearchQuery';
@@ -12,16 +11,19 @@ const clinicalTrialDistanceQuery = async (
   searchParams: ParsedUrlQuery
 ): Promise<ResultsResponse> => {
   // Have the matching service wrappers already filtered the results by zip code & distance? If so, don't refilter below.
-  if (sendLocationData) return response;
+  return response;
 
-  // Otherwise, patient zip code & distance weren't sent to the wrappers, so do that filtering here
-  const travelDistance = searchParams.travelDistance as string;
-  const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
-    return (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance as string);
-  };
-  const filtered = response.results.filter(isStudyWithinRange);
+  // NOTE: For now we'll keep this code here but most likely it will be removed. It was moved to search query.
+  // if (sendLocationData) return response;
 
-  return { ...response, results: filtered };
+  // // Otherwise, patient zip code & distance weren't sent to the wrappers, so do that filtering here
+  // const travelDistance = searchParams.travelDistance as string;
+  // const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
+  //   return (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance as string);
+  // };
+  // const filtered = response.results.filter(isStudyWithinRange);
+
+  // return { ...response, results: filtered };
 };
 
 export default clinicalTrialDistanceQuery;
