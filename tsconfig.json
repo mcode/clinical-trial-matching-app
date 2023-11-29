@@ -21,7 +21,7 @@
     "incremental": true
   },
   "compileOnSave": true,
-  "exclude": ["node_modules", ".next", "out"],
+  "exclude": ["node_modules", ".next", "out", "scripts"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
   "ts-node": {
     "compilerOptions": {

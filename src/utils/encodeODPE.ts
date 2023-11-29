@@ -1,9 +1,11 @@
+import { Coding } from 'fhir/r4';
+import biomarkerQualifiers from '../assets/optimizedPatientDataElements/biomarkerQualifiers.json';
 import biomarkers from '../assets/optimizedPatientDataElements/biomarkers.json';
 import medications from '../assets/optimizedPatientDataElements/medications.json';
 import metastases from '../assets/optimizedPatientDataElements/metastases.json';
 import radiations from '../assets/optimizedPatientDataElements/radiations.json';
 import surgeries from '../assets/optimizedPatientDataElements/surgeries.json';
-import { CodedValueType } from './fhirConversionUtils';
+import { Biomarker, CodedValueType } from './fhirConversionUtils';
 
 /**
  *
@@ -12,6 +14,11 @@ import { CodedValueType } from './fhirConversionUtils';
  */
 export const extractCodes = (values: CodedValueType[]): string[] => {
   return values.map<string>(value => value.code);
+};
+
+export const extractBiomarkerCodes = (values: Biomarker[]): string[] => {
+  // These also have a qualifier. For now, they're pre-pended with ":"
+  return values.map<string>(value => `${value.qualifier.code}:${value.code}`);
 };
 
 export const convertToCodedValueTypes = <T extends CodedValueType>(values: string[], fullValues: T[]): T[] => {
@@ -43,8 +50,28 @@ export const convertToCodedValueTypes = <T extends CodedValueType>(values: strin
   return values.map<T>(value => valueMap.get(value));
 };
 
-export const convertCodesToBiomarkers = (values: string[]): CodedValueType[] =>
-  convertToCodedValueTypes(values, biomarkers as CodedValueType[]);
+export const convertCodesToBiomarkers = (values: string[]): Biomarker[] => {
+  // First, split the codes
+  const splitCodes = values.map<[string, string]>(code => {
+    const idx = code.indexOf(':');
+    if (idx >= 0) {
+      return [code.substring(0, idx), code.substring(idx + 1)];
+    } else {
+      return ['', code];
+    }
+  });
+  // Now map the codes as normal
+  const codes = convertToCodedValueTypes(
+    splitCodes.map(c => c[1]),
+    biomarkers as CodedValueType[]
+  ) as Biomarker[];
+  const qualifiers = new Map<string, Coding>(biomarkerQualifiers.map<[string, Coding]>(code => [code.code, code]));
+  // Add the qualifiers to the marks
+  for (let idx = 0; idx < codes.length; idx++) {
+    codes[idx].qualifier = qualifiers.get(splitCodes[idx][0]);
+  }
+  return codes;
+};
 
 export const convertCodesToMedications = (values: string[]): CodedValueType[] =>
   convertToCodedValueTypes(values, medications as CodedValueType[]);

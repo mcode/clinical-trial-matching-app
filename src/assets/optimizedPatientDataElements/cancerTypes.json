@@ -5,7 +5,7 @@
     "code": "95210003",
     "display": "Plasma cell leukemia, disease (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -13,7 +13,7 @@
     "code": "109989006",
     "display": "Multiple myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -21,7 +21,7 @@
     "code": "277579002",
     "display": "Light chain myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -29,7 +29,7 @@
     "code": "277580004",
     "display": "Non-secretory myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -37,7 +37,7 @@
     "code": "285420006",
     "display": "Immunoglobulin A myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -45,7 +45,7 @@
     "code": "285421005",
     "display": "Immunoglobulin G myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -53,7 +53,7 @@
     "code": "285422003",
     "display": "Immunoglobulin D myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -61,7 +61,7 @@
     "code": "313427003",
     "display": "Lambda light chain myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -69,7 +69,7 @@
     "code": "413587002",
     "display": "Smoldering myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm", "Smoldering_mm"]
+    "category": ["Active MM", "Smoldering MM"]
   },
   {
     "entryType": "cancerType",
@@ -77,7 +77,7 @@
     "code": "414553000",
     "display": "Kappa light chain myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -85,7 +85,7 @@
     "code": "415110002",
     "display": "Plasma cell myeloma/plasmacytoma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -93,7 +93,7 @@
     "code": "425657001",
     "display": "Osteosclerotic myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -101,7 +101,7 @@
     "code": "440422002",
     "display": "Asymptomatic multiple myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -109,7 +109,7 @@
     "code": "441313008",
     "display": "Indolent multiple myeloma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Active_mm"]
+    "category": ["Active MM"]
   },
   {
     "entryType": "cancerType",
@@ -437,7 +437,7 @@
     "code": "276828006",
     "display": "Glioblastoma multiforme of brain (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -757,7 +757,7 @@
     "code": "1156414004",
     "display": "Giant cell glioblastoma of brain (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -941,7 +941,7 @@
     "code": "100731000119107",
     "display": "Low grade astrocytoma of brain (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "grade_1_astro"]
+    "category": ["Brain", "Grade 1 Astro"]
   },
   {
     "entryType": "cancerType",
@@ -949,7 +949,7 @@
     "code": "100721000119109",
     "display": "High grade astrocytoma of brain (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "grade_3_astro"]
+    "category": ["Brain", "Grade 3 Astro"]
   },
   {
     "entryType": "cancerType",
@@ -1037,7 +1037,7 @@
     "code": "684901000119107",
     "display": "Primary glioblastoma multiforme of cerebrum (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -1045,7 +1045,7 @@
     "code": "16845341000119100",
     "display": "Primary glioblastoma multiforme of brainstem (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -1053,7 +1053,7 @@
     "code": "16845301000119100",
     "display": "Primary glioblastoma multiforme of cerebellum (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -1061,7 +1061,7 @@
     "code": "684911000119105",
     "display": "Primary glioblastoma multiforme of frontal lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -1069,7 +1069,7 @@
     "code": "684931000119100",
     "display": "Primary glioblastoma multiforme of parietal lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -1077,7 +1077,7 @@
     "code": "684941000119109",
     "display": "Primary glioblastoma multiforme of temporal lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -1085,7 +1085,7 @@
     "code": "684921000119103",
     "display": "Primary glioblastoma multiforme of occipital lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Brain", "gbm"]
+    "category": ["Brain", "GBM"]
   },
   {
     "entryType": "cancerType",
@@ -1891,7 +1891,7 @@
     "entryType": "cancerType",
     "cancerType": ["breast"],
     "code": "783541009",
-    "display": "Breast implant–associated anaplastic large-cell lymphoma (disorder)",
+    "display": "Breast implant-associated anaplastic large-cell lymphoma (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast"]
   },
@@ -2125,7 +2125,7 @@
     "code": "254627002",
     "display": "Carcinoid tumor of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["carcinoid"]
+    "category": ["Carcinoid"]
   },
   {
     "entryType": "cancerType",
@@ -2285,7 +2285,7 @@
     "code": "315058005",
     "display": "Hereditary nonpolyposis colon cancer (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Colon", "Familial", "hnpcc"]
+    "category": ["Colon", "Familial", "HNPCC"]
   },
   {
     "entryType": "cancerType",
@@ -2525,7 +2525,7 @@
     "code": "276829003",
     "display": "Glioblastoma multiforme of spinal cord (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["gbm"]
+    "category": ["GBM"]
   },
   {
     "entryType": "cancerType",
@@ -2533,7 +2533,7 @@
     "code": "393563007",
     "display": "Glioblastoma multiforme (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["gbm"]
+    "category": ["GBM"]
   },
   {
     "entryType": "cancerType",
@@ -2541,7 +2541,7 @@
     "code": "1157062009",
     "display": "Giant cell glioblastoma of central nervous system (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["gbm"]
+    "category": ["GBM"]
   },
   {
     "entryType": "cancerType",
@@ -2549,7 +2549,7 @@
     "code": "147131000119101",
     "display": "Glioblastoma multiforme of central nervous system (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["gbm"]
+    "category": ["GBM"]
   },
   {
     "entryType": "cancerType",
@@ -2565,7 +2565,7 @@
     "code": "25050002",
     "display": "Alpha heavy chain disease, respiratory form (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2573,7 +2573,7 @@
     "code": "93729006",
     "display": "Primary malignant neoplasm of bronchus of left lower lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2581,7 +2581,7 @@
     "code": "93730001",
     "display": "Primary malignant neoplasm of bronchus of left upper lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2589,7 +2589,7 @@
     "code": "93731002",
     "display": "Primary malignant neoplasm of bronchus of right lower lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2597,7 +2597,7 @@
     "code": "93732009",
     "display": "Primary malignant neoplasm of bronchus of right middle lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2605,7 +2605,7 @@
     "code": "93733004",
     "display": "Primary malignant neoplasm of bronchus of right upper lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2613,7 +2613,7 @@
     "code": "93827000",
     "display": "Primary malignant neoplasm of hilus of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2621,7 +2621,7 @@
     "code": "93864006",
     "display": "Primary malignant neoplasm of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2629,7 +2629,7 @@
     "code": "93865007",
     "display": "Primary malignant neoplasm of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2637,7 +2637,7 @@
     "code": "93880001",
     "display": "Primary malignant neoplasm of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2645,7 +2645,7 @@
     "code": "93991009",
     "display": "Primary malignant neoplasm of right lower lobe of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2653,7 +2653,7 @@
     "code": "93992002",
     "display": "Primary malignant neoplasm of right middle lobe of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2661,7 +2661,7 @@
     "code": "93993007",
     "display": "Primary malignant neoplasm of upper lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2669,7 +2669,7 @@
     "code": "109371002",
     "display": "Overlapping malignant neoplasm of bronchus and lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2677,7 +2677,7 @@
     "code": "109390005",
     "display": "Kaposi's sarcoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2685,7 +2685,7 @@
     "code": "187862007",
     "display": "Malignant neoplasm of upper lobe of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2693,7 +2693,7 @@
     "code": "187865009",
     "display": "Malignant neoplasm of middle lobe bronchus (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2701,7 +2701,7 @@
     "code": "187870002",
     "display": "Malignant neoplasm of lower lobe of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2709,7 +2709,7 @@
     "code": "189815007",
     "display": "Pulmonary blastoma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2717,7 +2717,7 @@
     "code": "233940007",
     "display": "Pulmonary tumor embolism (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2725,7 +2725,7 @@
     "code": "254625005",
     "display": "Malignant tumor of lung parenchyma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2733,7 +2733,7 @@
     "code": "254626006",
     "display": "Adenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2741,7 +2741,7 @@
     "code": "254629004",
     "display": "Large cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2749,7 +2749,7 @@
     "code": "254631008",
     "display": "Giant cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2757,7 +2757,7 @@
     "code": "254632001",
     "display": "Small cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc", "sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["nsclc", "SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -2765,7 +2765,7 @@
     "code": "254633006",
     "display": "Oat cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc", "sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["nsclc", "SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -2773,7 +2773,7 @@
     "code": "254634000",
     "display": "Squamous cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2781,7 +2781,7 @@
     "code": "254635004",
     "display": "Epithelioid hemangioendothelioma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2789,7 +2789,7 @@
     "code": "254637007",
     "display": "Non-small cell lung cancer (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2797,7 +2797,7 @@
     "code": "254638002",
     "display": "Pancoast tumor (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2805,7 +2805,7 @@
     "code": "269464000",
     "display": "Malignant neoplasm of upper lobe, bronchus or lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2813,7 +2813,7 @@
     "code": "313353007",
     "display": "Squamous cell carcinoma of bronchus in left lower lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2821,7 +2821,7 @@
     "code": "313354001",
     "display": "Squamous cell carcinoma of bronchus in left upper lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2829,7 +2829,7 @@
     "code": "313355000",
     "display": "Squamous cell carcinoma of bronchus in right lower lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2837,7 +2837,7 @@
     "code": "313356004",
     "display": "Squamous cell carcinoma of bronchus in right middle lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2845,7 +2845,7 @@
     "code": "313357008",
     "display": "Squamous cell carcinoma of bronchus in right upper lobe (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2853,7 +2853,7 @@
     "code": "314954002",
     "display": "Local recurrence of malignant tumor of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2861,7 +2861,7 @@
     "code": "363358000",
     "display": "Malignant tumor of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2869,7 +2869,7 @@
     "code": "372110008",
     "display": "Primary malignant neoplasm of lower lobe, bronchus or lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2877,7 +2877,7 @@
     "code": "372111007",
     "display": "Carcinoma of lower lobe, bronchus or lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2885,7 +2885,7 @@
     "code": "422968005",
     "display": "Non-small cell carcinoma of lung, TNM stage 3 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2893,7 +2893,7 @@
     "code": "423050000",
     "display": "Large cell carcinoma of lung, TNM stage 2 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2901,7 +2901,7 @@
     "code": "423121009",
     "display": "Non-small cell carcinoma of lung, TNM stage 4 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2909,7 +2909,7 @@
     "code": "423295000",
     "display": "Squamous cell carcinoma of lung, TNM stage 1 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2917,7 +2917,7 @@
     "code": "423468007",
     "display": "Squamous cell carcinoma of lung, TNM stage 2 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2925,7 +2925,7 @@
     "code": "423600008",
     "display": "Large cell carcinoma of lung, TNM stage 4 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2933,7 +2933,7 @@
     "code": "424132000",
     "display": "Non-small cell carcinoma of lung, TNM stage 1 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2941,7 +2941,7 @@
     "code": "424938000",
     "display": "Large cell carcinoma of lung, TNM stage 1 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2949,7 +2949,7 @@
     "code": "424970000",
     "display": "Large cell carcinoma of lung, TNM stage 3 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2957,7 +2957,7 @@
     "code": "425048006",
     "display": "Non-small cell carcinoma of lung, TNM stage 2 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2965,7 +2965,7 @@
     "code": "425230006",
     "display": "Squamous cell carcinoma of lung, TNM stage 3 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2973,7 +2973,7 @@
     "code": "425376008",
     "display": "Squamous cell carcinoma of lung, TNM stage 4 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2981,7 +2981,7 @@
     "code": "426964009",
     "display": "Non-small cell lung cancer, positive for epidermal growth factor receptor expression (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2989,7 +2989,7 @@
     "code": "427038005",
     "display": "Non-small cell lung cancer, negative for epidermal growth factor receptor expression (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -2997,7 +2997,7 @@
     "code": "440173001",
     "display": "Nonsquamous nonsmall cell neoplasm of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3005,7 +3005,7 @@
     "code": "448372003",
     "display": "Non-Hodgkin's lymphoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3013,7 +3013,7 @@
     "code": "448672006",
     "display": "Follicular non-Hodgkin's lymphoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3021,7 +3021,7 @@
     "code": "448867004",
     "display": "Diffuse non-Hodgkin's lymphoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3029,7 +3029,7 @@
     "code": "448993007",
     "display": "Malignant epithelial neoplasm of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3037,7 +3037,7 @@
     "code": "703228009",
     "display": "Non-small cell lung cancer with mutation in epidermal growth factor receptor (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3045,7 +3045,7 @@
     "code": "703230006",
     "display": "Non-small cell lung cancer without mutation in epidermal growth factor receptor (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3053,7 +3053,7 @@
     "code": "707403002",
     "display": "Primary fetal adenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3061,7 +3061,7 @@
     "code": "707404008",
     "display": "Primary mixed subtype adenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3069,7 +3069,7 @@
     "code": "707405009",
     "display": "Primary adenosquamous carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3077,7 +3077,7 @@
     "code": "707407001",
     "display": "Primary signet ring cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3085,7 +3085,7 @@
     "code": "707408006",
     "display": "Primary small cell non-keratinizing squamous cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3093,7 +3093,7 @@
     "code": "707409003",
     "display": "Primary acinar cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3101,7 +3101,7 @@
     "code": "707410008",
     "display": "Primary solid carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3109,7 +3109,7 @@
     "code": "707411007",
     "display": "Primary papillary adenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3117,7 +3117,7 @@
     "code": "707451005",
     "display": "Primary adenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3125,7 +3125,7 @@
     "code": "707452003",
     "display": "Primary mucinous adenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3133,7 +3133,7 @@
     "code": "707453008",
     "display": "Primary clear cell squamous cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3141,7 +3141,7 @@
     "code": "707454002",
     "display": "Primary basaloid squamous cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3149,7 +3149,7 @@
     "code": "707455001",
     "display": "Primary papillary squamous cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3157,7 +3157,7 @@
     "code": "707456000",
     "display": "Primary undifferentiated carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3165,7 +3165,7 @@
     "code": "707457009",
     "display": "Primary spindle cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3173,7 +3173,7 @@
     "code": "707458004",
     "display": "Primary pleomorphic carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3181,7 +3181,7 @@
     "code": "707460002",
     "display": "Primary pseudosarcomatous carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3189,7 +3189,7 @@
     "code": "707464006",
     "display": "Primary myoepithelial carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3197,7 +3197,7 @@
     "code": "707465007",
     "display": "Primary mucoepidermoid carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3205,7 +3205,7 @@
     "code": "707466008",
     "display": "Primary adenoid cystic carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3213,7 +3213,7 @@
     "code": "707467004",
     "display": "Primary salivary gland type carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3221,7 +3221,7 @@
     "code": "707468009",
     "display": "Primary mixed mucinous and non-mucinous bronchiolo-alveolar carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3229,7 +3229,7 @@
     "code": "707469001",
     "display": "Primary non-mucinous bronchiolo-alveolar carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3237,7 +3237,7 @@
     "code": "707470000",
     "display": "Primary mucinous bronchiolo-alveolar carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3245,7 +3245,7 @@
     "code": "707595001",
     "display": "Primary mucinous cystadenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3253,7 +3253,7 @@
     "code": "707596000",
     "display": "Primary carcinosarcoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3261,7 +3261,7 @@
     "code": "707670009",
     "display": "Pleuropulmonary blastoma (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3269,7 +3269,7 @@
     "code": "707671008",
     "display": "Pleuropulmonary blastoma type I (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3277,7 +3277,7 @@
     "code": "707672001",
     "display": "Pleuropulmonary blastoma type II (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3285,7 +3285,7 @@
     "code": "707673006",
     "display": "Pleuropulmonary blastoma type III (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3293,7 +3293,7 @@
     "code": "711414003",
     "display": "Primary clear cell adenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3301,7 +3301,7 @@
     "code": "722425009",
     "display": "Reactive oxygen species 1 positive non-small cell lung cancer (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3309,7 +3309,7 @@
     "code": "722528008",
     "display": "Primary malignant neuroendocrine neoplasm of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3317,7 +3317,7 @@
     "code": "723301009",
     "display": "Squamous non-small cell lung cancer (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3325,7 +3325,7 @@
     "code": "724056005",
     "display": "Malignant neoplasm of lower lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3333,7 +3333,7 @@
     "code": "724058006",
     "display": "Malignant neoplasm of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3341,7 +3341,7 @@
     "code": "724059003",
     "display": "Malignant neoplasm of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3349,7 +3349,7 @@
     "code": "724060008",
     "display": "Malignant neoplasm of right upper lobe of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3357,7 +3357,7 @@
     "code": "789695003",
     "display": "Non-mucinous adenocarcinoma in situ of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3365,7 +3365,7 @@
     "code": "822969007",
     "display": "Acinar cell cystadenocarcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3373,7 +3373,7 @@
     "code": "830055006",
     "display": "Anaplastic lymphoma kinase fusion oncogene negative non-small cell lung cancer (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3381,7 +3381,7 @@
     "code": "830060005",
     "display": "Reactive oxygen species 1 negative non-small cell lung cancer (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3389,7 +3389,7 @@
     "code": "830151004",
     "display": "Anaplastic lymphoma kinase fusion oncogene positive non-small cell lung cancer (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3397,7 +3397,7 @@
     "code": "890528009",
     "display": "Primary malignant neoplasm of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3405,7 +3405,7 @@
     "code": "890529001",
     "display": "Primary malignant neoplasm of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3413,7 +3413,7 @@
     "code": "890534002",
     "display": "Primary malignant neoplasm of bilateral lungs (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3421,7 +3421,7 @@
     "code": "1141627001",
     "display": "Non-small cell lung carcinoma with neuregulin 1 gene fusion (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3429,7 +3429,7 @@
     "code": "1179762006",
     "display": "Malignant neoplasm of middle lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3437,7 +3437,7 @@
     "code": "16527641000119107",
     "display": "Primary non-small cell carcinoma of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3445,7 +3445,7 @@
     "code": "16527601000119105",
     "display": "Primary non-small cell carcinoma of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3453,7 +3453,7 @@
     "code": "16527521000119100",
     "display": "Primary non-small cell carcinoma of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3461,7 +3461,7 @@
     "code": "16527441000119105",
     "display": "Primary non-small cell carcinoma of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3469,7 +3469,7 @@
     "code": "16527561000119105",
     "display": "Primary non-small cell carcinoma of lower lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3477,7 +3477,7 @@
     "code": "16527721000119108",
     "display": "Primary non-small cell carcinoma of upper lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3485,7 +3485,7 @@
     "code": "16527481000119100",
     "display": "Primary non-small cell carcinoma of middle lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3493,7 +3493,7 @@
     "code": "15956341000119105",
     "display": "Adenocarcinoma of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3501,7 +3501,7 @@
     "code": "15956381000119100",
     "display": "Adenocarcinoma of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3509,7 +3509,7 @@
     "code": "1078881000119102",
     "display": "Primary adenocarcinoma of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3517,7 +3517,7 @@
     "code": "1078901000119100",
     "display": "Primary adenocarcinoma of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3525,7 +3525,7 @@
     "code": "1078931000119107",
     "display": "Primary adenocarcinoma of lower lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3533,7 +3533,7 @@
     "code": "1078961000119104",
     "display": "Primary adenocarcinoma of upper lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3541,7 +3541,7 @@
     "code": "1078951000119101",
     "display": "Primary adenocarcinoma of middle lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3549,7 +3549,7 @@
     "code": "12240951000119107",
     "display": "Squamous cell carcinoma of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3557,7 +3557,7 @@
     "code": "12240991000119102",
     "display": "Squamous cell carcinoma of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3565,7 +3565,7 @@
     "code": "1082141000119108",
     "display": "Primary squamous cell carcinoma of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3573,7 +3573,7 @@
     "code": "1082111000119109",
     "display": "Primary squamous cell carcinoma of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3581,7 +3581,7 @@
     "code": "1082231000119109",
     "display": "Primary squamous cell carcinoma of lower lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3589,7 +3589,7 @@
     "code": "1082271000119107",
     "display": "Primary squamous cell carcinoma of upper lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3597,7 +3597,7 @@
     "code": "1082251000119103",
     "display": "Primary squamous cell carcinoma of middle lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3605,7 +3605,7 @@
     "code": "1080471000119100",
     "display": "Primary large cell carcinoma of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3613,7 +3613,7 @@
     "code": "1080451000119100",
     "display": "Primary large cell carcinoma of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3621,7 +3621,7 @@
     "code": "1080531000119100",
     "display": "Primary large cell carcinoma of upper lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3629,7 +3629,7 @@
     "code": "1080501000119100",
     "display": "Primary large cell carcinoma of lower lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3637,7 +3637,7 @@
     "code": "15957261000119100",
     "display": "Kaposi sarcoma of bilateral lungs (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3645,7 +3645,7 @@
     "code": "15955941000119100",
     "display": "Primary small cell carcinoma of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3653,7 +3653,7 @@
     "code": "15955901000119100",
     "display": "Primary small cell carcinoma of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3661,7 +3661,7 @@
     "code": "1081921000119100",
     "display": "Primary small cell carcinoma of upper lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3669,7 +3669,7 @@
     "code": "1081911000119100",
     "display": "Primary small cell carcinoma of middle lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3677,7 +3677,7 @@
     "code": "1081891000119100",
     "display": "Primary small cell carcinoma of lower lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3685,7 +3685,7 @@
     "code": "1081861000119100",
     "display": "Primary small cell carcinoma of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3693,7 +3693,7 @@
     "code": "1081841000119100",
     "display": "Primary small cell carcinoma of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3701,7 +3701,7 @@
     "code": "683991000119103",
     "display": "Extensive stage primary small cell carcinoma of lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc", "sclc_extensive_stage"]
+    "category": ["NSCLC", "SCLC Extensive Stage"]
   },
   {
     "entryType": "cancerType",
@@ -3709,7 +3709,7 @@
     "code": "354461000119102",
     "display": "Kaposi sarcoma of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3717,7 +3717,7 @@
     "code": "354391000119100",
     "display": "Kaposi sarcoma of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc"]
+    "category": ["NSCLC"]
   },
   {
     "entryType": "cancerType",
@@ -3725,7 +3725,7 @@
     "code": "67841000119103",
     "display": "Primary small cell malignant neoplasm of lung, TNM stage 4 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc", "sclc_extensive_stage"]
+    "category": ["NSCLC", "SCLC Extensive Stage"]
   },
   {
     "entryType": "cancerType",
@@ -3733,7 +3733,7 @@
     "code": "67831000119107",
     "display": "Primary small cell malignant neoplasm of lung, TNM stage 3 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc", "sclc_limited_stage"]
+    "category": ["NSCLC", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -3741,7 +3741,7 @@
     "code": "67821000119109",
     "display": "Primary small cell malignant neoplasm of lung, TNM stage 2 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc", "sclc_limited_stage"]
+    "category": ["NSCLC", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -3749,7 +3749,7 @@
     "code": "67811000119102",
     "display": "Primary small cell malignant neoplasm of lung, TNM stage 1 (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["nsclc", "sclc_limited_stage"]
+    "category": ["NSCLC", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -3821,7 +3821,7 @@
     "code": "399490008",
     "display": "Adenocarcinoma of prostate (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Prostate", "adenocarcinoma"]
+    "category": ["Prostate", "Adenocarcinoma"]
   },
   {
     "entryType": "cancerType",
@@ -3829,7 +3829,7 @@
     "code": "399590005",
     "display": "Squamous cell carcinoma of prostate (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Prostate", "scc"]
+    "category": ["Prostate", "SCC"]
   },
   {
     "entryType": "cancerType",
@@ -3869,7 +3869,7 @@
     "code": "822970008",
     "display": "Acinar cell cystadenocarcinoma of prostate (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Prostate", "intralobular_acinar"]
+    "category": ["Prostate", "Intralobular Acinar"]
   },
   {
     "entryType": "cancerType",
@@ -3877,7 +3877,7 @@
     "code": "823017009",
     "display": "Infiltrating duct carcinoma of prostate (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["Prostate", "ductal_carcinoma"]
+    "category": ["Prostate", "Ductal Carcinoma"]
   },
   {
     "entryType": "cancerType",
@@ -4149,7 +4149,7 @@
     "code": "15955941000119102",
     "display": "Primary small cell carcinoma of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -4157,7 +4157,7 @@
     "code": "15955901000119104",
     "display": "Primary small cell carcinoma of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -4165,7 +4165,7 @@
     "code": "1081861000119105",
     "display": "Primary small cell carcinoma of upper lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -4173,7 +4173,7 @@
     "code": "1081841000119106",
     "display": "Primary small cell carcinoma of lower lobe of left lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -4181,7 +4181,7 @@
     "code": "1081891000119103",
     "display": "Primary small cell carcinoma of lower lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -4189,7 +4189,7 @@
     "code": "1081921000119108",
     "display": "Primary small cell carcinoma of upper lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",
@@ -4197,7 +4197,7 @@
     "code": "1081911000119101",
     "display": "Primary small cell carcinoma of middle lobe of right lung (disorder)",
     "system": "http://snomed.info/sct",
-    "category": ["sclc_extensive_stage", "sclc_limited_stage"]
+    "category": ["SCLC Extensive Stage", "SCLC Limited Stage"]
   },
   {
     "entryType": "cancerType",

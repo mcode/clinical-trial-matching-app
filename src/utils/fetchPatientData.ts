@@ -35,11 +35,11 @@ export type ProgressMonitor = (message: string | number, workDone?: number, work
  */
 export type PatientDataFetchFunction = (fhirClient: Client, progressMonitor: ProgressMonitor) => Promise<PatientData>;
 
-export const fetchPatientData = (fhirClient: Client, clientName: string): Promise<PatientData> => {
+const defaultProgressMonitor = (): ProgressMonitor => {
   let currentProgressMessage = 'Fetching patient data...';
   let totalWorkDone = 0;
   let totalWorkUnits = 0;
-  const progress = (message: string, workDone?: number, workTotal?: number): void => {
+  return (message: string, workDone?: number, workTotal?: number): void => {
     if (typeof message === 'number') {
       workDone = message;
     } else {
@@ -58,6 +58,54 @@ export const fetchPatientData = (fhirClient: Client, clientName: string): Promis
       }] ${currentProgressMessage}`
     );
   };
+};
+
+/**
+ * Allows a progress monitor to split work units within a sub process over work units in a parent process
+ * @param rootMonitor the root progress monitor
+ * @param totalParentUnits the total number of work units to progress in the parent
+ */
+export const subProgressMonitor = (rootMonitor: ProgressMonitor, totalParentUnits: number): ProgressMonitor => {
+  let totalWorkDone = 0,
+    lastWorkDone = 0;
+  let totalWorkUnits: number;
+  return (message: string, workDone?: number, workTotal?: number): void => {
+    if (typeof message === 'number') {
+      workDone = message;
+    }
+    if (workDone !== undefined) {
+      totalWorkDone += workDone;
+    }
+    if (workTotal !== undefined && totalWorkUnits === undefined) {
+      // It only makes sense to set total work units once
+      totalWorkUnits = workTotal;
+    }
+    let newUnits = 0;
+    if (totalWorkUnits !== undefined && totalWorkDone != lastWorkDone) {
+      newUnits =
+        Math.floor((totalWorkDone / totalWorkUnits) * totalParentUnits) -
+        Math.floor((lastWorkDone / totalWorkUnits) * totalParentUnits);
+      if (newUnits > 0) {
+        lastWorkDone = totalWorkDone;
+      }
+    }
+    // If we have a message to send or new work units to send, send those
+    if (typeof message === 'string') {
+      rootMonitor(message, newUnits);
+    } else if (newUnits > 0) {
+      rootMonitor(newUnits);
+    }
+  };
+};
+
+export const fetchPatientData = (
+  fhirClient: Client,
+  clientName: string,
+  progress?: ProgressMonitor
+): Promise<PatientData> => {
+  if (progress === undefined) {
+    progress = defaultProgressMonitor();
+  }
   if (clientName === 'epic') {
     return fetchEpicPatientData(fhirClient, progress);
   }

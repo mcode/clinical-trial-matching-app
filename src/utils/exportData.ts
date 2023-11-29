@@ -61,6 +61,7 @@ export const RedCapHeaders = [
   'histology___1',
   'biomarkers',
   'stage',
+  'bb_subject_id',
 ];
 
 const getMainRow = (studyProps: StudyDetailProps, userId: string): Record<string, string> =>
@@ -133,16 +134,17 @@ export const exportSpreadsheetData = (data: Record<string, string>[], fileName: 
 
 export const exportCsvStringData = (patientSearch: FullSearchParameters, data: StudyDetailProps[]): string => {
   const patientElements = convertPatientInfoToRedCapRow(patientSearch);
-  const record_id = uuidv4();
+  const bb_subject_id = uuidv4();
   const entries = data.map(entry => {
     const trialElements = convertResultsToRedCapRow(entry);
-    return { record_id, ...trialElements };
+    return { ...trialElements, bb_subject_id };
   });
-  return csvStringify([RedCapHeaders]) + csvStringify([{ record_id, ...patientElements }]) + csvStringify(entries);
+  return csvStringify([RedCapHeaders]) + csvStringify([{ ...patientElements }]) + csvStringify(entries);
 };
 
 const convertResultsToRedCapRow = (data: StudyDetailProps) => {
   return {
+    record_id: '',
     redcap_event_name: 'match_arm_1',
     redcap_repeat_instrument: 'trial_matches_intervention_arm_1',
     redcap_repeat_instance: 'new',
@@ -192,6 +194,7 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
     : '';
 
   return {
+    record_id: '',
     redcap_event_name: 'match_arm_1',
     redcap_repeat_instrument: '',
     redcap_repeat_instance: '',

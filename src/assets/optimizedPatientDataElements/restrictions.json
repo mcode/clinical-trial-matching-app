@@ -1,7 +1,7 @@
 [
   {
     "cancerType": ["lung"],
-    "category": ["sclc_limited_stage"],
+    "category": ["SCLC Limited Stage"],
     "restriction": {
       "cancerType": [
         { "code": "254632001", "system": "http://snomed.info/sct" },
@@ -26,7 +26,7 @@
   },
   {
     "cancerType": ["lung"],
-    "category": ["sclc_extensive_stage"],
+    "category": ["SCLC Extensive Stage"],
     "restriction": {
       "cancerType": [
         { "code": "254632001", "system": "http://snomed.info/sct" },

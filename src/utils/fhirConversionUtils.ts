@@ -119,7 +119,7 @@ export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle):
 
 export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patient => ({
   id: fhirPatient.id,
-  name: `${fhirPatient.name[0].given[0]} ${fhirPatient.name[0].family}`,
+  name: `${fhirPatient.name?.[0]?.given?.[0]} ${fhirPatient.name?.[0]?.family}`,
   gender: fhirPatient.gender,
   age: fhirPatient.birthDate ? getAge(fhirPatient.birthDate) : null,
   zipcode:

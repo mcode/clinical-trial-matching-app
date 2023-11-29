@@ -38,7 +38,7 @@ import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
 import { ParsedUrlQuery } from 'querystring';
-import { MutableRefObject, ReactElement, SyntheticEvent, useMemo, useReducer, useRef, useState } from 'react';
+import { ReactElement, SyntheticEvent, useMemo, useReducer, useRef, useState } from 'react';
 import { QueryClient, useQuery } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import {
@@ -122,6 +122,10 @@ const getSearchParams = getParameters<SearchParameters>([
   'stage',
   'ecogScore',
   'karnofskyScore',
+  'biomarkers',
+  'medications',
+  'radiation',
+  'surgery',
   // If we're not sending location data, we get all trials back
   ...(sendLocationData ? ['zipcode' as keyof SearchParameters, 'travelDistance' as keyof SearchParameters] : []),
 ]);
@@ -225,7 +229,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
     setAlertOpen(false);
   };
 
-  const scrollableParent: MutableRefObject<HTMLElement> = useRef<HTMLElement>(null);
+  const scrollableParent = useRef<HTMLDivElement>(null);
 
   return (
     <>

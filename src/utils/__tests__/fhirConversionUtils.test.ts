@@ -62,33 +62,33 @@ describe('extractMedicationCodes', () => {
     expect(extractMedicationCodes(fhirMedications)).toEqual([
       {
         cancerType: [CancerType.PROSTATE],
-        category: ['leuprolide'],
+        category: ['Leuprolide'],
         code: '1163443',
-        display: 'leuprolide Injectable Product',
+        display: 'Leuprolide Injectable Product',
         entryType: 'medications',
         system: RXNORM_CODE_URI,
       },
       {
         cancerType: [CancerType.BREAST],
-        category: ['fulvestrant'],
+        category: ['Fulvestrant'],
         code: '1156671',
-        display: 'fulvestrant Injectable Product',
+        display: 'Fulvestrant Injectable Product',
         entryType: 'medications',
         system: RXNORM_CODE_URI,
       },
       {
         cancerType: [CancerType.BREAST],
-        category: ['abemaciclib'],
+        category: ['Abemaciclib'],
         code: '1946828',
-        display: 'abemaciclib Pill',
+        display: 'Abemaciclib Pill',
         entryType: 'medications',
         system: RXNORM_CODE_URI,
       },
       {
         cancerType: [CancerType.BREAST],
-        category: ['ribociclib'],
+        category: ['Ribociclib'],
         code: '1873980',
-        display: 'ribociclib Oral Product',
+        display: 'Ribociclib Oral Product',
         entryType: 'medications',
         system: RXNORM_CODE_URI,
       },
@@ -157,7 +157,7 @@ describe('convertFhirRadiationProcedures', () => {
         code: '879916008',
         display: 'Radiofrequency ablation (procedure)',
         system: SNOMED_CODE_URI,
-        category: ['Ablation', 'rfa'],
+        category: ['Ablation', 'RFA'],
       },
       {
         entryType: 'radiation',
@@ -188,7 +188,7 @@ describe('convertFhirSecondaryCancerConditions', () => {
         code: '94222008',
         display: 'Secondary malignant neoplasm of bone',
         system: SNOMED_CODE_URI,
-        category: ['bone'],
+        category: ['Bone'],
       },
     ]);
     expect(convertFhirSecondaryCancerConditions(fhirEmptyBundle)).toEqual([]);
@@ -263,7 +263,7 @@ describe('convertFhirTumorMarkers', () => {
         code: '62862-8',
         display: 'Microsatellite instability [Presence] in Tissue by Immune stain',
         system: LOINC_CODE_URI,
-        category: ['msi'],
+        category: ['MSI'],
         qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
       },
       {
@@ -290,7 +290,7 @@ describe('convertFhirTumorMarkers', () => {
         code: '85318-4',
         display: 'ERBB2 gene duplication [Presence] in Breast cancer specimen by FISH',
         system: LOINC_CODE_URI,
-        category: ['erbb2_her2', 'HER2'],
+        category: ['ERBB2_HER2', 'HER2'],
         qualifier: { system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' },
       },
       {
