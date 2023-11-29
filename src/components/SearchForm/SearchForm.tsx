@@ -31,6 +31,7 @@ import {
 import { getNewState, uninitializedState } from './FormFieldsOptions';
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType, State } from './types';
+import { generateId } from '@/utils/generateId';
 
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;
@@ -122,25 +123,6 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
     return manuallyAdjusted;
   };
 
-  // Removing the download capability for now as it does not work in embedded Epic
-  // const onDownload = (data: SearchFormValuesType) => {
-  //   const newUserId = generateId();
-  //   const manuallyAdjusted = compareDefaultValues(data);
-
-  //   const csv = generateSearchCSVString(data, newUserId, manuallyAdjusted);
-  //   if (setUserId) {
-  //     setValue('userid', newUserId);
-  //     setUserId(newUserId);
-  //   }
-  //   // Create a hidden download link to download the CSV
-  //   const link = document.createElement('a');
-  //   link.setAttribute('href', `data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`);
-  //   link.setAttribute('download', 'search-parameters.csv');
-  //   document.body.appendChild(link);
-  //   link.click();
-  //   document.body.removeChild(link);
-  // };
-
   const generateExportButton = (onClick): ReactElement => {
     return (
       <Grid item xs={8}>
@@ -164,9 +146,13 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
   const generateExportCsv = (): string => {
     const data = getValues();
     const manuallyAdjusted = compareDefaultValues(data);
-    const csv = generateSearchCSVString(data, '', manuallyAdjusted);
+    const newUserId = generateId();
 
-    return csv;
+    if (setUserId) {
+      setValue('userid', newUserId);
+      setUserId(newUserId);
+    }
+    return generateSearchCSVString(data, userId, manuallyAdjusted);
   };
 
   const retrieveCancer = (cancerType: CodedValueType): void => {
@@ -371,23 +357,6 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               <SearchIcon sx={{ paddingRight: '5px' }} /> Search
             </Button>
           </Grid>
-
-          {/* Removing the download button for now as it does not work in embedded Epic */}
-          {/* <Grid item xs={8}>
-            <Button
-              onClick={handleSubmit(onDownload)}
-              sx={{
-                float: 'right',
-                fontSize: '1.3em',
-                fontWeight: '500',
-                minWidth: '200px',
-                width: fullWidth || isSmallScreen ? '100%' : '25%',
-              }}
-              variant="contained"
-            >
-              <DownloadIcon /> Download CSV
-            </Button>
-          </Grid> */}
 
           <ExportModal {...{ handleContentGeneration: generateExportCsv, replaceButton: generateExportButton }} />
         </Grid>
