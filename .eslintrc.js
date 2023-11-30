@@ -28,6 +28,9 @@ module.exports = {
         allowSingleExtends: true,
       },
     ],
+    // TODO (maybe): Only set this on Windows (it's required due to weird
+    // pathname issues on Windows)
+    '@next/next/no-document-import-in-page': 'off',
   },
   settings: {
     react: {
@@ -54,6 +57,7 @@ module.exports = {
         node: true,
       },
       rules: {
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
         '@typescript-eslint/no-var-requires': 'off',
         'no-console': 'off',
       },

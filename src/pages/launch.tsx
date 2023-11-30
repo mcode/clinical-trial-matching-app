@@ -1,8 +1,8 @@
-import React, { ReactElement } from 'react';
+import { Alert, Box, Container } from '@mui/material';
+import smart from 'fhirclient';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
-import smart from 'fhirclient';
-import { Alert, Box, Container } from '@mui/material';
+import React, { ReactElement } from 'react';
 
 const { publicRuntimeConfig } = getConfig();
 
@@ -27,8 +27,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
     const url = await smart(req, res).authorize({
       clientId: publicRuntimeConfig.fhirClientId,
       noRedirect: true,
-      redirectUri: '/authorize',
-      scope: 'launch/patient openid fhirUser patient/*.read',
+      redirectUri: publicRuntimeConfig.fhirRedirectUri,
+      scope: publicRuntimeConfig.fhirScope,
     });
 
     return {

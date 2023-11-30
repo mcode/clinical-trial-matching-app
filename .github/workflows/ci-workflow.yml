@@ -2,28 +2,42 @@ name: Lint and Test
 
 on: [push, pull_request]
 
+permissions:
+  pull-requests: read
+
 jobs:
   lint:
     name: Check lint
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-    - run: yarn install
-    - run: yarn lint
-      env:
-        CI: true
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - run: npm install
+      - run: npm run lint
+        env:
+          CI: true
   test:
-    name: Run tests
+    name: Run tests and coverage
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '14.x'
-    - run: yarn install
-    - run: yarn test:ci --ci --maxWorkers=2
-      env:
-        CI: true
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - run: npm install
+      - run: npm run test:ci --ci --maxWorkers=2 --coverage
+        env:
+          CI: true
+      - name: Scan with SonarCloud
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      - name: Code Coverage
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}

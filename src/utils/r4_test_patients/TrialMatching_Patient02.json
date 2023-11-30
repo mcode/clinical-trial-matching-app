@@ -1,0 +1,1351 @@
+{
+  "resourceType": "Bundle",
+  "id": "9aa0a829-14be-4951-84e7-5dd453708011_2",
+  "meta": {
+    "lastUpdated": "2020-04-15T01:23:30Z"
+  },
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingPatientExample02",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "mCODETrialMatchingPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>identifier</b>: id: a123</p><p><b>name</b>: Patient D TrialMatching </p><p><b>gender</b>: female</p><p><b>birthDate</b>: 1973-01-01</p></div>"
+        },
+        "identifier": [
+          {
+            "system": "http://hospital.example.org",
+            "value": "a123"
+          }
+        ],
+        "name": [
+          {
+            "family": "TrialMatching",
+            "given": ["Patient", "D"]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1973-01-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingTNMClinicalStageGroupPatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingTNMClinicalStageGroupPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-clinical-stage-group"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 21908-9}\">Stage group.clinical Cancer</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://cancerstaging.org 4}\">IV</span></p><p><b>method</b>: <span title=\"Codes: {http://ncimeta.nci.nih.gov C146985}\">AJCC Cancer Staging Manual 8th Edition</span></p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "21908-9"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://cancerstaging.org",
+              "code": "4",
+              "display": "IV"
+            }
+          ]
+        },
+        "method": {
+          "coding": [
+            {
+              "system": "http://ncimeta.nci.nih.gov",
+              "code": "C146985",
+              "display": "AJCC Cancer Staging Manual 8th Edition"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingPrimaryCancerConditionPatientExample02",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "mCODETrialMatchingPrimaryCancerConditionPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>clinicalStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span></p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span></p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 408643008}\">Infiltrating duct carcinoma of breast (disorder)</span></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 76752008}\">Breast structure (body structure)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><h3>Stages</h3><table class=\"grid\"><tr><td>-</td><td><b>Summary</b></td><td><b>Assessment</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://cancerstaging.org 4}\">IV</span></td><td><a href=\"Observation-mCODETrialMatchingTNMClinicalStageGroupPatientExample02.html\">Generated Summary: <span title=\"Codes: {http://loinc.org 21908-9}\">Stage group.clinical Cancer</span>; <span title=\"Codes: {http://cancerstaging.org 4}\">IV</span>; <span title=\"Codes: {http://ncimeta.nci.nih.gov C146985}\">AJCC Cancer Staging Manual 8th Edition</span></a></td></tr></table></div>"
+        },
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "64572001"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408643008",
+              "display": "Infiltrating duct carcinoma of breast (disorder)"
+            }
+          ]
+        },
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "76752008",
+                "display": "Breast structure (body structure)"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "stage": [
+          {
+            "summary": {
+              "coding": [
+                {
+                  "system": "http://cancerstaging.org",
+                  "code": "4",
+                  "display": "IV"
+                }
+              ]
+            },
+            "assessment": [
+              {
+                "reference": "Observation/mCODETrialMatchingTNMClinicalStageGroupPatientExample02"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingSecondaryCancerConditionPatientExample02",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "mCODETrialMatchingSecondaryCancerConditionPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-secondary-cancer-condition"]
+        },
+        "text": {
+          "status": "extensions",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>Related Primary Cancer Condition</b>: </p><p><b>verificationStatus</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span></p><p><b>category</b>: <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span></p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 94222008}\">Secondary malignant neoplasm of bone (disorder)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p></div>"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-related-primary-cancer-condition",
+            "valueReference": {
+              "reference": "Condition/mCODETrialMatchingPrimaryCancerConditionPatientExample02"
+            }
+          }
+        ],
+        "verificationStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+              "code": "confirmed",
+              "display": "Confirmed"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "64572001"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "94222008",
+              "display": "Secondary malignant neoplasm of bone (disorder)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarkerPatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingTumorMarkerPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 40556-3}\">Estrogen receptor Ag [Presence] in Tissue by Immune stain</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://snomed.info/sct 10828004}\">Positive (qualifier value)</span></p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "40556-3",
+              "display": "Estrogen receptor Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive (qualifier value)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker02PatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingTumorMarker02PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 40557-1}\">Progesterone receptor Ag [Presence] in Tissue by Immune stain</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://snomed.info/sct 10828004}\">Positive (qualifier value)</span></p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "40557-1",
+              "display": "Progesterone receptor Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive (qualifier value)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker03PatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingTumorMarker03PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 18474-7}\">HER2 Ag [Presence] in Tissue by Immune stain</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://snomed.info/sct 260385009}\">Negative (qualifier value)</span></p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "18474-7",
+              "display": "HER2 Ag [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260385009",
+              "display": "Negative (qualifier value)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker04PatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingTumorMarker04PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 62862-8}\">Microsatellite instability [Presence] in Tissue by Immune stain</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://snomed.info/sct 10828004}\">Positive (qualifier value)</span></p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "62862-8",
+              "display": "Microsatellite instability [Presence] in Tissue by Immune stain"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "10828004",
+              "display": "Positive (qualifier value)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariantPatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingCancerGeneticVariantPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 69548-6}\">Genetic variant assessment</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://loinc.org LA9633-4}\">Present</span></p><p><b>interpretation</b>: <span title=\"Codes: {http://snomed.info/sct 12645001}\">Gene amplification (finding)</span></p><h3>Components</h3><table class=\"grid\"><tr><td>-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://loinc.org 48018-6}\">Gene studied [ID]</span></td><td><span title=\"Codes: {http://www.genenames.org/geneId HGNC:1582}\">Cyclin D1</span></td></tr></table></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Present"
+            }
+          ]
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "12645001",
+                "display": "Gene amplification (finding)"
+              }
+            ]
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48018-6"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org/geneId",
+                  "code": "HGNC:1582",
+                  "display": "Cyclin D1"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariant02PatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingCancerGeneticVariant02PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 69548-6}\">Genetic variant assessment</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://loinc.org LA9633-4}\">Present</span></p><p><b>interpretation</b>: <span title=\"Codes: {http://snomed.info/sct 12645001}\">Gene amplification (finding)</span></p><h3>Components</h3><table class=\"grid\"><tr><td>-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://loinc.org 48018-6}\">Gene studied [ID]</span></td><td><span title=\"Codes: {http://www.genenames.org/geneId HGNC:3688}\">Fibroblast growth factor receptor 1</span></td></tr></table></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Present"
+            }
+          ]
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "12645001",
+                "display": "Gene amplification (finding)"
+              }
+            ]
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48018-6"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org/geneId",
+                  "code": "HGNC:3688",
+                  "display": "Fibroblast growth factor receptor 1"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerGeneticVariant03PatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingCancerGeneticVariant03PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-genetic-variant"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 69548-6}\">Genetic variant assessment</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://loinc.org LA9633-4}\">Present</span></p><p><b>interpretation</b>: <span title=\"Codes: {http://snomed.info/sct 12645001}\">Gene amplification (finding)</span></p><h3>Components</h3><table class=\"grid\"><tr><td>-</td><td><b>Code</b></td><td><b>Value[x]</b></td></tr><tr><td>*</td><td><span title=\"Codes: {http://loinc.org 48018-6}\">Gene studied [ID]</span></td><td><span title=\"Codes: {http://www.genenames.org/geneId HGNC:6973}\">MDM2 proto-oncogene</span></td></tr></table></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "69548-6"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "LA9633-4",
+              "display": "Present"
+            }
+          ]
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "12645001",
+                "display": "Gene amplification (finding)"
+              }
+            ]
+          }
+        ],
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "48018-6"
+                }
+              ]
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://www.genenames.org/geneId",
+                  "code": "HGNC:6973",
+                  "display": "MDM2 proto-oncogene"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingTumorMarker05PatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingTumorMarker05PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tumor-marker"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p></p><p><b>category</b>: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/observation-category laboratory}\">Laboratory</span></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 94077-5}\">Tumor mutation burden [Interpretation]</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>value</b>: <span title=\"Codes: {http://snomed.info/sct 62482003}\">Low (qualifier value)</span></p></div>"
+        },
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94077-5",
+              "display": "Tumor mutation burden [Interpretation]"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "62482003",
+              "display": "Low (qualifier value)"
+            }
+          ]
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedSurgicalProcedurePatientExample02",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mCODETrialMatchingCancerRelatedSurgicalProcedurePatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-surgical-procedure"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 392021009}\">Lumpectomy of breast (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>performed</b>: 2019-03-01</p><p><b>reasonReference</b>: <a href=\"Condition-mCODETrialMatchingPrimaryCancerConditionPatientExample02.html\">Generated Summary: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span>; <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span>; <span title=\"Codes: {http://snomed.info/sct 408643008}\">Infiltrating duct carcinoma of breast (disorder)</span>; <span title=\"Codes: {http://snomed.info/sct 76752008}\">Breast structure (body structure)</span></a></p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "392021009",
+              "display": "Lumpectomy of breast (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "performedDateTime": "2019-03-01",
+        "reasonReference": [
+          {
+            "reference": "Condition/mCODETrialMatchingPrimaryCancerConditionPatientExample02"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedurePatientEx02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 53438000}\">Radiation therapy procedure or service (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>performed</b>: 2019-04-01</p><p><b>reasonReference</b>: <a href=\"Condition-mCODETrialMatchingPrimaryCancerConditionPatientExample02.html\">Generated Summary: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span>; <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span>; <span title=\"Codes: {http://snomed.info/sct 408643008}\">Infiltrating duct carcinoma of breast (disorder)</span>; <span title=\"Codes: {http://snomed.info/sct 76752008}\">Breast structure (body structure)</span></a></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 73056007}\">Right breast structure (body structure)</span></p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53438000",
+              "display": "Radiation therapy procedure or service (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "performedDateTime": "2019-04-01",
+        "reasonReference": [
+          {
+            "reference": "Condition/mCODETrialMatchingPrimaryCancerConditionPatientExample02"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "73056007",
+                "display": "Right breast structure (body structure)"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure02PatientEx02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 445232009}\">Boost radiation therapy (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>performed</b>: 2019-04-01</p><p><b>reasonReference</b>: <a href=\"Condition-mCODETrialMatchingPrimaryCancerConditionPatientExample02.html\">Generated Summary: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span>; <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span>; <span title=\"Codes: {http://snomed.info/sct 408643008}\">Infiltrating duct carcinoma of breast (disorder)</span>; <span title=\"Codes: {http://snomed.info/sct 76752008}\">Breast structure (body structure)</span></a></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 73056007}\">Right breast structure (body structure)</span></p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "445232009",
+              "display": "Boost radiation therapy (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "performedDateTime": "2019-04-01",
+        "reasonReference": [
+          {
+            "reference": "Condition/mCODETrialMatchingPrimaryCancerConditionPatientExample02"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "73056007",
+                "display": "Right breast structure (body structure)"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure03PatientEx02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 53438000}\">Radiation therapy procedure or service (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>performed</b>: 2019-05-01</p><p><b>reasonReference</b>: <a href=\"Condition-mCODETrialMatchingPrimaryCancerConditionPatientExample02.html\">Generated Summary: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span>; <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span>; <span title=\"Codes: {http://snomed.info/sct 408643008}\">Infiltrating duct carcinoma of breast (disorder)</span>; <span title=\"Codes: {http://snomed.info/sct 76752008}\">Breast structure (body structure)</span></a></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 719537008}\">Bone structure of right acetabulum (body structure)</span></p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53438000",
+              "display": "Radiation therapy procedure or service (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "performedDateTime": "2019-05-01",
+        "reasonReference": [
+          {
+            "reference": "Condition/mCODETrialMatchingPrimaryCancerConditionPatientExample02"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "719537008",
+                "display": "Bone structure of right acetabulum (body structure)"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02",
+      "resource": {
+        "resourceType": "Procedure",
+        "id": "mCODETrialMatchingCancerRelatedRadiationProcedure04PatientEx02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-radiation-procedure"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>code</b>: <span title=\"Codes: {http://snomed.info/sct 53438000}\">Radiation therapy procedure or service (procedure)</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>performed</b>: 2019-11-01</p><p><b>reasonReference</b>: <a href=\"Condition-mCODETrialMatchingPrimaryCancerConditionPatientExample02.html\">Generated Summary: <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-clinical active}\">Active</span>; <span title=\"Codes: {http://terminology.hl7.org/CodeSystem/condition-ver-status confirmed}\">Confirmed</span>; <span title=\"Codes: {http://snomed.info/sct 64572001}\">Disease</span>; <span title=\"Codes: {http://snomed.info/sct 408643008}\">Infiltrating duct carcinoma of breast (disorder)</span>; <span title=\"Codes: {http://snomed.info/sct 76752008}\">Breast structure (body structure)</span></a></p><p><b>bodySite</b>: <span title=\"Codes: {http://snomed.info/sct 122496007}\">Structure of lumbar vertebral column (body structure)</span></p></div>"
+        },
+        "status": "completed",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "53438000",
+              "display": "Radiation therapy procedure or service (procedure)"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "performedDateTime": "2019-11-01",
+        "reasonReference": [
+          {
+            "reference": "Condition/mCODETrialMatchingPrimaryCancerConditionPatientExample02"
+          }
+        ],
+        "bodySite": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "122496007",
+                "display": "Structure of lumbar vertebral column (body structure)"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Procedure"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatementPatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatementPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1163788}\">exemestane Oral Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-06-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1163788",
+              "display": "exemestane Oral Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-06-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement02PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement02PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1156253}\">zoledronic acid Injetable Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-06-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1156253",
+              "display": "zoledronic acid Injetable Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-06-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement03PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement03PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1157702}\">anastrozole Oral Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-07-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1157702",
+              "display": "anastrozole Oral Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-07-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement04PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement04PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1163195}\">letrozole Oral Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-08-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1163195",
+              "display": "letrozole Oral Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-08-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement05PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement05PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1601377}\">palbociclib</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-09-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1601377",
+              "display": "palbociclib"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-09-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement06PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement06PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1156671}\">fulvestrant Injectable Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-09-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1156671",
+              "display": "fulvestrant Injectable Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-09-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement07PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement07PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1158877}\">capecitabine Oral Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-10-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1158877",
+              "display": "capecitabine Oral Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-10-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement08PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement08PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1164214}\">tamoxifen Oral Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-12-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1164214",
+              "display": "tamoxifen Oral Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-12-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement09PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement09PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1946827}\">abemaciclib Oral Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-12-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1946827",
+              "display": "abemaciclib Oral Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-12-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement10PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement10PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: completed</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 1156710}\">gemcitabine Injetable Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2020-01-01</p></div>"
+        },
+        "status": "completed",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "1156710",
+              "display": "gemcitabine Injetable Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2020-01-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingCancerMedicationStatement11PatientExample02",
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "mCODETrialMatchingCancerMedicationStatement11PatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><h3>Ids</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><h3>Meta</h3><table class=\"grid\"><tr><td>-</td></tr><tr><td>*</td></tr></table><p><b>status</b>: active</p><p><b>medication</b>: <span title=\"Codes: {http://www.nlm.nih.gov/research/umls/rxnorm 2169297}\">alpelisib Oral Product</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2020-02-01</p></div>"
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "2169297",
+              "display": "alpelisib Oral Product"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2020-02-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mCODETrialMatchingECOGPerformanceStatusPatientExample02",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "mCODETrialMatchingECOGPerformanceStatusPatientExample02",
+        "meta": {
+          "profile": ["http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-ecog-performance-status"]
+        },
+        "text": {
+          "status": "generated",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p></p><p><b>code</b>: <span title=\"Codes: {http://loinc.org 89247-1}\">ECOG Performance Status score</span></p><p><b>subject</b>: <a href=\"Patient-mCODETrialMatchingPatientExample02.html\">Generated Summary: id: a123; Patient D TrialMatching ; gender: female; birthDate: 1973-01-01</a></p><p><b>effective</b>: 2019-04-01</p><p><b>value</b>: 1</p><p><b>interpretation</b>: <span title=\"Codes: {http://loinc.org LA9623-5}\">Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work</span></p></div>"
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "89247-1"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/mCODETrialMatchingPatientExample02"
+        },
+        "effectiveDateTime": "2019-04-01",
+        "valueInteger": 1,
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://loinc.org",
+                "code": "LA9623-5",
+                "display": "Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

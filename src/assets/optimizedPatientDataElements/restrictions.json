@@ -1,0 +1,47 @@
+[
+  {
+    "cancerType": ["lung"],
+    "category": ["SCLC Limited Stage"],
+    "restriction": {
+      "cancerType": [
+        { "code": "254632001", "system": "http://snomed.info/sct" },
+        { "code": "15955941000119102", "system": "http://snomed.info/sct" },
+        { "code": "15955901000119104", "system": "http://snomed.info/sct" },
+        { "code": "1081861000119105", "system": "http://snomed.info/sct" },
+        { "code": "1081841000119106", "system": "http://snomed.info/sct" },
+        { "code": "1081891000119103", "system": "http://snomed.info/sct" },
+        { "code": "1081921000119108", "system": "http://snomed.info/sct" },
+        { "code": "1081911000119101", "system": "http://snomed.info/sct" },
+        { "code": "67831000119107", "system": "http://snomed.info/sct" },
+        { "code": "67821000119109", "system": "http://snomed.info/sct" },
+        { "code": "67811000119102", "system": "http://snomed.info/sct" },
+        { "code": "254633006", "system": "http://snomed.info/sct" }
+      ],
+      "stage": [
+        { "code": "258215001", "system": "http://snomed.info/sct" },
+        { "code": "258219007", "system": "http://snomed.info/sct" },
+        { "code": "258224005", "system": "http://snomed.info/sct" }
+      ]
+    }
+  },
+  {
+    "cancerType": ["lung"],
+    "category": ["SCLC Extensive Stage"],
+    "restriction": {
+      "cancerType": [
+        { "code": "254632001", "system": "http://snomed.info/sct" },
+        { "code": "15955941000119102", "system": "http://snomed.info/sct" },
+        { "code": "15955901000119104", "system": "http://snomed.info/sct" },
+        { "code": "1081861000119105", "system": "http://snomed.info/sct" },
+        { "code": "1081841000119106", "system": "http://snomed.info/sct" },
+        { "code": "1081891000119103", "system": "http://snomed.info/sct" },
+        { "code": "1081921000119108", "system": "http://snomed.info/sct" },
+        { "code": "1081911000119101", "system": "http://snomed.info/sct" },
+        { "code": "67841000119103", "system": "http://snomed.info/sct" },
+        { "code": "254633006", "system": "http://snomed.info/sct" },
+        { "code": "683991000119103", "system": "http://snomed.info/sct" }
+      ],
+      "stage": [{ "code": "258228008", "system": "http://snomed.info/sct" }]
+    }
+  }
+]

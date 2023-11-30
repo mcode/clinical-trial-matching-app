@@ -1,15 +1,52 @@
+import { SNOMED_CODE_URI } from '@/utils/fhirConstants';
+import { CancerType } from '@/utils/fhirConversionUtils';
 import { render, screen } from '@testing-library/react';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import SearchForm, { SearchFormProps } from '../SearchForm';
-import mockPatient from '@/__mocks__/patient';
+import { SearchFormValuesType } from '../types';
+
+const defaultValues: Partial<SearchFormValuesType> = {
+  age: '28',
+  cancerType: {
+    category: ['Breast'],
+    cancerType: [CancerType.BREAST],
+    entryType: 'cancerType',
+    display: 'Primary malignant neoplasm of breast',
+    code: '372137005',
+    system: SNOMED_CODE_URI,
+  },
+  travelDistance: '100',
+  zipcode: '11111',
+};
+
+const createQueryClient = () =>
+  new QueryClient({
+    defaultOptions: {
+      queries: {
+        retry: false,
+        cacheTime: Infinity,
+      },
+    },
+  });
 
 describe('<SearchForm />', () => {
-  const Component = (props: Partial<SearchFormProps>) => <SearchForm patient={mockPatient} {...props} />;
+  const Component = (props: Partial<SearchFormProps>) => (
+    <QueryClientProvider client={createQueryClient()}>
+      <SearchForm
+        defaultValues={defaultValues}
+        setUserId={() => {
+          // No-op
+        }}
+        {...props}
+      />
+    </QueryClientProvider>
+  );
 
   it('renders the search form and all the search form fields', () => {
     render(<Component />);
 
     expect(screen.getByText(/let's find some clinical trials/i)).toBeInTheDocument();
-    expect(screen.queryAllByTestId('matchingServices')).toHaveLength(3);
+    expect(screen.queryAllByTestId('matchingServices')).toHaveLength(2);
     expect(screen.getByTestId('zipcode')).toBeInTheDocument();
     expect(screen.getByTestId('travelDistance')).toBeInTheDocument();
     expect(screen.getByTestId('age')).toBeInTheDocument();
@@ -32,6 +69,10 @@ describe('<SearchForm />', () => {
     expect(screen.getByTestId('zipcode')).toContainHTML('11111');
     expect(screen.getByTestId('travelDistance')).toContainHTML('100');
     expect(screen.getByTestId('age')).toContainHTML('28');
-    expect(screen.getByTestId('cancerType')).toContainHTML('Breast');
+    expect(screen.getByTestId('cancerType')).toContainHTML(CancerType.BREAST);
+    expect(screen.getByTestId('cancerType')).toContainHTML('Primary malignant neoplasm of breast');
   });
+
+  // TODO: This component may require additional testing given how the state changes
+  // based on the selected cancer type.
 });

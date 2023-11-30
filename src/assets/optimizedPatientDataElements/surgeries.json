@@ -1,0 +1,2418 @@
+[
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "79544006",
+    "display": "Complete axillary lymphadenectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Alnd"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "234262008",
+    "display": "Excision of axillary lymph node (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Alnd"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "41330009",
+    "display": "Laparoscopic-assisted left colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "43075005",
+    "display": "Partial resection of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "44378008",
+    "display": "Partial colectomy with anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "44642007",
+    "display": "Partial colectomy with colostomy and creation of mucofistula",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy", "Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "44751009",
+    "display": "Total abdominal colectomy with proctectomy and continent ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "50774009",
+    "display": "Laparoscopic-assisted right colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "53003006",
+    "display": "Resection of splenic flexure of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "54164009",
+    "display": "Rectosigmoidectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "73509004",
+    "display": "Partial colectomy with skin level colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy", "Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "73996007",
+    "display": "Proctopexy combined with sigmoid resection by abdominal approach",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "75312003",
+    "display": "Partial colectomy with ileostomy and creation of mucofistula",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "75404005",
+    "display": "Epiploectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "80294005",
+    "display": "Total abdominal colectomy with rectal mucosectomy and ileoanal anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "81092009",
+    "display": "Transsacral rectosigmoidectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "82619000",
+    "display": "Left colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "82900007",
+    "display": "Partial colectomy with coloproctostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "84604002",
+    "display": "Sigmoid colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "84952009",
+    "display": "Resection of colon for interposition",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "87279008",
+    "display": "Excision of lesion of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "87602008",
+    "display": "Closure of enterostomy of large intestine with resection and anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "89339008",
+    "display": "Partial colectomy with coloproctostomy and colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy", "Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174059005",
+    "display": "Excision of colon and rectum",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174071004",
+    "display": "Extended right hemicolectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174072006",
+    "display": "Extended right hemicolectomy and end-to-end anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174073001",
+    "display": "Extended right hemicolectomy and anastomosis of ileum to colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174080004",
+    "display": "Right hemicolectomy and end to end anastomosis of ileum to colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174081000",
+    "display": "Right hemicolectomy and side-to-side anastomosis of ileum to transverse colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174086005",
+    "display": "Transverse colectomy and end-to-end anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174087001",
+    "display": "Transverse colectomy and anastomosis of ileum to colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174093009",
+    "display": "Left hemicolectomy and end to end anastomosis of colon to rectum",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174094003",
+    "display": "Left hemicolectomy and end-to-end anastomosis of colon to colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174100000",
+    "display": "Sigmoid colectomy and end-to-end anastomosis of ileum to rectum",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174101001",
+    "display": "Sigmoid colectomy and anastomosis of colon to rectum",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174171002",
+    "display": "Fiberoptic endoscopic snare resection of lesion of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "174207007",
+    "display": "Endoscopic snare resection of lesion of sigmoid colon using rigid sigmoidoscope",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "235325001",
+    "display": "Extended left hemicolectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "265411006",
+    "display": "Partial excision of rectum and sigmoid colon for prolapse",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "265412004",
+    "display": "Rectosigmoidectomy and rectopexy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "274025005",
+    "display": "Colonic polypectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "275017002",
+    "display": "Duhamel removal of colorectal septum",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "276190007",
+    "display": "Ileocolic resection",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "287815004",
+    "display": "Excision of excess colostomy mucosa",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "301699000",
+    "display": "Snare resection of lesion of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "304583001",
+    "display": "Extended right hemicolectomy and ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "304587000",
+    "display": "Excision of colonic pouch",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307507006",
+    "display": "Excision jejunocolic fistula",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307586000",
+    "display": "Laparoscopic transverse colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307644001",
+    "display": "Transverse colectomy and ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307645000",
+    "display": "Transverse colectomy and colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy", "Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307648003",
+    "display": "Sigmoid colectomy and ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307654002",
+    "display": "Subtotal colectomy with caecorectal anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307656000",
+    "display": "Subtotal colectomy with ileosigmoid anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307657009",
+    "display": "Left hemicolectomy and colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy", "Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307658004",
+    "display": "Sigmoid colectomy and colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307659007",
+    "display": "Subtotal colectomy with ileorectal anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307662005",
+    "display": "Excision of colocutaneous fistula",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307666008",
+    "display": "Total colectomy and ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307667004",
+    "display": "Total colectomy, ileostomy and rectal mucous fistula",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "307669001",
+    "display": "Total colectomy, ileostomy and closure of rectal stump",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "311774002",
+    "display": "Colonoscopic polypectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "315321001",
+    "display": "Right hemicolectomy and anastomosis of ileum to colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "315322008",
+    "display": "Transverse colectomy with anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "315324009",
+    "display": "Left hemicolectomy with anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "315325005",
+    "display": "Left hemicolectomy with stoma",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "315326006",
+    "display": "Sigmoid colectomy with anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "315327002",
+    "display": "Sigmoid colectomy with stoma",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "359571009",
+    "display": "Right colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "386197003",
+    "display": "Excision of diverticula of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "425851003",
+    "display": "Fibreoptic endoscopic submucosal resection of lesion of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "426699005",
+    "display": "Endoscopic submucosal resection of lesion of sigmoid colon using rigid sigmoidoscope",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "427997001",
+    "display": "Subtotal excision of colon and rectum and creation of colonic pouch and anastomosis of colon to anus",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "440033009",
+    "display": "Laparoscopic fixation of prolapse of rectum with resection of sigmoid",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "443480008",
+    "display": "Laparoscopic excision of part of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "443909001",
+    "display": "Excision of part of colon with mobilisation of splenic flexure",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "444165004",
+    "display": "Excision of part of colon and excision of terminal ileum with ileocolic anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "445884009",
+    "display": "Wedge resection of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "446222007",
+    "display": "Hand assisted laparoscopic left colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "446223002",
+    "display": "Hand assisted laparoscopic right colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "446228006",
+    "display": "Hand assisted laparoscopic extended left colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "446472006",
+    "display": "Incision of colon and excision of polyp",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "446521004",
+    "display": "Colonoscopy and excision of mucosa of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "446747005",
+    "display": "Sigmoidoscopy and excision of mucosa of sigmoid colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "447166008",
+    "display": "Hand assisted laparoscopic extended right colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "447946003",
+    "display": "Right hemicolectomy and ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "448050005",
+    "display": "Colectomy and side to side anastomosis of ileum to colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "450461000",
+    "display": "Subtotal excision of colon and creation of colonic pouch",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "450462007",
+    "display": "Subtotal excision of colon and rectum and creation of colonic pouch",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "713165008",
+    "display": "Laparoscopic total colectomy with ileo-rectal anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "738551006",
+    "display": "Right colectomy with stoma",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "738552004",
+    "display": "Partial resection of colon with stoma",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "771568007",
+    "display": "Fiberoptic endoscopic excision of lesion of colonic mucous membrane",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "773128008",
+    "display": "Endoscopic snare resection of lesion of colon using full thickness resection device",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "773129000",
+    "display": "Combined endoscopic and laparoscopic excision of polyp of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "787108001",
+    "display": "Laparoscopic restorative proctocolectomy with ileal pouch anal anastomosis",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "787109009",
+    "display": "Excision of entire colon and entire rectum",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "787874000",
+    "display": "Laparoscopic total colectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "787875004",
+    "display": "Laparoscopic total colectomy and loop ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "787876003",
+    "display": "Laparoscopic total colectomy and ileostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "858579005",
+    "display": "Panproctocolectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "10371000132109",
+    "display": "Colonoscopic snare polypectomy of colon",
+    "system": "http://snomed.info/sct",
+    "category": ["Colectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "4044002",
+    "display": "Permanent colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "9905009",
+    "display": "Loop colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "11626008",
+    "display": "Miles operation, complete proctectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "16564004",
+    "display": "Hartmann operation, rectal resection",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "17671008",
+    "display": "Laparoscopic-assisted anterior resection of rectum with colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "24221008",
+    "display": "Repair of rectovesical fistula with colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "25196007",
+    "display": "Proctectomy by abdominoperineal resection with colostomy, two stages",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "35535008",
+    "display": "Transverse colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "37828009",
+    "display": "Suture of small intestine with colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "46295004",
+    "display": "Proctectomy by abdominoperineal resection with colostomy, one stage",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "49924002",
+    "display": "Perineal colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "51977003",
+    "display": "Repair of rectourethral fistula with colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "54629001",
+    "display": "Permanent magnetic colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "62069000",
+    "display": "Delayed opening colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "89642006",
+    "display": "Anterior resection of rectum with colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "261766001",
+    "display": "Construction of divided colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "299681007",
+    "display": "Construction of transverse loop colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "299682000",
+    "display": "Construction of sigmoid loop colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "386651004",
+    "display": "Cystocolostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "386828002",
+    "display": "Creation of defunctioning colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "386829005",
+    "display": "Temporary colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "387606008",
+    "display": "Construction of end colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "387607004",
+    "display": "Construction of diverting colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "398740003",
+    "display": "Colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "447982008",
+    "display": "Low anterior resection of rectum with colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "448653006",
+    "display": "Anterior resection of rectum and total mesorectal excision with colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["colon"],
+    "code": "1186912002",
+    "display": "Laparoscopic low anterior resection of rectum with construction of colostomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Colostomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "119000",
+    "display": "Thoracoscopic partial lobectomy of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "75935006",
+    "display": "Thoracoscopic lobectomy of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "84840003",
+    "display": "Total lobectomy of lung with concomitant decortication (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "125571002",
+    "display": "Lobectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "173171007",
+    "display": "Lobectomy of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "232641004",
+    "display": "Lobectomy of lung with excision of part of adjacent lobe (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "359615001",
+    "display": "Partial lobectomy of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "359623004",
+    "display": "Total lobectomy of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "726425007",
+    "display": "Lobectomy of lower lobe of right lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "726426008",
+    "display": "Lobectomy of lower lobe of left lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "726427004",
+    "display": "Lobectomy of upper lobe of left lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "726428009",
+    "display": "Lobectomy of upper lobe of right lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "736974006",
+    "display": "Excision of middle lobe of right lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "739139005",
+    "display": "Excision of middle and lower lobe of right lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "739141006",
+    "display": "Excision of middle and upper lobe of right lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lobectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "392022002",
+    "display": "Excision of mass (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Lumpectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "14693006",
+    "display": "Bilateral subcutaneous mammectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "14714006",
+    "display": "Bilateral mastectomy with excision of bilateral regional lymph nodes (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "17086001",
+    "display": "Modified radical mastectomy, bilateral (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "22418005",
+    "display": "Bilateral simple mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "27865001",
+    "display": "Bilateral mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "35482003",
+    "display": "Partial mastectomy with axillary lymphadenectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "52314009",
+    "display": "Bilateral mastectomy extended simple (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "59620004",
+    "display": "Mastectomy for gynecomastia (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "64368001",
+    "display": "Partial mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "66398006",
+    "display": "Mastectomy with excision of regional lymph nodes (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "69031006",
+    "display": "Excision of breast tissue (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "70183006",
+    "display": "Subcutaneous mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "76468001",
+    "display": "Bilateral radical mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "172043006",
+    "display": "Simple mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "172044000",
+    "display": "Subcutaneous mastectomy for gynecomastia (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "237367009",
+    "display": "Total mastectomy and division of pectoralis minor muscle (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "237368004",
+    "display": "Total mastectomy and excision of part of pectoral muscles and chest wall (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "274957008",
+    "display": "Radical mastectomy including axillary lymph nodes (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "287653007",
+    "display": "Subcutaneous mastectomy and prosthetic implant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "318190001",
+    "display": "Mastectomy with preservation of skin and nipple with synchronous implant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "359728003",
+    "display": "Radical mastectomy including pectoral muscles and axillary lymph nodes (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "359731002",
+    "display": "Urban operation, extended radical mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "359734005",
+    "display": "Halsted mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "359740003",
+    "display": "Extended radical mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "384723003",
+    "display": "Radical mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "395702000",
+    "display": "Patey total mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "406505007",
+    "display": "Modified radical mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "428564008",
+    "display": "Skin sparing mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "428571003",
+    "display": "Mastectomy of left breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "429400009",
+    "display": "Mastectomy of right breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "446109005",
+    "display": "Simple mastectomy with excision of axillary lymph nodes (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "446420001",
+    "display": "Simple mastectomy with complete axillary lymphadenectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "447135002",
+    "display": "Simple mastectomy with axillary lymph node sampling (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "447168009",
+    "display": "Excision of breast tissue with complete axillary lymphadenectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "456903003",
+    "display": "Bilateral extended radical mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "726429001",
+    "display": "Radical mastectomy of left breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "726430006",
+    "display": "Radical mastectomy of right breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "726434002",
+    "display": "Subcutaneous mastectomy of right breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "726435001",
+    "display": "Subcutaneous mastectomy of left breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "726436000",
+    "display": "Modified radical mastectomy of right breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "726437009",
+    "display": "Modified radical mastectomy of left breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "726636007",
+    "display": "Prophylactic bilateral mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "736753001",
+    "display": "Excision of part of left breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "736754007",
+    "display": "Excision of part of right breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "741009001",
+    "display": "Simple mastectomy of left breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "741010006",
+    "display": "Simple mastectomy of right breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "741018004",
+    "display": "Subcutaneous mastectomy of left breast with prosthetic implant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "741019007",
+    "display": "Subcutaneous mastectomy of right breast with prosthetic implant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "836435007",
+    "display": "Simple mastectomy of right breast using robotic assistance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "836436008",
+    "display": "Simple mastectomy of bilateral breasts using robotic assistance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "836437004",
+    "display": "Simple mastectomy of left breast using robotic assistance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Mastectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "18027006",
+    "display": "Transplantation of liver (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "27280000",
+    "display": "Liver transplant with recipient hepatectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "28009009",
+    "display": "Liver transplant without recipient hepatectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "32413006",
+    "display": "Transplantation of heart (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "32477003",
+    "display": "Heart-lung transplant with recipient cardiectomy-pneumonectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "47058000",
+    "display": "Heart transplant with recipient cardiectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "52213001",
+    "display": "Renal homotransplantation excluding donor and recipient nephrectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "61535006",
+    "display": "Transplantation of spleen (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "62438007",
+    "display": "Transplantation of pancreas (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "62511003",
+    "display": "Autotransplant of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "67562009",
+    "display": "Heterotransplant of pancreas (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "70536003",
+    "display": "Transplant of kidney (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "71947008",
+    "display": "Homotransplant of pancreas (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "76077004",
+    "display": "Total pancreatectomy with transplantation (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "88039007",
+    "display": "Transplant of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174425003",
+    "display": "Orthotopic liver transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174426002",
+    "display": "Heterotopic liver transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174427006",
+    "display": "Replacement of previous liver transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174691005",
+    "display": "Transplantation of pancreas and duodenum (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174692003",
+    "display": "Whole organ pancreatic transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174693008",
+    "display": "Transplantation of tail of pancreas (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174694002",
+    "display": "Renewal of transplanted pancreatic tissue (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174802006",
+    "display": "Allotransplant of heart and lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174808005",
+    "display": "Xenotransplant of heart (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174809002",
+    "display": "Heterotopic allotransplant of heart (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "175899003",
+    "display": "Autotransplantation of kidney (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "175901007",
+    "display": "Live donor renal transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "175902000",
+    "display": "Cadaveric renal transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "232657004",
+    "display": "Single lung transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "232658009",
+    "display": "Double lung transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "232659001",
+    "display": "Double lung transplant as a block (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "232660006",
+    "display": "Bilateral sequential single lung transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "232973007",
+    "display": "Allotransplant of heart (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "232974001",
+    "display": "Orthotopic allotransplant of heart (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "236138007",
+    "display": "Xenograft renal transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "277451006",
+    "display": "Part organ pancreatic transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "313030004",
+    "display": "Donor renal transplantation (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "313039003",
+    "display": "Solid organ transplant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "345797001",
+    "display": "Autotransplantation of pancreatic tissue (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "405768001",
+    "display": "Autotransplantation of heart (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "426356008",
+    "display": "Orthotopic transplantation of whole liver (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "429332008",
+    "display": "Transplantation of single lobe of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "711411006",
+    "display": "Allotransplantation of kidney from beating heart cadaver (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "711413009",
+    "display": "Allotransplantation of kidney from non-beating heart cadaver (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "765478004",
+    "display": "Allotransplantation of left kidney (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "765479007",
+    "display": "Allotransplantation of right kidney (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "782655004",
+    "display": "Laparoscopic transplant of kidney using robotic assistance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "6471000179103",
+    "display": "Transplantation of kidney and pancreas (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Organ Transplant"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "25321000",
+    "display": "Thoracoscopic pneumonectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "43232006",
+    "display": "Extrapleural pneumonectomy with empyemectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "49795001",
+    "display": "Total pneumonectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "91596000",
+    "display": "Complete excision of lung with mediastinal dissection (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "232642006",
+    "display": "Extrapericardial pneumonectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "232643001",
+    "display": "Intrapericardial pneumonectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "232644007",
+    "display": "Extrapleural pneumonectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "232646009",
+    "display": "Completion pneumonectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "232647000",
+    "display": "Pneumonectomy with tracheobronchoplasty (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy", "Sleeve Resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "735015005",
+    "display": "Complete excision of left lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "735016006",
+    "display": "Complete excision of right lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Pneumonectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "1709006",
+    "display": "Breast reconstruction, bilateral, with bilateral pedicle transverse rectus abdominis myocutaneous flaps (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "14453001",
+    "display": "Breast reconstruction, bilateral, with bilateral transverse rectus abdominis myocutaneous flaps (one pedicle / one free flap) (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "14561009",
+    "display": "Breast reconstruction with latissimus dorsi flap with implant (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "33496007",
+    "display": "Reconstruction of breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "61938004",
+    "display": "Breast reconstruction with free flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "172057008",
+    "display": "Reconstruction of breast using myocutaneous flap of latissimus dorsi muscle (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "172059006",
+    "display": "Reconstruction of breast using flap of skin of abdomen (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "172061002",
+    "display": "Reconstruction of breast with expander or prosthesis (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "172062009",
+    "display": "Reconstruction of breast with local muscle flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "199649004",
+    "display": "Breast reconstruction with muscle or myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "237407008",
+    "display": "Reconstruction of breast using distant skin flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "302342002",
+    "display": "Reconstruction of breast using local skin flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "303445008",
+    "display": "Reconstruction of breast with flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "313018005",
+    "display": "Endoscopic reconstruction of breast with expander (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "395166009",
+    "display": "Breast reconstruction with latissimus dorsi mini-flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "395167000",
+    "display": "Breast reconstruction with deep inferior epigastric perforator skin flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "425538003",
+    "display": "Reconstruction of breast using free inferior gluteal artery perforator flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "425633001",
+    "display": "Reconstruction of breast using flap of skin of buttock (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "426433000",
+    "display": "Reconstruction of breast using pedicled transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "426677002",
+    "display": "Reconstruction of breast using transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "426781008",
+    "display": "Reconstruction of breast using free transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "427381000",
+    "display": "Reconstruction of breast using free superior gluteal artery perforator flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "443611007",
+    "display": "Reconstruction of breast with immediate insertion of breast prosthesis (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "709453003",
+    "display": "Reconstruction of breast using free fasciocutaneous flap with microvascular anastomosis (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "709455005",
+    "display": "Reconstruction of breast using pedicle fasciocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "735221002",
+    "display": "Reconstruction of right breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "735222009",
+    "display": "Reconstruction of left breast (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "735223004",
+    "display": "Reconstruction of bilateral breasts (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "736519002",
+    "display": "Reconstruction of breast using pedicled omental flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "736530004",
+    "display": "Reconstruction of breast using free omental flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "736777007",
+    "display": "Reconstruction of breast using myocutaneous flap with microvascular anastomosis following mastectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "736778002",
+    "display": "Reconstruction of breast using myocutaneous flap with microvascular anastomosis (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "840356002",
+    "display": "Reconstruction of bilateral breasts using free transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "1052271000",
+    "display": "Reconstruction of right breast with bipedicle transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "1052272007",
+    "display": "Reconstruction of left breast with bipedicle transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "1052278006",
+    "display": "Reconstruction of left breast with pedicle transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "1052279003",
+    "display": "Reconstruction of right breast with pedicle transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "1055313001",
+    "display": "Reconstruction of left breast using single pedicle transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "1055318005",
+    "display": "Reconstruction of right breast using single pedicle transverse rectus abdominis myocutaneous flap (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Reconstruction"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "20418004",
+    "display": "Wedge resection (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["segmentectomy_wedge_resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "173172000",
+    "display": "Excision of segment of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["segmentectomy_wedge_resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "444188003",
+    "display": "Thoracoscopic wedge resection of lung (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["segmentectomy_wedge_resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "116165008",
+    "display": "Bronchial sleeve resection with pulmonary resection (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Sleeve Resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["lung"],
+    "code": "447975009",
+    "display": "Sleeve resection of bronchus and anastomosis (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Sleeve Resection"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "67097003",
+    "display": "Partial splenectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Splenectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "174776001",
+    "display": "Total splenectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Splenectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["breast"],
+    "code": "234319005",
+    "display": "Splenectomy",
+    "system": "http://snomed.info/sct",
+    "category": ["Splenectomy"]
+  }
+]

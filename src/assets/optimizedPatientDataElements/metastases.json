@@ -1,0 +1,74 @@
+[
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94222008",
+    "display": "Secondary malignant neoplasm of bone",
+    "system": "http://snomed.info/sct",
+    "category": ["Bone"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94381002",
+    "display": "Secondary malignant neoplasm of liver",
+    "system": "http://snomed.info/sct",
+    "category": ["Liver"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94253005",
+    "display": "Secondary malignant neoplasm of chest wall",
+    "system": "http://snomed.info/sct",
+    "category": ["Chest wall"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94391008",
+    "display": "Secondary malignant neoplasm of lung",
+    "system": "http://snomed.info/sct",
+    "category": ["Lung"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94392001",
+    "display": "Secondary malignant neoplasm of lymph node",
+    "system": "http://snomed.info/sct",
+    "category": ["Lymph node"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94606003",
+    "display": "Secondary malignant neoplasm of stomach",
+    "system": "http://snomed.info/sct",
+    "category": ["Stomach"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94579000",
+    "display": "Secondary malignant neoplasm of skin",
+    "system": "http://snomed.info/sct",
+    "category": ["Skin"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94399005",
+    "display": "Secondary malignant neoplasm of main bronchus",
+    "system": "http://snomed.info/sct",
+    "category": ["Main bronchus"]
+  },
+  {
+    "entryType": "metastasis",
+    "cancerType": ["brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"],
+    "code": "94225005",
+    "display": "Secondary malignant neoplasm of brain",
+    "system": "http://snomed.info/sct",
+    "category": ["Brain"]
+  }
+]

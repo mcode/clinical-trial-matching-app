@@ -1,0 +1,482 @@
+[
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "14473006",
+    "display": "Surface brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "113120007",
+    "display": "Interstitial brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "152198000",
+    "display": "Brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228677009",
+    "display": "Cesium 137 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228681009",
+    "display": "Cobalt 60 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228682002",
+    "display": "Cobalt 60 brachytherapy manual loading (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228684001",
+    "display": "Iridium 192 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228685000",
+    "display": "Gammamed brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228686004",
+    "display": "Microselectron brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228687008",
+    "display": "Selectron brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228688003",
+    "display": "Californium 252 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228689006",
+    "display": "Gold 198 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228690002",
+    "display": "Iodine 125 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228691003",
+    "display": "Phosphorus 32 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228692005",
+    "display": "Radon 222 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228693000",
+    "display": "Ruthenium 106 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228694006",
+    "display": "Strontium 90 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228695007",
+    "display": "Tantalum 182 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "228696008",
+    "display": "Yttrium 90 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "312243002",
+    "display": "Cesium 137 brachytherapy remote afterloading (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "312244008",
+    "display": "Cobalt 60 brachytherapy remote afterloading (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "384691004",
+    "display": "Intraluminal brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "384692006",
+    "display": "Intracavitary brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "394902000",
+    "display": "High dose brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "429929004",
+    "display": "Laser ablation using computed tomography guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "430269006",
+    "display": "Ablation using computed tomography guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "430270007",
+    "display": "Ablation using ultrasound guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "431399005",
+    "display": "Brachytherapy using iodine (131-I) ethiodized oil (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "433918001",
+    "display": "Ethanol ablation using computed tomography guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "438629002",
+    "display": "High dose rate electronic brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "440102005",
+    "display": "Ablation using magnetic resonance imaging guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "448137007",
+    "display": "Brachytherapy using radioiodine (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "448467008",
+    "display": "Interstitial brachytherapy using cesium needle (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "448552007",
+    "display": "Interstitial brachytherapy using gold grain (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "449157000",
+    "display": "Interstitial brachytherapy using iridium wire (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "700356003",
+    "display": "Radium 226 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "700357007",
+    "display": "Radium 223 brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "702590004",
+    "display": "Ablation using fluoroscopic guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "709588001",
+    "display": "Radiofrequency ablation using fluoroscopic guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "RFA"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "714029009",
+    "display": "Preoperative high dose brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "719499006",
+    "display": "Ethanol ablation using fluoroscopic guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "725836001",
+    "display": "Laser ablation using cone beam computed tomography guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "773335005",
+    "display": "Epiretinal brachytherapy with vitrectomy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "774001008",
+    "display": "High intensity focused ultrasound ablation (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "836429007",
+    "display": "Injection of radioactive implant into malignant neoplasm for brachytherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "Brachytherapy"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "colon", "lung"],
+    "code": "879916008",
+    "display": "Radiofrequency ablation (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["Ablation", "RFA"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "10611004",
+    "display": "Teleradiotherapy protons (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "24242005",
+    "display": "Cobalt-60 therapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "33195004",
+    "display": "Teleradiotherapy procedure (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "33356009",
+    "display": "Betatron teleradiotherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "38104006",
+    "display": "Teleradiotherapy by linear accelerator (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "45643008",
+    "display": "Teleradiotherapy using electrons (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "50632006",
+    "display": "Cyclotron teleradiotherapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "62867004",
+    "display": "Teleradiotherapy with radioactive cesium (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "74023000",
+    "display": "Teleradiotherapy of 1 to 25 mega electronvolt protons (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "77613002",
+    "display": "Teleradiotherapy with iodine-125 (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "80347004",
+    "display": "Teleradiotherapy neutrons (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "113117004",
+    "display": "Teleradiotherapy particulate radiation (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "399315003",
+    "display": "Radionuclide therapy (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["EBRT"]
+  },
+  {
+    "entryType": "radiation",
+    "cancerType": ["breast", "lung"],
+    "code": "433058002",
+    "display": "Radiofrequency ablation using ultrasound guidance (procedure)",
+    "system": "http://snomed.info/sct",
+    "category": ["RFA"]
+  }
+]

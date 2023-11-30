@@ -1,20 +1,30 @@
+import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
+
 export type SearchFormValuesType = {
-  matchingServices: {
-    breastCancerTrials: boolean;
-    trialjectory: boolean;
-    trialscope: boolean;
-  };
+  userid: string | null;
+  matchingServices: { [key: string]: boolean };
   zipcode: string;
   travelDistance: string;
   age: string;
-  cancerType: string;
-  cancerSubtype: string;
-  metastasis: string;
-  stage: string;
-  ecogScore: string;
-  karnofskyScore: string;
-  biomarkers: string[];
-  radiation: string[];
-  surgery: string[];
-  medications: string[];
+  gender: string;
+  cancerType: CodedValueType | null;
+  cancerSubtype: CodedValueType | null;
+  metastasis: CodedValueType[];
+  stage: CodedValueType;
+  ecogScore: Score;
+  karnofskyScore: Score;
+  biomarkers: Biomarker[];
+  radiation: CodedValueType[];
+  surgery: CodedValueType[];
+  medications: CodedValueType[];
 };
+
+export type State = Record<
+  keyof Pick<
+    SearchFormValuesType,
+    'cancerSubtype' | 'cancerType' | 'medications' | 'metastasis' | 'radiation' | 'stage' | 'surgery'
+  >,
+  CodedValueType[]
+> &
+  Record<keyof Pick<SearchFormValuesType, 'ecogScore' | 'karnofskyScore'>, Score[]> &
+  Record<keyof Pick<SearchFormValuesType, 'biomarkers'>, Biomarker[]>;

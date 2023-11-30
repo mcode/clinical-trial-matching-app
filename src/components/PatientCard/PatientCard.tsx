@@ -1,25 +1,23 @@
-import type { ReactElement } from 'react';
-import { Box, Stack } from '@mui/material';
+import type { Patient } from '@/utils/fhirConversionUtils';
 import { AccountCircle as AccountCircleIcon } from '@mui/icons-material';
-
-import type { Patient } from '@/utils/patient';
+import { Box, Stack, Typography } from '@mui/material';
+import type { ReactElement } from 'react';
 
 export type PatientCardProps = {
   patient: Patient;
 };
 
 const PatientCard = ({ patient }: PatientCardProps): ReactElement => (
-  <Stack alignItems="center" bgcolor="grey.800" color="common.white" direction="row" height="80px" pl={3}>
-    <Box pr={3} py={2}>
+  <Stack alignItems="center" bgcolor="grey.800" color="common.white" direction="row" px={3} py={2}>
+    <Stack mr={3}>
       <AccountCircleIcon fontSize="large" />
-    </Box>
+    </Stack>
 
     <Box>
-      <Box fontWeight={700}>{patient.name}</Box>
-
+      <Typography fontWeight={700}>{patient?.name}</Typography>
       <Stack direction="row">
-        <Box width={80}>{patient.gender}</Box>
-        <Box width={80}>{patient.age} yrs</Box>
+        <Typography mr={2}>{patient?.gender}</Typography>
+        <Typography>{patient?.age ? patient?.age + ' yrs' : ''}</Typography>
       </Stack>
     </Box>
   </Stack>

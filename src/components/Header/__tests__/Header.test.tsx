@@ -1,6 +1,6 @@
+import mockUser from '@/__mocks__/user';
 import { render, screen } from '@testing-library/react';
 import Header, { HeaderProps } from '../Header';
-import mockUser from '@/__mocks__/user';
 
 describe('<Header />', () => {
   const Component = (props: Partial<HeaderProps>) => <Header {...props} />;
@@ -12,7 +12,7 @@ describe('<Header />', () => {
   });
 
   it('renders the user name if logged in', () => {
-    render(<Component user={mockUser} />);
+    render(<Component userName={mockUser.name} />);
 
     expect(screen.getByText(/dr\. leonard mccoy/i)).toBeInTheDocument();
   });

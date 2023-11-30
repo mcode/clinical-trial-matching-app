@@ -4,7 +4,6 @@ const mockPatient = {
   gender: 'female',
   age: '28',
   zipcode: '11111',
-  cancerType: 'Breast',
 };
 
 export default mockPatient;

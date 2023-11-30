@@ -1,19 +1,21 @@
+import { Service } from '@/queries/clinicalTrialSearchQuery';
+import { Box, FormControl, FormControlLabel, FormGroup, FormLabel, Stack } from '@mui/material';
+import getConfig from 'next/config';
 import React, { ReactElement } from 'react';
 import { Control, Controller } from 'react-hook-form';
-import { Box, FormControl, FormControlLabel, FormGroup, FormLabel, Stack } from '@mui/material';
-
 import { MatchingServiceCheckbox } from './FormFields';
 import { SearchFormValuesType } from './types';
 
-type MatchingServicesProps = { control: Control<SearchFormValuesType> };
+const {
+  publicRuntimeConfig: { services },
+} = getConfig();
 
-const MATCHING_SERVICES = [
-  { name: 'breastCancerTrials', label: 'BreastCancerTrials.org', defaultValue: true },
-  { name: 'trialjectory', label: 'Trialjectory', defaultValue: false },
-  { name: 'trialscope', label: 'Trialscope', defaultValue: false },
-] as const;
+type MatchingServicesProps = {
+  control: Control<SearchFormValuesType>;
+  fullWidth?: boolean;
+};
 
-const MatchingServices = ({ control }: MatchingServicesProps): ReactElement => (
+const MatchingServices = ({ control, fullWidth }: MatchingServicesProps): ReactElement => (
   <Box bgcolor={theme => theme.palette.common.white} borderRadius="5px" px={1.5} py={0.5}>
     <FormControl component="fieldset">
       <FormLabel component="legend" sx={{ fontSize: '0.8em' }}>
@@ -21,19 +23,19 @@ const MatchingServices = ({ control }: MatchingServicesProps): ReactElement => (
       </FormLabel>
 
       <FormGroup>
-        <Stack direction={{ xs: 'column', md: 'row' }}>
-          {MATCHING_SERVICES.map(matchingService => (
+        <Stack direction={fullWidth ? 'column' : { xs: 'column', md: 'row' }}>
+          {services.map(({ name, label, defaultValue = false }: Service) => (
             <FormControlLabel
-              key={matchingService.name}
+              key={name}
               control={
                 <Controller
-                  name={`matchingServices.${matchingService.name}`}
-                  defaultValue={matchingService.defaultValue}
+                  name={`matchingServices.${name}`}
+                  defaultValue={defaultValue}
                   control={control}
                   render={MatchingServiceCheckbox}
                 />
               }
-              label={matchingService.label}
+              label={label}
             />
           ))}
         </Stack>
