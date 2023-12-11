@@ -399,7 +399,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
   rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
   rehydrateCodes(query, 'medications', convertCodesToMedications);
-  rehydrateCodes(query, 'radiations', convertCodesToRadiations);
+  rehydrateCodes(query, 'radiation', convertCodesToRadiations);
   rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
 
   return {
