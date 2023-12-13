@@ -1,7 +1,14 @@
-import { CircularProgress, Container } from '@mui/material';
+import styled from '@emotion/styled';
+import { CircularProgress, Paper, Stack, Typography } from '@mui/material';
 import smart from 'fhirclient';
 import { GetServerSideProps } from 'next';
 import { ReactElement, useEffect, useState } from 'react';
+
+const MainContent = styled(Paper)`
+  overflow-y: auto;
+  position: relative;
+  flex: 1 0 auto;
+`;
 
 const IndexPage = (): ReactElement => {
   const [loading, setLoading] = useState(true);
@@ -13,10 +20,16 @@ const IndexPage = (): ReactElement => {
     }
   }, [loading]);
   return (
-    <Container>
-      Please wait, loading patient data...
-      <CircularProgress></CircularProgress>
-    </Container>
+    <Stack minHeight="100vh" maxHeight="100vh" sx={{ overflowY: 'auto' }}>
+      <MainContent elevation={0} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} square>
+        <Stack alignItems="center" justifyContent="center" height="100%">
+          <CircularProgress size={100} />
+          <Typography variant="h4" marginTop={3}>
+            Please wait, loading patient data...
+          </Typography>
+        </Stack>
+      </MainContent>
+    </Stack>
   );
 };
 
