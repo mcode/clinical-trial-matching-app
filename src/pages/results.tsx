@@ -357,6 +357,12 @@ const rehydrateCodes = (
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const { req, res, query } = context;
+  // FIXME: Next.js 13 broke something, see https://github.com/vercel/next.js/issues/57397
+  // For now, remove the x-forwarded headers, they break fhirclient
+  delete req.headers['x-forwarded-host'];
+  delete req.headers['x-forwarded-port'];
+  delete req.headers['x-forwarded-proto'];
+  delete req.headers['x-forwarded-for'];
   const queryClient = new QueryClient();
   const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
 
@@ -393,7 +399,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
   rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
   rehydrateCodes(query, 'medications', convertCodesToMedications);
-  rehydrateCodes(query, 'radiations', convertCodesToRadiations);
+  rehydrateCodes(query, 'radiation', convertCodesToRadiations);
   rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
 
   return {

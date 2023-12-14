@@ -186,14 +186,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
           <Box p={{ xs: 0, md: 2 }}>
             <Stack alignItems="center" direction={{ xs: 'column', lg: 'row' }} justifyContent="center">
               <Box>
-                <Image
-                  src={SearchImage}
-                  alt="Clinical Trial Finder Search"
-                  layout="fixed"
-                  width={400}
-                  height={190}
-                  priority
-                />
+                <Image src={SearchImage} alt="Clinical Trial Finder Search" width={400} height={190} priority />
               </Box>
 
               <Box ml={{ md: 0, lg: 10 }} textAlign={{ xs: 'center', lg: 'left' }}>

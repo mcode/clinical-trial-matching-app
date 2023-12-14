@@ -20,7 +20,6 @@ const Header = ({ userName }: HeaderProps): ReactElement => {
             <Image
               src={Logo}
               alt="Clinical Trial Finder logo"
-              layout="fixed"
               width={isExtraSmallScreen ? 240 : 300}
               height={isExtraSmallScreen ? 48 : 60}
               priority

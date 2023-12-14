@@ -1,9 +1,11 @@
 import { SNOMED_CODE_URI } from '@/utils/fhirConstants';
 import { CancerType } from '@/utils/fhirConversionUtils';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import SearchForm, { SearchFormProps } from '../SearchForm';
 import { SearchFormValuesType } from '../types';
+
+jest.mock('next/router', () => jest.requireActual('next-router-mock'));
 
 const defaultValues: Partial<SearchFormValuesType> = {
   age: '28',
@@ -43,7 +45,9 @@ describe('<SearchForm />', () => {
   );
 
   it('renders the search form and all the search form fields', () => {
-    render(<Component />);
+    act(() => {
+      render(<Component />);
+    });
 
     expect(screen.getByText(/let's find some clinical trials/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('matchingServices')).toHaveLength(2);
@@ -64,7 +68,9 @@ describe('<SearchForm />', () => {
   });
 
   it('autopopulates with default or patient data', () => {
-    render(<Component />);
+    act(() => {
+      render(<Component />);
+    });
 
     expect(screen.getByTestId('zipcode')).toContainHTML('11111');
     expect(screen.getByTestId('travelDistance')).toContainHTML('100');
