@@ -32,7 +32,7 @@ type StudyProps = {
 
 const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isFacilitiesExpanded, setFacilitiesIsExpanded] = useState(false);
+  const [isFacilitiesExpanded, setFacilitiesExpanded] = useState(false);
   const details = getDetails(entry);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
@@ -125,7 +125,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
                 sx={{ marginTop: 2 }}
                 className="borderless"
                 onChange={(_event, expanded) => {
-                  setFacilitiesIsExpanded(expanded);
+                  setFacilitiesExpanded(expanded);
                 }}
               >
                 <AccordionSummary

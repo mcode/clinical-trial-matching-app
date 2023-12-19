@@ -14,7 +14,7 @@ export const savedStudiesReducer = (state: SavedStudiesState, action: SavedStudi
   switch (action.type) {
     case 'setInitialState':
       return uninitializedState;
-    case 'toggleSave':
+    case 'toggleSave': {
       const alreadySavedStudy = state.has(action.value.trialId);
       const updated = new Set<string>(state);
       if (!alreadySavedStudy) {
@@ -23,5 +23,6 @@ export const savedStudiesReducer = (state: SavedStudiesState, action: SavedStudi
         updated.delete(action.value.trialId);
         return updated;
       }
+    }
   }
 };

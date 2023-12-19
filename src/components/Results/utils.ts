@@ -72,7 +72,7 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
 };
 
 const getSponsor = (study: ResearchStudy): ContactProps => {
-  const sponsorId = study?.sponsor?.reference?.match(/\#(.*)/)?.[1];
+  const sponsorId = study?.sponsor?.reference?.match(/#(.*)/)?.[1];
   const sponsor: Organization = study?.contained?.find(
     ({ resourceType, id }) => resourceType === 'Organization' && id === sponsorId
   ) as Organization;
@@ -108,7 +108,7 @@ const getTitle = (study: ResearchStudy): string => study.title;
 
 const getType = (study: ResearchStudy): TypeProps => {
   for (const { text } of study.category || []) {
-    const match = text.match(/Study Type: (.+)$/)?.[1];
+    const match = /Study Type: (.+)$/.exec(text)?.[1];
     // https://react-hook-form.com/api/useform/register/
     // React Hook Form uses array brackets and periods to create nested structures.
     // We use the study type to create checkbox filters in the Sidebar.

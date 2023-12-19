@@ -82,7 +82,7 @@ describe('<FilterForm />', () => {
   it('renders the filter form and all the filter form fields', () => {
     render(<Component />);
 
-    expect(screen.getByRole('button', { name: /clear all/i }));
+    expect(screen.getByRole('button', { name: /clear all/i })).toBeInTheDocument();
     expect(screen.getByText(/sort by/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('sortingOption')).toHaveLength(3);
     expect(screen.getByText(/filter by/i)).toBeInTheDocument();
@@ -92,7 +92,7 @@ describe('<FilterForm />', () => {
     expect(screen.queryAllByTestId('filterOptions.trialPhase')).toHaveLength(6);
     expect(screen.getByText(/study type/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('filterOptions.studyType')).toHaveLength(3);
-    expect(screen.getByRole('button', { name: 'Filter' }));
+    expect(screen.getByRole('button', { name: 'Filter' })).toBeInTheDocument();
   });
 
   it('autopopulates with default data', () => {

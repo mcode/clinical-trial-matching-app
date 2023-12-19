@@ -35,9 +35,11 @@ export const getLocations = (study: ResearchStudy): Location[] => {
 
   for (const site of sites) {
     const url: string = site.reference;
-    const isLocalReference = url.length > 1 && url.substr(0, 1);
+    // FIXME: What is "url.substring(0, 1)" trying to check?
+    // Is it supposed to be url[0] === '#'?
+    const isLocalReference = url.length > 1 && url.substring(0, 1);
     if (isLocalReference) {
-      const id = url.substr(1);
+      const id = url.substring(1);
       const location = getLocation(id) as Location;
       location && locations.push(location);
     }

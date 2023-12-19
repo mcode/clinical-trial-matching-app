@@ -193,7 +193,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
   const drawerWidth = getDrawerWidth(isSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const filterOptions = useMemo(() => data?.filterOptions as FilterOptions, [data]);
+  const filterOptions = useMemo(() => data?.filterOptions, [data]);
   const [state, dispatch] = useReducer(
     savedStudiesReducer,
     (searchParams.savedStudies && new Set<string>(ensureArray(searchParams.savedStudies))) || uninitializedState

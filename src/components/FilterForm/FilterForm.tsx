@@ -44,7 +44,7 @@ const FilterForm = ({
   const onSubmit = (data: FilterFormValuesType) =>
     router.push({
       pathname: '/results',
-      query: { ...fullSearchParams, ...formDataToFilterQuery(data as FilterFormValuesType) },
+      query: { ...fullSearchParams, ...formDataToFilterQuery(data) },
     });
 
   return (
