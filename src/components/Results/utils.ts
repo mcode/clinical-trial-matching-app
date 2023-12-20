@@ -145,7 +145,9 @@ export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Function for looking up local reference
   const getIntervention = (referenceId: string) =>
-    study.contained.find(({ resourceType, id }) => resourceType === 'PlanDefinition' && referenceId === id);
+    study.contained.find<PlanDefinition>(
+      (value): value is PlanDefinition => value && value.resourceType === 'PlanDefinition' && referenceId === value.id
+    );
 
   // Map the references in the protocol to the local reference
   const interventions = study.protocol?.map(item =>
@@ -163,10 +165,6 @@ export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Map the interventions to their arm group.
   for (const intervention of interventions) {
-    if (typeof intervention !== 'object' || intervention === null) {
-      // Ignore any invalid interventions
-      continue;
-    }
     // Text of the subjectCodeableConcept is the arm group; this is necessary for us to map!
     if (intervention.subjectCodeableConcept?.text) {
       const formattedIntervention = {

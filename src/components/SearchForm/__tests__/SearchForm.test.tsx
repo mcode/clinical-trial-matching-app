@@ -118,7 +118,16 @@ describe('compareDefaultValues', () => {
         },
         biomarkers: [],
         radiation: [],
-        surgery: [],
+        surgery: [
+          {
+            entryType: 'surgery',
+            cancerType: [CancerType.BREAST],
+            code: '234262008',
+            display: 'Excision of axillary lymph node (procedure)',
+            system: 'http://snomed.info/sct',
+            category: ['Alnd'],
+          },
+        ],
         medications: [],
       })
     ).toEqual({
@@ -127,6 +136,7 @@ describe('compareDefaultValues', () => {
       ecogScore: true,
       karnofskyScore: true,
       matchingServices: false,
+      'surgerysurgerybreast234262008Excision of axillary lymph node (procedure)http://snomed.info/sctAlnd': true,
       travelDistance: false,
       userid: true,
       zipcode: true,
