@@ -23,7 +23,7 @@ import { SaveStudyHandler } from './types';
 import UnsaveIcon from './UnsaveIcon';
 import { getDetails } from './utils';
 
-type StudyProps = {
+export type StudyProps = {
   entry: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;

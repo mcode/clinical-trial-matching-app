@@ -19,12 +19,14 @@ import {
   TypeProps,
 } from './types';
 
-export const getContact = (contact: ContactDetail): ContactProps => {
-  return {
-    name: contact?.name,
-    phone: contact?.telecom?.find(info => info.system === 'phone' && info.value)?.value,
-    email: contact?.telecom?.find(info => info.system === 'email' && info.value)?.value,
-  };
+export const getContact = (contact?: ContactDetail): ContactProps | undefined => {
+  return contact
+    ? {
+        name: contact?.name,
+        phone: contact?.telecom?.find(info => info.system === 'phone' && info.value)?.value,
+        email: contact?.telecom?.find(info => info.system === 'email' && info.value)?.value,
+      }
+    : undefined;
 };
 
 const getConditions = (study: ResearchStudy): string[] => study.condition?.map(({ text }) => text) || [];
@@ -71,11 +73,17 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
   return study?.contact?.map(getContact) || [];
 };
 
-const getSponsor = (study: ResearchStudy): ContactProps => {
-  const sponsorId = study?.sponsor?.reference?.match(/#(.*)/)?.[1];
-  const sponsor: Organization = study?.contained?.find(
-    ({ resourceType, id }) => resourceType === 'Organization' && id === sponsorId
-  ) as Organization;
+export const getSponsor = (study: ResearchStudy): ContactProps | undefined => {
+  const reference = study?.sponsor?.reference;
+  if (!reference || reference[0] !== '#') {
+    return undefined;
+  }
+  const sponsorId = reference.substring(1);
+  const sponsor = study?.contained?.find<Organization>(
+    // Technically find is limiting to more than just a type predicate, but it
+    // also ensures the return value is an organization
+    (value): value is Organization => value.resourceType === 'Organization' && value.id === sponsorId
+  );
   return getContact(sponsor);
 };
 
@@ -106,14 +114,18 @@ const getStatus = (study: ResearchStudy): StatusProps => {
 
 const getTitle = (study: ResearchStudy): string => study.title;
 
-const getType = (study: ResearchStudy): TypeProps => {
+export const getType = (study: ResearchStudy): TypeProps => {
   for (const { text } of study.category || []) {
     const match = /Study Type: (.+)$/.exec(text)?.[1];
+    if (!match) {
+      // Ignore this and keep looking
+      continue;
+    }
     // https://react-hook-form.com/api/useform/register/
     // React Hook Form uses array brackets and periods to create nested structures.
     // We use the study type to create checkbox filters in the Sidebar.
     // Unless we remove those characters, passing in the Study Type as the Controller.name will break its state.
-    const matchWithoutIllegalCharacters = match?.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
+    const matchWithoutIllegalCharacters = match.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
     if (matchWithoutIllegalCharacters) {
       return { name: matchWithoutIllegalCharacters, label: match };
     }
