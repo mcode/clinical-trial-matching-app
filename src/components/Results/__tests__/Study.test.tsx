@@ -3,7 +3,6 @@ import { act, render, screen } from '@testing-library/react';
 import { useRef } from 'react';
 import Study, { StudyProps } from '../Study';
 import { StudyDetailProps } from '../types';
-import { prettyDOM } from '@testing-library/dom';
 
 afterEach(() => {
   jest.clearAllMocks();

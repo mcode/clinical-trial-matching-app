@@ -133,7 +133,7 @@ export const getType = (study: ResearchStudy): TypeProps => {
   return { name: 'Unknown Study Type' };
 };
 
-const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
+export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
   const arms = new Map<string, ArmGroup>();
 
   // Dont bother if there are no arms and interventions
@@ -148,14 +148,14 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
     study.contained.find(({ resourceType, id }) => resourceType === 'PlanDefinition' && referenceId === id);
 
   // Map the references in the protocol to the local reference
-  const interventions = study?.protocol?.map(item =>
+  const interventions = study.protocol?.map(item =>
     item.reference.length == 0 ? null : (getIntervention(item.reference.substring(1)) as PlanDefinition)
   );
 
   // Set up the arm groups -- we'll use the name of the arm group as the key.
   for (const arm of study.arm) {
     arms.set(arm.name, {
-      display: arm.type ? (arm?.type?.text ? arm.type.text + ': ' + arm.name : '') : '',
+      display: arm.type ? (arm.type.text ? arm.type.text + ': ' + arm.name : '') : '',
       ...(arm.description && { description: arm.description }),
       interventions: [],
     });
@@ -163,17 +163,21 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Map the interventions to their arm group.
   for (const intervention of interventions) {
+    if (typeof intervention !== 'object' || intervention === null) {
+      // Ignore any invalid interventions
+      continue;
+    }
     // Text of the subjectCodeableConcept is the arm group; this is necessary for us to map!
-    if (intervention?.subjectCodeableConcept?.text) {
-      const formatted_intervention = {
-        ...(intervention?.type?.text && { type: intervention.type.text }),
-        ...(intervention?.title && { title: intervention.title }),
-        ...(intervention?.subtitle && { subtitle: intervention.subtitle }),
-        ...(intervention?.description && { description: intervention.description }),
+    if (intervention.subjectCodeableConcept?.text) {
+      const formattedIntervention = {
+        ...(intervention.type?.text && { type: intervention.type.text }),
+        ...(intervention.title && { title: intervention.title }),
+        ...(intervention.subtitle && { subtitle: intervention.subtitle }),
+        ...(intervention.description && { description: intervention.description }),
       };
       const arm = arms.get(intervention.subjectCodeableConcept.text);
       if (arm) {
-        arm.interventions.push(formatted_intervention);
+        arm.interventions.push(formattedIntervention);
       }
     }
   }

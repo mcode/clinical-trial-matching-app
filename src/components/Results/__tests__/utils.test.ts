@@ -1,4 +1,10 @@
-import { getSponsor, getType } from '../utils';
+import { getArmsAndInterventions, getContact, getSponsor, getType } from '../utils';
+
+describe('getContact', () => {
+  it('returned undefined if given undefined', () => {
+    expect(getContact(undefined)).toBeUndefined();
+  });
+});
 
 describe('getSponsor()', () => {
   it('handles an empty research study', () => {
@@ -87,5 +93,56 @@ describe('getType()', () => {
       ],
     });
     expect(result).toEqual({ name: 'Expected Result', label: 'Expected Result' });
+  });
+});
+
+describe('getArmsAndInterventions()', () => {
+  it('returns an empty array for an empty research study', () => {
+    expect(
+      getArmsAndInterventions({
+        resourceType: 'ResearchStudy',
+        status: 'active',
+      })
+    ).toEqual([]);
+  });
+  it('maps interventions to arms', () => {
+    const actual = getArmsAndInterventions({
+      resourceType: 'ResearchStudy',
+      status: 'active',
+      arm: [
+        {
+          name: 'Test Arm',
+          type: { text: 'Example Type' },
+        },
+      ],
+      protocol: [
+        {
+          reference: '#testplan',
+        },
+      ],
+      contained: [
+        {
+          resourceType: 'PlanDefinition',
+          id: 'testplan',
+          status: 'active',
+          subjectCodeableConcept: {
+            text: 'Test Arm',
+          },
+          type: {
+            text: 'Intervention Type',
+          },
+        },
+      ],
+    });
+    expect(actual).toEqual([
+      {
+        display: 'Example Type: Test Arm',
+        interventions: [
+          {
+            type: 'Intervention Type',
+          },
+        ],
+      },
+    ]);
   });
 });
