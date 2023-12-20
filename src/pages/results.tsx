@@ -7,7 +7,6 @@ import { clinicalTrialSearchQuery } from '@/queries';
 import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
-import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import {
   convertCodesToBiomarkers,
   convertCodesToMedications,

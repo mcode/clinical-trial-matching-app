@@ -64,7 +64,7 @@ describe('<SearchForm />', () => {
     expect(screen.getByTestId('radiation')).toBeInTheDocument();
     expect(screen.getByTestId('surgery')).toBeInTheDocument();
     expect(screen.getByTestId('medications')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /search/i }));
+    expect(screen.getByRole('button', { name: /search/i })).toBeInTheDocument();
   });
 
   it('autopopulates with default or patient data', () => {

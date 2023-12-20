@@ -2,7 +2,7 @@ import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { extractBiomarkerCodes, extractCodes } from '@/utils/encodeODPE';
 import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
-import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
+import { CodedValueType, isEqualCodedValueType, isEqualScore } from '@/utils/fhirConversionUtils';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
@@ -110,8 +110,8 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
       } else if (typeof value == 'string') {
         manuallyAdjusted[key] = data[key] != defaultValues[key];
       } else if (key == 'ecogScore' || key == 'karnofskyScore') {
-        const defaultValue = defaultValues[key] as CodedScore;
-        const setValue = data[key] as CodedScore;
+        const defaultValue = defaultValues[key];
+        const setValue = data[key];
         manuallyAdjusted[key] = !isEqualScore(defaultValue, setValue);
       } else {
         const defaultValue = defaultValues[key] as CodedValueType;
@@ -156,7 +156,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
   };
 
   const retrieveCancer = (cancerType: CodedValueType): void => {
-    if (!!cancerType?.entryType) {
+    if (cancerType?.entryType) {
       setState(getNewState(cancerType));
     } else {
       setState({ ...uninitializedState, cancerType: state.cancerType });

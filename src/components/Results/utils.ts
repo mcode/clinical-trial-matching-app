@@ -137,7 +137,7 @@ const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Map the references in the protocol to the local reference
   const interventions = study?.protocol?.map(item =>
-    item.reference.length == 0 ? null : (getIntervention(item.reference.substr(1)) as PlanDefinition)
+    item.reference.length == 0 ? null : (getIntervention(item.reference.substring(1)) as PlanDefinition)
   );
 
   // Set up the arm groups -- we'll use the name of the arm group as the key.
