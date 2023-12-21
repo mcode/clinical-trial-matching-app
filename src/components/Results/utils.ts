@@ -74,15 +74,8 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
   return study?.contact?.map(getContact) || [];
 };
 
-export const getSponsor = (study: ResearchStudy): ContactProps | undefined => {
-  const reference = study.sponsor?.reference;
-  if (!reference?.startsWith('#')) {
-    return undefined;
-  }
-  const sponsorId = reference.substring(1);
-  const sponsor = findContainedResourceById<Organization>(study, 'Organization', sponsorId);
-  return getContact(sponsor);
-};
+export const getSponsor = (study: ResearchStudy): ContactProps | undefined =>
+  getContact(findContainedResourceByReference<Organization>(study, 'Organization', study.sponsor?.reference));
 
 const getStatus = (study: ResearchStudy): StatusProps => {
   const label = study.status

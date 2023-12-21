@@ -37,5 +37,5 @@ export const findContainedResourceByReference = <T extends FhirResource>(
   // Get just the reference URL
   const ref = typeof reference === 'string' ? reference : reference?.reference;
   // If it's relative, return it
-  return ref.startsWith('#') ? findContainedResourceById(study, resourceType, ref.substring(1)) : undefined;
+  return ref?.startsWith('#') ? findContainedResourceById(study, resourceType, ref.substring(1)) : undefined;
 };
