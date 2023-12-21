@@ -18,6 +18,7 @@ import {
   StudyDetailProps,
   TypeProps,
 } from './types';
+import { findContainedResourceById } from '@/utils/fhirUtils';
 
 export const getContact = (contact?: ContactDetail): ContactProps | undefined => {
   return contact
@@ -74,16 +75,12 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
 };
 
 export const getSponsor = (study: ResearchStudy): ContactProps | undefined => {
-  const reference = study?.sponsor?.reference;
-  if (!reference || reference[0] !== '#') {
+  const reference = study.sponsor?.reference;
+  if (!reference || !reference.startsWith('#')) {
     return undefined;
   }
   const sponsorId = reference.substring(1);
-  const sponsor = study?.contained?.find<Organization>(
-    // Technically find is limiting to more than just a type predicate, but it
-    // also ensures the return value is an organization
-    (value): value is Organization => value.resourceType === 'Organization' && value.id === sponsorId
-  );
+  const sponsor = findContainedResourceById<Organization>(study, 'Organization', sponsorId);
   return getContact(sponsor);
 };
 
@@ -136,28 +133,22 @@ export const getType = (study: ResearchStudy): TypeProps => {
 export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
   const arms = new Map<string, ArmGroup>();
 
-  // Dont bother if there are no arms and interventions
-  const noArms: boolean = study.arm == undefined || study.arm == null || study.arm.length == 0;
-  const noInterventions: boolean = study.protocol == undefined || study.protocol == null || study.protocol.length == 0;
-  if (noArms || noInterventions) {
+  // Dont bother if there are no arms or interventions (nothing would get mapped anyway)
+  if (!(study.arm && study.arm.length > 0) || !(study.protocol && study.protocol.length > 0)) {
     return [];
   }
 
-  // Function for looking up local reference
-  const getIntervention = (referenceId: string) =>
-    study.contained.find<PlanDefinition>(
-      (value): value is PlanDefinition => value && value.resourceType === 'PlanDefinition' && referenceId === value.id
-    );
-
   // Map the references in the protocol to the local reference
   const interventions = study.protocol?.map(item =>
-    item.reference.length == 0 ? null : (getIntervention(item.reference.substring(1)) as PlanDefinition)
+    item.reference.length == 0
+      ? null
+      : findContainedResourceById<PlanDefinition>(study, 'PlanDefinition', item.reference.substring(1))
   );
 
   // Set up the arm groups -- we'll use the name of the arm group as the key.
   for (const arm of study.arm) {
     arms.set(arm.name, {
-      display: arm.type ? (arm.type.text ? arm.type.text + ': ' + arm.name : '') : '',
+      display: arm.type?.text ? arm.type.text + ': ' + arm.name : '',
       ...(arm.description && { description: arm.description }),
       interventions: [],
     });
