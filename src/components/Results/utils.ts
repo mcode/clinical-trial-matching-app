@@ -18,7 +18,7 @@ import {
   StudyDetailProps,
   TypeProps,
 } from './types';
-import { findContainedResourceById, findContainedResourceByReference } from '@/utils/fhirUtils';
+import { findContainedResourceByReference } from '@/utils/fhirUtils';
 
 export const getContact = (contact?: ContactDetail): ContactProps | undefined => {
   return contact
