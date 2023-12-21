@@ -18,7 +18,7 @@ import {
   StudyDetailProps,
   TypeProps,
 } from './types';
-import { findContainedResourceById } from '@/utils/fhirUtils';
+import { findContainedResourceById, findContainedResourceByReference } from '@/utils/fhirUtils';
 
 export const getContact = (contact?: ContactDetail): ContactProps | undefined => {
   return contact
@@ -76,7 +76,7 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
 
 export const getSponsor = (study: ResearchStudy): ContactProps | undefined => {
   const reference = study.sponsor?.reference;
-  if (!reference || !reference.startsWith('#')) {
+  if (!reference?.startsWith('#')) {
     return undefined;
   }
   const sponsorId = reference.substring(1);
@@ -131,8 +131,6 @@ export const getType = (study: ResearchStudy): TypeProps => {
 };
 
 export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
-  const arms = new Map<string, ArmGroup>();
-
   // Dont bother if there are no arms or interventions (nothing would get mapped anyway)
   if (!(study.arm && study.arm.length > 0) || !(study.protocol && study.protocol.length > 0)) {
     return [];
@@ -140,34 +138,31 @@ export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 
   // Map the references in the protocol to the local reference
   const interventions = study.protocol?.map(item =>
-    item.reference.length == 0
-      ? null
-      : findContainedResourceById<PlanDefinition>(study, 'PlanDefinition', item.reference.substring(1))
+    findContainedResourceByReference<PlanDefinition>(study, 'PlanDefinition', item)
   );
 
   // Set up the arm groups -- we'll use the name of the arm group as the key.
-  for (const arm of study.arm) {
-    arms.set(arm.name, {
-      display: arm.type?.text ? arm.type.text + ': ' + arm.name : '',
-      ...(arm.description && { description: arm.description }),
-      interventions: [],
-    });
-  }
+  const arms = new Map<string, ArmGroup>(
+    study.arm.map(arm => [
+      arm.name,
+      {
+        display: arm.type?.text ? arm.type.text + ': ' + arm.name : '',
+        ...(arm.description && { description: arm.description }),
+        interventions: [],
+      },
+    ])
+  );
 
   // Map the interventions to their arm group.
   for (const intervention of interventions) {
     // Text of the subjectCodeableConcept is the arm group; this is necessary for us to map!
     if (intervention.subjectCodeableConcept?.text) {
-      const formattedIntervention = {
+      arms.get(intervention.subjectCodeableConcept.text)?.interventions.push({
         ...(intervention.type?.text && { type: intervention.type.text }),
         ...(intervention.title && { title: intervention.title }),
         ...(intervention.subtitle && { subtitle: intervention.subtitle }),
         ...(intervention.description && { description: intervention.description }),
-      };
-      const arm = arms.get(intervention.subjectCodeableConcept.text);
-      if (arm) {
-        arm.interventions.push(formattedIntervention);
-      }
+      });
     }
   }
 
