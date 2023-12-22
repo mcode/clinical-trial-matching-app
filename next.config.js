@@ -24,6 +24,9 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
 });
 
 module.exports = {
+  // Disable image optimization, as it's currently broken when Next.js is
+  // running under IISnode.
+  images: { unoptimized: true },
   poweredByHeader: false,
   reactStrictMode: true,
   publicRuntimeConfig: {
