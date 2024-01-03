@@ -2,7 +2,7 @@ import SearchImage from '@/assets/images/search.png';
 import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginationQuery';
 import { extractBiomarkerCodes, extractCodes } from '@/utils/encodeODPE';
 import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
-import { CodedValueType, isEqualCodedValueType, isEqualScore, Score as CodedScore } from '@/utils/fhirConversionUtils';
+import { CodedValueType, isEqualCodedValueType, isEqualScore } from '@/utils/fhirConversionUtils';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
@@ -57,6 +57,48 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });
 
+// Compare what's in the form with what was set as the default values
+// Normally could user contollers isDirty, but doesn't work for array values...
+// Exported to allow it to be tested
+export const compareDefaultValues = (
+  defaultValues: Partial<SearchFormValuesType>,
+  data: SearchFormValuesType
+): SearchFormManuallyAdjustedType => {
+  const manuallyAdjusted = {};
+  Object.entries(data).forEach(([key, value]) => {
+    if (value == null || value == undefined) {
+      return;
+    }
+    // If the value is an array, we need to check to see if any of the present values were there before
+    if (Array.isArray(value)) {
+      if (value.length == 0) {
+        return;
+      }
+      // Since values are set via autocomplete, and unique, it's pretty safe to reduce values to combination
+      const defaults = defaultValues[key]?.map(item => [key, ...Object.values(item)].join('')) || [];
+
+      console.log('Defaults', defaults);
+
+      value.forEach(item => {
+        const newKey = [key, ...Object.values(item)].join('');
+        manuallyAdjusted[newKey] = !defaults.includes(newKey);
+      });
+    } else if (typeof value == 'string') {
+      manuallyAdjusted[key] = data[key] != defaultValues[key];
+    } else if (key == 'ecogScore' || key == 'karnofskyScore') {
+      const defaultValue = defaultValues[key];
+      const setValue = data[key];
+      manuallyAdjusted[key] = !isEqualScore(defaultValue, setValue);
+    } else {
+      const defaultValue = defaultValues[key] as CodedValueType;
+      const setValue = data[key] as CodedValueType;
+      manuallyAdjusted[key] = !isEqualCodedValueType(defaultValue, setValue);
+    }
+  });
+
+  return manuallyAdjusted;
+};
+
 const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: SearchFormProps): ReactElement => {
   const router = useRouter();
   const theme = useTheme();
@@ -85,44 +127,6 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
     });
   };
 
-  // Compare what's in the form with what was set as the default values
-  // Normally could user contollers isDirty, but doesn't work for array values...
-  const compareDefaultValues = (data: SearchFormValuesType): SearchFormManuallyAdjustedType => {
-    const manuallyAdjusted = {};
-    Object.entries(data).forEach(([key, value]) => {
-      if (value == null || value == undefined) {
-        return;
-      }
-      // If the value is an array, we need to check to see if any of the present values were there before
-      if (Array.isArray(value)) {
-        if (value.length == 0) {
-          return;
-        }
-        // Since values are set via autocomplete, and unique, it's pretty safe to reduce values to combination
-        const defaults = defaultValues[key]?.map(item => [key, ...Object.values(item)].join('')) || [];
-
-        console.log('Defaults', defaults);
-
-        value.forEach(item => {
-          const newKey = [key, ...Object.values(item)].join('');
-          manuallyAdjusted[newKey] = !defaults.includes(newKey);
-        });
-      } else if (typeof value == 'string') {
-        manuallyAdjusted[key] = data[key] != defaultValues[key];
-      } else if (key == 'ecogScore' || key == 'karnofskyScore') {
-        const defaultValue = defaultValues[key] as CodedScore;
-        const setValue = data[key] as CodedScore;
-        manuallyAdjusted[key] = !isEqualScore(defaultValue, setValue);
-      } else {
-        const defaultValue = defaultValues[key] as CodedValueType;
-        const setValue = data[key] as CodedValueType;
-        manuallyAdjusted[key] = !isEqualCodedValueType(defaultValue, setValue);
-      }
-    });
-
-    return manuallyAdjusted;
-  };
-
   const generateExportButton = (onClick): ReactElement => {
     return (
       <Grid item xs={8}>
@@ -145,7 +149,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
 
   const generateExportCsv = (): string => {
     const data = getValues();
-    const manuallyAdjusted = compareDefaultValues(data);
+    const manuallyAdjusted = compareDefaultValues(defaultValues, data);
     const newUserId = generateId();
 
     if (setUserId) {
@@ -156,7 +160,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
   };
 
   const retrieveCancer = (cancerType: CodedValueType): void => {
-    if (!!cancerType?.entryType) {
+    if (cancerType?.entryType) {
       setState(getNewState(cancerType));
     } else {
       setState({ ...uninitializedState, cancerType: state.cancerType });

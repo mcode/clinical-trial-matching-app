@@ -7,7 +7,6 @@ import { clinicalTrialSearchQuery } from '@/queries';
 import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
-import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import {
   convertCodesToBiomarkers,
   convertCodesToMedications,
@@ -193,7 +192,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
   const drawerWidth = getDrawerWidth(isSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const filterOptions = useMemo(() => data?.filterOptions as FilterOptions, [data]);
+  const filterOptions = useMemo(() => data?.filterOptions, [data]);
   const [state, dispatch] = useReducer(
     savedStudiesReducer,
     (searchParams.savedStudies && new Set<string>(ensureArray(searchParams.savedStudies))) || uninitializedState

@@ -18,13 +18,16 @@ import {
   StudyDetailProps,
   TypeProps,
 } from './types';
+import { findContainedResourceByReference } from '@/utils/fhirUtils';
 
-export const getContact = (contact: ContactDetail): ContactProps => {
-  return {
-    name: contact?.name,
-    phone: contact?.telecom?.find(info => info.system === 'phone' && info.value)?.value,
-    email: contact?.telecom?.find(info => info.system === 'email' && info.value)?.value,
-  };
+export const getContact = (contact?: ContactDetail): ContactProps | undefined => {
+  return contact
+    ? {
+        name: contact?.name,
+        phone: contact?.telecom?.find(info => info.system === 'phone' && info.value)?.value,
+        email: contact?.telecom?.find(info => info.system === 'email' && info.value)?.value,
+      }
+    : undefined;
 };
 
 const getConditions = (study: ResearchStudy): string[] => study.condition?.map(({ text }) => text) || [];
@@ -71,13 +74,8 @@ const getContacts = (study: ResearchStudy): ContactProps[] => {
   return study?.contact?.map(getContact) || [];
 };
 
-const getSponsor = (study: ResearchStudy): ContactProps => {
-  const sponsorId = study?.sponsor?.reference?.match(/\#(.*)/)?.[1];
-  const sponsor: Organization = study?.contained?.find(
-    ({ resourceType, id }) => resourceType === 'Organization' && id === sponsorId
-  ) as Organization;
-  return getContact(sponsor);
-};
+export const getSponsor = (study: ResearchStudy): ContactProps | undefined =>
+  getContact(findContainedResourceByReference<Organization>(study, 'Organization', study.sponsor?.reference));
 
 const getStatus = (study: ResearchStudy): StatusProps => {
   const label = study.status
@@ -106,14 +104,18 @@ const getStatus = (study: ResearchStudy): StatusProps => {
 
 const getTitle = (study: ResearchStudy): string => study.title;
 
-const getType = (study: ResearchStudy): TypeProps => {
+export const getType = (study: ResearchStudy): TypeProps => {
   for (const { text } of study.category || []) {
-    const match = text.match(/Study Type: (.+)$/)?.[1];
+    const match = /Study Type: (.+)$/.exec(text)?.[1];
+    if (!match) {
+      // Ignore this and keep looking
+      continue;
+    }
     // https://react-hook-form.com/api/useform/register/
     // React Hook Form uses array brackets and periods to create nested structures.
     // We use the study type to create checkbox filters in the Sidebar.
     // Unless we remove those characters, passing in the Study Type as the Controller.name will break its state.
-    const matchWithoutIllegalCharacters = match?.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
+    const matchWithoutIllegalCharacters = match.replace(/\./, '').replace(/\[/, '(').replace(/\]/, ')');
     if (matchWithoutIllegalCharacters) {
       return { name: matchWithoutIllegalCharacters, label: match };
     }
@@ -121,48 +123,39 @@ const getType = (study: ResearchStudy): TypeProps => {
   return { name: 'Unknown Study Type' };
 };
 
-const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
-  const arms = new Map<string, ArmGroup>();
-
-  // Dont bother if there are no arms and interventions
-  const noArms: boolean = study.arm == undefined || study.arm == null || study.arm.length == 0;
-  const noInterventions: boolean = study.protocol == undefined || study.protocol == null || study.protocol.length == 0;
-  if (noArms || noInterventions) {
+export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
+  // Dont bother if there are no arms or interventions (nothing would get mapped anyway)
+  if (!(study.arm && study.arm.length > 0) || !(study.protocol && study.protocol.length > 0)) {
     return [];
   }
 
-  // Function for looking up local reference
-  const getIntervention = (referenceId: string) =>
-    study.contained.find(({ resourceType, id }) => resourceType === 'PlanDefinition' && referenceId === id);
-
   // Map the references in the protocol to the local reference
-  const interventions = study?.protocol?.map(item =>
-    item.reference.length == 0 ? null : (getIntervention(item.reference.substr(1)) as PlanDefinition)
+  const interventions = study.protocol?.map(item =>
+    findContainedResourceByReference<PlanDefinition>(study, 'PlanDefinition', item)
   );
 
   // Set up the arm groups -- we'll use the name of the arm group as the key.
-  for (const arm of study.arm) {
-    arms.set(arm.name, {
-      display: arm.type ? (arm?.type?.text ? arm.type.text + ': ' + arm.name : '') : '',
-      ...(arm.description && { description: arm.description }),
-      interventions: [],
-    });
-  }
+  const arms = new Map<string, ArmGroup>(
+    study.arm.map(arm => [
+      arm.name,
+      {
+        display: arm.type?.text ? arm.type.text + ': ' + arm.name : '',
+        ...(arm.description && { description: arm.description }),
+        interventions: [],
+      },
+    ])
+  );
 
   // Map the interventions to their arm group.
   for (const intervention of interventions) {
     // Text of the subjectCodeableConcept is the arm group; this is necessary for us to map!
-    if (intervention?.subjectCodeableConcept?.text) {
-      const formatted_intervention = {
-        ...(intervention?.type?.text && { type: intervention.type.text }),
-        ...(intervention?.title && { title: intervention.title }),
-        ...(intervention?.subtitle && { subtitle: intervention.subtitle }),
-        ...(intervention?.description && { description: intervention.description }),
-      };
-      const arm = arms.get(intervention.subjectCodeableConcept.text);
-      if (arm) {
-        arm.interventions.push(formatted_intervention);
-      }
+    if (intervention.subjectCodeableConcept?.text) {
+      arms.get(intervention.subjectCodeableConcept.text)?.interventions.push({
+        ...(intervention.type?.text && { type: intervention.type.text }),
+        ...(intervention.title && { title: intervention.title }),
+        ...(intervention.subtitle && { subtitle: intervention.subtitle }),
+        ...(intervention.description && { description: intervention.description }),
+      });
     }
   }
 

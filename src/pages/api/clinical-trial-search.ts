@@ -151,10 +151,7 @@ async function callWrappers(
 
       // Function to determine if the results are within range
       const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
-        return (
-          sendLocationData ||
-          (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance as string)
-        );
+        return sendLocationData || (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance);
       };
 
       // Special filter to check if valid under Ancora
@@ -298,16 +295,16 @@ const getParsedParameters = (
     Record<keyof Pick<SearchParameters, 'ecogScore' | 'karnofskyScore'>, Score>
 > => {
   return {
-    ...(!!parameters.cancerType ? { cancerType: JSON.parse(parameters.cancerType) } : {}),
-    ...(!!parameters.cancerSubtype ? { cancerSubtype: JSON.parse(parameters.cancerSubtype) } : {}),
-    ...(!!parameters.metastasis ? { metastasis: JSON.parse(parameters.metastasis) } : {}),
-    ...(!!parameters.stage ? { stage: JSON.parse(parameters.stage) } : {}),
-    ...(!!parameters.ecogScore ? { ecogScore: JSON.parse(parameters.ecogScore) } : {}),
-    ...(!!parameters.karnofskyScore ? { karnofskyScore: JSON.parse(parameters.karnofskyScore) } : {}),
-    ...(!!parameters.biomarkers ? { biomarkers: JSON.parse(parameters.biomarkers) } : {}),
-    ...(!!parameters.surgery ? { surgery: JSON.parse(parameters.surgery) } : {}),
-    ...(!!parameters.medications ? { medications: JSON.parse(parameters.medications) } : {}),
-    ...(!!parameters.radiation ? { radiation: JSON.parse(parameters.radiation) } : {}),
+    ...(parameters.cancerType ? { cancerType: JSON.parse(parameters.cancerType) } : {}),
+    ...(parameters.cancerSubtype ? { cancerSubtype: JSON.parse(parameters.cancerSubtype) } : {}),
+    ...(parameters.metastasis ? { metastasis: JSON.parse(parameters.metastasis) } : {}),
+    ...(parameters.stage ? { stage: JSON.parse(parameters.stage) } : {}),
+    ...(parameters.ecogScore ? { ecogScore: JSON.parse(parameters.ecogScore) } : {}),
+    ...(parameters.karnofskyScore ? { karnofskyScore: JSON.parse(parameters.karnofskyScore) } : {}),
+    ...(parameters.biomarkers ? { biomarkers: JSON.parse(parameters.biomarkers) } : {}),
+    ...(parameters.surgery ? { surgery: JSON.parse(parameters.surgery) } : {}),
+    ...(parameters.medications ? { medications: JSON.parse(parameters.medications) } : {}),
+    ...(parameters.radiation ? { radiation: JSON.parse(parameters.radiation) } : {}),
   };
 };
 
