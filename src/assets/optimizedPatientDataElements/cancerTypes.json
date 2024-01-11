@@ -4138,7 +4138,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["colon"],
-    "code": "16636101000119100",
+    "code": "16636101000119105",
     "display": "Primary malignant gastrointestinal stromal neoplasm of rectum (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Rectal"]
