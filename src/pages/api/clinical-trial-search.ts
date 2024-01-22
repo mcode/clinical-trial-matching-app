@@ -21,6 +21,7 @@ import { nanoid } from 'nanoid';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
+import { MCODE_CANCER_PATIENT } from '@/utils/fhirConstants';
 
 const {
   publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, resultsMax, services },
@@ -80,7 +81,7 @@ export function buildBundle(searchParams: SearchParameters, id?: string): Bundle
   }
 
   // Create our stub patient
-  const patient: Patient = { resourceType: 'Patient', id: id };
+  const patient: Patient = { resourceType: 'Patient', meta: { profile: [MCODE_CANCER_PATIENT] }, id: id };
 
   // Add whatever we can
   if (isAdministrativeGender(searchParams.gender)) {
