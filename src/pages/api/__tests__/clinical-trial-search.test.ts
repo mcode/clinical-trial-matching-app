@@ -103,7 +103,7 @@ const expectedBundle: Bundle = {
       resource: {
         resourceType: 'Patient',
         meta: {
-          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient']
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient'],
         },
         id: 'test_id',
         gender: 'female',
