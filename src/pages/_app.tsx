@@ -8,7 +8,7 @@ import '@fontsource/open-sans/700.css';
 import '@fontsource/open-sans/800.css';
 import { CircularProgress, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material';
 import type { AppProps } from 'next/app';
-import { ReactElement, useCallback, useEffect, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { DehydratedState, Hydrate } from 'react-query/hydration';
@@ -30,19 +30,19 @@ const App = ({ Component, pageProps, router }: AppProps<{ dehydratedState: Dehyd
     };
   }, [handleStop, handleStart, router.events]);
 
-  const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            refetchOnWindowFocus: false,
-          },
+  const queryClient = useRef<QueryClient>(null);
+  if (queryClient.current == null) {
+    queryClient.current = new QueryClient({
+      defaultOptions: {
+        queries: {
+          refetchOnWindowFocus: false,
         },
-      })
-  );
+      },
+    });
+  }
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient.current}>
       <Hydrate state={pageProps.dehydratedState}>
         <CacheProvider value={emotionCache}>
           <ThemeProvider theme={theme}>
