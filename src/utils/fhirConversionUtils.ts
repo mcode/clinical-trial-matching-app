@@ -287,7 +287,7 @@ const getCancerSubtype = (condition: Condition): CodedValueType | null => {
       ) {
         const coding = extension.valueCodeableConcept.coding[0];
         const found = (cancerSubtypes as CodedValueType[]).find(equalCodedValueType(coding));
-        if (!!found) {
+        if (found) {
           return found;
         }
       }
