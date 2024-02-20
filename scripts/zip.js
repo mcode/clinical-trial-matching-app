@@ -12,8 +12,8 @@ let skipNodeModules = false;
 // version info should probably be localized in one place but it's currently
 // used by the PowerShell script)
 const INSTALLER_FILES = [
-  'Git-2.42.0.2-64-bit.exe',
-  'node-v18.18.2-x64.msi',
+  'Git-2.43.0-64-bit.exe',
+  'node-v18.19.1-x64.msi',
   'iisnode-core-v0.2.26-x64.msi',
   'rewrite_amd64_en-US.msi',
 ];
@@ -223,7 +223,7 @@ async function main(args) {
   }
   if (!argFlags['--exclude-install-scripts']) {
     console.log('  Adding install script data...');
-    const installScripts = ['install.ps1', 'install.js', 'test.js', 'wrappers.json'];
+    const installScripts = ['install.ps1', 'test.js', 'wrappers.json'];
     try {
       if ((await fsp.stat(path.join(installPath, 'wrappers.local.json'))).isFile()) {
         installScripts.push('wrappers.local.json');

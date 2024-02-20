@@ -234,14 +234,20 @@ sudo chown "$CTMS_USER:$CTMS_USER" "$CTMS_DIR"
 echo "Moving to Node.js-based install script..."
 SCRIPT_DIR=`dirname "$0"`
 # Copy the install script to the install directory. This is necessary because the install script may otherwise not be visible.
-for FILE in install.js wrappers.json wrappers.local.json; do
+for FILE in wrappers.json wrappers.local.json; do
   if [ "$FILE" != "wrappers.local.json" ] || [ -f "$SCRIPT_DIR/$FILE" ]; then
     sudo cp "$SCRIPT_DIR/$FILE" "$CTMS_DIR/$FILE"
     sudo chown "$CTMS_USER:$CTMS_USER" "$CTMS_DIR/$FILE"
   fi
 done
 cd "$CTMS_DIR"
-sudo -u "$CTMS_USER" node "$CTMS_DIR/install.js" --install-dir "$CTMS_DIR" --extra-ca-certs "$EXTRA_CA_CERTS_FILE" $*
+# Bootstrap the CTMS directory if necessary
+if ! [ -f "$CTMS_DIR/clinical-trial-matching-app/scripts/install.js" ] ; then
+  pushd "$CTMS_DIR"
+  git clone 'https://github.com/mcode/clinical-trial-matching-app.git'
+  popd
+fi
+sudo -u "$CTMS_USER" node "$CTMS_DIR/clinical-trial-matching-app/install.js" --install-dir "$CTMS_DIR" --extra-ca-certs "$EXTRA_CA_CERTS_FILE" $*
 
 # The wrapper script doesn't have permissions to write the nginx configuration file, so this needs to be done with a second step
 echo "Copying nginx config..."
