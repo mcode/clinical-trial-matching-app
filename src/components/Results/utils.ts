@@ -45,7 +45,7 @@ export const getDetails = (studyProps: StudyDetailProps): StudyDetail[] => {
   return details.filter(({ body }) => (Array.isArray(body) ? body.length > 0 : body));
 };
 
-const getTrialId = (study: ResearchStudy) => study.identifier?.[0]?.value;
+const getTrialId = (study: ResearchStudy) => study.identifier?.[0]?.value.trim();
 
 const getDescription = (study: ResearchStudy) => study.description?.trim();
 
