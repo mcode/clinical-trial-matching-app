@@ -1,6 +1,7 @@
 import { BundleEntry as BundleEntryWithStudy, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
+import { MCODE_CANCER_PATIENT } from '@/utils/fhirConstants';
 import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import {
   getCancerRelatedMedicationStatement,
@@ -21,10 +22,17 @@ import { nanoid } from 'nanoid';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
-import { MCODE_CANCER_PATIENT } from '@/utils/fhirConstants';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, siteRubric, resultsMax, services },
+  publicRuntimeConfig: {
+    sendLocationData,
+    defaultZipCode,
+    defaultTravelDistance,
+    reactAppDebug,
+    siteRubric,
+    resultsMax,
+    services,
+  },
 } = getConfig();
 
 /**
@@ -153,24 +161,25 @@ async function callWrappers(
       // Function to determine if the results are within range
       const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
         return sendLocationData || (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance);
-      }; 
-      
+      };
+
       // Special filter to check if valid under Ancora
       const isValidAncora = (entry: StudyDetailProps): boolean => {
         if (entry.source != 'Ancora') return true;
 
         // This is site specific; check which site
-        if (siteRubric == "site1") {
+        if (siteRubric == 'site1') {
           return !(
             (mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
-              (mainCancerType == 'prostate' && entry.likelihood.score < 0.3)
+            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3)
           );
-        }
-        else if (siteRubric == 'site2') {
-          return !((mainCancerType == 'breast' && entry.likelihood.score < 0.3) ||
-              (mainCancerType == 'prostate' && entry.likelihood.score < 0.3) ||
-              (mainCancerType == 'multipleMyleoma' && entry.likelihood.score == 0) ||
-              (mainCancerType == 'colon' && entry.likelihood.score < 0.3))
+        } else if (siteRubric == 'site2') {
+          return !(
+            (mainCancerType == 'breast' && entry.likelihood.score < 0.3) ||
+            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3) ||
+            (mainCancerType == 'multipleMyleoma' && entry.likelihood.score == 0) ||
+            (mainCancerType == 'colon' && entry.likelihood.score < 0.3)
+          );
         }
 
         // Default -- don't filter under Ancora
@@ -207,17 +216,18 @@ async function callWrappers(
 
   // If we're using site2 rubric, then bypass max results and just return all results
   if (siteRubric == 'site2' && mainCancerType == 'brain') {
-    // Go through dictionary of occurences and grab the proper 
-    const results: StudyDetailProps[] = Object.keys(occurrences)
-      .map(trial => {
-        const preferredService = occurrences[trial][0];
-        const studyResult:StudyDetailProps = distanceFilteredResults[preferredService].find(study => study.trialId == trial);
-        studyResult.source = occurrences[trial].join(', ');
-        return studyResult;
-      });
+    // Go through dictionary of occurences and grab the proper
+    const results: StudyDetailProps[] = Object.keys(occurrences).map(trial => {
+      const preferredService = occurrences[trial][0];
+      const studyResult: StudyDetailProps = distanceFilteredResults[preferredService].find(
+        study => study.trialId == trial
+      );
+      studyResult.source = occurrences[trial].join(', ');
+      return studyResult;
+    });
 
     return results;
-  }  
+  }
 
   const sortByOccurence = (a: string[], b: string[]) => {
     return b[1].length - a[1].length;

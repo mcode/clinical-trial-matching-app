@@ -137,16 +137,18 @@ export const exportCsvStringData = (patientSearch: FullSearchParameters, data: S
 
 const convertResultsToRedCapRow = (data: StudyDetailProps, patientSearch: FullSearchParameters) => {
   const travelDistance: number = parseInt(patientSearch.travelDistance);
-  const facilities:string[] = [];
+  const facilities: string[] = [];
   // Go through the facilities and grab those that are within distance but also have a noteable name
-  data.closestFacilities.forEach((facility:ContactProps) => {
-    if ((facility.distance?.quantity < travelDistance) && facility?.name) facilities.push(facility.name)
-  })
+  data.closestFacilities.forEach((facility: ContactProps) => {
+    if (facility.distance?.quantity < travelDistance && facility?.name) facilities.push(facility.name);
+  });
 
-  if (data.trialId == "NCT04768868") {
-    console.log("Closest Facilities", data.closestFacilities.map((f) => f.name));
-    console.log("Facilities", facilities);
-
+  if (data.trialId == 'NCT04768868') {
+    console.log(
+      'Closest Facilities',
+      data.closestFacilities.map(f => f.name)
+    );
+    console.log('Facilities', facilities);
   }
 
   return {
