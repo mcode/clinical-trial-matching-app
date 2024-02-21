@@ -223,12 +223,6 @@ let protocol = 'http';
 let hostname = 'localhost';
 
 // Parse command line arguments
-// param (
-//     # Name of wrappers to install
-//     [string[]]$Wrappers = @("ancora.ai", "breastcancertrials.org", "carebox", "lungevity"),
-//     [string]$Protocol = "http",
-//     [string]$Hostname = "localhost"
-// )
 
 for (let idx = 2; idx < process.argv.length; idx++) {
   const arg = process.argv[idx];
