@@ -307,7 +307,7 @@ EnableFSMonitor=Disabled
     }
 
     [void]CopyInstallJS() {
-        $this.StartActivity("Copying install script to destination...")
+        $this.StartActivity("Copying install files to destination...")
         # Copy the scripts to the install directory
         if (-Not (Test-Path -Path "$($this.InstallPath)\wrappers.json" -PathType "Leaf")) {
             # Copy wrapper configuration over

@@ -457,20 +457,28 @@ class CTMSWrapper extends CTMSWebApp {
   async configure(installer) {
     // Let the base inmplementation deal with the generic stuff
     await super.configure(installer);
+    const envLocal = {};
+    if (installer.useSingleCacheDb) {
+      envLocal['CTGOV_CACHE_FILE'] = installer.joinPath('ctgov-cache.db');
+    }
     if (this.localEnv) {
-      const localEnvKeys = Object.keys(this.localEnv);
-      if (localEnvKeys.length > 0) {
-        // Write out values to .env.local
-        if (
-          await writeFileIfNotExists(
-            installer.joinPath(this.path, '.env.local'),
-            localEnvKeys.map(k => `${k}="${this.localEnv[k]}"`).join('\n') + '\n'
-          )
-        ) {
-          installer.info('Wrote .env.local file');
-        } else {
-          installer.info('Skipped .env.local, file already exists');
-        }
+      // Merge
+      for (let k in this.localEnv) {
+        envLocal[k] = this.localEnv[k];
+      }
+    }
+    const localEnvKeys = Object.keys(envLocal);
+    if (localEnvKeys.length > 0) {
+      // Write out values to .env.local
+      if (
+        await writeFileIfNotExists(
+          installer.joinPath(this.path, '.env.local'),
+          localEnvKeys.map(k => `${k}="${envLocal[k]}"`).join('\n') + '\n'
+        )
+      ) {
+        installer.info('Wrote .env.local file');
+      } else {
+        installer.info('Skipped .env.local, file already exists');
       }
     }
   }
@@ -550,6 +558,10 @@ class CTMSInstaller {
    * the install script, otherwise bad things may happen.
    */
   skipCheckInstallScriptUpdated = false;
+  /**
+   * When true (the default) use a single cache DB file for all wrappers.
+   */
+  useSingleCacheDb = true;
   /**
    * Target server. Currently either 'nginx' or 'IIS'
    */
@@ -855,6 +867,7 @@ const argumentFlags = {
   '--no-build': false,
   '--no-webapp-configure': false,
   '--no-install-update-check': false,
+  '--no-single-cache': false,
 };
 
 // Parse command line arguments. This is intentionally somewhat simplistic
@@ -886,6 +899,7 @@ installer.skipBuild = argumentFlags['--no-build'];
 installer.skipWebappConfigure = argumentFlags['--no-webapp-configure'];
 installer.targetServer = argumentsWithValues['--target-server'];
 installer.skipCheckInstallScriptUpdated = argumentFlags['--no-install-update-check'];
+installer.useSingleCacheDb = !argumentsWithValues['--no-single-cache'];
 
 installer
   .install()
