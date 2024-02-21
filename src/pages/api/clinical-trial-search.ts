@@ -1,6 +1,7 @@
 import { BundleEntry as BundleEntryWithStudy, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
+import { MCODE_CANCER_PATIENT } from '@/utils/fhirConstants';
 import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import {
   getCancerRelatedMedicationStatement,
@@ -21,10 +22,17 @@ import { nanoid } from 'nanoid';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
-import { MCODE_CANCER_PATIENT } from '@/utils/fhirConstants';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, resultsMax, services },
+  publicRuntimeConfig: {
+    sendLocationData,
+    defaultZipCode,
+    defaultTravelDistance,
+    reactAppDebug,
+    siteRubric,
+    resultsMax,
+    services,
+  },
 } = getConfig();
 
 /**
@@ -157,11 +165,25 @@ async function callWrappers(
 
       // Special filter to check if valid under Ancora
       const isValidAncora = (entry: StudyDetailProps): boolean => {
-        return !(
-          entry.source == 'Ancora' &&
-          ((mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
-            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3))
-        );
+        if (entry.source != 'Ancora') return true;
+
+        // This is site specific; check which site
+        if (siteRubric == 'site1') {
+          return !(
+            (mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
+            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3)
+          );
+        } else if (siteRubric == 'site2') {
+          return !(
+            (mainCancerType == 'breast' && entry.likelihood.score < 0.3) ||
+            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3) ||
+            (mainCancerType == 'multipleMyleoma' && entry.likelihood.score == 0) ||
+            (mainCancerType == 'colon' && entry.likelihood.score < 0.3)
+          );
+        }
+
+        // Default -- don't filter under Ancora
+        return true;
       };
 
       // Only interested in Active and Interventional trials
@@ -192,6 +214,21 @@ async function callWrappers(
     distanceFilteredResults[searchset['serviceName']] = subset;
   });
 
+  // If we're using site2 rubric, then bypass max results and just return all results
+  if (siteRubric == 'site2' && mainCancerType == 'brain') {
+    // Go through dictionary of occurences and grab the proper
+    const results: StudyDetailProps[] = Object.keys(occurrences).map(trial => {
+      const preferredService = occurrences[trial][0];
+      const studyResult: StudyDetailProps = distanceFilteredResults[preferredService].find(
+        study => study.trialId == trial
+      );
+      studyResult.source = occurrences[trial].join(', ');
+      return studyResult;
+    });
+
+    return results;
+  }
+
   const sortByOccurence = (a: string[], b: string[]) => {
     return b[1].length - a[1].length;
   };
@@ -214,8 +251,7 @@ async function callWrappers(
 
     // Remove this trial as an option of trials from the distanceFilteredResults
     services.forEach(service => {
-      const removalIndex = distanceFilteredResults[service].indexOf(item => item.trialId == trialId[0]);
-      delete distanceFilteredResults[service][removalIndex];
+      distanceFilteredResults[service] = distanceFilteredResults[service].filter(item => item.trialId != trialId[0]);
     });
 
     return studyResult;

@@ -3,6 +3,7 @@ import { DEFAULT_PAGE, DEFAULT_PAGE_SIZE } from '@/queries/clinicalTrialPaginati
 import { extractBiomarkerCodes, extractCodes } from '@/utils/encodeODPE';
 import generateSearchCSVString, { SearchFormManuallyAdjustedType } from '@/utils/exportSearch';
 import { CodedValueType, isEqualCodedValueType, isEqualScore } from '@/utils/fhirConversionUtils';
+import { generateId } from '@/utils/generateId';
 import { Download as DownloadIcon, Search as SearchIcon } from '@mui/icons-material';
 import { Box, Button, Grid, Stack, useMediaQuery, useTheme } from '@mui/material';
 import Image from 'next/image';
@@ -31,7 +32,6 @@ import {
 import { getNewState, uninitializedState } from './FormFieldsOptions';
 import MatchingServices from './MatchingServices';
 import { SearchFormValuesType, State } from './types';
-import { generateId } from '@/utils/generateId';
 
 export type SearchFormProps = {
   defaultValues: Partial<SearchFormValuesType>;

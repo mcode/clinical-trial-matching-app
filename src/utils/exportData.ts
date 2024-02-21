@@ -3,7 +3,7 @@
 import { stringify as csvStringify } from 'csv-stringify/sync';
 import { FullSearchParameters } from 'types/search-types';
 import { v4 as uuidv4 } from 'uuid';
-import { StudyDetail, StudyDetailProps } from '../components/Results/types';
+import { ContactProps, StudyDetail, StudyDetailProps } from '../components/Results/types';
 
 // NOTE: Uncomment this out for facilities information
 // const SiteRowKeys = {
@@ -51,6 +51,11 @@ export const RedCapHeaders = [
   'contact',
   'contact_phone',
   'contact_email',
+  'facility_name_1',
+  'facility_name_2',
+  'facility_name_3',
+  'facility_name_4',
+  'facility_name_5',
   'age',
   'ps_scale',
   'ecog',
@@ -124,13 +129,28 @@ export const exportCsvStringData = (patientSearch: FullSearchParameters, data: S
   const patientElements = convertPatientInfoToRedCapRow(patientSearch);
   const bb_subject_id = uuidv4();
   const entries = data.map(entry => {
-    const trialElements = convertResultsToRedCapRow(entry);
+    const trialElements = convertResultsToRedCapRow(entry, patientSearch);
     return { ...trialElements, bb_subject_id };
   });
   return csvStringify([RedCapHeaders]) + csvStringify([{ ...patientElements }]) + csvStringify(entries);
 };
 
-const convertResultsToRedCapRow = (data: StudyDetailProps) => {
+const convertResultsToRedCapRow = (data: StudyDetailProps, patientSearch: FullSearchParameters) => {
+  const travelDistance: number = parseInt(patientSearch.travelDistance);
+  const facilities: string[] = [];
+  // Go through the facilities and grab those that are within distance but also have a noteable name
+  data.closestFacilities.forEach((facility: ContactProps) => {
+    if (facility.distance?.quantity < travelDistance && facility?.name) facilities.push(facility.name);
+  });
+
+  if (data.trialId == 'NCT04768868') {
+    console.log(
+      'Closest Facilities',
+      data.closestFacilities.map(f => f.name)
+    );
+    console.log('Facilities', facilities);
+  }
+
   return {
     record_id: '',
     redcap_event_name: 'match_arm_1',
@@ -151,6 +171,11 @@ const convertResultsToRedCapRow = (data: StudyDetailProps) => {
     contact: data.contacts?.[0]?.name || '',
     contact_phone: data.contacts?.[0]?.phone || '',
     contact_email: data.contacts?.[0]?.email || '',
+    facility_name_1: facilities?.[0] || '',
+    facility_name_2: facilities?.[1] || '',
+    facility_name_3: facilities?.[2] || '',
+    facility_name_4: facilities?.[3] || '',
+    facility_name_5: facilities?.[4] || '',
     age: '',
     ps_scale: '',
     ecog: '',
@@ -201,6 +226,11 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
     contact: '',
     contact_phone: '',
     contact_email: '',
+    facility_name_1: '',
+    facility_name_2: '',
+    facility_name_3: '',
+    facility_name_4: '',
+    facility_name_5: '',
     age: patientSearch.age || '',
     ps_scale: karnofskyScore ? 1 : ecogScore || ecogScore === 0 ? 2 : '',
     ecog: ecogScore,

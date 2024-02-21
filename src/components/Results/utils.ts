@@ -6,6 +6,7 @@ import {
   getZipcodeCoordinates,
 } from '@/utils/distanceUtils';
 import { MainRowKeys } from '@/utils/exportData';
+import { findContainedResourceByReference } from '@/utils/fhirUtils';
 import { format } from 'date-fns';
 import { BundleEntrySearch, ContactDetail, Location, Organization, PlanDefinition, ResearchStudy } from 'fhir/r4';
 import { ArmGroup } from '.';
@@ -18,7 +19,6 @@ import {
   StudyDetailProps,
   TypeProps,
 } from './types';
-import { findContainedResourceByReference } from '@/utils/fhirUtils';
 
 export const getContact = (contact?: ContactDetail): ContactProps | undefined => {
   return contact
@@ -45,7 +45,7 @@ export const getDetails = (studyProps: StudyDetailProps): StudyDetail[] => {
   return details.filter(({ body }) => (Array.isArray(body) ? body.length > 0 : body));
 };
 
-const getTrialId = (study: ResearchStudy) => study.identifier?.[0]?.value;
+const getTrialId = (study: ResearchStudy) => study.identifier?.[0]?.value.trim();
 
 const getDescription = (study: ResearchStudy) => study.description?.trim();
 
