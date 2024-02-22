@@ -153,8 +153,10 @@ class Zipper {
       if (nextUpdate < now) {
         process.stdout.write(
           `\rAdding ${
-            file.length > maxFilenameLength ? '...' + file.substring(file.length - maxFilenameLength - 3) : file
-          }... (${((current / total) * 100).toFixed(1)}%)`
+            file.length > maxFilenameLength ? '...' + file.substring(file.length - maxFilenameLength + 3) : file
+          }... (${((current / total) * 100).toFixed(1)}%)${
+            file.length < maxFilenameLength ? ''.padEnd(maxFilenameLength - file.length, ' ') : ''
+          }`
         );
         nextUpdate = now + 100;
       }
