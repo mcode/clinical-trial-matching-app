@@ -1,5 +1,5 @@
 const allowedCancerTypes = ['bladder', 'brain', 'breast', 'colon', 'lung', 'multipleMyeloma', 'prostate'];
-const allowedSiteRubics = ['none', 'site1', 'site2'];
+const allowedSiteRubrics = ['none', 'site1', 'site2'];
 const enabledMatchingServices = process.env.MATCHING_SERVICES;
 if (!enabledMatchingServices || /^\s*$/.test(enabledMatchingServices)) {
   console.error(
@@ -43,7 +43,7 @@ module.exports = {
     defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
     defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
     resultsMax: process.env.RESULTS_MAX,
-    siteRubric: allowedSiteRubics.includes(process.env.SITE_RUBRIC) ? process.env.SITE_RUBRIC : 'none',
+    siteRubric: allowedSiteRubrics.includes(process.env.SITE_RUBRIC) ? process.env.SITE_RUBRIC : 'none',
     services: matchingServices,
   },
   serverRuntimeConfig: {
