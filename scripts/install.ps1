@@ -2,7 +2,7 @@
 # files under Windows.
 param (
     # The install path for CTMS and its various software
-    [string]$InstallPath = "C:\CTMS",
+    [string]$InstallPath = "",
     # Name of a CA file to automatically use (path is relative to where the
     # script is run or the script file itself if not found there)
     [string]$ExtraCAs = "CA.cer",
@@ -20,13 +20,17 @@ param (
 
 # Config for various prereqs, moved here to make updating them easier
 # (these values will get overridden later, they're only for making populating the config easier)
-$GIT_VERSION = "2.42.0.windows.2"
-$NODE_VERSION = "18.18.2"
+$GIT_VERSION = "2.43.0.windows.1"
+$NODE_VERSION = "18.19.1"
 
 $global:PREREQ_CONFIG = @{
   "git" = @{
     "version" = "git version $GIT_VERSION";
-    "url" = "https://github.com/git-for-windows/git/releases/download/v$GIT_VERSION/Git-$($GIT_VERSION -replace '.windows', '')-64-bit.exe"
+    # This is weird, but basically, .windows.1 becomes empty, while
+    # .windows.(anything else) keeps the variant in the final download
+    # So first remove .windows.1 if it exists, and then remove .windows if it
+    # exists.
+    "url" = "https://github.com/git-for-windows/git/releases/download/v$GIT_VERSION/Git-$(($GIT_VERSION -replace '.windows.1', '') -replace '.windows', '')-64-bit.exe"
   };
   "node" = @{
     "version" = "v$NODE_VERSION";
@@ -303,7 +307,7 @@ EnableFSMonitor=Disabled
     }
 
     [void]CopyInstallJS() {
-        $this.StartActivity("Copying install script to destination...")
+        $this.StartActivity("Copying install files to destination...")
         # Copy the scripts to the install directory
         if (-Not (Test-Path -Path "$($this.InstallPath)\wrappers.json" -PathType "Leaf")) {
             # Copy wrapper configuration over
@@ -315,22 +319,18 @@ EnableFSMonitor=Disabled
                 Copy-Item -Path "$PSScriptRoot\wrappers.local.json" -Destination "$($this.InstallPath)\wrappers.local.json"
             }
         }
-        # There is no good way to check if we're trying to copy over itself
-        # and no way to determine if the error was that it copied to itself
-        # (other than hoping the description text never changes) so instead
-        # try and figure out if the destination already exists
-        $source = Get-Item "$PSScriptRoot\install.js"
-        $install_js_path = "$($this.InstallPath)\install.js"
-        if (Test-Path -Path $install_js_path -PathType "Leaf") {
-            # Could potentially be the same file.
-            $dest = Get-Item -Path $install_js_path
-            if ($source.PSParentPath -eq $dest.PSParentPath) {
-                # Is the same item, return
-                return
+        if (-Not (Test-Path -Path "$($this.InstallPath)\clinical-trial-matching-app\scripts\install.js")) {
+            # If the script does not exist, we need to clone it.
+            Push-Location $this.InstallPath
+            try {
+                git clone 'https://github.com/mcode/clinical-trial-matching-app.git'
+                if ($LastExitCode -ne 0) {
+                    throw 'Failed to clone webapp directory (could not bootstrap remaining install)'
+                }
+            } finally {
+                Pop-Location
             }
         }
-        # Copy it
-        Copy-Item -Path "$PSScriptRoot\install.js" -Destination $install_js_path
     }
 
     [void]InvokeJSInstallScript() {
@@ -340,7 +340,7 @@ EnableFSMonitor=Disabled
         Write-Progress -Activity "done" -Status "done" -Completed
         # Force color output in the install script
         $Env:FORCE_COLOR = 1
-        $args = @("$($this.InstallPath)\install.js", "--install-dir", $this.InstallPath, "--target-server", "IIS")
+        $args = @("$($this.InstallPath)\clinical-trial-matching-app\scripts\install.js", "--install-dir", $this.InstallPath, "--target-server", "IIS")
         if ($this.HasExtraCerts) {
           $args += "--extra-ca-certs"
           $args += $this.CACertsPEM
@@ -407,6 +407,18 @@ EnableFSMonitor=Disabled
 }
 
 Write-Host "Running CTMS Installer..."
+
+if ($InstallPath -eq "") {
+  # If it's blank, use a default
+  # Check to see if we're already in an install directory
+  if ((Test-Path -Path "$PSScriptRoot\clinical-trial-matching-app\scripts\install.js" -PathType "Leaf") -and (Test-Path -Path "$PSScriptRoot\wrappers\installers" -PathType "Container")) {
+    $InstallPath = $PSScriptRoot
+  } else {
+    $InstallPath = "C:\CTMS"
+  }
+}
+
+Write-Host "  Installing into $InstallPath"
 
 $ca_file = ""
 if (Test-Path -Path $ExtraCAs -PathType "Leaf") {
