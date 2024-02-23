@@ -418,7 +418,7 @@ Write-Host "Running CTMS Installer..."
 if ($InstallPath -eq "") {
   # If it's blank, use a default
   # Check to see if we're already in an install directory
-  if ((Test-Path -Path "$PSScriptRoot\clinical-trial-matching-app\scripts\install.js" -PathType "Leaf") -and (Test-Path -Path "$PSScriptRoot\wrappers\installers" -PathType "Container")) {
+  if ((Test-Path -Path "$PSScriptRoot\clinical-trial-matching-app\scripts\install.js" -PathType "Leaf") -and (Test-Path -Path "$PSScriptRoot\installers" -PathType "Container")) {
     $InstallPath = $PSScriptRoot
   } else {
     $InstallPath = "C:\CTMS"
