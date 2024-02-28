@@ -15,7 +15,10 @@ param (
     # If $true, skip the build step
     [switch]$NoBuild = $false,
     # If $true, don't attempt to configure the web apps
-    [switch]$NoConfigureWebapps = $false
+    [switch]$NoConfigureWebapps = $false,
+    # If $true, skip anything that would involve network access. Currently this
+    # only affects the JS script portion
+    [switch]$NoNetwork = $false
 )
 
 # Config for various prereqs, moved here to make updating them easier
@@ -139,6 +142,7 @@ class CTMSInstaller {
     [boolean]$SkipGitPull
     [boolean]$SkipBuild
     [boolean]$SkipWebappConfigure
+    [boolean]$NoNetwork
     [string]$CurrentActivity
     [string]$CurrentStatus
 
@@ -334,32 +338,35 @@ EnableFSMonitor=Disabled
     }
 
     [void]InvokeJSInstallScript() {
-        # Copy the scripts to the install directory
-        $this.CopyInstallJS()
-        # Hide the progress bar for the duration of the Node.js process
-        Write-Progress -Activity "done" -Status "done" -Completed
-        # Force color output in the install script
-        $Env:FORCE_COLOR = 1
-        $args = @("$($this.InstallPath)\clinical-trial-matching-app\scripts\install.js", "--install-dir", $this.InstallPath, "--target-server", "IIS")
-        if ($this.HasExtraCerts) {
-          $args += "--extra-ca-certs"
-          $args += $this.CACertsPEM
-        }
-        if ($this.SkipGitPull) {
-          $args += "--no-git-pull"
-        }
-        if ($this.SkipBuild) {
-          $args += "--no-build"
-        }
-        if ($this.SkipWebappConfigure) {
-          $args += "--no-webapp-configure"
-        }
-        if (($this.WrapperNames.Length -ne 1) -Or ($this.WrapperNames[0] -ne "default")) {
-          $args += "--wrappers"
-          $args += """$($this.WrapperNames)"""
-        }
-        # And run it
-        Start-Process -FilePath "node.exe" -ArgumentList $args -Wait -NoNewWindow | Out-Host
+      # Copy the scripts to the install directory
+      $this.CopyInstallJS()
+      # Hide the progress bar for the duration of the Node.js process
+      Write-Progress -Activity "done" -Status "done" -Completed
+      # Force color output in the install script
+      $Env:FORCE_COLOR = 1
+      $args = @("$($this.InstallPath)\clinical-trial-matching-app\scripts\install.js", "--install-dir", $this.InstallPath, "--target-server", "IIS")
+      if ($this.HasExtraCerts) {
+        $args += "--extra-ca-certs"
+        $args += $this.CACertsPEM
+      }
+      if ($this.SkipGitPull) {
+        $args += "--no-git-pull"
+      }
+      if ($this.SkipBuild) {
+        $args += "--no-build"
+      }
+      if ($this.SkipWebappConfigure) {
+        $args += "--no-webapp-configure"
+      }
+      if ($this.NoNetwork) {
+        $args += "--no-network"
+      }
+      if (($this.WrapperNames.Length -ne 1) -Or ($this.WrapperNames[0] -ne "default")) {
+        $args += "--wrappers"
+        $args += """$($this.WrapperNames)"""
+      }
+      # And run it
+      Start-Process -FilePath "node.exe" -ArgumentList $args -Wait -NoNewWindow | Out-Host
     }
 
     [void]RestartIIS() {
@@ -411,7 +418,7 @@ Write-Host "Running CTMS Installer..."
 if ($InstallPath -eq "") {
   # If it's blank, use a default
   # Check to see if we're already in an install directory
-  if ((Test-Path -Path "$PSScriptRoot\clinical-trial-matching-app\scripts\install.js" -PathType "Leaf") -and (Test-Path -Path "$PSScriptRoot\wrappers\installers" -PathType "Container")) {
+  if ((Test-Path -Path "$PSScriptRoot\clinical-trial-matching-app\scripts\install.js" -PathType "Leaf") -and (Test-Path -Path "$PSScriptRoot\installers" -PathType "Container")) {
     $InstallPath = $PSScriptRoot
   } else {
     $InstallPath = "C:\CTMS"
@@ -428,14 +435,15 @@ if (Test-Path -Path $ExtraCAs -PathType "Leaf") {
 }
 
 try {
-    $installer = [CTMSInstaller]::New($InstallPath, $ca_file)
-    $installer.SkipInstall = $NoInstall
-    $installer.SkipGitPull = $NoGitPull
-    $installer.SkipBuild = $NoBuild
-    $installer.SkipWebappConfigure = $NoConfigureWebapps
-    $installer.WrapperNames = $Wrappers
-    $installer.Install()
+  $installer = [CTMSInstaller]::New($InstallPath, $ca_file)
+  $installer.SkipInstall = $NoInstall
+  $installer.SkipGitPull = $NoGitPull
+  $installer.SkipBuild = $NoBuild
+  $installer.NoNetwork = $NoNetwork
+  $installer.SkipWebappConfigure = $NoConfigureWebapps
+  $installer.WrapperNames = $Wrappers
+  $installer.Install()
 } catch {
-    Write-Error "The CTMS system failed to install: $_"
-    throw $_
+  Write-Error "The CTMS system failed to install: $_"
+  throw $_
 }

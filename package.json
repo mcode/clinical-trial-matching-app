@@ -60,7 +60,6 @@
     "babel-jest": "^29.6.2",
     "babel-plugin-direct-import": "^1.0.0",
     "babel-plugin-rewire": "^1.2.0",
-    "chai": "^4.3.6",
     "eslint": "^7.32.0",
     "eslint-config-next": "^14.0.3",
     "eslint-config-prettier": "^8.3.0",
