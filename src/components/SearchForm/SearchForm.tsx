@@ -217,7 +217,8 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               defaultValue=""
               control={control}
               rules={{ required: true }}
-              render={({ field }) => <ZipcodeTextField field={field} disabled={disableLocation} />}
+              disabled={disableLocation}
+              render={({ field }) => <ZipcodeTextField field={field} />}
             />
           </Grid>
 
@@ -226,7 +227,8 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               name="travelDistance"
               defaultValue=""
               control={control}
-              render={({ field }) => <TravelDistanceTextField field={field} disabled={disableLocation} />}
+              disabled={disableLocation}
+              render={({ field }) => <TravelDistanceTextField field={field} />}
             />
           </Grid>
 
