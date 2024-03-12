@@ -165,7 +165,7 @@ async function callWrappers(
 
       // Special filter to check if valid under Ancora
       const isValidAncora = (entry: StudyDetailProps): boolean => {
-        if (entry.source != 'Ancora') return true;
+        if (entry.source != 'Ancora.ai') return true;
 
         // This is site specific; check which site
         if (siteRubric == 'site1') {
