@@ -24,6 +24,11 @@ export const MCODE_SECONDARY_CANCER_CONDITION = MCODE_STRUCTURE_DEFINITION + 'mc
 export const MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR = MCODE_STRUCTURE_DEFINITION + 'mcode-histology-morphology-behavior';
 
 /**
+ * Cancer disease status
+ */
+export const MCODE_CANCER_DISEASE_STATUS = MCODE_STRUCTURE_DEFINITION + 'mcode-cancer-disease-status';
+
+/**
  * The system URLs for SNOMED, LOINC, and RxNorm codes.
  */
 export const SNOMED_CODE_URI = 'http://snomed.info/sct';

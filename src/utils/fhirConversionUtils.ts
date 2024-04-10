@@ -86,14 +86,12 @@ export type User = {
   record?: FhirUser; // for debugging
 };
 
-export const convertFhirKarnofskyPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): Score | null => {
-  const observation = bundle.entry?.[0]?.resource as Observation;
+export const convertFhirKarnofskyPerformanceStatus = (observation: Observation): Score | null => {
   const coding = observation?.interpretation?.[0]?.coding?.[0];
   return (karnofskyScores as Score[]).find(equalScore(coding)) || null;
 };
 
-export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): Score | null => {
-  const observation = bundle.entry?.[0]?.resource as Observation;
+export const convertFhirEcogPerformanceStatus = (observation: Observation): Score | null => {
   const coding = observation?.interpretation?.[0]?.coding?.[0];
   return (ecogScores as Score[]).find(equalScore(coding)) || null;
 };
@@ -181,8 +179,7 @@ export const convertFhirSurgeryProcedures = (bundle: fhirclient.FHIR.Bundle): Co
   return getUniques(surgeries);
 };
 
-export const convertFhirTumorMarkers = (bundle: fhirclient.FHIR.Bundle): Biomarker[] => {
-  const fhirTumorMarkers = bundle?.entry?.map(entry => entry.resource as Observation) || [];
+export const convertFhirTumorMarkers = (fhirTumorMarkers: Observation[]): Biomarker[] => {
   const biomarkers: Biomarker[] = fhirTumorMarkers.map(convertTumorMarkersToBiomarkers).flat();
   return getUniques(biomarkers);
 };
