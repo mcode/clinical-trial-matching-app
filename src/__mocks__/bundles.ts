@@ -13,90 +13,70 @@ import {
   RXNORM_CODE_URI,
   SNOMED_CODE_URI,
 } from '@/utils/fhirConstants';
-import { Medication } from 'fhir/r4';
+import { Medication, Observation } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 
 const NO_SUCH_URL = '';
 
 export const fhirEmptyBundle: fhirclient.FHIR.Bundle = { resourceType: 'Bundle', type: 'searchset', link: [] };
 
-export const fhirKarnofskyPerformanceStatusBundle: fhirclient.FHIR.Bundle = {
-  resourceType: 'Bundle',
-  type: 'searchset',
-  entry: [
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: { profile: [MCODE_KARNOFSKY_PERFORMANCE_STATUS] },
-        status: 'final',
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '89243-0',
-            },
-          ],
-        },
-        subject: {
-          reference: 'Patient/patient-123',
-        },
-        valueInteger: 100,
-        interpretation: [
-          {
-            coding: [
-              {
-                system: LOINC_CODE_URI,
-                code: 'LA29175-9',
-                display: 'Normal; no complaints; no evidence of disease',
-              },
-            ],
-          },
-        ],
+export const fhirKarnofskyPerformanceStatusResource: Observation = {
+  resourceType: 'Observation',
+  meta: { profile: [MCODE_KARNOFSKY_PERFORMANCE_STATUS] },
+  status: 'final',
+  code: {
+    coding: [
+      {
+        system: LOINC_CODE_URI,
+        code: '89243-0',
       },
+    ],
+  },
+  subject: {
+    reference: 'Patient/patient-123',
+  },
+  valueInteger: 100,
+  interpretation: [
+    {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: 'LA29175-9',
+          display: 'Normal; no complaints; no evidence of disease',
+        },
+      ],
     },
   ],
-  link: [],
 };
 
-export const fhirEcogPerformanceStatusBundle: fhirclient.FHIR.Bundle = {
-  resourceType: 'Bundle',
-  type: 'searchset',
-  entry: [
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_ECOG_PERFORMANCE_STATUS }],
-        status: 'final',
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '89247-1',
-            },
-          ],
-        },
-        subject: {
-          reference: 'Patient/patient-123',
-        },
-        valueInteger: 1,
-        interpretation: [
-          {
-            coding: [
-              {
-                system: LOINC_CODE_URI,
-                code: 'LA9623-5',
-                display:
-                  'Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work',
-              },
-            ],
-          },
-        ],
+export const fhirEcogPerformanceStatusResource: Observation = {
+  resourceType: 'Observation',
+  extension: [{ url: MCODE_ECOG_PERFORMANCE_STATUS }],
+  status: 'final',
+  code: {
+    coding: [
+      {
+        system: LOINC_CODE_URI,
+        code: '89247-1',
       },
+    ],
+  },
+  subject: {
+    reference: 'Patient/patient-123',
+  },
+  valueInteger: 1,
+  interpretation: [
+    {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: 'LA9623-5',
+          display:
+            'Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work',
+        },
+      ],
     },
   ],
-  link: [],
 };
 
 export const fhirPrimaryCancerConditionBundle: fhirclient.FHIR.Bundle = {
@@ -678,346 +658,314 @@ export const fhirPatient: fhirclient.FHIR.Patient = {
   address: [{ postalCode: '11111' }],
 };
 
-export const fhirTumorMarkerBundle: fhirclient.FHIR.Bundle = {
-  resourceType: 'Bundle',
-  type: 'searchset',
-  entry: [
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+export const fhirTumorMarkers: Observation[] = [
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '40556-3',
-              display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
-            },
-          ],
-        },
-        subject: {
-          reference: 'Patient/patient-123',
-        },
-        valueCodeableConcept: {
-          coding: [
-            {
-              system: SNOMED_CODE_URI,
-              code: '10828004',
-              display: 'Positive (qualifier value)',
-            },
-          ],
-        },
       },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '40556-3',
+          display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
+        },
+      ],
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    subject: {
+      reference: 'Patient/patient-123',
+    },
+    valueCodeableConcept: {
+      coding: [
+        {
+          system: SNOMED_CODE_URI,
+          code: '10828004',
+          display: 'Positive (qualifier value)',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '40556-3',
-              display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
-            },
-          ],
-        },
-        subject: {
-          reference: 'Patient/patient-123',
-        },
-        valueCodeableConcept: {
-          coding: [
-            {
-              system: SNOMED_CODE_URI,
-              code: '10828004',
-              display: 'Positive (qualifier value)',
-            },
-          ],
-        },
       },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '40556-3',
+          display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
+        },
+      ],
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    subject: {
+      reference: 'Patient/patient-123',
+    },
+    valueCodeableConcept: {
+      coding: [
+        {
+          system: SNOMED_CODE_URI,
+          code: '10828004',
+          display: 'Positive (qualifier value)',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '40557-1',
-              display: 'Progesterone receptor Ag [Presence] in Tissue by Immune stain',
-            },
-          ],
-        },
-        subject: {
-          reference: 'Patient/patient-123',
-        },
-        valueCodeableConcept: {
-          coding: [
-            {
-              system: SNOMED_CODE_URI,
-              code: '10828004',
-              display: 'Positive (qualifier value)',
-            },
-          ],
-        },
       },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '40557-1',
+          display: 'Progesterone receptor Ag [Presence] in Tissue by Immune stain',
+        },
+      ],
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    subject: {
+      reference: 'Patient/patient-123',
+    },
+    valueCodeableConcept: {
+      coding: [
+        {
+          system: SNOMED_CODE_URI,
+          code: '10828004',
+          display: 'Positive (qualifier value)',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '18474-7',
-              display: 'HER2 Ag [Presence] in Tissue by Immune stain',
-            },
-          ],
-        },
-        subject: {
-          reference: 'Patient/patient-123',
-        },
-        valueCodeableConcept: {
-          coding: [
-            {
-              system: SNOMED_CODE_URI,
-              code: '260385009',
-              display: 'Negative (qualifier value)',
-            },
-          ],
-        },
       },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '18474-7',
+          display: 'HER2 Ag [Presence] in Tissue by Immune stain',
+        },
+      ],
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    subject: {
+      reference: 'Patient/patient-123',
+    },
+    valueCodeableConcept: {
+      coding: [
+        {
+          system: SNOMED_CODE_URI,
+          code: '260385009',
+          display: 'Negative (qualifier value)',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '62862-8',
-              display: 'Microsatellite instability [Presence] in Tissue by Immune stain',
-            },
-          ],
-        },
-        subject: {
-          reference: 'Patient/patient-123',
-        },
-        valueCodeableConcept: {
-          coding: [
-            {
-              system: SNOMED_CODE_URI,
-              code: '10828004',
-              display: 'Positive (qualifier value)',
-            },
-          ],
-        },
       },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '62862-8',
+          display: 'Microsatellite instability [Presence] in Tissue by Immune stain',
+        },
+      ],
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    subject: {
+      reference: 'Patient/patient-123',
+    },
+    valueCodeableConcept: {
+      coding: [
+        {
+          system: SNOMED_CODE_URI,
+          code: '10828004',
+          display: 'Positive (qualifier value)',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-                display: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
+            display: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            { system: LOINC_CODE_URI, code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
-            {
-              system: LOINC_CODE_URI,
-              code: '85319-2',
-              display: 'HER2 [Presence] in Breast cancer specimen by Immune stain',
-            },
-          ],
-          text: 'HER2 Receptor',
-        },
-        subject: { reference: 'Patient/patient-123' },
-        valueCodeableConcept: {
-          coding: [{ system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' }],
-          text: 'Negative (qualifier value)',
-        },
       },
+    ],
+    code: {
+      coding: [
+        { system: LOINC_CODE_URI, code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
+        {
+          system: LOINC_CODE_URI,
+          code: '85319-2',
+          display: 'HER2 [Presence] in Breast cancer specimen by Immune stain',
+        },
+      ],
+      text: 'HER2 Receptor',
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    subject: { reference: 'Patient/patient-123' },
+    valueCodeableConcept: {
+      coding: [{ system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' }],
+      text: 'Negative (qualifier value)',
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-                display: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
+            display: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            { system: LOINC_CODE_URI, code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
-            {
-              system: LOINC_CODE_URI,
-              code: '85318-4',
-              display: 'HER2 [Presence] in Breast cancer specimen by FISH',
-            },
-          ],
-          text: 'HER2 Receptor',
-        },
-        valueCodeableConcept: {
-          coding: [{ system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' }],
-          text: 'Negative (qualifier value)',
-        },
       },
+    ],
+    code: {
+      coding: [
+        { system: LOINC_CODE_URI, code: '48676-1', display: 'HER2 [Interpretation] in Tissue' },
+        {
+          system: LOINC_CODE_URI,
+          code: '85318-4',
+          display: 'HER2 [Presence] in Breast cancer specimen by FISH',
+        },
+      ],
+      text: 'HER2 Receptor',
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    valueCodeableConcept: {
+      coding: [{ system: SNOMED_CODE_URI, code: '260385009', display: 'Negative (qualifier value)' }],
+      text: 'Negative (qualifier value)',
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-                display: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
+            display: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            { system: LOINC_CODE_URI, code: '16112-5', display: 'Estrogen receptor [Interpretation] in Tissue' },
-            {
-              system: LOINC_CODE_URI,
-              code: '85337-4',
-              display: 'Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain',
-            },
-          ],
-          text: 'Estrogen Receptor',
-        },
-        valueCodeableConcept: {
-          coding: [{ system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' }],
-          text: 'Positive (qualifier value)',
-        },
       },
+    ],
+    code: {
+      coding: [
+        { system: LOINC_CODE_URI, code: '16112-5', display: 'Estrogen receptor [Interpretation] in Tissue' },
+        {
+          system: LOINC_CODE_URI,
+          code: '85337-4',
+          display: 'Estrogen receptor Ag [Presence] in Breast cancer specimen by Immune stain',
+        },
+      ],
+      text: 'Estrogen Receptor',
     },
-    {
-      fullUrl: NO_SUCH_URL,
-      resource: {
-        resourceType: 'Observation',
-        extension: [{ url: MCODE_TUMOR_MARKER }],
-        status: 'final',
-        category: [
+    valueCodeableConcept: {
+      coding: [{ system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' }],
+      text: 'Positive (qualifier value)',
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
           {
-            coding: [
-              {
-                system: 'http://terminology.hl7.org/CodeSystem/observation-category',
-                code: 'laboratory',
-                display: 'laboratory',
-              },
-            ],
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
+            display: 'laboratory',
           },
         ],
-        code: {
-          coding: [
-            {
-              system: LOINC_CODE_URI,
-              code: '16113-3',
-              display: 'Progesterone receptor [Interpretation] in Tissue',
-            },
-            {
-              system: LOINC_CODE_URI,
-              code: '85339-0',
-              display: 'Progesterone receptor Ag [Presence] in Breast cancer specimen by Immune stain',
-            },
-          ],
-          text: 'Progesterone Receptor',
-        },
-        dataAbsentReason: { coding: [{ code: 'unknown', display: 'Unknown' }] },
       },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '16113-3',
+          display: 'Progesterone receptor [Interpretation] in Tissue',
+        },
+        {
+          system: LOINC_CODE_URI,
+          code: '85339-0',
+          display: 'Progesterone receptor Ag [Presence] in Breast cancer specimen by Immune stain',
+        },
+      ],
+      text: 'Progesterone Receptor',
     },
-  ],
-  link: [],
-};
+    dataAbsentReason: { coding: [{ code: 'unknown', display: 'Unknown' }] },
+  },
+];
 
 export const fhirSurgeryProcedureBundle: fhirclient.FHIR.Bundle = {
   resourceType: 'Bundle',
