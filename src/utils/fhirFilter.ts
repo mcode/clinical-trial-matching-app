@@ -21,6 +21,7 @@ import {
   MCODE_CANCER_RELATED_RADIATION_PROCEDURE,
   MCODE_CANCER_RELATED_SURGICAL_PROCEDURE,
   MCODE_CLINICAL_STAGE_GROUP,
+  MCODE_DISEASE_STATUS,
   MCODE_ECOG_PERFORMANCE_STATUS,
   MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
   MCODE_KARNOFSKY_PERFORMANCE_STATUS,
@@ -101,6 +102,28 @@ export const getSecondaryCancerCondition = ({
     };
   }
 
+  return null;
+};
+
+// mCODE IG link: https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-cancer-disease-status.html
+export const getDiseaseStatus = ({
+  diseaseStatus,
+  patientId,
+}: {
+  diseaseStatus: CodedValueType;
+  patientId: string;
+}): Observation | null => {
+  const { code, system, display } = { ...diseaseStatus };
+  if (!!code && !!system && !!display) {
+    return {
+      resourceType: 'Observation',
+      status: 'final',
+      subject: getSubject(patientId),
+      meta: { profile: [MCODE_DISEASE_STATUS] },
+      code: { coding: [{ code: '97509-4', system: LOINC_CODE_URI }] },
+      valueCodeableConcept: { coding: [{ code, system, display }] },
+    };
+  }
   return null;
 };
 

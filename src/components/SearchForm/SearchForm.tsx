@@ -20,6 +20,7 @@ import {
   CancerStageAutocomplete,
   CancerSubtypeAutocomplete,
   CancerTypeAutocomplete,
+  DiseaseStatusAutocomplete,
   ECOGScoreAutocomplete,
   KarnofskyScoreAutocomplete,
   MedicationsAutocomplete,
@@ -46,6 +47,7 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   // Boolean check is because JSON.stringify(null) === "null" and should be omitted
   cancerType: data.cancerType ? JSON.stringify(data.cancerType) : undefined,
   cancerSubtype: data.cancerSubtype ? JSON.stringify(data.cancerSubtype) : undefined,
+  diseaseStatus: data.diseaseStatus ? JSON.stringify(data.diseaseStatus) : undefined,
   metastasis: data.metastasis ? JSON.stringify(extractCodes(data.metastasis)) : undefined,
   biomarkers: data.biomarkers ? JSON.stringify(extractBiomarkerCodes(data.biomarkers)) : undefined,
   stage: data.stage ? JSON.stringify(data.stage) : undefined,
@@ -266,12 +268,11 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
 
           <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
             <Controller
-              name="stage"
+              name="diseaseStatus"
               defaultValue={null}
               control={control}
-              rules={{ validate: validateStage }}
               render={({ field }) => (
-                <CancerStageAutocomplete field={field} stages={state.stage} stageIsValid={validateStage} />
+                <DiseaseStatusAutocomplete field={field} options={state.diseaseStatus} />
               )}
             />
           </Grid>
@@ -292,6 +293,18 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               control={control}
               render={({ field }) => (
                 <KarnofskyScoreAutocomplete field={field} karnofskyScores={state.karnofskyScore} />
+              )}
+            />
+          </Grid>
+
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
+            <Controller
+              name="stage"
+              defaultValue={null}
+              control={control}
+              rules={{ validate: validateStage }}
+              render={({ field }) => (
+                <CancerStageAutocomplete field={field} stages={state.stage} stageIsValid={validateStage} />
               )}
             />
           </Grid>

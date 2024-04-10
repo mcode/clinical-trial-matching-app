@@ -9,6 +9,7 @@ export type SearchFormValuesType = {
   gender: string;
   cancerType: CodedValueType | null;
   cancerSubtype: CodedValueType | null;
+  diseaseStatus: CodedValueType | null,
   metastasis: CodedValueType[];
   stage: CodedValueType;
   ecogScore: Score;
@@ -22,7 +23,7 @@ export type SearchFormValuesType = {
 export type State = Record<
   keyof Pick<
     SearchFormValuesType,
-    'cancerSubtype' | 'cancerType' | 'medications' | 'metastasis' | 'radiation' | 'stage' | 'surgery'
+    'cancerSubtype' | 'cancerType' | 'diseaseStatus' | 'medications' | 'metastasis' | 'radiation' | 'stage' | 'surgery'
   >,
   CodedValueType[]
 > &

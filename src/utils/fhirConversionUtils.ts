@@ -41,6 +41,7 @@ export type Field = keyof Pick<
   SearchFormValuesType,
   | 'cancerType'
   | 'cancerSubtype'
+  | 'diseaseStatus'
   | 'metastasis'
   | 'stage'
   | 'ecogScore'
