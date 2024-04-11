@@ -3,14 +3,7 @@ import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
 import { UserIdContext } from '@/components/UserIdContext';
 import { fetchPatientData } from '@/utils/fetchPatientData';
-import {
-  Biomarker,
-  CodedValueType,
-  Patient,
-  PrimaryCancerCondition,
-  Score,
-  User,
-} from '@/utils/fhirConversionUtils';
+import { Biomarker, CodedValueType, Patient, PrimaryCancerCondition, Score, User } from '@/utils/fhirConversionUtils';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { GetServerSideProps } from 'next';
