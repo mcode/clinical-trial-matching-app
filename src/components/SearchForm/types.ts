@@ -9,7 +9,7 @@ export type SearchFormValuesType = {
   gender: string;
   cancerType: CodedValueType | null;
   cancerSubtype: CodedValueType | null;
-  diseaseStatus: CodedValueType | null,
+  diseaseStatus: CodedValueType | null;
   metastasis: CodedValueType[];
   stage: CodedValueType;
   ecogScore: Score;

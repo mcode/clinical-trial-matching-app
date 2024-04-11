@@ -205,14 +205,7 @@ export const DiseaseStatusAutocomplete = ({
       onChange={(_, value) => field.onChange(value)}
       options={options}
       getOptionLabel={(option: CodedValueType) => option.display}
-      renderInput={params => (
-        <TextField
-          variant="filled"
-          label="Disease Status"
-          placeholder=""
-          {...params}
-        />
-      )}
+      renderInput={params => <TextField variant="filled" label="Disease Status" placeholder="" {...params} />}
       isOptionEqualToValue={areCodedValueTypesEqual}
     />
   );

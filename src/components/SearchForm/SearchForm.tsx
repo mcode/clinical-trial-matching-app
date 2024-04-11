@@ -271,9 +271,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               name="diseaseStatus"
               defaultValue={null}
               control={control}
-              render={({ field }) => (
-                <DiseaseStatusAutocomplete field={field} options={state.diseaseStatus} />
-              )}
+              render={({ field }) => <DiseaseStatusAutocomplete field={field} options={state.diseaseStatus} />}
             />
           </Grid>
 
