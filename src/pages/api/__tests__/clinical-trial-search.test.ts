@@ -23,9 +23,9 @@ export const searchParameters: SearchParameters = {
   cancerType: JSON.stringify(cancerType),
   cancerSubtype: JSON.stringify(cancerSubType),
   diseaseStatus: JSON.stringify({
-    code: "268910001",
-    system: "http://snomed.info/sct",
-    display: "Patient's condition improved (finding)"
+    code: '268910001',
+    system: 'http://snomed.info/sct',
+    display: "Patient's condition improved (finding)",
   }),
   metastasis: '["metastasis-1"]',
   ecogScore: JSON.stringify({
@@ -167,36 +167,34 @@ const expectedBundle: Bundle = {
     },
     // Result from getDiseaseStatus
     {
-      "resource": {
-        "resourceType": "Observation",
-        "status": "final",
-        "subject": {
-          "reference": "urn:uuid:7AfuCr3dmxiImaq_F2dcB",
-          "type": "Patient"
+      resource: {
+        resourceType: 'Observation',
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
         },
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-disease-status"
-          ]
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-disease-status'],
         },
-        "code": {
-          "coding": [
+        code: {
+          coding: [
             {
-              "code": "97509-4",
-              "system": "http://loinc.org"
-            }
-          ]
+              code: '97509-4',
+              system: 'http://loinc.org',
+            },
+          ],
         },
-        "valueCodeableConcept": {
-          "coding": [
+        valueCodeableConcept: {
+          coding: [
             {
-              "code": "268910001",
-              "system": "http://snomed.info/sct",
-              "display": "Patient's condition improved (finding)"
-            }
-          ]
-        }
-      }
+              code: '268910001',
+              system: 'http://snomed.info/sct',
+              display: "Patient's condition improved (finding)",
+            },
+          ],
+        },
+      },
     },
     // Result from getEcogPerformanceStatus
     {
