@@ -22,6 +22,11 @@ export const searchParameters: SearchParameters = {
   matchingServices: ['Lungevity'],
   cancerType: JSON.stringify(cancerType),
   cancerSubtype: JSON.stringify(cancerSubType),
+  diseaseStatus: JSON.stringify({
+    code: "268910001",
+    system: "http://snomed.info/sct",
+    display: "Patient's condition improved (finding)"
+  }),
   metastasis: '["metastasis-1"]',
   ecogScore: JSON.stringify({
     interpretation: {
@@ -159,6 +164,39 @@ const expectedBundle: Bundle = {
           },
         ],
       },
+    },
+    // Result from getDiseaseStatus
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "urn:uuid:7AfuCr3dmxiImaq_F2dcB",
+          "type": "Patient"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-disease-status"
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "code": "97509-4",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "268910001",
+              "system": "http://snomed.info/sct",
+              "display": "Patient's condition improved (finding)"
+            }
+          ]
+        }
+      }
     },
     // Result from getEcogPerformanceStatus
     {
@@ -431,6 +469,7 @@ describe('buildBundle', () => {
       gender: '',
       cancerType: 'null',
       cancerSubtype: 'null',
+      diseaseStatus: 'null',
       metastasis: '[]',
       stage: '',
       ecogScore: '',
