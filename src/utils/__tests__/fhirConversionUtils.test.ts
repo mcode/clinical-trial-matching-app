@@ -1,14 +1,13 @@
 import {
   fhirEcogPerformanceStatusResource,
-  fhirEmptyBundle,
   fhirKarnofskyPerformanceStatusResource,
   fhirMedications,
   fhirPatient,
-  fhirPrimaryCancerConditionBundle,
-  fhirPrimaryCancerConditionBundle2,
-  fhirRadiationProcedureBundle,
-  fhirSecondaryCancerConditionBundle,
-  fhirSurgeryProcedureBundle,
+  fhirPrimaryCancerConditions,
+  fhirPrimaryCancerConditions2,
+  fhirRadiationProcedures,
+  fhirSecondaryCancerConditions,
+  fhirSurgeryProcedures,
   fhirTumorMarkers,
 } from '@/__mocks__/bundles';
 import mockPatient from '@/__mocks__/patient';
@@ -110,7 +109,7 @@ describe('convertFhirPatient', () => {
 
 describe('convertFhirPrimaryCancerCondition', () => {
   it('gets the primary cancer condition from a FHIR Bundle', () => {
-    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditionBundle)).toEqual({
+    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditions)).toEqual({
       cancerType: {
         category: ['Breast', 'Invasive Breast', 'Invasive Carcinoma', 'Invasive Ductal Carcinoma'],
         cancerType: [CancerType.BREAST],
@@ -129,7 +128,7 @@ describe('convertFhirPrimaryCancerCondition', () => {
       },
       stage: null,
     });
-    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditionBundle2)).toEqual({
+    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditions2)).toEqual({
       cancerType: {
         entryType: 'cancerType',
         cancerType: [CancerType.BREAST],
@@ -148,13 +147,12 @@ describe('convertFhirPrimaryCancerCondition', () => {
         entryType: 'stage',
       },
     });
-    expect(extractPrimaryCancerCondition(fhirEmptyBundle)).toBeNull();
   });
 });
 
 describe('convertFhirRadiationProcedures', () => {
   it('gets the radiation procedures from a FHIR Bundle', () => {
-    expect(convertFhirRadiationProcedures(fhirRadiationProcedureBundle)).toEqual([
+    expect(convertFhirRadiationProcedures(fhirRadiationProcedures)).toEqual([
       {
         entryType: 'radiation',
         cancerType: [CancerType.BREAST, CancerType.COLON, CancerType.LUNG],
@@ -172,13 +170,12 @@ describe('convertFhirRadiationProcedures', () => {
         category: ['EBRT'],
       },
     ]);
-    expect(convertFhirRadiationProcedures(fhirEmptyBundle)).toEqual([]);
   });
 });
 
 describe('convertFhirSecondaryCancerConditions', () => {
   it('gets the secondary cancer conditions from a FHIR Bundle', () => {
-    expect(convertFhirSecondaryCancerConditions(fhirSecondaryCancerConditionBundle)).toEqual([
+    expect(convertFhirSecondaryCancerConditions(fhirSecondaryCancerConditions)).toEqual([
       {
         entryType: 'metastasis',
         cancerType: [
@@ -195,13 +192,12 @@ describe('convertFhirSecondaryCancerConditions', () => {
         category: ['Bone'],
       },
     ]);
-    expect(convertFhirSecondaryCancerConditions(fhirEmptyBundle)).toEqual([]);
   });
 });
 
 describe('convertFhirSurgeryProcedures', () => {
   it('gets the surgery procedures from a FHIR Bundle', () => {
-    expect(convertFhirSurgeryProcedures(fhirSurgeryProcedureBundle)).toEqual([
+    expect(convertFhirSurgeryProcedures(fhirSurgeryProcedures)).toEqual([
       {
         entryType: 'surgery',
         cancerType: [CancerType.BREAST],
@@ -227,7 +223,6 @@ describe('convertFhirSurgeryProcedures', () => {
         category: ['Mastectomy'],
       },
     ]);
-    expect(convertFhirSurgeryProcedures(fhirEmptyBundle)).toEqual([]);
   });
 });
 
