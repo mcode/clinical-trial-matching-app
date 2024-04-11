@@ -165,37 +165,6 @@ const expectedBundle: Bundle = {
         ],
       },
     },
-    // Result from getDiseaseStatus
-    {
-      resource: {
-        resourceType: 'Observation',
-        status: 'final',
-        subject: {
-          reference: 'urn:uuid:test_id',
-          type: 'Patient',
-        },
-        meta: {
-          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-disease-status'],
-        },
-        code: {
-          coding: [
-            {
-              code: '97509-4',
-              system: 'http://loinc.org',
-            },
-          ],
-        },
-        valueCodeableConcept: {
-          coding: [
-            {
-              code: '268910001',
-              system: 'http://snomed.info/sct',
-              display: "Patient's condition improved (finding)",
-            },
-          ],
-        },
-      },
-    },
     // Result from getEcogPerformanceStatus
     {
       resource: {
@@ -246,6 +215,37 @@ const expectedBundle: Bundle = {
           },
         ],
         valueInteger: 0,
+      },
+    },
+    // Result from getDiseaseStatus
+    {
+      resource: {
+        resourceType: 'Observation',
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
+        },
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-disease-status'],
+        },
+        code: {
+          coding: [
+            {
+              code: '97509-4',
+              system: 'http://loinc.org',
+            },
+          ],
+        },
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '268910001',
+              system: 'http://snomed.info/sct',
+              display: "Patient's condition improved (finding)",
+            },
+          ],
+        },
       },
     },
     // Result from getKarnofskyPerformanceStatus
