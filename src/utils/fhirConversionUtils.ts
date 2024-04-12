@@ -181,10 +181,10 @@ export const convertFhirDiseaseStatus = (bundle: fhirclient.FHIR.Bundle): CodedV
   const observation = bundle.entry?.[0]?.resource as Observation;
 
   const diseaseStatus = observation?.valueCodeableConcept?.coding
-                          ?.map(code => diseaseStatuses.find(equalCodedValueType(code as CodedValueType)))
-                          .flat()
-                          .filter(e => !!e)?.[0] as CodedValueType;
-  
+    ?.map(code => diseaseStatuses.find(equalCodedValueType(code as CodedValueType)))
+    .flat()
+    .filter(e => !!e)?.[0] as CodedValueType;
+
   return diseaseStatus || null;
 };
 
