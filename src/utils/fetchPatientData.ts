@@ -11,6 +11,7 @@ export interface PatientData {
   patient: Patient;
   user?: User;
   primaryCancerCondition: PrimaryCancerCondition;
+  diseaseStatus: CodedValueType;
   metastasis: CodedValueType[];
   ecogScore: Score;
   karnofskyScore: Score;

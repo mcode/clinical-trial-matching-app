@@ -7,6 +7,7 @@ import {
   getCancerRelatedMedicationStatement,
   getCancerRelatedRadiationProcedure,
   getCancerRelatedSurgicalProcedure,
+  getDiseaseStatus,
   getClinicalStageGroup,
   getEcogPerformanceStatus,
   getHistologyMorphologyBehavior,
@@ -326,7 +327,7 @@ function handleError(response) {
 const getParsedParameters = (
   parameters: SearchParameters
 ): Partial<
-  Record<keyof Pick<SearchParameters, 'cancerType' | 'cancerSubtype' | 'stage'>, CodedValueType> &
+  Record<keyof Pick<SearchParameters, 'cancerType' | 'cancerSubtype' | 'diseaseStatus' | 'stage'>, CodedValueType> &
     Record<keyof Pick<SearchParameters, 'metastasis' | 'surgery' | 'medications' | 'radiation'>, CodedValueType[]> &
     Record<keyof Pick<SearchParameters, 'biomarkers'>, Biomarker[]> &
     Record<keyof Pick<SearchParameters, 'ecogScore' | 'karnofskyScore'>, Score>
@@ -334,6 +335,7 @@ const getParsedParameters = (
   return {
     ...(parameters.cancerType ? { cancerType: JSON.parse(parameters.cancerType) } : {}),
     ...(parameters.cancerSubtype ? { cancerSubtype: JSON.parse(parameters.cancerSubtype) } : {}),
+    ...(parameters.diseaseStatus ? { diseaseStatus: JSON.parse(parameters.diseaseStatus) } : {}),
     ...(parameters.metastasis ? { metastasis: JSON.parse(parameters.metastasis) } : {}),
     ...(parameters.stage ? { stage: JSON.parse(parameters.stage) } : {}),
     ...(parameters.ecogScore ? { ecogScore: JSON.parse(parameters.ecogScore) } : {}),
@@ -349,6 +351,7 @@ const getOPDEValues = (parameters: SearchParameters, patientId: string): BundleE
   const {
     cancerType,
     cancerSubtype,
+    diseaseStatus,
     metastasis: metastases,
     stage,
     ecogScore,
@@ -362,6 +365,7 @@ const getOPDEValues = (parameters: SearchParameters, patientId: string): BundleE
   const entries = [
     getPrimaryCancerCondition({ cancerType, histologyMorphology, patientId }),
     getEcogPerformanceStatus({ ecogScore, patientId }),
+    getDiseaseStatus({ diseaseStatus, patientId }),
     getKarnofskyPerformanceStatus({ karnofskyScore, patientId }),
     getClinicalStageGroup({ stage, patientId }),
     ...biomarkers.map(biomarker => getTumorMarker({ biomarker, patientId })),

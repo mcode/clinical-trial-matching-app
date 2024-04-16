@@ -1,4 +1,5 @@
 import {
+  convertFhirDiseaseStatus,
   convertFhirPatient,
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
@@ -74,6 +75,7 @@ ${JSON.stringify(observations, null, 2)}
   return {
     patient: convertFhirPatient(fhirPatient),
     primaryCancerCondition: primaryCancerCondition,
+    diseaseStatus: null,
     metastasis: metastasis,
     // Conversion is "safe" as convertEcogScore will reject bad values
     ecogScore: null, // convertEcogScore(fhirEcogPerformanceStatus as Observation),

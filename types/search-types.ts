@@ -9,6 +9,7 @@ export type SearchParameters = {
   gender: string;
   cancerType: string;
   cancerSubtype: string;
+  diseaseStatus: string;
   metastasis: string;
   stage: string;
   ecogScore: string;
