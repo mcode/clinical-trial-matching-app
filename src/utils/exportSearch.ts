@@ -100,6 +100,7 @@ export const generateSearchCSVRecords = (
   appendRecord(records, 'age', searchParameters.age, manuallyAdjusted?.age);
   appendCodedValueType(records, 'cancerType', searchParameters.cancerType, manuallyAdjusted?.cancerType);
   appendCodedValueType(records, 'cancerSubtype', searchParameters.cancerSubtype, manuallyAdjusted?.cancerSubtype);
+  appendCodedValueType(records, 'diseaseStatus', searchParameters.diseaseStatus, manuallyAdjusted?.diseaseStatus);
   appendCodedValueTypes(records, 'metastasis', searchParameters.metastasis, manuallyAdjusted);
   appendCodedValueType(records, 'stage', searchParameters.stage, manuallyAdjusted?.stage);
   appendScore(records, 'ecogScore', searchParameters.ecogScore, manuallyAdjusted?.ecogScore);

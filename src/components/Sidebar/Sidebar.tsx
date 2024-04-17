@@ -50,6 +50,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUse
     gender: (query.gender as string) || '',
     cancerType: query.cancerType ? JSON.parse(query.cancerType as string) : null,
     cancerSubtype: query.cancerSubtype ? JSON.parse(query.cancerSubtype as string) : null,
+    diseaseStatus: query.diseaseStatus ? JSON.parse(query.diseaseStatus as string) : null,
     metastasis: query.metastasis ? JSON.parse(query.metastasis as string) : null,
     stage: query.stage ? JSON.parse(query.stage as string) : null,
     ecogScore: query.ecogScore ? JSON.parse(query.ecogScore as string) : null,

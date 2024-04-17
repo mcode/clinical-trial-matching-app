@@ -2,6 +2,7 @@ import biomarkerQualifiers from '@/assets/optimizedPatientDataElements/biomarker
 import biomarkers from '@/assets/optimizedPatientDataElements/biomarkers.json';
 import cancerSubtypes from '@/assets/optimizedPatientDataElements/cancerSubtypes.json';
 import cancerTypes from '@/assets/optimizedPatientDataElements/cancerTypes.json';
+import diseaseStatuses from '@/assets/optimizedPatientDataElements/diseaseStatuses.json';
 import ecogScores from '@/assets/optimizedPatientDataElements/ecogScores.json';
 import karnofskyScores from '@/assets/optimizedPatientDataElements/karnofskyScores.json';
 import medications from '@/assets/optimizedPatientDataElements/medications.json';
@@ -74,6 +75,7 @@ export const getNewState = (selectedCancerType: CodedValueType): State => {
       .flat() as Biomarker[],
     cancerSubtype: getCancerSpecificCodes(selectedCancerType, cancerSubtypes as CodedValueType[]),
     cancerType: (cancerTypes as CodedValueType[]).map(createRestrictedAndUnrestrictedValues).flat(),
+    diseaseStatus: diseaseStatuses as CodedValueType[],
     ecogScore: ecogScores as Score[],
     karnofskyScore: karnofskyScores as Score[],
     medications: medications as CodedValueType[],
@@ -110,6 +112,7 @@ export const uninitializedState: State = {
   biomarkers: [],
   cancerSubtype: [],
   cancerType: [],
+  diseaseStatus: [],
   ecogScore: [],
   karnofskyScore: [],
   medications: [],

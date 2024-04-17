@@ -1,0 +1,57 @@
+[
+    {
+        "entryType": "diseaseStatus",
+        "code" : "550991000124107",
+        "system": "http://snomed.info/sct",
+        "display" : "Malignant neoplasm in full remission (disorder)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "551001000124108",
+        "system": "http://snomed.info/sct",
+        "display" : "Malignant neoplasm in partial remission (disorder)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "268910001",
+        "system": "http://snomed.info/sct",
+        "display" : "Patient's condition improved (finding)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "359746009",
+        "system": "http://snomed.info/sct",
+        "display" : "Patient's condition stable (finding)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "271299001",
+        "system": "http://snomed.info/sct",
+        "display" : "Patient's condition worsened (finding)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "709137006",
+        "system": "http://snomed.info/sct",
+        "display" : "Patient condition undetermined (finding)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "103338009",
+        "system": "http://snomed.info/sct",
+        "display" : "In full remission (qualifier value)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "103337004",
+        "system": "http://snomed.info/sct",
+        "display" : "In partial remission (qualifier value)"
+      },
+      {
+        "entryType": "diseaseStatus",
+        "code" : "399409002",
+        "system": "http://snomed.info/sct",
+        "display" : "Distant metastasis present (finding)"
+      }
+  ]
+  

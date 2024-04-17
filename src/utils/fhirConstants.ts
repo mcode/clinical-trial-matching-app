@@ -19,6 +19,11 @@ export const MCODE_PRIMARY_CANCER_CONDITION = MCODE_STRUCTURE_DEFINITION + 'mcod
 export const MCODE_SECONDARY_CANCER_CONDITION = MCODE_STRUCTURE_DEFINITION + 'mcode-secondary-cancer-condition';
 
 /**
+ * Disease Status URL.
+ */
+export const MCODE_DISEASE_STATUS = MCODE_STRUCTURE_DEFINITION + 'mcode-cancer-disease-status';
+
+/**
  * Histology Morphology Behavior Extension URL.
  */
 export const MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR = MCODE_STRUCTURE_DEFINITION + 'mcode-histology-morphology-behavior';

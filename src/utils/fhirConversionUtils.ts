@@ -2,6 +2,7 @@ import biomarkerQualifiers from '@/assets/optimizedPatientDataElements/biomarker
 import biomarkers from '@/assets/optimizedPatientDataElements/biomarkers.json';
 import cancerSubtypes from '@/assets/optimizedPatientDataElements/cancerSubtypes.json';
 import cancerTypes from '@/assets/optimizedPatientDataElements/cancerTypes.json';
+import diseaseStatuses from '@/assets/optimizedPatientDataElements/diseaseStatuses.json';
 import ecogScores from '@/assets/optimizedPatientDataElements/ecogScores.json';
 import karnofskyScores from '@/assets/optimizedPatientDataElements/karnofskyScores.json';
 import medication from '@/assets/optimizedPatientDataElements/medications.json';
@@ -41,6 +42,7 @@ export type Field = keyof Pick<
   SearchFormValuesType,
   | 'cancerType'
   | 'cancerSubtype'
+  | 'diseaseStatus'
   | 'metastasis'
   | 'stage'
   | 'ecogScore'
@@ -159,6 +161,15 @@ export const convertFhirRadiationProcedures = (procedures: Procedure[]): CodedVa
 
 export const convertFhirSecondaryCancerConditions = (conditions: Condition[]): CodedValueType[] =>
   getUniques(conditions.map(extractKnownCodes(metastases as CodedValueType[])).flat());
+
+export const convertFhirDiseaseStatus = (observation: Observation): CodedValueType => {
+  const diseaseStatus = observation.valueCodeableConcept?.coding
+    ?.map(code => diseaseStatuses.find(equalCodedValueType(code as CodedValueType)))
+    .flat()
+    .filter(e => !!e)?.[0] as CodedValueType;
+
+  return diseaseStatus || null;
+};
 
 export const convertFhirSurgeryProcedures = (procedures: Procedure[]): CodedValueType[] =>
   getUniques(procedures.map(extractKnownCodes(surgery as CodedValueType[])).flat());

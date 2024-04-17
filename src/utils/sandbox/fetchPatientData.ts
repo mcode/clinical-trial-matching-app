@@ -1,5 +1,10 @@
-import { MCODE_ECOG_PERFORMANCE_STATUS, MCODE_KARNOFSKY_PERFORMANCE_STATUS } from '@/utils/fhirConstants';
 import {
+  MCODE_ECOG_PERFORMANCE_STATUS,
+  MCODE_DISEASE_STATUS,
+  MCODE_KARNOFSKY_PERFORMANCE_STATUS,
+} from '@/utils/fhirConstants';
+import {
+  convertFhirDiseaseStatus,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
   convertFhirPatient,
@@ -55,6 +60,7 @@ export const fetchPatientData = async (fhirClient: Client, progress: ProgressMon
   // TODO: Should find the most recent
   // TODO: As this gets more complicated, it'll make more sense to go through all observations and check each one to see
   // if it contains relavent information rather than do separate find/filters
+  const diseaseStatusObservation = observations.find(resource => resourceHasProfile(resource, MCODE_DISEASE_STATUS));
   // FIXME: ECOG and Karnofsy have no associated records, so the following will never work but needs to be changed to
   // not be using the profile anyway
   const ecogObservation = observations.find(resource => resourceHasProfile(resource, MCODE_ECOG_PERFORMANCE_STATUS));
@@ -67,6 +73,7 @@ export const fetchPatientData = async (fhirClient: Client, progress: ProgressMon
     user: convertFhirUser(fhirUser),
     primaryCancerCondition: extractPrimaryCancerCondition(conditions),
     metastasis: convertFhirSecondaryCancerConditions(conditions),
+    diseaseStatus: convertFhirDiseaseStatus(diseaseStatusObservation),
     ecogScore: ecogObservation ? convertFhirEcogPerformanceStatus(ecogObservation) : null,
     karnofskyScore: karnosfkyObservation ? convertFhirKarnofskyPerformanceStatus(karnosfkyObservation) : null,
     biomarkers: convertFhirTumorMarkers(observations),

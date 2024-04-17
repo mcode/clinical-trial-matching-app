@@ -6,6 +6,7 @@ jest.mock('@/assets/optimizedPatientDataElements/biomarkerQualifiers.json', () =
 jest.mock('@/assets/optimizedPatientDataElements/biomarkers.json', () => []);
 jest.mock('@/assets/optimizedPatientDataElements/cancerSubtypes.json', () => []);
 jest.mock('@/assets/optimizedPatientDataElements/cancerTypes.json', () => []);
+jest.mock('@/assets/optimizedPatientDataElements/diseaseStatuses.json', () => []);
 jest.mock('@/assets/optimizedPatientDataElements/ecogScores.json', () => []);
 jest.mock('@/assets/optimizedPatientDataElements/karnofskyScores.json', () => []);
 jest.mock('@/assets/optimizedPatientDataElements/medications.json', () => []);
@@ -32,7 +33,7 @@ describe('getJoinedCategories', () => {
 });
 
 describe('getNewState', () => {
-  it('gets all selectable biomarkers, cancer subtypes, cancer types, ECOG scores, Karnofsky scores, medications, metastases, radiations, stages, and surgeries based on the selected cancer type', () => {
+  it('gets all selectable biomarkers, cancer subtypes, cancer types, disease statuses, ECOG scores, Karnofsky scores, medications, metastases, radiations, stages, and surgeries based on the selected cancer type', () => {
     // TODO: Also mock the JSON files such that they resemble CodedValueType[], Score[], or Biomarker[]
     expect(getNewState(cancerType)).toEqual(uninitializedState);
   });

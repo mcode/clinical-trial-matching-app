@@ -95,6 +95,7 @@ describe('compareDefaultValues', () => {
         gender: 'male',
         cancerType: undefined,
         cancerSubtype: undefined,
+        diseaseStatus: undefined,
         metastasis: [],
         stage: undefined,
         ecogScore: {
