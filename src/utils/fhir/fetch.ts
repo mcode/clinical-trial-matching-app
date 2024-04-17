@@ -60,8 +60,6 @@ export const fetchResources = async <T extends FhirResource>(
 export const fetchMedications = async (fhirClient: Client): Promise<Medication[]> => {
   const medications: Promise<Medication>[] = [];
   for (const medRequest of await fetchResources<MedicationRequest>(fhirClient, 'MedicationRequest')) {
-    console.log('Checking medication request');
-    console.log(JSON.stringify(medRequest, null, 2));
     // See if this requires the medication be loaded separately
     if (medRequest.medicationReference?.reference) {
       // It does, so add the request
@@ -99,5 +97,5 @@ export const resourceHasProfile = (resource: FhirResource, profile: string): boo
  */
 export const observationHasCode = (observation: Observation, system: string, code: string): boolean => {
   // Basically, see if any of the codings in the observation match
-  return observation.code?.coding?.findIndex(coding => coding.system === system && coding.code === code) >= 0;
+  return observation.code?.coding?.findIndex(coding => coding.system === system && coding.code === code) >= 0 ?? false;
 };

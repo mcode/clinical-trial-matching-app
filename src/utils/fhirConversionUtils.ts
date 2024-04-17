@@ -10,7 +10,7 @@ import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
 import stages from '@/assets/optimizedPatientDataElements/stages.json';
 import surgery from '@/assets/optimizedPatientDataElements/surgeries.json';
 import { SearchFormValuesType } from '@/components/SearchForm';
-import { Coding, Condition, FhirResource, Medication, MedicationStatement, Observation, Procedure } from 'fhir/r4';
+import { Coding, Condition, FhirResource, Medication, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 import {
   ICD_10_CODE_URI,
