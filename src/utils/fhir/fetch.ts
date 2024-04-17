@@ -1,4 +1,4 @@
-import { Bundle, BundleEntry, FhirResource, Medication, MedicationRequest } from 'fhir/r4';
+import { Bundle, BundleEntry, FhirResource, Medication, MedicationRequest, Observation } from 'fhir/r4';
 import type Client from 'fhirclient/lib/Client';
 
 /**
@@ -60,8 +60,6 @@ export const fetchResources = async <T extends FhirResource>(
 export const fetchMedications = async (fhirClient: Client): Promise<Medication[]> => {
   const medications: Promise<Medication>[] = [];
   for (const medRequest of await fetchResources<MedicationRequest>(fhirClient, 'MedicationRequest')) {
-    console.log('Checking medication request');
-    console.log(JSON.stringify(medRequest, null, 2));
     // See if this requires the medication be loaded separately
     if (medRequest.medicationReference?.reference) {
       // It does, so add the request
@@ -88,4 +86,16 @@ export const fetchMedications = async (fhirClient: Client): Promise<Medication[]
  */
 export const resourceHasProfile = (resource: FhirResource, profile: string): boolean => {
   return (resource.meta?.profile?.indexOf(profile) ?? -1) >= 0;
+};
+
+/**
+ * Determines if any code on the given observation matches the given code.
+ * @param observation the observation to check
+ * @param system the system to find
+ * @param code the code to find
+ * @returns true if the observation's code matches
+ */
+export const observationHasCode = (observation: Observation, system: string, code: string): boolean => {
+  // Basically, see if any of the codings in the observation match
+  return observation.code?.coding?.findIndex(coding => coding.system === system && coding.code === code) >= 0 ?? false;
 };

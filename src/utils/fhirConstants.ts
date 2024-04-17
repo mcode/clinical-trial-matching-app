@@ -108,6 +108,12 @@ export const US_CORE_OBSERVATION_CATEGORY_URI = 'http://hl7.org/fhir/us/core/Cod
  */
 export const OBSERVATION_CATEGORY_URI = 'http://terminology.hl7.org/CodeSystem/observation-category';
 
+/**
+ * Required LOINC code to indicate a disease status, as defined in the mCODE IG
+ * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-cancer-disease-status.html
+ */
+export const MCODE_CANCER_DISEASE_STATUS_LOINC_CODE = '97509-4';
+
 // Constant CodeableConcept resources used in the different profiles.
 export const clinicalTest = {
   coding: [{ system: US_CORE_OBSERVATION_CATEGORY_URI, code: 'clinical-test' }],
