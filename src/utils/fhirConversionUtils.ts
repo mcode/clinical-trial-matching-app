@@ -108,15 +108,6 @@ export const extractMedicationCodes = (medications: Medication[]): CodedValueTyp
   return getUniques(medicationCodes);
 };
 
-export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const medicationStatements =
-    bundle.entry?.map<MedicationStatement>(entry => entry.resource as MedicationStatement) || [];
-  const medications: CodedValueType[] = medicationStatements
-    .map(extractKnownCodes(medication as CodedValueType[]))
-    .flat();
-  return getUniques(medications);
-};
-
 export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patient => ({
   id: fhirPatient.id,
   name: `${fhirPatient.name?.[0]?.given?.[0]} ${fhirPatient.name?.[0]?.family}`,
