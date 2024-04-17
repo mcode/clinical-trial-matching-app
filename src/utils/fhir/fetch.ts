@@ -1,4 +1,4 @@
-import { Bundle, BundleEntry, FhirResource, Medication, MedicationRequest } from 'fhir/r4';
+import { Bundle, BundleEntry, FhirResource, Medication, MedicationRequest, Observation } from 'fhir/r4';
 import type Client from 'fhirclient/lib/Client';
 
 /**
@@ -30,7 +30,7 @@ export const fetchBundleEntries = async <T extends FhirResource>(
   const bundles = await fetchBundles(fhirClient, resourceType);
   for (const bundle of bundles) {
     // If the bundle exists, return a filtered copy of just the entries array
-    if (bundle && bundle.entry) {
+    if (bundle?.entry) {
       result.push(
         ...bundle.entry.filter<BundleEntry<T>>(
           (entry): entry is BundleEntry<T> => entry.resource?.resourceType === resourceType
@@ -88,4 +88,16 @@ export const fetchMedications = async (fhirClient: Client): Promise<Medication[]
  */
 export const resourceHasProfile = (resource: FhirResource, profile: string): boolean => {
   return (resource.meta?.profile?.indexOf(profile) ?? -1) >= 0;
+};
+
+/**
+ * Determines if any code on the given observation matches the given code.
+ * @param observation the observation to check
+ * @param system the system to find
+ * @param code the code to find
+ * @returns true if the observation's code matches
+ */
+export const observationHasCode = (observation: Observation, system: string, code: string): boolean => {
+  // Basically, see if any of the codings in the observation match
+  return observation.code?.coding?.findIndex(coding => coding.system === system && coding.code === code) >= 0;
 };

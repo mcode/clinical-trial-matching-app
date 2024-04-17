@@ -123,13 +123,13 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
 export const extractPrimaryCancerCondition = (conditions: Condition[]): PrimaryCancerCondition | null => {
   // Go through each entry and see if we find data
   for (const condition of conditions) {
-    const cancerType = getCancerType(condition as Condition);
+    const cancerType = getCancerType(condition);
     if (cancerType) {
       // For now, just return the first entry found
       return {
         cancerType: cancerType,
-        cancerSubtype: getCancerSubtype(condition as Condition),
-        stage: getStage(condition as Condition),
+        cancerSubtype: getCancerSubtype(condition),
+        stage: getStage(condition),
       };
     }
   }
