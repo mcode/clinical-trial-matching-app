@@ -18,11 +18,6 @@ A minimal `wrappers.json` file would be something like the following:
 
 ```json
 {
-  "ancora.ai": {
-    "env": {
-      "ANCORA_AI_API_KEY": "<Ancora.ai API key>"
-    }
-  },
   "carebox": {
     "env": {
       "MATCHING_SERVICE_AUTH_CLIENT_ID": "<Carebox client ID>",
