@@ -102,4 +102,55 @@ describe('buildPatientData', () => {
     expect(patientData.diseaseStatus.system).toEqual('http://snomed.info/sct');
     expect(patientData.diseaseStatus.code).toEqual('268910001');
   });
+  describe('biomarkers', () => {
+    it('loads HER2 markers', () => {
+      const patientData = buildPatientData([
+        testPatient,
+        testUser,
+        [],
+        [
+          {
+            resourceType: 'Observation',
+            status: 'final',
+            code: {
+              coding: [
+                {
+                  system: 'http://loinc.org',
+                  code: '51981-9',
+                  display: 'HER2 [Presence] in Serum by Immunoassay',
+                },
+              ],
+            },
+            valueCodeableConcept: {
+              coding: [
+                {
+                  code: '10828004',
+                  display: 'Positive (qualifier value)',
+                  system: 'http://snomed.info/sct',
+                },
+              ],
+            },
+          },
+        ],
+        [],
+        [],
+      ]);
+      expect(patientData).not.toBeNull();
+      expect(patientData.biomarkers).toEqual([
+        {
+          entryType: 'biomarkers',
+          cancerType: ['breast', 'lung'],
+          code: '51981-9',
+          display: 'HER2 [Presence] in Serum by Immunoassay',
+          system: 'http://loinc.org',
+          category: ['HER2'],
+          qualifier: {
+            code: '10828004',
+            display: 'Positive (qualifier value)',
+            system: 'http://snomed.info/sct',
+          },
+        },
+      ]);
+    });
+  });
 });
