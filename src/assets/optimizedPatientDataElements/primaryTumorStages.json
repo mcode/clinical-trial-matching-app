@@ -1,0 +1,710 @@
+[
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1222604002",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cTX (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228882005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT0 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228883000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cTa (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228884006",
+      "system": "http://snomed.info/sct",
+      "display": "cTis"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228885007",
+      "system": "http://snomed.info/sct",
+      "display": "cTis(DCIS)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228887004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cTis(LAMN) (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228888009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cTis(Paget)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228889001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228891009",
+      "system": "http://snomed.info/sct",
+      "display": "cT1mi"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228892002",
+      "system": "http://snomed.info/sct",
+      "display": "cT1a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228893007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1a1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228894001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1a2 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228895000",
+      "system": "http://snomed.info/sct",
+      "display": "cT1b"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228896004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1b1 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228898003",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1b2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228899006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1c"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228900001",
+      "system": "http://snomed.info/sct",
+      "display": "cT1c1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228901002",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1c2 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228902009",
+      "system": "http://snomed.info/sct",
+      "display": "cT1c3"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228928007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT1d"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228929004",
+      "system": "http://snomed.info/sct",
+      "display": "cT2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228931008",
+      "system": "http://snomed.info/sct",
+      "display": "cT2a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228932001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT2a1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228933006",
+      "system": "http://snomed.info/sct",
+      "display": "cT2a2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228934000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT2b"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228936003",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT2c (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228937007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT2d (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228938002",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT3 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228939005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT3a (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228940007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT3b"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228941006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT3c (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228942004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT3d (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228943009",
+      "system": "http://snomed.info/sct",
+      "display": "cT3e"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228944003",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT4"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228945002",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT4a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228946001",
+      "system": "http://snomed.info/sct",
+      "display": "cT4b"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228947005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT4c"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228948000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT4d"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228949008",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer cT4e (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1285094009",
+      "system": "http://snomed.info/sct",
+      "display": "AJCC (American Joint Committee on Cancer) cT1b3"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228950008",
+      "system": "http://snomed.info/sct",
+      "display": "pTX"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228951007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT0"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228952000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pTa"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228953005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pTis (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228954004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pTis(DCIS) (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228955003",
+      "system": "http://snomed.info/sct",
+      "display": "pTis(LAMN)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228956002",
+      "system": "http://snomed.info/sct",
+      "display": "pTis(Paget)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228957006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228958001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1mi"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228959009",
+      "system": "http://snomed.info/sct",
+      "display": "pT1a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228960004",
+      "system": "http://snomed.info/sct",
+      "display": "pT1a1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228961000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1a2 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228962007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1b (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229844006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1b1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229845007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1b2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229846008",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1c (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229848009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1c1 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229849001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1c2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229850001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT1c3 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229851002",
+      "system": "http://snomed.info/sct",
+      "display": "pT1d"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229852009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT2 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229853004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT2a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229854005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT2a1 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229855006",
+      "system": "http://snomed.info/sct",
+      "display": "pT2a2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229856007",
+      "system": "http://snomed.info/sct",
+      "display": "pT2b"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229857003",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT2c (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229858008",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT2d (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229859000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT3"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229860005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT3a (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229861009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT3b (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229862002",
+      "system": "http://snomed.info/sct",
+      "display": "pT3c"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229863007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT3d (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229864001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT4"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229865000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT4a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229866004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT4b"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229867008",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT4c"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229868003",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT4d (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229869006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer pT4e (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1285095005",
+      "system": "http://snomed.info/sct",
+      "display": "pT1b3"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228862006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypTX"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228863001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT0 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228864007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypTa"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228865008",
+      "system": "http://snomed.info/sct",
+      "display": "ypTis"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228866009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypTis(DCIS) (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228867000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypTis(LAMN) (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228868005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypTis(Paget)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228869002",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228870001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1mi (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228872009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1a (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228873004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1a1"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228874005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1a2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228897008",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1b (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228903004",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1b1 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228904005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1b2 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228905006",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1c"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228906007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1c1 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228907003",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1c2 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228908008",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1c3 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228909000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1d (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228910005",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228911009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT2a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228912002",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT2a1 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228913007",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT2a2 (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228914001",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT2b (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228915000",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2c"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228916004",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2d"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228917008",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT3"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228918003",
+      "system": "http://snomed.info/sct",
+      "display": "ypT3a"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228919006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT3b (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228920000",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT3c"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228921001",
+      "system": "http://snomed.info/sct",
+      "display": "ypT3d"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228922008",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228923003",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT4a (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228924009",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT4b"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228925005",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT4c (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228926006",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4d"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228927002",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT4e (qualifier value)"
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1285096006",
+      "system": "http://snomed.info/sct",
+      "display": "American Joint Committee on Cancer ypT1b3 (qualifier value)"
+    }
+  ]

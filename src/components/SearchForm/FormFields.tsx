@@ -211,6 +211,26 @@ export const DiseaseStatusAutocomplete = ({
   );
 };
 
+export const PrimaryTumorStageAutocomplete = ({
+  field,
+  options,
+}: {
+  field: ControllerRenderProps<SearchFormValuesType, 'primaryTumorStage'>;
+  options: CodedValueType[];
+}): ReactElement => {
+  return (
+    <Autocomplete
+      {...field}
+      data-testid="primaryTumorStage"
+      onChange={(_, value) => field.onChange(value)}
+      options={options}
+      getOptionLabel={(option: CodedValueType) => option.display}
+      renderInput={params => <TextField variant="filled" label="Primary Tumor (T) Stage" placeholder="" {...params} />}
+      isOptionEqualToValue={areCodedValueTypesEqual}
+    />
+  );
+};
+
 export const ECOGScoreAutocomplete = ({
   field,
   ecogScores,

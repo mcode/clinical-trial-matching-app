@@ -25,6 +25,7 @@ import {
   KarnofskyScoreAutocomplete,
   MedicationsAutocomplete,
   MetastasisAutocomplete,
+  PrimaryTumorStageAutocomplete,
   RadiationAutocomplete,
   SurgeryAutocomplete,
   TravelDistanceTextField,
@@ -303,6 +304,17 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               rules={{ validate: validateStage }}
               render={({ field }) => (
                 <CancerStageAutocomplete field={field} stages={state.stage} stageIsValid={validateStage} />
+              )}
+            />
+          </Grid>
+
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
+            <Controller
+              name="primaryTumorStage"
+              defaultValue={null}
+              control={control}
+              render={({ field }) => (
+                <PrimaryTumorStageAutocomplete field={field} options={state.primaryTumorStage} />
               )}
             />
           </Grid>
