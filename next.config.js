@@ -24,6 +24,11 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
   };
 });
 
+function parseResultsMax() {
+  let value = Number(process.env.RESULTS_MAX);
+  return isNaN(value) || value < 1 ? 15 : value;
+}
+
 module.exports = {
   // Disable image optimization, as it's currently broken when Next.js is
   // running under IISnode.
@@ -42,7 +47,7 @@ module.exports = {
     disableSearchLocation: JSON.parse(process.env.DISABLE_SEARCH_LOCATION ?? 'false'),
     defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
     defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
-    resultsMax: process.env.RESULTS_MAX,
+    resultsMax: parseResultsMax(),
     siteRubric: allowedSiteRubrics.includes(process.env.SITE_RUBRIC) ? process.env.SITE_RUBRIC : 'none',
     services: matchingServices,
   },

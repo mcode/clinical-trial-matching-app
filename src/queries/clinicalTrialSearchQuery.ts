@@ -42,10 +42,12 @@ const clinicalTrialSearchQuery = async (
   user: User,
   searchParams: ParsedUrlQuery
 ): Promise<ResultsResponse> =>
-  fetch('/api/clinical-trial-search', {
-    cache: 'no-store',
-    method: 'post',
-    body: JSON.stringify({ patient, user, searchParams }, null, 2),
-  }).then(res => res.json());
+  await (
+    await fetch('/api/clinical-trial-search', {
+      cache: 'no-store',
+      method: 'post',
+      body: JSON.stringify({ patient, user, searchParams }, null, 2),
+    })
+  ).json();
 
 export default clinicalTrialSearchQuery;

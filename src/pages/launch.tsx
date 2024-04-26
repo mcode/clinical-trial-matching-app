@@ -3,8 +3,9 @@ import smart from 'fhirclient';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import React, { ReactElement } from 'react';
+import { GetConfig } from 'types/config';
 
-const { publicRuntimeConfig } = getConfig();
+const { publicRuntimeConfig } = getConfig() as GetConfig;
 
 type LaunchPageProps = {
   errorMessage: string;

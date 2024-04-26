@@ -1,10 +1,11 @@
 import getConfig from 'next/config';
 import { ParsedUrlQuery } from 'querystring';
 import { ResultsResponse } from './clinicalTrialSearchQuery';
+import { GetConfig } from 'types/config';
 
 const {
   publicRuntimeConfig: { sendLocationData },
-} = getConfig();
+} = getConfig() as GetConfig;
 
 const clinicalTrialDistanceQuery = async (
   response: ResultsResponse,
