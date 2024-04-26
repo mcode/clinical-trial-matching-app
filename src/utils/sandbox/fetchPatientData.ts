@@ -20,7 +20,7 @@ import {
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import type { PatientData, ProgressMonitor } from '../fetchPatientData';
-import { fetchMedications, fetchResources, resourceHasProfile, observationHasCode } from '../fhir/fetch';
+import { fetchMedications, fetchResources, resourceHasProfile, observationHasCode, sortByDate } from '../fhir/fetch';
 import { Condition, Medication, Observation, Procedure } from 'fhir/r4';
 
 export type FetchTaskType = [
@@ -81,6 +81,9 @@ export const buildPatientData = ([
   procedures,
   medications,
 ]: FetchTaskType): PatientData => {
+  // Sort observations by date
+  sortByDate(observations, 'effectiveDateTime');
+
   // FIXME: Should find the most recent, which is not necessarily the first record in the bundle
   // TODO: As this gets more complicated, it'll make more sense to go through all observations and check each one to see
   // if it contains relavent information rather than do separate find/filters

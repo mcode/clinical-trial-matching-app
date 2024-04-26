@@ -99,3 +99,65 @@ export const observationHasCode = (observation: Observation, system: string, cod
   // Basically, see if any of the codings in the observation match
   return observation.code?.coding?.findIndex(coding => coding.system === system && coding.code === code) >= 0;
 };
+
+// TypeScript helper to ensure that the given field is a DateTime field - as nearly as we can determine via FHIR types,
+// at least.
+type DateField<F extends string | number | symbol> = {
+  [key in F]?: string;
+};
+
+/**
+ * Sorts a set of resources by date, with newest sorted first.
+ * (This may eventually be updated to allow multiple fields to be used along
+ * with things like periods. But for now...)
+ * @param resources the resources to sort
+ * @param dateField the field which contains a date
+ * @returns
+ */
+export const sortByDate = <T extends DateField<F>, F extends keyof T>(
+  resources: T[],
+  dateField: F
+): T[] => {
+  return resources.sort((a, b) => compareDates(a[dateField], b[dateField]));
+};
+
+/**
+ * Compares two dates, ordering later dates "first" (so 2024-01-02 compares as "less" than 2024-01-01).
+ *
+ * Note: this currently does not attempt to parse the dates, it uses a simple string comparison. This is valid except
+ * when there are differing timezones.
+ *
+ * @param dateA date A
+ * @param dateB date B
+ */
+export const compareDates = (dateA: string | undefined, dateB: string | undefined): number => {
+  let timestampA = parseFHIRDate(dateA), timestampB = parseFHIRDate(dateB);
+  if (timestampA === undefined) {
+    return timestampB === undefined ? 0 : 1;
+  }
+  if (timestampB === undefined) {
+    // dateA is known to be defined at this point in time
+    return -1;
+  }
+  return timestampA < timestampB ? 1 : timestampA > timestampB ? -1 : 0;
+};
+
+/**
+ *
+ * @param date the date to parse
+ * @returns either the result of Date.parse or undefined if the date was invalid
+ */
+export const parseFHIRDate = (date: string | undefined): number | undefined => {
+  // Regexp is a simplified version of the one in the FHIR spec that does't attempt to enforce ranges (Date.parse should
+  // do that - probably, depending on browser)
+  // (This is to filter out a bunch of random junk that's otherwise accepted, like '8' meaning '1970-08-01T00:00:00.0Z'
+  // in Node.js and Chrome)
+  if (date && /^[0-9]{4,}(?:-[0-9]{2}(?:-[0-9]{2}(?:T[0-9]{2}:[0-9]{2}:[0-9]{2}(?:\.[0-9]+)?(?:Z|[+-][0-9]{2}:[0-9]{2}))?)?)?$/.test(date)) {
+    console.log('parse', date);
+    const result = Date.parse(date);
+    // Date.parse can return NaN if the date is invalid. Return undefined
+    // instead, it arguably makes more sense.
+    return isNaN(result) ? undefined : result;
+  }
+  return undefined;
+}
