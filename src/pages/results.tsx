@@ -47,10 +47,11 @@ import {
   SearchParameters,
   SortingParameters,
 } from 'types/search-types';
+import { GetConfig } from 'types/config';
 
 const {
   publicRuntimeConfig: { sendLocationData },
-} = getConfig();
+} = getConfig() as GetConfig;
 
 type ResultsPageProps = {
   patient: Patient;
