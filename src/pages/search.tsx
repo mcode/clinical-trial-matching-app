@@ -3,17 +3,7 @@ import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
 import { UserIdContext } from '@/components/UserIdContext';
 import { fetchPatientData } from '@/utils/fetchPatientData';
-import {
-  Biomarker,
-  CodedValueType,
-  convertFhirMedicationStatements,
-  convertFhirTumorMarkers,
-  Patient,
-  PrimaryCancerCondition,
-  Score,
-  User,
-} from '@/utils/fhirConversionUtils';
-import { fhirMedicationStatementBundle, fhirTumorMarkerBundle } from '@/__mocks__/bundles';
+import { Biomarker, CodedValueType, Patient, PrimaryCancerCondition, Score, User } from '@/utils/fhirConversionUtils';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { GetServerSideProps } from 'next';
@@ -70,12 +60,6 @@ const SearchPage = ({
     medications,
   };
   const [userId, setUserId] = useState<string | null>(null);
-
-  // for debugging purposes
-  if (true) {
-    convertFhirMedicationStatements(fhirMedicationStatementBundle);
-    convertFhirTumorMarkers(fhirTumorMarkerBundle);
-  }
 
   return (
     <>

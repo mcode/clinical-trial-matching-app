@@ -3,7 +3,6 @@
  */
 
 import type Client from 'fhirclient/lib/Client';
-import fetchEpicPatientData from './epic/fetchPatientData';
 import { Biomarker, CodedValueType, Patient, PrimaryCancerCondition, Score, User } from './fhirConversionUtils';
 import fetchSandboxPatientData from './sandbox/fetchPatientData';
 
@@ -101,14 +100,12 @@ export const subProgressMonitor = (rootMonitor: ProgressMonitor, totalParentUnit
 
 export const fetchPatientData = (
   fhirClient: Client,
-  clientName: string,
+  // Client name is not currently used but may be in the future
+  _clientName: string,
   progress?: ProgressMonitor
 ): Promise<PatientData> => {
   if (progress === undefined) {
     progress = defaultProgressMonitor();
-  }
-  if (clientName === 'epic') {
-    return fetchEpicPatientData(fhirClient, progress);
   }
   // The default fallback is the sandbox implementation
   return fetchSandboxPatientData(fhirClient, progress);

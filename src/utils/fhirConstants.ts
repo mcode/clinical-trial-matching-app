@@ -29,6 +29,11 @@ export const MCODE_DISEASE_STATUS = MCODE_STRUCTURE_DEFINITION + 'mcode-cancer-d
 export const MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR = MCODE_STRUCTURE_DEFINITION + 'mcode-histology-morphology-behavior';
 
 /**
+ * Cancer disease status
+ */
+export const MCODE_CANCER_DISEASE_STATUS = MCODE_STRUCTURE_DEFINITION + 'mcode-cancer-disease-status';
+
+/**
  * The system URLs for SNOMED, LOINC, and RxNorm codes.
  */
 export const SNOMED_CODE_URI = 'http://snomed.info/sct';
@@ -102,6 +107,12 @@ export const US_CORE_OBSERVATION_CATEGORY_URI = 'http://hl7.org/fhir/us/core/Cod
  * Observation Category URL.
  */
 export const OBSERVATION_CATEGORY_URI = 'http://terminology.hl7.org/CodeSystem/observation-category';
+
+/**
+ * Required LOINC code to indicate a disease status, as defined in the mCODE IG
+ * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-cancer-disease-status.html
+ */
+export const MCODE_CANCER_DISEASE_STATUS_LOINC_CODE = '97509-4';
 
 // Constant CodeableConcept resources used in the different profiles.
 export const clinicalTest = {

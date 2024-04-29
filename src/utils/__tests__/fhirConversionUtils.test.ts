@@ -1,15 +1,14 @@
 import {
-  fhirEcogPerformanceStatusBundle,
-  fhirEmptyBundle,
-  fhirKarnofskyPerformanceStatusBundle,
+  fhirEcogPerformanceStatusResource,
+  fhirKarnofskyPerformanceStatusResource,
   fhirMedications,
   fhirPatient,
-  fhirPrimaryCancerConditionBundle,
-  fhirPrimaryCancerConditionBundle2,
-  fhirRadiationProcedureBundle,
-  fhirSecondaryCancerConditionBundle,
-  fhirSurgeryProcedureBundle,
-  fhirTumorMarkerBundle,
+  fhirPrimaryCancerConditions,
+  fhirPrimaryCancerConditions2,
+  fhirRadiationProcedures,
+  fhirSecondaryCancerConditions,
+  fhirSurgeryProcedures,
+  fhirTumorMarkers,
 } from '@/__mocks__/bundles';
 import mockPatient from '@/__mocks__/patient';
 import { LOINC_CODE_URI, RXNORM_CODE_URI, SNOMED_CODE_URI } from '../fhirConstants';
@@ -30,7 +29,7 @@ import {
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
   it('gets the Karnofsky score from a bundle', () => {
-    expect(convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatusBundle)).toEqual({
+    expect(convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatusResource)).toEqual({
       entryType: 'karnofskyScore',
       interpretation: {
         code: 'LA29175-9',
@@ -39,13 +38,16 @@ describe('convertFhirKarnofskyPerformanceStatus', () => {
       },
       valueInteger: 100,
     });
-    expect(convertFhirKarnofskyPerformanceStatus(fhirEmptyBundle)).toBeNull();
+  });
+  it('returns null when no Karnosky score is present', () => {
+    // Use the ECOG performance score resource - this should be ignored
+    expect(convertFhirKarnofskyPerformanceStatus(fhirEcogPerformanceStatusResource)).toBeNull();
   });
 });
 
 describe('convertFhirEcogPerformanceStatus', () => {
   it('gets the ECOG score from a FHIR bundle', () => {
-    expect(convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatusBundle)).toEqual({
+    expect(convertFhirEcogPerformanceStatus(fhirEcogPerformanceStatusResource)).toEqual({
       entryType: 'ecogScore',
       interpretation: {
         code: 'LA9623-5',
@@ -55,7 +57,6 @@ describe('convertFhirEcogPerformanceStatus', () => {
       },
       valueInteger: 1,
     });
-    expect(convertFhirEcogPerformanceStatus(fhirEmptyBundle)).toBeNull();
   });
 });
 
@@ -108,7 +109,7 @@ describe('convertFhirPatient', () => {
 
 describe('convertFhirPrimaryCancerCondition', () => {
   it('gets the primary cancer condition from a FHIR Bundle', () => {
-    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditionBundle)).toEqual({
+    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditions)).toEqual({
       cancerType: {
         category: ['Breast', 'Invasive Breast', 'Invasive Carcinoma', 'Invasive Ductal Carcinoma'],
         cancerType: [CancerType.BREAST],
@@ -127,7 +128,7 @@ describe('convertFhirPrimaryCancerCondition', () => {
       },
       stage: null,
     });
-    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditionBundle2)).toEqual({
+    expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditions2)).toEqual({
       cancerType: {
         entryType: 'cancerType',
         cancerType: [CancerType.BREAST],
@@ -146,13 +147,12 @@ describe('convertFhirPrimaryCancerCondition', () => {
         entryType: 'stage',
       },
     });
-    expect(extractPrimaryCancerCondition(fhirEmptyBundle)).toBeNull();
   });
 });
 
 describe('convertFhirRadiationProcedures', () => {
   it('gets the radiation procedures from a FHIR Bundle', () => {
-    expect(convertFhirRadiationProcedures(fhirRadiationProcedureBundle)).toEqual([
+    expect(convertFhirRadiationProcedures(fhirRadiationProcedures)).toEqual([
       {
         entryType: 'radiation',
         cancerType: [CancerType.BREAST, CancerType.COLON, CancerType.LUNG],
@@ -170,13 +170,12 @@ describe('convertFhirRadiationProcedures', () => {
         category: ['EBRT'],
       },
     ]);
-    expect(convertFhirRadiationProcedures(fhirEmptyBundle)).toEqual([]);
   });
 });
 
 describe('convertFhirSecondaryCancerConditions', () => {
   it('gets the secondary cancer conditions from a FHIR Bundle', () => {
-    expect(convertFhirSecondaryCancerConditions(fhirSecondaryCancerConditionBundle)).toEqual([
+    expect(convertFhirSecondaryCancerConditions(fhirSecondaryCancerConditions)).toEqual([
       {
         entryType: 'metastasis',
         cancerType: [
@@ -193,13 +192,12 @@ describe('convertFhirSecondaryCancerConditions', () => {
         category: ['Bone'],
       },
     ]);
-    expect(convertFhirSecondaryCancerConditions(fhirEmptyBundle)).toEqual([]);
   });
 });
 
 describe('convertFhirSurgeryProcedures', () => {
   it('gets the surgery procedures from a FHIR Bundle', () => {
-    expect(convertFhirSurgeryProcedures(fhirSurgeryProcedureBundle)).toEqual([
+    expect(convertFhirSurgeryProcedures(fhirSurgeryProcedures)).toEqual([
       {
         entryType: 'surgery',
         cancerType: [CancerType.BREAST],
@@ -225,13 +223,12 @@ describe('convertFhirSurgeryProcedures', () => {
         category: ['Mastectomy'],
       },
     ]);
-    expect(convertFhirSurgeryProcedures(fhirEmptyBundle)).toEqual([]);
   });
 });
 
 describe('convertFhirTumorMarkers', () => {
   it('gets the tumor markers from a FHIR Bundle', () => {
-    expect(convertFhirTumorMarkers(fhirTumorMarkerBundle)).toEqual([
+    expect(convertFhirTumorMarkers(fhirTumorMarkers)).toEqual([
       {
         entryType: 'biomarkers',
         cancerType: [CancerType.BREAST, CancerType.LUNG],
@@ -314,7 +311,6 @@ describe('convertFhirTumorMarkers', () => {
         qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
       },
     ]);
-    expect(convertFhirTumorMarkers(fhirEmptyBundle)).toEqual([]);
   });
 });
 
