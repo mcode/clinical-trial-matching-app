@@ -1,4 +1,4 @@
-import { getArmsAndInterventions, getContact, getSponsor, getType } from '../utils';
+import { getArmsAndInterventions, getContact, getSponsor, getType, getBestContact } from '../utils';
 
 describe('getContact', () => {
   it('returned undefined if given undefined', () => {
@@ -144,5 +144,70 @@ describe('getArmsAndInterventions()', () => {
         ],
       },
     ]);
+  });
+});
+
+describe('getBestContact()', () => {
+  it('handles an empty array gracefully', () => {
+    // Nothing should return an empty object.
+    expect(getBestContact([], 'phone', 'work')).toEqual({});
+  });
+  it('returns the instance with the correct system', () => {
+    expect(
+      getBestContact(
+        [
+          {
+            system: 'email',
+            use: 'work',
+            value: 'work email',
+          },
+          {
+            system: 'phone',
+            use: 'work',
+            value: 'work phone',
+          },
+          {
+            system: 'fax',
+            use: 'work',
+            value: 'work fax',
+          },
+        ],
+        'phone',
+        'work'
+      )
+    ).toEqual({
+      system: 'phone',
+      use: 'work',
+      value: 'work phone',
+    });
+  });
+  it('returns the instance with the best use', () => {
+    expect(
+      getBestContact(
+        [
+          {
+            system: 'phone',
+            use: 'home',
+            value: 'home phone',
+          },
+          {
+            system: 'phone',
+            use: 'work',
+            value: 'work phone',
+          },
+          {
+            system: 'phone',
+            use: 'mobile',
+            value: 'mobile phone',
+          },
+        ],
+        'phone',
+        'work'
+      )
+    ).toEqual({
+      system: 'phone',
+      use: 'work',
+      value: 'work phone',
+    });
   });
 });
