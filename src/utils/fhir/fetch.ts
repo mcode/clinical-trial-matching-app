@@ -157,7 +157,7 @@ export const parseFHIRDate = (date: string | undefined): number | undefined => {
   // do that - probably, depending on browser)
   // (The regexp is to filter out a bunch of random junk that's otherwise accepted, like '8' meaning
   // '2001-08-01T00:00:00.0Z' in Node.js and Chrome and other random edge cases that are browser specific.)
-  if (date && /^\d{4,}(?:-\d]{2}(?:-\d{2}(?:T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2}))?)?)?$/.test(date)) {
+  if (date && /^\d{4,}(?:-\d{2}(?:-\d{2}(?:T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2}))?)?)?$/.test(date)) {
     console.log('parse', date);
     const result = Date.parse(date);
     // Date.parse can return NaN if the date is invalid. Return undefined
