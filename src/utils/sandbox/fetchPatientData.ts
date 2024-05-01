@@ -75,7 +75,7 @@ export const buildPatientData = ([
   procedures,
   medications,
 ]: FetchTaskType): PatientData => {
-  // Sort observations by date
+  // Sort observations by date. This sorts in place, mutating the array.
   sortByDate(observations, 'effectiveDateTime');
 
   // FIXME: Should find the most recent, which is not necessarily the first record in the bundle
