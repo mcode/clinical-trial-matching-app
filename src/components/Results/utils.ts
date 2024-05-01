@@ -8,7 +8,15 @@ import {
 import { MainRowKeys } from '@/utils/exportData';
 import { findContainedResourceByReference } from '@/utils/fhirUtils';
 import { format } from 'date-fns';
-import { BundleEntrySearch, ContactDetail, Location, Organization, PlanDefinition, ResearchStudy } from 'fhir/r4';
+import {
+  BundleEntrySearch,
+  ContactDetail,
+  ContactPoint,
+  Location,
+  Organization,
+  PlanDefinition,
+  ResearchStudy,
+} from 'fhir/r4';
 import { ArmGroup } from '.';
 import {
   BundleEntry,
@@ -162,6 +170,41 @@ export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
   return Array.from(arms.values());
 };
 
+/**
+ * Attempt to find the "best" contact. Exported for testing.
+ * @param contacts contact list
+ * @param system system to look for
+ * @param use use field to look for
+ * @returns "best" matching contact
+ */
+export const getBestContact = (
+  contacts: ContactPoint[] | undefined,
+  system: ContactPoint['system'],
+  use: ContactPoint['use'],
+) =>
+  contacts.reduce(
+    (previous, current) => {
+      // Use contacts with the preferred system over ones without
+      if (previous.system === system && current.system !== system) {
+        return previous;
+      }
+      // Use contacts with the preferred use over ones without
+      if (previous.use === use && current.use !== use) {
+        return previous;
+      }
+      // Uses fields that have values over ones without
+      if (previous.value && !current.value) {
+        return previous;
+      }
+      // Otherwise, the current is probably better
+      return current;
+    },
+    // Default value in case given an empty array, which is a simple empty
+    // object.
+    {
+    }
+  );
+
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {
   const origin = getZipcodeCoordinates(zipcode);
   return getCoordinatesForLocations(locations)
@@ -171,21 +214,7 @@ const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacil
       let phone: string | undefined;
       // Find a phone number to use
       if (telecom) {
-        const bestTelecom = telecom.reduce((previous, current) => {
-          // Use phone numbers if possible
-          if (previous.system === 'phone' && current.system !== 'phone') {
-            return previous;
-          }
-          // Use work numbers if possible
-          if (previous.use === 'work' && current.use !== 'work') {
-            return previous;
-          }
-          if (previous.value && !current.value) {
-            return previous;
-          }
-          // Otherwise, the current is probably better
-          return current;
-        });
+        const bestTelecom = getBestContact(telecom, 'phone', 'work');
         if (bestTelecom.system === 'phone' && bestTelecom.value) {
           phone = bestTelecom.value;
         }
