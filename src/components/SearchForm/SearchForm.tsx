@@ -318,9 +318,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               name="primaryTumorStage"
               defaultValue={null}
               control={control}
-              render={({ field }) => (
-                <PrimaryTumorStageAutocomplete field={field} options={state.primaryTumorStage} />
-              )}
+              render={({ field }) => <PrimaryTumorStageAutocomplete field={field} options={state.primaryTumorStage} />}
             />
           </Grid>
 
@@ -329,9 +327,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               name="nodalDiseaseStage"
               defaultValue={null}
               control={control}
-              render={({ field }) => (
-                <NodalDiseaseStageAutocomplete field={field} options={state.nodalDiseaseStage} />
-              )}
+              render={({ field }) => <NodalDiseaseStageAutocomplete field={field} options={state.nodalDiseaseStage} />}
             />
           </Grid>
 
@@ -340,9 +336,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               name="metastasesStage"
               defaultValue={null}
               control={control}
-              render={({ field }) => (
-                <MetastasesStageAutocomplete field={field} options={state.metastasesStage} />
-              )}
+              render={({ field }) => <MetastasesStageAutocomplete field={field} options={state.metastasesStage} />}
             />
           </Grid>
 

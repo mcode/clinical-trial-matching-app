@@ -168,7 +168,7 @@ export const convertFhirDiseaseStatus = (observation: Observation): CodedValueTy
   return diseaseStatus || null;
 };
 
-export const convertFhirPrimaryTumorStage =(observation: Observation): CodedValueType => {
+export const convertFhirPrimaryTumorStage = (observation: Observation): CodedValueType => {
   const pts = observation.valueCodeableConcept?.coding
     ?.map(code => primaryTumorStages.find(equalCodedValueType(code as CodedValueType)))
     .flat()
@@ -177,7 +177,7 @@ export const convertFhirPrimaryTumorStage =(observation: Observation): CodedValu
   return pts || null;
 };
 
-export const convertFhirNodalDiseaseStage =(observation: Observation): CodedValueType => {
+export const convertFhirNodalDiseaseStage = (observation: Observation): CodedValueType => {
   const nds = observation.valueCodeableConcept?.coding
     ?.map(code => nodalDiseaseStages.find(equalCodedValueType(code as CodedValueType)))
     .flat()
@@ -186,7 +186,7 @@ export const convertFhirNodalDiseaseStage =(observation: Observation): CodedValu
   return nds || null;
 };
 
-export const convertFhirMetastasesStage =(observation: Observation): CodedValueType => {
+export const convertFhirMetastasesStage = (observation: Observation): CodedValueType => {
   const ms = observation.valueCodeableConcept?.coding
     ?.map(code => metastasesStages.find(equalCodedValueType(code as CodedValueType)))
     .flat()

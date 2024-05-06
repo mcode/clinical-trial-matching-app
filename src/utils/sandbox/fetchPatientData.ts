@@ -103,22 +103,25 @@ export const buildPatientData = ([
   );
 
   // Find primary tumor stage Observation based on snomed codes
-  const primaryTumorStageObservation = observations.find(observation =>
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE) ||
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE) ||
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE) 
+  const primaryTumorStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE)
   );
   // Find nodal disease stage Observation based on snomed codes
-  const nodalDiseaseStageObservation = observations.find(observation =>
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_N_CATEGORY_CODE) ||
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_CN_CATEGORY_CODE) ||
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_PN_CATEGORY_CODE) 
+  const nodalDiseaseStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_N_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_CN_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_PN_CATEGORY_CODE)
   );
   // Find metastases stage observation based on snomed codes
-  const metastasesStageObservation = observations.find(observation =>
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_M_CATEGORY_CODE) ||
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE) ||
-    observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE) 
+  const metastasesStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_M_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE)
   );
 
   // FIXME: ECOG and Karnofsy have no associated records, so the following will never work but needs to be changed to

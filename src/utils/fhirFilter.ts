@@ -217,9 +217,9 @@ export const getClinicalStageGroup = ({
  * http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category
  */
 const tCategories = {
-  "T category": MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE,
-  "cT category": MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE,
-  "pT category": MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE
+  'T category': MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE,
+  'cT category': MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE,
+  'pT category': MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE,
 };
 
 export const getPrimaryTumorStage = ({
@@ -239,28 +239,29 @@ export const getPrimaryTumorStage = ({
       meta: { profile: [MCODE_TNM_PRIMARY_TUMOR] },
       code: { coding: [{ code: tCategories[category[0]], system: SNOMED_CODE_URI, display: category[0] }] },
       valueCodeableConcept: { coding: [{ code, system, display }] },
-      method : {
-        coding : [
+      method: {
+        coding: [
           {
-            system : "http://snomed.info/sct",
-            code : "897275008",
-            display : "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
-          }
-        ]
-      }
+            system: 'http://snomed.info/sct',
+            code: '897275008',
+            display:
+              'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+          },
+        ],
+      },
     };
   }
 
   return null;
-}
+};
 
 /**
  * http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category
  */
 const nCategories = {
-  "N category": MCODE_REGIONAL_NODES_N_CATEGORY_CODE,
-  "cN category": MCODE_REGIONAL_NODES_CN_CATEGORY_CODE,
-  "pN category": MCODE_REGIONAL_NODES_PN_CATEGORY_CODE
+  'N category': MCODE_REGIONAL_NODES_N_CATEGORY_CODE,
+  'cN category': MCODE_REGIONAL_NODES_CN_CATEGORY_CODE,
+  'pN category': MCODE_REGIONAL_NODES_PN_CATEGORY_CODE,
 };
 
 export const getNodalDiseaseStage = ({
@@ -280,27 +281,28 @@ export const getNodalDiseaseStage = ({
       meta: { profile: [MCODE_TNM_REGIONAL_NODES] },
       code: { coding: [{ code: nCategories[category[0]], system: SNOMED_CODE_URI, display: category[0] }] },
       valueCodeableConcept: { coding: [{ code, system, display }] },
-      method : {
-        coding : [
+      method: {
+        coding: [
           {
-            system : "http://snomed.info/sct",
-            code : "897275008",
-            display : "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
-          }
-        ]
-      }
+            system: 'http://snomed.info/sct',
+            code: '897275008',
+            display:
+              'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+          },
+        ],
+      },
     };
   }
   return null;
-}
+};
 
 /**
  * http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category
  */
 const mCategories = {
-  "M category": MCODE_DISTANT_METASTASES_M_CATEGORY_CODE,
-  "cM category": MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE,
-  "pM category": MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE
+  'M category': MCODE_DISTANT_METASTASES_M_CATEGORY_CODE,
+  'cM category': MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE,
+  'pM category': MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE,
 };
 
 export const getMetastasesStage = ({
@@ -320,19 +322,20 @@ export const getMetastasesStage = ({
       meta: { profile: [MCODE_TNM_DISTANT_METASTASES] },
       code: { coding: [{ code: mCategories[category[0]], system: SNOMED_CODE_URI, display: category[0] }] },
       valueCodeableConcept: { coding: [{ code, system, display }] },
-      method : {
-        coding : [
+      method: {
+        coding: [
           {
-            system : "http://snomed.info/sct",
-            code : "897275008",
-            display : "American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)"
-          }
-        ]
-      }
+            system: 'http://snomed.info/sct',
+            code: '897275008',
+            display:
+              'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+          },
+        ],
+      },
     };
   }
   return null;
-}
+};
 
 // Permanent mCODE IG link: http://hl7.org/fhir/us/mcode/STU1/StructureDefinition-mcode-tumor-marker.html
 export const getTumorMarker = ({

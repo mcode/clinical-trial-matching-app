@@ -104,8 +104,18 @@ export const generateSearchCSVRecords = (
   appendCodedValueTypes(records, 'metastasis', searchParameters.metastasis, manuallyAdjusted);
   appendCodedValueType(records, 'stage', searchParameters.stage, manuallyAdjusted?.stage);
   appendScore(records, 'ecogScore', searchParameters.ecogScore, manuallyAdjusted?.ecogScore);
-  appendCodedValueType(records, 'primaryTumorStage', searchParameters.primaryTumorStage, manuallyAdjusted?.primaryTumorStage);
-  appendCodedValueType(records, 'nodalDiseaseStage', searchParameters.nodalDiseaseStage, manuallyAdjusted?.nodalDiseaseStage);
+  appendCodedValueType(
+    records,
+    'primaryTumorStage',
+    searchParameters.primaryTumorStage,
+    manuallyAdjusted?.primaryTumorStage
+  );
+  appendCodedValueType(
+    records,
+    'nodalDiseaseStage',
+    searchParameters.nodalDiseaseStage,
+    manuallyAdjusted?.nodalDiseaseStage
+  );
   appendCodedValueType(records, 'metastasesStage', searchParameters.metastasesStage, manuallyAdjusted?.metastasesStage);
   appendScore(records, 'karnofskyScore', searchParameters.karnofskyScore, manuallyAdjusted?.karnofskyScore);
   appendBiomarkers(records, 'biomarkers', searchParameters.biomarkers, manuallyAdjusted);

@@ -49,7 +49,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
   const { searchParams } = JSON.parse(req.body);
   const mainCancerType: string = JSON.parse(searchParams.cancerType).cancerType[0];
 
-  console.log("SearchParams", searchParams);
+  console.log('SearchParams', searchParams);
   const patientBundle: Bundle = buildBundle(searchParams);
 
   const chosenServices =
@@ -331,7 +331,19 @@ function handleError(response) {
 const getParsedParameters = (
   parameters: SearchParameters
 ): Partial<
-  Record<keyof Pick<SearchParameters, 'cancerType' | 'cancerSubtype' | 'diseaseStatus' | 'stage' | 'primaryTumorStage' | 'nodalDiseaseStage' | 'metastasesStage' >, CodedValueType> &
+  Record<
+    keyof Pick<
+      SearchParameters,
+      | 'cancerType'
+      | 'cancerSubtype'
+      | 'diseaseStatus'
+      | 'stage'
+      | 'primaryTumorStage'
+      | 'nodalDiseaseStage'
+      | 'metastasesStage'
+    >,
+    CodedValueType
+  > &
     Record<keyof Pick<SearchParameters, 'metastasis' | 'surgery' | 'medications' | 'radiation'>, CodedValueType[]> &
     Record<keyof Pick<SearchParameters, 'biomarkers'>, Biomarker[]> &
     Record<keyof Pick<SearchParameters, 'ecogScore' | 'karnofskyScore'>, Score>
@@ -378,9 +390,9 @@ const getOPDEValues = (parameters: SearchParameters, patientId: string): BundleE
     getDiseaseStatus({ diseaseStatus, patientId }),
     getKarnofskyPerformanceStatus({ karnofskyScore, patientId }),
     getClinicalStageGroup({ stage, patientId }),
-    getPrimaryTumorStage({primaryTumorStage, patientId}),
-    getNodalDiseaseStage({nodalDiseaseStage, patientId}),
-    getMetastasesStage({metastasesStage, patientId}),
+    getPrimaryTumorStage({ primaryTumorStage, patientId }),
+    getNodalDiseaseStage({ nodalDiseaseStage, patientId }),
+    getMetastasesStage({ metastasesStage, patientId }),
     ...biomarkers.map(biomarker => getTumorMarker({ biomarker, patientId })),
     ...medications.map(medication => getCancerRelatedMedicationStatement({ medication, patientId })),
     ...metastases.map(cancerType => getSecondaryCancerCondition({ cancerType, patientId })),

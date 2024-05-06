@@ -26,7 +26,17 @@ export type SearchFormValuesType = {
 export type State = Record<
   keyof Pick<
     SearchFormValuesType,
-    'cancerSubtype' | 'cancerType' | 'diseaseStatus' | 'medications' | 'metastasis' | 'metastasesStage' | 'nodalDiseaseStage' | 'primaryTumorStage' | 'radiation' | 'stage' | 'surgery'
+    | 'cancerSubtype'
+    | 'cancerType'
+    | 'diseaseStatus'
+    | 'medications'
+    | 'metastasis'
+    | 'metastasesStage'
+    | 'nodalDiseaseStage'
+    | 'primaryTumorStage'
+    | 'radiation'
+    | 'stage'
+    | 'surgery'
   >,
   CodedValueType[]
 > &

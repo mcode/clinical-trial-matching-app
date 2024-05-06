@@ -56,12 +56,10 @@ export const MCODE_KARNOFSKY_PERFORMANCE_STATUS = MCODE_STRUCTURE_DEFINITION + '
  */
 export const MCODE_CLINICAL_STAGE_GROUP = MCODE_STRUCTURE_DEFINITION + 'mcode-tnm-clinical-stage-group';
 
-
 /**
  * TNM Primary Tumor Stage URL.
  */
 export const MCODE_TNM_PRIMARY_TUMOR = MCODE_STRUCTURE_DEFINITION + 'mcode-tnm-primary-tumor-category';
-
 
 /**
  * TNM Nodal Disease Stage URL.
