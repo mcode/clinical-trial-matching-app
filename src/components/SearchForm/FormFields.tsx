@@ -227,6 +227,49 @@ export const PrimaryTumorStageAutocomplete = ({
       getOptionLabel={(option: CodedValueType) => option.display}
       renderInput={params => <TextField variant="filled" label="Primary Tumor (T) Stage" placeholder="" {...params} />}
       isOptionEqualToValue={areCodedValueTypesEqual}
+      groupBy={getJoinedCategories}
+    />
+  );
+};
+
+export const NodalDiseaseStageAutocomplete = ({
+  field,
+  options,
+}: {
+  field: ControllerRenderProps<SearchFormValuesType, 'nodalDiseaseStage'>;
+  options: CodedValueType[];
+}): ReactElement => {
+  return (
+    <Autocomplete
+      {...field}
+      data-testid="nodalDiseaseStage"
+      onChange={(_, value) => field.onChange(value)}
+      options={options}
+      getOptionLabel={(option: CodedValueType) => option.display}
+      renderInput={params => <TextField variant="filled" label="Nodal Disease (N) Stage" placeholder="" {...params} />}
+      isOptionEqualToValue={areCodedValueTypesEqual}
+      groupBy={getJoinedCategories}
+    />
+  );
+};
+
+export const MetastasesStageAutocomplete = ({
+  field,
+  options,
+}: {
+  field: ControllerRenderProps<SearchFormValuesType, 'metastasesStage'>;
+  options: CodedValueType[];
+}): ReactElement => {
+  return (
+    <Autocomplete
+      {...field}
+      data-testid="metastasesStage"
+      onChange={(_, value) => field.onChange(value)}
+      options={options}
+      getOptionLabel={(option: CodedValueType) => option.display}
+      renderInput={params => <TextField variant="filled" label="Metastases (M) Stage" placeholder="" {...params} />}
+      isOptionEqualToValue={areCodedValueTypesEqual}
+      groupBy={getJoinedCategories}
     />
   );
 };

@@ -16,6 +16,9 @@ import {
   getSecondaryCancerCondition,
   getTumorMarker,
   resourceToEntry,
+  getPrimaryTumorStage,
+  getNodalDiseaseStage,
+  getMetastasesStage,
 } from '@/utils/fhirFilter';
 import { isAdministrativeGender } from '@/utils/fhirTypeGuards';
 import type { Bundle, BundleEntry, Parameters, Patient } from 'fhir/r4';
@@ -46,6 +49,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
   const { searchParams } = JSON.parse(req.body);
   const mainCancerType: string = JSON.parse(searchParams.cancerType).cancerType[0];
 
+  console.log("SearchParams", searchParams);
   const patientBundle: Bundle = buildBundle(searchParams);
 
   const chosenServices =
@@ -327,7 +331,7 @@ function handleError(response) {
 const getParsedParameters = (
   parameters: SearchParameters
 ): Partial<
-  Record<keyof Pick<SearchParameters, 'cancerType' | 'cancerSubtype' | 'diseaseStatus' | 'stage'>, CodedValueType> &
+  Record<keyof Pick<SearchParameters, 'cancerType' | 'cancerSubtype' | 'diseaseStatus' | 'stage' | 'primaryTumorStage' | 'nodalDiseaseStage' | 'metastasesStage' >, CodedValueType> &
     Record<keyof Pick<SearchParameters, 'metastasis' | 'surgery' | 'medications' | 'radiation'>, CodedValueType[]> &
     Record<keyof Pick<SearchParameters, 'biomarkers'>, Biomarker[]> &
     Record<keyof Pick<SearchParameters, 'ecogScore' | 'karnofskyScore'>, Score>
@@ -338,6 +342,9 @@ const getParsedParameters = (
     ...(parameters.diseaseStatus ? { diseaseStatus: JSON.parse(parameters.diseaseStatus) } : {}),
     ...(parameters.metastasis ? { metastasis: JSON.parse(parameters.metastasis) } : {}),
     ...(parameters.stage ? { stage: JSON.parse(parameters.stage) } : {}),
+    ...(parameters.primaryTumorStage ? { primaryTumorStage: JSON.parse(parameters.primaryTumorStage) } : {}),
+    ...(parameters.nodalDiseaseStage ? { nodalDiseaseStage: JSON.parse(parameters.nodalDiseaseStage) } : {}),
+    ...(parameters.metastasesStage ? { metastasesStage: JSON.parse(parameters.metastasesStage) } : {}),
     ...(parameters.ecogScore ? { ecogScore: JSON.parse(parameters.ecogScore) } : {}),
     ...(parameters.karnofskyScore ? { karnofskyScore: JSON.parse(parameters.karnofskyScore) } : {}),
     ...(parameters.biomarkers ? { biomarkers: JSON.parse(parameters.biomarkers) } : {}),
@@ -354,6 +361,9 @@ const getOPDEValues = (parameters: SearchParameters, patientId: string): BundleE
     diseaseStatus,
     metastasis: metastases,
     stage,
+    primaryTumorStage,
+    nodalDiseaseStage,
+    metastasesStage,
     ecogScore,
     karnofskyScore,
     biomarkers,
@@ -368,6 +378,9 @@ const getOPDEValues = (parameters: SearchParameters, patientId: string): BundleE
     getDiseaseStatus({ diseaseStatus, patientId }),
     getKarnofskyPerformanceStatus({ karnofskyScore, patientId }),
     getClinicalStageGroup({ stage, patientId }),
+    getPrimaryTumorStage({primaryTumorStage, patientId}),
+    getNodalDiseaseStage({nodalDiseaseStage, patientId}),
+    getMetastasesStage({metastasesStage, patientId}),
     ...biomarkers.map(biomarker => getTumorMarker({ biomarker, patientId })),
     ...medications.map(medication => getCancerRelatedMedicationStatement({ medication, patientId })),
     ...metastases.map(cancerType => getSecondaryCancerCondition({ cancerType, patientId })),

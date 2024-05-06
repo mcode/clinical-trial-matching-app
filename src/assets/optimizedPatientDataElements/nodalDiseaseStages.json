@@ -1,0 +1,415 @@
+[
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229966003",
+      "system": "http://snomed.info/sct",
+      "display": "cNX",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229967007",
+      "system": "http://snomed.info/sct",
+      "display": "cN0",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229968002",
+      "system": "http://snomed.info/sct",
+      "display": "cN0a (qualifier value)",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229969005",
+      "system": "http://snomed.info/sct",
+      "display": "cN0b",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229971005",
+      "system": "http://snomed.info/sct",
+      "display": "cN0(i+)",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229973008",
+      "system": "http://snomed.info/sct",
+      "display": "cN1",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229974002",
+      "system": "http://snomed.info/sct",
+      "display": "cN1mi",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229975001",
+      "system": "http://snomed.info/sct",
+      "display": "cN1a (qualifier value)",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229976000",
+      "system": "http://snomed.info/sct",
+      "display": "cN1b",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229977009",
+      "system": "http://snomed.info/sct",
+      "display": "cN1c",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229978004",
+      "system": "http://snomed.info/sct",
+      "display": "cN2",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229980005",
+      "system": "http://snomed.info/sct",
+      "display": "cN2mi",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229981009",
+      "system": "http://snomed.info/sct",
+      "display": "cN2a",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229982002",
+      "system": "http://snomed.info/sct",
+      "display": "cN2b",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229983007",
+      "system": "http://snomed.info/sct",
+      "display": "cN2c",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229984001",
+      "system": "http://snomed.info/sct",
+      "display": "cN3",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229985000",
+      "system": "http://snomed.info/sct",
+      "display": "cN3a",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229986004",
+      "system": "http://snomed.info/sct",
+      "display": "cN3b",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229987008",
+      "system": "http://snomed.info/sct",
+      "display": "cN3c",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229945006",
+      "system": "http://snomed.info/sct",
+      "display": "pNX (qualifier value)",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229947003",
+      "system": "http://snomed.info/sct",
+      "display": "pN0",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229948008",
+      "system": "http://snomed.info/sct",
+      "display": "pN0a",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229949000",
+      "system": "http://snomed.info/sct",
+      "display": "pN0(i+)",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229950000",
+      "system": "http://snomed.info/sct",
+      "display": "pN0(mol+) (qualifier value)",
+      "category": ["cN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229951001",
+      "system": "http://snomed.info/sct",
+      "display": "pN1",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229952008",
+      "system": "http://snomed.info/sct",
+      "display": "pN1mi (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229953003",
+      "system": "http://snomed.info/sct",
+      "display": "pN1a(sn) (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229954009",
+      "system": "http://snomed.info/sct",
+      "display": "pN1a (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229955005",
+      "system": "http://snomed.info/sct",
+      "display": "pN1b",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229956006",
+      "system": "http://snomed.info/sct",
+      "display": "pN1c",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229957002",
+      "system": "http://snomed.info/sct",
+      "display": "pN2",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229958007",
+      "system": "http://snomed.info/sct",
+      "display": "pN2mi",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229959004",
+      "system": "http://snomed.info/sct",
+      "display": "pN2a",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229960009",
+      "system": "http://snomed.info/sct",
+      "display": "pN2b (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229961008",
+      "system": "http://snomed.info/sct",
+      "display": "pN2c",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229962001",
+      "system": "http://snomed.info/sct",
+      "display": "pN3",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229963006",
+      "system": "http://snomed.info/sct",
+      "display": "pN3a (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229964000",
+      "system": "http://snomed.info/sct",
+      "display": "pN3b (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229965004",
+      "system": "http://snomed.info/sct",
+      "display": "pN3c",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229877005",
+      "system": "http://snomed.info/sct",
+      "display": "ypNX",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229878000",
+      "system": "http://snomed.info/sct",
+      "display": "ypN0 (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229879008",
+      "system": "http://snomed.info/sct",
+      "display": "ypN0a",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229880006",
+      "system": "http://snomed.info/sct",
+      "display": "ypN0(mol+) (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229881005",
+      "system": "http://snomed.info/sct",
+      "display": "ypN0(i+) (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229884002",
+      "system": "http://snomed.info/sct",
+      "display": "ypN1",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229885001",
+      "system": "http://snomed.info/sct",
+      "display": "ypN1mi (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229886000",
+      "system": "http://snomed.info/sct",
+      "display": "ypN2mi",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229887009",
+      "system": "http://snomed.info/sct",
+      "display": "ypN1a",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229888004",
+      "system": "http://snomed.info/sct",
+      "display": "ypN1a(sn)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229889007",
+      "system": "http://snomed.info/sct",
+      "display": "ypN1b",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229890003",
+      "system": "http://snomed.info/sct",
+      "display": "ypN1c",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229892006",
+      "system": "http://snomed.info/sct",
+      "display": "ypN2",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229893001",
+      "system": "http://snomed.info/sct",
+      "display": "ypN2a",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229894007",
+      "system": "http://snomed.info/sct",
+      "display": "ypN2c",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229896009",
+      "system": "http://snomed.info/sct",
+      "display": "ypN2b",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229897000",
+      "system": "http://snomed.info/sct",
+      "display": "ypN3 (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229898005",
+      "system": "http://snomed.info/sct",
+      "display": "ypN3a",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229899002",
+      "system": "http://snomed.info/sct",
+      "display": "ypN3b (qualifier value)",
+      "category": ["pN category"]
+    },
+    {
+      "entryType": "nodalDiseaseStage",
+      "code": "1229900007",
+      "system": "http://snomed.info/sct",
+      "display": "ypN3c (qualifier value)",
+      "category": ["pN category"]
+    }
+  ]

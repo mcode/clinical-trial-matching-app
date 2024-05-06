@@ -24,7 +24,9 @@ import {
   ECOGScoreAutocomplete,
   KarnofskyScoreAutocomplete,
   MedicationsAutocomplete,
+  MetastasesStageAutocomplete,
   MetastasisAutocomplete,
+  NodalDiseaseStageAutocomplete,
   PrimaryTumorStageAutocomplete,
   RadiationAutocomplete,
   SurgeryAutocomplete,
@@ -52,6 +54,9 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   metastasis: data.metastasis ? JSON.stringify(extractCodes(data.metastasis)) : undefined,
   biomarkers: data.biomarkers ? JSON.stringify(extractBiomarkerCodes(data.biomarkers)) : undefined,
   stage: data.stage ? JSON.stringify(data.stage) : undefined,
+  primaryTumorStage: data.primaryTumorStage ? JSON.stringify(data.primaryTumorStage) : undefined,
+  nodalDiseaseStage: data.nodalDiseaseStage ? JSON.stringify(data.nodalDiseaseStage) : undefined,
+  metastasesStage: data.metastasesStage ? JSON.stringify(data.metastasesStage) : undefined,
   medications: data.medications ? JSON.stringify(extractCodes(data.medications)) : undefined,
   surgery: data.surgery ? JSON.stringify(extractCodes(data.surgery)) : undefined,
   radiation: data.radiation ? JSON.stringify(extractCodes(data.radiation)) : undefined,
@@ -315,6 +320,28 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
               control={control}
               render={({ field }) => (
                 <PrimaryTumorStageAutocomplete field={field} options={state.primaryTumorStage} />
+              )}
+            />
+          </Grid>
+
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
+            <Controller
+              name="nodalDiseaseStage"
+              defaultValue={null}
+              control={control}
+              render={({ field }) => (
+                <NodalDiseaseStageAutocomplete field={field} options={state.nodalDiseaseStage} />
+              )}
+            />
+          </Grid>
+
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
+            <Controller
+              name="metastasesStage"
+              defaultValue={null}
+              control={control}
+              render={({ field }) => (
+                <MetastasesStageAutocomplete field={field} options={state.metastasesStage} />
               )}
             />
           </Grid>
