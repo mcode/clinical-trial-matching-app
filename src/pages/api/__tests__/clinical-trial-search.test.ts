@@ -28,25 +28,25 @@ export const searchParameters: SearchParameters = {
     display: "Patient's condition improved (finding)",
   }),
   primaryTumorStage: JSON.stringify({
-      "entryType": "primaryTumorStage",
-      "code": "1222604002",
-      "system": "http://snomed.info/sct",
-      "display": "cTX (qualifier value)",
-      "category": ["cT category"]
+    entryType: 'primaryTumorStage',
+    code: '1222604002',
+    system: 'http://snomed.info/sct',
+    display: 'cTX (qualifier value)',
+    category: ['cT category'],
   }),
   nodalDiseaseStage: JSON.stringify({
-    "entryType": "nodalDiseaseStage",
-    "code": "1229966003",
-    "system": "http://snomed.info/sct",
-    "display": "cNX",
-    "category": ["cN category"]
+    entryType: 'nodalDiseaseStage',
+    code: '1229966003',
+    system: 'http://snomed.info/sct',
+    display: 'cNX',
+    category: ['cN category'],
   }),
   metastasesStage: JSON.stringify({
-      entryType: "metastasesStage",
-      code: "1229901006",
-      system: "http://snomed.info/sct",
-      display: "cM0",
-      category: ["cM category"]
+    entryType: 'metastasesStage',
+    code: '1229901006',
+    system: 'http://snomed.info/sct',
+    display: 'cM0',
+    category: ['cM category'],
   }),
   metastasis: '["metastasis-1"]',
   ecogScore: JSON.stringify({
