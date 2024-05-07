@@ -68,7 +68,7 @@ const SearchPage = ({
     surgery,
     medications,
   };
-  console.log("Default Values", defaultValues);
+
   const [userId, setUserId] = useState<string | null>(null);
 
   return (
