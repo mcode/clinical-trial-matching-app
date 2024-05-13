@@ -21,6 +21,9 @@ import {
   MCODE_CANCER_RELATED_RADIATION_PROCEDURE,
   MCODE_CANCER_RELATED_SURGICAL_PROCEDURE,
   MCODE_CLINICAL_STAGE_GROUP,
+  MCODE_TNM_DISTANT_METASTASES,
+  MCODE_TNM_PRIMARY_TUMOR,
+  MCODE_TNM_REGIONAL_NODES,
   MCODE_DISEASE_STATUS,
   MCODE_ECOG_PERFORMANCE_STATUS,
   MCODE_HISTOLOGY_MORPHOLOGY_BEHAVIOR,
@@ -30,6 +33,15 @@ import {
   MCODE_TUMOR_MARKER,
   requiredCategory,
   SNOMED_CODE_URI,
+  MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE,
+  MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE,
+  MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_N_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_CN_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_PN_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_M_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE,
 } from './fhirConstants';
 import { Biomarker, CodedValueType, Score } from './fhirConversionUtils';
 
@@ -196,6 +208,130 @@ export const getClinicalStageGroup = ({
       meta: { profile: [MCODE_CLINICAL_STAGE_GROUP] },
       code: { coding: [{ code: '21908-9', system: SNOMED_CODE_URI }] },
       valueCodeableConcept: { coding: [{ code, system, display }] },
+    };
+  }
+  return null;
+};
+
+/**
+ * http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category
+ */
+const tCategories = {
+  'T category': MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE,
+  'cT category': MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE,
+  'pT category': MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE,
+};
+
+export const getPrimaryTumorStage = ({
+  primaryTumorStage,
+  patientId,
+}: {
+  primaryTumorStage: CodedValueType;
+  patientId: string;
+}): Observation | null => {
+  const { code, system, display, category } = { ...primaryTumorStage };
+
+  if (!!code && !!system && !!display) {
+    return {
+      resourceType: 'Observation',
+      status: 'final',
+      subject: getSubject(patientId),
+      meta: { profile: [MCODE_TNM_PRIMARY_TUMOR] },
+      code: { coding: [{ code: tCategories[category[0]], system: SNOMED_CODE_URI, display: category[0] }] },
+      valueCodeableConcept: { coding: [{ code, system, display }] },
+      method: {
+        coding: [
+          {
+            system: 'http://snomed.info/sct',
+            code: '897275008',
+            display:
+              'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+          },
+        ],
+      },
+    };
+  }
+
+  return null;
+};
+
+/**
+ * http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category
+ */
+const nCategories = {
+  'N category': MCODE_REGIONAL_NODES_N_CATEGORY_CODE,
+  'cN category': MCODE_REGIONAL_NODES_CN_CATEGORY_CODE,
+  'pN category': MCODE_REGIONAL_NODES_PN_CATEGORY_CODE,
+};
+
+export const getNodalDiseaseStage = ({
+  nodalDiseaseStage,
+  patientId,
+}: {
+  nodalDiseaseStage: CodedValueType;
+  patientId: string;
+}): Observation | null => {
+  const { code, system, display, category } = { ...nodalDiseaseStage };
+
+  if (!!code && !!system && !!display) {
+    return {
+      resourceType: 'Observation',
+      status: 'final',
+      subject: getSubject(patientId),
+      meta: { profile: [MCODE_TNM_REGIONAL_NODES] },
+      code: { coding: [{ code: nCategories[category[0]], system: SNOMED_CODE_URI, display: category[0] }] },
+      valueCodeableConcept: { coding: [{ code, system, display }] },
+      method: {
+        coding: [
+          {
+            system: 'http://snomed.info/sct',
+            code: '897275008',
+            display:
+              'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+          },
+        ],
+      },
+    };
+  }
+  return null;
+};
+
+/**
+ * http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category
+ */
+const mCategories = {
+  'M category': MCODE_DISTANT_METASTASES_M_CATEGORY_CODE,
+  'cM category': MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE,
+  'pM category': MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE,
+};
+
+export const getMetastasesStage = ({
+  metastasesStage,
+  patientId,
+}: {
+  metastasesStage: CodedValueType;
+  patientId: string;
+}): Observation | null => {
+  const { code, system, display, category } = { ...metastasesStage };
+
+  if (!!code && !!system && !!display) {
+    return {
+      resourceType: 'Observation',
+      status: 'final',
+      subject: getSubject(patientId),
+      meta: { profile: [MCODE_TNM_DISTANT_METASTASES] },
+      code: { coding: [{ code: mCategories[category[0]], system: SNOMED_CODE_URI, display: category[0] }] },
+      valueCodeableConcept: { coding: [{ code, system, display }] },
+      method: {
+        coding: [
+          {
+            system: 'http://snomed.info/sct',
+            code: '897275008',
+            display:
+              'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+          },
+        ],
+      },
     };
   }
   return null;

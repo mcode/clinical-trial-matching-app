@@ -12,6 +12,9 @@ export type SearchParameters = {
   diseaseStatus: string;
   metastasis: string;
   stage: string;
+  primaryTumorStage: string;
+  nodalDiseaseStage: string;
+  metastasesStage: string;
   ecogScore: string;
   karnofskyScore: string;
   biomarkers: string;

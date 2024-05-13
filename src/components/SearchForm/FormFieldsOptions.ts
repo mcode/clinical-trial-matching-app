@@ -7,6 +7,9 @@ import ecogScores from '@/assets/optimizedPatientDataElements/ecogScores.json';
 import karnofskyScores from '@/assets/optimizedPatientDataElements/karnofskyScores.json';
 import medications from '@/assets/optimizedPatientDataElements/medications.json';
 import metastases from '@/assets/optimizedPatientDataElements/metastases.json';
+import metastasesStages from '@/assets/optimizedPatientDataElements/metastasesStages.json';
+import nodalDiseaseStages from '@/assets/optimizedPatientDataElements/nodalDiseaseStages.json';
+import primaryTumorStages from '@/assets/optimizedPatientDataElements/primaryTumorStages.json';
 import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
 import restrictions from '@/assets/optimizedPatientDataElements/restrictions.json';
 import stages from '@/assets/optimizedPatientDataElements/stages.json';
@@ -80,6 +83,9 @@ export const getNewState = (selectedCancerType: CodedValueType): State => {
     karnofskyScore: karnofskyScores as Score[],
     medications: medications as CodedValueType[],
     metastasis: metastases as CodedValueType[],
+    metastasesStage: metastasesStages as CodedValueType[],
+    nodalDiseaseStage: nodalDiseaseStages as CodedValueType[],
+    primaryTumorStage: primaryTumorStages as CodedValueType[],
     radiation: radiation as CodedValueType[],
     stage: stages as CodedValueType[],
     surgery: surgeries as CodedValueType[],
@@ -117,6 +123,9 @@ export const uninitializedState: State = {
   karnofskyScore: [],
   medications: [],
   metastasis: [],
+  metastasesStage: [],
+  nodalDiseaseStage: [],
+  primaryTumorStage: [],
   radiation: [],
   stage: [],
   surgery: [],

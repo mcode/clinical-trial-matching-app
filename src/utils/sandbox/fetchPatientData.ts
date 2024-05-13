@@ -3,12 +3,25 @@ import {
   MCODE_CANCER_DISEASE_STATUS_LOINC_CODE,
   MCODE_ECOG_PERFORMANCE_STATUS,
   MCODE_KARNOFSKY_PERFORMANCE_STATUS,
+  MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE,
+  MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE,
+  MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_N_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_CN_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_PN_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_M_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE,
+  SNOMED_CODE_URI,
 } from '@/utils/fhirConstants';
 import {
   convertFhirDiseaseStatus,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
+  convertFhirMetastasesStage,
+  convertFhirNodalDiseaseStage,
   convertFhirPatient,
+  convertFhirPrimaryTumorStage,
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
@@ -91,6 +104,29 @@ export const buildPatientData = ([
   const diseaseStatusObservation = observations.find(observation =>
     observationHasCode(observation, LOINC_CODE_URI, MCODE_CANCER_DISEASE_STATUS_LOINC_CODE)
   );
+
+  // Find primary tumor stage Observation based on snomed codes
+  const primaryTumorStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE)
+  );
+  // Find nodal disease stage Observation based on snomed codes
+  const nodalDiseaseStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_N_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_CN_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_PN_CATEGORY_CODE)
+  );
+  // Find metastases stage observation based on snomed codes
+  const metastasesStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_M_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE)
+  );
+
   // FIXME: ECOG and Karnofsy have no associated records, so the following will never work but needs to be changed to
   // not be using the profile anyway
   const ecogObservation = observations.find(resource => resourceHasProfile(resource, MCODE_ECOG_PERFORMANCE_STATUS));
@@ -104,6 +140,9 @@ export const buildPatientData = ([
     primaryCancerCondition: extractPrimaryCancerCondition(conditions),
     metastasis: convertFhirSecondaryCancerConditions(conditions),
     diseaseStatus: diseaseStatusObservation ? convertFhirDiseaseStatus(diseaseStatusObservation) : null,
+    primaryTumorStage: primaryTumorStageObservation ? convertFhirPrimaryTumorStage(primaryTumorStageObservation) : null,
+    nodalDiseaseStage: nodalDiseaseStageObservation ? convertFhirNodalDiseaseStage(nodalDiseaseStageObservation) : null,
+    metastasesStage: metastasesStageObservation ? convertFhirMetastasesStage(metastasesStageObservation) : null,
     ecogScore: ecogObservation ? convertFhirEcogPerformanceStatus(ecogObservation) : null,
     karnofskyScore: karnosfkyObservation ? convertFhirKarnofskyPerformanceStatus(karnosfkyObservation) : null,
     biomarkers: convertFhirTumorMarkers(observations),

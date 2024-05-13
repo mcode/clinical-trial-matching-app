@@ -1,0 +1,828 @@
+[
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1222604002",
+      "system": "http://snomed.info/sct",
+      "display": "cTX (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228882005",
+      "system": "http://snomed.info/sct",
+      "display": "cT0 (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228883000",
+      "system": "http://snomed.info/sct",
+      "display": "cTa (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228884006",
+      "system": "http://snomed.info/sct",
+      "display": "cTis",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228885007",
+      "system": "http://snomed.info/sct",
+      "display": "cTis(DCIS)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228887004",
+      "system": "http://snomed.info/sct",
+      "display": "cTis(LAMN) (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228888009",
+      "system": "http://snomed.info/sct",
+      "display": "cTis(Paget)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228889001",
+      "system": "http://snomed.info/sct",
+      "display": "cT1",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228891009",
+      "system": "http://snomed.info/sct",
+      "display": "cT1mi",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228892002",
+      "system": "http://snomed.info/sct",
+      "display": "cT1a",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228893007",
+      "system": "http://snomed.info/sct",
+      "display": "cT1a1",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228894001",
+      "system": "http://snomed.info/sct",
+      "display": "cT1a2 (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228895000",
+      "system": "http://snomed.info/sct",
+      "display": "cT1b",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228896004",
+      "system": "http://snomed.info/sct",
+      "display": "cT1b1 (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228898003",
+      "system": "http://snomed.info/sct",
+      "display": "cT1b2",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228899006",
+      "system": "http://snomed.info/sct",
+      "display": "cT1c",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228900001",
+      "system": "http://snomed.info/sct",
+      "display": "cT1c1",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228901002",
+      "system": "http://snomed.info/sct",
+      "display": "cT1c2 (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228902009",
+      "system": "http://snomed.info/sct",
+      "display": "cT1c3",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228928007",
+      "system": "http://snomed.info/sct",
+      "display": "cT1d",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228929004",
+      "system": "http://snomed.info/sct",
+      "display": "cT2",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228931008",
+      "system": "http://snomed.info/sct",
+      "display": "cT2a",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228932001",
+      "system": "http://snomed.info/sct",
+      "display": "cT2a1",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228933006",
+      "system": "http://snomed.info/sct",
+      "display": "cT2a2",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228934000",
+      "system": "http://snomed.info/sct",
+      "display": "cT2b",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228936003",
+      "system": "http://snomed.info/sct",
+      "display": "cT2c (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228937007",
+      "system": "http://snomed.info/sct",
+      "display": "cT2d (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228938002",
+      "system": "http://snomed.info/sct",
+      "display": "cT3 (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228939005",
+      "system": "http://snomed.info/sct",
+      "display": "cT3a (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228940007",
+      "system": "http://snomed.info/sct",
+      "display": "cT3b",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228941006",
+      "system": "http://snomed.info/sct",
+      "display": "cT3c (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228942004",
+      "system": "http://snomed.info/sct",
+      "display": "cT3d (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228943009",
+      "system": "http://snomed.info/sct",
+      "display": "cT3e",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228944003",
+      "system": "http://snomed.info/sct",
+      "display": "cT4",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228945002",
+      "system": "http://snomed.info/sct",
+      "display": "cT4a",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228946001",
+      "system": "http://snomed.info/sct",
+      "display": "cT4b",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228947005",
+      "system": "http://snomed.info/sct",
+      "display": "cT4c",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228948000",
+      "system": "http://snomed.info/sct",
+      "display": "cT4d",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228949008",
+      "system": "http://snomed.info/sct",
+      "display": "cT4e (qualifier value)",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1285094009",
+      "system": "http://snomed.info/sct",
+      "display": "cT1b3",
+      "category": ["cT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228950008",
+      "system": "http://snomed.info/sct",
+      "display": "pTX",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228951007",
+      "system": "http://snomed.info/sct",
+      "display": "pT0",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228952000",
+      "system": "http://snomed.info/sct",
+      "display": "pTa",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228953005",
+      "system": "http://snomed.info/sct",
+      "display": "pTis (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228954004",
+      "system": "http://snomed.info/sct",
+      "display": "pTis(DCIS) (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228955003",
+      "system": "http://snomed.info/sct",
+      "display": "pTis(LAMN)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228956002",
+      "system": "http://snomed.info/sct",
+      "display": "pTis(Paget)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228957006",
+      "system": "http://snomed.info/sct",
+      "display": "pT1",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228958001",
+      "system": "http://snomed.info/sct",
+      "display": "pT1mi",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228959009",
+      "system": "http://snomed.info/sct",
+      "display": "pT1a",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228960004",
+      "system": "http://snomed.info/sct",
+      "display": "pT1a1",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228961000",
+      "system": "http://snomed.info/sct",
+      "display": "pT1a2 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228962007",
+      "system": "http://snomed.info/sct",
+      "display": "pT1b (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229844006",
+      "system": "http://snomed.info/sct",
+      "display": "pT1b1",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229845007",
+      "system": "http://snomed.info/sct",
+      "display": "pT1b2",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229846008",
+      "system": "http://snomed.info/sct",
+      "display": "pT1c (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229848009",
+      "system": "http://snomed.info/sct",
+      "display": "pT1c1 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229849001",
+      "system": "http://snomed.info/sct",
+      "display": "pT1c2",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229850001",
+      "system": "http://snomed.info/sct",
+      "display": "pT1c3 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229851002",
+      "system": "http://snomed.info/sct",
+      "display": "pT1d",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229852009",
+      "system": "http://snomed.info/sct",
+      "display": "pT2 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229853004",
+      "system": "http://snomed.info/sct",
+      "display": "pT2a",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229854005",
+      "system": "http://snomed.info/sct",
+      "display": "pT2a1 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229855006",
+      "system": "http://snomed.info/sct",
+      "display": "pT2a2",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229856007",
+      "system": "http://snomed.info/sct",
+      "display": "pT2b",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229857003",
+      "system": "http://snomed.info/sct",
+      "display": "pT2c (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229858008",
+      "system": "http://snomed.info/sct",
+      "display": "pT2d (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229859000",
+      "system": "http://snomed.info/sct",
+      "display": "pT3",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229860005",
+      "system": "http://snomed.info/sct",
+      "display": "pT3a (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229861009",
+      "system": "http://snomed.info/sct",
+      "display": "pT3b (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229862002",
+      "system": "http://snomed.info/sct",
+      "display": "pT3c",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229863007",
+      "system": "http://snomed.info/sct",
+      "display": "pT3d (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229864001",
+      "system": "http://snomed.info/sct",
+      "display": "pT4",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229865000",
+      "system": "http://snomed.info/sct",
+      "display": "pT4a",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229866004",
+      "system": "http://snomed.info/sct",
+      "display": "pT4b",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229867008",
+      "system": "http://snomed.info/sct",
+      "display": "pT4c",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229868003",
+      "system": "http://snomed.info/sct",
+      "display": "pT4d (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1229869006",
+      "system": "http://snomed.info/sct",
+      "display": "pT4e (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1285095005",
+      "system": "http://snomed.info/sct",
+      "display": "pT1b3",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228862006",
+      "system": "http://snomed.info/sct",
+      "display": "ypTX",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228863001",
+      "system": "http://snomed.info/sct",
+      "display": "ypT0 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228864007",
+      "system": "http://snomed.info/sct",
+      "display": "ypTa",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228865008",
+      "system": "http://snomed.info/sct",
+      "display": "ypTis",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228866009",
+      "system": "http://snomed.info/sct",
+      "display": "ypTis(DCIS) (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228867000",
+      "system": "http://snomed.info/sct",
+      "display": "ypTis(LAMN) (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228868005",
+      "system": "http://snomed.info/sct",
+      "display": "ypTis(Paget)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228869002",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228870001",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1mi (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228872009",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1a (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228873004",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1a1",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228874005",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1a2",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228897008",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1b (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228903004",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1b1 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228904005",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1b2 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228905006",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1c",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228906007",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1c1 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228907003",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1c2 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228908008",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1c3 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228909000",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1d (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228910005",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228911009",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2a",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228912002",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2a1 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228913007",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2a2 (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228914001",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2b (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228915000",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2c",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228916004",
+      "system": "http://snomed.info/sct",
+      "display": "ypT2d",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228917008",
+      "system": "http://snomed.info/sct",
+      "display": "ypT3",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228918003",
+      "system": "http://snomed.info/sct",
+      "display": "ypT3a",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228919006",
+      "system": "http://snomed.info/sct",
+      "display": "ypT3b (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228920000",
+      "system": "http://snomed.info/sct",
+      "display": "ypT3c",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228921001",
+      "system": "http://snomed.info/sct",
+      "display": "ypT3d",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228922008",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228923003",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4a (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228924009",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4b",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228925005",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4c (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228926006",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4d",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1228927002",
+      "system": "http://snomed.info/sct",
+      "display": "ypT4e (qualifier value)",
+      "category": ["pT category"]
+    },
+    {
+      "entryType": "primaryTumorStage",
+      "code": "1285096006",
+      "system": "http://snomed.info/sct",
+      "display": "ypT1b3 (qualifier value)",
+      "category": ["pT category"]
+    }
+  ]

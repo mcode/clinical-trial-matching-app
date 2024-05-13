@@ -17,6 +17,9 @@ type SearchPageProps = {
   primaryCancerCondition: PrimaryCancerCondition;
   diseaseStatus: CodedValueType;
   metastasis: CodedValueType[];
+  primaryTumorStage: CodedValueType;
+  nodalDiseaseStage: CodedValueType;
+  metastasesStage: CodedValueType;
   ecogScore: Score;
   karnofskyScore: Score;
   biomarkers: Biomarker[];
@@ -34,6 +37,9 @@ const SearchPage = ({
   user,
   primaryCancerCondition,
   diseaseStatus,
+  primaryTumorStage,
+  nodalDiseaseStage,
+  metastasesStage,
   metastasis,
   ecogScore,
   karnofskyScore,
@@ -49,6 +55,9 @@ const SearchPage = ({
     cancerSubtype: primaryCancerCondition?.cancerSubtype ?? null,
     diseaseStatus: diseaseStatus ?? null,
     stage: primaryCancerCondition?.stage ?? null,
+    primaryTumorStage: primaryTumorStage ?? null,
+    nodalDiseaseStage: nodalDiseaseStage ?? null,
+    metastasesStage: metastasesStage ?? null,
     travelDistance: defaultSearchTravelDistance || '100',
     zipcode: disableSearchLocation ? defaultSearchZipCode : patient.zipcode || (defaultSearchZipCode ?? ''),
     metastasis,
@@ -59,6 +68,7 @@ const SearchPage = ({
     surgery,
     medications,
   };
+
   const [userId, setUserId] = useState<string | null>(null);
 
   return (
@@ -109,6 +119,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
         },
         primaryCancerCondition: null,
         diseaseStatus: null,
+        primaryTumorStage: null,
+        nodalDiseaseStage: null,
+        metastasesStage: null,
         ecogScore: null,
         karnofskyScore: null,
         radiation: [],

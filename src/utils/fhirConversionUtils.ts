@@ -7,6 +7,9 @@ import ecogScores from '@/assets/optimizedPatientDataElements/ecogScores.json';
 import karnofskyScores from '@/assets/optimizedPatientDataElements/karnofskyScores.json';
 import medication from '@/assets/optimizedPatientDataElements/medications.json';
 import metastases from '@/assets/optimizedPatientDataElements/metastases.json';
+import metastasesStages from '@/assets/optimizedPatientDataElements/metastasesStages.json';
+import nodalDiseaseStages from '@/assets/optimizedPatientDataElements/nodalDiseaseStages.json';
+import primaryTumorStages from '@/assets/optimizedPatientDataElements/primaryTumorStages.json';
 import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
 import stages from '@/assets/optimizedPatientDataElements/stages.json';
 import surgery from '@/assets/optimizedPatientDataElements/surgeries.json';
@@ -45,6 +48,9 @@ export type Field = keyof Pick<
   | 'diseaseStatus'
   | 'metastasis'
   | 'stage'
+  | 'primaryTumorStage'
+  | 'nodalDiseaseStage'
+  | 'metastasesStage'
   | 'ecogScore'
   | 'karnofskyScore'
   | 'biomarkers'
@@ -160,6 +166,33 @@ export const convertFhirDiseaseStatus = (observation: Observation): CodedValueTy
     .filter(e => !!e)?.[0] as CodedValueType;
 
   return diseaseStatus || null;
+};
+
+export const convertFhirPrimaryTumorStage = (observation: Observation): CodedValueType => {
+  const pts = observation.valueCodeableConcept?.coding
+    ?.map(code => primaryTumorStages.find(equalCodedValueType(code as CodedValueType)))
+    .flat()
+    .filter(e => !!e)?.[0] as CodedValueType;
+
+  return pts || null;
+};
+
+export const convertFhirNodalDiseaseStage = (observation: Observation): CodedValueType => {
+  const nds = observation.valueCodeableConcept?.coding
+    ?.map(code => nodalDiseaseStages.find(equalCodedValueType(code as CodedValueType)))
+    .flat()
+    .filter(e => !!e)?.[0] as CodedValueType;
+
+  return nds || null;
+};
+
+export const convertFhirMetastasesStage = (observation: Observation): CodedValueType => {
+  const ms = observation.valueCodeableConcept?.coding
+    ?.map(code => metastasesStages.find(equalCodedValueType(code as CodedValueType)))
+    .flat()
+    .filter(e => !!e)?.[0] as CodedValueType;
+
+  return ms || null;
 };
 
 export const convertFhirSurgeryProcedures = (procedures: Procedure[]): CodedValueType[] =>

@@ -27,6 +27,27 @@ export const searchParameters: SearchParameters = {
     system: 'http://snomed.info/sct',
     display: "Patient's condition improved (finding)",
   }),
+  primaryTumorStage: JSON.stringify({
+    entryType: 'primaryTumorStage',
+    code: '1222604002',
+    system: 'http://snomed.info/sct',
+    display: 'cTX (qualifier value)',
+    category: ['cT category'],
+  }),
+  nodalDiseaseStage: JSON.stringify({
+    entryType: 'nodalDiseaseStage',
+    code: '1229966003',
+    system: 'http://snomed.info/sct',
+    display: 'cNX',
+    category: ['cN category'],
+  }),
+  metastasesStage: JSON.stringify({
+    entryType: 'metastasesStage',
+    code: '1229901006',
+    system: 'http://snomed.info/sct',
+    display: 'cM0',
+    category: ['cM category'],
+  }),
   metastasis: '["metastasis-1"]',
   ecogScore: JSON.stringify({
     interpretation: {
@@ -331,6 +352,132 @@ const expectedBundle: Bundle = {
         },
       },
     },
+    // Result from Primary Tumor Stage
+    {
+      resource: {
+        code: {
+          coding: [
+            {
+              code: '399504009',
+              display: 'cT category',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-primary-tumor-category'],
+        },
+        method: {
+          coding: [
+            {
+              code: '897275008',
+              display:
+                'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+        resourceType: 'Observation',
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
+        },
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '1222604002',
+              display: 'cTX (qualifier value)',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+      },
+    },
+    // Result from Nodal Disease Stage
+    {
+      resource: {
+        code: {
+          coding: [
+            {
+              code: '399534004',
+              display: 'cN category',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-regional-nodes-category'],
+        },
+        method: {
+          coding: [
+            {
+              code: '897275008',
+              display:
+                'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+        resourceType: 'Observation',
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
+        },
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '1229966003',
+              display: 'cNX',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+      },
+    },
+    // Results from Metastases Category
+    {
+      resource: {
+        code: {
+          coding: [
+            {
+              code: '399387003',
+              display: 'cM category',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-distant-metastases-category'],
+        },
+        method: {
+          coding: [
+            {
+              code: '897275008',
+              display:
+                'American Joint Commission on Cancer, Cancer Staging Manual, 8th edition neoplasm staging system (tumor staging)',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+        resourceType: 'Observation',
+        status: 'final',
+        subject: {
+          reference: 'urn:uuid:test_id',
+          type: 'Patient',
+        },
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '1229901006',
+              display: 'cM0',
+              system: 'http://snomed.info/sct',
+            },
+          ],
+        },
+      },
+    },
     // Result from getTumorMarker (biomarker)
     {
       resource: {
@@ -470,6 +617,9 @@ describe('buildBundle', () => {
       diseaseStatus: 'null',
       metastasis: '[]',
       stage: '',
+      primaryTumorStage: '',
+      nodalDiseaseStage: '',
+      metastasesStage: '',
       ecogScore: '',
       karnofskyScore: '',
       biomarkers: '[]',
