@@ -5,6 +5,7 @@ import { fhirclient } from 'fhirclient/lib/types';
 
 const testPatient: fhirclient.FHIR.Patient = {
   resourceType: 'Patient',
+  id: 'test-patient',
   name: [
     {
       given: ['Test'],
@@ -48,7 +49,32 @@ describe('fetchPatientData', () => {
     const patientData = await fetchPatientData(fhirClient, () => {
       /* no-op */
     });
-    expect(patientData).not.toBeNull();
+    // Basically, this should be blank
+    // It might be worth checking to see if the expected queries were called,
+    // but not really
+    expect(patientData).toEqual({
+      patient: {
+        id: 'test-patient',
+        name: 'Test User',
+        gender: undefined,
+        age: null,
+        zipcode: null,
+      },
+      user: {
+        id: 'test-patient',
+        name: 'Test User',
+        record: testPatient,
+      },
+      primaryCancerCondition: null,
+      metastasis: [],
+      diseaseStatus: null,
+      ecogScore: null,
+      karnofskyScore: null,
+      biomarkers: [],
+      radiation: [],
+      surgery: [],
+      medications: [],
+    });
   });
 });
 
@@ -147,6 +173,103 @@ describe('buildPatientData', () => {
           qualifier: {
             code: '10828004',
             display: 'Positive (qualifier value)',
+            system: 'http://snomed.info/sct',
+          },
+        },
+      ]);
+    });
+    it('loads ER markers', () => {
+      const patientData = buildPatientData([
+        testPatient,
+        testUser,
+        [],
+        [
+          {
+            resourceType: 'Observation',
+            status: 'final',
+            code: {
+              coding: [
+                {
+                  system: 'http://loinc.org',
+                  code: '40556-3',
+                  display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
+                },
+              ],
+            },
+            valueCodeableConcept: {
+              coding: [
+                {
+                  code: '10828004',
+                  display: 'Positive (qualifier value)',
+                  system: 'http://snomed.info/sct',
+                },
+              ],
+            },
+          },
+        ],
+        [],
+        [],
+      ]);
+      expect(patientData).not.toBeNull();
+      expect(patientData.biomarkers).toEqual([
+        {
+          entryType: 'biomarkers',
+          cancerType: ['breast', 'lung'],
+          code: '40556-3',
+          display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
+          system: 'http://loinc.org',
+          category: ['ER'],
+          qualifier: {
+            code: '10828004',
+            display: 'Positive (qualifier value)',
+            system: 'http://snomed.info/sct',
+          },
+        },
+      ]);
+    });
+    it('loads PR markers', () => {
+      const patientData = buildPatientData([
+        testPatient,
+        testUser,
+        [],
+        [
+          {
+            resourceType: 'Observation',
+            status: 'final',
+            code: {
+              coding: [
+                {
+                  system: 'http://loinc.org',
+                  code: '10861-3',
+                },
+              ],
+            },
+            valueCodeableConcept: {
+              coding: [
+                {
+                  code: '260385009',
+                  display: 'Negative (qualifier value)',
+                  system: 'http://snomed.info/sct',
+                },
+              ],
+            },
+          },
+        ],
+        [],
+        [],
+      ]);
+      expect(patientData).not.toBeNull();
+      expect(patientData.biomarkers).toEqual([
+        {
+          entryType: 'biomarkers',
+          cancerType: ['breast', 'lung'],
+          code: '10861-3',
+          display: 'Progesterone receptor [Mass/mass] in Tissue',
+          system: 'http://loinc.org',
+          category: ['PR'],
+          qualifier: {
+            code: '260385009',
+            display: 'Negative (qualifier value)',
             system: 'http://snomed.info/sct',
           },
         },

@@ -3,12 +3,27 @@ import {
   MCODE_CANCER_DISEASE_STATUS_LOINC_CODE,
   ECOG_PERFORMANCE_STATUS_LOINC_CODE,
   KARNOFSKY_PERFORMANCE_STATUS_LOINC_CODE,
+  MCODE_ECOG_PERFORMANCE_STATUS,
+  MCODE_KARNOFSKY_PERFORMANCE_STATUS,
+  MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE,
+  MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE,
+  MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_N_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_CN_CATEGORY_CODE,
+  MCODE_REGIONAL_NODES_PN_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_M_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE,
+  MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE,
+  SNOMED_CODE_URI,
 } from '@/utils/fhirConstants';
 import {
   convertFhirDiseaseStatus,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
+  convertFhirMetastasesStage,
+  convertFhirNodalDiseaseStage,
   convertFhirPatient,
+  convertFhirPrimaryTumorStage,
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
@@ -20,7 +35,7 @@ import {
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import type { PatientData, ProgressMonitor } from '../fetchPatientData';
-import { fetchMedications, fetchResources, observationHasCode } from '../fhir/fetch';
+import { fetchMedications, fetchResources, observationHasCode, sortByDate } from '../fhir/fetch';
 import { Condition, Medication, Observation, Procedure } from 'fhir/r4';
 
 export type FetchTaskType = [
@@ -81,12 +96,37 @@ export const buildPatientData = ([
   procedures,
   medications,
 ]: FetchTaskType): PatientData => {
+  // Sort observations by date. This sorts in place, mutating the array.
+  sortByDate(observations, 'effectiveDateTime');
+
   // FIXME: Should find the most recent, which is not necessarily the first record in the bundle
   // TODO: As this gets more complicated, it'll make more sense to go through all observations and check each one to see
   // if it contains relavent information rather than do separate find/filters
   // Find the disease status based on the required LOINC code
   const diseaseStatusObservation = observations.find(observation =>
     observationHasCode(observation, LOINC_CODE_URI, MCODE_CANCER_DISEASE_STATUS_LOINC_CODE)
+  );
+
+  // Find primary tumor stage Observation based on snomed codes
+  const primaryTumorStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE)
+  );
+  // Find nodal disease stage Observation based on snomed codes
+  const nodalDiseaseStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_N_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_CN_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_REGIONAL_NODES_PN_CATEGORY_CODE)
+  );
+  // Find metastases stage observation based on snomed codes
+  const metastasesStageObservation = observations.find(
+    observation =>
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_M_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE) ||
+      observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE)
   );
 
   const ecogObservation = observations.find(resource =>
@@ -102,6 +142,9 @@ export const buildPatientData = ([
     primaryCancerCondition: extractPrimaryCancerCondition(conditions),
     metastasis: convertFhirSecondaryCancerConditions(conditions),
     diseaseStatus: diseaseStatusObservation ? convertFhirDiseaseStatus(diseaseStatusObservation) : null,
+    primaryTumorStage: primaryTumorStageObservation ? convertFhirPrimaryTumorStage(primaryTumorStageObservation) : null,
+    nodalDiseaseStage: nodalDiseaseStageObservation ? convertFhirNodalDiseaseStage(nodalDiseaseStageObservation) : null,
+    metastasesStage: metastasesStageObservation ? convertFhirMetastasesStage(metastasesStageObservation) : null,
     ecogScore: ecogObservation ? convertFhirEcogPerformanceStatus(ecogObservation) : null,
     karnofskyScore: karnosfkyObservation ? convertFhirKarnofskyPerformanceStatus(karnosfkyObservation) : null,
     biomarkers: convertFhirTumorMarkers(observations),

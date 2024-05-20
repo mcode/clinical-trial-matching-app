@@ -98,6 +98,9 @@ describe('compareDefaultValues', () => {
         diseaseStatus: undefined,
         metastasis: [],
         stage: undefined,
+        primaryTumorStage: undefined,
+        nodalDiseaseStage: undefined,
+        metastasesStage: undefined,
         ecogScore: {
           entryType: 'ecogScore',
           interpretation: {

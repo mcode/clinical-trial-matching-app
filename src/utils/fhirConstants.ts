@@ -57,6 +57,21 @@ export const MCODE_KARNOFSKY_PERFORMANCE_STATUS = MCODE_STRUCTURE_DEFINITION + '
 export const MCODE_CLINICAL_STAGE_GROUP = MCODE_STRUCTURE_DEFINITION + 'mcode-tnm-clinical-stage-group';
 
 /**
+ * TNM Primary Tumor Stage URL.
+ */
+export const MCODE_TNM_PRIMARY_TUMOR = MCODE_STRUCTURE_DEFINITION + 'mcode-tnm-primary-tumor-category';
+
+/**
+ * TNM Nodal Disease Stage URL.
+ */
+export const MCODE_TNM_REGIONAL_NODES = MCODE_STRUCTURE_DEFINITION + 'mcode-tnm-regional-nodes-category';
+
+/**
+ * TNM Metastases Stage URL.
+ */
+export const MCODE_TNM_DISTANT_METASTASES = MCODE_STRUCTURE_DEFINITION + 'mcode-tnm-distant-metastases-category';
+
+/**
  * TNM Distant Metastases Category URL.
  */
 export const MCODE_CLINICAL_DISTANT_METASTASIS =
@@ -125,6 +140,30 @@ export const KARNOFSKY_PERFORMANCE_STATUS_LOINC_CODE = '89243-0';
  * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-cancer-disease-status.html
  */
 export const MCODE_CANCER_DISEASE_STATUS_LOINC_CODE = '97509-4';
+
+/**
+ * Primary Tumor Category Codes
+ * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/ValueSet-mcode-tnm-primary-tumor-staging-type-vs.html
+ */
+export const MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE = '78873005';
+export const MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE = '399504009';
+export const MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE = '384625004';
+
+/**
+ * Regional Nodes Category Codes
+ * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/ValueSet-mcode-tnm-regional-nodes-staging-type-vs.html
+ */
+export const MCODE_REGIONAL_NODES_N_CATEGORY_CODE = '277206009';
+export const MCODE_REGIONAL_NODES_CN_CATEGORY_CODE = '399534004';
+export const MCODE_REGIONAL_NODES_PN_CATEGORY_CODE = '371494008';
+
+/**
+ * Distance Metastases Category Codes
+ * http://hl7.org/fhir/us/mcode/ValueSet/mcode-tnm-distant-metastases-staging-type-vs
+ */
+export const MCODE_DISTANT_METASTASES_M_CATEGORY_CODE = '277208005';
+export const MCODE_DISTANT_METASTASES_CM_CATEGORY_CODE = '399387003';
+export const MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE = '371497001';
 
 // Constant CodeableConcept resources used in the different profiles.
 export const clinicalTest = {

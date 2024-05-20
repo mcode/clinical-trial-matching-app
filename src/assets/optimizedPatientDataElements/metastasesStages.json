@@ -1,0 +1,198 @@
+[
+    {
+      "entryType": "metastasesStage",
+      "code": "1229901006",
+      "system": "http://snomed.info/sct",
+      "display": "cM0",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229902004",
+      "system": "http://snomed.info/sct",
+      "display": "cM0(i+) (qualifier value)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229903009",
+      "system": "http://snomed.info/sct",
+      "display": "cM1",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229904003",
+      "system": "http://snomed.info/sct",
+      "display": "cM1a",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229905002",
+      "system": "http://snomed.info/sct",
+      "display": "cM1a(0) (qualifier value)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229906001",
+      "system": "http://snomed.info/sct",
+      "display": "cM1a(1)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229907005",
+      "system": "http://snomed.info/sct",
+      "display": "cM1b (qualifier value)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229908000",
+      "system": "http://snomed.info/sct",
+      "display": "cM1b(0)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229909008",
+      "system": "http://snomed.info/sct",
+      "display": "cM1b(1)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229910003",
+      "system": "http://snomed.info/sct",
+      "display": "cM1c",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229911004",
+      "system": "http://snomed.info/sct",
+      "display": "cM1c(0)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229912006",
+      "system": "http://snomed.info/sct",
+      "display": "cM1c(1) (qualifier value)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229913001",
+      "system": "http://snomed.info/sct",
+      "display": "cM1d (qualifier value)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229914007",
+      "system": "http://snomed.info/sct",
+      "display": "cM1d(0)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229915008",
+      "system": "http://snomed.info/sct",
+      "display": "cM1d(1) (qualifier value)",
+      "category": ["cM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229916009",
+      "system": "http://snomed.info/sct",
+      "display": "pM1 (qualifier value)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229917000",
+      "system": "http://snomed.info/sct",
+      "display": "pM1a",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229918005",
+      "system": "http://snomed.info/sct",
+      "display": "pM1a(0)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229919002",
+      "system": "http://snomed.info/sct",
+      "display": "pM1a(1)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229920008",
+      "system": "http://snomed.info/sct",
+      "display": "pM1b",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229921007",
+      "system": "http://snomed.info/sct",
+      "display": "pM1b(0) (qualifier value)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229922000",
+      "system": "http://snomed.info/sct",
+      "display": "pM1b(1) (qualifier value)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229923005",
+      "system": "http://snomed.info/sct",
+      "display": "pM1c",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229924004",
+      "system": "http://snomed.info/sct",
+      "display": "pM1c(0)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229925003",
+      "system": "http://snomed.info/sct",
+      "display": "pM1c(1) (qualifier value)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229926002",
+      "system": "http://snomed.info/sct",
+      "display": "pM1d",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229927006",
+      "system": "http://snomed.info/sct",
+      "display": "pM1d(0)",
+      "category": ["pM category"]
+    },
+    {
+      "entryType": "metastasesStage",
+      "code": "1229928001",
+      "system": "http://snomed.info/sct",
+      "display": "pM1d(1)",
+      "category": ["pM category"]
+    }
+  ]

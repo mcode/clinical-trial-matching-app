@@ -12,6 +12,9 @@ export type SearchFormValuesType = {
   diseaseStatus: CodedValueType | null;
   metastasis: CodedValueType[];
   stage: CodedValueType;
+  primaryTumorStage: CodedValueType | null;
+  nodalDiseaseStage: CodedValueType | null;
+  metastasesStage: CodedValueType | null;
   ecogScore: Score;
   karnofskyScore: Score;
   biomarkers: Biomarker[];
@@ -23,7 +26,17 @@ export type SearchFormValuesType = {
 export type State = Record<
   keyof Pick<
     SearchFormValuesType,
-    'cancerSubtype' | 'cancerType' | 'diseaseStatus' | 'medications' | 'metastasis' | 'radiation' | 'stage' | 'surgery'
+    | 'cancerSubtype'
+    | 'cancerType'
+    | 'diseaseStatus'
+    | 'medications'
+    | 'metastasis'
+    | 'metastasesStage'
+    | 'nodalDiseaseStage'
+    | 'primaryTumorStage'
+    | 'radiation'
+    | 'stage'
+    | 'surgery'
   >,
   CodedValueType[]
 > &
