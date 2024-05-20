@@ -87,11 +87,21 @@ export type User = {
 };
 
 export const convertFhirKarnofskyPerformanceStatus = (observation: Observation): Score | null => {
+  // if valueInteger exists, use that to find the score, otherwise use interpretation
+  if (observation?.valueInteger) {
+    const valueInt = observation?.valueInteger;
+    return (karnofskyScores as Score[]).find(equalValueInteger(valueInt)) || null;
+  }
   const coding = observation?.interpretation?.[0]?.coding?.[0];
   return (karnofskyScores as Score[]).find(equalScore(coding)) || null;
 };
 
 export const convertFhirEcogPerformanceStatus = (observation: Observation): Score | null => {
+  // if valueInteger exists, use that to find the score, otherwise use interpretation
+  if (observation?.valueInteger) {
+    const valueInt = observation?.valueInteger;
+    return (ecogScores as Score[]).find(equalValueInteger(valueInt)) || null;
+  }
   const coding = observation?.interpretation?.[0]?.coding?.[0];
   return (ecogScores as Score[]).find(equalScore(coding)) || null;
 };
@@ -331,6 +341,11 @@ const equalScore =
   (selected: Coding) =>
   (target: Score): boolean =>
     target.interpretation.code === selected?.code && target.interpretation.system === selected?.system;
+
+const equalValueInteger =
+  (selected: number) =>
+  (target: Score): boolean =>
+    target.valueInteger === selected;
 
 export const isEqualScore = (originalValue: Score, newValue: Score): boolean => {
   return (
