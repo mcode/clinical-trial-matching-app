@@ -153,4 +153,85 @@ describe('buildPatientData', () => {
       ]);
     });
   });
+  describe('ECOG and Karnofsky', () => {
+    it('loads ECOG Performance Status', () => {
+      const patientData = buildPatientData([
+        testPatient,
+        testUser,
+        [],
+        [
+          {
+            resourceType: 'Observation',
+            id: 'ecog-performance-status',
+            status: 'final',
+            code: {
+              coding: [
+                {
+                  system: 'http://loinc.org',
+                  code: '89247-1',
+                },
+              ],
+            },
+            interpretation: [
+              {
+                coding: [
+                  {
+                    system: 'http://loinc.org',
+                    code: 'LA9622-7',
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+        [],
+        [],
+      ]);
+      expect(patientData.ecogScore).not.toBeNull();
+      expect(patientData.ecogScore).toEqual({
+        interpretation: {
+          code: 'LA9622-7',
+          display: 'Fully active, able to carry on all pre-disease performance without restriction',
+          system: 'http://loinc.org',
+        },
+        valueInteger: 0,
+        entryType: 'ecogScore',
+      });
+    });
+    it('loads Karnofsky Performance Status', () => {
+      const patientData = buildPatientData([
+        testPatient,
+        testUser,
+        [],
+        [
+          {
+            resourceType: 'Observation',
+            id: 'karnofsky-performance-status',
+            status: 'final',
+            code: {
+              coding: [
+                {
+                  system: 'http://loinc.org',
+                  code: '89243-0',
+                },
+              ],
+            },
+            valueInteger: 20,
+          },
+        ],
+        [],
+        [],
+      ]);
+      expect(patientData.karnofskyScore).not.toBeNull();
+      expect(patientData.karnofskyScore).toEqual({
+        interpretation: {
+          display: 'Very sick; hospitalization necessary; active supportive treatment necessary',
+          code: 'LA29183-3',
+          system: 'http://loinc.org',
+        },
+        valueInteger: 20,
+        entryType: 'karnofskyScore',
+      });
+    });
+  });
 });
