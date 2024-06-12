@@ -124,6 +124,18 @@ export const US_CORE_OBSERVATION_CATEGORY_URI = 'http://hl7.org/fhir/us/core/Cod
 export const OBSERVATION_CATEGORY_URI = 'http://terminology.hl7.org/CodeSystem/observation-category';
 
 /**
+ * Required LOINC code to indicate a ECOG performance status, as defined in the mCODE IG
+ * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-ecog-performance-status.html
+ */
+export const ECOG_PERFORMANCE_STATUS_LOINC_CODE = '89247-1';
+
+/**
+ * Required LOINC code to indicate a KArnofsky performance status, as defined in the mCODE IG
+ * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-karnofsky-performance-status.html
+ */
+export const KARNOFSKY_PERFORMANCE_STATUS_LOINC_CODE = '89243-0';
+
+/**
  * Required LOINC code to indicate a disease status, as defined in the mCODE IG
  * https://build.fhir.org/ig/HL7/fhir-mCODE-ig/StructureDefinition-mcode-cancer-disease-status.html
  */

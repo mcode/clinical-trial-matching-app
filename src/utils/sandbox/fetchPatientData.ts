@@ -1,8 +1,8 @@
 import {
   LOINC_CODE_URI,
   MCODE_CANCER_DISEASE_STATUS_LOINC_CODE,
-  MCODE_ECOG_PERFORMANCE_STATUS,
-  MCODE_KARNOFSKY_PERFORMANCE_STATUS,
+  ECOG_PERFORMANCE_STATUS_LOINC_CODE,
+  KARNOFSKY_PERFORMANCE_STATUS_LOINC_CODE,
   MCODE_PRIMARY_TUMOR_T_CATEGORY_CODE,
   MCODE_PRIMARY_TUMOR_CT_CATEGORY_CODE,
   MCODE_PRIMARY_TUMOR_PT_CATEGORY_CODE,
@@ -33,7 +33,7 @@ import {
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import type { PatientData, ProgressMonitor } from '../fetchPatientData';
-import { fetchMedications, fetchResources, resourceHasProfile, observationHasCode, sortByDate } from '../fhir/fetch';
+import { fetchMedications, fetchResources, observationHasCode, sortByDate } from '../fhir/fetch';
 import { Condition, Medication, Observation, Procedure } from 'fhir/r4';
 
 export type FetchTaskType = [
@@ -127,11 +127,11 @@ export const buildPatientData = ([
       observationHasCode(observation, SNOMED_CODE_URI, MCODE_DISTANT_METASTASES_PM_CATEGORY_CODE)
   );
 
-  // FIXME: ECOG and Karnofsy have no associated records, so the following will never work but needs to be changed to
-  // not be using the profile anyway
-  const ecogObservation = observations.find(resource => resourceHasProfile(resource, MCODE_ECOG_PERFORMANCE_STATUS));
+  const ecogObservation = observations.find(resource =>
+    observationHasCode(resource, LOINC_CODE_URI, ECOG_PERFORMANCE_STATUS_LOINC_CODE)
+  );
   const karnosfkyObservation = observations.find(resource =>
-    resourceHasProfile(resource, MCODE_KARNOFSKY_PERFORMANCE_STATUS)
+    observationHasCode(resource, LOINC_CODE_URI, KARNOFSKY_PERFORMANCE_STATUS_LOINC_CODE)
   );
 
   return {
