@@ -2414,5 +2414,221 @@
     "display": "Splenectomy",
     "system": "http://snomed.info/sct",
     "category": ["Splenectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55866",
+    "display": "Laparoscopic radical prostatectomy",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55867",
+    "display": "Laparoscopic simple prostatectomy",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55821",
+    "display": "Open Prostatectomy",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55831",
+    "display": "Open Prostatectomy (Suprapubic)",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55801",
+    "display": "Removal of prostate",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55810",
+    "display": "Extensive prostate surgery",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55815",
+    "display": "Extensive prostate surgery",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55840",
+    "display": "Extensive prostate surgery",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55842",
+    "display": "Extensive prostate surgery",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55845",
+    "display": "Extensive prostate surgery",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55860",
+    "display": "Surgical exposure prostate",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55862",
+    "display": "Extensive prostate surgery",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "55865",
+    "display": "Extensive prostate surgery",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Prostatectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51595",
+    "display": "Cystectomy, with ileal conduit or sigmoid bladder, with bilateral pelvic lymphadenectomy",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51570",
+    "display": "Cystectomy, complete",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51580",
+    "display": "Cystectomy, complete, with ureterosigmoidostomy or ureterocutaneous diversion",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51555",
+    "display": "Cystectomy, partial, complicated",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51565",
+    "display": "Cystectomy, partial, with ureteral reimplantation",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51590",
+    "display": "Cystectomy, with ileal conduit or sigmoid bladder",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51575",
+    "display": "Cystectomy, with bilateral pelvic lymphadenectomy",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51596",
+    "display": "Cystectomy, with continent urinary diversion, and open technique",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51585",
+    "display": "Cystectomy, with ureterosigmoidostomy or ureterocutaneous diversion, with bilateral pelvic lymphadenectomy",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51597",
+    "display": "Pelvic exenteration",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "51999",
+    "display": "Unlisted laparoscopic procedure bladder",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Cystectomy"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "38771",
+    "display": "Laparoscopic pelvic lymph node dissection without periaortic sampling",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Pelvic"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "38772",
+    "display": "Laparoscopic pelvic lymph node dissection with periaortic sampling",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Pelvic"]
+  },
+  {
+    "entryType": "surgery",
+    "cancerType": ["prostate"],
+    "code": "50820",
+    "display": "For ileal conduit",
+    "system": "http://www.ama-assn.org/go/cpt",
+    "category": ["Pelvic"]
   }
 ]
