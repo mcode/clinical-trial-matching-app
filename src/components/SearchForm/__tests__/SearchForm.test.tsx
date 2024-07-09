@@ -1,6 +1,6 @@
 import { SNOMED_CODE_URI } from '@/utils/fhirConstants';
 import { CancerType } from '@/utils/fhirConversionUtils';
-import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import SearchForm, { compareDefaultValues, SearchFormProps } from '../SearchForm';
@@ -88,8 +88,8 @@ describe('<SearchForm />', () => {
 
   it('does not disable the location fields when disableLocation is false', async () => {
     render(<Component disableLocation={false} />);
-    expect(screen.getByTestId('travelDistance').querySelector('input')).not.toBeDisabled();
-    expect(screen.getByTestId('zipcode').querySelector('input')).not.toBeDisabled();
+    expect(screen.getByTestId('travelDistance').querySelector('input')).toBeEnabled();
+    expect(screen.getByTestId('zipcode').querySelector('input')).toBeEnabled();
   });
 
   it('when location is disabled sends default location data on submit', async () => {
