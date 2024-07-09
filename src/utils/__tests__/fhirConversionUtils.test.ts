@@ -180,13 +180,15 @@ describe('extractPrimaryCancerCondition', () => {
     });
   });
   it('handles empty Conditions', () => {
-    expect(extractPrimaryCancerCondition([
-      {
-        resourceType: 'Condition',
-        subject: {},
-      }
-    ])).toBeNull();
-  })
+    expect(
+      extractPrimaryCancerCondition([
+        {
+          resourceType: 'Condition',
+          subject: {},
+        },
+      ])
+    ).toBeNull();
+  });
 });
 
 describe('convertFhirPrimaryTumorStage', () => {
@@ -582,7 +584,7 @@ describe('isEqualCodedValueType()', () => {
           system: 'http://snomed.info/sct',
         },
         {
-          cancerType: [CancerType.BREAST, CancerType.BRAIN, CancerType.BRAIN, ],
+          cancerType: [CancerType.BREAST, CancerType.BRAIN, CancerType.BRAIN],
           category: ['category2', 'category1', 'category2'],
           code: 'code',
           display: 'display',

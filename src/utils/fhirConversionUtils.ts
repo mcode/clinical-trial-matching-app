@@ -347,8 +347,7 @@ const equalStringArrays = (arrayLeft: string[] | undefined, arrayRight: string[]
   // Make sure they match by going through all entries on one and making sure
   // it matches the other
   for (const [str, count] of countsLeft.entries()) {
-    if (countsRight.get(str) != count)
-      return false;
+    if (countsRight.get(str) != count) return false;
   }
   // Gone through all of these? True
   return true;
