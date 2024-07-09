@@ -158,7 +158,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
 
   const { data: distanceFilteredData } = useQuery(
     ['clinical-trials', searchData, getDistanceParams(searchParams)],
-    () => clinicalTrialDistanceQuery(searchData, searchParams),
+    () => clinicalTrialDistanceQuery(searchData),
     {
       enabled: !!searchData && typeof window !== 'undefined',
       refetchOnMount: false,
