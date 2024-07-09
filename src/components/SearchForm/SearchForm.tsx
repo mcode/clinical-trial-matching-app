@@ -116,6 +116,12 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
   const userId = useContext(UserIdContext);
 
   const onSubmit = (data: SearchFormValuesType) => {
+    if (disableLocation) {
+      // If location data was disabled, it won't be in the form data, and we'd
+      // want to ignore anything in the fields anyway, so overwrite it
+      data.zipcode = defaultValues.zipcode;
+      data.travelDistance = defaultValues.travelDistance;
+    }
     const query = {
       ...formDataToSearchQuery(data),
       sortingOption: 'matchLikelihood',
