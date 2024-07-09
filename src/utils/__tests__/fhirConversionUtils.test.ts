@@ -17,7 +17,10 @@ import {
   CodedValueType,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
+  convertFhirMetastasesStage,
+  convertFhirNodalDiseaseStage,
   convertFhirPatient,
+  convertFhirPrimaryTumorStage,
   convertFhirRadiationProcedures,
   convertFhirSecondaryCancerConditions,
   convertFhirSurgeryProcedures,
@@ -28,8 +31,36 @@ import {
 } from '../fhirConversionUtils';
 
 describe('convertFhirKarnofskyPerformanceStatus', () => {
-  it('gets the Karnofsky score from a bundle', () => {
+  it('gets the Karnofsky score from an observation', () => {
     expect(convertFhirKarnofskyPerformanceStatus(fhirKarnofskyPerformanceStatusResource)).toEqual({
+      entryType: 'karnofskyScore',
+      interpretation: {
+        code: 'LA29175-9',
+        display: 'Normal; no complaints; no evidence of disease',
+        system: LOINC_CODE_URI,
+      },
+      valueInteger: 100,
+    });
+  });
+  it('uses interpetation if valueInteger is missing', () => {
+    expect(
+      convertFhirKarnofskyPerformanceStatus({
+        resourceType: 'Observation',
+        status: 'final',
+        // code is ignored for now
+        code: {},
+        interpretation: [
+          {
+            coding: [
+              {
+                code: 'LA29175-9',
+                system: LOINC_CODE_URI,
+              },
+            ],
+          },
+        ],
+      })
+    ).toEqual({
       entryType: 'karnofskyScore',
       interpretation: {
         code: 'LA29175-9',
@@ -107,8 +138,8 @@ describe('convertFhirPatient', () => {
   });
 });
 
-describe('convertFhirPrimaryCancerCondition', () => {
-  it('gets the primary cancer condition from a FHIR Bundle', () => {
+describe('extractPrimaryCancerCondition', () => {
+  it('extracts the primary cancer condition information form a Condition', () => {
     expect(extractPrimaryCancerCondition(fhirPrimaryCancerConditions)).toEqual({
       cancerType: {
         category: ['Breast', 'Invasive Breast', 'Invasive Carcinoma', 'Invasive Ductal Carcinoma'],
@@ -146,6 +177,119 @@ describe('convertFhirPrimaryCancerCondition', () => {
         cancerType: [CancerType.BREAST, CancerType.PROSTATE],
         entryType: 'stage',
       },
+    });
+  });
+  it('handles empty Conditions', () => {
+    expect(extractPrimaryCancerCondition([
+      {
+        resourceType: 'Condition',
+        subject: {},
+      }
+    ])).toBeNull();
+  })
+});
+
+describe('convertFhirPrimaryTumorStage', () => {
+  it('returns null if given an Observation with no valueCodeableConcept', () => {
+    expect(
+      convertFhirPrimaryTumorStage({
+        resourceType: 'Observation',
+        code: {},
+        status: 'final',
+      })
+    ).toEqual(null);
+  });
+  it('extracts the expected CodedValueType', () => {
+    expect(
+      convertFhirPrimaryTumorStage({
+        resourceType: 'Observation',
+        code: {},
+        status: 'final',
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '1222604002',
+              system: SNOMED_CODE_URI,
+            },
+          ],
+        },
+      })
+    ).toEqual({
+      entryType: 'primaryTumorStage',
+      code: '1222604002',
+      system: SNOMED_CODE_URI,
+      display: 'cTX (qualifier value)',
+      category: ['cT category'],
+    });
+  });
+});
+
+describe('convertFhirNodalDiseaseStage', () => {
+  it('returns null if given an Observation with no valueCodeableConcept', () => {
+    expect(
+      convertFhirNodalDiseaseStage({
+        resourceType: 'Observation',
+        code: {},
+        status: 'final',
+      })
+    ).toEqual(null);
+  });
+  it('extracts the expected CodedValueType', () => {
+    expect(
+      convertFhirNodalDiseaseStage({
+        resourceType: 'Observation',
+        code: {},
+        status: 'final',
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '1229967007',
+              system: SNOMED_CODE_URI,
+            },
+          ],
+        },
+      })
+    ).toEqual({
+      entryType: 'nodalDiseaseStage',
+      code: '1229967007',
+      system: SNOMED_CODE_URI,
+      display: 'cN0',
+      category: ['cN category'],
+    });
+  });
+});
+
+describe('convertFhirMetastasesStage', () => {
+  it('returns null if given an Observation with no valueCodeableConcept', () => {
+    expect(
+      convertFhirMetastasesStage({
+        resourceType: 'Observation',
+        code: {},
+        status: 'final',
+      })
+    ).toEqual(null);
+  });
+  it('extracts the expected CodedValueType', () => {
+    expect(
+      convertFhirMetastasesStage({
+        resourceType: 'Observation',
+        code: {},
+        status: 'final',
+        valueCodeableConcept: {
+          coding: [
+            {
+              code: '1229905002',
+              system: SNOMED_CODE_URI,
+            },
+          ],
+        },
+      })
+    ).toEqual({
+      entryType: 'metastasesStage',
+      code: '1229905002',
+      system: SNOMED_CODE_URI,
+      display: 'cM1a(0) (qualifier value)',
+      category: ['cM category'],
     });
   });
 });
@@ -376,6 +520,70 @@ describe('isEqualCodedValueType()', () => {
         {
           cancerType: [CancerType.BREAST, CancerType.BRAIN],
           category: ['category2', 'category1'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        }
+      )
+    ).toBe(true);
+  });
+  it('handles otherwise equal values with repeated types', () => {
+    // Basically, repeat values to make the lengths the same, but otherwise
+    // not equal.
+    expect(
+      isEqualCodedValueType(
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BRAIN],
+          category: ['category1', 'category2'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        },
+        {
+          cancerType: [CancerType.BREAST, CancerType.BRAIN],
+          category: ['category2', 'category1'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        }
+      )
+    ).toBe(false);
+    expect(
+      isEqualCodedValueType(
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BREAST],
+          category: ['category1', 'category2', 'category2'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        },
+        {
+          cancerType: [CancerType.BREAST, CancerType.BRAIN],
+          category: ['category2', 'category1', 'category1'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        }
+      )
+    ).toBe(false);
+    expect(
+      isEqualCodedValueType(
+        {
+          cancerType: [CancerType.BRAIN, CancerType.BRAIN, CancerType.BREAST],
+          category: ['category1', 'category2', 'category2'],
+          code: 'code',
+          display: 'display',
+          entryType: 'cancerType',
+          system: 'http://snomed.info/sct',
+        },
+        {
+          cancerType: [CancerType.BREAST, CancerType.BRAIN, CancerType.BRAIN, ],
+          category: ['category2', 'category1', 'category2'],
           code: 'code',
           display: 'display',
           entryType: 'cancerType',
