@@ -18,14 +18,14 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
   if (cancerTypes.length === 0) {
     console.error(`Warning: ${service} has no cancer types set.`);
   }
-    return {
-      name: service,
-      label: process.env[`MATCHING_SERVICE_${serviceEnvName}_LABEL`] ?? service,
-      url: process.env[`MATCHING_SERVICE_${serviceEnvName}_URL`] ?? `http://localhost/${service}`,
-      searchRoute: '/getClinicalTrial',
-      defaultValue: defaultMatchingServices.has(service),
-      cancerTypes: cancerTypes,
-    };
+  return {
+    name: service,
+    label: process.env[`MATCHING_SERVICE_${serviceEnvName}_LABEL`] ?? service,
+    url: process.env[`MATCHING_SERVICE_${serviceEnvName}_URL`] ?? `http://localhost/${service}`,
+    searchRoute: '/getClinicalTrial',
+    defaultValue: defaultMatchingServices.has(service),
+    cancerTypes: cancerTypes,
+  };
 });
 
 function parseResultsMax() {
