@@ -47,16 +47,15 @@ const {
  * @param res Returns { results, errors }
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { searchParams } = JSON.parse(req.body);
+  const { searchParams }: { searchParams: SearchParameters } = JSON.parse(req.body);
   const mainCancerType: string = JSON.parse(searchParams.cancerType).cancerType[0];
 
   console.log('SearchParams', searchParams);
   const patientBundle: Bundle = buildBundle(searchParams);
 
-  const chosenServices =
-    searchParams.matchingServices && Array.isArray(searchParams.matchingServices)
-      ? searchParams.matchingServices
-      : [searchParams.matchingServices];
+  const chosenServices = Array.isArray(searchParams.matchingServices)
+    ? searchParams.matchingServices
+    : [searchParams.matchingServices];
 
   const results = await callWrappers(
     chosenServices,
@@ -298,6 +297,7 @@ async function callWrapper(url: string, query: string, serviceName: string): Pro
     handleError(response);
     return { status: 200, response: await response.json(), serviceName };
   } catch (error) {
+    console.error(error);
     return {
       status: 500,
       response: 'There was an issue receiving responses from ' + serviceName,
