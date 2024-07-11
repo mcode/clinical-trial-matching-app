@@ -31,6 +31,7 @@ import { GetConfig } from 'types/config';
 const {
   publicRuntimeConfig: {
     sendLocationData,
+    disableSearchLocation,
     defaultZipCode,
     defaultTravelDistance,
     reactAppDebug,
@@ -61,8 +62,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     chosenServices,
     mainCancerType,
     patientBundle,
-    searchParams['zipcode'],
-    searchParams['travelDistance']
+    disableSearchLocation ? defaultZipCode : searchParams['zipcode'],
+    disableSearchLocation ? defaultTravelDistance : searchParams['travelDistance']
   );
   res.status(200).json(results);
 };
