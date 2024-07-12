@@ -154,15 +154,6 @@ export const extractPrimaryCancerCondition = (conditions: Condition[]): PrimaryC
   return null;
 };
 
-export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition => {
-  const condition = bundle?.entry?.[0]?.resource as Condition;
-  return {
-    cancerType: getCancerType(condition),
-    cancerSubtype: getCancerSubtype(condition),
-    stage: getStage(condition),
-  };
-};
-
 export const convertFhirRadiationProcedures = (procedures: Procedure[]): CodedValueType[] =>
   getUniques(procedures.map(extractKnownCodes(radiation as CodedValueType[])).flat());
 
@@ -276,11 +267,6 @@ const extractKnownCodes =
       resource.code
     ) {
       codings = resource.code?.coding;
-    } else if (
-      (resource.resourceType === 'MedicationRequest' || resource.resourceType === 'MedicationStatement') &&
-      resource.medicationCodeableConcept
-    ) {
-      codings = resource.medicationCodeableConcept?.coding;
     }
     return codings ? codings.map(coding => knownCodes.find(equalCodedValueType(coding))).filter(e => !!e) : [];
   };
@@ -353,17 +339,15 @@ const equalStringArrays = (arrayLeft: string[] | undefined, arrayRight: string[]
   }
   // This is interested in if the contents of both arrays are the same,
   // regardless of order.
-  const mapLeft = arrayValueCountsMap(arrayLeft),
-    mapRight = arrayValueCountsMap(arrayRight);
-  const left = Array.from(mapLeft.entries()),
-    right = Array.from(mapRight.entries());
-  if (left.length != right.length) {
+  const countsLeft = arrayValueCountsMap(arrayLeft),
+    countsRight = arrayValueCountsMap(arrayRight);
+  if (countsLeft.size != countsRight.size) {
     return false;
   }
-  for (let idx = 0; idx < left.length; idx++) {
-    if (left[idx][0] != right[idx][0] && left[idx][1] != right[idx][1]) {
-      return false;
-    }
+  // Make sure they match by going through all entries on one and making sure
+  // it matches the other
+  for (const [str, count] of countsLeft.entries()) {
+    if (countsRight.get(str) != count) return false;
   }
   // Gone through all of these? True
   return true;
@@ -372,11 +356,8 @@ const equalStringArrays = (arrayLeft: string[] | undefined, arrayRight: string[]
 const arrayValueCountsMap = <T>(array: T[]): Map<T, number> => {
   const map = new Map<T, number>();
   for (const value of array) {
-    if (map.has(value)) {
-      map.set(value, map.get(value) + 1);
-    } else {
-      map.set(value, 1);
-    }
+    const current = map.get(value) ?? 0;
+    map.set(value, current + 1);
   }
   return map;
 };

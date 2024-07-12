@@ -47,10 +47,11 @@ import {
   SearchParameters,
   SortingParameters,
 } from 'types/search-types';
+import { GetConfig } from 'types/config';
 
 const {
   publicRuntimeConfig: { sendLocationData },
-} = getConfig();
+} = getConfig() as GetConfig;
 
 type ResultsPageProps = {
   patient: Patient;
@@ -157,7 +158,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
 
   const { data: distanceFilteredData } = useQuery(
     ['clinical-trials', searchData, getDistanceParams(searchParams)],
-    () => clinicalTrialDistanceQuery(searchData, searchParams),
+    () => clinicalTrialDistanceQuery(searchData),
     {
       enabled: !!searchData && typeof window !== 'undefined',
       refetchOnMount: false,

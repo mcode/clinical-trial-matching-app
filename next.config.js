@@ -11,9 +11,13 @@ const defaultMatchingServices = new Set((process.env.MATCHING_SERVICES_DEFAULT_E
 
 const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service => {
   const serviceEnvName = service.toUpperCase();
-  const cancerTypes = process.env[`MATCHING_SERVICE_${serviceEnvName}_CANCER_TYPES`]
-    .split(/\s*,\s*/)
-    .filter(cancer => allowedCancerTypes.includes(cancer));
+  const cancerTypesString = process.env[`MATCHING_SERVICE_${serviceEnvName}_CANCER_TYPES`];
+  const cancerTypes = cancerTypesString
+    ? cancerTypesString.split(/\s*,\s*/).filter(cancer => allowedCancerTypes.includes(cancer))
+    : [];
+  if (cancerTypes.length === 0) {
+    console.error(`Warning: ${service} has no cancer types set.`);
+  }
   return {
     name: service,
     label: process.env[`MATCHING_SERVICE_${serviceEnvName}_LABEL`] ?? service,
@@ -23,6 +27,11 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
     cancerTypes: cancerTypes,
   };
 });
+
+function parseResultsMax() {
+  let value = Number(process.env.RESULTS_MAX);
+  return isNaN(value) || value < 1 ? 15 : value;
+}
 
 module.exports = {
   // Disable image optimization, as it's currently broken when Next.js is
@@ -42,7 +51,7 @@ module.exports = {
     disableSearchLocation: JSON.parse(process.env.DISABLE_SEARCH_LOCATION ?? 'false'),
     defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
     defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
-    resultsMax: process.env.RESULTS_MAX,
+    resultsMax: parseResultsMax(),
     siteRubric: allowedSiteRubrics.includes(process.env.SITE_RUBRIC) ? process.env.SITE_RUBRIC : 'none',
     services: matchingServices,
   },

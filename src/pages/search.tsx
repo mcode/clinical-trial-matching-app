@@ -10,6 +10,7 @@ import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
 import React, { ReactElement, useState } from 'react';
+import { GetConfig } from 'types/config';
 
 type SearchPageProps = {
   patient: Patient;
@@ -30,7 +31,7 @@ type SearchPageProps = {
 
 const {
   publicRuntimeConfig: { disableSearchLocation, defaultSearchZipCode, defaultSearchTravelDistance, fhirQueryFlavor },
-} = getConfig();
+} = getConfig() as GetConfig;
 
 const SearchPage = ({
   patient,

@@ -5,10 +5,11 @@ import React, { ReactElement } from 'react';
 import { Control, Controller } from 'react-hook-form';
 import { MatchingServiceCheckbox } from './FormFields';
 import { SearchFormValuesType } from './types';
+import { GetConfig } from 'types/config';
 
 const {
   publicRuntimeConfig: { services },
-} = getConfig();
+} = getConfig() as GetConfig;
 
 type MatchingServicesProps = {
   control: Control<SearchFormValuesType>;
