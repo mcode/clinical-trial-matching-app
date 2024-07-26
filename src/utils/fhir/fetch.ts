@@ -10,9 +10,18 @@ import type Client from 'fhirclient/lib/Client';
  */
 export const fetchBundles = async <T extends FhirResource>(
   fhirClient: Client,
-  resourceType: T['resourceType']
+  resourceType: T['resourceType'],
+  parameters?: Record<string, string>
 ): Promise<Bundle[]> => {
-  return await fhirClient.request<Bundle[]>(`${resourceType}?patient=${fhirClient.getPatientId()}`, { pageLimit: 0 });
+  const extra = parameters
+    ? '&' +
+      Object.entries(parameters)
+        .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(value)}`)
+        .join('&')
+    : '';
+  return await fhirClient.request<Bundle[]>(`${resourceType}?patient=${fhirClient.getPatientId()}${extra}`, {
+    pageLimit: 0,
+  });
 };
 
 /**
@@ -24,10 +33,11 @@ export const fetchBundles = async <T extends FhirResource>(
  */
 export const fetchBundleEntries = async <T extends FhirResource>(
   fhirClient: Client,
-  resourceType: T['resourceType']
+  resourceType: T['resourceType'],
+  parameters?: Record<string, string>
 ): Promise<BundleEntry<T>[]> => {
   const result: BundleEntry<T>[] = [];
-  const bundles = await fetchBundles(fhirClient, resourceType);
+  const bundles = await fetchBundles(fhirClient, resourceType, parameters);
   for (const bundle of bundles) {
     // If the bundle exists, return a filtered copy of just the entries array
     if (bundle?.entry) {
@@ -50,8 +60,9 @@ export const fetchBundleEntries = async <T extends FhirResource>(
  */
 export const fetchResources = async <T extends FhirResource>(
   fhirClient: Client,
-  resourceType: T['resourceType']
-): Promise<T[]> => (await fetchBundleEntries(fhirClient, resourceType)).map<T>(entry => entry.resource);
+  resourceType: T['resourceType'],
+  parameters?: Record<string, string>
+): Promise<T[]> => (await fetchBundleEntries(fhirClient, resourceType, parameters)).map<T>(entry => entry.resource);
 
 /**
  * Retrieves all known medications from the current patient.
