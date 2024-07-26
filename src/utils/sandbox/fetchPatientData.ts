@@ -62,7 +62,7 @@ export const fetchPatientData = async (fhirClient: Client, progress: ProgressMon
     fhirClient.patient.read(),
     fhirClient.user.read(),
     fetchResources<Condition>(fhirClient, 'Condition'),
-    fetchResources<Observation>(fhirClient, 'Observation'),
+    fetchResources<Observation>(fhirClient, 'Observation', { category: 'vital-signs,social-history,laboratory'}),
     fetchResources<Procedure>(fhirClient, 'Procedure'),
     fetchMedications(fhirClient),
   ];
