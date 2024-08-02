@@ -908,6 +908,72 @@ export const fhirTumorMarkers: Observation[] = [
   },
 ];
 
+export const fhirTumorMarkerNoQualifier: Observation[] = [
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
+          {
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
+          },
+        ],
+      },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '21678-8',
+          display: 'FGFR3 gene p.Gly380Arg [Presence] in Blood or Tissue by Molecular genetics method',
+        },
+      ],
+    },
+    subject: {
+      reference: 'Patient/patient-123',
+    },
+    valueCodeableConcept: {
+      coding: [
+        {
+          system: SNOMED_CODE_URI,
+          code: '1234',
+          display: 'whatever',
+        },
+      ],
+    },
+  },
+  {
+    resourceType: 'Observation',
+    extension: [{ url: MCODE_TUMOR_MARKER }],
+    status: 'final',
+    category: [
+      {
+        coding: [
+          {
+            system: 'http://terminology.hl7.org/CodeSystem/observation-category',
+            code: 'laboratory',
+          },
+        ],
+      },
+    ],
+    code: {
+      coding: [
+        {
+          system: LOINC_CODE_URI,
+          code: '40556-3',
+          display: 'Estrogen receptor Ag [Presence] in Tissue by Immune stain',
+        },
+      ],
+    },
+    subject: {
+      reference: 'Patient/patient-123',
+    },
+  },
+];
+
 export const fhirSurgeryProcedures: Procedure[] = [
   {
     resourceType: 'Procedure',
