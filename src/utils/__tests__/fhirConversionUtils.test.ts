@@ -9,6 +9,7 @@ import {
   fhirSecondaryCancerConditions,
   fhirSurgeryProcedures,
   fhirTumorMarkers,
+  fhirTumorMarkerNoQualifier,
 } from '@/__mocks__/bundles';
 import mockPatient from '@/__mocks__/patient';
 import { LOINC_CODE_URI, RXNORM_CODE_URI, SNOMED_CODE_URI } from '../fhirConstants';
@@ -457,6 +458,9 @@ describe('convertFhirTumorMarkers', () => {
         qualifier: { system: SNOMED_CODE_URI, code: '10828004', display: 'Positive (qualifier value)' },
       },
     ]);
+  });
+  it('filters out biomarkers without qualifiers', () => {
+    expect(convertFhirTumorMarkers(fhirTumorMarkerNoQualifier).length).toEqual(0);
   });
 });
 
