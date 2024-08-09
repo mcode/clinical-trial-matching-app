@@ -40,6 +40,18 @@ export type SearchFormProps = {
   disableLocation?: boolean;
 };
 
+// Change defaultValues into a string query
+export const defaultValuesToQuery = (
+  defaultValues) => {
+    const originalValues = {};
+  
+    Object.keys(defaultValues).forEach((key) => {
+      originalValues["pre_" + key] = defaultValues[key];
+    })
+  
+    return originalValues;
+};
+
 export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
   ...data,
   // For the cancer types, encode the JSON objects
@@ -52,7 +64,7 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   medications: data.medications ? JSON.stringify(extractCodes(data.medications)) : undefined,
   surgery: data.surgery ? JSON.stringify(extractCodes(data.surgery)) : undefined,
   radiation: data.radiation ? JSON.stringify(extractCodes(data.radiation)) : undefined,
-  matchingServices: Object.keys(data.matchingServices).filter(service => data.matchingServices[service]),
+  matchingServices: data.matchingServices? Object.keys(data.matchingServices).filter(service => data.matchingServices[service]) : undefined,
   karnofskyScore: data.karnofskyScore ? JSON.stringify(data.karnofskyScore) : undefined,
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });
@@ -107,6 +119,8 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
   const [state, setState] = useState<State>(getNewState(defaultValues.cancerType));
   const userId = useContext(UserIdContext);
 
+  const originalValues = defaultValuesToQuery(formDataToSearchQuery(defaultValues as SearchFormValuesType));
+
   const onSubmit = (data: SearchFormValuesType) => {
     if (disableLocation) {
       // If location data was disabled, it won't be in the form data, and we'd
@@ -117,6 +131,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
 
     const query = {
       ...formDataToSearchQuery(data),
+      ...originalValues,
       sortingOption: 'matchLikelihood',
       // Set default filters (they'll be ignored if no trials match, most likely)
       // recruitmentStatus: 'active',

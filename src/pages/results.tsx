@@ -342,6 +342,7 @@ const rehydrateCodes = (
   key: string,
   converter: (values: string[]) => CodedValueType[]
 ): void => {
+  console.log("Query", query);
   const codeJson = query[key];
   if (typeof codeJson === 'string') {
     try {
@@ -372,6 +373,12 @@ export const getServerSideProps: GetServerSideProps = async context => {
   rehydrateCodes(query, 'medications', convertCodesToMedications);
   rehydrateCodes(query, 'radiation', convertCodesToRadiations);
   rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
+
+  rehydrateCodes(query, 'pre_metastasis', convertCodesToMetastases);
+  rehydrateCodes(query, 'pre_biomarkers', convertCodesToBiomarkers);
+  rehydrateCodes(query, 'pre_medications', convertCodesToMedications);
+  rehydrateCodes(query, 'pre_radiations', convertCodesToRadiations);
+  rehydrateCodes(query, 'pre_surgery', convertCodesToSurgeries);
 
   if (query['fhirless'] !== undefined) {
     // In this case, the results are "fhirless" and we return a default set of properties
