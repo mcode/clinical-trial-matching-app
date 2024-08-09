@@ -123,7 +123,7 @@ const getAllMedications = async (fhirClient: Client): Promise<Medication[]> => {
       if (entry.resource && entry.resource.resourceType === 'MedicationRequest') {
         const medRequest = entry.resource as MedicationRequest;
         // See if this requires the medication be loaded separately
-        if (medRequest.medicationReference && medRequest.medicationReference.reference) {
+        if (medRequest.medicationReference?.reference) {
           // It does, so add the request
           medications.push(fhirClient.request<Medication>(medRequest.medicationReference.reference));
         } else if (medRequest.medicationCodeableConcept) {

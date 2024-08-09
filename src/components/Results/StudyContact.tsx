@@ -15,31 +15,35 @@ const StudyContact = ({ contact, title }: StudyContactProps): ReactElement => (
     </Box>
 
     {/* Display the contact only if it's different from the title */}
-    {contact.name && contact.name != title && (
-      <Box fontWeight="600" ml={2}>
-        {contact.name}
-      </Box>
-    )}
+    {contact && (
+      <>
+        {contact.name && contact.name != title && (
+          <Box fontWeight="600" ml={2}>
+            {contact.name}
+          </Box>
+        )}
 
-    {contact.phone && (
-      <Stack alignItems="center" direction="row" ml={4}>
-        <PhoneIcon fontSize="small" sx={{ marginRight: 1 }} />
-        {contact.phone}
-      </Stack>
-    )}
+        {contact.phone && (
+          <Stack alignItems="center" direction="row" ml={4}>
+            <PhoneIcon fontSize="small" sx={{ marginRight: 1 }} />
+            {contact.phone}
+          </Stack>
+        )}
 
-    {contact.email && (
-      <Stack alignItems="center" direction="row" ml={4}>
-        <EmailIcon fontSize="small" sx={{ marginRight: 1 }} />
-        {contact.email}
-      </Stack>
-    )}
+        {contact.email && (
+          <Stack alignItems="center" direction="row" ml={4}>
+            <EmailIcon fontSize="small" sx={{ marginRight: 1 }} />
+            {contact.email}
+          </Stack>
+        )}
 
-    {contact.distance && (
-      <Stack alignItems="center" direction="row" ml={4}>
-        <LocationOnIcon fontSize="small" sx={{ marginRight: 1 }} />
-        {`${contact.distance.quantity} ${contact.distance.units}`}
-      </Stack>
+        {contact.distance && (
+          <Stack alignItems="center" direction="row" ml={4}>
+            <LocationOnIcon fontSize="small" sx={{ marginRight: 1 }} />
+            {`${contact.distance.quantity} ${contact.distance.units}`}
+          </Stack>
+        )}
+      </>
     )}
   </Stack>
 );

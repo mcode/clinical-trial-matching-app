@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import { setLogger } from 'react-query';
 
 jest.mock('next/image');

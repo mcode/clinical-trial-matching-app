@@ -3,9 +3,8 @@ import { uninitializedState } from '@/utils/resultsStateUtils';
 import { createMockRouter } from '@/utils/testUtils';
 import mockSearchResults from '@/__mocks__/resultDetails.json';
 import { Stack } from '@mui/material';
-import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { RouterContext } from 'next/dist/shared/lib/router-context';
+import { act, render, screen } from '@testing-library/react';
+import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime';
 import { useRef } from 'react';
 import Results, { ResultsProps } from '../Results';
 import { StudyDetailProps } from '../types';
@@ -13,6 +12,9 @@ import { StudyDetailProps } from '../types';
 afterEach(() => {
   jest.clearAllMocks();
 });
+
+// Mock SVG icons (they break horribly within Jest otherwise)
+jest.mock('@mui/material/node/SvgIcon', () => () => <div />);
 
 describe('<Results />', () => {
   const entries = [
@@ -74,7 +76,9 @@ describe('<Results />', () => {
 
     const saveButtons = screen.queryAllByRole('button', { name: /^save study$/i });
     expect(saveButtons.length).toBe(3);
-    userEvent.click(saveButtons[0]);
+    act(() => {
+      saveButtons[0].click();
+    });
     expect(mockedOnClick).toHaveBeenCalledTimes(1);
   });
 
@@ -90,8 +94,10 @@ describe('<Results />', () => {
 
     const unsaveButtons = screen.queryAllByRole('button', { name: /unsave study/i });
     expect(unsaveButtons.length).toBe(2);
-    userEvent.click(unsaveButtons[0]);
-    userEvent.click(unsaveButtons[1]);
+    act(() => {
+      unsaveButtons[0].click();
+      unsaveButtons[1].click();
+    });
     expect(mockedOnClick).toHaveBeenCalledTimes(2);
   });
 });

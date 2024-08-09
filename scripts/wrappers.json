@@ -1,9 +1,4 @@
 {
-  "ancora.ai": {
-    "env": {
-      "ANCORA_AI_API_KEY": "<set to the Ancora.ai API key>"
-    }
-  },
   "breastcancertrials.org": {},
   "carebox": {
     "env": {

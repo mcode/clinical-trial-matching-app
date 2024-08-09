@@ -1,9 +1,11 @@
 import { SNOMED_CODE_URI } from '@/utils/fhirConstants';
 import { CancerType } from '@/utils/fhirConversionUtils';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import SearchForm, { SearchFormProps } from '../SearchForm';
+import SearchForm, { compareDefaultValues, SearchFormProps } from '../SearchForm';
 import { SearchFormValuesType } from '../types';
+
+jest.mock('next/router', () => jest.requireActual('next-router-mock'));
 
 const defaultValues: Partial<SearchFormValuesType> = {
   age: '28',
@@ -43,7 +45,9 @@ describe('<SearchForm />', () => {
   );
 
   it('renders the search form and all the search form fields', () => {
-    render(<Component />);
+    act(() => {
+      render(<Component />);
+    });
 
     expect(screen.getByText(/let's find some clinical trials/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('matchingServices')).toHaveLength(2);
@@ -60,11 +64,13 @@ describe('<SearchForm />', () => {
     expect(screen.getByTestId('radiation')).toBeInTheDocument();
     expect(screen.getByTestId('surgery')).toBeInTheDocument();
     expect(screen.getByTestId('medications')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /search/i }));
+    expect(screen.getByRole('button', { name: /search/i })).toBeInTheDocument();
   });
 
   it('autopopulates with default or patient data', () => {
-    render(<Component />);
+    act(() => {
+      render(<Component />);
+    });
 
     expect(screen.getByTestId('zipcode')).toContainHTML('11111');
     expect(screen.getByTestId('travelDistance')).toContainHTML('100');
@@ -75,4 +81,65 @@ describe('<SearchForm />', () => {
 
   // TODO: This component may require additional testing given how the state changes
   // based on the selected cancer type.
+});
+
+describe('compareDefaultValues', () => {
+  it('returns the list of altered default values', () => {
+    expect(
+      compareDefaultValues(defaultValues, {
+        userid: '',
+        matchingServices: {},
+        zipcode: '12345',
+        travelDistance: '100',
+        age: '28',
+        gender: 'male',
+        cancerType: undefined,
+        cancerSubtype: undefined,
+        metastasis: [],
+        stage: undefined,
+        ecogScore: {
+          entryType: 'ecogScore',
+          interpretation: {
+            code: 'LA9623-5',
+            display:
+              'Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work',
+            system: 'http://loinc.org',
+          },
+          valueInteger: 1,
+        },
+        karnofskyScore: {
+          interpretation: {
+            display: 'Able to carry on normal activity; minor signs or symptoms of disease',
+            code: 'LA29176-7',
+            system: 'http://loinc.org',
+          },
+          valueInteger: 90,
+          entryType: 'karnofskyScore',
+        },
+        biomarkers: [],
+        radiation: [],
+        surgery: [
+          {
+            entryType: 'surgery',
+            cancerType: [CancerType.BREAST],
+            code: '234262008',
+            display: 'Excision of axillary lymph node (procedure)',
+            system: 'http://snomed.info/sct',
+            category: ['Alnd'],
+          },
+        ],
+        medications: [],
+      })
+    ).toEqual({
+      age: false,
+      gender: true,
+      ecogScore: true,
+      karnofskyScore: true,
+      matchingServices: false,
+      'surgerysurgerybreast234262008Excision of axillary lymph node (procedure)http://snomed.info/sctAlnd': true,
+      travelDistance: false,
+      userid: true,
+      zipcode: true,
+    });
+  });
 });

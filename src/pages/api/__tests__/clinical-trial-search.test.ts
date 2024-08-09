@@ -102,6 +102,9 @@ const expectedBundle: Bundle = {
     {
       resource: {
         resourceType: 'Patient',
+        meta: {
+          profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-patient'],
+        },
         id: 'test_id',
         gender: 'female',
         // Age is 28, test sets time to 2022, 2022-28 = 1994

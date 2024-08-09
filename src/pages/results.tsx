@@ -7,7 +7,6 @@ import { clinicalTrialSearchQuery } from '@/queries';
 import clinicalTrialDistanceQuery from '@/queries/clinicalTrialDistanceQuery';
 import clinicalTrialFilterQuery from '@/queries/clinicalTrialFilterQuery';
 import clinicalTrialPaginationQuery from '@/queries/clinicalTrialPaginationQuery';
-import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
 import {
   convertCodesToBiomarkers,
   convertCodesToMedications,
@@ -193,7 +192,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
   const drawerWidth = getDrawerWidth(isSmallScreen);
 
   // Here, we initialize the state based on the asynchronous data coming back. When the promise hasn't resolved yet, the list of studies is empty.
-  const filterOptions = useMemo(() => data?.filterOptions as FilterOptions, [data]);
+  const filterOptions = useMemo(() => data?.filterOptions, [data]);
   const [state, dispatch] = useReducer(
     savedStudiesReducer,
     (searchParams.savedStudies && new Set<string>(ensureArray(searchParams.savedStudies))) || uninitializedState
@@ -357,6 +356,12 @@ const rehydrateCodes = (
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const { req, res, query } = context;
+  // FIXME: Next.js 13 broke something, see https://github.com/vercel/next.js/issues/57397
+  // For now, remove the x-forwarded headers, they break fhirclient
+  delete req.headers['x-forwarded-host'];
+  delete req.headers['x-forwarded-port'];
+  delete req.headers['x-forwarded-proto'];
+  delete req.headers['x-forwarded-for'];
   const queryClient = new QueryClient();
   const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
 
@@ -393,7 +398,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
   rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
   rehydrateCodes(query, 'medications', convertCodesToMedications);
-  rehydrateCodes(query, 'radiations', convertCodesToRadiations);
+  rehydrateCodes(query, 'radiation', convertCodesToRadiations);
   rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
 
   rehydrateCodes(query, 'pre_metastasis', convertCodesToMetastases);

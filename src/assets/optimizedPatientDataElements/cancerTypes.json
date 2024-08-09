@@ -1898,7 +1898,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "15635801000119100",
+    "code": "15635801000119106",
     "display": "Primary malignant neoplasm of bilateral female breasts (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast"]
@@ -1914,7 +1914,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1081561000119100",
+    "code": "1081561000119108",
     "display": "Recurrent primary malignant neoplasm of right female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast"]
@@ -1922,7 +1922,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1081551000119100",
+    "code": "1081551000119106",
     "display": "Recurrent primary malignant neoplasm of left female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast"]
@@ -1930,7 +1930,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080341000119100",
+    "code": "1080341000119105",
     "display": "Infiltrating lobular carcinoma of right female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Lobular Carcinoma"]
@@ -1946,7 +1946,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080241000119100",
+    "code": "1080241000119104",
     "display": "Infiltrating ductal carcinoma of upper outer quadrant of right female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -1954,7 +1954,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080231000119100",
+    "code": "1080231000119108",
     "display": "Infiltrating ductal carcinoma of upper inner quadrant of right female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -1962,7 +1962,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080211000119100",
+    "code": "1080211000119103",
     "display": "Infiltrating ductal carcinoma of lower outer quadrant of right female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -1970,7 +1970,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080201000119100",
+    "code": "1080201000119101",
     "display": "Infiltrating ductal carcinoma of lower inner quadrant of right female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -1978,7 +1978,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080191000119100",
+    "code": "1080191000119104",
     "display": "Infiltrating ductal carcinoma of central portion of right female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -2002,7 +2002,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080151000119100",
+    "code": "1080151000119109",
     "display": "Infiltrating ductal carcinoma of upper inner quadrant of left female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -2010,7 +2010,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080131000119100",
+    "code": "1080131000119103",
     "display": "Infiltrating ductal carcinoma of lower outer quadrant of left female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -2018,7 +2018,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080121000119100",
+    "code": "1080121000119101",
     "display": "Infiltrating ductal carcinoma of lower inner quadrant of left female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -2026,7 +2026,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["breast"],
-    "code": "1080111000119100",
+    "code": "1080111000119108",
     "display": "Infiltrating ductal carcinoma of central portion of left female breast (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Breast", "Invasive Breast", "Invasive Carcinoma", "Invasive Ductal Carcinoma"]
@@ -3882,7 +3882,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["prostate"],
-    "code": "1098981000119100",
+    "code": "1098981000119101",
     "display": "Recurrent malignant neoplasm of prostate (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Prostate"]
@@ -4138,7 +4138,7 @@
   {
     "entryType": "cancerType",
     "cancerType": ["colon"],
-    "code": "16636101000119100",
+    "code": "16636101000119105",
     "display": "Primary malignant gastrointestinal stromal neoplasm of rectum (disorder)",
     "system": "http://snomed.info/sct",
     "category": ["Rectal"]

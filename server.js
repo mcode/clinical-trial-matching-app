@@ -17,13 +17,17 @@ function getPort() {
 
 const port = getPort();
 const dev = process.env.NODE_ENV !== 'production';
-const app = nextjs({ dev });
+const app = nextjs({ dev, port });
 const handle = app.getRequestHandler();
 
 app
   .prepare()
   .then(() => {
-    const { serverRuntimeConfig } = getConfig();
+    const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
+    console.log('Starting server with the following options:');
+    for (const k of Object.keys(publicRuntimeConfig).sort()) {
+      console.log('  %s = %j', k, publicRuntimeConfig[k]);
+    }
 
     const server = express();
 

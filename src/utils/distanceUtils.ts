@@ -2,6 +2,7 @@ import { Location, Reference, ResearchStudy } from 'fhir/r4';
 import { convertDistance, getLatitude, getLongitude, getPreciseDistance } from 'geolib';
 import { GeolibInputCoordinates } from 'geolib/es/types';
 import data from 'us-zips';
+import { findContainedResourceById } from './fhirUtils';
 
 export const getZipcodeCoordinates = (zipcode: string): GeolibInputCoordinates => {
   return data[zipcode] || null;
@@ -30,15 +31,12 @@ export const getLocationCoordinates = (location: Location): GeolibInputCoordinat
 export const getLocations = (study: ResearchStudy): Location[] => {
   const sites: Reference[] = study.site || [];
   const locations: Location[] = [];
-  const getLocation = (referenceId: string) =>
-    study.contained.find(({ resourceType, id }) => resourceType === 'Location' && referenceId === id);
 
   for (const site of sites) {
     const url: string = site.reference;
-    const isLocalReference = url.length > 1 && url.substr(0, 1);
-    if (isLocalReference) {
-      const id = url.substr(1);
-      const location = getLocation(id) as Location;
+    // If the URL is a local reference, find it
+    if (url.startsWith('#')) {
+      const location = findContainedResourceById<Location>(study, 'Location', url.substring(1));
       location && locations.push(location);
     }
   }

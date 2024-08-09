@@ -18,11 +18,6 @@ A minimal `wrappers.json` file would be something like the following:
 
 ```json
 {
-  "ancora.ai": {
-    "env": {
-      "ANCORA_AI_API_KEY": "<Ancora.ai API key>"
-    }
-  },
   "carebox": {
     "env": {
       "MATCHING_SERVICE_AUTH_CLIENT_ID": "<Carebox client ID>",
@@ -34,7 +29,7 @@ A minimal `wrappers.json` file would be something like the following:
 
 ## Running the install under Windows
 
-Copy the `install.ps1`, `install.js`, and `wrappers.json` files into a directory on the Windows server. Copy or create a `wrappers.local.json` as described above to fill in the missing API keys.
+Copy the `install.ps1` and `wrappers.json` files into a directory on the Windows server. Copy or create a `wrappers.local.json` as described above to fill in the missing API keys.
 
 The install script may need to be marked as being allowed to execute locally, via:
 
@@ -52,7 +47,7 @@ After completing the install, a test script may be run to ensure everything is f
 
 ## Running the install under Linux
 
-Copy the `install.sh`, `install.js`, and `wrappers.json` files into a directory on the Linux system. Copy or create a `wrappers.local.json` as described above to fill in the missing API keys.
+Copy the `install.sh` and `wrappers.json` files into a directory on the Linux system. Copy or create a `wrappers.local.json` as described above to fill in the missing API keys.
 
 The install script may need to be marked as being allowed to execute locally. This can be done via the following command:
 

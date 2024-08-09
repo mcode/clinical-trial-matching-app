@@ -1,6 +1,7 @@
 import { BundleEntry as BundleEntryWithStudy, StudyDetailProps } from '@/components/Results';
 import { getStudyDetailProps } from '@/components/Results/utils';
 import { Service } from '@/queries/clinicalTrialSearchQuery';
+import { MCODE_CANCER_PATIENT } from '@/utils/fhirConstants';
 import { Biomarker, CodedValueType, Score } from '@/utils/fhirConversionUtils';
 import {
   getCancerRelatedMedicationStatement,
@@ -23,7 +24,15 @@ import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
 
 const {
-  publicRuntimeConfig: { sendLocationData, defaultZipCode, defaultTravelDistance, reactAppDebug, resultsMax, services },
+  publicRuntimeConfig: {
+    sendLocationData,
+    defaultZipCode,
+    defaultTravelDistance,
+    reactAppDebug,
+    siteRubric,
+    resultsMax,
+    services,
+  },
 } = getConfig();
 
 /**
@@ -82,7 +91,7 @@ export function buildBundle(searchParams: SearchParameters, id?: string): Bundle
   }
 
   // Create our stub patient
-  const patient: Patient = { resourceType: 'Patient', id: id };
+  const patient: Patient = { resourceType: 'Patient', meta: { profile: [MCODE_CANCER_PATIENT] }, id: id };
 
   // Add whatever we can
   if (isAdministrativeGender(searchParams.gender)) {
@@ -153,19 +162,30 @@ async function callWrappers(
 
       // Function to determine if the results are within range
       const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
-        return (
-          sendLocationData ||
-          (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance as string)
-        );
+        return sendLocationData || (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance);
       };
 
       // Special filter to check if valid under Ancora
       const isValidAncora = (entry: StudyDetailProps): boolean => {
-        return !(
-          entry.source == 'Ancora' &&
-          ((mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
-            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3))
-        );
+        if (entry.source != 'Ancora.ai') return true;
+
+        // This is site specific; check which site
+        if (siteRubric == 'site1') {
+          return !(
+            (mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
+            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3)
+          );
+        } else if (siteRubric == 'site2') {
+          return !(
+            (mainCancerType == 'breast' && entry.likelihood.score < 0.3) ||
+            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3) ||
+            (mainCancerType == 'multipleMyleoma' && entry.likelihood.score == 0) ||
+            (mainCancerType == 'colon' && entry.likelihood.score < 0.3)
+          );
+        }
+
+        // Default -- don't filter under Ancora
+        return true;
       };
 
       // Only interested in Active and Interventional trials
@@ -196,6 +216,21 @@ async function callWrappers(
     distanceFilteredResults[searchset['serviceName']] = subset;
   });
 
+  // If we're using site2 rubric, then bypass max results and just return all results
+  if (siteRubric == 'site2' && mainCancerType == 'brain') {
+    // Go through dictionary of occurences and grab the proper
+    const results: StudyDetailProps[] = Object.keys(occurrences).map(trial => {
+      const preferredService = occurrences[trial][0];
+      const studyResult: StudyDetailProps = distanceFilteredResults[preferredService].find(
+        study => study.trialId == trial
+      );
+      studyResult.source = occurrences[trial].join(', ');
+      return studyResult;
+    });
+
+    return results;
+  }
+
   const sortByOccurence = (a: string[], b: string[]) => {
     return b[1].length - a[1].length;
   };
@@ -218,8 +253,7 @@ async function callWrappers(
 
     // Remove this trial as an option of trials from the distanceFilteredResults
     services.forEach(service => {
-      const removalIndex = distanceFilteredResults[service].indexOf(item => item.trialId == trialId[0]);
-      delete distanceFilteredResults[service][removalIndex];
+      distanceFilteredResults[service] = distanceFilteredResults[service].filter(item => item.trialId != trialId[0]);
     });
 
     return studyResult;
@@ -300,16 +334,16 @@ const getParsedParameters = (
     Record<keyof Pick<SearchParameters, 'ecogScore' | 'karnofskyScore'>, Score>
 > => {
   return {
-    ...(!!parameters.cancerType ? { cancerType: JSON.parse(parameters.cancerType) } : {}),
-    ...(!!parameters.cancerSubtype ? { cancerSubtype: JSON.parse(parameters.cancerSubtype) } : {}),
-    ...(!!parameters.metastasis ? { metastasis: JSON.parse(parameters.metastasis) } : {}),
-    ...(!!parameters.stage ? { stage: JSON.parse(parameters.stage) } : {}),
-    ...(!!parameters.ecogScore ? { ecogScore: JSON.parse(parameters.ecogScore) } : {}),
-    ...(!!parameters.karnofskyScore ? { karnofskyScore: JSON.parse(parameters.karnofskyScore) } : {}),
-    ...(!!parameters.biomarkers ? { biomarkers: JSON.parse(parameters.biomarkers) } : {}),
-    ...(!!parameters.surgery ? { surgery: JSON.parse(parameters.surgery) } : {}),
-    ...(!!parameters.medications ? { medications: JSON.parse(parameters.medications) } : {}),
-    ...(!!parameters.radiation ? { radiation: JSON.parse(parameters.radiation) } : {}),
+    ...(parameters.cancerType ? { cancerType: JSON.parse(parameters.cancerType) } : {}),
+    ...(parameters.cancerSubtype ? { cancerSubtype: JSON.parse(parameters.cancerSubtype) } : {}),
+    ...(parameters.metastasis ? { metastasis: JSON.parse(parameters.metastasis) } : {}),
+    ...(parameters.stage ? { stage: JSON.parse(parameters.stage) } : {}),
+    ...(parameters.ecogScore ? { ecogScore: JSON.parse(parameters.ecogScore) } : {}),
+    ...(parameters.karnofskyScore ? { karnofskyScore: JSON.parse(parameters.karnofskyScore) } : {}),
+    ...(parameters.biomarkers ? { biomarkers: JSON.parse(parameters.biomarkers) } : {}),
+    ...(parameters.surgery ? { surgery: JSON.parse(parameters.surgery) } : {}),
+    ...(parameters.medications ? { medications: JSON.parse(parameters.medications) } : {}),
+    ...(parameters.radiation ? { radiation: JSON.parse(parameters.radiation) } : {}),
   };
 };
 

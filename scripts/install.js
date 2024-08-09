@@ -276,7 +276,7 @@ class CTMSWebApp {
 
   async needsDependenciesUpdated(installer) {
     // Really this could just return the promise directly, but it reads more clearly with the async/await
-    return await isFileOutOfDate(installer.joinPath(this.path, 'package.json'), installer.joinPath('node_modules'));
+    return await isFileOutOfDate(installer.joinPath(this.path, 'package.json'), installer.joinPath(this.path, 'node_modules'));
   }
 
   async runInstallDependencyCommand(installer) {
@@ -457,20 +457,28 @@ class CTMSWrapper extends CTMSWebApp {
   async configure(installer) {
     // Let the base inmplementation deal with the generic stuff
     await super.configure(installer);
+    const envLocal = {};
+    if (installer.useSingleCacheDb) {
+      envLocal['CTGOV_CACHE_FILE'] = installer.joinPath('ctgov-cache.db');
+    }
     if (this.localEnv) {
-      const localEnvKeys = Object.keys(this.localEnv);
-      if (localEnvKeys.length > 0) {
-        // Write out values to .env.local
-        if (
-          await writeFileIfNotExists(
-            installer.joinPath(this.path, '.env.local'),
-            localEnvKeys.map(k => `${k}="${this.localEnv[k]}"`).join('\n') + '\n'
-          )
-        ) {
-          installer.info('Wrote .env.local file');
-        } else {
-          installer.info('Skipped .env.local, file already exists');
-        }
+      // Merge
+      for (let k in this.localEnv) {
+        envLocal[k] = this.localEnv[k];
+      }
+    }
+    const localEnvKeys = Object.keys(envLocal);
+    if (localEnvKeys.length > 0) {
+      // Write out values to .env.local
+      if (
+        await writeFileIfNotExists(
+          installer.joinPath(this.path, '.env.local'),
+          localEnvKeys.map(k => `${k}="${envLocal[k]}"`).join('\n') + '\n'
+        )
+      ) {
+        installer.info('Wrote .env.local file');
+      } else {
+        installer.info('Skipped .env.local, file already exists');
       }
     }
   }
@@ -545,6 +553,15 @@ class CTMSInstaller {
   skipGitPull = false;
   skipBuild = false;
   skipWebappConfigure = false;
+  /**
+   * When set, skips checking if the install script has changed. This is always set when attempting to double-invoke
+   * the install script, otherwise bad things may happen.
+   */
+  skipCheckInstallScriptUpdated = false;
+  /**
+   * When true (the default) use a single cache DB file for all wrappers.
+   */
+  useSingleCacheDb = true;
   /**
    * Target server. Currently either 'nginx' or 'IIS'
    */
@@ -789,8 +806,23 @@ ${frontendConfig}
     await this.loadInstallerConfig();
     await this.makeInstallPath();
     await this.checkExtraCerts();
-    await this.installWrappers();
+    const scriptPath = this.joinPath('clinical-trial-matching-app', 'scripts', 'install.js');
+    const installScriptStats = this.skipCheckInstallScriptUpdated ? null : await fs.stat(scriptPath);
     await this.installFrontend();
+    if (!this.skipCheckInstallScriptUpdated) {
+      const newInstallScriptStats = await fs.stat(scriptPath);
+      if (installScriptStats.mtime < newInstallScriptStats.mtime) {
+        console.log('Install script may have updated! Attempting to relaunch installer.');
+        console.log(`(Old mtime was ${installScriptStats.mtime.toString()}, new is ${newInstallScriptStats.mtime.toString()}.)`);
+        // Concat creates a new copy of the array
+        const newArgs = process.argv.slice(1);
+        newArgs.push('--no-install-update-check');
+        exec(process.argv[0], newArgs, { cwd: this.installPath });
+        // Immediately return if we went into a new installer
+        return;
+      }
+    }
+    await this.installWrappers();
     await this.configureWebServer();
     if (!this.skipWebappConfigure) {
       await this.configureWrappers();
@@ -834,6 +866,8 @@ const argumentFlags = {
   '--no-git-pull': false,
   '--no-build': false,
   '--no-webapp-configure': false,
+  '--no-install-update-check': false,
+  '--no-single-cache': false,
 };
 
 // Parse command line arguments. This is intentionally somewhat simplistic
@@ -864,6 +898,8 @@ installer.skipGitPull = argumentFlags['--no-git-pull'];
 installer.skipBuild = argumentFlags['--no-build'];
 installer.skipWebappConfigure = argumentFlags['--no-webapp-configure'];
 installer.targetServer = argumentsWithValues['--target-server'];
+installer.skipCheckInstallScriptUpdated = argumentFlags['--no-install-update-check'];
+installer.useSingleCacheDb = !argumentsWithValues['--no-single-cache'];
 
 installer
   .install()

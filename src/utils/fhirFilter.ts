@@ -30,7 +30,7 @@ import {
   requiredCategory,
   SNOMED_CODE_URI,
 } from './fhirConstants';
-import { Biomarker, CodedValueType as CodedValueType, Score } from './fhirConversionUtils';
+import { Biomarker, CodedValueType, Score } from './fhirConversionUtils';
 
 export const resourceToEntry = (resource: FhirResource): BundleEntry => ({
   resource,

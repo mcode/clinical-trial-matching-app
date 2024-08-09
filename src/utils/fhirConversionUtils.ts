@@ -287,7 +287,7 @@ const getCancerSubtype = (condition: Condition): CodedValueType | null => {
       ) {
         const coding = extension.valueCodeableConcept.coding[0];
         const found = (cancerSubtypes as CodedValueType[]).find(equalCodedValueType(coding));
-        if (!!found) {
+        if (found) {
           return found;
         }
       }
@@ -313,7 +313,14 @@ export const isEqualCodedValueType = (originalValue: CodedValueType, newValue: C
   );
 };
 
-const equalStringArrays = (arrayLeft: string[], arrayRight: string[]) => {
+const equalStringArrays = (arrayLeft: string[] | undefined, arrayRight: string[] | undefined) => {
+  if (arrayLeft === undefined) {
+    return arrayRight === undefined;
+  }
+  if (arrayRight === undefined) {
+    // arrayLeft cannot be undefined as well
+    return false;
+  }
   // Fail fast: different lengths? Not equal!
   if (arrayLeft.length !== arrayRight.length) {
     return false;

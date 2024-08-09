@@ -1,4 +1,5 @@
 const allowedCancerTypes = ['bladder', 'brain', 'breast', 'colon', 'lung', 'multipleMyeloma', 'prostate'];
+const allowedSiteRubrics = ['none', 'site1', 'site2'];
 const enabledMatchingServices = process.env.MATCHING_SERVICES;
 if (!enabledMatchingServices || /^\s*$/.test(enabledMatchingServices)) {
   console.error(
@@ -24,7 +25,9 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
 });
 
 module.exports = {
-  watch: true, // Enable watch mode
+  // Disable image optimization, as it's currently broken when Next.js is
+  // running under IISnode.
+  images: { unoptimized: true },
   poweredByHeader: false,
   reactStrictMode: true,
   publicRuntimeConfig: {
@@ -40,6 +43,7 @@ module.exports = {
     defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
     defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
     resultsMax: process.env.RESULTS_MAX,
+    siteRubric: allowedSiteRubrics.includes(process.env.SITE_RUBRIC) ? process.env.SITE_RUBRIC : 'none',
     services: matchingServices,
   },
   serverRuntimeConfig: {

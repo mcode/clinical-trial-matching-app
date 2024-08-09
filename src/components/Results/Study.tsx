@@ -23,7 +23,7 @@ import { SaveStudyHandler } from './types';
 import UnsaveIcon from './UnsaveIcon';
 import { getDetails } from './utils';
 
-type StudyProps = {
+export type StudyProps = {
   entry: StudyDetailProps;
   handleSaveStudy: SaveStudyHandler;
   isStudySaved: boolean;
@@ -32,7 +32,7 @@ type StudyProps = {
 
 const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: StudyProps): ReactElement => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isFacilitiesExpanded, setFacilitiesIsExpanded] = useState(false);
+  const [facilitiesExpanded, setFacilitiesExpanded] = useState(false);
   const details = getDetails(entry);
   const theme = useTheme();
   const isExtraLargeScreen = useMediaQuery(theme.breakpoints.up('xl'));
@@ -56,7 +56,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
             p={2}
             sx={{
               backgroundColor: 'common.white',
-              maxHeight: isFacilitiesExpanded ? '800px' : '500px',
+              maxHeight: facilitiesExpanded ? '800px' : '500px',
               overflowY: 'scroll',
               transition: 'max-height 0.25s ease-in-out',
             }}
@@ -125,7 +125,7 @@ const Study = ({ entry, handleSaveStudy, isStudySaved, scrollableParent }: Study
                 sx={{ marginTop: 2 }}
                 className="borderless"
                 onChange={(_event, expanded) => {
-                  setFacilitiesIsExpanded(expanded);
+                  setFacilitiesExpanded(expanded);
                 }}
               >
                 <AccordionSummary

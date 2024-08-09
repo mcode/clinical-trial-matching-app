@@ -1,4 +1,4 @@
-import { extractBiomarkerCodes, extractCodes, convertCodesToBiomarkers } from '../encodeODPE';
+import { convertCodesToBiomarkers, extractBiomarkerCodes, extractCodes } from '../encodeODPE';
 import { CancerType } from '../fhirConversionUtils';
 
 describe('extractCodes()', () => {

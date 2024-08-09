@@ -1,8 +1,11 @@
 import { FilterOptions } from '@/queries/clinicalTrialSearchQuery';
-import { render, screen } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
+import mockRouter from 'next-router-mock';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import FilterForm, { FilterFormProps } from '../FilterForm';
 import { FilterFormValuesType } from '../types';
+
+jest.mock('next/router', () => jest.requireActual('next-router-mock'));
 
 const defaultValues = {
   sortingOption: 'distance' as FilterFormValuesType['sortingOption'],
@@ -72,10 +75,14 @@ describe('<FilterForm />', () => {
     </QueryClientProvider>
   );
 
+  beforeEach(() => {
+    mockRouter.push('/results');
+  });
+
   it('renders the filter form and all the filter form fields', () => {
     render(<Component />);
 
-    expect(screen.getByRole('button', { name: /clear all/i }));
+    expect(screen.getByRole('button', { name: /clear all/i })).toBeInTheDocument();
     expect(screen.getByText(/sort by/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('sortingOption')).toHaveLength(3);
     expect(screen.getByText(/filter by/i)).toBeInTheDocument();
@@ -85,7 +92,7 @@ describe('<FilterForm />', () => {
     expect(screen.queryAllByTestId('filterOptions.trialPhase')).toHaveLength(6);
     expect(screen.getByText(/study type/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('filterOptions.studyType')).toHaveLength(3);
-    expect(screen.getByRole('button', { name: 'Filter' }));
+    expect(screen.getByRole('button', { name: 'Filter' })).toBeInTheDocument();
   });
 
   it('autopopulates with default data', () => {
@@ -99,8 +106,9 @@ describe('<FilterForm />', () => {
 
   it('resets checkbox and radio button selection when the clear all button is clicked', () => {
     render(<Component />);
-
-    screen.getByRole('button', { name: /clear all/i }).click();
+    act(() => {
+      screen.getByRole('button', { name: /clear all/i }).click();
+    });
     expect(screen.queryByRole('radio', { name: /saved status/i, checked: true })).toBeInTheDocument();
     expect(screen.queryByRole('checkbox', { name: /active/i, checked: false })).toBeInTheDocument();
     expect(screen.queryByRole('checkbox', { name: /n\/a/i, checked: false })).toBeInTheDocument();

@@ -15,6 +15,7 @@ import mockPatient from '@/__mocks__/patient';
 import { LOINC_CODE_URI, RXNORM_CODE_URI, SNOMED_CODE_URI } from '../fhirConstants';
 import {
   CancerType,
+  CodedValueType,
   convertFhirEcogPerformanceStatus,
   convertFhirKarnofskyPerformanceStatus,
   convertFhirPatient,
@@ -386,5 +387,25 @@ describe('isEqualCodedValueType()', () => {
         }
       )
     ).toBe(true);
+  });
+  it('accepts missing cancer type/category', () => {
+    const missingCancerType = {
+      category: ['brain'],
+      code: 'code',
+      display: 'display',
+      entryType: 'cancerType',
+      system: 'http://snomed.info/sct',
+    } as CodedValueType;
+    const missingCategory = {
+      cancerType: [CancerType.BRAIN],
+      code: 'code',
+      display: 'display',
+      entryType: 'cancerType',
+      system: 'http://snomed.info/sct',
+    } as CodedValueType;
+    expect(isEqualCodedValueType(missingCancerType, missingCategory)).toBe(false);
+    expect(isEqualCodedValueType(missingCategory, missingCancerType)).toBe(false);
+    expect(isEqualCodedValueType(missingCancerType, missingCancerType)).toBe(true);
+    expect(isEqualCodedValueType(missingCategory, missingCategory)).toBe(true);
   });
 });

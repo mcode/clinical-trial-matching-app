@@ -18,8 +18,8 @@ describe('<SidebarAccordion />', () => {
     render(<Component />);
 
     expect(screen.getByText(/provider information/i)).toBeInTheDocument();
-    expect(screen.getByTestId('PersonIcon'));
+    expect(screen.getByTestId('PersonIcon')).toBeInTheDocument();
     expect(screen.getByText(/dr\. leonard mccoy/i)).toBeInTheDocument();
-    expect(screen.getByTestId('ExpandMoreIcon'));
+    expect(screen.getByTestId('ExpandMoreIcon')).toBeInTheDocument();
   });
 });

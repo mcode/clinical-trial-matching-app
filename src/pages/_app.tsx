@@ -8,12 +8,12 @@ import '@fontsource/open-sans/700.css';
 import '@fontsource/open-sans/800.css';
 import { CircularProgress, CssBaseline, Stack, ThemeProvider, Typography } from '@mui/material';
 import type { AppProps } from 'next/app';
-import { ReactElement, useCallback, useEffect, useState } from 'react';
+import { ReactElement, useCallback, useEffect, useRef, useState } from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { Hydrate } from 'react-query/hydration';
+import { DehydratedState, Hydrate } from 'react-query/hydration';
 
-const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
+const App = ({ Component, pageProps, router }: AppProps<{ dehydratedState: DehydratedState }>): ReactElement => {
   const [loading, setLoading] = useState(false);
   const handleStart = useCallback(() => setLoading(true), []);
   const handleStop = useCallback(() => setLoading(false), []);
@@ -30,19 +30,19 @@ const App = ({ Component, pageProps, router }: AppProps): ReactElement => {
     };
   }, [handleStop, handleStart, router.events]);
 
-  const [queryClient] = useState(
-    () =>
-      new QueryClient({
-        defaultOptions: {
-          queries: {
-            refetchOnWindowFocus: false,
-          },
+  const queryClient = useRef<QueryClient>(null);
+  if (queryClient.current == null) {
+    queryClient.current = new QueryClient({
+      defaultOptions: {
+        queries: {
+          refetchOnWindowFocus: false,
         },
-      })
-  );
+      },
+    });
+  }
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <QueryClientProvider client={queryClient.current}>
       <Hydrate state={pageProps.dehydratedState}>
         <CacheProvider value={emotionCache}>
           <ThemeProvider theme={theme}>
