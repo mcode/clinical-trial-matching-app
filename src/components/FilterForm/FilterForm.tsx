@@ -28,6 +28,17 @@ export const formDataToFilterQuery = ({
   studyType: Object.keys(studyType).filter(option => studyType[option]),
 });
 
+// Change defaultValues into a string query
+export const defaultValuesToQuery = (defaultValues: Partial<FilterFormValuesType>) => {
+  const originalValues = {};
+
+  Object.keys(defaultValues).forEach(key => {
+    originalValues['pre_' + key] = defaultValues[key];
+  });
+
+  return originalValues;
+};
+
 const FilterForm = ({
   defaultValues,
   blankValues,
@@ -41,10 +52,12 @@ const FilterForm = ({
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
   const { handleSubmit, control, reset } = useForm<FilterFormValuesType>({ defaultValues });
 
+  const originalValues = defaultValuesToQuery(defaultValues);
+
   const onSubmit = (data: FilterFormValuesType) =>
     router.push({
       pathname: '/results',
-      query: { ...fullSearchParams, ...formDataToFilterQuery(data as FilterFormValuesType) },
+      query: { ...fullSearchParams, ...formDataToFilterQuery(data as FilterFormValuesType), ...originalValues },
     });
 
   return (
