@@ -24,22 +24,22 @@ export type SearchParameters = {
 };
 
 export type OriginalSearchParameters = {
-  pre_matchingServices: string[];
-  pre_zipcode: string;
-  pre_travelDistance: string;
-  pre_age: string;
+  pre_matchingServices?: string[];
+  pre_zipcode?: string;
+  pre_travelDistance?: string;
+  pre_age?: string;
   // This is the "administrative gender" of the patient.
-  pre_gender: string;
-  pre_cancerType: string;
-  pre_cancerSubtype: string;
-  pre_metastasis: string;
-  pre_stage: string;
-  pre_ecogScore: string;
-  pre_karnofskyScore: string;
-  pre_biomarkers: string;
-  pre_surgery: string;
-  pre_medications: string;
-  pre_radiation: string;
+  pre_gender?: string;
+  pre_cancerType?: string;
+  pre_cancerSubtype?: string;
+  pre_metastasis?: string;
+  pre_stage?: string;
+  pre_ecogScore?: string;
+  pre_karnofskyScore?: string;
+  pre_biomarkers?: string;
+  pre_surgery?: string;
+  pre_medications?: string;
+  pre_radiation?: string;
 };
 
 export type FilterParameters = {
