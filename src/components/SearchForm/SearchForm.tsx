@@ -41,15 +41,14 @@ export type SearchFormProps = {
 };
 
 // Change defaultValues into a string query
-export const defaultValuesToQuery = (
-  defaultValues) => {
-    const originalValues = {};
-  
-    Object.keys(defaultValues).forEach((key) => {
-      originalValues["pre_" + key] = defaultValues[key];
-    })
-  
-    return originalValues;
+export const defaultValuesToQuery = defaultValues => {
+  const originalValues = {};
+
+  Object.keys(defaultValues).forEach(key => {
+    originalValues['pre_' + key] = defaultValues[key];
+  });
+
+  return originalValues;
 };
 
 export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParameters => ({
@@ -64,7 +63,9 @@ export const formDataToSearchQuery = (data: SearchFormValuesType): SearchParamet
   medications: data.medications ? JSON.stringify(extractCodes(data.medications)) : undefined,
   surgery: data.surgery ? JSON.stringify(extractCodes(data.surgery)) : undefined,
   radiation: data.radiation ? JSON.stringify(extractCodes(data.radiation)) : undefined,
-  matchingServices: data.matchingServices? Object.keys(data.matchingServices).filter(service => data.matchingServices[service]) : undefined,
+  matchingServices: data.matchingServices
+    ? Object.keys(data.matchingServices).filter(service => data.matchingServices[service])
+    : undefined,
   karnofskyScore: data.karnofskyScore ? JSON.stringify(data.karnofskyScore) : undefined,
   ecogScore: data.ecogScore ? JSON.stringify(data.ecogScore) : undefined,
 });

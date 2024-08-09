@@ -342,7 +342,6 @@ const rehydrateCodes = (
   key: string,
   converter: (values: string[]) => CodedValueType[]
 ): void => {
-  console.log("Query", query);
   const codeJson = query[key];
   if (typeof codeJson === 'string') {
     try {
