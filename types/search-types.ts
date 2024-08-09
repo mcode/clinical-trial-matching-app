@@ -1,4 +1,8 @@
-export type FullSearchParameters = SearchParameters & SortingParameters & FilterParameters & PaginationParameters & OriginalSearchParameters;
+export type FullSearchParameters = SearchParameters &
+  SortingParameters &
+  FilterParameters &
+  PaginationParameters &
+  OriginalSearchParameters;
 
 export type SearchParameters = {
   matchingServices: string[];
@@ -36,7 +40,7 @@ export type OriginalSearchParameters = {
   pre_surgery: string;
   pre_medications: string;
   pre_radiation: string;
-}
+};
 
 export type FilterParameters = {
   recruitmentStatus: string[];

@@ -33,7 +33,7 @@ const {
  * @param res Returns { results, errors }
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { searchParams} = JSON.parse(req.body);
+  const { searchParams } = JSON.parse(req.body);
 
   const mainCancerType: string = JSON.parse(searchParams.cancerType).cancerType[0];
 

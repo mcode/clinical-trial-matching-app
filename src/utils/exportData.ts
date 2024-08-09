@@ -154,7 +154,6 @@ const convertToSpreadsheetRow = (details: StudyDetail[], userId: string): Record
 };
 
 export const exportCsvStringData = (patientSearch: FullSearchParameters, data: StudyDetailProps[]): string => {
-  console.log("Patient Search", patientSearch);
   const patientElements = convertPatientInfoToRedCapRow(patientSearch);
   const bb_subject_id = uuidv4();
   const entries = data.map(entry => {
@@ -225,7 +224,7 @@ const convertResultsToRedCapRow = (data: StudyDetailProps) => {
     pre_surgery: '',
     post_surgery: '',
     pre_medication: '',
-    post_medication: ''
+    post_medication: '',
   };
 };
 
@@ -234,13 +233,23 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
   const ecogScore = patientSearch.ecogScore ? JSON.parse(patientSearch.ecogScore)?.valueInteger : '';
   const pre_ecogScore = patientSearch.pre_ecogScore ? JSON.parse(patientSearch.pre_ecogScore)?.valueInteger : '';
   const karnofskyScore = patientSearch.karnofskyScore ? JSON.parse(patientSearch.karnofskyScore)?.valueInteger : '';
-  const pre_karnofskyScore = patientSearch.pre_karnofskyScore ? JSON.parse(patientSearch.pre_karnofskyScore)?.valueInteger : '';
+  const pre_karnofskyScore = patientSearch.pre_karnofskyScore
+    ? JSON.parse(patientSearch.pre_karnofskyScore)?.valueInteger
+    : '';
   const cancerType: string = patientSearch.cancerType ? JSON.parse(patientSearch.cancerType)?.cancerType?.[0] : '';
-  const pre_cancerType: string = patientSearch.pre_cancerType ? JSON.parse(patientSearch.pre_cancerType)?.cancerType?.[0] : '';
-  const cancerSubtype: string = patientSearch.cancerSubtype ? JSON.parse(patientSearch.cancerSubtype)?.category?.[0] : '';
-  const pre_cancerSubtype: string = patientSearch.pre_cancerSubtype ? JSON.parse(patientSearch.pre_cancerSubtype)?.category?.[0] : '';
-  const metastasis:string = patientSearch.metastasis ? JSON.parse(patientSearch.metastasis)?.category?.[0] : '';
-  const pre_metastasis:string = patientSearch.pre_metastasis ? JSON.parse(patientSearch.pre_metastasis)?.category?.[0] : '';
+  const pre_cancerType: string = patientSearch.pre_cancerType
+    ? JSON.parse(patientSearch.pre_cancerType)?.cancerType?.[0]
+    : '';
+  const cancerSubtype: string = patientSearch.cancerSubtype
+    ? JSON.parse(patientSearch.cancerSubtype)?.category?.[0]
+    : '';
+  const pre_cancerSubtype: string = patientSearch.pre_cancerSubtype
+    ? JSON.parse(patientSearch.pre_cancerSubtype)?.category?.[0]
+    : '';
+  const metastasis: string = patientSearch.metastasis ? JSON.parse(patientSearch.metastasis)?.category?.[0] : '';
+  const pre_metastasis: string = patientSearch.pre_metastasis
+    ? JSON.parse(patientSearch.pre_metastasis)?.category?.[0]
+    : '';
   const stage: string = patientSearch.stage ? JSON.parse(patientSearch.stage)?.category?.[0] : '';
   const pre_stage: string = patientSearch.pre_stage ? JSON.parse(patientSearch.pre_stage)?.category?.[0] : '';
 
@@ -250,7 +259,8 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
           const qualifier =
             biomarker.qualifier?.code == '10828004' ? '+' : biomarker.qualifier?.code === '260385009' ? '-' : '';
           return biomarker.display + qualifier;
-        }).sort()
+        })
+        .sort()
     : [];
 
   const pre_biomarkers: string[] = patientSearch.pre_biomarkers
@@ -259,42 +269,54 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
           const qualifier =
             biomarker.qualifier?.code == '10828004' ? '+' : biomarker.qualifier?.code === '260385009' ? '-' : '';
           return biomarker.display + qualifier;
-        }).sort()
+        })
+        .sort()
     : [];
 
-    // Cut off length into 10
-    biomarkers.length = 10;
-    pre_biomarkers.length = 10;
+  // Cut off length into 10
+  biomarkers.length = 10;
+  pre_biomarkers.length = 10;
 
-
-    const pre_radiation: string = patientSearch.pre_radiation
+  const pre_radiation: string = patientSearch.pre_radiation
     ? JSON.parse(patientSearch.pre_radiation)
-        .map(radiation => radiation.display).sort().join(', ')
+        .map(radiation => radiation.display)
+        .sort()
+        .join(', ')
     : '';
 
-    const radiation: string = patientSearch.radiation
+  const radiation: string = patientSearch.radiation
     ? JSON.parse(patientSearch.radiation)
-        .map(radiation => radiation.display).sort().join(', ')
+        .map(radiation => radiation.display)
+        .sort()
+        .join(', ')
     : '';
 
-    const pre_medications: string = patientSearch.pre_medications
+  const pre_medications: string = patientSearch.pre_medications
     ? JSON.parse(patientSearch.pre_medications)
-        .map(medication => medication.display).sort().join(', ')
+        .map(medication => medication.display)
+        .sort()
+        .join(', ')
     : '';
 
-    const medications: string = patientSearch.medications
+  const medications: string = patientSearch.medications
     ? JSON.parse(patientSearch.medications)
-        .map(medication => medication.display).sort().join(', ')
+        .map(medication => medication.display)
+        .sort()
+        .join(', ')
     : '';
 
-    const pre_surgery: string = patientSearch.pre_surgery
+  const pre_surgery: string = patientSearch.pre_surgery
     ? JSON.parse(patientSearch.pre_surgery)
-        .map(surgery => surgery.display).sort().join(', ')
+        .map(surgery => surgery.display)
+        .sort()
+        .join(', ')
     : '';
 
-    const surgery: string = patientSearch.surgery
+  const surgery: string = patientSearch.surgery
     ? JSON.parse(patientSearch.surgery)
-        .map(surgery => surgery.display).sort().join(', ')
+        .map(surgery => surgery.display)
+        .sort()
+        .join(', ')
     : '';
 
   return {
