@@ -84,14 +84,14 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUse
   };
 
   // Change defaultValues into a string query
-  const defaultValuesToQuery = (defaultValues):OriginalSearchParameters => {
-  const originalValues = {};
+  const defaultValuesToQuery = (defaultValues): OriginalSearchParameters => {
+    const originalValues = {};
 
-  Object.keys(defaultValues).forEach(key => {
-    originalValues['pre_' + key] = defaultValues[key];
-  });
+    Object.keys(defaultValues).forEach(key => {
+      originalValues['pre_' + key] = defaultValues[key];
+    });
 
-  return originalValues;
+    return originalValues;
   };
 
   const fullSearchParams: FullSearchParameters = {
