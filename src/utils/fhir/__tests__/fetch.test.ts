@@ -1,4 +1,5 @@
-import { compareDates, createQueryConfig, parseFHIRDate } from '../fetch';
+import { createMockFhirClient, createRequestSpy } from '@/__mocks__/fhirClient';
+import { compareDates, createQueryConfig, fetchBundles, parseFHIRDate } from '../fetch';
 
 describe('compareDates()', () => {
   it('compares undefined after other dates', () => {
@@ -43,5 +44,20 @@ describe('createQueryConfig()', () => {
   it('returns the configured value', () => {
     process.env['FHIR_QUERY_TESTSCRIPT'] = 'category=test&other=thing';
     expect(createQueryConfig('TestScript')).toEqual({ category: 'test', other: 'thing' });
+  });
+});
+
+describe('fetchBundles()', () => {
+  it('adds parameters to the query', async () => {
+    const requestSpy = createRequestSpy();
+    const fhirClient = createMockFhirClient({ request: requestSpy });
+    await fetchBundles(fhirClient, 'TestScript', { test: 'parameters' });
+    expect(requestSpy).toHaveBeenCalledWith('TestScript?patient=test-patient&test=parameters', { pageLimit: 0 });
+  });
+  it('adds nothing to the query if no parameters are given', async () => {
+    const requestSpy = createRequestSpy();
+    const fhirClient = createMockFhirClient({ request: requestSpy });
+    await fetchBundles(fhirClient, 'TestScript');
+    expect(requestSpy).toHaveBeenCalledWith('TestScript?patient=test-patient', { pageLimit: 0 });
   });
 });
