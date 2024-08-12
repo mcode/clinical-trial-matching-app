@@ -18,7 +18,7 @@ import {
 import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
 import type { PatientData, ProgressMonitor } from '../fetchPatientData';
-import { fetchMedications, fetchResources, observationHasCode, sortByDate } from '../fhir/fetch';
+import { createQueryConfig, fetchMedications, fetchResources, observationHasCode, sortByDate } from '../fhir/fetch';
 import { Condition, Medication, Observation, Procedure } from 'fhir/r4';
 
 export type FetchTaskType = [
@@ -46,10 +46,10 @@ export const fetchPatientData = async (fhirClient: Client, progress: ProgressMon
   const tasks: FetchTaskPromiseType = [
     fhirClient.patient.read(),
     fhirClient.user.read(),
-    fetchResources<Condition>(fhirClient, 'Condition'),
-    fetchResources<Observation>(fhirClient, 'Observation', { category: 'vital-signs,social-history,laboratory'}),
-    fetchResources<Procedure>(fhirClient, 'Procedure'),
-    fetchMedications(fhirClient),
+    fetchResources<Condition>(fhirClient, 'Condition', createQueryConfig('Condition')),
+    fetchResources<Observation>(fhirClient, 'Observation', createQueryConfig('Observation')),
+    fetchResources<Procedure>(fhirClient, 'Procedure', createQueryConfig('Procedure')),
+    fetchMedications(fhirClient, createQueryConfig('MedicationRequest')),
   ];
   progress('Fetching patient data...', 0, tasks.length);
 
