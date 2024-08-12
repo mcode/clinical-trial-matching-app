@@ -86,7 +86,10 @@ export const fetchResources = async <T extends FhirResource>(
  * Retrieves all known medications from the current patient.
  * @param fhirClient the client to retrieve medications from
  */
-export const fetchMedications = async (fhirClient: Client, parameters?: Record<string, string>): Promise<Medication[]> => {
+export const fetchMedications = async (
+  fhirClient: Client,
+  parameters?: Record<string, string>
+): Promise<Medication[]> => {
   const medications: Promise<Medication>[] = [];
   for (const medRequest of await fetchResources<MedicationRequest>(fhirClient, 'MedicationRequest', parameters)) {
     // See if this requires the medication be loaded separately

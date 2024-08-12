@@ -82,10 +82,13 @@ describe('fetchPatientData', () => {
       medications: [],
     });
     expect(requestSpy).toHaveBeenCalledTimes(4);
-    expect(requestSpy.mock.calls[0]).toEqual(['Condition?patient=test-patient&type=condition', {pageLimit: 0}]);
-    expect(requestSpy.mock.calls[1]).toEqual(['Observation?patient=test-patient&type=observation', {pageLimit: 0}]);
-    expect(requestSpy.mock.calls[2]).toEqual(['Procedure?patient=test-patient&type=procedure', {pageLimit: 0}]);
-    expect(requestSpy.mock.calls[3]).toEqual(['MedicationRequest?patient=test-patient&type=medicationrequest', {pageLimit: 0}]);
+    expect(requestSpy.mock.calls[0]).toEqual(['Condition?patient=test-patient&type=condition', { pageLimit: 0 }]);
+    expect(requestSpy.mock.calls[1]).toEqual(['Observation?patient=test-patient&type=observation', { pageLimit: 0 }]);
+    expect(requestSpy.mock.calls[2]).toEqual(['Procedure?patient=test-patient&type=procedure', { pageLimit: 0 }]);
+    expect(requestSpy.mock.calls[3]).toEqual([
+      'MedicationRequest?patient=test-patient&type=medicationrequest',
+      { pageLimit: 0 },
+    ]);
   });
 });
 
