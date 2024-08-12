@@ -1,7 +1,6 @@
-import { Bundle } from 'fhir/r4';
 import { fetchPatientData, buildPatientData } from '../fetchPatientData';
-import type Client from 'fhirclient/lib/Client';
 import { fhirclient } from 'fhirclient/lib/types';
+import { createMockFhirClient, createRequestSpy } from '@/__mocks__/fhirClient';
 
 const testPatient: fhirclient.FHIR.Patient = {
   resourceType: 'Patient',
@@ -24,34 +23,8 @@ describe('fetchPatientData', () => {
     process.env['FHIR_QUERY_PROCEDURE'] = 'type=procedure';
     process.env['FHIR_QUERY_MEDICATIONREQUEST'] = 'type=medicationrequest';
     // Spy for requests
-    const requestSpy = jest.fn(async (query: string, options?: fhirclient.FhirOptions): Promise<Bundle | Bundle[]> => {
-      // For now, always return an empty bundle (or an array of a single empty bundle)
-      if ('pageLimit' in options) {
-        return [
-          {
-            resourceType: 'Bundle',
-            type: 'searchset',
-            entry: [],
-          },
-        ];
-      }
-      return {
-        resourceType: 'Bundle',
-        type: 'searchset',
-        entry: [],
-      };
-    });
-    // This is a mock client, it's intentionally missing things the real one would have
-    const fhirClient = {
-      patient: {
-        read: () => Promise.resolve(testPatient),
-      },
-      user: {
-        read: () => Promise.resolve(testUser),
-      },
-      getPatientId: () => 'test-patient',
-      request: requestSpy,
-    } as unknown as Client;
+    const requestSpy = createRequestSpy();
+    const fhirClient = createMockFhirClient({ request: requestSpy });
     const patientData = await fetchPatientData(fhirClient, () => {
       /* no-op */
     });
