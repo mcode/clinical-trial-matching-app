@@ -1,4 +1,4 @@
-import { parseFHIRDate, compareDates } from '../fetch';
+import { compareDates, createQueryConfig, parseFHIRDate } from '../fetch';
 
 describe('compareDates()', () => {
   it('compares undefined after other dates', () => {
@@ -31,5 +31,17 @@ describe('parseFHIRDate()', () => {
   });
   it('parses a date with an explicit timezone', () => {
     expect(parseFHIRDate('2004-03-15T15:23:49-04:00')).toEqual(Date.UTC(2004, 2, 15, 19, 23, 49));
+  });
+});
+
+describe('createQueryConfig()', () => {
+  it('returns undefined for an unset entry', () => {
+    delete process.env['FHIR_QUERY_TESTSCRIPT'];
+    expect(createQueryConfig('TestScript')).toBeUndefined();
+  });
+
+  it('returns the configured value', () => {
+    process.env['FHIR_QUERY_TESTSCRIPT'] = 'category=test&other=thing';
+    expect(createQueryConfig('TestScript')).toEqual({ category: 'test', other: 'thing' });
   });
 });

@@ -19,6 +19,29 @@ const testUser = testPatient;
 
 describe('fetchPatientData', () => {
   it('fetches data', async () => {
+    // "Configure" test data
+    process.env['FHIR_QUERY_CONDITION'] = 'type=condition';
+    process.env['FHIR_QUERY_OBSERVATION'] = 'type=observation';
+    process.env['FHIR_QUERY_PROCEDURE'] = 'type=procedure';
+    process.env['FHIR_QUERY_MEDICATIONREQUEST'] = 'type=medicationrequest';
+    // Spy for requests
+    const requestSpy = jest.fn(async (query: string, options?: fhirclient.FhirOptions): Promise<Bundle | Bundle[]> => {
+      // For now, always return an empty bundle (or an array of a single empty bundle)
+      if ('pageLimit' in options) {
+        return [
+          {
+            resourceType: 'Bundle',
+            type: 'searchset',
+            entry: [],
+          },
+        ];
+      }
+      return {
+        resourceType: 'Bundle',
+        type: 'searchset',
+        entry: [],
+      };
+    });
     // This is a mock client, it's intentionally missing things the real one would have
     const fhirClient = {
       patient: {
@@ -28,23 +51,7 @@ describe('fetchPatientData', () => {
         read: () => Promise.resolve(testUser),
       },
       getPatientId: () => 'test-patient',
-      request: async (query: string, options?: fhirclient.FhirOptions): Promise<Bundle | Bundle[]> => {
-        // For now, always return an empty bundle (or an array of a single empty bundle)
-        if ('pageLimit' in options) {
-          return [
-            {
-              resourceType: 'Bundle',
-              type: 'searchset',
-              entry: [],
-            },
-          ];
-        }
-        return {
-          resourceType: 'Bundle',
-          type: 'searchset',
-          entry: [],
-        };
-      },
+      request: requestSpy,
     } as unknown as Client;
     const patientData = await fetchPatientData(fhirClient, () => {
       /* no-op */
@@ -78,6 +85,11 @@ describe('fetchPatientData', () => {
       surgery: [],
       medications: [],
     });
+    expect(requestSpy).toHaveBeenCalledTimes(4);
+    expect(requestSpy.mock.calls[0]).toEqual(['Condition?patient=test-patient&type=condition', {pageLimit: 0}]);
+    expect(requestSpy.mock.calls[1]).toEqual(['Observation?patient=test-patient&type=observation', {pageLimit: 0}]);
+    expect(requestSpy.mock.calls[2]).toEqual(['Procedure?patient=test-patient&type=procedure', {pageLimit: 0}]);
+    expect(requestSpy.mock.calls[3]).toEqual(['MedicationRequest?patient=test-patient&type=medicationrequest', {pageLimit: 0}]);
   });
 });
 
