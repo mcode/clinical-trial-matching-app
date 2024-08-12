@@ -1,0 +1,9 @@
+name: clinical-trial-matching
+
+services:
+  app:
+    hostname: app
+    build:
+      dockerfile: docker/app.Dockerfile
+    ports:
+      - "3200:3200"

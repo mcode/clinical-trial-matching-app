@@ -41,8 +41,14 @@ app
       console.log('Running in production mode, using connect-sqlite3 for session store');
       const SQLiteStore = require('connect-sqlite3')(session);
       sessionOptions.store = new SQLiteStore({
-        db: 'sessions.db',
+        db: process.env.SESSION_FILE ?? 'sessions.db',
+        dir: process.env.SESSION_DIR ?? '.',
       });
+      if (!serverRuntimeConfig.sessionSecretKey) {
+        console.error(
+          'Warning: SESSION_SECRET_KEY was not set. Please set this value in either .env.local or .env.production.local'
+        );
+      }
     }
     server.use(session(sessionOptions));
 
@@ -50,9 +56,28 @@ app
       return handle(req, res);
     });
 
-    server.listen(port, err => {
-      if (err) throw err;
-      console.log(`> Ready on http://localhost:${port}`);
+    console.log('Starting server...');
+    const httpServer = server.listen(port, process.env.HOSTNAME, () => {
+      try {
+        console.log('Server ready.');
+        const address = httpServer.address();
+        console.log(
+          `> Ready on ${typeof address === 'object' ? `http://${address.address}:${address.port}` : address}`
+        );
+      } catch (ex) {
+        console.error('Error finding server address:');
+        console.error(ex);
+        console.error('Server may or may not be running successfully.');
+      }
+    });
+
+    httpServer.on('error', err => {
+      console.error('An error occurred:');
+      console.error(err);
     });
   })
-  .catch(() => process.exit(1));
+  .catch(e => {
+    console.error('Server failed to start.');
+    console.error(e);
+    process.exitCode = 1;
+  });
