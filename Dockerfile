@@ -1,27 +1,42 @@
-# Base image - installs dependencies
+# syntax=docker/dockerfile:1
+
+# Base image - allows the Node version to be set once
 FROM node:20 AS base
+
+# Build stage
+FROM base AS deps
 WORKDIR /ctm
 COPY package.json package-lock.json ./
 RUN npm ci
-
-# Build stage
-FROM base AS builder
 COPY . .
+
+# Target "dev" to run the system in dev mode, rather than production mode.
+FROM deps AS dev
+EXPOSE 3200
+CMD [ "node", "server.js" ]
+
+FROM deps AS builder
 RUN npm run build
 
 # Runner stage
-FROM base as runner
+FROM base AS runner
 WORKDIR /ctm
 ENV NODE_ENV production
 # Disable Next telemetry for production
 ENV NEXT_TELEMETRY_DISABLED 1
 
+COPY package.json package-lock.json ./
+# Because this is a local copy, we can modify it. Remove the prepare script -
+# otherwise NPM will attempt to run it, even in production mode, which appears
+# to be a bug that will never be fixed
+# (see https://github.com/npm/cli/issues/4027)
+RUN npm pkg delete scripts.prepare
+RUN npm ci
+
 # Create a non-root user to run as
 RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
-COPY package.json package-lock.json ./
-RUN npm install --ignore-scripts
 COPY ./public/ ./public/
 # The local* thing is effectively a way of saying "if exists"
 COPY ./.env ./.env.local* ./.env.production.local* ./next.config.js ./server.js ./
@@ -39,6 +54,5 @@ USER nextjs
 EXPOSE 3200
 
 ENV SESSION_DIR "/ctm/sessions"
-ENV HOSTNAME "0.0.0.0"
 
 CMD [ "node", "server.js" ]
