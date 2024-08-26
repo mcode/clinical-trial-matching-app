@@ -366,6 +366,13 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const queryClient = new QueryClient();
   const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
 
+  // "Rehydrate" codes
+  rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
+  rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
+  rehydrateCodes(query, 'medications', convertCodesToMedications);
+  rehydrateCodes(query, 'radiation', convertCodesToRadiations);
+  rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
+
   if (query['fhirless'] !== undefined) {
     // In this case, the results are "fhirless" and we return a default set of properties
     return {
@@ -394,13 +401,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
-
-  // "Rehydrate" codes
-  rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
-  rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
-  rehydrateCodes(query, 'medications', convertCodesToMedications);
-  rehydrateCodes(query, 'radiation', convertCodesToRadiations);
-  rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
 
   return {
     props: {
