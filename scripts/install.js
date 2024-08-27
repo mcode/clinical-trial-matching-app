@@ -42,6 +42,15 @@ function exec(command, args, options) {
   }
   return new Promise((resolve, reject) => {
     try {
+      // Enable running .CMD files. (Arguments should already be sanitized if
+      // they're in this script...)
+      if (command.toLowerCase().endsWith('.cmd')) {
+        if (options) {
+          options.shell = true;
+        } else {
+          options = { shell: true };
+        }
+      }
       const childStdout = options.capture ? [] : null;
       const child = child_process.spawn(command, args, options);
       let rejected = false;
