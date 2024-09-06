@@ -5,10 +5,11 @@
 - [Node.js](https://nodejs.org/en/download/) (LTS edition, currently 20.x)
 - At least one of the following matching services:
   - [BreastCancerTrials](https://github.com/mcode/clinical-trial-matching-service-breastcancertrials.org)
-  - [TrialScope](https://github.com/mcode/clinical-trial-matching-service-trialscope)
+  - [Carebox](https://github.com/mcode/clinical-trial-matching-service-carebox)
+  - [LUNGevity](https://github.com/mcode/clinical-trial-matching-service-lungevity)
   - [TrialJectory](https://github.com/mcode/clinical-trial-matching-service-trialjectory)
 
-## Testing with a launcher
+## Testing with a SMART on FHIR launcher
 
 1. Run `npm install` to install the necessary packages.
 2. Run `npm start` to start the application.
@@ -27,8 +28,6 @@ Present on the application's search page is the option of several matching servi
 npm install
 npm start
 ```
-
-NOTE: TrialScope and TrialJectory both run on port `3000` so thus you will not be able to run them at the same time. This is because TrialScope will be phased out soon.
 
 ## Uploading test patients to the public SMART sandbox
 
@@ -62,10 +61,3 @@ Some issues can be automatically corrected with:
 ```
 npm run lint:js --fix
 ```
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
