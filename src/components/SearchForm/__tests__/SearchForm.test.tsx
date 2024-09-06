@@ -63,7 +63,7 @@ describe('<SearchForm />', () => {
     expect(screen.getByTestId('stage')).toBeInTheDocument();
     expect(screen.getByTestId('ecogScore')).toBeInTheDocument();
     expect(screen.getByTestId('karnofskyScore')).toBeInTheDocument();
-    expect(screen.getByTestId('biomarkers')).toBeInTheDocument();
+    expect(screen.getByTestId('biomarkers †')).toBeInTheDocument();
     expect(screen.getByTestId('radiation')).toBeInTheDocument();
     expect(screen.getByTestId('surgery')).toBeInTheDocument();
     expect(screen.getByTestId('medications')).toBeInTheDocument();
