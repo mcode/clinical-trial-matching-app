@@ -90,7 +90,7 @@ export const AgeTextField = ({
   field,
 }: {
   field: ControllerRenderProps<SearchFormValuesType, 'age'>;
-}): ReactElement => <TextField data-testid="age" fullWidth label="Age ⓘ" type="number" variant="filled" {...field} />;
+}): ReactElement => <TextField data-testid="age" fullWidth label="Age †" type="number" variant="filled" {...field} />;
 
 export const CancerTypeAutocomplete = ({
   field,
@@ -114,7 +114,7 @@ export const CancerTypeAutocomplete = ({
       renderInput={params => (
         <TextField
           variant="filled"
-          label="Cancer Diagnosis ⓘ"
+          label="Cancer Diagnosis †"
           placeholder=""
           required
           error={field.value === null}
@@ -146,7 +146,7 @@ export const CancerSubtypeAutocomplete = ({
       renderInput={params => (
         <TextField
           variant="filled"
-          label="Histology"
+          label="Histology †"
           placeholder=""
           error={!subtypeIsValid()}
           helperText={!subtypeIsValid() ? 'Invalid histology.' : undefined}
@@ -205,7 +205,7 @@ export const DiseaseStatusAutocomplete = ({
       onChange={(_, value) => field.onChange(value)}
       options={options}
       getOptionLabel={(option: CodedValueType) => option.display}
-      renderInput={params => <TextField variant="filled" label="Disease Status ⓘ" placeholder="" {...params} />}
+      renderInput={params => <TextField variant="filled" label="Disease Status †" placeholder="" {...params} />}
       isOptionEqualToValue={areCodedValueTypesEqual}
     />
   );
@@ -226,7 +226,7 @@ export const PrimaryTumorStageAutocomplete = ({
       options={options}
       getOptionLabel={(option: CodedValueType) => option.display}
       renderInput={params => (
-        <TextField variant="filled" label="Primary Tumor (T) Stage ⓘ" placeholder="" {...params} />
+        <TextField variant="filled" label="Primary Tumor (T) Stage †" placeholder="" {...params} />
       )}
       isOptionEqualToValue={areCodedValueTypesEqual}
       groupBy={getJoinedCategories}
@@ -249,7 +249,7 @@ export const NodalDiseaseStageAutocomplete = ({
       options={options}
       getOptionLabel={(option: CodedValueType) => option.display}
       renderInput={params => (
-        <TextField variant="filled" label="Nodal Disease (N) Stage ⓘ" placeholder="" {...params} />
+        <TextField variant="filled" label="Nodal Disease (N) Stage †" placeholder="" {...params} />
       )}
       isOptionEqualToValue={areCodedValueTypesEqual}
       groupBy={getJoinedCategories}
@@ -271,7 +271,7 @@ export const MetastasesStageAutocomplete = ({
       onChange={(_, value) => field.onChange(value)}
       options={options}
       getOptionLabel={(option: CodedValueType) => option.display}
-      renderInput={params => <TextField variant="filled" label="Metastases (M) Stage ⓘ" placeholder="" {...params} />}
+      renderInput={params => <TextField variant="filled" label="Metastases (M) Stage †" placeholder="" {...params} />}
       isOptionEqualToValue={areCodedValueTypesEqual}
       groupBy={getJoinedCategories}
     />
@@ -332,7 +332,7 @@ export const BiomarkersAutocomplete = ({
   return (
     <AutocompleteMulti
       field={field}
-      label="biomarkers"
+      label="biomarkers †"
       options={biomarkers}
       getOptionLabel={(option: Biomarker) => {
         const { display, qualifier } = { ...option };
