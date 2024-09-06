@@ -55,6 +55,8 @@ const {
 type ResultsPageProps = {
   patient: Patient;
   user: User;
+  // FIXME: The following is *really* a Partial<FullSearchParams> when coming
+  // from getServerSideProps
   searchParams: FullSearchParameters;
   userId: string;
 };
@@ -354,7 +356,7 @@ const rehydrateCodes = (
   }
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<ResultsPageProps> = async context => {
   const { req, res, query } = context;
   const queryClient = new QueryClient();
   const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
@@ -376,10 +378,16 @@ export const getServerSideProps: GetServerSideProps = async context => {
           // Gender can't currently be user-set
           gender: 'male',
           // Age can't currently be user-set
-          age: 35,
+          age: '35',
           zipcode: null,
         },
-        searchParams: query,
+        user: {
+          id: 'example',
+          name: 'example',
+          record: null,
+        },
+        // FIXME: Remove "as FullSearchParameters" when possible
+        searchParams: query as FullSearchParameters,
         dehydratedState: dehydrate(queryClient),
         userId: userId,
       },
@@ -399,7 +407,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
-      searchParams: query,
+      // FIXME: Remove "as FullSearchParameters" when possible
+      searchParams: query as FullSearchParameters,
       dehydratedState: dehydrate(queryClient),
       userId: userId,
     },

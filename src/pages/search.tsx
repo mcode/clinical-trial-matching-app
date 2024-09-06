@@ -91,7 +91,7 @@ const SearchPage = ({
 
 export default SearchPage;
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<SearchPageProps> = async context => {
   const { req, res } = context;
 
   // See if this has been told to ignore the FHIR client
@@ -106,7 +106,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
           // Gender can't currently be user-set
           gender: 'male',
           // Age can't currently be user-set
-          age: 35,
+          age: '35',
           zipcode: null,
         },
         user: {
@@ -120,6 +120,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
         radiation: [],
         surgery: [],
         medications: [],
+        metastasis: [],
+        biomarkers: [],
       },
     };
   }

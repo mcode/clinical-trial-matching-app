@@ -215,7 +215,7 @@ export function getCancerRelatedMedicationStatement({
   medication: CodedValueType;
   patientId: string;
 }): MedicationStatement | null {
-  const { code, display, system } = { ...medication };
+  const { code, display, system } = medication;
   if (!!code && !!display && !!system) {
     return {
       resourceType: 'MedicationStatement',
