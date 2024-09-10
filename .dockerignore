@@ -1,0 +1,10 @@
+# Do not include local node_modules
+node_modules/
+# Ignore other repository stuff that's not needed
+.github
+.husky
+.next
+.swc
+.vscode
+coverage
+docker

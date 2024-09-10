@@ -1,0 +1,18 @@
+name: clinical-trial-matching
+
+services:
+  app:
+    hostname: app
+    build:
+      context: .
+      # To run the server in dev mode, target dev
+      # target: dev
+    ports:
+      - "3200:3200"
+    environment:
+      MATCHING_SERVICE_BREASTCANCERTRIALS_URL: http://bct-wrapper:3000
+    depends_on:
+      - bct
+  bct:
+    hostname: bct-wrapper
+    build: https://github.com/mcode/clinical-trial-matching-service-breastcancertrials.org.git#containerize
