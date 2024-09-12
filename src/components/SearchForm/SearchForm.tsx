@@ -391,6 +391,10 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
             />
           </Grid>
 
+          <Grid item xs={8} lg={fullWidth ? 8 : 4} xl={fullWidth ? 8 : 2}>
+            † Indicates EOM clinical data element
+          </Grid>
+
           <Grid item xs={8}>
             <Button
               sx={{
