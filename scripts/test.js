@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict';
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
@@ -229,12 +230,14 @@ const testBundleString = JSON.stringify(testBundle, null, 2);
 let wrappers = [];
 let protocol = 'http';
 let hostname = 'localhost';
+// Port defaults to undefined, AKA, protocol default
+let port = undefined;
 
 // Parse command line arguments
 
 for (let idx = 2; idx < process.argv.length; idx++) {
   const arg = process.argv[idx];
-  if (arg == '--protocol' || arg == '--hostname' || arg == '--wrappers') {
+  if (arg == '--protocol' || arg == '--hostname' || arg == '--wrappers' || arg == '--port') {
     idx++;
     if (idx < process.argv.length) {
       const value = process.argv[idx];
@@ -242,6 +245,8 @@ for (let idx = 2; idx < process.argv.length; idx++) {
         protocol = value;
       } else if (arg == '--hostname') {
         hostname = value;
+      } else if (arg == '--port') {
+        port = parseInt(value);
       } else if (arg == '--wrappers') {
         wrappers.push(...value.split(/\s*,\s*/));
       }
@@ -268,9 +273,18 @@ function invokeRestMethod(options, body) {
   if (!options.hostname) {
     options.hostname = hostname;
   }
+  const reqPort = options.port ?? options.defaultPort ?? (protocol === 'https' ? 443 : 80);
   return new Promise((resolve, reject) => {
     const request = http.request(options, res => {
-      log('Received response HTTP %d %s for %s://%s%s', res.statusCode, res.statusMessage, protocol, options.hostname, options.path);
+      log(
+        'Received response HTTP %d %s for %s://%s:%d%s',
+        res.statusCode,
+        res.statusMessage,
+        protocol,
+        options.hostname,
+        reqPort,
+        options.path
+      );
       if (res.statusCode < 200 || res.statusCode >= 300) {
         // Handle redirects we can handle
         if (
@@ -303,10 +317,20 @@ function invokeRestMethod(options, body) {
             return;
           }
           options.hostname = location.hostname;
+          options.port = location.port ? location.port : reqPort;
           options.path = location.pathname;
-          log('Redirecting to %s://%s/%s', protocol, options.hostname, options.path);
+          log('Redirecting to %s://%s:%d/%s', protocol, options.hostname, options.port, options.path);
           // And then send the redirect
-          resolve(invokeRestMethod(options, body));
+          res.on('data', chunk => {
+            log('Redirect data chunk (%d bytes)', chunk.length);
+          });
+          res.on('error', error => {
+            log('Error raised while reading redirect response: %o', error);
+          });
+          res.on('end', () => {
+            log('Redirect request completed.');
+            resolve(invokeRestMethod(options, body));
+          });
           return;
         }
         // Otherwise, fall through to gather the body
@@ -316,7 +340,7 @@ function invokeRestMethod(options, body) {
         log('Data chunk (%d bytes)', chunk.length);
         responseBody.push(chunk);
       });
-      res.on('error', (error) => {
+      res.on('error', error => {
         log('Error raised while reading response: %o', error);
       });
       res.on('end', () => {
@@ -329,15 +353,32 @@ function invokeRestMethod(options, body) {
         }
       });
     });
-    request.on('error', (error) => {
+    request.on('error', error => {
       log('Request failed: %o', error);
-      reject(error)
+      reject(error);
     });
     if (body) {
       request.write(body);
     }
     request.end();
-    log('Sending %s request to %s://%s%s', options.method ?? 'GET', protocol, options.hostname, options.path);
+    request.on('end', () => {
+      log(
+        '%s request to %s://%s:%d%s ended.',
+        options.method ?? 'GET',
+        protocol,
+        options.hostname,
+        reqPort,
+        options.path
+      );
+    });
+    log(
+      'Sending %s request to %s://%s:%d%s',
+      options.method ?? 'GET',
+      protocol,
+      options.hostname,
+      reqPort,
+      options.path
+    );
   });
 }
 
@@ -410,6 +451,7 @@ async function runTests() {
   try {
     testStart('Sending basic "up and running" test...');
     const result = await invokeRestMethod({
+      port: port,
       path: '/',
     });
     // TODO: Check the result
@@ -418,12 +460,14 @@ async function runTests() {
     testFailed(ex);
   }
 
-  let successCount = 0, failCount = 0;
+  let successCount = 0,
+    failCount = 0;
   for (const wrapper of wrappers) {
     console.log(`-- Testing ${wrapper} --`);
     try {
       testStart('Sending basic "up and running" test...');
       let result = await invokeRestMethod({
+        port: port,
         path: '/' + wrapper,
       });
       if (result == 'Hello from the Clinical Trial Matching Service') {
@@ -474,7 +518,9 @@ async function runTests() {
     }
   }
   const total = successCount + failCount;
-  console.log(`Ran ${total} tests, ${successCount} succeeded (${total > 0 ? Math.round(successCount / total * 100) : 0}%).`);
+  console.log(
+    `Ran ${total} tests, ${successCount} succeeded (${total > 0 ? Math.round((successCount / total) * 100) : 0}%).`
+  );
   const handles = process.getActiveResourcesInfo();
   log('runTests() completed. Open handles: %o', handles);
   const unexpectedHandles = handles.filter(handle => handle != 'TTYWrap');
