@@ -2,6 +2,14 @@
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const util = require('node:util');
+
+// Logging function. Set NODE_DEBUG=CTMS to see debug log.
+// In PowerShell:
+// $Env:NODE_DEBUG = "CTMS"
+let log = util.debuglog('CTMS', fn => {
+  log = fn;
+});
 
 // Script to test that wrappers are running.
 
@@ -262,6 +270,7 @@ function invokeRestMethod(options, body) {
   }
   return new Promise((resolve, reject) => {
     const request = http.request(options, res => {
+      log('Received response HTTP %d %s for %s://%s%s', res.statusCode, res.statusMessage, protocol, options.hostname, options.path);
       if (res.statusCode < 200 || res.statusCode >= 300) {
         // Handle redirects we can handle
         if (
@@ -272,6 +281,7 @@ function invokeRestMethod(options, body) {
           res.statusCode === 308
         ) {
           if (!res.headers.location) {
+            log('Error: no Location header in %d %s redirect', res.statusCode, res.statusMessage);
             reject(
               new ServerErrorException(
                 `Redirected via HTTP ${res.statusCode} ${res.statusMessage} but no location header`,
@@ -288,11 +298,13 @@ function invokeRestMethod(options, body) {
             body = undefined;
           }
           if (location.protocol !== protocol + ':') {
+            log('Error: redirecting from %s to %s changes protocol', protocol, location.protocol);
             reject(new Error(`Not redirecting from ${protocol} to ${location.protocol} for these tests`));
             return;
           }
           options.hostname = location.hostname;
           options.path = location.pathname;
+          log('Redirecting to %s://%s/%s', protocol, options.hostname, options.path);
           // And then send the redirect
           resolve(invokeRestMethod(options, body));
           return;
@@ -301,9 +313,14 @@ function invokeRestMethod(options, body) {
       }
       const responseBody = [];
       res.on('data', chunk => {
+        log('Data chunk (%d bytes)', chunk.length);
         responseBody.push(chunk);
       });
+      res.on('error', (error) => {
+        log('Error raised while reading response: %o', error);
+      });
       res.on('end', () => {
+        log('Request completed.');
         const bodyStr = responseBody.join('');
         if (res.statusCode >= 200 && res.statusCode < 300) {
           resolve(bodyStr);
@@ -312,11 +329,15 @@ function invokeRestMethod(options, body) {
         }
       });
     });
-    request.on('error', reject);
+    request.on('error', (error) => {
+      log('Request failed: %o', error);
+      reject(error)
+    });
     if (body) {
       request.write(body);
     }
     request.end();
+    log('Sending %s request to %s://%s%s', options.method ?? 'GET', protocol, options.hostname, options.path);
   });
 }
 
@@ -397,6 +418,7 @@ async function runTests() {
     testFailed(ex);
   }
 
+  let successCount = 0, failCount = 0;
   for (const wrapper of wrappers) {
     console.log(`-- Testing ${wrapper} --`);
     try {
@@ -405,8 +427,10 @@ async function runTests() {
         path: '/' + wrapper,
       });
       if (result == 'Hello from the Clinical Trial Matching Service') {
+        successCount++;
         testPassed();
       } else {
+        failCount++;
         testPassed('Request succeeded, but the response was not the expected value.');
         console.log(`Unexpected response: ${result}`);
       }
@@ -425,29 +449,43 @@ async function runTests() {
         try {
           result = JSON.parse(result);
           if (result.resourceType === 'Bundle' && typeof result.total === 'number') {
+            successCount++;
             testPassed();
             console.log(`  Received ${result.total} results`);
           } else {
+            failCount++;
             testPassed('Unexpected response from wrapper: not a FHIR bundle.');
             console.log('Server responsed with: %j', result);
           }
         } catch (ex) {
+          failCount++;
           testPassed(`Failed to parse result: ${ex.toString()}`);
         }
       } catch (ex) {
+        failCount++;
         testFailed(ex);
         console.log(
           '  The wrapper is running, this failure may be caused by the backend itself and not the CTMS software.'
         );
       }
     } catch (ex) {
+      failCount++;
       testFailed(ex);
     }
+  }
+  const total = successCount + failCount;
+  console.log(`Ran ${total} tests, ${successCount} succeeded (${total > 0 ? Math.round(successCount / total * 100) : 0}%).`);
+  const handles = process.getActiveResourcesInfo();
+  log('runTests() completed. Open handles: %o', handles);
+  const unexpectedHandles = handles.filter(handle => handle != 'TTYWrap');
+  if (unexpectedHandles.length > 0) {
+    console.error('Unexpected handles still open! Handles left open: %s', unexpectedHandles.join(', '));
   }
 }
 runTests()
   .then(() => {
     // Do nothing
+    log('Test script promise resolved.');
   })
   .catch(error => {
     console.error('Running tests failed!');
