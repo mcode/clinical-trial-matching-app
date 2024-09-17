@@ -163,29 +163,6 @@ async function callWrappers(
         return sendLocationData || (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance);
       };
 
-      // Special filter to check if valid under Ancora
-      const isValidAncora = (entry: StudyDetailProps): boolean => {
-        if (entry.source != 'Ancora.ai') return true;
-
-        // This is site specific; check which site
-        if (siteRubric == 'site1') {
-          return !(
-            (mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
-            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3)
-          );
-        } else if (siteRubric == 'site2') {
-          return !(
-            (mainCancerType == 'breast' && entry.likelihood.score < 0.3) ||
-            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3) ||
-            (mainCancerType == 'multipleMyleoma' && entry.likelihood.score == 0) ||
-            (mainCancerType == 'colon' && entry.likelihood.score < 0.3)
-          );
-        }
-
-        // Default -- don't filter under Ancora
-        return true;
-      };
-
       // Only interested in Active and Interventional trials
       const isActiveAndInterventional = (entry: StudyDetailProps): boolean => {
         return (
@@ -197,7 +174,6 @@ async function callWrappers(
       // Don't want to return NCT05885880 so just filter it out
       if (
         isStudyWithinRange(studyDetails) &&
-        isValidAncora(studyDetails) &&
         isActiveAndInterventional(studyDetails) &&
         studyDetails.trialId != 'NCT05885880'
       ) {
