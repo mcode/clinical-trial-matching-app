@@ -202,9 +202,7 @@ async function callWrappers(
       studyResult.source = occurrences[trial].join(', ');
       return studyResult;
     });
-
   } else {
-
     const sortByOccurence = (a: string[], b: string[]) => {
       return b[1].length - a[1].length;
     };
