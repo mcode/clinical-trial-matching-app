@@ -163,29 +163,6 @@ async function callWrappers(
         return sendLocationData || (entry.closestFacilities?.[0]?.distance?.quantity || 0) <= parseInt(travelDistance);
       };
 
-      // Special filter to check if valid under Ancora
-      const isValidAncora = (entry: StudyDetailProps): boolean => {
-        if (entry.source != 'Ancora.ai') return true;
-
-        // This is site specific; check which site
-        if (siteRubric == 'site1') {
-          return !(
-            (mainCancerType == 'breast' && entry.likelihood.score < 0.5) ||
-            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3)
-          );
-        } else if (siteRubric == 'site2') {
-          return !(
-            (mainCancerType == 'breast' && entry.likelihood.score < 0.3) ||
-            (mainCancerType == 'prostate' && entry.likelihood.score < 0.3) ||
-            (mainCancerType == 'multipleMyleoma' && entry.likelihood.score == 0) ||
-            (mainCancerType == 'colon' && entry.likelihood.score < 0.3)
-          );
-        }
-
-        // Default -- don't filter under Ancora
-        return true;
-      };
-
       // Only interested in Active and Interventional trials
       const isActiveAndInterventional = (entry: StudyDetailProps): boolean => {
         return (
@@ -197,7 +174,6 @@ async function callWrappers(
       // Don't want to return NCT05885880 so just filter it out
       if (
         isStudyWithinRange(studyDetails) &&
-        isValidAncora(studyDetails) &&
         isActiveAndInterventional(studyDetails) &&
         studyDetails.trialId != 'NCT05885880'
       ) {
@@ -214,10 +190,11 @@ async function callWrappers(
     distanceFilteredResults[searchset['serviceName']] = subset;
   });
 
+  let results: StudyDetailProps[] = [];
   // If we're using site2 rubric, then bypass max results and just return all results
   if (siteRubric == 'site2' && mainCancerType == 'brain') {
     // Go through dictionary of occurences and grab the proper
-    const results: StudyDetailProps[] = Object.keys(occurrences).map(trial => {
+    results = Object.keys(occurrences).map(trial => {
       const preferredService = occurrences[trial][0];
       const studyResult: StudyDetailProps = distanceFilteredResults[preferredService].find(
         study => study.trialId == trial
@@ -225,53 +202,51 @@ async function callWrappers(
       studyResult.source = occurrences[trial].join(', ');
       return studyResult;
     });
+  } else {
+    const sortByOccurence = (a: string[], b: string[]) => {
+      return b[1].length - a[1].length;
+    };
 
-    return results;
-  }
+    // Cut this off at the max results anyways
+    const trialCounts = Object.keys(occurrences)
+      .map(key => [key, occurrences[key]])
+      .sort(sortByOccurence)
+      .filter(count => count[1].length > 1)
+      .slice(0, resultsMax);
 
-  const sortByOccurence = (a: string[], b: string[]) => {
-    return b[1].length - a[1].length;
-  };
+    // Go through the highest recurring trials first
+    results = trialCounts.map((trialId: [string, string[]]) => {
+      const services = trialId[1];
+      const preferredService = services[0];
+      const studyResult = distanceFilteredResults[preferredService].find(study => study.trialId == trialId[0]);
 
-  // Cut this off at the max results anyways
-  const trialCounts = Object.keys(occurrences)
-    .map(key => [key, occurrences[key]])
-    .sort(sortByOccurence)
-    .filter(count => count[1].length > 1)
-    .slice(0, resultsMax);
+      // Change the sources to be all of the services that you saw this occurence for
+      studyResult.source = services.join(', ');
 
-  // Go through the highest recurring trials first
-  const results: StudyDetailProps[] = trialCounts.map((trialId: [string, string[]]) => {
-    const services = trialId[1];
-    const preferredService = services[0];
-    const studyResult = distanceFilteredResults[preferredService].find(study => study.trialId == trialId[0]);
+      // Remove this trial as an option of trials from the distanceFilteredResults
+      services.forEach(service => {
+        distanceFilteredResults[service] = distanceFilteredResults[service].filter(item => item.trialId != trialId[0]);
+      });
 
-    // Change the sources to be all of the services that you saw this occurence for
-    studyResult.source = services.join(', ');
-
-    // Remove this trial as an option of trials from the distanceFilteredResults
-    services.forEach(service => {
-      distanceFilteredResults[service] = distanceFilteredResults[service].filter(item => item.trialId != trialId[0]);
+      return studyResult;
     });
 
-    return studyResult;
-  });
+    // Then if we haven't hit the max, keep adding round robin style from those that are left.
+    // Keep track of number of consecutive failures.
+    const validMatchingServices = Object.keys(distanceFilteredResults);
+    let numOfFailures = 0;
+    for (let i = results.length; i < resultsMax; i++) {
+      // If we've hit the number of matchingServices in consecutive failures then we just don't have enough results to hit resultsMax.
+      if (numOfFailures == validMatchingServices.length) break;
+      const currentService = validMatchingServices[i % validMatchingServices.length];
+      const study: StudyDetailProps = distanceFilteredResults[currentService].pop();
 
-  // Then if we haven't hit the max, keep adding round robin style from those that are left.
-  // Keep track of number of consecutive failures.
-  const validMatchingServices = Object.keys(distanceFilteredResults);
-  let numOfFailures = 0;
-  for (let i = results.length; i < resultsMax; i++) {
-    // If we've hit the number of matchingServices in consecutive failures then we just don't have enough results to hit resultsMax.
-    if (numOfFailures == validMatchingServices.length) break;
-    const currentService = validMatchingServices[i % validMatchingServices.length];
-    const study: StudyDetailProps = distanceFilteredResults[currentService].pop();
-
-    if (study == undefined || study == null) {
-      numOfFailures++;
-    } else {
-      numOfFailures = 0;
-      results.push(study);
+      if (study == undefined || study == null) {
+        numOfFailures++;
+      } else {
+        numOfFailures = 0;
+        results.push(study);
+      }
     }
   }
 
