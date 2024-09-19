@@ -129,7 +129,7 @@ export const resourceHasProfile = (resource: FhirResource, profile: string): boo
  */
 export const observationHasCode = (observation: Observation, system: string, code: string): boolean => {
   // Basically, see if any of the codings in the observation match
-  return observation.code?.coding?.findIndex(coding => coding.system === system && coding.code === code) >= 0 ?? false;
+  return (observation.code?.coding?.findIndex(coding => coding.system === system && coding.code === code) ?? -1) >= 0;
 };
 
 // TypeScript helper to ensure that the given field is a DateTime field - as nearly as we can determine via FHIR types,
