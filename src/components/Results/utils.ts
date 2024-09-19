@@ -180,8 +180,8 @@ export const getArmsAndInterventions = (study: ResearchStudy): ArmGroup[] => {
 export const getBestContact = (
   contacts: ContactPoint[] | undefined,
   system: ContactPoint['system'],
-  use: ContactPoint['use'],
-) =>
+  use: ContactPoint['use']
+): ContactPoint =>
   contacts.reduce(
     (previous, current) => {
       // Use contacts with the preferred system over ones without
@@ -201,8 +201,7 @@ export const getBestContact = (
     },
     // Default value in case given an empty array, which is a simple empty
     // object.
-    {
-    }
+    {}
   );
 
 const getClosestFacilities = (locations: Location[], zipcode: string, numOfFacilities = 5): ContactProps[] => {

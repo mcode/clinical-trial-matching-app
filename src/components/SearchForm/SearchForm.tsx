@@ -114,7 +114,7 @@ const SearchForm = ({ defaultValues, fullWidth, setUserId, disableLocation }: Se
       data.zipcode = defaultValues.zipcode;
       data.travelDistance = defaultValues.travelDistance;
     }
-    
+
     const query = {
       ...formDataToSearchQuery(data),
       sortingOption: 'matchLikelihood',
