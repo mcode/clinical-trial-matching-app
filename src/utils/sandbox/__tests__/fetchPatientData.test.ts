@@ -4,6 +4,7 @@ import { createMockFhirClient, createRequestSpy } from '@/__mocks__/fhirClient';
 
 const testPatient: fhirclient.FHIR.Patient = {
   resourceType: 'Patient',
+  id: 'test-patient',
   name: [
     {
       given: ['Test'],
@@ -45,7 +46,6 @@ describe('fetchPatientData', () => {
         record: testPatient,
       },
       primaryCancerCondition: null,
-      primaryTumorStage: null,
       metastasis: [],
       ecogScore: null,
       karnofskyScore: null,

@@ -33,6 +33,7 @@ function parseResultsMax() {
   return isNaN(value) || value < 1 ? 15 : value;
 }
 
+/** @type {import('next').NextConfig} */
 module.exports = {
   // Disable image optimization, as it's currently broken when Next.js is
   // running under IISnode.
