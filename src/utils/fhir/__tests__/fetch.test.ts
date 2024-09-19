@@ -1,5 +1,103 @@
 import { createMockFhirClient, createRequestSpy } from '@/__mocks__/fhirClient';
-import { compareDates, createQueryConfig, fetchBundles, parseFHIRDate } from '../fetch';
+import { compareDates, createQueryConfig, fetchBundles, observationHasCode, parseFHIRDate } from '../fetch';
+
+describe('observationHasCode()', () => {
+  it('returns true if an Observation has a given system and code', () => {
+    expect(
+      observationHasCode(
+        {
+          resourceType: 'Observation',
+          status: 'final',
+          code: {
+            coding: [
+              {
+                system: 'https://www.example.com/some-other-system',
+                code: 'ignore-this',
+              },
+              {
+                system: 'https://www.example.com/test-system',
+                code: 'test-code',
+              },
+            ],
+          },
+        },
+        'https://www.example.com/test-system',
+        'test-code'
+      )
+    ).toBe(true);
+    // Also test at index 0
+    expect(
+      observationHasCode(
+        {
+          resourceType: 'Observation',
+          status: 'final',
+          code: {
+            coding: [
+              {
+                system: 'https://www.example.com/test-system',
+                code: 'test-code',
+              },
+              {
+                system: 'https://www.example.com/some-other-system',
+                code: 'ignore-this',
+              },
+            ],
+          },
+        },
+        'https://www.example.com/test-system',
+        'test-code'
+      )
+    ).toBe(true);
+  });
+  it("returns false if an Observation doesn't have a given system and code", () => {
+    expect(
+      observationHasCode(
+        {
+          resourceType: 'Observation',
+          status: 'final',
+          code: {
+            coding: [
+              {
+                system: 'https://www.example.com/some-other-system',
+                code: 'ignore-this',
+              },
+            ],
+          },
+        },
+        'https://www.example.com/test-system',
+        'test-code'
+      )
+    ).toBe(false);
+  });
+  it('returns false if an Observation has an empty coding', () => {
+    expect(
+      observationHasCode(
+        {
+          resourceType: 'Observation',
+          status: 'final',
+          code: {
+            coding: [],
+          },
+        },
+        'https://www.example.com/test-system',
+        'test-code'
+      )
+    ).toBe(false);
+  });
+  it('returns false if an Observation has no coding', () => {
+    expect(
+      observationHasCode(
+        {
+          resourceType: 'Observation',
+          status: 'final',
+          code: {},
+        },
+        'https://www.example.com/test-system',
+        'test-code'
+      )
+    ).toBe(false);
+  });
+});
 
 describe('compareDates()', () => {
   it('compares undefined after other dates', () => {
