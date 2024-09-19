@@ -278,7 +278,7 @@ type WrapperResponse = {
  * @returns Response from wrapper
  */
 async function callWrapper(url: string, query: string, serviceName: string): Promise<WrapperResponse> {
-  console.log('Grabbing Responses from:', serviceName);
+  console.log('Grabbing Responses from:', serviceName, url);
   try {
     const response = await fetch(url, {
       cache: 'no-store',
@@ -306,9 +306,9 @@ async function callWrapper(url: string, query: string, serviceName: string): Pro
  * @param response Wrapper response
  * @returns Response if 2xx
  */
-function handleError(response) {
+function handleError(response: Response) {
   if (!response.ok) {
-    throw Error();
+    throw Error(`Error response from server: ${response.status} ${response.statusText}`);
   }
   return response;
 }
