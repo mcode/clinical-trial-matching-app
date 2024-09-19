@@ -97,7 +97,6 @@ export const buildPatientData = ([
   // Sort observations by date. This sorts in place, mutating the array.
   sortByDate(observations, 'effectiveDateTime');
 
-  // FIXME: Should find the most recent, which is not necessarily the first record in the bundle
   // TODO: As this gets more complicated, it'll make more sense to go through all observations and check each one to see
   // if it contains relavent information rather than do separate find/filters
   // Find the disease status based on the required LOINC code
