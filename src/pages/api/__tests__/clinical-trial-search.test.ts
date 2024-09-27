@@ -31,6 +31,13 @@ jest.mock('next/config', () => {
           cancerTypes: ['breast', 'lung', 'colon', 'brain', 'prostate', 'multipleMyeloma', 'bladder'],
         },
       ],
+      fhirlessPatient: {
+        id: 'example',
+        name: 'Test Launch',
+        gender: 'male',
+        age: 35,
+        zipcode: null,
+      },
     },
   });
 });

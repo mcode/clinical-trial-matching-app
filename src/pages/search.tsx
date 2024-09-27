@@ -26,7 +26,13 @@ type SearchPageProps = {
 };
 
 const {
-  publicRuntimeConfig: { disableSearchLocation, defaultSearchZipCode, defaultSearchTravelDistance, fhirQueryFlavor },
+  publicRuntimeConfig: {
+    disableSearchLocation,
+    defaultSearchZipCode,
+    defaultSearchTravelDistance,
+    fhirQueryFlavor,
+    fhirlessPatient,
+  },
 } = getConfig() as GetConfig;
 
 const SearchPage = ({
@@ -91,15 +97,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
     // In this case, the search form is "fhirless" and we return a default set of properties
     return {
       props: {
-        patient: {
-          id: 'example',
-          name: 'Test Launch',
-          // Gender can't currently be user-set
-          gender: 'male',
-          // Age can't currently be user-set
-          age: 35,
-          zipcode: null,
-        },
+        // Patient data is currently configured in .env
+        patient: fhirlessPatient,
         user: {
           id: 'example',
           name: 'example',
