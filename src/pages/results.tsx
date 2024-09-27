@@ -50,7 +50,7 @@ import {
 import { GetConfig } from 'types/config';
 
 const {
-  publicRuntimeConfig: { sendLocationData },
+  publicRuntimeConfig: { sendLocationData, fhirlessPatient },
 } = getConfig() as GetConfig;
 
 type ResultsPageProps = {
@@ -366,19 +366,19 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const queryClient = new QueryClient();
   const userId = Array.isArray(query['userid']) ? query['userid'].join('') : query['userid'] ?? null;
 
+  // "Rehydrate" codes
+  rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
+  rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
+  rehydrateCodes(query, 'medications', convertCodesToMedications);
+  rehydrateCodes(query, 'radiation', convertCodesToRadiations);
+  rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
+
   if (query['fhirless'] !== undefined) {
     // In this case, the results are "fhirless" and we return a default set of properties
     return {
       props: {
-        patient: {
-          id: 'example',
-          name: 'Test Launch',
-          // Gender can't currently be user-set
-          gender: 'male',
-          // Age can't currently be user-set
-          age: 35,
-          zipcode: null,
-        },
+        // Patient data is currently configured in .env
+        patient: fhirlessPatient,
         searchParams: query,
         dehydratedState: dehydrate(queryClient),
         userId: userId,
@@ -394,13 +394,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 
   const [fhirPatient, fhirUser] = await Promise.all([fhirClient.patient.read(), fhirClient.user.read()]);
-
-  // "Rehydrate" codes
-  rehydrateCodes(query, 'metastasis', convertCodesToMetastases);
-  rehydrateCodes(query, 'biomarkers', convertCodesToBiomarkers);
-  rehydrateCodes(query, 'medications', convertCodesToMedications);
-  rehydrateCodes(query, 'radiation', convertCodesToRadiations);
-  rehydrateCodes(query, 'surgery', convertCodesToSurgeries);
 
   return {
     props: {
