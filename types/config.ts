@@ -22,6 +22,13 @@ export type PublicRuntimeConfig = {
   resultsMax: number;
   siteRubric: string;
   services: MatchingServiceConfig[];
+  fhirlessPatient: {
+    id: string;
+    name: string;
+    gender: 'male' | 'female';
+    age: number;
+    zipcode: string;
+  };
 };
 
 export type GetConfig = {
