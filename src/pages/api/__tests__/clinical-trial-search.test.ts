@@ -1,11 +1,54 @@
 import type { Bundle, Patient } from 'fhir/r4';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import handler, { buildBundle } from '../clinical-trial-search';
 import { SearchParameters } from 'types/search-types';
-import { buildBundle } from '../clinical-trial-search';
+import { GetConfig } from 'types/config';
+
+// Mock out a set of default configuration values for this specific test
+jest.mock('next/config', () => {
+  return (): GetConfig => ({
+    publicRuntimeConfig: {
+      fhirClientId: 'fhir_client_id',
+      fhirRedirectUri: 'http://localhost:3200/',
+      fhirScope: 'launch/patient openid fhirUser patient/*.read',
+      fhirQueryFlavor: 'sandbox',
+      defaultZipCode: '01234',
+      defaultTravelDistance: '50',
+      sendLocationData: true,
+      reactAppDebug: false,
+      disableSearchLocation: false,
+      defaultSearchZipCode: '12345',
+      defaultSearchTravelDistance: '100',
+      resultsMax: 15,
+      siteRubric: 'none',
+      services: [
+        {
+          name: 'test',
+          label: 'Test',
+          url: 'http://localhost/match',
+          searchRoute: '/getClinicalTrial',
+          defaultValue: true,
+          cancerTypes: ['breast', 'lung', 'colon', 'brain', 'prostate', 'multipleMyeloma', 'bladder'],
+        },
+      ],
+      fhirlessPatient: {
+        id: 'example',
+        name: 'Test Launch',
+        gender: 'male',
+        age: 35,
+        zipcode: null,
+      },
+    },
+  });
+});
+
 const cancerType = {
-  entryType: 'Primary malignant neoplasm of lung (disorder)',
-  display: 'Primary malignant neoplasm of lung (disorder)',
+  entryType: 'cancerType',
+  cancerType: ['lung'],
   code: '254632001',
+  display: 'Small cell carcinoma of lung (disorder)',
   system: 'http://snomed.info/sct',
+  category: ['nsclc', 'SCLC Extensive Stage', 'SCLC Limited Stage'],
 };
 const cancerSubType = {
   entryType: 'Adenocarcinoma of lung (disorder)',
@@ -19,7 +62,7 @@ export const searchParameters: SearchParameters = {
   gender: 'female',
   travelDistance: '100',
   zipcode: '75001',
-  matchingServices: ['Lungevity'],
+  matchingServices: ['test'],
   cancerType: JSON.stringify(cancerType),
   cancerSubtype: JSON.stringify(cancerSubType),
   metastasis: '["metastasis-1"]',
@@ -128,7 +171,7 @@ const expectedBundle: Bundle = {
             {
               system: 'http://snomed.info/sct',
               code: '254632001',
-              display: 'Primary malignant neoplasm of lung (disorder)',
+              display: 'Small cell carcinoma of lung (disorder)',
             },
           ],
         },
@@ -443,5 +486,95 @@ describe('buildBundle', () => {
     const patient = patientBundle.entry.find(resource => resource.resource?.resourceType == 'Patient');
     expect(patient).toBeDefined();
     expect((patient.resource as Patient).birthDate).toEqual('1932');
+  });
+});
+
+describe('handler', () => {
+  // Mock out fetch (Next.js polyfills it and prevents mocking it via mocking libraries)
+  // Grab the original fetch during setup
+  const originalFetch = global.fetch;
+  afterAll(() => {
+    // Restore fetch after all tests run
+    global.fetch = originalFetch;
+  });
+  it('returns success when a wrapper returns results', async () => {
+    const fetchSpy = jest.fn<Promise<Response>, [string | URL, RequestInit?]>(() => {
+      return Promise.resolve({
+        ok: true,
+        status: 200,
+        statusText: 'OK',
+        json: () =>
+          Promise.resolve({
+            resourceType: 'Bundle',
+            entry: [],
+          }),
+      } as unknown as Response);
+    });
+    global.fetch = fetchSpy;
+    const req = {
+      body: JSON.stringify({ searchParams: searchParameters }),
+    } as NextApiRequest;
+    const res = {
+      json: jest.fn<void, [object]>(),
+      status: jest.fn<NextApiResponse, [number]>(function () {
+        return this;
+      }),
+    } as unknown as NextApiResponse;
+    await handler(req, res);
+    expect(fetchSpy).toHaveBeenCalledWith('http://localhost/match/getClinicalTrial', {
+      cache: 'no-store',
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // The exact query contents are tested elsewhere, this just makes sure it works
+      body: expect.any(String),
+    });
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith({
+      results: expect.anything(),
+      errors: [],
+    });
+  });
+  it('returns an error when a wrapper errors out', async () => {
+    const fetchSpy = jest.fn<Promise<Response>, [string | URL, RequestInit?]>(() => {
+      return Promise.resolve({
+        ok: false,
+        status: 500,
+        statusText: 'Internal Server Error',
+      } as unknown as Response);
+    });
+    global.fetch = fetchSpy;
+    const req = {
+      body: JSON.stringify({ searchParams: searchParameters }),
+    } as NextApiRequest;
+    const res = {
+      json: jest.fn<void, [object]>(),
+      status: jest.fn<NextApiResponse, [number]>(function () {
+        return this;
+      }),
+    } as unknown as NextApiResponse;
+    await handler(req, res);
+    expect(fetchSpy).toHaveBeenCalledWith('http://localhost/match/getClinicalTrial', {
+      cache: 'no-store',
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      // The exact query contents are tested elsewhere, this just makes sure it works
+      body: expect.any(String),
+    });
+    expect(res.status).toHaveBeenCalledWith(200);
+    expect(res.json).toHaveBeenCalledWith({
+      results: [],
+      errors: [
+        {
+          error: expect.any(Error),
+          response: 'There was an issue receiving responses from Test',
+          serviceName: 'Test',
+          status: 500,
+        },
+      ],
+    });
   });
 });

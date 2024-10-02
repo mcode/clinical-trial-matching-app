@@ -47,10 +47,11 @@ import {
   SearchParameters,
   SortingParameters,
 } from 'types/search-types';
+import { GetConfig } from 'types/config';
 
 const {
-  publicRuntimeConfig: { sendLocationData },
-} = getConfig();
+  publicRuntimeConfig: { sendLocationData, fhirlessPatient },
+} = getConfig() as GetConfig;
 
 type ResultsPageProps = {
   patient: Patient;
@@ -157,7 +158,7 @@ const ResultsPage = ({ patient, user, searchParams, userId: initialUserId }: Res
 
   const { data: distanceFilteredData } = useQuery(
     ['clinical-trials', searchData, getDistanceParams(searchParams)],
-    () => clinicalTrialDistanceQuery(searchData, searchParams),
+    () => clinicalTrialDistanceQuery(searchData),
     {
       enabled: !!searchData && typeof window !== 'undefined',
       refetchOnMount: false,
@@ -376,15 +377,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
     // In this case, the results are "fhirless" and we return a default set of properties
     return {
       props: {
-        patient: {
-          id: 'example',
-          name: 'Test Launch',
-          // Gender can't currently be user-set
-          gender: 'male',
-          // Age can't currently be user-set
-          age: 35,
-          zipcode: null,
-        },
+        // Patient data is currently configured in .env
+        patient: fhirlessPatient,
         searchParams: query,
         dehydratedState: dehydrate(queryClient),
         userId: userId,

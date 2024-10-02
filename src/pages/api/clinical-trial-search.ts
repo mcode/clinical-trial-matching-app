@@ -22,6 +22,7 @@ import { nanoid } from 'nanoid';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import getConfig from 'next/config';
 import { SearchParameters } from 'types/search-types';
+import { GetConfig } from 'types/config';
 
 const {
   publicRuntimeConfig: {
@@ -33,7 +34,7 @@ const {
     resultsMax,
     services,
   },
-} = getConfig();
+} = getConfig() as GetConfig;
 
 /**
  * API/Query handler For clinical-trial-search
@@ -42,15 +43,14 @@ const {
  * @param res Returns { results, errors }
  */
 const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
-  const { searchParams } = JSON.parse(req.body);
+  const { searchParams }: { searchParams: SearchParameters } = JSON.parse(req.body);
   const mainCancerType: string = JSON.parse(searchParams.cancerType).cancerType[0];
 
   const patientBundle: Bundle = buildBundle(searchParams);
 
-  const chosenServices =
-    searchParams.matchingServices && Array.isArray(searchParams.matchingServices)
-      ? searchParams.matchingServices
-      : [searchParams.matchingServices];
+  const chosenServices = Array.isArray(searchParams.matchingServices)
+    ? searchParams.matchingServices
+    : [searchParams.matchingServices];
 
   const results = await callWrappers(
     chosenServices,
@@ -136,11 +136,15 @@ async function callWrappers(
   travelDistance: string
 ) {
   const wrapperResults = await Promise.all(
-    matchingServices.map(async name => {
+    matchingServices.map<Promise<WrapperResponse>>(async name => {
       const { url, searchRoute, label, cancerTypes } = services.find((service: Service) => service.name === name);
       const results = cancerTypes.includes(mainCancerType)
         ? await callWrapper(url + searchRoute, JSON.stringify(query, null, 2), label)
-        : { status: 200, response: { resourceType: 'Bundle', type: 'searchset', total: 0, entry: [] }, label };
+        : {
+            status: 200,
+            response: { resourceType: 'Bundle', type: 'searchset', total: 0, entry: [] },
+            serviceName: label,
+          };
       return results;
     })
   );
@@ -153,10 +157,15 @@ async function callWrappers(
   const successfuResults = wrapperResults.filter(result => result.status == 200);
   const distanceFilteredResults = {};
 
-  successfuResults.forEach(searchset => {
+  successfuResults.forEach(({ response, serviceName }) => {
     const subset = [];
-    searchset?.response?.entry.forEach((entry: BundleEntryWithStudy) => {
-      const studyDetails: StudyDetailProps = getStudyDetailProps(entry, patientZipCode, searchset['serviceName']);
+    const entries = (response as Bundle).entry;
+    if (!(entries && Array.isArray(entries))) {
+      // Effectively continue to the next one
+      return;
+    }
+    entries.forEach((entry: BundleEntryWithStudy) => {
+      const studyDetails: StudyDetailProps = getStudyDetailProps(entry, patientZipCode, serviceName);
 
       // Function to determine if the results are within range
       const isStudyWithinRange = (entry: StudyDetailProps): boolean => {
@@ -179,15 +188,15 @@ async function callWrappers(
       ) {
         if (occurrences[studyDetails.trialId] === undefined) {
           subset.push(studyDetails);
-          occurrences[studyDetails.trialId] = [searchset['serviceName']];
-        } else if (!occurrences[studyDetails.trialId].includes(searchset['serviceName'])) {
+          occurrences[studyDetails.trialId] = [serviceName];
+        } else if (!occurrences[studyDetails.trialId].includes(serviceName)) {
           subset.push(studyDetails);
-          occurrences[studyDetails.trialId].push(searchset['serviceName']);
+          occurrences[studyDetails.trialId].push(serviceName);
         }
       }
     });
 
-    distanceFilteredResults[searchset['serviceName']] = subset;
+    distanceFilteredResults[serviceName] = subset;
   });
 
   let results: StudyDetailProps[] = [];
@@ -253,6 +262,13 @@ async function callWrappers(
   return { results, errors };
 }
 
+type WrapperResponse = {
+  status: number;
+  response: unknown;
+  serviceName: string;
+  error?: unknown;
+};
+
 /**
  * Calls a single wrapper
  *
@@ -261,29 +277,28 @@ async function callWrappers(
  * @param serviceName Name of the service
  * @returns Response from wrapper
  */
-async function callWrapper(url: string, query: string, serviceName: string) {
-  console.log('Grabbing Responses from: ', serviceName);
-  return fetch(url, {
-    cache: 'no-store',
-    method: 'post',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: query,
-  })
-    .then(handleError)
-    .then(response => response.json())
-    .then(data => {
-      return { status: 200, response: data, serviceName };
-    })
-    .catch(error => {
-      return {
-        status: 500,
-        response: 'There was an issue receiving responses from ' + serviceName,
-        serviceName,
-        error,
-      };
+async function callWrapper(url: string, query: string, serviceName: string): Promise<WrapperResponse> {
+  console.log('Grabbing Responses from:', serviceName, url);
+  try {
+    const response = await fetch(url, {
+      cache: 'no-store',
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: query,
     });
+    handleError(response);
+    return { status: 200, response: await response.json(), serviceName };
+  } catch (error) {
+    console.error(error);
+    return {
+      status: 500,
+      response: 'There was an issue receiving responses from ' + serviceName,
+      serviceName,
+      error,
+    };
+  }
 }
 
 /**
@@ -291,9 +306,9 @@ async function callWrapper(url: string, query: string, serviceName: string) {
  * @param response Wrapper response
  * @returns Response if 2xx
  */
-function handleError(response) {
+function handleError(response: Response) {
   if (!response.ok) {
-    throw Error();
+    throw Error(`Error response from server: ${response.status} ${response.statusText}`);
   }
   return response;
 }
