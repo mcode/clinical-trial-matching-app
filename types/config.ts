@@ -26,7 +26,7 @@ export type PublicRuntimeConfig = {
     id: string;
     name: string;
     gender: 'male' | 'female';
-    age: number;
+    age: string;
     zipcode: string;
   };
 };

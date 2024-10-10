@@ -355,7 +355,7 @@ const rehydrateCodes = (
   }
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<ResultsPageProps> = async context => {
   const { req, res, query } = context;
   // FIXME: Next.js 13 broke something, see https://github.com/vercel/next.js/issues/57397
   // For now, remove the x-forwarded headers, they break fhirclient
@@ -379,10 +379,11 @@ export const getServerSideProps: GetServerSideProps = async context => {
       props: {
         // Patient data is currently configured in .env
         patient: fhirlessPatient,
-        searchParams: query,
+        user: { id: 'test-user', name: 'Test User' },
+        searchParams: query as unknown as FullSearchParameters,
         dehydratedState: dehydrate(queryClient),
         userId: userId,
-      },
+      } as ResultsPageProps,
     };
   }
 
@@ -399,9 +400,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
     props: {
       patient: convertFhirPatient(fhirPatient),
       user: convertFhirUser(fhirUser),
-      searchParams: query,
+      searchParams: query as unknown as FullSearchParameters,
       dehydratedState: dehydrate(queryClient),
       userId: userId,
-    },
+    } as ResultsPageProps,
   };
 };

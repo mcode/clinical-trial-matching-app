@@ -59,7 +59,10 @@ module.exports = {
       id: 'example',
       name: process.env.FHIRLESS_PATIENT_NAME ?? 'Test Launch',
       gender: process.env.FHIRLESS_PATIENT_GENDER ?? 'male',
-      age: parseEnvInt(process.env.FHIRLESS_PATIENT_AGE, 35, 1, 150),
+      // This is weird, but basically, parse it as an integer, and then convert it to a string to make input types
+      // play nicely with each other. Really it should be a number, but <input> values are strings, and it's kind of
+      // not worth it to fight with that right now.
+      age: parseEnvInt(process.env.FHIRLESS_PATIENT_AGE, 35, 1, 150).toString(),
       zipcode: process.env.FHIRLESS_PATIENT_ZIPCODE ?? null,
     },
   },

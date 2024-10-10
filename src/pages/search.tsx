@@ -82,7 +82,7 @@ const SearchPage = ({
 
 export default SearchPage;
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps<SearchPageProps> = async context => {
   const { req, res } = context;
   // FIXME: Next.js 13 broke something, see https://github.com/vercel/next.js/issues/57397
   // For now, remove the x-forwarded headers, they break fhirclient
@@ -107,10 +107,12 @@ export const getServerSideProps: GetServerSideProps = async context => {
         primaryCancerCondition: null,
         ecogScore: null,
         karnofskyScore: null,
+        metastasis: null,
+        biomarkers: null,
         radiation: [],
         surgery: [],
         medications: [],
-      },
+      } as SearchPageProps,
     };
   }
   let fhirClient: Client;
