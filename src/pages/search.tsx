@@ -3,23 +3,14 @@ import PatientCard from '@/components/PatientCard';
 import SearchForm from '@/components/SearchForm';
 import { UserIdContext } from '@/components/UserIdContext';
 import { fetchPatientData } from '@/utils/fetchPatientData';
-import {
-  Biomarker,
-  CodedValueType,
-  convertFhirMedicationStatements,
-  convertFhirTumorMarkers,
-  Patient,
-  PrimaryCancerCondition,
-  Score,
-  User,
-} from '@/utils/fhirConversionUtils';
-import { fhirMedicationStatementBundle, fhirTumorMarkerBundle } from '@/__mocks__/bundles';
+import { Biomarker, CodedValueType, Patient, PrimaryCancerCondition, Score, User } from '@/utils/fhirConversionUtils';
 import smart from 'fhirclient';
 import type Client from 'fhirclient/lib/Client';
 import { GetServerSideProps } from 'next';
 import getConfig from 'next/config';
 import Head from 'next/head';
 import React, { ReactElement, useState } from 'react';
+import { GetConfig } from 'types/config';
 
 type SearchPageProps = {
   patient: Patient;
@@ -35,8 +26,14 @@ type SearchPageProps = {
 };
 
 const {
-  publicRuntimeConfig: { disableSearchLocation, defaultSearchZipCode, defaultSearchTravelDistance, fhirQueryFlavor },
-} = getConfig();
+  publicRuntimeConfig: {
+    disableSearchLocation,
+    defaultSearchZipCode,
+    defaultSearchTravelDistance,
+    fhirQueryFlavor,
+    fhirlessPatient,
+  },
+} = getConfig() as GetConfig;
 
 const SearchPage = ({
   patient,
@@ -67,12 +64,6 @@ const SearchPage = ({
     medications,
   };
   const [userId, setUserId] = useState<string | null>(null);
-
-  // for debugging purposes
-  if (true) {
-    convertFhirMedicationStatements(fhirMedicationStatementBundle);
-    convertFhirTumorMarkers(fhirTumorMarkerBundle);
-  }
 
   return (
     <>
@@ -106,15 +97,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
     // In this case, the search form is "fhirless" and we return a default set of properties
     return {
       props: {
-        patient: {
-          id: 'example',
-          name: 'Test Launch',
-          // Gender can't currently be user-set
-          gender: 'male',
-          // Age can't currently be user-set
-          age: 35,
-          zipcode: null,
-        },
+        // Patient data is currently configured in .env
+        patient: fhirlessPatient,
         user: {
           id: 'example',
           name: 'example',

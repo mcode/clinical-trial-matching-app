@@ -10,7 +10,7 @@ import radiation from '@/assets/optimizedPatientDataElements/radiations.json';
 import stages from '@/assets/optimizedPatientDataElements/stages.json';
 import surgery from '@/assets/optimizedPatientDataElements/surgeries.json';
 import { SearchFormValuesType } from '@/components/SearchForm';
-import { Coding, Condition, FhirResource, Medication, MedicationStatement, Observation, Procedure } from 'fhir/r4';
+import { Coding, Condition, FhirResource, Medication, Observation, Procedure } from 'fhir/r4';
 import { fhirclient } from 'fhirclient/lib/types';
 import {
   ICD_10_CODE_URI,
@@ -86,14 +86,22 @@ export type User = {
   record?: FhirUser; // for debugging
 };
 
-export const convertFhirKarnofskyPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): Score | null => {
-  const observation = bundle.entry?.[0]?.resource as Observation;
+export const convertFhirKarnofskyPerformanceStatus = (observation: Observation): Score | null => {
+  // if valueInteger exists, use that to find the score, otherwise use interpretation
+  if (observation?.valueInteger) {
+    const valueInt = observation?.valueInteger;
+    return (karnofskyScores as Score[]).find(equalValueInteger(valueInt)) || null;
+  }
   const coding = observation?.interpretation?.[0]?.coding?.[0];
   return (karnofskyScores as Score[]).find(equalScore(coding)) || null;
 };
 
-export const convertFhirEcogPerformanceStatus = (bundle: fhirclient.FHIR.Bundle): Score | null => {
-  const observation = bundle.entry?.[0]?.resource as Observation;
+export const convertFhirEcogPerformanceStatus = (observation: Observation): Score | null => {
+  // if valueInteger exists, use that to find the score, otherwise use interpretation
+  if (observation?.valueInteger) {
+    const valueInt = observation?.valueInteger;
+    return (ecogScores as Score[]).find(equalValueInteger(valueInt)) || null;
+  }
   const coding = observation?.interpretation?.[0]?.coding?.[0];
   return (ecogScores as Score[]).find(equalScore(coding)) || null;
 };
@@ -106,15 +114,6 @@ export const extractMedicationCodes = (medications: Medication[]): CodedValueTyp
     })
     .flat();
   return getUniques(medicationCodes);
-};
-
-export const convertFhirMedicationStatements = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const medicationStatements =
-    bundle.entry?.map<MedicationStatement>(entry => entry.resource as MedicationStatement) || [];
-  const medications: CodedValueType[] = medicationStatements
-    .map(extractKnownCodes(medication as CodedValueType[]))
-    .flat();
-  return getUniques(medications);
 };
 
 export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patient => ({
@@ -131,22 +130,17 @@ export const convertFhirPatient = (fhirPatient: fhirclient.FHIR.Patient): Patien
  * @param bundle the bundle to find a known cancer condition in
  * @returns a primary cancer condition
  */
-export const extractPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle): PrimaryCancerCondition | null => {
-  if (Array.isArray(bundle.entry)) {
-    // Go through each entry and see if we find data
-    for (const entry of bundle.entry) {
-      const condition = entry?.resource;
-      if (condition && condition.resourceType === 'Condition') {
-        const cancerType = getCancerType(condition as Condition);
-        if (cancerType) {
-          // For now, just return the first entry found
-          return {
-            cancerType: cancerType,
-            cancerSubtype: getCancerSubtype(condition as Condition),
-            stage: getStage(condition as Condition),
-          };
-        }
-      }
+export const extractPrimaryCancerCondition = (conditions: Condition[]): PrimaryCancerCondition | null => {
+  // Go through each entry and see if we find data
+  for (const condition of conditions) {
+    const cancerType = getCancerType(condition);
+    if (cancerType) {
+      // For now, just return the first entry found
+      return {
+        cancerType: cancerType,
+        cancerSubtype: getCancerSubtype(condition),
+        stage: getStage(condition),
+      };
     }
   }
   return null;
@@ -161,28 +155,16 @@ export const convertFhirPrimaryCancerCondition = (bundle: fhirclient.FHIR.Bundle
   };
 };
 
-export const convertFhirRadiationProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const radiationProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const radiations: CodedValueType[] = radiationProcedures.map(extractKnownCodes(radiation as CodedValueType[])).flat();
-  return getUniques(radiations);
-};
+export const convertFhirRadiationProcedures = (procedures: Procedure[]): CodedValueType[] =>
+  getUniques(procedures.map(extractKnownCodes(radiation as CodedValueType[])).flat());
 
-export const convertFhirSecondaryCancerConditions = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const secondaryCancerConditions = bundle?.entry?.map(entry => entry.resource as Condition) || [];
-  const conditions: CodedValueType[] = secondaryCancerConditions
-    .map(extractKnownCodes(metastases as CodedValueType[]))
-    .flat();
-  return getUniques(conditions);
-};
+export const convertFhirSecondaryCancerConditions = (conditions: Condition[]): CodedValueType[] =>
+  getUniques(conditions.map(extractKnownCodes(metastases as CodedValueType[])).flat());
 
-export const convertFhirSurgeryProcedures = (bundle: fhirclient.FHIR.Bundle): CodedValueType[] => {
-  const surgeryProcedures = bundle?.entry?.map(entry => entry.resource as Procedure) || [];
-  const surgeries: CodedValueType[] = surgeryProcedures.map(extractKnownCodes(surgery as CodedValueType[])).flat();
-  return getUniques(surgeries);
-};
+export const convertFhirSurgeryProcedures = (procedures: Procedure[]): CodedValueType[] =>
+  getUniques(procedures.map(extractKnownCodes(surgery as CodedValueType[])).flat());
 
-export const convertFhirTumorMarkers = (bundle: fhirclient.FHIR.Bundle): Biomarker[] => {
-  const fhirTumorMarkers = bundle?.entry?.map(entry => entry.resource as Observation) || [];
+export const convertFhirTumorMarkers = (fhirTumorMarkers: Observation[]): Biomarker[] => {
   const biomarkers: Biomarker[] = fhirTumorMarkers.map(convertTumorMarkersToBiomarkers).flat();
   return getUniques(biomarkers);
 };
@@ -359,6 +341,11 @@ const equalScore =
   (selected: Coding) =>
   (target: Score): boolean =>
     target.interpretation.code === selected?.code && target.interpretation.system === selected?.system;
+
+const equalValueInteger =
+  (selected: number) =>
+  (target: Score): boolean =>
+    target.valueInteger === selected;
 
 export const isEqualScore = (originalValue: Score, newValue: Score): boolean => {
   return (

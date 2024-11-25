@@ -11,8 +11,8 @@ let skipNodeModules = false;
 // version info should probably be localized in one place but it's currently
 // used by the PowerShell script)
 const INSTALLER_FILES = [
-  'Git-2.43.0-64-bit.exe',
-  'node-v18.19.1-x64.msi',
+  'Git-2.46.0-64-bit.exe',
+  'node-v20.17.0-x64.msi',
   'iisnode-core-v0.2.26-x64.msi',
   'rewrite_amd64_en-US.msi',
 ];

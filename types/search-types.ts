@@ -5,7 +5,7 @@ export type FullSearchParameters = SearchParameters &
   OriginalSearchParameters;
 
 export type SearchParameters = {
-  matchingServices: string[];
+  matchingServices: string | string[];
   zipcode: string;
   travelDistance: string;
   age: string;

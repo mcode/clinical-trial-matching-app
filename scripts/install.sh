@@ -19,7 +19,7 @@ EXTRA_CA_CERTS_FILE=extra-cas.crt
 
 # Wrappers being installed:
 WRAPPERS=("breastcancertrials.org" "carebox" "lungevity" "trialjectory")
-MINIMUM_NODE_VERSION=18
+MINIMUM_NODE_VERSION=20
 
 # Script for installing the various components. Requires root privileges via
 # sudo.

@@ -1,9 +1,11 @@
 import { SNOMED_CODE_URI } from '@/utils/fhirConstants';
 import { CancerType } from '@/utils/fhirConversionUtils';
-import { act, render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import SearchForm, { compareDefaultValues, SearchFormProps } from '../SearchForm';
 import { SearchFormValuesType } from '../types';
+import mockRouter from 'next-router-mock';
 
 jest.mock('next/router', () => jest.requireActual('next-router-mock'));
 
@@ -32,6 +34,9 @@ const createQueryClient = () =>
   });
 
 describe('<SearchForm />', () => {
+  afterEach(() => {
+    cleanup();
+  });
   const Component = (props: Partial<SearchFormProps>) => (
     <QueryClientProvider client={createQueryClient()}>
       <SearchForm
@@ -45,9 +50,7 @@ describe('<SearchForm />', () => {
   );
 
   it('renders the search form and all the search form fields', () => {
-    act(() => {
-      render(<Component />);
-    });
+    render(<Component />);
 
     expect(screen.getByText(/let's find some clinical trials/i)).toBeInTheDocument();
     expect(screen.queryAllByTestId('matchingServices')).toHaveLength(2);
@@ -68,15 +71,91 @@ describe('<SearchForm />', () => {
   });
 
   it('autopopulates with default or patient data', () => {
-    act(() => {
-      render(<Component />);
-    });
+    render(<Component />);
 
     expect(screen.getByTestId('zipcode')).toContainHTML('11111');
     expect(screen.getByTestId('travelDistance')).toContainHTML('100');
     expect(screen.getByTestId('age')).toContainHTML('28');
     expect(screen.getByTestId('cancerType')).toContainHTML(CancerType.BREAST);
     expect(screen.getByTestId('cancerType')).toContainHTML('Primary malignant neoplasm of breast');
+  });
+
+  it('disables the location fields when disableLocation is true', async () => {
+    render(<Component disableLocation={true} />);
+    expect(screen.getByTestId('travelDistance').querySelector('input')).toBeDisabled();
+    expect(screen.getByTestId('zipcode').querySelector('input')).toBeDisabled();
+  });
+
+  it('does not disable the location fields when disableLocation is false', async () => {
+    render(<Component disableLocation={false} />);
+    expect(screen.getByTestId('travelDistance').querySelector('input')).toBeEnabled();
+    expect(screen.getByTestId('zipcode').querySelector('input')).toBeEnabled();
+  });
+
+  it('when location is disabled sends default location data on submit', async () => {
+    mockRouter.push('/search');
+    render(<Component disableLocation={true} />);
+    await userEvent.click(screen.getByText('Search'));
+    expect(mockRouter).toMatchObject({
+      pathname: '/results',
+      query: {
+        age: '28',
+        cancerType:
+          '{"category":["Breast"],"cancerType":["breast"],"entryType":"cancerType","display":"Primary malignant neoplasm of breast","code":"372137005","system":"http://snomed.info/sct"}',
+        travelDistance: '100',
+        zipcode: '11111',
+        userid: null,
+        matchingServices: [],
+        cancerSubtype: undefined,
+        ecogScore: undefined,
+        karnofskyScore: undefined,
+        stage: undefined,
+        metastasis: '[]',
+        biomarkers: '[]',
+        radiation: '[]',
+        surgery: '[]',
+        medications: '[]',
+        sortingOption: 'matchLikelihood',
+        page: '1',
+        pageSize: '15',
+      },
+    });
+  });
+
+  it('when location is enabled sends user set location data on submit', async () => {
+    mockRouter.push('/search');
+    render(<Component disableLocation={false} />);
+    const travelDistance = screen.getByTestId('travelDistance').querySelector('input');
+    await userEvent.clear(travelDistance);
+    await userEvent.type(travelDistance, '222');
+    const zipcode = screen.getByTestId('zipcode').querySelector('input');
+    await userEvent.clear(zipcode);
+    await userEvent.type(zipcode, '98765');
+    await userEvent.click(screen.getByText('Search'));
+    expect(mockRouter).toMatchObject({
+      pathname: '/results',
+      query: {
+        age: '28',
+        cancerType:
+          '{"category":["Breast"],"cancerType":["breast"],"entryType":"cancerType","display":"Primary malignant neoplasm of breast","code":"372137005","system":"http://snomed.info/sct"}',
+        travelDistance: '222',
+        zipcode: '98765',
+        userid: null,
+        matchingServices: [],
+        cancerSubtype: undefined,
+        ecogScore: undefined,
+        karnofskyScore: undefined,
+        stage: undefined,
+        metastasis: '[]',
+        biomarkers: '[]',
+        radiation: '[]',
+        surgery: '[]',
+        medications: '[]',
+        sortingOption: 'matchLikelihood',
+        page: '1',
+        pageSize: '15',
+      },
+    });
   });
 
   // TODO: This component may require additional testing given how the state changes

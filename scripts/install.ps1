@@ -23,8 +23,8 @@ param (
 
 # Config for various prereqs, moved here to make updating them easier
 # (these values will get overridden later, they're only for making populating the config easier)
-$GIT_VERSION = "2.43.0.windows.1"
-$NODE_VERSION = "18.19.1"
+$GIT_VERSION = "2.46.0.windows.1"
+$NODE_VERSION = "20.17.0"
 
 $global:PREREQ_CONFIG = @{
   "git" = @{

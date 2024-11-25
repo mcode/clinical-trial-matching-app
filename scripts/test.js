@@ -1,7 +1,16 @@
 #!/usr/bin/env node
+'use strict';
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
+const util = require('node:util');
+
+// Logging function. Set NODE_DEBUG=CTMS to see debug log.
+// In PowerShell:
+// $Env:NODE_DEBUG = "CTMS"
+let log = util.debuglog('CTMS', fn => {
+  log = fn;
+});
 
 // Script to test that wrappers are running.
 
@@ -221,12 +230,14 @@ const testBundleString = JSON.stringify(testBundle, null, 2);
 let wrappers = [];
 let protocol = 'http';
 let hostname = 'localhost';
+// Port defaults to undefined, AKA, protocol default
+let port = undefined;
 
 // Parse command line arguments
 
 for (let idx = 2; idx < process.argv.length; idx++) {
   const arg = process.argv[idx];
-  if (arg == '--protocol' || arg == '--hostname' || arg == '--wrappers') {
+  if (arg == '--protocol' || arg == '--hostname' || arg == '--wrappers' || arg == '--port') {
     idx++;
     if (idx < process.argv.length) {
       const value = process.argv[idx];
@@ -234,6 +245,8 @@ for (let idx = 2; idx < process.argv.length; idx++) {
         protocol = value;
       } else if (arg == '--hostname') {
         hostname = value;
+      } else if (arg == '--port') {
+        port = parseInt(value);
       } else if (arg == '--wrappers') {
         wrappers.push(...value.split(/\s*,\s*/));
       }
@@ -260,8 +273,18 @@ function invokeRestMethod(options, body) {
   if (!options.hostname) {
     options.hostname = hostname;
   }
+  const reqPort = options.port ?? options.defaultPort ?? (protocol === 'https' ? 443 : 80);
   return new Promise((resolve, reject) => {
     const request = http.request(options, res => {
+      log(
+        'Received response HTTP %d %s for %s://%s:%d%s',
+        res.statusCode,
+        res.statusMessage,
+        protocol,
+        options.hostname,
+        reqPort,
+        options.path
+      );
       if (res.statusCode < 200 || res.statusCode >= 300) {
         // Handle redirects we can handle
         if (
@@ -272,6 +295,7 @@ function invokeRestMethod(options, body) {
           res.statusCode === 308
         ) {
           if (!res.headers.location) {
+            log('Error: no Location header in %d %s redirect', res.statusCode, res.statusMessage);
             reject(
               new ServerErrorException(
                 `Redirected via HTTP ${res.statusCode} ${res.statusMessage} but no location header`,
@@ -288,22 +312,39 @@ function invokeRestMethod(options, body) {
             body = undefined;
           }
           if (location.protocol !== protocol + ':') {
+            log('Error: redirecting from %s to %s changes protocol', protocol, location.protocol);
             reject(new Error(`Not redirecting from ${protocol} to ${location.protocol} for these tests`));
             return;
           }
           options.hostname = location.hostname;
+          options.port = location.port ? location.port : reqPort;
           options.path = location.pathname;
+          log('Redirecting to %s://%s:%d/%s', protocol, options.hostname, options.port, options.path);
           // And then send the redirect
-          resolve(invokeRestMethod(options, body));
+          res.on('data', chunk => {
+            log('Redirect data chunk (%d bytes)', chunk.length);
+          });
+          res.on('error', error => {
+            log('Error raised while reading redirect response: %o', error);
+          });
+          res.on('end', () => {
+            log('Redirect request completed.');
+            resolve(invokeRestMethod(options, body));
+          });
           return;
         }
         // Otherwise, fall through to gather the body
       }
       const responseBody = [];
       res.on('data', chunk => {
+        log('Data chunk (%d bytes)', chunk.length);
         responseBody.push(chunk);
       });
+      res.on('error', error => {
+        log('Error raised while reading response: %o', error);
+      });
       res.on('end', () => {
+        log('Request completed.');
         const bodyStr = responseBody.join('');
         if (res.statusCode >= 200 && res.statusCode < 300) {
           resolve(bodyStr);
@@ -312,11 +353,32 @@ function invokeRestMethod(options, body) {
         }
       });
     });
-    request.on('error', reject);
+    request.on('error', error => {
+      log('Request failed: %o', error);
+      reject(error);
+    });
     if (body) {
       request.write(body);
     }
     request.end();
+    request.on('end', () => {
+      log(
+        '%s request to %s://%s:%d%s ended.',
+        options.method ?? 'GET',
+        protocol,
+        options.hostname,
+        reqPort,
+        options.path
+      );
+    });
+    log(
+      'Sending %s request to %s://%s:%d%s',
+      options.method ?? 'GET',
+      protocol,
+      options.hostname,
+      reqPort,
+      options.path
+    );
   });
 }
 
@@ -389,6 +451,7 @@ async function runTests() {
   try {
     testStart('Sending basic "up and running" test...');
     const result = await invokeRestMethod({
+      port: port,
       path: '/',
     });
     // TODO: Check the result
@@ -397,16 +460,21 @@ async function runTests() {
     testFailed(ex);
   }
 
+  let successCount = 0,
+    failCount = 0;
   for (const wrapper of wrappers) {
     console.log(`-- Testing ${wrapper} --`);
     try {
       testStart('Sending basic "up and running" test...');
       let result = await invokeRestMethod({
+        port: port,
         path: '/' + wrapper,
       });
       if (result == 'Hello from the Clinical Trial Matching Service') {
+        successCount++;
         testPassed();
       } else {
+        failCount++;
         testPassed('Request succeeded, but the response was not the expected value.');
         console.log(`Unexpected response: ${result}`);
       }
@@ -425,29 +493,45 @@ async function runTests() {
         try {
           result = JSON.parse(result);
           if (result.resourceType === 'Bundle' && typeof result.total === 'number') {
+            successCount++;
             testPassed();
             console.log(`  Received ${result.total} results`);
           } else {
+            failCount++;
             testPassed('Unexpected response from wrapper: not a FHIR bundle.');
             console.log('Server responsed with: %j', result);
           }
         } catch (ex) {
+          failCount++;
           testPassed(`Failed to parse result: ${ex.toString()}`);
         }
       } catch (ex) {
+        failCount++;
         testFailed(ex);
         console.log(
           '  The wrapper is running, this failure may be caused by the backend itself and not the CTMS software.'
         );
       }
     } catch (ex) {
+      failCount++;
       testFailed(ex);
     }
+  }
+  const total = successCount + failCount;
+  console.log(
+    `Ran ${total} tests, ${successCount} succeeded (${total > 0 ? Math.round((successCount / total) * 100) : 0}%).`
+  );
+  const handles = process.getActiveResourcesInfo();
+  log('runTests() completed. Open handles: %o', handles);
+  const unexpectedHandles = handles.filter(handle => handle != 'TTYWrap');
+  if (unexpectedHandles.length > 0) {
+    console.error('Unexpected handles still open! Handles left open: %s', unexpectedHandles.join(', '));
   }
 }
 runTests()
   .then(() => {
     // Do nothing
+    log('Test script promise resolved.');
   })
   .catch(error => {
     console.error('Running tests failed!');

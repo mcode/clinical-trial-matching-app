@@ -11,9 +11,13 @@ const defaultMatchingServices = new Set((process.env.MATCHING_SERVICES_DEFAULT_E
 
 const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service => {
   const serviceEnvName = service.toUpperCase();
-  const cancerTypes = process.env[`MATCHING_SERVICE_${serviceEnvName}_CANCER_TYPES`]
-    .split(/\s*,\s*/)
-    .filter(cancer => allowedCancerTypes.includes(cancer));
+  const cancerTypesString = process.env[`MATCHING_SERVICE_${serviceEnvName}_CANCER_TYPES`];
+  const cancerTypes = cancerTypesString
+    ? cancerTypesString.split(/\s*,\s*/).filter(cancer => allowedCancerTypes.includes(cancer))
+    : [];
+  if (cancerTypes.length === 0) {
+    console.error(`Warning: ${service} has no cancer types set.`);
+  }
   return {
     name: service,
     label: process.env[`MATCHING_SERVICE_${serviceEnvName}_LABEL`] ?? service,
@@ -24,6 +28,12 @@ const matchingServices = enabledMatchingServices.split(/\s*,\s*/).map(service =>
   };
 });
 
+function parseEnvInt(stringValue, defaultValue, min, max) {
+  let value = Number(stringValue);
+  return isNaN(value) ? defaultValue : Math.min(Math.max(Math.floor(value), min), max);
+}
+
+/** @type {import('next').NextConfig} */
 module.exports = {
   // Disable image optimization, as it's currently broken when Next.js is
   // running under IISnode.
@@ -42,9 +52,16 @@ module.exports = {
     disableSearchLocation: JSON.parse(process.env.DISABLE_SEARCH_LOCATION ?? 'false'),
     defaultSearchZipCode: process.env.DEFAULT_SEARCH_ZIP_CODE,
     defaultSearchTravelDistance: process.env.DEFAULT_SEARCH_TRAVEL_DISTANCE,
-    resultsMax: process.env.RESULTS_MAX,
+    resultsMax: parseEnvInt(process.env.RESULTS_MAX, 15, 1, 15),
     siteRubric: allowedSiteRubrics.includes(process.env.SITE_RUBRIC) ? process.env.SITE_RUBRIC : 'none',
     services: matchingServices,
+    fhirlessPatient: {
+      id: 'example',
+      name: process.env.FHIRLESS_PATIENT_NAME ?? 'Test Launch',
+      gender: process.env.FHIRLESS_PATIENT_GENDER ?? 'male',
+      age: parseEnvInt(process.env.FHIRLESS_PATIENT_AGE, 35, 1, 150),
+      zipcode: process.env.FHIRLESS_PATIENT_ZIPCODE ?? null,
+    },
   },
   serverRuntimeConfig: {
     sessionSecretKey: process.env.SESSION_SECRET_KEY,
