@@ -29,7 +29,7 @@ export const formDataToFilterQuery = ({
 });
 
 // Change defaultValues into a string query
-export const defaultValuesToQuery = (defaultValues: Partial<FilterFormValuesType>) => {
+export const defaultValuesToQuery = (defaultValues: Partial<FilterFormValuesType>): Record<string, string> => {
   const originalValues = {};
 
   Object.keys(defaultValues).forEach(key => {

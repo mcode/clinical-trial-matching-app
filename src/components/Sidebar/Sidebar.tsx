@@ -7,7 +7,7 @@ import { Patient } from '@/utils/fhirConversionUtils';
 import { FilterAlt as FilterIcon, Search as SearchIcon } from '@mui/icons-material';
 import { ParsedUrlQuery } from 'querystring';
 import { ReactElement, SyntheticEvent, useState } from 'react';
-import { FullSearchParameters, OriginalSearchParameters } from 'types/search-types';
+import { FullSearchParameters, OriginalSearchParameters, SearchParameters } from 'types/search-types';
 import { formDataToFilterQuery } from '../FilterForm/FilterForm';
 import { SavedStudiesState } from '../Results';
 import { formDataToSearchQuery } from '../SearchForm/SearchForm';
@@ -84,7 +84,7 @@ const Sidebar = ({ patient, disabled, savedStudies, filterOptions, query, setUse
   };
 
   // Change defaultValues into a string query
-  const defaultValuesToQuery = (defaultValues): OriginalSearchParameters => {
+  const defaultValuesToQuery = (defaultValues: SearchParameters): OriginalSearchParameters => {
     const originalValues = {};
 
     Object.keys(defaultValues).forEach(key => {
