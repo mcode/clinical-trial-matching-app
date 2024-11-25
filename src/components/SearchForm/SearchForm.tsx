@@ -41,8 +41,8 @@ export type SearchFormProps = {
 };
 
 // Change defaultValues into a string query
-export const defaultValuesToQuery = defaultValues => {
-  const originalValues = {};
+export const defaultValuesToQuery = (defaultValues: SearchParameters): Record<string, string | string[]> => {
+  const originalValues: Record<string, string | string[]> = {};
 
   Object.keys(defaultValues).forEach(key => {
     originalValues['pre_' + key] = defaultValues[key];
