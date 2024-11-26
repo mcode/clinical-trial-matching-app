@@ -122,6 +122,7 @@ These options control the Linux installer:
 | `README.md`     | This file.                                                                                                                                                        |
 | `test.js`       | Test script. Sends a test request to the main web app as well as                                                                                                  |
 | `wrappers.json` | Configuration file for the individual wrappers. See below.                                                                                                        |
+| `zip.js`        | Utility for creating a ZIP file containing installation files. See below.                                                                                         |
 
 ## wrappers.json Configuration
 
@@ -133,3 +134,44 @@ The value for each key may either be `false` or `null` to skip that wrapper (whe
 | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `branch` | String indicating the Git branch to use                                                                                                                                                                                                      |
 | `env`    | A `Record<string, string>` containing environment variable names and their values. Setting this entirely overrides the values within the global wrapper, so setting it to an empty object means no keys are used in the final configuration. |
+
+## `zip.js` ZIP Utility
+
+The `zip.js` script is designed to create a ZIP file based on an install created via the install script. It exists mostly to allow custom exclude rules for the files, such as automatically excluding `.env.local` files. Currently several of the options are only configured within the script itself.
+
+`zip.js` requires the `commons-compress` library. This can either be installed globally:
+
+```sh
+npm install -g commons-compress
+```
+
+Or it can be installed locally within a directory with the `zip.js` file, such as:
+
+```bat
+MKDIR C:\CTMS\zip
+CD C:\CTMS\zip
+COPY C:\CTMS\clinical-trial-matching-app\scripts\zip.js .
+npm install commons-compress
+```
+
+This should produce warnings about `package.json` not existing in this directory, but it should still install the necessary dependency.
+
+### Usage
+
+```bat
+node zip.js [OPTIONS]
+```
+
+At present this will always use `C:\CTMS` as the source directory and `CTMS.zip` as the ZIP file being created.
+
+### Options
+
+| Option                      | Description                                                                                                                       |
+| --------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| `--exclude-node-modules`    | If given, skip over the `node_modules` directory in the app/wrapper                                                               |
+| `--exclude-front-end`       | Do not include the front-end `clinical-trial-matching-app` (this app)                                                             |
+| `--exclude-installers`      | Do not include installers in the installers directory                                                                             |
+| `--exclude-install-scripts` | Do not include `install.ps1`, `test.ps1`, or the `wrappers.json` files                                                            |
+| `--exclude-wrappers`        | Exclude all wrappers (overrides `--wrappers`)                                                                                     |
+| `--wrappers <WRAPPERS>`     | Install the given `<WRAPPERS>` - a comma separated list of wrapper names, using the same names as would appear in `wrappers.json` |
+| `-v`, `--verbose`           | Enable verbose output                                                                                                             |
