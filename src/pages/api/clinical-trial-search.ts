@@ -59,6 +59,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse): Promise<void>
     searchParams['zipcode'],
     searchParams['travelDistance']
   );
+
   res.status(200).json(results);
 };
 
