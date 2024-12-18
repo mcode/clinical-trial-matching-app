@@ -56,14 +56,47 @@ export const RedCapHeaders = [
   'facility_name_3',
   'facility_name_4',
   'facility_name_5',
-  'age',
-  'ps_scale',
-  'ecog',
-  'kps',
+  'pre_cancer_diagnosis',
   'cancer_diagnosis',
-  'histology___1',
-  'biomarkers',
+  'pre_cancer_subtype_other',
+  'histology_other',
+  'pre_stage',
   'stage',
+  'ps_scale',
+  'pre_ecog',
+  'ecog',
+  'pre_kps',
+  'kps',
+  'pre_metastasis_other',
+  'sites_of_mets_other',
+  'pre_age',
+  'age',
+  'pre_biomarker_01',
+  'post_biomarker_01',
+  'pre_biomarker_02',
+  'post_biomarker_02',
+  'pre_biomarker_03',
+  'post_biomarker_03',
+  'pre_biomarker_04',
+  'post_biomarker_04',
+  'pre_biomarker_05',
+  'post_biomarker_05',
+  'pre_biomarker_06',
+  'post_biomarker_06',
+  'pre_biomarker_07',
+  'post_biomarker_07',
+  'pre_biomarker_08',
+  'post_biomarker_08',
+  'pre_biomarker_09',
+  'post_biomarker_09',
+  'pre_biomarker_10',
+  'post_biomarker_10',
+  'pre_radiation',
+  'post_radiation',
+  'pre_surgery',
+  'post_surgery',
+  'pre_medication',
+  'post_medication',
   'bb_subject_id',
 ];
 
@@ -176,39 +209,144 @@ const convertResultsToRedCapRow = (data: StudyDetailProps, patientSearch: FullSe
     facility_name_3: facilities?.[2] || '',
     facility_name_4: facilities?.[3] || '',
     facility_name_5: facilities?.[4] || '',
-    age: '',
-    ps_scale: '',
-    ecog: '',
-    kps: '',
+    pre_cancer_diagnosis: '',
     cancer_diagnosis: '',
-    histology___1: '',
-    biomarkers: '',
+    pre_cancer_subtype_other: '',
+    histology_other: '',
+    pre_stage: '',
     stage: '',
+    ps_scale: '',
+    pre_ecog: '',
+    ecog: '',
+    pre_kps: '',
+    kps: '',
+    pre_metastasis_other: '',
+    sites_of_mets_other: '',
+    pre_age: '',
+    age: '',
+    pre_biomarker_01: '',
+    post_biomarker_01: '',
+    pre_biomarker_02: '',
+    post_biomarker_02: '',
+    pre_biomarker_03: '',
+    post_biomarker_03: '',
+    pre_biomarker_04: '',
+    post_biomarker_04: '',
+    pre_biomarker_05: '',
+    post_biomarker_05: '',
+    pre_biomarker_06: '',
+    post_biomarker_06: '',
+    pre_biomarker_07: '',
+    post_biomarker_07: '',
+    pre_biomarker_08: '',
+    post_biomarker_08: '',
+    pre_biomarker_09: '',
+    post_biomarker_09: '',
+    pre_biomarker_10: '',
+    post_biomarker_10: '',
+    pre_radiation: '',
+    post_radiation: '',
+    pre_surgery: '',
+    post_surgery: '',
+    pre_medication: '',
+    post_medication: '',
   };
 };
 
 // The same
 const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
   const ecogScore = patientSearch.ecogScore ? JSON.parse(patientSearch.ecogScore)?.valueInteger : '';
+  const pre_ecogScore = patientSearch.pre_ecogScore ? JSON.parse(patientSearch.pre_ecogScore)?.valueInteger : '';
   const karnofskyScore = patientSearch.karnofskyScore ? JSON.parse(patientSearch.karnofskyScore)?.valueInteger : '';
-  const cancerType: string = patientSearch.cancerType ? JSON.parse(patientSearch.cancerType)?.cancerType[0] : '';
-  // const cancerSubtype: string = patientSearch.cancerSubtype ? JSON.parse(patientSearch.cancerSubtype)?.category[0] : '';
-  // const metastasis:string = patientSearch.metastasis ? JSON.parse(patientSearch.metastasis)?.category[0] : '';
-  const stage: string = patientSearch.stage ? JSON.parse(patientSearch.stage)?.category[0] : '';
-  console.log('Biomarkers', patientSearch.biomarkers);
-  const biomarkers: string = patientSearch.biomarkers
+  const pre_karnofskyScore = patientSearch.pre_karnofskyScore
+    ? JSON.parse(patientSearch.pre_karnofskyScore)?.valueInteger
+    : '';
+  const cancerType: string = patientSearch.cancerType ? JSON.parse(patientSearch.cancerType)?.cancerType?.[0] : '';
+  const pre_cancerType: string = patientSearch.pre_cancerType
+    ? JSON.parse(patientSearch.pre_cancerType)?.cancerType?.[0]
+    : '';
+  const cancerSubtype: string = patientSearch.cancerSubtype
+    ? JSON.parse(patientSearch.cancerSubtype)?.category?.[0]
+    : '';
+  const pre_cancerSubtype: string = patientSearch.pre_cancerSubtype
+    ? JSON.parse(patientSearch.pre_cancerSubtype)?.category?.[0]
+    : '';
+  const metastasis: string = patientSearch.metastasis ? JSON.parse(patientSearch.metastasis)?.category?.[0] : '';
+  const pre_metastasis: string = patientSearch.pre_metastasis
+    ? JSON.parse(patientSearch.pre_metastasis)?.category?.[0]
+    : '';
+  const stage: string = patientSearch.stage ? JSON.parse(patientSearch.stage)?.category?.[0] : '';
+  const pre_stage: string = patientSearch.pre_stage ? JSON.parse(patientSearch.pre_stage)?.category?.[0] : '';
+
+  const biomarkers: string[] = patientSearch.biomarkers
     ? JSON.parse(patientSearch.biomarkers)
         .map(biomarker => {
           const qualifier =
             biomarker.qualifier?.code == '10828004' ? '+' : biomarker.qualifier?.code === '260385009' ? '-' : '';
           return biomarker.display + qualifier;
         })
+        .sort()
+    : [];
+
+  const pre_biomarkers: string[] = patientSearch.pre_biomarkers
+    ? JSON.parse(patientSearch.pre_biomarkers)
+        .map(biomarker => {
+          const qualifier =
+            biomarker.qualifier?.code == '10828004' ? '+' : biomarker.qualifier?.code === '260385009' ? '-' : '';
+          return biomarker.display + qualifier;
+        })
+        .sort()
+    : [];
+
+  // Cut off length into 10
+  biomarkers.length = 10;
+  pre_biomarkers.length = 10;
+
+  const pre_radiation: string = patientSearch.pre_radiation
+    ? JSON.parse(patientSearch.pre_radiation)
+        .map(radiation => radiation.display)
+        .sort()
+        .join(', ')
+    : '';
+
+  const radiation: string = patientSearch.radiation
+    ? JSON.parse(patientSearch.radiation)
+        .map(radiation => radiation.display)
+        .sort()
+        .join(', ')
+    : '';
+
+  const pre_medications: string = patientSearch.pre_medications
+    ? JSON.parse(patientSearch.pre_medications)
+        .map(medication => medication.display)
+        .sort()
+        .join(', ')
+    : '';
+
+  const medications: string = patientSearch.medications
+    ? JSON.parse(patientSearch.medications)
+        .map(medication => medication.display)
+        .sort()
+        .join(', ')
+    : '';
+
+  const pre_surgery: string = patientSearch.pre_surgery
+    ? JSON.parse(patientSearch.pre_surgery)
+        .map(surgery => surgery.display)
+        .sort()
+        .join(', ')
+    : '';
+
+  const surgery: string = patientSearch.surgery
+    ? JSON.parse(patientSearch.surgery)
+        .map(surgery => surgery.display)
+        .sort()
         .join(', ')
     : '';
 
   return {
     record_id: '',
-    redcap_event_name: 'match_arm_1',
+    redcap_event_name: 'match_arm_2',
     redcap_repeat_instrument: '',
     redcap_repeat_instance: '',
     trial_id: '',
@@ -231,13 +369,46 @@ const convertPatientInfoToRedCapRow = (patientSearch: FullSearchParameters) => {
     facility_name_3: '',
     facility_name_4: '',
     facility_name_5: '',
-    age: patientSearch.age || '',
-    ps_scale: karnofskyScore ? 1 : ecogScore || ecogScore === 0 ? 2 : '',
-    ecog: ecogScore,
-    kps: karnofskyScore,
+    pre_cancer_diagnosis: pre_cancerType,
     cancer_diagnosis: cancerType,
-    histology___1: '',
-    biomarkers: biomarkers,
+    pre_cancer_subtype_other: pre_cancerSubtype,
+    histology_other: cancerSubtype,
+    pre_stage: pre_stage,
     stage: stage,
+    ps_scale: karnofskyScore ? 1 : ecogScore || ecogScore === 0 ? 2 : '',
+    pre_ecog: pre_ecogScore,
+    ecog: ecogScore,
+    pre_kps: pre_karnofskyScore,
+    kps: karnofskyScore,
+    pre_metastasis_other: pre_metastasis,
+    sites_of_mets_other: metastasis,
+    pre_age: patientSearch.pre_age,
+    age: patientSearch.age || '',
+    pre_biomarker_01: pre_biomarkers[0] || '',
+    post_biomarker_01: biomarkers[0] || '',
+    pre_biomarker_02: pre_biomarkers[1] || '',
+    post_biomarker_02: biomarkers[1] || '',
+    pre_biomarker_03: pre_biomarkers[2] || '',
+    post_biomarker_03: biomarkers[2] || '',
+    pre_biomarker_04: pre_biomarkers[3] || '',
+    post_biomarker_04: biomarkers[3] || '',
+    pre_biomarker_05: pre_biomarkers[4] || '',
+    post_biomarker_05: biomarkers[4] || '',
+    pre_biomarker_06: pre_biomarkers[5] || '',
+    post_biomarker_06: biomarkers[5] || '',
+    pre_biomarker_07: pre_biomarkers[6] || '',
+    post_biomarker_07: biomarkers[6] || '',
+    pre_biomarker_08: pre_biomarkers[7] || '',
+    post_biomarker_08: biomarkers[7] || '',
+    pre_biomarker_09: pre_biomarkers[8] || '',
+    post_biomarker_09: biomarkers[8] || '',
+    pre_biomarker_10: pre_biomarkers[9] || '',
+    post_biomarker_10: biomarkers[9] || '',
+    pre_radiation: pre_radiation,
+    post_radiation: radiation,
+    pre_surgery: pre_surgery,
+    post_surgery: surgery,
+    pre_medication: pre_medications,
+    post_medication: medications,
   };
 };
