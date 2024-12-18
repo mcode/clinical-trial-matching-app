@@ -139,10 +139,12 @@ The value for each key may either be `false` or `null` to skip that wrapper (whe
 
 The `zip.js` script is designed to create a ZIP file based on an install created via the install script. It exists mostly to allow custom exclude rules for the files, such as automatically excluding `.env.local` files. Currently several of the options are only configured within the script itself.
 
-`zip.js` requires the `commons-compress` library. This can either be installed globally:
+You cannot run `zip.js` from within the scripts directory, as this will cause it to try and include the ZIP file itself. It needs to be copied outside of the web app directories and run within its own directory.
+
+`zip.js` requires the `compress-commons` library. This can either be installed globally:
 
 ```sh
-npm install -g commons-compress
+npm install -g compress-commons
 ```
 
 Or it can be installed locally within a directory with the `zip.js` file, such as:
@@ -151,7 +153,7 @@ Or it can be installed locally within a directory with the `zip.js` file, such a
 MKDIR C:\CTMS\zip
 CD C:\CTMS\zip
 COPY C:\CTMS\clinical-trial-matching-app\scripts\zip.js .
-npm install commons-compress
+npm install compress-commons
 ```
 
 This should produce warnings about `package.json` not existing in this directory, but it should still install the necessary dependency.
