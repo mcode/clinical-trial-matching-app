@@ -379,7 +379,6 @@ export const getServerSideProps: GetServerSideProps = async context => {
   rehydrateCodes(query, 'pre_radiations', convertCodesToRadiations);
   rehydrateCodes(query, 'pre_surgery', convertCodesToSurgeries);
 
-
   if (query['fhirless'] !== undefined) {
     // In this case, the results are "fhirless" and we return a default set of properties
     return {

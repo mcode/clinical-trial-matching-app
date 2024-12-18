@@ -1,4 +1,3 @@
-import { FilterFormValuesType } from '@/components/FilterForm/types';
 import { StudyDetailProps } from '@/components/Results';
 import { Patient, User } from '@/utils/fhirConversionUtils';
 import { ParsedUrlQuery } from 'querystring';
